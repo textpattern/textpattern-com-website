@@ -1,0 +1,21 @@
+{
+  "name": "textpattern-website",
+  "version": "3.0.0-alpha.1",
+  "author": "The Textpattern Team",
+  "description": "The official Textpattern website",
+  "directory": "bower_components",
+  "ignore": [
+    "**/machform"
+  ],
+  "dependencies": {
+    "google-code-prettify": "latest",
+    "jquery": "1.x",
+    "jquery-ui": "1.x",
+    "jquery.cookie": "~1.3",
+    "jquery-details": "latest",
+    "jquery-placeholder": "latest",
+    "responsive-nav": "latest",
+    "ResponsiveSlides.js": "latest",
+    "selectivizr": "latest"
+  }
+}

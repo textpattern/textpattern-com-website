@@ -1,0 +1,98 @@
+-------------------------------
+TEXTPATTERN.COM STRUCTURE AUDIT
+-------------------------------
+
+
+0a: Homepage
+------------
+
+0a.1: Feature slider
+0a.2: Testimonials x 4
+
+
+0b: Common sidebar
+------------------
+
+0b.1: Download button (independent of downloads section)
+0b.2: Overview of features
+0b.3: 'Featured at' widget
+0b.4: Advertisement slots
+0b.5: Outbound linkage (see section 8)
+
+
+1: 'Look at the features' section
+---------------------------------
+
+1.1: Textpattern's features (landing)
+1.2: For content publishers
+1.3: For designers
+1.4: For developers
+1.5: Testimonials
+1.6: Langauges
+
+
+2: 'Learn from the docs' section
+--------------------------------
+
+2.1: Docs overview (landing)
+2.2: FAQ categories (full listing and subsections for basic filtering by category)
+2.2.x: Categorised FAQs
+2.3: Releases FAQ (full listing and subsections for basic filtering by release version)
+2.3.x: FAQs by specific release
+2.4: System requirements (actually redirects to 5.2)
+2.5: Licence
+
+
+3: 'Community support' section
+------------------------------
+
+3.1: Support overview (landing)
+3.2: Security
+3.3: Contact us
+
+
+4: 'Check the weblog' section
+-----------------------------
+
+4.1: Blog overview (landing - not actual articles themselves, they are nested at 3.1.x)
+4.1.x: The individual blog articles
+4.2: Archives (not actual articles themselves, they are nested at 3.1.x)
+4.3: Feed - RSS (redirects to RSS)
+4.4: Feed - ATOM (redirects to ATOM)
+
+
+5: 'About the software' section
+-------------------------------
+
+5.1: What is Textpattern? (landing)
+5.2: System requirements
+5.3: Contributors
+5.4: Donating and patrons
+
+
+6: Additional (non specific) sections
+-------------------------------------
+
+6a: Downloads (links from sidebar sitewide)
+6b: Featured sites (links from sidebar sitewide)
+6c: Textpattern web hosting (linked from 5.2)
+
+
+7: Other functions
+------------------
+
+7a: Search
+7b: Twitter feed
+7c: Forum feed
+7d: Donate (actually redirects to 5.4)
+
+
+8: Outbound linkage
+-------------------
+
+8a: Try a demo (opensourceCMS)
+8b: The forum
+8c: The manual
+8d: Resources
+8e: Templates
+8f: Textpattern Solutions book
