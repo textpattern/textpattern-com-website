@@ -1,5 +1,3 @@
 h1. Textpattern.com website
 
-Official website of the Textpattern project.
-
-h2. Currently under development
+Official website of the Textpattern project. *Currently under development.*
