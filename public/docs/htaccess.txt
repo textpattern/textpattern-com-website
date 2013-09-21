@@ -1,0 +1,210 @@
+# ##############################################################################
+# # INTERNET EXPLORER                                                          #
+# ##############################################################################
+
+# ------------------------------------------------------------------------------
+# | Better website experience                                                  |
+# ------------------------------------------------------------------------------
+
+# Force IE to render pages in the highest available mode in the various
+# cases when it may not: http://hsivonen.iki.fi/doctype/ie-mode.pdf.
+
+<IfModule mod_headers.c>
+    Header set X-UA-Compatible "IE=edge"
+    # `mod_headers` can't match based on the content-type, however, we only
+    # want to send this header for HTML pages and not for the other resources
+    <FilesMatch "\.(appcache|crx|css|eot|gif|htc|ico|jpe?g|js|m4a|m4v|manifest|mp4|oex|oga|ogg|ogv|otf|pdf|png|safariextz|svgz?|ttf|vcf|webapp|webm|webp|woff|xml|xpi)$">
+        Header unset X-UA-Compatible
+    </FilesMatch>
+</IfModule>
+
+
+# ##############################################################################
+# # ENCODING                                                                   #
+# ##############################################################################
+
+# Use UTF-8 encoding for anything served as `text/html` or `text/plain`.
+AddDefaultCharset utf-8
+
+# Force UTF-8 for certain file formats.
+<IfModule mod_mime.c>
+    AddCharset utf-8 .atom .css .js .json .rss .vtt .webapp .xml
+</IfModule>
+
+
+# ##############################################################################
+# # SECURITY                                                                   #
+# ##############################################################################
+
+# ------------------------------------------------------------------------------
+# | File access                                                                |
+# ------------------------------------------------------------------------------
+
+# Block access to directories without a default document.
+# Usually you should leave this uncommented because you shouldn't allow anyone
+# to surf through every directory on your server (which may includes rather
+# private places like the CMS's directories).
+
+<IfModule mod_autoindex.c>
+    Options -Indexes
+</IfModule>
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+# Block access to hidden files and directories.
+# This includes directories used by version control systems such as Git and SVN.
+
+<IfModule mod_rewrite.c>
+    RewriteCond %{SCRIPT_FILENAME} -d [OR]
+    RewriteCond %{SCRIPT_FILENAME} -f
+    RewriteRule "(^|/)\." - [F]
+</IfModule>
+
+
+# ##############################################################################
+# # WEB PERFORMANCE                                                            #
+# ##############################################################################
+
+# ------------------------------------------------------------------------------
+# | ETag removal                                                               |
+# ------------------------------------------------------------------------------
+
+# Since we're sending far-future expires headers (see below), ETags can
+# be removed: http://developer.yahoo.com/performance/rules.html#etags.
+
+# `FileETag None` is not enough for every server.
+<IfModule mod_headers.c>
+    Header unset ETag
+</IfModule>
+
+FileETag None
+
+# ------------------------------------------------------------------------------
+# | Expires headers (for better cache control)                                 |
+# ------------------------------------------------------------------------------
+
+# The following expires headers are set pretty far in the future. If you don't
+# control versioning with filename-based cache busting, consider lowering the
+# cache time for resources like CSS and JS to something like 1 week.
+
+<IfModule mod_expires.c>
+
+    ExpiresActive on
+    ExpiresDefault                                      "access plus 1 month"
+
+  # CSS
+    ExpiresByType text/css                              "access plus 1 month"
+
+  # Data interchange
+    ExpiresByType application/json                      "access plus 0 seconds"
+    ExpiresByType application/xml                       "access plus 0 seconds"
+    ExpiresByType text/xml                              "access plus 0 seconds"
+
+  # Favicon (cannot be renamed!)
+    ExpiresByType image/x-icon                          "access plus 1 week"
+
+  # HTML components (HTCs)
+    ExpiresByType text/x-component                      "access plus 1 month"
+
+  # HTML
+    ExpiresByType text/html                             "access plus 0 seconds"
+
+  # JavaScript
+    ExpiresByType application/javascript                "access plus 1 month"
+
+  # Manifest files
+    ExpiresByType application/x-web-app-manifest+json   "access plus 0 seconds"
+    ExpiresByType text/cache-manifest                   "access plus 0 seconds"
+
+  # Media
+    ExpiresByType audio/ogg                             "access plus 1 month"
+    ExpiresByType image/gif                             "access plus 1 month"
+    ExpiresByType image/jpeg                            "access plus 1 month"
+    ExpiresByType image/png                             "access plus 1 month"
+    ExpiresByType video/mp4                             "access plus 1 month"
+    ExpiresByType video/ogg                             "access plus 1 month"
+    ExpiresByType video/webm                            "access plus 1 month"
+
+  # Web feeds
+    ExpiresByType application/atom+xml                  "access plus 1 hour"
+    ExpiresByType application/rss+xml                   "access plus 1 hour"
+
+  # Web fonts
+    ExpiresByType application/font-woff                 "access plus 1 month"
+    ExpiresByType application/vnd.ms-fontobject         "access plus 1 month"
+    ExpiresByType application/x-font-ttf                "access plus 1 month"
+    ExpiresByType font/opentype                         "access plus 1 month"
+    ExpiresByType image/svg+xml                         "access plus 1 month"
+
+</IfModule>
+
+
+# ##############################################################################
+# # TEXTPATTERN                                                                #
+# ##############################################################################
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Redirect team subdomain
+    RewriteCond %{HTTP_HOST} ^team\.textpattern\.com$ [NC]
+    RewriteRule ^(.*)$ http://textpattern.com/contributors [R=301,L]
+
+    # Redirect svn subdomain
+    RewriteCond %{HTTP_HOST} ^svn\.textpattern\.com$ [NC]
+    RewriteRule ^(.*)$ http://textpattern.googlecode.com/svn/$1 [R=301,L]
+
+    # Redirect dev subdomain
+    RewriteCond %{HTTP_HOST} ^dev\.textpattern\.com$ [NC]
+    RewriteRule ^.*$ http://code.google.com/p/textpattern/ [R=302,L]
+
+    # Old help URLs
+    RewriteRule ^help/(.*)$ http://rpc.textpattern.com/help/$1 [R=301,L]
+
+    # No 'www'
+    RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+    RewriteRule ^(.*)$ http://%1/$1 [R=301,L] 
+
+    RewriteCond %{REQUEST_FILENAME} -f [OR]
+    RewriteCond %{REQUEST_FILENAME} -d
+    RewriteRule ^(.+) - [PT,L]
+
+    RewriteRule ^(.*) index.php
+
+    RewriteCond %{HTTP:Authorization}  !^$
+    RewriteRule .* - [E=REMOTE_USER:%{HTTP:Authorization}]
+</IfModule>
+
+
+# ##############################################################################
+# # REDIRECTS                                                                  #
+# ##############################################################################
+
+# ------------------------------------------------------------------------------
+# | Cool URIs don't change                                                     |
+# ------------------------------------------------------------------------------
+
+Redirect permanent /plugins/txp_plugin_template.txt http://svn.textpattern.com/development/4.0-plugin-template/
+Redirect permanent /forum http://forum.textpattern.com
+
+# ------------------------------------------------------------------------------
+# | Selfish propaganda                                                         |
+# ------------------------------------------------------------------------------
+
+Redirect temp /@textpattern https://twitter.com/textpattern
+Redirect temp /+ https://plus.google.com/u/0/communities/111366418300163664690
+Redirect temp /facebook https://www.facebook.com/groups/textpattern/
+
+# ------------------------------------------------------------------------------
+# | Redirect hardcoded URIs to external resources                              |
+# ------------------------------------------------------------------------------
+
+Redirect temp /textpattern-first-steps http://textpattern.net/wiki/index.php?title=Textpattern_Quickstart:_Hello_World
+Redirect temp /textpattern-semantic-model http://textpattern.net/wiki/index.php?title=Textpattern_Semantic_Model
+Redirect temp /textpattern-tag-reference http://textpattern.net/wiki/index.php?title=Category:Tag_Reference
+Redirect temp /default-theme https://github.com/philwareham/txp-h5bp-theme
+Redirect temp /textile-changelog https://github.com/netcarver/textile/wiki/PHP-Textile-Changelog
+Redirect temp /hidden-files-osx http://osxdaily.com/2009/02/25/show-hidden-files-in-os-x/
+
+Redirect temp /textile-sandbox http://txstyle.org/
+Redirect temp /textile-reference-manual http://txstyle.org/
