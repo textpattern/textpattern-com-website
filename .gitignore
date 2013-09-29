@@ -16,3 +16,9 @@ Thumbs.db
 /node_modules
 /npm-debug.log
 /tmp
+/vendor
+
+# Page cache #
+##############
+
+/cache
