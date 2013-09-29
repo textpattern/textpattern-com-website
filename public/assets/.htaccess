@@ -1,0 +1,13 @@
+<ifModule mod_headers.c>
+    Header append Cache-Control "public"
+</ifModule>
+
+<ifModule mod_expires.c>
+    ExpiresActive On
+    ExpiresDefault "access plus 1 year"
+</ifModule>
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule ^(js|css)/([a-z0-9]+)\.([0-9]+)\.(js|css)$ $1/$2.$4 [L]
+</IfModule>

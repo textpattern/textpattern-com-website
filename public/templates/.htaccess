@@ -1,0 +1,5 @@
+Options -Indexes
+
+<ifModule mod_alias.c>
+    RedirectMatch 403 .*
+</ifModule>
