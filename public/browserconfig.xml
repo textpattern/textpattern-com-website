@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<browserconfig>
+    <msapplication>
+        <tile>
+            <square70x70logo src="/assets/img/windows-site-tile/tiny.png"/>
+            <square150x150logo src="/assets/img/windows-site-tile/square.png"/>
+            <wide310x150logo src="/assets/img/windows-site-tile/wide.png"/>
+            <square310x310logo src="/assets/img/windows-site-tile/large.png"/>
+            <TileColor>#ffffff</TileColor>
+        </tile>
+        <notification>
+            <polling-uri src="http://textpattern.com/rss/"/>
+            <frequency>60</frequency>
+            <cycle>1</cycle>
+        </notification>
+    </msapplication>
+</browserconfig>
