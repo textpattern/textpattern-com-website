@@ -1,0 +1,224 @@
+//
+// note: this file is for use with Sass and Compass - http://sass-lang.com, http://compass-style.org
+// don't use it as your live site stylesheet!
+//
+
+
+@media print {
+
+* {
+    @include box-shadow(none !important);
+
+    color: black !important; // black prints faster
+    text-shadow: none !important;
+    background: transparent !important;
+}
+
+body {
+    font-family: $font-print;
+    font-size: 8pt;
+    line-height: 1.5;
+    margin: .5cm;
+    padding: 2em 5em;
+}
+
+header {
+    border-bottom: solid 1pt black;
+}
+
+footer {
+    margin-top: 12pt;
+    border-top: solid 1pt black;
+}
+
+/* hide unnecessary content from print */
+nav,
+audio,
+video,
+form,
+[role="complementary"],
+#comments-form,
+.comments h4 a:last-child,
+.paginator {
+    display: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* show URLs for certain links in print */
+a[href]:after {
+    content: " (" attr(href) ")";
+}
+
+h1 a[href],
+h2 a[href],
+h3 a[href],
+sup a[href],
+a[itemprop="discussionUrl"],
+a[rel="tag"] {
+    &:after {
+        content: "";
+    }
+}
+
+/* show long-form for abbreviations in print */
+abbr[title] {
+    &:after {
+        content: " (" attr(title) ")";
+    }
+}
+
+h1 {
+    font-size: 32pt;
+    line-height: 36pt;
+    font-weight: normal;
+    margin: .5em 0;
+}
+
+h2 {
+    font-size: 18pt;
+    line-height: 23pt;
+    page-break-after: avoid;
+    orphans: 3;
+    widows: 3;
+    margin: .6666667em 0;
+}
+
+h3 {
+    font-size: 12pt;
+    line-height: 17pt;
+    page-break-after: avoid;
+    orphans: 3;
+    widows: 3;
+    margin: .75em 0;
+}
+
+h4 {
+    font-size: 10pt;
+    line-height: 14pt;
+    page-break-after: avoid;
+    orphans: 3;
+    widows: 3;
+    margin: .875em 0;
+}
+
+p {
+    orphans: 3;
+    widows: 3;
+}
+
+footer,
+figcaption,
+tfoot,
+small,
+.footnote {
+    font-size: 6pt;
+}
+
+blockquote {
+    font-size: 16pt;
+    border-left: 3pt solid black;
+    padding: 0 0 0 8pt;
+    page-break-inside: avoid;
+}
+
+pre {
+    margin-bottom: 8pt;
+    border: solid 1pt black;
+    padding: 8pt;
+}
+
+.comments {
+    page-break-inside: avoid;
+}
+
+pre,
+code,
+kbd,
+samp,
+var {
+    font-family: "Courier New", Courier, monospace;
+}
+
+dfn,
+q,
+dt {
+    font-style: italic;
+}
+
+img {
+    max-width: 100% !important;
+    page-break-inside: avoid;
+}
+
+/* image alignemnts */
+img {
+    &.align-left {
+        float: left;
+        margin: 1em 1em 1em 0;
+    }
+
+    &.align-right {
+        float: right;
+        margin: 1em 0 1em 1em;
+    }
+    &.align-center {
+        display: block;
+        margin: 1em auto;
+    }
+}
+
+figure {
+    margin-bottom: 8pt;
+}
+
+figcaption {
+    margin-top: 4pt;
+}
+
+ul {
+    list-style: square;
+    margin: 0 0 8pt 1.8em;
+}
+
+ol {
+    list-style: decimal;
+    margin: 0 0 8pt 1.8em;
+}
+
+dl {
+    margin: 0 0 8pt 1.8em;
+}
+
+table {
+    margin-bottom: 8pt;
+    width: 100%;
+}
+
+caption {
+    font-weight: bold;
+    text-align: left;
+    margin-bottom: 4pt;
+}
+
+/* display table head across multi-page tables */
+thead {
+    display: table-header-group;
+    th {
+        border-top: solid 1pt black;
+    }
+}
+
+tr {
+    page-break-inside: avoid;
+}
+
+th,
+td {
+    border-bottom: solid 1pt black;
+    padding: 4pt 8pt;
+}
+
+}
