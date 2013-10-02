@@ -1,5 +1,7 @@
 h1. Textpattern.com website
 
+!https://travis-ci.org/textpattern/textpattern-com-website.png?branch=master!:https://travis-ci.org/textpattern/textpattern-com-website
+
 Official website of the Textpattern project. *Currently under development.*
 
 h2. Requirements
