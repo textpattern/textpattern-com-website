@@ -1,0 +1,76 @@
+//
+// note: this file is for use with Sass and Compass - http://sass-lang.com, http://compass-style.org
+// don't use it as your live site stylesheet!
+//
+
+
+/* Embedded content
+   ========================================================================== */
+
+/* remove the gap between images, videos, audio and canvas and the bottom of their containers */
+audio,
+canvas,
+img,
+video {
+	vertical-align: middle;
+}
+
+/* correct `inline-block` display not defined in IE8-9 */
+audio,
+canvas,
+video {
+	display: inline-block;
+}
+
+/* make embedded elements responsive */
+img,
+video {
+	max-width: 100%;
+	height: auto;
+}
+
+img {
+	/* remove border when inside `<a>` element in IE8-9 */
+	border: 0;
+
+	&.align-left {
+		float: left;
+		margin: 1em 1em 1em 0;
+	}
+
+	&.align-right {
+		float: right;
+		margin: 1em 0 1em 1em;
+	}
+	&.align-center {
+		display: block;
+		margin: 1em auto;
+	}
+}
+
+/* rounded images */
+.img--round {
+	@include border-radius(50%);
+}
+
+/* address margin not present in IE8-9 and Safari5 */
+figure {
+	margin: 0;
+}
+
+/* prevent modern browsers from displaying `<audio>` without controls, remove excess height in iOS5 devices */
+audio:not([controls]) {
+	display: none;
+	height: 0;
+}
+
+/* correct overflow displayed oddly in IE9 */
+svg:not(:root) {
+	overflow: hidden;
+}
+
+/* reset fonts for Flowplayer (can be removed if no videos needed) */
+.videoplayer {
+	font-family: sans-serif;
+	background-color: #333333;
+}

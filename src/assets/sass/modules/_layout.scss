@@ -1,0 +1,86 @@
+//
+// note: this file is for use with Sass and Compass - http://sass-lang.com, http://compass-style.org
+// don't use it as your live site stylesheet!
+//
+
+
+/* Layout
+   ========================================================================== */
+
+html {
+	-webkit-tap-highlight-color: rgba($color-link-hover, .5);
+	/* always force scrollbar padding so we don't get 'jumping' */
+	overflow-y: scroll;
+	/* prevent iOS text size adjust after orientation change, without disabling user zoom */
+	-webkit-text-size-adjust: 100%;
+	/* as above, for Windows Phone */
+	-ms-text-size-adjust: 100%;
+}
+
+body {
+	margin: 0;
+	background: $color-background-box;
+}
+
+.wrapper {
+	border-top: 1px solid $color-border;
+	border-bottom: 1px solid $color-border;
+	padding: 1px 0 1em;
+	background: $color-background;
+}
+
+header,
+.container,
+footer {
+	margin: 0 auto;
+	width: 90%;
+	max-width: $container-max-width;
+}
+
+footer {
+    clear: both;
+    position: relative;
+}
+
+.legal {
+    margin-right: 48px;
+}
+
+.html5 {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    a {
+        @include hide-text;
+        @include svg-graphic(html5, png, 32px, 32px);
+
+        display: block;
+        width: 32px;
+        height: 32px;
+
+        &:hover {
+            @include hover-brightness;
+        }
+    }
+}
+
+.section {
+	margin-top: 2em;
+
+	&:before {
+		display: block; 
+		content: ""; 
+		height: 2em; 
+		margin: -2em 0 0; 
+	}
+}
+
+/* address differences between Firefox and other browsers */
+hr {
+	@include box-sizing(content-box);
+
+	border: 0; // remove the default `hr` border
+	border-bottom: 1px solid $color-border;
+	height: 0;
+}
