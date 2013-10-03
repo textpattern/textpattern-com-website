@@ -1,0 +1,111 @@
+//
+// note: this file is for use with Sass and Compass - http://sass-lang.com, http://compass-style.org
+// don't use it as your live site stylesheet!
+//
+
+
+/* Buttons
+   ========================================================================== */
+
+/* address inconsistent `text-transform` inheritance for `button` in Chrome, Safari5+, and IE6+ */
+button {
+	text-transform: none;
+}
+
+button,
+a.button,
+span.button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	@include text-shadow($text-shadow-light);
+	@include border-radius;
+	@include box-shadow($inset-highlighting);
+	@include background-clip;
+	@include box-sizing(border-box);
+	@include gradient-linear($color-gradient-from, $color-gradient-to);
+	@include transition(box-shadow .2s linear);
+
+	-webkit-appearance: none; // remove iOS Safari default styling
+	display: inline-block;
+	border: solid 1px $color-gradient-border;
+	padding: .3571428em .7142857em; // 5px / 14px, 10px / 14px
+	width: auto;
+	height: 2.3571428em; // 33px / 14px
+	overflow: visible; // the overflow property removes extra width in IE
+	font-weight: normal;
+	text-align: center;
+	color: $color-text;
+	cursor: pointer;
+
+	&:hover {
+		@include gradient-linear(lighten($color-gradient-from, 4%), lighten($color-gradient-to, 4%));
+
+		border-color: darken($color-gradient-border, 13%);
+		text-decoration: none;
+	}
+
+	&:active {
+		@include box-shadow(inset 0 .2em .2857142em rgba(#000000, .15));
+		@include gradient-linear(darken($color-gradient-to, 4%), darken($color-gradient-from, 4%));
+
+		border-color: darken($color-gradient-border, 13%);
+		color: darken($color-text, 10%);
+	}
+
+	&.button-success {
+		@include text-shadow($text-shadow-dark);
+		@include gradient-linear(lighten($color-success-text, 10%), $color-success-text);
+
+		color: #ffffff;
+		border-color: darken($color-success-text, 5%);
+	
+		&:hover {
+			@include gradient-linear(lighten($color-success-text, 18%), lighten($color-success-text, 8%));
+
+			border-color: darken($color-success-text, 12%);
+		}
+	
+		&:active {
+			@include gradient-linear($color-success-text, lighten($color-success-text, 8%));
+
+			border-color: darken($color-success-text, 12%);
+		}
+	}
+
+	&.button-danger {
+		@include text-shadow($text-shadow-dark);
+		@include gradient-linear(lighten($color-error-text, 10%), $color-error-text);
+
+		color: #ffffff;
+		border-color: darken($color-error-text, 5%);
+	
+		&:hover {
+			@include gradient-linear(lighten($color-error-text, 18%), lighten($color-error-text, 8%));
+
+			border-color: darken($color-error-text, 12%);
+		}
+	
+		&:active {
+			@include gradient-linear($color-error-text, lighten($color-error-text, 8%));
+
+			border-color: darken($color-error-text, 12%);
+		}
+	}
+}
+
+/* better button focus glows, if box-shadow is supported */
+.boxshadow {
+	button,
+	a.button,
+	input[type="button"],
+	input[type="reset"],
+	input[type="submit"] {
+		&:focus {
+			@include box-shadow($inset-highlighting, 0 0 7px $color-link-hover);
+
+			outline: 0;
+			z-index: 1; // Opera fix
+		}
+	}
+}
