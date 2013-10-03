@@ -235,7 +235,6 @@ textarea {
 			@include box-shadow(0 0 7px $color-link-hover);
 
 			outline: 0;
-			z-index: 1; // Opera fix
 		}
 	}
 }
