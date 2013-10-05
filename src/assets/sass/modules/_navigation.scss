@@ -1,0 +1,124 @@
+//
+// note: this file is for use with Sass and Compass - http://sass-lang.com, http://compass-style.org
+// don't use it as your live site stylesheet!
+//
+
+
+/* Navigation
+   ========================================================================== */
+
+.nav-container {
+    border-bottom: 2px solid $color-text;
+}
+
+.nav-collapse {
+    font-family: $font-serif;
+
+    .js & {
+        clip: rect(0 0 0 0);
+        max-height: 0;
+        position: absolute;
+        display: block;
+        overflow: hidden;
+
+        @include breakpoint($breakpoint-2) {
+            position: relative;
+
+            &.closed {
+                max-height: none;
+            }
+        }
+    }
+
+    ul {
+        list-style: none;
+        display: block;
+        margin: 0 auto;
+        padding: 0;
+        max-width: $container-max-width;
+
+        @include breakpoint($breakpoint-2) {
+            width: 90%;
+        }
+    }
+
+    li {
+        border-top: 1px solid $color-border;
+
+        &:first-child {
+            border-top: 2px solid $color-text;
+        }
+
+        @include breakpoint($breakpoint-2) {
+            float: left;
+            border: 0 !important;
+        }
+    }
+
+    a {
+        display: block;
+        padding: 0.5em 5%;
+        color: $color-text;
+        font-weight: bold;
+
+        &:hover,
+        &:visited {
+            color: $color-text;
+            text-decoration: none;
+        }
+
+        &:hover {
+            background-color: #e3edfc;
+        }
+
+        &:active {
+            color: darken($color-text, 10%);
+            background-color: #c7dbfa;
+            text-decoration: none;
+        }
+
+    	&:focus {
+    		outline: 0;
+            background-color: #e3edfc;
+    	}
+
+        @include breakpoint($breakpoint-2) {
+            @include adjust-font-size-to(20px, 1);
+
+            margin-right: 0.4em;
+            margin-left: -0.4em;
+            padding: 0.4em;
+            font-weight: normal;
+        }
+    }
+
+    &.opened {
+        max-height: 9999px;
+    }
+}
+
+.nav-toggle {
+    @include hide-text;
+    @include svg-graphic(hamburger, png, 32px, 32px);
+
+    -webkit-touch-callout: none; // disables the default bubble shown when you touch and hold a touch target
+    position: absolute;
+    top: 1em;
+    right: 5%;
+    z-index: 2;
+    border: 2px solid $color-background;
+    width: 32px;
+    height: 32px;
+
+    @include breakpoint($breakpoint-2) {
+        display: none;
+    }
+
+    &:hover {
+        background-color: #e3edfc;
+    }
+
+    &:active {
+        background-color: #c7dbfa;
+    }
+}

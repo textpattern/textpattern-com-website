@@ -25,7 +25,6 @@
 </head>
 
 <body>
-
     <div class="wrapper">
 
 
@@ -36,29 +35,26 @@
 
 <!-- Header -->
         <header role="banner" itemscope itemtype="http://schema.org/Organization">
-            <h1 itemprop="name" class="accessibility">Textpattern CMS</h1>
-            <div class="layout--span-1-6">
-                <a rel="home" itemprop="url" href="/" title="Go to the Textpattern homepage"><img itemprop="logo" class="svg" src="/assets/img/textpattern.png" alt="Textpattern"></a>
-            </div>
-            <div class="layout--span-6-12">
-                <form role="search" method="get" action="#">
-                    <input type="search" placeholder="Search…"><button class="search-button">Go</button>
-                </form>
-            </div>
+            <h1 itemprop="name" class="masthead"><a rel="home" itemprop="url" href="/" title="Go to the Textpattern homepage">Textpattern CMS</a></h1>
+
+            <form role="search" method="get" action="#">
+                <label for="search-input">Search</label>
+                <input type="search" size="30" id="search-input" placeholder="Search…"><input type="submit" value="Go">
+            </form>
         </header>
 
 
 <!-- Navigation -->
         <div class="nav-container">
             <nav role="navigation" class="nav-collapse" aria-label="Site navigation">
-            <ul>
-                <li><a href="#">Get started</a></li>
-                <li><a href="#">Documentation</a></li>
-                <li><a href="#">Themes</a></li>
-                <li><a href="#">Plugins</a></li>
-                <li><a href="#">Forum</a></li>
-                <li><a href="#">Blog</a></li>
-                <li><a href="#">About</a></li>
+                <ul>
+                    <li><a href="#">Get started</a></li>
+                    <li><a href="#">Documentation</a></li>
+                    <li><a href="#">Themes</a></li>
+                    <li><a href="#">Plugins</a></li>
+                    <li><a href="#">Forum</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">About</a></li>
                 </ul>
             </nav>
         </div>
@@ -88,15 +84,13 @@
 <!-- Footer -->
     <footer role="contentinfo">
         <p class="legal">
-            <small>
-                <a href="#">Copyright</a> 2004–2013 The Textpattern Development Team.
-                <a href="#">Contact us</a>.
-                <a href="#">Privacy</a>.
-                <a href="http://textpattern.com/humans.txt">Colophon</a>.
-                Textpattern is both free and open source. <a href="#">GPLv2 license</a>.
-            </small>
+            <a href="#">Copyright</a> 2004–2013 The Textpattern Development Team.
+            <a href="#">Contact us</a>.
+            <a href="#">Privacy</a>.
+            <a href="http://textpattern.com/humans.txt">Colophon</a>.
+            Textpattern is both free and open source. <a href="#">GPLv2 license</a>.
         </p>
-        <p class="html5"><small><a rel="external" href="http://www.w3.org/html/logo/" title="HTML5 powered">HTML5 powered</a></small></p>
+        <p class="html5"><a rel="external" href="http://www.w3.org/html/logo/" title="HTML5 powered">HTML5 powered</a></p>
     </footer>
 
 

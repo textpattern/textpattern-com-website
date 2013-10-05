@@ -1,0 +1,19 @@
+//
+// note: this file is for use with Sass and Compass - http://sass-lang.com, http://compass-style.org
+// don't use it as your live site stylesheet!
+//
+
+
+/* cookie disclaimer */
+#cookie-disclaimer {
+    @include box-shadow(inset 0 -.25em .25em rgba(51, 51, 51, .1));
+
+    border-bottom: 1px solid $color-border;
+    padding: 1px 0;
+    color: $color-text;
+    background-color: $color-background-box;
+
+    p {
+        @include adjust-font-size-to(12px, .9);
+    }
+}

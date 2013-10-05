@@ -18,14 +18,15 @@ html {
 }
 
 body {
-	margin: 0;
-	background: $color-background-box;
+    margin: 0;
+    color: $color-text-inverse;
+    background-color: $color-text;
 }
 
 .wrapper {
-	border-top: 1px solid $color-border;
-	border-bottom: 1px solid $color-border;
-	padding: 1px 0 1em;
+    position: relative;
+	padding: 1px 0;
+    color: $color-text;
 	background: $color-background;
 }
 
@@ -37,12 +38,66 @@ footer {
 	max-width: $container-max-width;
 }
 
+header {
+    position: relative;
+}
+
+h1.masthead {
+    font-size: 1em;
+    margin: 1em 0;
+
+    a {
+        @include hide-text;
+        @include svg-graphic(textpattern-mobile, png, 208px, 34px);
+
+        display: block;
+        width: 208px;
+        height: 34px;
+
+        &:hover {
+            @include hover-brightness;
+        }
+
+        @include breakpoint($breakpoint-2) {
+            @include svg-graphic(textpattern, png, 320px, 52px);
+
+            width: 320px;
+            height: 52px;
+        }
+    }
+}
+
+[role="search"] {
+    position: absolute;
+    top: 0;
+    right: 48px;
+
+    @include breakpoint($breakpoint-2) {
+        top: 0.75em;
+        right: 0;
+
+        label {
+            display: none;
+        }
+    }
+
+    input[type="search"] {
+        border-right: 0;
+    }
+
+    input[type="submit"] {
+        @include border-radius(0 0.5em 0.5em 0);
+    }
+}
+
 footer {
     clear: both;
     position: relative;
 }
 
 .legal {
+    @include adjust-font-size-to(12px, .9);
+
     margin-right: 48px;
 }
 

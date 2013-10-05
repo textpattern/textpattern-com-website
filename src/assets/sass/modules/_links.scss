@@ -28,3 +28,21 @@ a {
 		color: $color-link-visited;
 	}
 }
+
+[role="complementary"] a,
+footer a {
+    color: #c7dbfa;
+
+    &:hover,
+    &:active {
+        color: #e3edfc;
+    }
+
+    &:focus {
+        outline: thin dotted #e3edfc;
+    }
+
+    &:visited {
+        color: #c7dbfa;
+    }
+}

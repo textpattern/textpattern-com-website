@@ -29,18 +29,19 @@ $base-line-height:            20px;
 // layout grid
 
 $grid-gutter:                 2em;  // 28px / 14px
-$container-max-width:         70em; // 980px / 14px
+$container-max-width:         72em; // 1008px / 14px
 
 // breakpoints
 
-$breakpoint-3:                54em; // 756px / 14px
-$breakpoint-2:                40em; // 560px / 14px
+$breakpoint-3:                60em; // 840px / 14px
+$breakpoint-2:                48em; // 672px / 14px
 $breakpoint-1:                26em; // 364px / 14px
 
 // text colours
 
 $color-text:                  #333333;
 $color-text-footnote:         #888888;
+$color-text-inverse:          #ffffff;
 $color-link:                  #114eb1;
 $color-link-hover:            #0066ff;
 $color-link-visited:          #183082;
@@ -54,7 +55,7 @@ $color-gradient-border:       darken($color-gradient-from, 13.5%);
 // borders
 
 $color-border:                #cccccc;
-$default-border-radius:       0.5em; // 8px / 16px
+$default-border-radius:       0.5em; // 7px / 14px
 
 // shadows
 
