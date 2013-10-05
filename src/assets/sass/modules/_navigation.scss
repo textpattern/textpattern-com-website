@@ -85,8 +85,7 @@
         @include breakpoint($breakpoint-2) {
             @include adjust-font-size-to(20px, 1);
 
-            margin-right: 0.4em;
-            margin-left: -0.4em;
+            margin: 0 0.4em 0.4em -0.4em;
             padding: 0.4em;
             font-weight: normal;
         }
