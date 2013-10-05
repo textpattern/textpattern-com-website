@@ -71,6 +71,7 @@ h1.masthead {
     position: absolute;
     top: 0;
     right: 48px;
+    z-index: 3;
 
     @include breakpoint($breakpoint-2) {
         top: 0.75em;
