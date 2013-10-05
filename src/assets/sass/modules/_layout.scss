@@ -82,6 +82,7 @@ h1.masthead {
     }
 
     input[type="search"] {
+        @include border-radius(0.5em 0 0 0.5em);
         border-right: 0;
     }
 
