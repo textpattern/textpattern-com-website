@@ -9,15 +9,15 @@
 
 /* define consistent fieldset margin, border and padding */
 fieldset {
-	margin: 1em 0;
-	border: 1px solid $color-border;
-	padding: 1px 1em;
+    margin: 1em 0;
+    border: 1px solid $color-border;
+    padding: 1px 1em;
 }
 
 /* remove padding so people aren't caught out if they zero out fieldsets */
 legend {
-	border: 0;
-	padding: 0;
+    border: 0;
+    padding: 0;
 }
 
 button,
@@ -26,42 +26,42 @@ select,
 textarea,
 a.button,
 span.disabled {
-	/* correct font size not being inherited in all browsers */
-	font-size: 100%;
-	font-size: 1em;
+    /* correct font size not being inherited in all browsers */
+    font-size: 100%;
+    font-size: 1em;
 
-	/* address margins set differently in Firefox4+, Safari5+, and Chrome */
-	margin: 0;
-	font-family: $font-sans-serif;
-	vertical-align: baseline;
+    /* address margins set differently in Firefox4+, Safari5+, and Chrome */
+    margin: 0;
+    font-family: $font-sans-serif;
+    vertical-align: baseline;
 }
 
 /* colour placeholder text (WebKit and Mozilla only, so far) */
 input::-webkit-input-placeholder,
 textarea::-webkit-input-placeholder {
-	color: $color-text-footnote;
+    color: $color-text-footnote;
 }
 input:-moz-placeholder,
 textarea:-moz-placeholder {
-	color: $color-text-footnote;
+    color: $color-text-footnote;
 }
 
 /* styling for placeholder polyfill fallback */
 .placeholder {
-	color: $color-text-footnote;
+    color: $color-text-footnote;
 }
 
 /* remove inner padding and border in Firefox 4+ */
 button::-moz-focus-inner,
 input::-moz-focus-inner {
-	border: 0;
-	padding: 0;
+    border: 0;
+    padding: 0;
 }
 
 /* remove inner padding and search cancel button in Safari5+ and Chrome on OS X */
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-decoration {
-	-webkit-appearance: none;
+    -webkit-appearance: none;
 }
 
 input[type="color"],
@@ -80,83 +80,83 @@ input[type="url"],
 input[type="week"],
 select,
 textarea {
-	@include border-radius(0);
-	@include box-sizing(border-box);
-	@include transition(box-shadow .2s linear);
+    @include border-radius(0);
+    @include box-sizing(border-box);
+    @include transition(box-shadow .2s linear);
 
-	-webkit-appearance: none; // remove iOS Safari default styling
-	border: 1px solid $color-border;
-	padding: .3571428em; // 5px / 14px
-	height: 2.3571428em; // 33px / 14px
-	background: #ffffff;
-	text-align: left;
+    -webkit-appearance: none; // remove iOS Safari default styling
+    border: 1px solid $color-border;
+    padding: .3571428em; // 5px / 14px
+    height: 2.3571428em; // 33px / 14px
+    background: #ffffff;
+    text-align: left;
 }
 
 input[type="color"] {
-	padding: 0;
+    padding: 0;
 }
 
 /* address box sizing set to `content-box` and excess padding in IE8-9 */
 input[type="checkbox"],
 input[type="radio"] {
-	padding: 0;
-	box-sizing: border-box;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 /* address inconsistent `text-transform` inheritance for `select` in Firefox 4+ and Opera */
 select {
-	text-transform: none;
+    text-transform: none;
 }
 
 select[size],
 select[multiple] {
-	height: auto;
+    height: auto;
 }
 
 select[size="0"],
 select[size="1"] {
-	height: 2.3571428em; // 33px / 14px
+    height: 2.3571428em; // 33px / 14px
 }
 
 /* address `<select>` alignment in Safari/Chrome */
 @media (-webkit-min-device-pixel-ratio: 0) {
 
-	select[size],
-	select[multiple],
-	select[multiple][size] {
-		background-image: none;
-		padding-right: .5em;
-	}
+    select[size],
+    select[multiple],
+    select[multiple][size] {
+        background-image: none;
+        padding-right: .5em;
+    }
 
-	select,
-	select[size="0"],
-	select[size="1"] {
-		background: #ffffff url("data:image/svg+xml,<svg version='1.1' baseProfile='full' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' width='21px' height='7px' viewBox='0 0 21 7' enable-background='new 0 0 21 7' xml:space='preserve'><polygon fill='#333333' points='2,0 7,7 12,0'/></svg>") no-repeat right center;
-		padding-right: 2.25em;
-		-webkit-background-size: 1.5em .5em; // 21px 7px
-		        background-size: 1.5em .5em; // 21px 7px
-	}
+    select,
+    select[size="0"],
+    select[size="1"] {
+        background: #ffffff url("data:image/svg+xml,<svg version='1.1' baseProfile='full' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' width='21px' height='7px' viewBox='0 0 21 7' enable-background='new 0 0 21 7' xml:space='preserve'><polygon fill='#333333' points='2,0 7,7 12,0'/></svg>") no-repeat right center;
+        padding-right: 2.25em;
+        -webkit-background-size: 1.5em .5em; // 21px 7px
+                background-size: 1.5em .5em; // 21px 7px
+    }
 
 }
 
 optgroup {
-	font-family: $font-sans-serif; // font family repeated, for Firefox
-	font-style: normal;
-	font-weight: normal;
-	color: $color-text;
+    font-family: $font-sans-serif; // font family repeated, for Firefox
+    font-style: normal;
+    font-weight: normal;
+    color: $color-text;
 
-	&::-moz-focus-inner { // kill phantom spacing and dotted border that appears in Firefox
-		border: 0;
-		padding: 0;
-	}
+    &::-moz-focus-inner { // kill phantom spacing and dotted border that appears in Firefox
+        border: 0;
+        padding: 0;
+    }
 }
 
 textarea {
-	height: auto;
-	min-height: 3em;
-	overflow: auto; // remove default vertical scrollbar in IE8-9
-	resize: vertical;
-	width: 100%;
+    height: auto;
+    min-height: 3em;
+    overflow: auto; // remove default vertical scrollbar in IE8-9
+    resize: vertical;
+    width: 100%;
 }
 
 /* make sure disable elements really are disabled */
@@ -170,71 +170,71 @@ select[disabled] option,
 select[disabled] optgroup,
 textarea[disabled],
 span.disabled {
-	@include box-shadow(none !important);
+    @include box-shadow(none !important);
 
-	opacity: 1; // overrides iOS opacity setting
-	border-color: lighten($color-border, 9%) !important;
-	color: $color-text-footnote !important;
-	background: $color-background-box !important;
-	text-shadow: none !important;
-	cursor: default !important;
+    opacity: 1; // overrides iOS opacity setting
+    border-color: lighten($color-border, 9%) !important;
+    color: $color-text-footnote !important;
+    background: $color-background-box !important;
+    text-shadow: none !important;
+    cursor: default !important;
 }
 
 input {
-	&.small {
-		width: 33%;
-	}
+    &.small {
+        width: 33%;
+    }
 
-	&.medium {
-		width: 66%;
-	}
+    &.medium {
+        width: 66%;
+    }
 
-	&.large {
-		width: 100%;
-	}
+    &.large {
+        width: 100%;
+    }
 }
 
 textarea {
-	&.small {
-		height: 4em;
-	}
+    &.small {
+        height: 4em;
+    }
 
-	&.medium {
-		height: 8em;
-	}
+    &.medium {
+        height: 8em;
+    }
 
-	&.large {
-		height: 12em;
-	}
+    &.large {
+        height: 12em;
+    }
 }
 
 .required {
-	color: $color-error-text;
-	cursor: help;
+    color: $color-error-text;
+    cursor: help;
 }
 
 /* better form focus glows, if box-shadow is supported */
 .boxshadow {
-	input[type="color"],
-	input[type="date"],
-	input[type="datetime"],
-	input[type="datetime-local"],
-	input[type="email"],
-	input[type="month"],
-	input[type="number"],
-	input[type="password"],
-	input[type="search"],
-	input[type="tel"],
-	input[type="text"],
-	input[type="time"],
-	input[type="url"],
-	input[type="week"],
-	select,
-	textarea {
-		&:focus {
-			@include box-shadow(0 0 7px $color-link-hover);
+    input[type="color"],
+    input[type="date"],
+    input[type="datetime"],
+    input[type="datetime-local"],
+    input[type="email"],
+    input[type="month"],
+    input[type="number"],
+    input[type="password"],
+    input[type="search"],
+    input[type="tel"],
+    input[type="text"],
+    input[type="time"],
+    input[type="url"],
+    input[type="week"],
+    select,
+    textarea {
+        &:focus {
+            @include box-shadow(0 0 7px $color-link-hover);
 
-			outline: 0;
-		}
-	}
+            outline: 0;
+        }
+    }
 }

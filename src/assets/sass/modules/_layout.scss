@@ -8,13 +8,13 @@
    ========================================================================== */
 
 html {
-	-webkit-tap-highlight-color: rgba($color-link-hover, .5);
-	/* always force scrollbar padding so we don't get 'jumping' */
-	overflow-y: scroll;
-	/* prevent iOS text size adjust after orientation change, without disabling user zoom */
-	-webkit-text-size-adjust: 100%;
-	/* as above, for Windows Phone */
-	-ms-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: rgba($color-link-hover, .5);
+    /* always force scrollbar padding so we don't get 'jumping' */
+    overflow-y: scroll;
+    /* prevent iOS text size adjust after orientation change, without disabling user zoom */
+    -webkit-text-size-adjust: 100%;
+    /* as above, for Windows Phone */
+    -ms-text-size-adjust: 100%;
 }
 
 body {
@@ -25,17 +25,17 @@ body {
 
 .wrapper {
     position: relative;
-	padding: 1px 0;
+    padding: 1px 0;
     color: $color-text;
-	background: $color-background;
+    background: $color-background;
 }
 
 header,
 .container,
 footer {
-	margin: 0 auto;
-	width: 90%;
-	max-width: $container-max-width;
+    margin: 0 auto;
+    width: 90%;
+    max-width: $container-max-width;
 }
 
 header {
@@ -123,21 +123,21 @@ footer {
 }
 
 .section {
-	margin-top: 2em;
+    margin-top: 2em;
 
-	&:before {
-		display: block; 
-		content: ""; 
-		height: 2em; 
-		margin: -2em 0 0; 
-	}
+    &:before {
+        display: block; 
+        content: ""; 
+        height: 2em; 
+        margin: -2em 0 0; 
+    }
 }
 
 /* address differences between Firefox and other browsers */
 hr {
-	@include box-sizing(content-box);
+    @include box-sizing(content-box);
 
-	border: 0; // remove the default `hr` border
-	border-bottom: 1px solid $color-border;
-	height: 0;
+    border: 0; // remove the default `hr` border
+    border-bottom: 1px solid $color-border;
+    height: 0;
 }

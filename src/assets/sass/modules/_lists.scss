@@ -11,28 +11,28 @@
 menu,
 ol,
 ul {
-	padding: 0 0 0 2em;
+    padding: 0 0 0 2em;
 }
 
 /* remove margins from nested lists */
 li {
-	> ul,
-	> ol {
-		margin: 0;
-	}
+    > ul,
+    > ol {
+        margin: 0;
+    }
 }
 
 dd {
-	margin: 0 0 0 2em;
+    margin: 0 0 0 2em;
 }
 
 dt {
-	font-style: italic;
+    font-style: italic;
 }
 
 .list--no-bullets {
-	list-style: none;
-	padding: 0;
+    list-style: none;
+    padding: 0;
 }
 
 /* have a numbered `ul` without the semantics implied by using an `ol` */

@@ -8,25 +8,25 @@
    ========================================================================== */
 
 a {
-	text-decoration: none;
-	color: $color-link;
-	background: transparent; // remove the gray background color from active links in IE10
+    text-decoration: none;
+    color: $color-link;
+    background: transparent; // remove the gray background color from active links in IE10
 
-	// improve readability when focused and also mouse hovered in all browsers
-	&:hover,
-	&:active {
-		outline: 0;
-		text-decoration: underline;
-		color: $color-link-hover;
-	}
+    // improve readability when focused and also mouse hovered in all browsers
+    &:hover,
+    &:active {
+        outline: 0;
+        text-decoration: underline;
+        color: $color-link-hover;
+    }
 
-	&:focus {
-		outline: thin dotted $color-link-hover;
-	}
+    &:focus {
+        outline: thin dotted $color-link-hover;
+    }
 
-	&:visited {
-		color: $color-link-visited;
-	}
+    &:visited {
+        color: $color-link-visited;
+    }
 }
 
 [role="complementary"] a,

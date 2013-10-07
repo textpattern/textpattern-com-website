@@ -9,22 +9,22 @@
 
 /* AJAX spinners */
 span.spinner {
-	@include hires-graphic(spinner, gif, 16px, 16px);
+    @include hires-graphic(spinner, gif, 16px, 16px);
 
-	display: inline-block;
-	width: 16px;
-	height: 16px;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
 
-	&.inverse {
-		@include hires-graphic(spinner-inverse, gif, 16px, 16px);
-	}
+    &.inverse {
+        @include hires-graphic(spinner-inverse, gif, 16px, 16px);
+    }
 }
 
 /* hide text but still allow screen reader access */
 .accessibility {
-	position: absolute;
-	left: -1000em;
-	height: 1px;
-	width: 1px;
-	overflow: hidden;
+    position: absolute;
+    left: -1000em;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
 }

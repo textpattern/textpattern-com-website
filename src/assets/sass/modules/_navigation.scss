@@ -79,10 +79,10 @@
             text-decoration: none;
         }
 
-    	&:focus {
-    		outline: 0;
+        &:focus {
+            outline: 0;
             background-color: #e3edfc;
-    	}
+        }
 
         @include breakpoint($breakpoint-2) {
             @include adjust-font-size-to(20px, 1);
