@@ -1,0 +1,41 @@
+//
+// note: this file is for use with Sass and Compass - http://sass-lang.com, http://compass-style.org
+// don't use it as your live site stylesheet!
+//
+
+
+/* Lists
+   ========================================================================== */
+
+/* address paddings set differently */
+menu,
+ol,
+ul {
+	padding: 0 0 0 2em;
+}
+
+/* remove margins from nested lists */
+li {
+	> ul,
+	> ol {
+		margin: 0;
+	}
+}
+
+dd {
+	margin: 0 0 0 2em;
+}
+
+dt {
+	font-style: italic;
+}
+
+.list--no-bullets {
+	list-style: none;
+	padding: 0;
+}
+
+/* have a numbered `ul` without the semantics implied by using an `ol` */
+.list--numbered {
+    list-style-type: decimal;
+}
