@@ -62,9 +62,9 @@ blockquote {
 
 	font-family: $font-serif;
 	font-style: italic;
-	margin: .7777778em 0; // 14px / 18px
+	margin: 0.7777778em 0; // 14px / 18px
 	border-left: 3px solid $color-border;
-	padding: 0 0 0 .7777778em; // 14px / 18px
+	padding: 0 0 0 0.7777778em; // 14px / 18px
 }
 
 /* set consistent quote types */
@@ -86,9 +86,9 @@ dfn[title] {
 
 mark,
 var {
-	@include border-radius(.2857142em); // 4px / 14px
+	@include border-radius(0.2142857em); // 3px / 14px
 
-	padding: 0em .2142857em; // 3px / 14px
+	padding: 0em 0.2142857em; // 3px / 14px
 	color: $color-text;
 	background: $color-highlight-box;
 }
@@ -103,15 +103,17 @@ samp {
 code,
 kbd,
 samp {
-	@include border-radius(.2857142em); // 4px / 14px
+    @include adjust-font-size-to(13px, 0.95);
+	@include border-radius(0.2307692em); // 3px / 13px
 
 	border: 1px solid lighten($color-border, 9%);
-	padding: .0714286em .2142857em; // 2px / 14px + 3px / 14px
+	padding: 0.1538462em 0.2307692em; // 2px / 13px + 3px / 13px
 	background: $color-background-box;
 }
 
 pre {
-	@include border-radius(.5em);
+    @include adjust-font-size-to(13px, 0.95);
+	@include border-radius(0.2307692em); // 3px / 13px
 
 	overflow-x: auto;
 	border: 1px solid lighten($color-border, 9%);
@@ -120,6 +122,7 @@ pre {
 	tab-size: 4; // set tab size to 4 spaces
 
 	code {
+        font-size: 1em; // 13px
 		border: 0;
 		padding: 0;
 		background: none;
@@ -135,17 +138,17 @@ sup {
 	vertical-align: baseline;
 }
 sup {
-	top: -.5em;
+	top: -0.5em;
 }
 sub {
-	bottom: -.2857142em;
+	bottom: -0.2857142em;
 }
 
 small,
 figcaption,
 tfoot,
 .footnote {
-	@include adjust-font-size-to(12px, .9);
+	@include adjust-font-size-to(12px, 0.9);
 }
 
 figcaption,
@@ -155,6 +158,6 @@ tfoot,
 }
 
 figcaption {
-	margin-top: .5em;
+	margin-top: 0.5em;
 	font-style: italic;
 }
