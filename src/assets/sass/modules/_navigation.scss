@@ -56,6 +56,8 @@
     }
 
     a {
+        @include border-radius(0.25em);
+
         display: block;
         padding: 0.5em 5%;
         color: $color-text;
