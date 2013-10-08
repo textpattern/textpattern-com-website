@@ -67,7 +67,7 @@ h1.masthead {
     }
 }
 
-[role="search"] {
+#search-form {
     position: absolute;
     top: 0;
     right: 48px;
@@ -78,7 +78,7 @@ h1.masthead {
         right: 0;
     }
 
-    input[type="search"] {
+    #search-query {
         @include border-radius;
     }
 }
