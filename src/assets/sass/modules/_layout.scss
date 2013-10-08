@@ -76,19 +76,10 @@ h1.masthead {
     @include breakpoint($breakpoint-2) {
         top: 0.75em;
         right: 0;
-
-        label {
-            display: none;
-        }
     }
 
     input[type="search"] {
-        @include border-radius(0.5em 0 0 0.5em);
-        border-right: 0;
-    }
-
-    input[type="submit"] {
-        @include border-radius(0 0.5em 0.5em 0);
+        @include border-radius;
     }
 }
 
