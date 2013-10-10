@@ -155,7 +155,7 @@
         WebFont.load({
             google:
             {
-                families: ['PT+Serif:400,700,400italic,700italic:latin', 'Cousine::latin']
+                families: ['PT+Serif:400,700,400italic,700italic:latin']
             }
         });
     });
