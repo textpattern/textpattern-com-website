@@ -1,0 +1,1368 @@
+<!DOCTYPE html>
+<html lang="en-gb" class="no-js">
+<head>
+    <title>Textpattern CMS | New website design patterns</title>
+
+    <meta charset="utf-8">
+    <meta name="description" content="Article containing examples of various inline and block elements that should be considered and styled within any theme.">
+    <meta name="generator" content="Textpattern CMS">
+    <meta name="robots" content="index, follow, noodp, noydir">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Windows 8 stuff specific to tiles -->
+    <meta name="application-name" content="Textpattern CMS">
+
+<!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+
+<!-- Modernizr -->
+    <script src="/assets/js/modernizr.js"></script>
+
+<!-- Fix IE8 -->
+    <!--[if lt IE 9]>
+        <link rel="stylesheet" href="/assets/css/ie8.css">
+    <![endif]-->
+
+<!-- JUST FOR DESIGN PATTERNS DOC - NOT IN ACTUAL SITE -->
+    <style>
+        .box {padding: 1em; margin-bottom: 1em; background: #999;}
+
+        /* jQuery UI stuff */
+        .jquery-ui-icons { margin: 0; padding: 0;}
+        .jquery-ui-icons li { margin: 2px; position: relative; padding: 4px 0; cursor: pointer; float: left; list-style: none; }
+        .jquery-ui-icons span.ui-icon { float: left; margin: 0 4px; }
+        .jquery-ui-slider-vertical span { height: 120px; float: left; margin: 15px; }
+
+        .ui-menu { width: 150px; }
+        .ui-menu:not(.jquery-ui-menu) { position: absolute; z-index: 1000; }
+    </style>
+
+</head>
+
+<body>
+    <div class="wrapper">
+
+
+<!-- Old IE browsers -->
+        <!--[if lt IE 8]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/" rel="external">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+
+<!-- Header -->
+        <header role="banner" itemscope itemtype="http://schema.org/Organization">
+            <h1 itemprop="name" class="masthead"><a rel="home" itemprop="url" href="/" title="Go to the Textpattern homepage">Textpattern CMS</a></h1>
+
+            <form id="search-form" role="search" method="get" action="#">
+                <input id="search-query" type="search" size="32" placeholder="Search…">
+            </form>
+        </header>
+
+
+<!-- Navigation -->
+        <div class="nav-container">
+            <nav role="navigation" class="nav-collapse" aria-label="Site navigation">
+                <ul>
+                    <li><a href="#">Get started</a></li>
+                    <li><a href="#">Documentation</a></li>
+                    <li><a href="#">Themes</a></li>
+                    <li><a href="#">Plugins</a></li>
+                    <li><a href="#">Forum</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">About</a></li>
+                </ul>
+            </nav>
+        </div>
+
+
+<!-- Primary Content -->
+        <div class="container">
+            <main role="main" aria-label="Main content">
+
+
+                <article role="article" itemscope itemtype="http://schema.org/Article">
+
+                    <h1 itemprop="name">Design patterns</h1>
+
+                    <div itemprop="description">
+                        <p>Article containing examples of various inline and block elements that should be considered and styled within any theme. Supported browsers: Mozilla Firefox 4+, Apple Safari 5+, Opera 12+, Internet Explorer 8+. Development environment requires <a href="http://sass-lang.com" rel="external" title="Go to the Sass website">Sass</a> 3.2+ and <a href="http://compass-style.org" rel="external" title="Go to the Compass website">Compass</a> 0.13.alpha.4+, plus the Compass extensions <a href="https://github.com/Team-Sass/breakpoint" rel="external" title="Go to the Breakpoint website">Breakpoint</a> 2.0+ and <a href="http://singularity.gs" rel="external" title="Go to the Singularity website">Singularity</a> 1.0+.</p>
+                    </div>
+
+                    <nav>
+                        <h3>Contents</h3>
+                        <ol>
+                            <li><a href="#section-grid">Responsive grid</a></li>
+                            <li><a href="#section-type">Typography</a></li>
+                            <li><a href="#section-text-semantics">Inline text-level semantics</a></li>
+                            <li><a href="#section-block-semantics">Block text-level semantics</a></li>
+                            <li><a href="#section-media">Embedded content</a></li>
+                            <li><a href="#section-labels">Inline text labels</a></li>
+                            <li><a href="#section-alerts">Alert boxes</a></li>
+                            <li><a href="#section-details-summary">Details / summary</a></li>
+                            <li><a href="#section-pagination">Pagination</a></li>
+                            <li><a href="#section-breadcrumbs">Breadcrumbs</a></li>
+                            <li><a href="#section-lists">Lists</a></li>
+                            <li><a href="#section-tables">Tables</a></li>
+                            <li><a href="#section-forms">Forms</a></li>
+                            <li><a href="#section-social">Social media</a></li>
+                            <li><a href="#section-jquery-ui">jQuery UI widgets</a></li>
+                            <li><a href="#section-misc">Miscellaneous</a></li>
+                        </ol>
+                    </nav>
+
+                    <div itemprop="articleBody">
+
+                        <section role="region" id="section-grid" class="section clearfix">
+                            <h2>Responsive grid</h2>
+                            <p>Grid layout with 1 to 4 column options. Uses the <a href="http://singularity.gs" rel="external" title="Go to the Singularity website">Singularity</a> grid system.</p>
+
+                            <div class="layout--span-1-12"><p class="box">Opt1: 1col</p></div>
+
+                            <div class="layout--span-1-6 at-break2"><p class="box">Opt2: 2col cell1</p></div>
+                            <div class="layout--span-7-12 at-break2"><p class="box">Opt2: 2col cell2</p></div>
+
+                            <div class="layout--span-1-4"><p class="box">Opt3: 3col cell1</p></div>
+                            <div class="layout--span-5-8"><p class="box">Opt3: 3col cell2</p></div>
+                            <div class="layout--span-9-12"><p class="box">Opt3: 3col cell3</p></div>
+
+                            <div class="layout--span-1-8"><p class="box">Opt4: 3col cell1and2</p></div>
+                            <div class="layout--span-9-12"><p class="box">Opt4: 3col cell3</p></div>
+
+                            <div class="layout--span-1-4"><p class="box">Opt5: 3col cell1</p></div>
+                            <div class="layout--span-5-12"><p class="box">Opt5: 3col cell2and3</p></div>
+
+                            <div class="layout--span-1-3 at-break1"><p class="box">Opt6: 4col cell1</p></div>
+                            <div class="layout--span-4-6 at-break1"><p class="box">Opt6: 5col cell2</p></div>
+                            <div class="layout--span-7-9 at-break1"><p class="box">Opt6: 6col cell3</p></div>
+                            <div class="layout--span-10-12 at-break1"><p class="box">Opt6: 7col cell4</p></div>
+
+                            <div class="layout--span-1-6"><p class="box">Opt7: 4col cell1and2</p></div>
+                            <div class="layout--span-7-9 at-break1"><p class="box">Opt7: 4col cell3</p></div>
+                            <div class="layout--span-10-12 at-break1"><p class="box">Opt7: 4col cell4</p></div>
+
+                            <div class="layout--span-1-3"><p class="box">Opt8: 4col cell1</p></div>
+                            <div class="layout--span-4-9"><p class="box">Opt8: 4col cell2and3</p></div>
+                            <div class="layout--span-10-12"><p class="box">Opt8: 4col cell4</p></div>
+
+                            <div class="layout--span-1-3"><p class="box">Opt9: 4col cell1</p></div>
+                            <div class="layout--span-4-6"><p class="box">Opt9: 4col cell2</p></div>
+                            <div class="layout--span-7-12"><p class="box">Opt9: 4col cell3and4</p></div>
+
+                            <div class="layout--span-1-9"><p class="box">Opt10: 4col cell1and2and3</p></div>
+                            <div class="layout--span-10-12"><p class="box">Opt10: 4col cell4</p></div>
+
+                            <div class="layout--span-1-3"><p class="box">Opt11: 4col cell1</p></div>
+                            <div class="layout--span-4-12"><p class="box">Opt11: 4col cell2and3and4</p></div>
+
+                        </section>
+
+
+                        <section role="region" id="section-type" class="section">
+                            <h2>Typography</h2>
+                            <p>Using only h1 to h4.</p>
+
+                            <h1>h1 Heading 1 h1 Heading 1 h1 Heading 1 h1 Heading 1</h1>
+                            <h2>h2 Heading 2 h2 Heading 2 h2 Heading 2 h2 Heading 2 h2 Heading 2</h2>
+                            <h3>h3 Heading 3 h3 Heading 3 h3 Heading 3 h3 Heading 3 h3 Heading 3 h3 Heading 3 h3</h3>
+                            <h4>h4 Heading 4 h4 Heading 4 h4 Heading 4 h4 Heading 4 h4 Heading 4 h4 Heading 4 h4 Heading 4 h4 Heading 4</h4>
+
+                            <p><strong>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Etiam sit amet elit vitae arcu interdum ullamcorper.</strong> Nullam ultrices, nisi quis scelerisque convallis, augue neque tempor enim, et mattis justo nibh eu elit.</p>
+                            <p>Quisque ultrices gravida pede. Mauris accumsan vulputate tellus. Phasellus condimentum bibendum dolor. Mauris sed ipsum. Phasellus in diam. Nam sapien ligula, consectetuer id, hendrerit in, cursus sed, leo. Nam tincidunt rhoncus urna. Aliquam id massa ut nibh bibendum imperdiet. Curabitur neque mauris, porta vel, lacinia quis, placerat ultrices, orci.</p>
+
+                            <p>This text has a reference in the footnote<sup id="fnrevanchor1" class="footnote"><a href="#fnanchor1">1</a></sup>.</p>
+                            <p id="fnanchor1" class="footnote"><sup>1</sup> Here is the footnote.</p>
+
+                            <h3>Contact details</h3>
+                            <p>Uses both the <a href="http://schema.org/" rel="external" title="Go to the Schema.org website">Schema.org</a> and <a href="http://microformats.org/wiki/hcard" rel="external" title="Go to the hCard website">hCard</a> mircoformats.</p>
+                            <!-- possible schema types: Organization, Corporation, etc (see http://schema.org/Organization for more info) -->
+                            <div role="group" class="vcard" itemscope itemtype="http://schema.org/Organization">
+                                <p class="org fn" itemprop="name">Organisation Name</p>
+                                <address class="adr" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+                                    <span class="street-address" itemprop="streetAddress">13 Mystreet</span>, <span class="locality" itemprop="addressLocality">Mytown</span>, <span class="region" itemprop="addressRegion">Myshire</span>, <span class="postal-code" itemprop="postalCode">GU1 0AB</span>, <span class="country" itemprop="addressCountry">United Kingdom</span>
+                                </address>
+                                <p class="tel" itemprop="contactPoint">
+                                    <span class="type" itemprop="name">Telephone</span>
+                                    <span class="value" itemprop="telephone">01234 456789</span>
+                                </p>
+                                <p class="tel" itemprop="contactPoint">
+                                    <span class="type" itemprop="name">Mobile</span>
+                                    <span class="value" itemprop="telephone">07900 123456</span>
+                                </p>
+                                <p itemprop="contactPoint">
+                                    <span itemprop="name">Email</span>
+                                    <a href="mailto:anon@anon.com" class="email" itemprop="email" title="Email us">anon@anon.com</a>
+                                </p>
+                            </div>
+
+                            <h3>Text ranged left</h3>
+                            <p style="text-align:left;">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Etiam sit amet elit vitae arcu interdum ullamcorper. Nullam ultrices, nisi quis scelerisque convallis, augue neque tempor enim, et mattis justo nibh eu elit.</p>
+
+                            <h3>Text ranged right</h3>
+                            <p style="text-align:right;">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Etiam sit amet elit vitae arcu interdum ullamcorper. Nullam ultrices, nisi quis scelerisque convallis, augue neque tempor enim, et mattis justo nibh eu elit.</p>
+
+                            <h3>Text centred</h3>
+                            <p style="text-align:center;">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Etiam sit amet elit vitae arcu interdum ullamcorper. Nullam ultrices, nisi quis scelerisque convallis, augue neque tempor enim, et mattis justo nibh eu elit.</p>
+
+                            <h3>Text justified</h3>
+                            <p style="text-align:justify;">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Etiam sit amet elit vitae arcu interdum ullamcorper. Nullam ultrices, nisi quis scelerisque convallis, augue neque tempor enim, et mattis justo nibh eu elit.</p>
+                        </section>
+
+
+                        <section role="region" id="section-text-semantics" class="section">
+                            <h2>Inline text-level semantics</h2>
+
+                            <p>
+                                The <a href="http://codeispottery.com/">a element</a> example<br/>
+                                The <abbr>abbr element</abbr> and <abbr title="Title text">abbr element with title</abbr> examples<br/>
+                                The <b>b element</b> example<br/>
+                                The <cite>cite element</cite> example<br/>
+                                The <code>code element</code> example<br/>
+                                The <del>del element</del> example<br/>
+                                The <dfn>dfn element</dfn> and <dfn title="Title text">dfn element with title</dfn> examples<br/>
+                                The <em>em element</em> example<br/>
+                                The <i>i element</i> example<br/>
+                                The <ins>ins element</ins> example<br/>
+                                The <kbd>kbd element</kbd> example<br/>
+                                The <mark>mark element</mark> example<br/>
+                                The <q>q element <q>inside</q> a q element</q> example<br/>
+                                The <s>s element</s> example<br/>
+                                The <samp>samp element</samp> example<br/>
+                                The <small>small element</small> example<br/>
+                                The <span>span element</span> example<br/>
+                                The <strong>strong element</strong> example<br/>
+                                The <sub>sub element</sub> example<br/>
+                                The <sup>sup element</sup> example<br/>
+                                The <u>u element</u> example<br/>
+                                The <var>var element</var> example
+                            </p>
+                        </section>
+
+
+                        <section role="region" id="section-block-semantics" class="section">
+                            <h2>Block text-level semantics</h2>
+
+                            <h3>Pre-formatted text blocks</h3>
+                            <pre>This is an example of a non-code
+    pre-formatted text block
+        preserving white spaces</pre>
+
+                            <h3>Pre-formatted code blocks</h3>
+                            <pre><code>&lt;section role=&quot;alert&quot; class=&quot;alert alert-error fade in&quot;&gt;
+    &lt;a class=&quot;close&quot; data-dismiss=&quot;alert&quot;&gt;&amp;amp;times;&lt;/a&gt;
+    &lt;h3&gt;Message pane&lt;/h3&gt;
+    &lt;p&gt;Error message goes here.&lt;/p&gt;
+&lt;/section&gt;</code></pre>
+
+                            <h3>Pre-formatted code blocks with line numbers</h3>
+                            <pre class="linenums"><code>&lt;section role=&quot;alert&quot; class=&quot;alert alert-error fade in&quot;&gt;
+    &lt;a class=&quot;close&quot; data-dismiss=&quot;alert&quot;&gt;&amp;amp;times;&lt;/a&gt;
+    &lt;h3&gt;Message pane&lt;/h3&gt;
+    &lt;p&gt;Error message goes here.&lt;/p&gt;
+&lt;/section&gt;</code></pre>
+
+                            <h3>Blockquotes</h3>
+                            <blockquote cite="http://textpattern.com/">
+                                <p>Here is an example of a block quote. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+                            </blockquote>
+
+                            <h3>Thematic break (hr tag)</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Etiam sit amet elit vitae arcu interdum ullamcorper.</p>
+                            <hr>
+                            <p>Nullam ultrices, nisi quis scelerisque convallis, augue neque tempor enim, et mattis justo nibh eu elit.</p>
+                        </section>
+
+
+                        <section role="region" id="section-media" class="section">
+                            <h2>Embedded content</h2>
+
+                            <h3>Images</h3>
+                            <p><img src="http://placehold.it/160x160/999999/333333" alt="Alt text"></p>
+
+                            <h3>Images with links</h3>
+                            <p><a href="#" title="Title text"><img src="http://placehold.it/160x160/999999/333333" alt="Alt text"></a></p>
+
+                            <h3>Rounded images</h3>
+                            <p><img class="img--round" src="http://placehold.it/160x160/999999/333333" alt="Alt text"></p>
+
+                            <h3>Figures</h3>
+                            <figure itemscope itemtype="http://schema.org/ImageObject">
+                                <img itemprop="image" src="http://placehold.it/160x160/999999/333333" alt="Alt text">
+                                <figcaption itemprop="caption">Figcaption content</figcaption>
+                            </figure>
+
+                            <h3>Left ranged image</h3>
+                            <p>Aenean vehicula posuere neque. Nam nibh lectus, laoreet non, convallis sed, vulputate consectetuer, enim. Pellentesque arcu. Vestibulum consequat nisi a ipsum vulputate vehicula. Aliquam lacus diam, ultricies vel, interdum eget, posuere non, tellus. Donec vel ligula. Sed felis. <img src="http://placehold.it/160x160/999999/333333" class="align-left" alt="160x160px placeholder"> Quisque ultrices gravida pede. Mauris accumsan vulputate tellus. Phasellus condimentum bibendum dolor. Mauris sed ipsum. Phasellus in diam. Nam sapien ligula, consectetuer id, hendrerit in, cursus sed, leo. Nam tincidunt rhoncus urna. Aliquam id massa ut nibh bibendum imperdiet. Curabitur neque mauris, porta vel, lacinia quis, placerat ultrices, orci. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In lectus nisl, porttitor eget, fermentum et, viverra a, odio. Sed semper. Praesent vulputate nibh eget nisi. Sed ligula. Aenean vehicula posuere neque. Nam nibh lectus, laoreet non, convallis sed, vulputate consectetuer, enim. Pellentesque arcu. Vestibulum consequat nisi a ipsum vulputate vehicula. Aliquam lacus diam, ultricies vel, interdum eget, posuere non, tellus. Donec vel ligula. Sed felis.</p>
+
+                            <h3>Right ranged image</h3>
+                            <p>Aenean vehicula posuere neque. Nam nibh lectus, laoreet non, convallis sed, vulputate consectetuer, enim. Pellentesque arcu. Vestibulum consequat nisi a ipsum vulputate vehicula. Aliquam lacus diam, ultricies vel, interdum eget, posuere non, tellus. Donec vel ligula. Sed felis. <img src="http://placehold.it/160x160/999999/333333" class="align-right" alt="160x160px placeholder"> Quisque ultrices gravida pede. Mauris accumsan vulputate tellus. Phasellus condimentum bibendum dolor. Mauris sed ipsum. Phasellus in diam. Nam sapien ligula, consectetuer id, hendrerit in, cursus sed, leo. Nam tincidunt rhoncus urna. Aliquam id massa ut nibh bibendum imperdiet. Curabitur neque mauris, porta vel, lacinia quis, placerat ultrices, orci. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In lectus nisl, porttitor eget, fermentum et, viverra a, odio. Sed semper. Praesent vulputate nibh eget nisi. Sed ligula. Aenean vehicula posuere neque. Nam nibh lectus, laoreet non, convallis sed, vulputate consectetuer, enim. Pellentesque arcu. Vestibulum consequat nisi a ipsum vulputate vehicula. Aliquam lacus diam, ultricies vel, interdum eget, posuere non, tellus. Donec vel ligula. Sed felis.</p>
+
+                            <h3>Centred image</h3>
+                            <p>Aenean vehicula posuere neque. Nam nibh lectus, laoreet non, convallis sed, vulputate consectetuer, enim. Pellentesque arcu. Vestibulum consequat nisi a ipsum vulputate vehicula. Aliquam lacus diam, ultricies vel, interdum eget, posuere non, tellus. Donec vel ligula. Sed felis. <img src="http://placehold.it/160x160/999999/333333" class="align-center" alt="160x160px placeholder"> Quisque ultrices gravida pede. Mauris accumsan vulputate tellus. Phasellus condimentum bibendum dolor. Mauris sed ipsum. Phasellus in diam. Nam sapien ligula, consectetuer id, hendrerit in, cursus sed, leo. Nam tincidunt rhoncus urna. Aliquam id massa ut nibh bibendum imperdiet. Curabitur neque mauris, porta vel, lacinia quis, placerat ultrices, orci. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In lectus nisl, porttitor eget, fermentum et, viverra a, odio. Sed semper. Praesent vulputate nibh eget nisi. Sed ligula. Aenean vehicula posuere neque. Nam nibh lectus, laoreet non, convallis sed, vulputate consectetuer, enim. Pellentesque arcu. Vestibulum consequat nisi a ipsum vulputate vehicula. Aliquam lacus diam, ultricies vel, interdum eget, posuere non, tellus. Donec vel ligula. Sed felis.</p>
+
+                            <h3><span class="caps">SVG</span></h3>
+                            <svg width="160px" height="160px">
+                                <circle cx="160" cy="160" r="160" fill="#999999"/>
+                            </svg>
+
+                            <h3>Videos</h3>
+                            <p>Via <a href="http://flowplayer.org/" rel="external" title="Go to the Flowplayer website">Flowplayer</a> (GPL version).</p>
+                            <div class="videoplayer">
+                                <video>
+                                    <source type="video/mp4" src="http://stream.flowplayer.org/bauhaus/624x260.mp4">
+                                    <source type="video/webm" src="http://stream.flowplayer.org/bauhaus/624x260.webm">
+                                </video>
+                            </div>
+
+                        </section>
+
+
+                        <section role="region" id="section-labels" class="section">
+                            <h2>Inline text labels</h2>
+
+                            <h3>Safe</h3>
+                            <p>This is an example of a <span class="success">span success label</span> and a <strong class="success">strong success label</strong>.</p>
+
+                            <h3>Warning</h3>
+                            <p>This is an example of a <span class="warning">span warning label</span> and a <strong class="warning">strong warning label</strong>.</p>
+
+                            <h3>Danger</h3>
+                            <p>This is an example of a <span class="error">span error label</span> and a <strong class="error">strong error label</strong>.</p>
+
+                            <h3>Information (no semantic meaning)</h3>
+                            <p>This is an example of a <span class="information">span information label</span> and a <strong class="information">strong information label</strong>.</p>
+
+                        </section>
+
+
+                        <section role="region" id="section-alerts" class="section">
+                            <h2>Alert boxes</h2>
+
+                            <h3>System message: success</h3>
+                            <p class="alert-block success"><span class="ui-icon ui-icon-check"></span> <strong>Success:</strong> a suitable success message goes here.</p>
+
+                            <h3>System message: warning</h3>
+                            <p class="alert-block warning"><span class="ui-icon ui-icon-alert"></span> <strong>Warning:</strong> a suitable warning message goes here.</p>
+
+                            <h3>System message: error</h3>
+                            <p class="alert-block error"><span class="ui-icon ui-icon-closethick"></span> <strong>Error:</strong> a suitable error message goes here.</p>
+
+                            <h3>System message: information (no semantic meaning)</h3>
+                            <p class="alert-block information"><span class="ui-icon ui-icon-info"></span> <strong>Information:</strong> a suitable information message goes here.</p>
+
+                        </section>
+
+
+                        <section role="region" id="section-details-summary" class="section">
+                            <h2>Details / summary</h2>
+                            <p>Uses a <a href="https://github.com/mathiasbynens/jquery-details" rel="external">jQuery polyfill fallback</a> for unsupported browsers. <strong>Note:</strong> additional WAI-ARIA attributes appended via JavaScript for improved accessibility.</p>
+
+                            <details>
+                                <summary>More info</summary>
+                                
+                                <p>Additional information</p>
+                                <ul>
+                                    <li>Point 1</li>
+                                    <li>Point 2</li>
+                                </ul>
+                            </details>
+                        </section>
+
+
+                        <section role="region" id="section-pagination" class="section">
+                            <h2>Pagination</h2>
+
+                            <nav role="navigation" class="paginator" aria-label="Article navigation">
+                                <a rel="prev" href="#" title="Go to previous page" aria-label="Go to previous page">← Prev</span>
+                                <a rel="next" href="#" title="Go to next page" aria-label="Go to next page">Next →</a>
+
+                                <ul class="pagination">
+                                    <li class="current"><b title="Current page" aria-label="Current page">1</b></li>
+                                    <li><a href="#" title="Go to page 2" aria-label="Go to page 2">2</a></li>
+                                    <li><a href="#" title="Go to page 3" aria-label="Go to page 3">3</a></li>
+                                    <li><a href="#" title="Go to page 4" aria-label="Go to page 4">4</a></li>
+                                    <li><a href="#" title="Go to page 5" aria-label="Go to page 5">5</a></li>
+                                    <li><a href="#" title="Go to page 6" aria-label="Go to page 6">6</a></li>
+                                    <li><a href="#" title="Go to page 7" aria-label="Go to page 7">7</a></li>
+                                    <li><a href="#" title="Go to page 8" aria-label="Go to page 8">8</a></li>
+                                    <li><a href="#" title="Go to page 9" aria-label="Go to page 9">9</a></li>
+                                    <li><a href="#" title="More pages" aria-label="More pages">…</a></li>
+                                </ul>
+                            </nav>
+                        </section>
+
+
+                        <section role="region" id="section-breadcrumbs" class="section">
+                            <h2>Breadcrumbs</h2>
+                            <p>Two style options available: <code>.breadcrumbs</code> or <code>.breadcrumbs--path</code>.</p>
+
+                            <nav role="navigation" aria-label="Breadcrumb navigation">
+                                <ol class="breadcrumbs">
+                                    <li><a href="#">Home</a></li>
+                                    <li><a href="#">Projects</a></li>
+                                    <li><a href="#">Gene Splicing</a></li>
+                                    <li class="current">Test subject X11</li>
+                                </ol>
+                            </nav>
+
+                            <nav role="navigation" aria-label="Breadcrumb navigation">
+                                <ol class="breadcrumbs--path">
+                                    <li><a href="#">Home</a></li>
+                                    <li><a href="#">Projects</a></li>
+                                    <li><a href="#">Gene Splicing</a></li>
+                                    <li class="current">Test subject X11 (deceased)</li>
+                                </ol>
+                            </nav>
+                        </section>
+
+
+                        <section role="region" id="section-lists" class="section">
+                            <h2>Lists</h2>
+
+                            <h3>Number list</h3>
+                            <ol>
+                                <li>this is an example</li>
+                                <li>of a numbered</li>
+                                <li>(ordered) list
+                                    <ol>
+                                        <li>and a second level</li>
+                                        <li>numbered list example</li>
+                                    </ol>
+                                </li>
+                            </ol>
+
+                            <h3>Bullet list</h3>
+                            <ul>
+                                <li>this is an example</li>
+                                <li>of a bulletpoint</li>
+                                <li>(unordered) list
+                                    <ul>
+                                        <li>and a second level</li>
+                                        <li>bulletpoint list example</li>
+                                    </ul>
+                                </li>
+                            </ul>
+
+                            <h3>Plain list</h3>
+                            <ul class="list--no-bullets">
+                                <li>this is an example</li>
+                                <li>of a <code>.list--no-bullets</code></li>
+                                <li>(unordered) list
+                                    <ul class="list--no-bullets">
+                                        <li>and a second level</li>
+                                        <li><code>.list--no-bullets</code> list example</li>
+                                    </ul>
+                                </li>
+                            </ul>
+
+                            <h3>Definition list</h3>
+                            <dl>
+                                <dt>This is a definition list term 1</dt>
+                                <dd>Definition of term 1 here</dd>
+                                <dd>Another definition of term 1
+                                    <dl>
+                                        <dt>A sub term</dt>
+                                        <dd>With</dd>
+                                        <dd>Subs</dd>
+                                    </dl>
+                                </dd>
+                            </dl>
+                        </section>
+
+
+                        <section role="region" id="section-tables" class="section">
+                            <h2>Tables</h2>
+
+                            <h3>Plain table</h3>
+                            <p>Plain table with <code>&lt;thead&gt;</code> included.</p>
+
+                            <div class="tabular-data">
+                                <table>
+                                    <colgroup>
+                                        <col class="t33">
+                                        <col class="t33">
+                                        <col>
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Primary</th>
+                                            <th scope="col">Secondary</th>
+                                            <th scope="col">Tertiary</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">Roast duck</th>
+                                            <td>Seasonal vegetables</td>
+                                            <td>New potatoes</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Grilled lobster</th>
+                                            <td>Mixed seafood</td>
+                                            <td>Side salad</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Chicken dinosaurs</th>
+                                            <td>Baked beans</td>
+                                            <td>Waffles</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <h3>Bordered table</h3>
+                            <p>Bordered table with <code>&lt;caption&gt;</code>, <code>&lt;thead&gt;</code> and <code>&lt;tfoot&gt;</code> included.</p>
+
+                            <div class="tabular-data">
+                                <table class="table--bordered">
+                                    <caption>This is a table caption</caption>
+                                    <colgroup>
+                                        <col class="t25">
+                                        <col class="t25">
+                                        <col class="t25">
+                                        <col>
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Sector</th>
+                                            <th scope="col">Planet</th>
+                                            <th scope="col">Government</th>
+                                            <th scope="col" class="numerical">Population</th>
+                                        </tr>
+                                    </thead>
+                                    <tfoot>
+                                        <tr>
+                                            <td colspan="4">This is the tfoot</td>
+                                        </tr>
+                                    </tfoot>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row" rowspan="3">Alpha</th>
+                                            <td>Diso</td>
+                                            <td>Democracy</td>
+                                            <td class="numerical">4.137 B</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Lave</td>
+                                            <td>Dictatorship</td>
+                                            <td class="numerical">2.5 B</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Leesti</td>
+                                            <td>Corporate State</td>
+                                            <td class="numerical">5.01 B</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row" rowspan="2">Beta</th>
+                                            <td>Reorte</td>
+                                            <td>Dictatorship</td>
+                                            <td class="numerical">3.119 B</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Zaonce</td>
+                                            <td>Corporate State</td>
+                                            <td class="numerical">5.3 B</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </section>
+
+
+                        <section role="region" id="section-forms" class="section">
+                            <h2>Forms</h2>
+
+                            <form>
+                                <p>
+                                    <span>
+                                        <input type="checkbox" id="test_checkbox_1" name="test_checkbox_1">
+                                        <label for="test_checkbox_1">Test checkbox 1</label>
+                                    </span>
+                                    &nbsp;
+                                    &nbsp;
+                                    <span>
+                                        <input type="checkbox" id="test_checkbox_2" name="test_checkbox_2">
+                                        <label for="test_checkbox_2">Test checkbox 2</label>
+                                    </span>
+                                    &nbsp;
+                                    &nbsp;
+                                    <span>
+                                        <input type="checkbox" id="test_checkbox_3" name="test_checkbox_3">
+                                        <label for="test_checkbox_3">Test checkbox 3</label>
+                                    </span>
+                                </p>
+                                <p>
+                                    <span>
+                                        <input type="radio" id="test_radio_1" name="test_radio_group">
+                                        <label for="test_radio_1">Test radio 1</label>
+                                    </span>
+                                    &nbsp;
+                                    &nbsp;
+                                    <span>
+                                        <input type="radio" id="test_radio_2" name="test_radio_group">
+                                        <label for="test_radio_2">Test radio 2</label>
+                                    </span>
+                                    &nbsp;
+                                    &nbsp;
+                                    <span>
+                                        <input type="radio" id="test_radio_3" name="test_radio_group">
+                                        <label for="test_radio_3">Test radio 3</label>
+                                    </span>
+                                </p>
+                                <p>
+                                    <label for="select_dd">Inline form elements</label><br>
+                                    <select id="select_dd" name="select_dd">
+                                        <optgroup label="Group 1">
+                                            <option value="1">Some text goes here</option>
+                                            <option value="2">Another choice could be here</option>
+                                            <option value="3">Yet another item to be chosen</option>
+                                        </optgroup>
+                                        <optgroup label="Group 2">
+                                            <option value="4">Some text goes here</option>
+                                            <option value="5">Another choice could be here</option>
+                                            <option value="6">Yet another item to be chosen</option>
+                                        </optgroup>
+                                        <optgroup label="Group 3">
+                                            <option value="7">Some text goes here</option>
+                                            <option value="8">Another choice could be here</option>
+                                            <option value="9">Yet another item to be chosen</option>
+                                        </optgroup>
+                                    </select>
+                                    <input type="text" id="text_inline" name="text_inline">
+                                    <input type="button" value="Hello">
+                                </p>
+                                <p>
+                                    <label for="select_dd2">Inline form elements (disabled)</label><br>
+                                    <select id="select_dd2" name="select_dd2" disabled="disabled">
+                                        <optgroup label="Group 1">
+                                            <option value="1">Some text goes here</option>
+                                            <option value="2">Another choice could be here</option>
+                                            <option value="3">Yet another item to be chosen</option>
+                                        </optgroup>
+                                        <optgroup label="Group 2">
+                                            <option value="4">Some text goes here</option>
+                                            <option value="5">Another choice could be here</option>
+                                            <option value="6">Yet another item to be chosen</option>
+                                        </optgroup>
+                                        <optgroup label="Group 3">
+                                            <option value="7">Some text goes here</option>
+                                            <option value="8">Another choice could be here</option>
+                                            <option value="9">Yet another item to be chosen</option>
+                                        </optgroup>
+                                    </select>
+                                    <input type="text" id="text_inline2" name="text_inline2" disabled="disabled">
+                                    <input type="button" value="Hello" disabled="disabled">
+                                </p>
+                                <p>
+                                    <label for="select_multi">Select multiple</label><br>
+                                    <select id="select_multi" name="select_multi" multiple="multiple" size="10">
+                                        <optgroup label="Group 1">
+                                            <option value="1">Some text goes here</option>
+                                            <option value="2">Another choice could be here</option>
+                                            <option value="3">Yet another item to be chosen</option>
+                                        </optgroup>
+                                        <optgroup label="Group 2">
+                                            <option value="4">Some text goes here</option>
+                                            <option value="5">Another choice could be here</option>
+                                            <option value="6">Yet another item to be chosen</option>
+                                        </optgroup>
+                                        <optgroup label="Group 3">
+                                            <option value="7">Some text goes here</option>
+                                            <option value="8">Another choice could be here</option>
+                                            <option value="9">Yet another item to be chosen</option>
+                                        </optgroup>
+                                    </select>
+                                </p>
+                                <p>
+                                    <label for="textarea">Textarea</label><br>
+                                    <textarea id="textarea" name="textarea" rows="5" placeholder="This is an example of HTML5 placeholder text."></textarea>
+                                </p>
+                                <p>
+                                    <label for="url">URL</label><br>
+                                    <input type="url" id="url" name="url">
+                                </p>
+                                <p>
+                                    <label for="email">Email</label><br>
+                                    <input type="email" id="email" name="email" placeholder="name@example.com">
+                                </p>
+                                <p>
+                                    <label for="text">Text <b class="required" title="Required">*</b></label><br>
+                                    <input type="text" id="text" name="text">
+                                </p>
+                                <p>
+                                    <label for="text-data">Text with data list</label><br>
+                                    <input type="text" id="text-data" name="text-data" list="text-data-list">
+                                    <datalist id="text-data-list">
+                                        <option value="Afghanistan">
+                                        <option value="Albania">
+                                        <option value="Algeria">
+                                        <option value="Andorra">
+                                        <option value="Angola">
+                                    </datalist>
+                                </p>
+                                <p>
+                                    <label for="datetime-local">Datetime local</label><br>
+                                    <input type="datetime-local" id="datetime-local" name="datetime-local">
+                                </p>
+                                <p>
+                                    <label for="number">Number</label><br>
+                                    <input type="number" id="number" name="number" min="0" max="999" step="1">
+                                </p>
+                                <p>
+                                    <label for="tel">Tel (phone)</label><br>
+                                    <input type="tel" id="tel" name="tel">
+                                </p>
+                                <p>
+                                    <label for="datetime">Datetime</label><br>
+                                    <input type="datetime" id="datetime" name="datetime">
+                                </p>
+                                <p>
+                                    <label for="date">Date</label><br>
+                                    <input type="date" id="date" name="date">
+                                </p>
+                                <p>
+                                    <label for="month">Month</label><br>
+                                    <input type="month" id="month" name="month">
+                                </p>
+                                <p>
+                                    <label for="search">Search</label><br>
+                                    <input type="search" id="search" name="search">
+                                </p>
+                                <p>
+                                    <label for="range">Range</label><br>
+                                    <input type="range" id="range" name="range">
+                                </p>
+                                <p>
+                                    <label for="range">Range (min = 100, max = 500, step = 50, start value = 100)</label><br>
+                                    <script>function printValue(sliderID, textbox) { var x = document.getElementById(textbox); var y = document.getElementById(sliderID); x.value = y.value; } window.onload = function() { printValue('range1', 'rangeValue1'); } </script>
+                                    <input type="range" id="range1" name="range1" min="100" max="500" step="50" value="100" onchange="printValue('range1','rangeValue1')"><br>
+                                    <input type="text" id="rangeValue1" name="rangeValue1" size="3">
+                                </p>
+                                <p>
+                                    <label for="color">Colour</label><br>
+                                    <input type="color" id="color" name="color" value="#cc0000">
+                                </p>
+                                <p>
+                                    <input type="submit" value="Input - Submit">
+                                    &nbsp;
+                                    <input type="button" value="Input - Button">
+                                    &nbsp;
+                                    <input type="reset" value="Input - Reset">
+                                    &nbsp;
+                                    <button>Button tag</button>
+                                </p>
+                                <p>
+                                    <input class="button-success" type="button" value="Success">
+                                    &nbsp;
+                                    <input class="button-danger" type="button" value="Danger">
+                                </p>
+                                <p>
+                                    <a class="button" href="#">Link tag</a>
+                                    &nbsp;
+                                    <span class="button disabled">Span tag (disabled)</span>
+                                    &nbsp;
+                                    <input type="submit" value="Input (disabled)" disabled="disabled">
+                                    &nbsp;
+                                    <button disabled="disabled">Button (disabled)</button>
+                                </p>
+                            </form>
+                        </section>
+
+
+                        <section role="region" id="section-social" class="section">
+                            <h2>Social media</h2>
+
+                            <h3>External social media links</h3>
+                            <ul class="social-channels">
+                                <li><a class="facebook" href="http://facebook.com/" title="Follow us on Facebook" rel="external">Facebook</a></li>
+                                <li><a class="flickr" href="http://www.flickr.com/" title="See our photos on Flickr" rel="external">Flickr</a></li>
+                                <li><a class="googleplus" href="https://plus.google.com/" title="Follow us on Google+" rel="external">Google+</a></li>
+                                <li><a class="linkedin" href="http://linkedin.com/" title="Link with us on LinkedIn" rel="external">LinkedIn</a></li>
+                                <li><a class="pinterest" href="http://pinterest.com/" title="Pin us on Pinterest" rel="external">Pinterest</a></li>
+                                <li><a class="twitter" href="http://twitter.com/" title="Follow us on Twitter" rel="external">Twitter</a></li>
+                                <li><a class="youtube" href="http://youtube.com/" title="Watch us on YouTube" rel="external">YouTube</a></li>
+                            </ul>
+
+                            <h3>Social media buttons</h3>
+                            <p class="social-sharing">
+                                <!-- Twitter 'Tweet' button -->
+                                <a rel="external" class="twitter-share-button" href="https://twitter.com/share" data-via="twitterapi" data-lang="en" data-url="http://txpmag.com/mockups/design-patterns.html" data-text="New magazine design patterns">Tweet</a>
+                            </p>
+                        </section>
+
+
+                        <section role="region" id="section-jquery-ui" class="section">
+                            <h2>jQuery UI widgets</h2>
+                            <p>Collection of all the available <a href="http://jqueryui.com/" rel="external" title="Go to the jQuery User Interface website">jQuery UI</a> widgets.</p>
+
+                            <h3>Interactions: Draggable</h3>
+                            <div class="jquery-ui-draggable ui-widget-content" style="padding:.5em 1em; margin-bottom:1em;">
+                                <strong>Drag me around!</strong>
+                            </div>
+                            <p><a href="http://jqueryui.com/draggable/" rel="external" title="Go to the jQuery UI documentation">Full documentation</a></p>
+
+                            <h3>Interactions: Resizable</h3>
+                            <div class="jquery-ui-resizable ui-widget-content" style="padding:.5em 1em; margin-bottom:1em;">
+                                <strong>Resize me!</strong>
+                            </div>
+                            <p><a href="http://jqueryui.com/resizable/" rel="external" title="Go to the jQuery UI documentation">Full documentation</a></p>
+
+                            <h3>Interactions: Selectable</h3>
+                            <ol class="jquery-ui-selectable list--no-bullets">
+                                <li class="ui-widget-content" style="padding:.5em 1em; border-bottom:0;">Item 1</li>
+                                <li class="ui-widget-content" style="padding:.5em 1em; border-bottom:0;">Item 2</li>
+                                <li class="ui-widget-content" style="padding:.5em 1em; border-bottom:0;">Item 3</li>
+                                <li class="ui-widget-content" style="padding:.5em 1em; border-bottom:0;">Item 4</li>
+                                <li class="ui-widget-content" style="padding:.5em 1em; border-bottom:0;">Item 5</li>
+                                <li class="ui-widget-content" style="padding:.5em 1em; border-bottom:0;">Item 6</li>
+                                <li class="ui-widget-content" style="padding:.5em 1em;">Item 7</li>
+                            </ol>
+                            <p><a href="http://jqueryui.com/selectable/" rel="external" title="Go to the jQuery UI documentation">Full documentation</a></p>
+
+                            <h3>Interactions: Sortable</h3>
+                            <ul class="jquery-ui-sortable list--no-bullets">
+                                <li class="ui-widget-content" style="padding:.5em 1em .5em .5em; margin:2px 0;">
+                                    <span class="ui-icon ui-icon-arrow-2-n-s"></span>
+                                    Item 1
+                                </li>
+                                <li class="ui-widget-content" style="padding:.5em 1em .5em .5em; margin:2px 0;">
+                                    <span class="ui-icon ui-icon-arrow-2-n-s"></span>
+                                    Item 2
+                                </li>
+                                <li class="ui-widget-content" style="padding:.5em 1em .5em .5em; margin:2px 0;">
+                                    <span class="ui-icon ui-icon-arrow-2-n-s"></span>
+                                    Item 3
+                                </li>
+                                <li class="ui-widget-content" style="padding:.5em 1em .5em .5em; margin:2px 0;">
+                                    <span class="ui-icon ui-icon-arrow-2-n-s"></span>
+                                    Item 4
+                                </li>
+                                <li class="ui-widget-content" style="padding:.5em 1em .5em .5em; margin:2px 0;">
+                                    <span class="ui-icon ui-icon-arrow-2-n-s"></span>
+                                    Item 5
+                                </li>
+                                <li class="ui-widget-content" style="padding:.5em 1em .5em .5em; margin:2px 0;">
+                                    <span class="ui-icon ui-icon-arrow-2-n-s"></span>
+                                    Item 6
+                                </li>
+                                <li class="ui-widget-content" style="padding:.5em 1em .5em .5em; margin:2px 0;">
+                                    <span class="ui-icon ui-icon-arrow-2-n-s"></span>
+                                    Item 7
+                                </li>
+                            </ul>
+                            <p><a href="http://jqueryui.com/sortable/" rel="external" title="Go to the jQuery UI documentation">Full documentation</a></p>
+
+                            <h3>Widgets: Accordion</h3>
+                            <div class="jquery-ui-accordion">
+                                <h3><a href="#">Section 1</a></h3>
+                                <div>
+                                    <p>Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.</p>
+                                </div>
+
+                                <h3><a href="#">Section 2</a></h3>
+                                <div>
+                                    <p>Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris turpis porttitor velit, faucibus interdum tellus libero ac justo. Vivamus non quam. In suscipit faucibus urna.</p>
+                                </div>
+
+                                <h3><a href="#">Section 3</a></h3>
+                                <div>
+                                    <p> Nam enim risus, molestie et, porta ac, aliquam ac, risus. Quisque lobortis. Phasellus pellentesque purus in massa. Aenean in pede. Phasellus ac libero ac tellus pellentesque semper. Sed ac felis. Sed commodo, magna quis lacinia ornare, quam ante aliquam nisi, eu iaculis leo purus venenatis dui.</p>
+                                    <ul>
+                                        <li>List item one</li>
+                                        <li>List item two</li>
+                                        <li>List item three</li>
+                                    </ul>
+                                </div>
+
+                                <h3><a href="#">Section 4</a></h3>
+                                <div>
+                                    <p>Cras dictum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aenean lacinia mauris vel est.</p>
+                                    <p>Suspendisse eu nisl. Nullam ut libero. Integer dignissim consequat lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+                                </div>
+                            </div>
+                            <p><a href="http://jqueryui.com/accordion/" rel="external" title="Go to the jQuery UI documentation">Full documentation</a></p>
+
+                            <h3>Widgets: Autocomplete</h3>
+                            <p>
+                                <label for="autocomplete-country">Countries</label><br>
+                                <input type="text" id="autocomplete-country">
+                            </p>
+                            <p><a href="http://jqueryui.com/autocomplete/" rel="external" title="Go to the jQuery UI documentation">Full documentation</a></p>
+
+                            <h3>Widgets: Button</h3>
+
+                            <h4>Default functionality buttons</h4>
+                            <p>
+                                <a href="#" class="jquery-ui-button">&lt;a&gt; button</a>
+                                <button class="jquery-ui-button">&lt;button&gt; button</button>
+                                <input type="button" class="jquery-ui-button" value="Input button">
+                                <input type="submit" class="jquery-ui-button" value="Submit button">
+                            </p>
+
+                            <h4>Checkboxes as buttons</h4>
+                            <p>
+                                <input type="checkbox" class="jquery-ui-button" id="check">
+                                <label for="check">Toggle</label>
+                            </p>
+                            <p class="jquery-ui-buttonset">
+                                <input type="checkbox" id="check1">
+                                <label for="check1">B</label>
+                                <input type="checkbox" id="check2">
+                                <label for="check2">I</label>
+                                <input type="checkbox" id="check3">
+                                <label for="check3">U</label>
+                            </p>
+
+                            <h4>Radios as buttons</h4>
+                            <p class="jquery-ui-buttonset">
+                                <input type="radio" id="radio1" name="radio" checked="checked">
+                                <label for="radio1">Yes</label>
+                                <input type="radio" id="radio2" name="radio">
+                                <label for="radio2">Maybe</label>
+                                <input type="radio" id="radio3" name="radio">
+                                <label for="radio3">No</label>
+                            </p>
+
+                            <h4>Icon buttons</h4>
+                            <p>
+                                <button class="jquery-ui-button-icon-only">&lt;button&gt; icon only</button>
+                                <button class="jquery-ui-button-icon-left">&lt;button&gt; icon on the left</button>
+                                <button class="jquery-ui-button-icon-right">&lt;button&gt; icon on the right</button>
+                                <button class="jquery-ui-button-icon-two">&lt;button&gt; two icons</button>
+                                <button class="jquery-ui-button-icon-two-only">&lt;button&gt; two icons and no text</button>
+                            </p>
+                            <p>
+                                <a href="#" class="jquery-ui-button-icon-only">&lt;a&gt; icon only</a>
+                                <a href="#" class="jquery-ui-button-icon-left">&lt;a&gt; icon on the left</a>
+                                <a href="#" class="jquery-ui-button-icon-two-only">&lt;a&gt; two icons and no text</a>
+                            </p>
+
+                            <h4>Split buttons</h4>
+                            <div>
+                                <p>
+                                    <button id="split-rerun-example">Run last action</button>
+                                    <button id="split-select-example">Select an action</button>
+                                </p>
+                                <ul>
+                                    <li><a href="#">Open…</a></li>
+                                    <li><a href="#">Save</a></li>
+                                    <li><a href="#">Delete</a></li>
+                                </ul>
+                            </div>
+
+                            <p><a href="http://jqueryui.com/button/" rel="external" title="Go to the jQuery UI documentation">Full documentation</a></p>
+                            
+                            <h3>Widgets: Datepicker</h3>
+                            <div class="jquery-ui-datepicker"></div>
+                            <p><a href="http://jqueryui.com/datepicker/" rel="external" title="Go to the jQuery UI documentation">Full documentation</a></p>
+
+                            <h3>Widgets: Dialog</h3>
+
+                            <p><a href="#" id="jquery-ui-dialog-link">Open basic dialog…</a></p>
+                            <!-- Dialog box (basic) -->
+                            <div id="jquery-ui-dialog" title="Basic dialog example">
+                                <h3>Non-modal dialog</h3>
+                                <p>Lorem ipsum dolor sit amet, <a href="#nowhere">Testlink</a> quo epicuri volutpat no. Causae option accusamus in est. Mea id ignota meliore facilis, cu vim omnium appareat mediocrem. Eu oblique voluptua electram his. Mei eu movet recteque. Vis nulla graeci praesent ad, mediocrem expetenda pro ad.</p>
+                            </div>
+
+                            <p><a href="#" id="jquery-ui-dialog-modal-link">Open modal dialog…</a></p>
+                            <!-- Dialog box (modal) -->
+                            <div id="jquery-ui-dialog-modal" title="Modal dialog example">
+                                <h3>Modal dialog</h3>
+                                <p>Lorem ipsum dolor sit amet, <a href="#nowhere">Testlink</a> quo epicuri volutpat no. Causae option accusamus in est. Mea id ignota meliore facilis, cu vim omnium appareat mediocrem. Eu oblique voluptua electram his. Mei eu movet recteque. Vis nulla graeci praesent ad, mediocrem expetenda pro ad.</p>
+                            </div>
+
+                            <p><a href="http://jqueryui.com/dialog/" rel="external" title="Go to the jQuery UI documentation">Full documentation</a></p>
+
+                            <h3>Widgets: Menu</h3>
+
+                            <h4>Menu vertical</h4>
+                            <ul class="jquery-ui-menu">
+                                <li class="ui-state-disabled"><a href="#">Aberdeen</a></li>
+                                <li><a href="#">Ada</a></li>
+                                <li><a href="#">Adamsville</a></li>
+                                <li><a href="#">Addyston</a></li>
+                                <li>
+                                    <a href="#">Delphi</a>
+                                    <ul>
+                                        <li class="ui-state-disabled"><a href="#">Ada</a></li>
+                                        <li><a href="#">Saarland</a></li>
+                                        <li><a href="#">Salzburg</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">Saarland</a></li>
+                                <li>
+                                    <a href="#">Salzburg</a>
+                                    <ul>
+                                        <li>
+                                            <a href="#">Delphi</a>
+                                            <ul>
+                                                <li><a href="#">Ada</a></li>
+                                                <li><a href="#">Saarland</a></li>
+                                                <li><a href="#">Salzburg</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#">Delphi</a>
+                                            <ul>
+                                                <li><a href="#">Ada</a></li>
+                                                <li><a href="#">Saarland</a></li>
+                                                <li><a href="#">Salzburg</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">Perch</a></li>
+                                    </ul>
+                                </li>
+                                <li class="ui-state-disabled"><a href="#">Amesville</a></li>
+                            </ul>
+
+                            <h4>Menu Horizontal</h4>
+                            <p><span class="warning">Current jQuery UI release (v1.10.3) does not provide horizontal menus - this is a planned feature coming soon. <a href="http://wiki.jqueryui.com/w/page/38666403/Menubar" rel="external">More info</a>.</span></p>
+
+                            <p><a href="http://jqueryui.com/menu/" rel="external" title="Go to the jQuery UI documentation">Full documentation</a></p>
+
+                            <h3>Widget: Progressbar</h3>
+                            <h4>Determinate value</h4>
+                            <div class="jquery-ui-progressbar"></div>
+                            <p><a class="jquery-ui-progressbar-animate" href="#">Animate to random number</a></p>
+                            <h4>Indeterminate value</h4>
+                            <div class="jquery-ui-progressbar2"></div>
+                            <p><a href="http://jqueryui.com/progressbar/" rel="external" title="Go to the jQuery UI documentation">Full documentation</a></p>
+
+                            <h3>Widgets: Slider</h3>
+                            <h4>Slider - horizontal</h4>
+                            <div class="jquery-ui-slider-horizontal"></div>
+
+                            <h4>Slider - vertical</h4>
+                            <div class="jquery-ui-slider-vertical clearfix">
+                                <span>88</span>
+                                <span>77</span>
+                                <span>55</span>
+                                <span>33</span>
+                                <span>40</span>
+                                <span>45</span>
+                                <span>70</span>
+                            </div>
+
+                            <p><a href="http://jqueryui.com/slider/" rel="external" title="Go to the jQuery UI documentation">Full documentation</a></p>
+
+                            <h3>Widgets: Spinner</h3>
+                            <p>
+                                <label for="jquery-ui-spinner">Select a value:</label>
+                                <input type="text" id="jquery-ui-spinner" name="value">
+                            </p>
+                            <p><a href="http://jqueryui.com/spinner/" rel="external" title="Go to the jQuery UI documentation">Full documentation</a></p>
+
+                            <h3>Widgets: Tabs</h3>
+                            <div class="jquery-ui-tabs">
+                                <ul>
+                                    <li><a href="#tabgroup1-tab1">Carnivore</a></li>
+                                    <li><a href="#tabgroup1-tab2">Herbivore</a></li>
+                                    <li><a href="#tabgroup1-tab3">Omnivore</a></li>
+                                </ul>
+                                <div id="tabgroup1-tab1">
+                                    <h4>Carnivore tab contents</h4>
+                                    <p>Lorem ipsum dolor sit amet, <a href="#nowhere">Testlink</a> quo epicuri volutpat no. Causae option accusamus in est. Mea id ignota meliore facilis, cu vim omnium appareat mediocrem. Eu oblique voluptua electram his. Mei eu movet recteque. Vis nulla graeci praesent ad, mediocrem expetenda pro ad.</p>
+                                </div>
+                                <div id="tabgroup1-tab2">
+                                    <h4>Herbivore tab contents</h4>
+                                    <p>Timeam mentitum an nam. Mei ne prima perfecto adversarium. Quo eu tamquam invidunt verterem, albucius dissentiet ea eum <a href="#nowhere">Testlink</a>. Facete fabellas referrentur et qui. Cu harum tempor vivendum vel. Nec quem movet nullam in. No stet tota pri.</p>
+                                </div>
+                                <div id="tabgroup1-tab3">
+                                    <h4>Omnivore tab contents</h4>
+                                    <p>Inermis indoctum vis in, has soleat complectitur te <a href="#nowhere">Testlink</a>. Ut est stet civibus, mucius iriure ad duo. Sumo tantas et est, ea duo elitr utroque, ne mea dicant tincidunt scribentur. Sit dico accusata et. Sint inimicus cu nam, odio velit minim sit ut.</p>
+                                </div>
+                            </div>
+                            <p><a href="http://jqueryui.com/tabs/" rel="external" title="Go to the jQuery UI documentation">Full documentation</a></p>
+
+
+                            <h3>Widgets: Tooltip</h3>
+                            <p>Here is an example of a <a class="jquery-ui-tooltip" href="#" title="This is a tooltip, it can be of any length (within practical reason).">link with a tooltip</a>, mouseover to reveal it.</p>
+                            <p><a href="http://jqueryui.com/tooltip/" rel="external" title="Go to the jQuery UI documentation">Full documentation</a></p>
+
+                            <h3>Styles: Icons</h3>
+                            <ul class="jquery-ui-icons ui-widget ui-helper-clearfix">
+                                <li class="ui-state-default" title=".ui-icon-carat-1-n"><span class="ui-icon ui-icon-carat-1-n"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-carat-1-ne"><span class="ui-icon ui-icon-carat-1-ne"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-carat-1-e"><span class="ui-icon ui-icon-carat-1-e"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-carat-1-se"><span class="ui-icon ui-icon-carat-1-se"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-carat-1-s"><span class="ui-icon ui-icon-carat-1-s"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-carat-1-sw"><span class="ui-icon ui-icon-carat-1-sw"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-carat-1-w"><span class="ui-icon ui-icon-carat-1-w"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-carat-1-nw"><span class="ui-icon ui-icon-carat-1-nw"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-carat-2-n-s"><span class="ui-icon ui-icon-carat-2-n-s"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-carat-2-e-w"><span class="ui-icon ui-icon-carat-2-e-w"></span></li>
+
+                                <li class="ui-state-default" title=".ui-icon-triangle-1-n"><span class="ui-icon ui-icon-triangle-1-n"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-triangle-1-ne"><span class="ui-icon ui-icon-triangle-1-ne"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-triangle-1-e"><span class="ui-icon ui-icon-triangle-1-e"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-triangle-1-se"><span class="ui-icon ui-icon-triangle-1-se"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-triangle-1-s"><span class="ui-icon ui-icon-triangle-1-s"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-triangle-1-sw"><span class="ui-icon ui-icon-triangle-1-sw"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-triangle-1-w"><span class="ui-icon ui-icon-triangle-1-w"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-triangle-1-nw"><span class="ui-icon ui-icon-triangle-1-nw"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-triangle-2-n-s"><span class="ui-icon ui-icon-triangle-2-n-s"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-triangle-2-e-w"><span class="ui-icon ui-icon-triangle-2-e-w"></span></li>
+
+                                <li class="ui-state-default" title=".ui-icon-arrow-1-n"><span class="ui-icon ui-icon-arrow-1-n"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-arrow-1-ne"><span class="ui-icon ui-icon-arrow-1-ne"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-arrow-1-e"><span class="ui-icon ui-icon-arrow-1-e"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-arrow-1-se"><span class="ui-icon ui-icon-arrow-1-se"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-arrow-1-s"><span class="ui-icon ui-icon-arrow-1-s"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-arrow-1-sw"><span class="ui-icon ui-icon-arrow-1-sw"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-arrow-1-w"><span class="ui-icon ui-icon-arrow-1-w"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-arrow-1-nw"><span class="ui-icon ui-icon-arrow-1-nw"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-arrow-2-n-s"><span class="ui-icon ui-icon-arrow-2-n-s"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-arrow-2-ne-sw"><span class="ui-icon ui-icon-arrow-2-ne-sw"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-arrow-2-e-w"><span class="ui-icon ui-icon-arrow-2-e-w"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-arrow-2-se-nw"><span class="ui-icon ui-icon-arrow-2-se-nw"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-arrowstop-1-n"><span class="ui-icon ui-icon-arrowstop-1-n"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-arrowstop-1-e"><span class="ui-icon ui-icon-arrowstop-1-e"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-arrowstop-1-s"><span class="ui-icon ui-icon-arrowstop-1-s"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-arrowstop-1-w"><span class="ui-icon ui-icon-arrowstop-1-w"></span></li>
+
+                                <li class="ui-state-default" title=".ui-icon-arrowthick-1-n"><span class="ui-icon ui-icon-arrowthick-1-n"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-arrowthick-1-ne"><span class="ui-icon ui-icon-arrowthick-1-ne"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-arrowthick-1-e"><span class="ui-icon ui-icon-arrowthick-1-e"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-arrowthick-1-se"><span class="ui-icon ui-icon-arrowthick-1-se"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-arrowthick-1-s"><span class="ui-icon ui-icon-arrowthick-1-s"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-arrowthick-1-sw"><span class="ui-icon ui-icon-arrowthick-1-sw"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-arrowthick-1-w"><span class="ui-icon ui-icon-arrowthick-1-w"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-arrowthick-1-nw"><span class="ui-icon ui-icon-arrowthick-1-nw"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-arrowthick-2-n-s"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-arrowthick-2-ne-sw"><span class="ui-icon ui-icon-arrowthick-2-ne-sw"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-arrowthick-2-e-w"><span class="ui-icon ui-icon-arrowthick-2-e-w"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-arrowthick-2-se-nw"><span class="ui-icon ui-icon-arrowthick-2-se-nw"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-arrowthickstop-1-n"><span class="ui-icon ui-icon-arrowthickstop-1-n"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-arrowthickstop-1-e"><span class="ui-icon ui-icon-arrowthickstop-1-e"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-arrowthickstop-1-s"><span class="ui-icon ui-icon-arrowthickstop-1-s"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-arrowthickstop-1-w"><span class="ui-icon ui-icon-arrowthickstop-1-w"></span></li>
+
+                                <li class="ui-state-default" title=".ui-icon-arrowreturnthick-1-w"><span class="ui-icon ui-icon-arrowreturnthick-1-w"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-arrowreturnthick-1-n"><span class="ui-icon ui-icon-arrowreturnthick-1-n"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-arrowreturnthick-1-e"><span class="ui-icon ui-icon-arrowreturnthick-1-e"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-arrowreturnthick-1-s"><span class="ui-icon ui-icon-arrowreturnthick-1-s"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-arrowreturn-1-w"><span class="ui-icon ui-icon-arrowreturn-1-w"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-arrowreturn-1-n"><span class="ui-icon ui-icon-arrowreturn-1-n"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-arrowreturn-1-e"><span class="ui-icon ui-icon-arrowreturn-1-e"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-arrowreturn-1-s"><span class="ui-icon ui-icon-arrowreturn-1-s"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-arrowrefresh-1-w"><span class="ui-icon ui-icon-arrowrefresh-1-w"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-arrowrefresh-1-n"><span class="ui-icon ui-icon-arrowrefresh-1-n"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-arrowrefresh-1-e"><span class="ui-icon ui-icon-arrowrefresh-1-e"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-arrowrefresh-1-s"><span class="ui-icon ui-icon-arrowrefresh-1-s"></span></li>
+
+                                <li class="ui-state-default" title=".ui-icon-arrow-4"><span class="ui-icon ui-icon-arrow-4"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-arrow-4-diag"><span class="ui-icon ui-icon-arrow-4-diag"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-extlink"><span class="ui-icon ui-icon-extlink"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-newwin"><span class="ui-icon ui-icon-newwin"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-refresh"><span class="ui-icon ui-icon-refresh"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-shuffle"><span class="ui-icon ui-icon-shuffle"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-transfer-e-w"><span class="ui-icon ui-icon-transfer-e-w"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-transferthick-e-w"><span class="ui-icon ui-icon-transferthick-e-w"></span></li>
+
+                                <li class="ui-state-default" title=".ui-icon-folder-collapsed"><span class="ui-icon ui-icon-folder-collapsed"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-folder-open"><span class="ui-icon ui-icon-folder-open"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-document"><span class="ui-icon ui-icon-document"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-document-b"><span class="ui-icon ui-icon-document-b"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-note"><span class="ui-icon ui-icon-note"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-mail-closed"><span class="ui-icon ui-icon-mail-closed"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-mail-open"><span class="ui-icon ui-icon-mail-open"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-suitcase"><span class="ui-icon ui-icon-suitcase"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-comment"><span class="ui-icon ui-icon-comment"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-person"><span class="ui-icon ui-icon-person"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-print"><span class="ui-icon ui-icon-print"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-trash"><span class="ui-icon ui-icon-trash"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-locked"><span class="ui-icon ui-icon-locked"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-unlocked"><span class="ui-icon ui-icon-unlocked"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-bookmark"><span class="ui-icon ui-icon-bookmark"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-tag"><span class="ui-icon ui-icon-tag"></span></li>
+
+                                <li class="ui-state-default" title=".ui-icon-home"><span class="ui-icon ui-icon-home"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-flag"><span class="ui-icon ui-icon-flag"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-calculator"><span class="ui-icon ui-icon-calculator"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-cart"><span class="ui-icon ui-icon-cart"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-pencil"><span class="ui-icon ui-icon-pencil"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-clock"><span class="ui-icon ui-icon-clock"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-disk"><span class="ui-icon ui-icon-disk"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-calendar"><span class="ui-icon ui-icon-calendar"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-zoomin"><span class="ui-icon ui-icon-zoomin"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-zoomout"><span class="ui-icon ui-icon-zoomout"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-search"><span class="ui-icon ui-icon-search"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-wrench"><span class="ui-icon ui-icon-wrench"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-gear"><span class="ui-icon ui-icon-gear"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-heart"><span class="ui-icon ui-icon-heart"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-star"><span class="ui-icon ui-icon-star"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-link"><span class="ui-icon ui-icon-link"></span></li>
+
+                                <li class="ui-state-default" title=".ui-icon-cancel"><span class="ui-icon ui-icon-cancel"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-plus"><span class="ui-icon ui-icon-plus"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-plusthick"><span class="ui-icon ui-icon-plusthick"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-minus"><span class="ui-icon ui-icon-minus"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-minusthick"><span class="ui-icon ui-icon-minusthick"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-close"><span class="ui-icon ui-icon-close"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-closethick"><span class="ui-icon ui-icon-closethick"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-key"><span class="ui-icon ui-icon-key"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-lightbulb"><span class="ui-icon ui-icon-lightbulb"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-scissors"><span class="ui-icon ui-icon-scissors"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-clipboard"><span class="ui-icon ui-icon-clipboard"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-copy"><span class="ui-icon ui-icon-copy"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-contact"><span class="ui-icon ui-icon-contact"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-image"><span class="ui-icon ui-icon-image"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-video"><span class="ui-icon ui-icon-video"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-script"><span class="ui-icon ui-icon-script"></span></li>
+
+                                <li class="ui-state-default" title=".ui-icon-alert"><span class="ui-icon ui-icon-alert"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-info"><span class="ui-icon ui-icon-info"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-notice"><span class="ui-icon ui-icon-notice"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-help"><span class="ui-icon ui-icon-help"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-check"><span class="ui-icon ui-icon-check"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-bullet"><span class="ui-icon ui-icon-bullet"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-radio-off"><span class="ui-icon ui-icon-radio-off"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-radio-on"><span class="ui-icon ui-icon-radio-on"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-pin-w"><span class="ui-icon ui-icon-pin-w"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-pin-s"><span class="ui-icon ui-icon-pin-s"></span></li>
+
+                                <li class="ui-state-default" title=".ui-icon-play"><span class="ui-icon ui-icon-play"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-pause"><span class="ui-icon ui-icon-pause"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-seek-next"><span class="ui-icon ui-icon-seek-next"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-seek-prev"><span class="ui-icon ui-icon-seek-prev"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-seek-end"><span class="ui-icon ui-icon-seek-end"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-seek-start"><span class="ui-icon ui-icon-seek-start"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-stop"><span class="ui-icon ui-icon-stop"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-eject"><span class="ui-icon ui-icon-eject"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-volume-off"><span class="ui-icon ui-icon-volume-off"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-volume-on"><span class="ui-icon ui-icon-volume-on"></span></li>
+
+                                <li class="ui-state-default" title=".ui-icon-power"><span class="ui-icon ui-icon-power"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-signal-diag"><span class="ui-icon ui-icon-signal-diag"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-signal"><span class="ui-icon ui-icon-signal"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-battery-0"><span class="ui-icon ui-icon-battery-0"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-battery-1"><span class="ui-icon ui-icon-battery-1"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-battery-2"><span class="ui-icon ui-icon-battery-2"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-battery-3"><span class="ui-icon ui-icon-battery-3"></span></li>
+
+                                <li class="ui-state-default" title=".ui-icon-circle-plus"><span class="ui-icon ui-icon-circle-plus"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-circle-minus"><span class="ui-icon ui-icon-circle-minus"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-circle-close"><span class="ui-icon ui-icon-circle-close"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-circle-triangle-e"><span class="ui-icon ui-icon-circle-triangle-e"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-circle-triangle-s"><span class="ui-icon ui-icon-circle-triangle-s"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-circle-triangle-w"><span class="ui-icon ui-icon-circle-triangle-w"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-circle-triangle-n"><span class="ui-icon ui-icon-circle-triangle-n"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-circle-arrow-e"><span class="ui-icon ui-icon-circle-arrow-e"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-circle-arrow-s"><span class="ui-icon ui-icon-circle-arrow-s"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-circle-arrow-w"><span class="ui-icon ui-icon-circle-arrow-w"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-circle-arrow-n"><span class="ui-icon ui-icon-circle-arrow-n"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-circle-zoomin"><span class="ui-icon ui-icon-circle-zoomin"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-circle-zoomout"><span class="ui-icon ui-icon-circle-zoomout"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-circle-check"><span class="ui-icon ui-icon-circle-check"></span></li>
+
+                                <li class="ui-state-default" title=".ui-icon-circlesmall-plus"><span class="ui-icon ui-icon-circlesmall-plus"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-circlesmall-minus"><span class="ui-icon ui-icon-circlesmall-minus"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-circlesmall-close"><span class="ui-icon ui-icon-circlesmall-close"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-squaresmall-plus"><span class="ui-icon ui-icon-squaresmall-plus"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-squaresmall-minus"><span class="ui-icon ui-icon-squaresmall-minus"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-squaresmall-close"><span class="ui-icon ui-icon-squaresmall-close"></span></li>
+
+                                <li class="ui-state-default" title=".ui-icon-grip-dotted-vertical"><span class="ui-icon ui-icon-grip-dotted-vertical"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-grip-dotted-horizontal"><span class="ui-icon ui-icon-grip-dotted-horizontal"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-grip-solid-vertical"><span class="ui-icon ui-icon-grip-solid-vertical"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-grip-solid-horizontal"><span class="ui-icon ui-icon-grip-solid-horizontal"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-gripsmall-diagonal-se"><span class="ui-icon ui-icon-gripsmall-diagonal-se"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-grip-diagonal-se"><span class="ui-icon ui-icon-grip-diagonal-se"></span></li>
+                            </ul>
+
+                            <h4>My additions to standard jQuery UI icon set</h4>
+                            <ul class="jquery-ui-icons ui-widget ui-helper-clearfix">
+                                <li class="ui-state-default" title=".ui-extra-icon-code"><span class="ui-icon ui-extra-icon-code"></span></li>
+                                <li class="ui-state-default" title=".ui-extra-icon-list"><span class="ui-icon ui-extra-icon-list"></span></li>
+                                <li class="ui-state-default" title=".ui-extra-icon-grid"><span class="ui-icon ui-extra-icon-grid"></span></li>
+                                <li class="ui-state-default" title=".ui-extra-icon-download"><span class="ui-icon ui-extra-icon-download"></span></li>
+                                <li class="ui-state-default" title=".ui-extra-icon-upload"><span class="ui-icon ui-extra-icon-upload"></span></li>
+                                <li class="ui-state-default" title=".ui-extra-icon-attach"><span class="ui-icon ui-extra-icon-attach"></span></li>
+                            </ul>
+
+                            <h4>Icons inline with text</h4>
+                            <p>Lorem ipsum dolor sit amet, <span class="ui-icon ui-icon-search">Search</span> consectetuer adipiscing elit.</p>
+
+                            <h4>Icons in a (plain) list</h4>
+                            <ul class="list--no-bullets">
+                                <li><span class="ui-icon ui-extra-icon-time"></span> List item 1</li>
+                                <li><span class="ui-icon ui-icon-star"></span> List item 2</li>
+                                <li><span class="ui-icon ui-extra-icon-list"></span> List item 3</li>
+                                <li><span class="ui-icon ui-extra-icon-grid"></span> List item 4</li>
+                                <li><span class="ui-icon ui-icon-notice"></span> List item 5</li>
+                            </ul>
+
+                            <h3>Styles: Overlay and shadow</h3>
+                            <p><span class="warning">Not currently used in jQuery UI widgets.</span></p>
+                            <div style="position: relative; width: 70%; height: 200px; padding:1% 4%; overflow:hidden;" class="fakewindowcontain">
+                                <p>Lorem ipsum dolor sit amet, Nulla nec tortor. Donec id elit quis purus consectetur consequat.</p>
+                                <p>Nam congue semper tellus. Sed erat dolor, dapibus sit amet, venenatis ornare, ultrices ut, nisi. Aliquam ante. Suspendisse scelerisque dui nec velit. Duis augue augue, gravida euismod, vulputate ac, facilisis id, sem. Morbi in orci.</p>
+                                <p>Nulla purus lacus, pulvinar vel, malesuada ac, mattis nec, quam. Nam molestie scelerisque quam. Nullam feugiat cursus lacus.orem ipsum dolor sit amet, consectetur adipiscing elit. Donec libero risus, commodo vitae, pharetra mollis, posuere eu, pede. Nulla nec tortor. Donec id elit quis purus consectetur consequat.</p>
+                                <p>Nam congue semper tellus. Sed erat dolor, dapibus sit amet, venenatis ornare, ultrices ut, nisi. Aliquam ante. Suspendisse scelerisque dui nec velit. Duis augue augue, gravida euismod, vulputate ac, facilisis id, sem. Morbi in orci. Nulla purus lacus, pulvinar vel, malesuada ac, mattis nec, quam. Nam molestie scelerisque quam.</p>
+                                <p>Nullam feugiat cursus lacus.orem ipsum dolor sit amet, consectetur adipiscing elit. Donec libero risus, commodo vitae, pharetra mollis, posuere eu, pede. Nulla nec tortor. Donec id elit quis purus consectetur consequat. Nam congue semper tellus. Sed erat dolor, dapibus sit amet, venenatis ornare, ultrices ut, nisi. Aliquam ante.</p>
+                                <p>Suspendisse scelerisque dui nec velit. Duis augue augue, gravida euismod, vulputate ac, facilisis id, sem. Morbi in orci. Nulla purus lacus, pulvinar vel, malesuada ac, mattis nec, quam. Nam molestie scelerisque quam. Nullam feugiat cursus lacus.orem ipsum dolor sit amet, consectetur adipiscing elit. Donec libero risus, commodo vitae, pharetra mollis, posuere eu, pede. Nulla nec tortor. Donec id elit quis purus consectetur consequat. Nam congue semper tellus. Sed erat dolor, dapibus sit amet, venenatis ornare, ultrices ut, nisi.</p>
+
+                                <!-- ui-dialog -->
+                                <div class="ui-overlay">
+                                    <div class="ui-widget-overlay"></div>
+                                    <div class="ui-widget-shadow ui-corner-all" style="position:absolute; top:30px; left:50px; z-index:1002; width:302px; height:152px;"></div>
+                                </div>
+                                <div class="ui-widget ui-widget-content ui-corner-all" style="position:absolute; top:30px; left:50px; z-index:1003; padding:10px; width:280px; height:130px;">
+                                    <div class="ui-dialog-content ui-widget-content" style="background:none; border:0;">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+
+                        <section role="region" id="section-misc" class="section">
+                            <h2>Miscellaneous</h2>
+
+                            <h3>AJAX spinner (for light backgrounds)</h3>
+                            <p><span class="spinner"></span></p>
+
+                            <h3>AJAX spinner (for dark backgrounds)</h3>
+                            <p><span class="spinner inverse"></span></p>
+                        </section>
+
+
+                    </div><!-- /itemprop=articleBody -->
+
+                </article>
+
+
+            </main>
+        </div><!-- /.container -->
+
+
+    </div><!-- /.wrapper -->
+
+
+<!-- Secondary Content -->
+    <div role="complementary" class="container">
+
+        <p>PLACHOLDER TEXT</p>
+
+    </div><!-- /role="complementary" -->
+
+    
+<!-- Footer -->
+    <footer role="contentinfo">
+        <p class="legal">
+            <a href="#">Copyright</a> 2004–2013 The Textpattern Development Team.
+            <a href="#">Contact us</a>.
+            <a href="#">Privacy</a>.
+            <a href="http://textpattern.com/humans.txt">Colophon</a>.
+            Textpattern is both free and open source. <a href="#">GPLv2 license</a>.
+        </p>
+        <p class="html5"><a rel="external" href="http://www.w3.org/html/logo/" title="HTML5 powered">HTML5 powered</a></p>
+    </footer>
+
+
+<!-- JavaScript -->
+    <script data-main="/assets/js/main.js" src="/assets/js/require.js"></script>
+
+
+</body>
+</html>
