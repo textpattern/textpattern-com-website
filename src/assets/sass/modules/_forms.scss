@@ -174,8 +174,8 @@ span.disabled {
 
     opacity: 1; // overrides iOS opacity setting
     border-color: lighten($color-border, 9%) !important;
-    color: $color-text-footnote !important;
-    background: $color-background-box !important;
+    color: #aaaaaa !important;
+    background: #eeeeee !important;
     text-shadow: none !important;
     cursor: default !important;
 }
