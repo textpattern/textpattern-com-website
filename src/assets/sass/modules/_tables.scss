@@ -1,0 +1,126 @@
+//
+// note: this file is for use with Sass and Compass - http://sass-lang.com, http://compass-style.org
+// don't use it as your live site stylesheet!
+//
+
+
+/* Tables
+   ========================================================================== */
+
+/* allow overflow scroll on tables */
+.tabular-data {
+    overflow-x: auto;
+    margin-bottom: 1em;
+}
+
+/* consistent tables */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+}
+
+caption {
+    font-style: italic;
+    text-align: left;
+    margin-bottom: 0.5em;
+}
+
+th,
+td {
+    /* make table cells align top and left by default */
+    vertical-align: top;
+    text-align: left;
+    padding: 0.2307692em 0; // 3px / 13px
+}
+
+tfoot {
+    th,
+    td {
+        padding: 0.2727273em 0; // 3px / 11px
+    }
+}
+
+/* cell alignments */
+
+[rowspan] {
+    vertical-align: middle;
+}
+
+.numerical {
+    text-align: right;
+}
+
+/* bordered tables */
+.table--bordered {
+    th,
+    td {
+        border-bottom: 1px solid $color-border;
+        padding: 0.2307692em; // 3px / 13px
+
+        &:empty {
+            border: 0;
+        }
+    }
+
+    thead tr:last-child {
+        th,
+        td {
+            border-bottom: 2px solid $color-border;
+        }
+    }
+
+    tfoot {
+        th,
+        td {
+            padding: 0.2727273em; // 3px / 11px
+        }
+
+        tr:last-child {
+            th,
+            td {
+                border-bottom: 0;
+            }
+        }
+    }
+}
+
+/* set widths of `col` elements using classes whose numbers represent a percentage
+   width for that column - we leave one column free of a class so that column can
+   soak up the effects of any accidental breakage in the table.
+
+   <table>
+     <colgroup>
+       <col class="t10">
+       <col class="t10">
+       <col class="t10">
+       <col>
+     </colgroup>
+     ..etc..
+*/
+
+.t5  { width: 5%; }
+.t10 { width: 10%; }
+.t12 { width: 12.5%; }       // 1/8
+.t15 { width: 15%; }
+.t20 { width: 20%; }
+.t25 { width: 25%; }         // 1/4
+.t30 { width: 30%; }
+.t33 { width: 33.3333333%; } // 1/3
+.t35 { width: 35%; }
+.t37 { width: 37.5%; }       // 3/8
+.t40 { width: 40%; }
+.t45 { width: 45%; }
+.t50 { width: 50%; }         // 1/2
+.t55 { width: 55%; }
+.t60 { width: 60%; }
+.t62 { width: 62.5%; }       // 5/8
+.t65 { width: 65%; }
+.t66 { width: 66.6666667%; } // 2/3
+.t70 { width: 70%; }
+.t75 { width: 75%; }         // 3/4
+.t80 { width: 80%; }
+.t85 { width: 85%; }
+.t87 { width: 87.5%; }       // 7/8
+.t90 { width: 90%; }
+.t95 { width: 95%; }
