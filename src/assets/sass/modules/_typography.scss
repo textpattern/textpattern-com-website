@@ -53,6 +53,12 @@ h5 {
     margin: rhythm(1, 20px) 0;
 }
 
+h6 {
+    @include adjust-font-size-to(14px, 1);
+
+    margin: rhythm(1, 20px) 0;
+}
+
 /* address style set to `bolder` in Firefox4+, Safari5, and Chrome */
 b,
 strong { 
@@ -88,9 +94,9 @@ dfn[title] {
 
 mark,
 var {
-    @include border-radius(0.2142857em); // 3px / 14px
+    @include border-radius(0.2307692em); // 3px / 13px
 
-    padding: 0em 0.2142857em; // 3px / 14px
+    padding: 0em 0.2307692em; // 3px / 13px
     color: $color-text;
     background: $color-highlight-box;
 }
@@ -106,25 +112,26 @@ code,
 kbd,
 samp {
     @include adjust-font-size-to(12px, 0.9);
-    @include border-radius(0.2307692em); // 3px / 13px
+    @include border-radius(0.25em); // 3px / 12px
 
     border: 1px solid lighten($color-border, 9%);
-    padding: 0.1538462em 0.2307692em; // 2px / 13px + 3px / 13px
+    padding: 0.1666667em 0.25em; // 2px / 12px + 3px / 12px
     background: $color-background-box;
 }
 
 pre {
     @include adjust-font-size-to(12px, 0.9);
-    @include border-radius(0.2307692em); // 3px / 13px
+    @include border-radius(0.25em); // 3px / 12px
 
     overflow-x: auto;
+    margin: 1.0833333em 0; // 13px / 12px
     border: 1px solid lighten($color-border, 9%);
     padding: 1em;
     background: $color-background-box;
     tab-size: 4; // set tab size to 4 spaces
 
     code {
-        font-size: 1em; // 12px
+        font-size: 1em; // keep size at 12px
         border: 0;
         padding: 0;
         background: none;
@@ -143,7 +150,7 @@ sup {
     top: -0.5em;
 }
 sub {
-    bottom: -0.2857142em;
+    bottom: -0.3333333em;
 }
 
 small,
