@@ -24,25 +24,31 @@ h6 {
 }
 
 h1 {
-    @include adjust-font-size-to(40px, 2);
+    @include adjust-font-size-to(36px, 2);
 
     margin: rhythm(1, 40px) 0;
 }
 
 h2 {
-    @include adjust-font-size-to(32px, 1.6666667);
+    @include adjust-font-size-to(30px, 1.75);
 
     margin: rhythm(1, 32px) 0;
 }
 
 h3 {
-    @include adjust-font-size-to(24px, 1.3333333);
+    @include adjust-font-size-to(24px, 1.4);
 
     margin: rhythm(1, 24px) 0;
 }
 
 h4 {
-    @include adjust-font-size-to(20px, 1.1666667);
+    @include adjust-font-size-to(18px, 1.2);
+
+    margin: rhythm(1, 20px) 0;
+}
+
+h5 {
+    @include adjust-font-size-to(16px, 1.1);
 
     margin: rhythm(1, 20px) 0;
 }
@@ -99,7 +105,7 @@ samp {
 code,
 kbd,
 samp {
-    @include adjust-font-size-to(13px, 0.95);
+    @include adjust-font-size-to(12px, 0.9);
     @include border-radius(0.2307692em); // 3px / 13px
 
     border: 1px solid lighten($color-border, 9%);
@@ -108,7 +114,7 @@ samp {
 }
 
 pre {
-    @include adjust-font-size-to(13px, 0.95);
+    @include adjust-font-size-to(12px, 0.9);
     @include border-radius(0.2307692em); // 3px / 13px
 
     overflow-x: auto;
@@ -118,7 +124,7 @@ pre {
     tab-size: 4; // set tab size to 4 spaces
 
     code {
-        font-size: 1em; // 13px
+        font-size: 1em; // 12px
         border: 0;
         padding: 0;
         background: none;
@@ -128,7 +134,7 @@ pre {
 /* prevent `<sub>` and `<sup>` affecting line height in all browsers */
 sub,
 sup {
-    @include adjust-font-size-to(10px, 0);
+    @include adjust-font-size-to(9px, 0);
 
     position: relative;
     vertical-align: baseline;
@@ -144,7 +150,7 @@ small,
 figcaption,
 tfoot,
 .footnote {
-    @include adjust-font-size-to(12px, 0.9);
+    @include adjust-font-size-to(11px, 0.85);
 }
 
 figcaption,

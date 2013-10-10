@@ -23,19 +23,19 @@ $font-print:                  "Helvetica Neue", Helvetica, Arial, sans-serif;
 
 // typography grid
 
-$base-font-size:              14px;
+$base-font-size:              13px;
 $base-line-height:            20px;
 
 // layout grid
 
-$grid-gutter:                 2em;  // 28px / 14px
-$container-max-width:         72em; // 1008px / 14px
+$grid-gutter:                 2em;  // 26px / 13px
+$container-max-width:         78em; // 1014px / 13px
 
 // breakpoints
 
-$breakpoint-3:                60em; // 840px / 14px
-$breakpoint-2:                48em; // 672px / 14px
-$breakpoint-1:                26em; // 364px / 14px
+$breakpoint-3:                64em; // 832px / 13px
+$breakpoint-2:                52em; // 676px / 13px
+$breakpoint-1:                28em; // 364px / 13px
 
 // text colours
 
@@ -55,7 +55,7 @@ $color-gradient-border:       darken($color-gradient-from, 13.5%);
 // borders
 
 $color-border:                #cccccc;
-$default-border-radius:       0.5em; // 7px / 14px
+$default-border-radius:       0.5em; // 7px / 13px
 
 // shadows
 
