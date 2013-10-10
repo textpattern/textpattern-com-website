@@ -113,17 +113,6 @@ footer {
     }
 }
 
-.section {
-    margin-top: 2em;
-
-    &:before {
-        display: block; 
-        content: ""; 
-        height: 2em; 
-        margin: -2em 0 0; 
-    }
-}
-
 /* address differences between Firefox and other browsers */
 hr {
     @include box-sizing(content-box);
