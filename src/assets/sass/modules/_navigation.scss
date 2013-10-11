@@ -56,7 +56,7 @@
     }
 
     a {
-        @include border-radius(0.25em);
+        @include border-radius($default-border-radius / 2);
 
         display: block;
         padding: 0.5em 5%;
