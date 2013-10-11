@@ -28,7 +28,7 @@ a.button,
 span.disabled {
     /* correct font size not being inherited in all browsers */
     font-size: 100%;
-    font-size: 1em;
+    @include adjust-font-size-to(13px, 0.8);
 
     /* address margins set differently in Firefox4+, Safari5+, and Chrome */
     margin: 0;
@@ -87,7 +87,7 @@ textarea {
     -webkit-appearance: none; // remove iOS Safari default styling
     border: 1px solid $color-border;
     padding: 0.5384615em; // 7px / 13px
-    height: 2.3846154em; // 31px / 13px
+    height: 2.4615384em; // 32px / 13px
     background: #ffffff;
     text-align: left;
 }
