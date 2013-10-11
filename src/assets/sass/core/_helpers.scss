@@ -11,26 +11,6 @@
 @import "singularitygs";
 
 
-
-// for developent only: display CSS media query information
-// http://johanbrook.com/design/css/debugging-css-media-queries/
-// example: @include debugmessage("Mobile landscape media query fired");
-
-@mixin debugmessage($message, $color: rgba(255, 255, 0, .75)) {
-    &::before {
-        content: $message;
-        font-weight: bold;
-        display: block;
-        text-align: center;
-        background: #{$color};
-        position: absolute;
-        right: 0;
-        left: 0;
-        top: 0;
-        z-index: 9999;
-    }
-}
-
 // SVG images with fallback for older browsers (via Modernizr)
         
 @mixin svg-graphic($imgfilename, $imgtype, $imgwidth, $imgheight) {
@@ -80,9 +60,9 @@
 // on-hover highlights
 
 @mixin hover-brightness {
-    -webkit-filter: brightness(.1);
-       -moz-filter: brightness(.1);
-        -ms-filter: brightness(.1);
-         -o-filter: brightness(.1);
-            filter: brightness(.1);
+    -webkit-filter: brightness(0.1);
+       -moz-filter: brightness(0.1);
+        -ms-filter: brightness(0.1);
+         -o-filter: brightness(0.1);
+            filter: brightness(0.1);
 }
