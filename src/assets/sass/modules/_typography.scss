@@ -85,7 +85,7 @@ mark,
 var {
     @include border-radius(0.2307692em); // 3px / 13px
 
-    padding: 0em 0.2307692em; // 3px / 13px
+    padding: 1px 0.2307692em; // 3px / 13px
     color: $color-text;
     background: $color-highlight-box;
 }
