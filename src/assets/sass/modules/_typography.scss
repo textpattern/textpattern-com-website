@@ -115,7 +115,7 @@ pre {
     overflow-x: auto;
     margin: 1.0833333em 0; // 13px / 12px
     border: 1px solid lighten($color-border, 9%);
-    padding: 0.5833333em 1.0833333em;
+    padding: 0.5833333em 1.0833333em; // 7px / 12px + 13px / 12px
     background: $color-background-box;
     tab-size: 4; // set tab size to 4 spaces
 
