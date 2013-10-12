@@ -7,7 +7,7 @@
 .warning,
 .error,
 .information {
-    @include border-radius($default-border-radius / 2);
+    @include border-radius(0.2307692em); // 3px / 13px
 
     padding: 1px 0.2307692em; // 3px / 13px
 }
