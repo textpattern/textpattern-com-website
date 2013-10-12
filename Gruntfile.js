@@ -36,8 +36,10 @@ module.exports = function (grunt) {
         },
 
         copy: {
-            branding: {
+            img: {
                 files: [
+                    {expand: true, cwd: 'src/assets/img/', src: ['**'], dest: 'public/assets/img/com/'},
+                    {expand: true, cwd: 'bower_components/textpattern-branding/assets/img/', src: ['**'], dest: 'public/assets/img/branding/'},
                     {expand: true, cwd: 'bower_components/textpattern-branding/assets/img/apple-touch-icon/textpattern/', src: ['**'], dest: 'public/'},
                     {expand: true, cwd: 'bower_components/textpattern-branding/assets/img/favicon/textpattern/', src: ['**'], dest: 'public/'},
                     {expand: true, cwd: 'bower_components/textpattern-branding/assets/img/windows-site-tile/textpattern/', src: ['**'], dest: 'public/'}
@@ -135,6 +137,6 @@ module.exports = function (grunt) {
     grunt.registerTask('test', ['jshint']);
     grunt.registerTask('sass', ['compass', 'cssmin', 'copy:css']);
     grunt.registerTask('default', ['watch']);
-    grunt.registerTask('build', ['jshint', 'sass', 'copy:js', 'copy:branding', 'uglify']);
+    grunt.registerTask('build', ['jshint', 'sass', 'copy:img', 'copy:js', 'uglify']);
     grunt.registerTask('travis', ['jshint']);
 };

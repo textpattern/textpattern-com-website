@@ -9,14 +9,14 @@
 
 /* AJAX spinners */
 span.spinner {
-    @include hires-graphic(spinner, gif, 16px, 16px);
+    @include hires-graphic(/branding/misc/spinner, gif, 16px, 16px);
 
     display: inline-block;
     width: 16px;
     height: 16px;
 
     &.inverse {
-        @include hires-graphic(spinner-inverse, gif, 16px, 16px);
+        @include hires-graphic(/branding/misc/spinner-inverse, gif, 16px, 16px);
     }
 }
 

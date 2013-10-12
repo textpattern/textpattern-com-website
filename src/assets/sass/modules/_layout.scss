@@ -48,7 +48,7 @@ h1.masthead {
 
     a {
         @include hide-text;
-        @include svg-graphic(textpattern-mobile, png, 208px, 34px);
+        @include svg-graphic(/branding/textpattern/textpattern-mobile, png, 208px, 34px);
 
         display: block;
         width: 208px;
@@ -59,7 +59,7 @@ h1.masthead {
         }
 
         @include breakpoint($breakpoint-2) {
-            @include svg-graphic(textpattern, png, 320px, 52px);
+            @include svg-graphic(/branding/textpattern/textpattern, png, 320px, 52px);
 
             width: 320px;
             height: 52px;
@@ -101,7 +101,7 @@ footer {
 
     a {
         @include hide-text;
-        @include svg-graphic(html5, png, 32px, 32px);
+        @include svg-graphic(/branding/misc/html5-inverse, png, 32px, 32px);
 
         display: block;
         width: 32px;
