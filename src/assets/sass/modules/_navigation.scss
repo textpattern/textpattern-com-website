@@ -50,10 +50,10 @@
     }
 
     a {
-        @include border-radius($default-border-radius / 2);
+        @include adjust-font-size-to(14px, 1);
 
         display: block;
-        padding: 0.5em 5%;
+        padding: 0.4285714em 5%; // 6px / 14px
         color: $color-text;
         font-weight: bold;
 
@@ -80,6 +80,7 @@
 
         @include breakpoint($breakpoint-2) {
             @include adjust-font-size-to(20px, 1);
+            @include border-radius($default-border-radius / 2);
 
             margin: 0 0.4em 0.4em -0.4em;
             padding: 0.4em;
