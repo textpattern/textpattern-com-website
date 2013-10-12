@@ -77,6 +77,16 @@ h1.masthead {
     }
 }
 
+.host-details {
+    display: none;
+    margin-top: 1em;
+    text-align: center;
+
+    @include breakpoint($breakpoint-2) {
+        display: block;
+    }
+}
+
 footer {
     clear: both;
     position: relative;
