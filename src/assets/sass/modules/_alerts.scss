@@ -1,0 +1,60 @@
+/* Alert messages
+   ========================================================================== */
+
+/* label colours */
+
+.success,
+.warning,
+.error,
+.information {
+    @include border-radius($default-border-radius / 2);
+
+    padding: 1px 0.2307692em; // 3px / 13px
+}
+
+.success {
+    color: $color-success-text;
+    background: $color-success-background;
+}
+
+.warning {
+    color: $color-warning-text;
+    background: $color-warning-background;
+}
+
+.error {
+    color: $color-error-text;
+    background: $color-error-background;
+}
+
+.information {
+    color: $color-info-text;
+    background: $color-info-background;
+}
+
+.highlight {
+    background: $color-highlight-box;
+}
+
+/* alert boxes */
+
+.alert-block {
+    border: 1px solid;
+    padding: 0.5384615em 1em; // 7px / 13px
+
+    &.success {
+        border-color: $color-success-border;
+    }
+
+    &.warning {
+        border-color: $color-warning-border;
+    }
+
+    &.error {
+        border-color: $color-error-border;
+    }
+
+    &.information {
+        border-color: $color-info-border;
+    }
+}
