@@ -1,0 +1,12 @@
+/* HTTP error pages
+   ========================================================================== */
+
+.http-status-code {
+    @include adjust-font-size-to(52px, 2.6);
+}
+
+@include breakpoint(max-width $breakpoint-2) {
+    .http-status-description {
+        display: block;
+    }
+}
