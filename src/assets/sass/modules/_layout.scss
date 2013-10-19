@@ -92,6 +92,11 @@ footer {
     position: relative;
 }
 
+.joyent {
+    display: inline-block;
+    line-height: 1;
+}
+
 .legal {
     @include adjust-font-size-to(11px, 0.85);
 
