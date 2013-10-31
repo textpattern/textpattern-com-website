@@ -50,13 +50,3 @@
     background-color: $color-gradient-to;
     @include background-image(radial-gradient($color-gradient-from, $color-gradient-to));
 }
-
-// on-hover highlights
-
-@mixin hover-brightness {
-    -webkit-filter: brightness(1.1);
-       -moz-filter: brightness(1.1);
-        -ms-filter: brightness(1.1);
-         -o-filter: brightness(1.1);
-            filter: brightness(1.1);
-}

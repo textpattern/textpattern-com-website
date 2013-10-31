@@ -49,7 +49,7 @@ h1.masthead {
         height: 34px;
 
         &:hover {
-            @include hover-brightness;
+            //@include filter(brightness(1.1));
         }
 
         @include breakpoint($breakpoint-2) {
@@ -117,7 +117,7 @@ footer {
         height: 32px;
 
         &:hover {
-            @include hover-brightness;
+            //@include filter(brightness(1.1));
         }
     }
 }

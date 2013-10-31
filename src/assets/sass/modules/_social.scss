@@ -45,7 +45,7 @@
         }
 
         &:hover {
-            @include hover-brightness;
+            //@include filter(brightness(1.1));
         }
     }
 }
