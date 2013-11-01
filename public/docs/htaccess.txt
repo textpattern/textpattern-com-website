@@ -224,3 +224,6 @@ Redirect temp /textile-strong-and-b http://txstyle.org/doc/16/strong-and-bold-te
 Redirect temp /textile-sub-and-sup http://txstyle.org/doc/18/subscript-and-superscript-text
 Redirect temp /textile-table http://txstyle.org/doc/15/tables
 Redirect temp /textile-ul-list http://txstyle.org/doc/8/bullet-list
+
+# To be removed when new site created (and we have a proper 'Get started' section)
+Redirect temp /start http://textpattern.net/wiki/index.php?title=Textpattern_Quickstart:_Hello_World
