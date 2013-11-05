@@ -81,7 +81,7 @@ select,
 textarea {
     @include border-radius(0);
     @include box-sizing(border-box);
-    @include transition(box-shadow .2s linear);
+    @include transition(box-shadow 0.2s linear);
 
     -webkit-appearance: none; // remove iOS Safari default styling
     border: 1px solid $color-border;
