@@ -7,11 +7,11 @@ button {
 }
 
 button,
-a.button,
-span.button,
 input[type="button"],
 input[type="reset"],
-input[type="submit"] {
+input[type="submit"],
+a.button,
+span.button {
     @include text-shadow($text-shadow-light);
     @include border-radius;
     @include box-shadow($inset-highlighting);
@@ -45,6 +45,7 @@ input[type="submit"] {
 
         border-color: darken($color-gradient-border, 13%);
         color: darken($color-text, 10%);
+        text-decoration: none;
     }
 
     &.button-success {
@@ -88,13 +89,35 @@ input[type="submit"] {
     }
 }
 
+/* donations link button */
+a.button.button-donate {
+    @include text-shadow($text-shadow-dark);
+    @include gradient-linear(#555555, #444444);
+
+    border-color: #222222;
+    color: $color-text-inverse;
+    font-weight: bold;
+
+    &:hover {
+        @include gradient-linear(lighten(#555555, 4%), lighten(#444444, 4%));
+
+        border-color: #111111;
+    }
+
+    &:active {
+        @include gradient-linear(darken(#444444, 4%), darken(#555555, 4%));
+
+        border-color: #111111;
+    }
+}
+
 /* better button focus glows, if box-shadow is supported */
 .boxshadow {
     button,
-    a.button,
     input[type="button"],
     input[type="reset"],
-    input[type="submit"] {
+    input[type="submit"],
+    a.button {
         &:focus {
             @include box-shadow($inset-highlighting, 0 0 7px $color-link-hover);
 

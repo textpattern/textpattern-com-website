@@ -77,14 +77,23 @@ h1.masthead {
     }
 }
 
+.community-details,
 .host-details {
     display: none;
-    margin-top: 1em;
-    text-align: center;
 
     @include breakpoint($breakpoint-2) {
         display: block;
     }
+}
+
+.community-links {
+    list-style: none;
+    padding: 0;
+}
+
+.host-details {
+    margin-top: 1em;
+    text-align: center;
 }
 
 footer {
