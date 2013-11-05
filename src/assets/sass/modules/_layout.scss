@@ -72,6 +72,10 @@ h1.masthead {
         right: 48px;
     }
 
+    @include breakpoint(max-width $breakpoint-1) {
+        right: 36px;
+    }
+
     // search input field
     #search-query {
         @include border-radius;
