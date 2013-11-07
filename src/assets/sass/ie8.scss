@@ -66,31 +66,34 @@
     @include grid-span(9, 4);
 }
 
-#nav {
+/* show standard `<nav>` menu on larger screens */
+.nav-collapse {
+    .js & {
+        position: relative;
+
+        &.closed {
+            max-height: none;
+        }
+    }
+
     ul {
         width: 90%;
-
-        // show standard `<nav>` menu on larger screens
-        .js & {
-            display: block;
-        }
     }
 
     li {
         float: left;
-        border-right: solid 1px $color-gradient-border;
-        border-bottom: 0;
+        border: 0 !important;
+    }
 
-        &:first-child {
-            border-left: solid 1px $color-gradient-border;
-        }
+    a {
+        @include adjust-font-size-to(20px, 1);
+        @include border-radius($default-border-radius / 2);
 
-        a {
-            padding: 0.5em 1em;
-        }
+        margin: 0 0.4em 0.4em -0.4em;
+        padding: 0.4em;
+        font-weight: normal;
     }
 }
-
 
 
 /* ==========================================================================
