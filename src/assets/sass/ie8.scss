@@ -70,10 +70,6 @@
 .nav-collapse {
     .js & {
         position: relative;
-
-        &.closed {
-            max-height: none;
-        }
     }
 
     ul {
