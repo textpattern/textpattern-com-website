@@ -66,6 +66,13 @@
     @include grid-span(9, 4);
 }
 
+h1.masthead {
+    @include svg-graphic(branding/textpattern/textpattern, png, 320px, 52px);
+
+    width: 320px;
+    height: 52px;
+}
+
 /* show standard `<nav>` menu on larger screens */
 .nav-collapse {
     .js & {
