@@ -28,19 +28,33 @@ td {
     padding: 0.2307692em 0; // 3px / 13px
 }
 
+thead tr:first-child {
+    th,
+    td {
+        padding-top: 0;
+    }
+}
+
 tfoot {
     th,
     td {
         padding: 0.2727273em 0; // 3px / 11px
     }
+
+    tr:last-child {
+        th,
+        td {
+            padding-bottom: 0;
+        }
+    }
 }
 
-/* cell alignments */
-
+/* multi-row span vertical cell alignments */
 [rowspan] {
     vertical-align: middle;
 }
 
+/* range values right in numerical cells */
 .numerical {
     text-align: right;
 }
@@ -75,6 +89,13 @@ tfoot {
             td {
                 border-bottom: 0;
             }
+        }
+    }
+
+    tbody tr:first-child {
+        td,
+        th {
+            border-top: 1px solid $color-border;
         }
     }
 }
