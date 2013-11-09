@@ -77,7 +77,7 @@ h1.masthead {
     }
 
     // search input field
-    #search-query {
+    input#search-query {
         @include border-radius;
         @include svg-graphic(/branding/misc/search, png, 32px, 32px);
 
@@ -91,6 +91,8 @@ h1.masthead {
         transition: width 0.2s linear, box-shadow 0.2s linear;
 
         @include breakpoint(max-width $breakpoint-2) {
+            @include placeholder(transparent);
+
             padding-right: 0;
             width: 34px;
             cursor: pointer;
@@ -100,6 +102,8 @@ h1.masthead {
             }
 
             &:focus {
+                @include placeholder($color-text-footnote);
+
                 padding-right: 0.5384615em;
                 width: 240px;
                 cursor: auto;
