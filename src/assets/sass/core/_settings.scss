@@ -1,7 +1,6 @@
-// disable Compass support of IE6 and IE7
+// disable Compass support for IE < 8
 
-$legacy-support-for-ie6:      false;
-$legacy-support-for-ie7:      false;
+$browser-minimum-versions:     (ie: '8');
 
 // use the Kellum method for hiding text
 // http://www.zeldman.com/2012/03/01/replacing-the-9999px-hack-new-image-replacement/
