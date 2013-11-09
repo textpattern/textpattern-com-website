@@ -52,8 +52,8 @@ span.button {
         @include text-shadow($text-shadow-dark);
         @include gradient-linear(lighten($color-success-text, 10%), $color-success-text);
 
-        color: #ffffff;
         border-color: darken($color-success-text, 5%);
+        color: #ffffff;
     
         &:hover {
             @include gradient-linear(lighten($color-success-text, 18%), lighten($color-success-text, 8%));
@@ -73,8 +73,8 @@ span.button {
         @include text-shadow($text-shadow-dark);
         @include gradient-linear(lighten($color-error-text, 10%), $color-error-text);
 
-        color: #ffffff;
         border-color: darken($color-error-text, 5%);
+        color: #ffffff;
     
         &:hover {
             @include gradient-linear(lighten($color-error-text, 18%), lighten($color-error-text, 8%));
