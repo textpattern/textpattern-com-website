@@ -65,6 +65,7 @@ span.button {
             @include gradient-linear($color-success-text, lighten($color-success-text, 8%));
 
             border-color: darken($color-success-text, 12%);
+            color: darken(#ffffff, 10%);
         }
     }
 
@@ -85,6 +86,7 @@ span.button {
             @include gradient-linear($color-error-text, lighten($color-error-text, 8%));
 
             border-color: darken($color-error-text, 12%);
+            color: darken(#ffffff, 10%);
         }
     }
 }
@@ -95,7 +97,7 @@ a.button.button-donate {
     @include gradient-linear(#555555, #444444);
 
     border-color: #222222;
-    color: $color-text-inverse;
+    color: #ffffff;
     font-weight: bold;
 
     &:hover {
@@ -108,6 +110,7 @@ a.button.button-donate {
         @include gradient-linear(darken(#444444, 4%), darken(#555555, 4%));
 
         border-color: #111111;
+        color: darken(#ffffff, 10%);
     }
 }
 
