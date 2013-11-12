@@ -35,9 +35,14 @@ $breakpoint-1:                30em;         // 390px / 13px
 $color-text:                  #333333;
 $color-text-footnote:         #888888;
 $color-text-inverse:          #ffffff;
+
+// interaction colours
+
 $color-link:                  #114eb1;
 $color-link-hover:            #0066ff;
 $color-link-visited:          #183082;
+$color-selecting:             lighten($color-link, 50%);
+$color-selected:              lighten($color-link, 56%);
 
 // default gradients
 
@@ -64,7 +69,7 @@ $text-shadow-dark:            -1px -1px 0 rgba(#000000, 0.1);
 
 $color-background:            #ffffff;
 $color-background-box:        #f7f7f7;
-$color-highlight-box:         lighten($color-link, 57%);
+$color-highlight-box:         #fff9e1;
 
 // alert colours
 

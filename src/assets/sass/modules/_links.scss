@@ -25,18 +25,18 @@ a {
 
 [role="complementary"] a,
 footer a {
-    color: #c7dbfa;
+    color: $color-selecting;;
 
     &:hover,
     &:active {
-        color: #e3edfc;
+        color: $color-selected;
     }
 
     &:focus {
-        outline: thin dotted #e3edfc;
+        outline: thin dotted $color-selected;
     }
 
     &:visited {
-        color: #c7dbfa;
+        color: $color-selecting;
     }
 }
