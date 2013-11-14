@@ -91,7 +91,9 @@ h1.masthead {
         transition: width 0.2s linear, box-shadow 0.2s linear;
 
         @include breakpoint(max-width $breakpoint-2) {
-            @include placeholder(transparent);
+            @include input-placeholder {
+                color: transparent;
+            }
 
             padding-right: 0;
             width: 34px;
@@ -102,7 +104,9 @@ h1.masthead {
             }
 
             &:focus {
-                @include placeholder($color-text-footnote);
+                @include input-placeholder {
+                    color: $color-text-footnote;
+                }
 
                 padding-right: 0.5384615em;
                 width: 240px;
