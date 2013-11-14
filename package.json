@@ -1,17 +1,6 @@
 {
     "name": "textpattern-com",
     "version": "0.0.0",
-    "author": {
-        "name": "Team Textpattern",
-        "url": "http://textpattern.com"
-    },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/textpattern/textpattern-com-website.git"
-    },
-    "bugs": {
-        "url": "https://github.com/textpattern/textpattern-com-website/issues"
-    },
     "devDependencies": {
         "grunt": "~0.4.1",
         "grunt-cli": "~0.1",
