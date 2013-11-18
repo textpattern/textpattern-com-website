@@ -25,6 +25,8 @@ select,
 textarea,
 a.button,
 span.button {
+    @include box-sizing(border-box);
+
     /* correct font size not being inherited in all browsers */
     font-size: 100%;
     @include adjust-font-size-to(13px, 0.8);
@@ -78,7 +80,6 @@ input[type="week"],
 select,
 textarea {
     @include border-radius(0);
-    @include box-sizing(border-box);
     @include transition(box-shadow 0.2s linear);
 
     -webkit-appearance: none; // remove iOS Safari default styling
@@ -96,7 +97,6 @@ input[type="color"] {
 input[type="checkbox"],
 input[type="radio"] {
     padding: 0;
-    box-sizing: border-box;
 }
 
 /* address inconsistent `text-transform` inheritance for `select` in Firefox 4+ and Opera */
