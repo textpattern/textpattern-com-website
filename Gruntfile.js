@@ -117,7 +117,6 @@ module.exports = function (grunt) {
                     {
                         'public/assets/js/main.js': ['src/assets/js/main.js'],
                         'public/assets/js/details.js': ['bower_components/jquery-details/jquery.details.js'],
-                        'public/assets/js/placeholder.js': ['bower_components/jquery-placeholder/jquery.placeholder.js'],
                         'public/assets/js/prettify.js': ['bower_components/google-code-prettify/src/prettify.js'],
                         'public/assets/js/require.js': ['bower_components/requirejs/require.js'],
                         'public/assets/js/cookie.js': ['bower_components/jquery.cookie/jquery.cookie.js'],

@@ -13,7 +13,6 @@
         shim:
         {
             'details': ['jquery'],
-            'placeholder': ['jquery'],
             'flowplayer': ['jquery'],
             'cookie': ['jquery'],
             'jqueryui': ['jquery']
@@ -27,7 +26,7 @@
 
     require(['jquery'], function ($)
     {
-        var details = $('details'), placeholder = $('textarea[placeholder], input[placeholder]'), code = $('pre code');
+        var details = $('details'), code = $('pre code');
 
         // Details polyfill.
 
@@ -37,16 +36,6 @@
             {
                 details.details();
                 $('html').addClass($.fn.details.support ? 'details' : 'no-details');
-            });
-        }
-
-        // Placeholder polyfill.
-
-        if (placeholder.length)
-        {
-            require(['placeholder'], function ()
-            {
-                placeholder.placeholder();
             });
         }
 

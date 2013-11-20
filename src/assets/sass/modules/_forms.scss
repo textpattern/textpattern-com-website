@@ -45,11 +45,6 @@ textarea {
     }
 }
 
-/* styling for placeholder polyfill fallback */
-.placeholder {
-    color: $color-text-footnote;
-}
-
 /* remove inner padding and border in Firefox 4+ */
 button::-moz-focus-inner,
 input::-moz-focus-inner {
