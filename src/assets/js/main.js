@@ -52,23 +52,6 @@
         }
     });
 
-    // Hack-fix for the iOS orientationchange zoom bug (NOTE: fixed in iOS 6).
-
-    require(['jquery', 'modernizr'], function ($, Modernizr)
-    {
-        if (Modernizr.touch)
-        {
-            var meta = $('meta[name=viewport]'), scales = [1, 1], fix = function ()
-            {
-                meta.attr('content', 'width=device-width,minimum-scale=' + scales[0] + ',maximum-scale=' + scales[1]);
-            };
-
-            fix();
-            scales = [0.25, 1.6];
-            $(document).one('gesturestart', fix);
-        }
-    });
-
     // Test for SVG support via Modernizr, if yes then replace PNGs with SVGs.
 
     require(['jquery', 'modernizr'], function ($, Modernizr)
