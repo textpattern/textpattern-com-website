@@ -70,13 +70,8 @@
     require(['responsivenav'], function ()
     {
         responsiveNav('.nav-collapse', {
-            animate: true,
             transition: 400,
-            label: 'Menu',
-            insert: 'before',
-            customToggle: '',
-            openPos: 'relative',
-            jsClass: 'js'
+            insert: 'before'
         });
     });
 
