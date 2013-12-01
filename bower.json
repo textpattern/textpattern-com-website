@@ -5,7 +5,7 @@
         "google-code-prettify": "1.0.0",
         "jquery.cookie": "1.4.0",
         "jquery-details": "0.1.0",
-        "responsive-nav": "1.0.23",
+        "responsive-nav": "1.0.24",
         "requirejs": "2.1.9",
         "textpattern-branding": "*"
     }
