@@ -149,11 +149,11 @@
 
     // Analytics.
 
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-xxxxxxxx-x']);
-    _gaq.push(['_setDomainName', 'none']);
-    _gaq.push(['_gat._anonymizeIp']);
-    _gaq.push(['_trackPageview']);
+    window._gaq = window._gaq || [];
+    window._gaq.push(['_setAccount', 'UA-xxxxxxxx-x']);
+    window._gaq.push(['_setDomainName', 'none']);
+    window._gaq.push(['_gat._anonymizeIp']);
+    window._gaq.push(['_trackPageview']);
     require(['//www.google-analytics.com/ga.js']);
 
 })();
