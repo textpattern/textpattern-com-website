@@ -37,6 +37,17 @@ span.button {
     vertical-align: baseline;
 }
 
+@include breakpoint(max-width $breakpoint-2) {
+    .touch {
+        input:focus,
+        select:focus,
+        textarea:focus {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+    }
+}
+
 /* colour placeholder text */
 input,
 textarea {
