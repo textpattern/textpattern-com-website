@@ -38,6 +38,7 @@ span.button {
 }
 
 @include breakpoint(max-width $breakpoint-2) {
+    /* make focused forum element text on mobile 16px, to avoid auto-zooming */
     .touch {
         input:focus,
         select:focus,
