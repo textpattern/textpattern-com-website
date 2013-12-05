@@ -136,39 +136,18 @@ h1.masthead {
     text-align: center;
 }
 
-footer {
-    clear: both;
-    position: relative;
-}
-
 .joyent {
     display: inline-block;
     line-height: 1;
 }
 
-.legal {
-    @include adjust-font-size-to(11px, 0.85);
-
-    margin-right: 48px;
+footer {
+    clear: both;
+    position: relative;
 }
 
-.html5 {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-
-    a {
-        @include hide-text;
-        @include svg-graphic(/branding/misc/html5-inverse, png, 32px, 32px);
-
-        display: block;
-        width: 32px;
-        height: 32px;
-
-        &:hover {
-            //@include filter(brightness(1.1));
-        }
-    }
+.legal {
+    @include adjust-font-size-to(11px, 0.85);
 }
 
 /* address differences between Firefox and other browsers */
