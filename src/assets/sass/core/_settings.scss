@@ -30,11 +30,34 @@ $breakpoint-3:                64em;         // 832px / 13px
 $breakpoint-2:                46.6153846em; // 606px / 13px
 $breakpoint-1:                30em;         // 390px / 13px
 
+// page colours
+
+$color-background:            #ffffff;
+$color-background-box:        #f7f7f7;
+
 // text colours
 
 $color-text:                  #333333;
 $color-text-footnote:         #888888;
 $color-text-inverse:          #ffffff;
+
+// borders
+
+$color-border:                #cccccc;
+$default-border-radius:       0.5384615em; // 7px / 13px
+
+// default gradients
+
+$color-gradient-from:         #eeeeee;
+$color-gradient-to:           darken($color-gradient-from, 6.5%);
+$color-gradient-border:       darken($color-gradient-from, 13.5%);
+
+// accent colours
+
+$color-highlight-box:         #fff9e1;
+$color-strong-highlight-box:  #fde699;
+$color-accent-gradient-from:  #ffda44;
+$color-accent-gradient-to:    darken($color-gradient2-from, 15%);
 
 // interaction colours
 
@@ -43,33 +66,6 @@ $color-link-hover:            #0066ff;
 $color-link-visited:          #183082;
 $color-selecting:             lighten($color-link, 50%);
 $color-selected:              lighten($color-link, 56%);
-
-// default gradients
-
-$color-gradient-from:         #eeeeee;
-$color-gradient-to:           darken($color-gradient-from, 6.5%);
-$color-gradient-border:       darken($color-gradient-from, 13.5%);
-
-// borders
-
-$color-border:                #cccccc;
-$default-border-radius:       0.5384615em; // 7px / 13px
-
-// shadows
-
-$default-box-shadow-color:    rgba(#000000, 0.2);
-$default-box-shadow-h-offset: 0;
-$default-box-shadow-v-offset: 1px;
-$default-box-shadow-blur:     2px;
-$inset-highlighting:          inset 0 1px 0 rgba(#ffffff, 0.25);
-$text-shadow-light:           1px 1px 0 rgba(#ffffff, 0.5);
-$text-shadow-dark:            -1px -1px 0 rgba(#000000, 0.1);
-
-// accent colours
-
-$color-background:            #ffffff;
-$color-background-box:        #f7f7f7;
-$color-highlight-box:         #fff9e1;
 
 // alert colours
 
@@ -85,3 +81,13 @@ $color-error-border:          darken($color-error-background, 12%);
 $color-info-text:             #3a87ad;
 $color-info-background:       #e7f6fc;
 $color-info-border:           darken($color-info-background, 12%);
+
+// shadows
+
+$default-box-shadow-color:    rgba(#000000, 0.2);
+$default-box-shadow-h-offset: 0;
+$default-box-shadow-v-offset: 1px;
+$default-box-shadow-blur:     2px;
+$inset-highlighting:          inset 0 1px 0 rgba(#ffffff, 0.25);
+$text-shadow-light:           1px 1px 0 rgba(#ffffff, 0.5);
+$text-shadow-dark:            -1px -1px 0 rgba(#000000, 0.1);
