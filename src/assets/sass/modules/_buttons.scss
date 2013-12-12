@@ -121,7 +121,7 @@ a.button.button-donate {
     input[type="submit"],
     a.button {
         &:focus {
-            @include box-shadow($inset-highlighting, 0 0 7px $color-link-hover);
+            @include box-shadow($inset-highlighting, 0 0 4px 2px $color-link-focus);
 
             outline: 0;
         }
