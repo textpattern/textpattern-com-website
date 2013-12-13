@@ -91,6 +91,10 @@
     &.opened {
         max-height: 9999px;
     }
+
+    &.disable-pointer-events {
+        pointer-events: none !important;
+    }
 }
 
 .nav-toggle {
