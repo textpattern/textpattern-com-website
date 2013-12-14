@@ -274,24 +274,24 @@
                             <p id="fnanchor1" class="footnote"><sup>1</sup> Here is the footnote.</p>
 
                             <h3>Contact details</h3>
-                            <p>Uses both the <a href="http://schema.org/" rel="external" title="Go to the Schema.org website">Schema.org</a> and <a href="http://microformats.org/wiki/hcard" rel="external" title="Go to the hCard website">hCard</a> mircoformats.</p>
+                            <p>Uses both the <a rel="external" href="http://schema.org/" title="Go to the Schema.org website">Schema.org</a> and <a rel="external" href="http://microformats.org/wiki/hcard" title="Go to the hCard website">hCard</a> mircoformats.</p>
                             <!-- possible schema types: Organization, Corporation, etc (see http://schema.org/Organization for more info) -->
-                            <div role="group" class="vcard" itemscope itemtype="http://schema.org/Organization">
-                                <p class="org fn" itemprop="name">Organisation Name</p>
-                                <address class="adr" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-                                    <span class="street-address" itemprop="streetAddress">13 Mystreet</span>, <span class="locality" itemprop="addressLocality">Mytown</span>, <span class="region" itemprop="addressRegion">Myshire</span>, <span class="postal-code" itemprop="postalCode">GU1 0AB</span>, <span class="country" itemprop="addressCountry">United Kingdom</span>
+                            <div role="group" itemscope itemtype="http://schema.org/Organization" class="vcard">
+                                <p itemprop="name" class="org fn">Organisation Name</p>
+                                <address itemprop="address" itemscope itemtype="http://schema.org/PostalAddress" class="adr">
+                                    <span itemprop="streetAddress" class="street-address">13 Mystreet</span>, <span itemprop="addressLocality" class="locality">Mytown</span>, <span itemprop="addressRegion" class="region">Myshire</span>, <span itemprop="postalCode" class="postal-code">GU1 0AB</span>, <span itemprop="addressCountry" class="country">United Kingdom</span>
                                 </address>
-                                <p class="tel" itemprop="contactPoint">
-                                    <span class="type" itemprop="name">Telephone</span>
-                                    <span class="value" itemprop="telephone">01234 456789</span>
+                                <p itemprop="contactPoint" class="tel">
+                                    <span itemprop="name" class="type">Telephone</span>
+                                    <span itemprop="telephone" class="value">01234 456789</span>
                                 </p>
-                                <p class="tel" itemprop="contactPoint">
-                                    <span class="type" itemprop="name">Mobile</span>
-                                    <span class="value" itemprop="telephone">07900 123456</span>
+                                <p itemprop="contactPoint" class="tel">
+                                    <span itemprop="name" class="type">Mobile</span>
+                                    <span itemprop="telephone" class="value">07900 123456</span>
                                 </p>
                                 <p itemprop="contactPoint">
                                     <span itemprop="name">Email</span>
-                                    <a href="mailto:anon@anon.com" class="email" itemprop="email" title="Email us">anon@anon.com</a>
+                                    <a href="mailto:anon@anon.com" itemprop="email" class="email" title="Email us">anon@anon.com</a>
                                 </p>
                             </div>
 
