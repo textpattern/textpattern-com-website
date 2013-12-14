@@ -12,7 +12,8 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+.article-description {
     clear: both;
     font-family: $font-serif;
 }
@@ -41,7 +42,8 @@ h4 {
     margin: rhythm(1, 20px) 0;
 }
 
-h5 {
+h5,
+.article-description {
     @include adjust-font-size-to(16px, 1.1);
 
     margin: rhythm(1, 20px) 0;
