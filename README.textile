@@ -37,7 +37,7 @@ The @public/@ directory is intended to be set as the server's document root. You
 
 bc.. <VirtualHost *:80>
     VirtualHost "/absolute/path/to/textpattern-com-website/public"
-    ServerName www.txpmag.test
+    ServerName www.textpattern-com.test
     ServerAlias textpattern-com.test
 </VirtualHost>
 
@@ -54,7 +54,7 @@ h3. Installing dependencies
 
 After you have the base dependencies taken care of, you can install the project's dependencies. Navigate to the project's directory, and run the dependency managers:
 
-bc. $ cd txpmag-website
+bc. $ cd textpattern-com-website
 $ npm install
 $ bundle install
 $ bower install
