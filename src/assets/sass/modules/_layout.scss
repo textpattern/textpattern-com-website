@@ -42,7 +42,7 @@ h1.masthead {
 
     a {
         @include hide-text;
-        @include svg-graphic(/branding/textpattern/textpattern-mobile, png, 208px, 34px);
+        @include svg-graphic(branding/textpattern/textpattern-mobile, png, 208px, 34px);
 
         display: block;
         width: 208px;
@@ -53,7 +53,7 @@ h1.masthead {
         }
 
         @include breakpoint($breakpoint-2) {
-            @include svg-graphic(/branding/textpattern/textpattern, png, 320px, 52px);
+            @include svg-graphic(branding/textpattern/textpattern, png, 320px, 52px);
 
             width: 320px;
             height: 52px;
@@ -79,7 +79,7 @@ h1.masthead {
     // search input field
     input#search-query {
         @include border-radius;
-        @include svg-graphic(/branding/misc/search, png, 32px, 32px);
+        @include svg-graphic(branding/misc/search, png, 32px, 32px);
 
         width: 240px;
         height: 34px;
@@ -150,11 +150,12 @@ footer {
     @include adjust-font-size-to(11px, 0.85);
 }
 
-/* address differences between Firefox and other browsers */
 hr {
     @include box-sizing(content-box);
+    @include svg-graphic(com/hr, png, 240px, 24px);
 
     border: 0; // remove the default `hr` border
-    border-bottom: 1px solid $color-border;
-    height: 0;
+    height: 24px;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
 }

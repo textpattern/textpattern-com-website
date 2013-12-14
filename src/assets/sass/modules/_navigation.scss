@@ -100,7 +100,7 @@
 .nav-toggle {
     @include hide-text;
     @include border-radius;
-    @include svg-graphic(/branding/misc/hamburger, png, 32px, 32px);
+    @include svg-graphic(branding/misc/hamburger, png, 32px, 32px);
 
     -webkit-touch-callout: none; // disables the default bubble shown when you touch and hold a touch target
     position: absolute;

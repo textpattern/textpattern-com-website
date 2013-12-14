@@ -17,31 +17,31 @@
         height: 32px;
 
         &.facebook {
-            @include svg-graphic(/branding/social-media/facebook, png, 32px, 32px);
+            @include svg-graphic(branding/social-media/facebook, png, 32px, 32px);
         }
 
         &.flickr {
-            @include svg-graphic(/branding/social-media/flickr, png, 32px, 32px);
+            @include svg-graphic(branding/social-media/flickr, png, 32px, 32px);
         }
 
         &.googleplus {
-            @include svg-graphic(/branding/social-media/googleplus, png, 32px, 32px);
+            @include svg-graphic(branding/social-media/googleplus, png, 32px, 32px);
         }
 
         &.linkedin {
-            @include svg-graphic(/branding/social-media/linkedin, png, 32px, 32px);
+            @include svg-graphic(branding/social-media/linkedin, png, 32px, 32px);
         }
 
         &.pinterest {
-            @include svg-graphic(/branding/social-media/pinterest, png, 32px, 32px);
+            @include svg-graphic(branding/social-media/pinterest, png, 32px, 32px);
         }
 
         &.twitter {
-            @include svg-graphic(/branding/social-media/twitter, png, 32px, 32px);
+            @include svg-graphic(branding/social-media/twitter, png, 32px, 32px);
         }
 
         &.youtube {
-            @include svg-graphic(/branding/social-media/youtube, png, 32px, 32px);
+            @include svg-graphic(branding/social-media/youtube, png, 32px, 32px);
         }
 
         &:hover {
