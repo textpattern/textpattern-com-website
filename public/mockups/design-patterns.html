@@ -36,7 +36,10 @@
 
 <!-- JUST FOR DESIGN PATTERNS DOC - NOT IN ACTUAL SITE -->
     <style>
-        .box {padding: 1em; margin-bottom: 1em; background: #999;}
+        .information code { color: #333333; }
+
+        .box { padding: 1em; margin-bottom: 1em; background: #999; }
+        #section-grid .information { clear: both; }
 
         /* jQuery UI stuff */
         .jquery-ui-icons { margin: 0; padding: 0;}
@@ -89,7 +92,7 @@
                     <h1 itemprop="name">Design patterns</h1>
 
                     <div itemprop="description" class="article-description">
-                        <p>Article containing examples of various inline and block elements that should be considered and styled within the brand websites. Supported browsers: Apple Safari 5+, Google Chrome 22+, Microsoft Internet Explorer 8+, Mozilla Firefox 16+, Opera Browser 12+. Development environment requires <a href="http://sass-lang.com" rel="external" title="Go to the Sass website">Sass</a> and <a href="http://compass-style.org" rel="external" title="Go to the Compass website">Compass</a>, plus the Compass extensions <a href="https://github.com/Team-Sass/breakpoint" rel="external" title="Go to the Breakpoint website">Breakpoint</a> and <a href="http://singularity.gs" rel="external" title="Go to the Singularity website">Singularity</a>.</p>
+                        <p>Article containing examples of various inline and block elements that should be considered and styled within the brand websites. Supported browsers: Apple Safari 5+, Google Chrome 22+, Microsoft Internet Explorer 8+, Mozilla Firefox 16+, Opera Browser 12+. Development environment requires <a rel="external" href="http://sass-lang.com" title="Go to the Sass website">Sass</a> and <a rel="external" href="http://compass-style.org" title="Go to the Compass website">Compass</a>, plus the Compass extensions <a rel="external" href="https://github.com/Team-Sass/breakpoint" title="Go to the Breakpoint website">Breakpoint</a> and <a rel="external" href="http://singularity.gs" title="Go to the Singularity website">Singularity</a>.</p>
                     </div>
 
                     <nav>
@@ -123,88 +126,88 @@
                             <div class="layout--span-1-3 at-break1">
                                 <h3 >Neutral</h3>
 
-                                <p>Background <code>#ffffff</code></p>
+                                <p class="information">Background <code>#ffffff</code></p>
                                 <div style="width:100%;height:2.5em;border:1px solid #cccccc;background:#ffffff;"></div>
 
-                                <p>Background box <code>#f7f7f7</code></p>
+                                <p class="information">Background box <code>#f7f7f7</code></p>
                                 <div style="width:100%;height:2.5em;border:1px solid #cccccc;background:#f2f2f2;"></div>
 
-                                <p>Neutral gradient from <code>#eeeeee</code></p>
+                                <p class="information">Neutral gradient from <code>#eeeeee</code></p>
                                 <div style="width:100%;height:2.5em;border:1px solid #cccccc;background:#eeeeee;"></div>
 
-                                <p>Neutral gradient to <code>#dddddd</code></p>
+                                <p class="information">Neutral gradient to <code>#dddddd</code></p>
                                 <div style="width:100%;height:2.5em;border:1px solid #cccccc;background:#dddddd;"></div>
 
-                                <p>Border <code>#cccccc</code></p>
+                                <p class="information">Border <code>#cccccc</code></p>
                                 <div style="width:100%;height:2.5em;border:1px solid #cccccc;background:#cccccc;"></div>
 
-                                <p>Footnote/placeholder <code>#888888</code></p>
+                                <p class="information">Footnote/placeholder <code>#888888</code></p>
                                 <div style="width:100%;height:2.5em;border:1px solid #cccccc;background:#888888;"></div>
 
-                                <p>Body text <code>#333333</code></p>
+                                <p class="information">Body text <code>#333333</code></p>
                                 <div style="width:100%;height:2.5em;border:1px solid #cccccc;background:#333333;"></div>
                             </div>
 
                             <div class="layout--span-4-6 at-break1">
                                 <h3>Accent</h3>
 
-                                <p>Highlight box <code>#fff9e1</code></p>
+                                <p class="information">Highlight box <code>#fff9e1</code></p>
                                 <div style="width:100%;height:2.5em;border:1px solid #cccccc;background:#fff9e1;"></div>
 
-                                <p>Strong Highlight box <code>#fde699</code></p>
+                                <p class="information">Strong Highlight box <code>#fde699</code></p>
                                 <div style="width:100%;height:2.5em;border:1px solid #cccccc;background:#fde699;"></div>
 
-                                <p>Accent gradient from <code>#ffda44</code></p>
+                                <p class="information">Accent gradient from <code>#ffda44</code></p>
                                 <div style="width:100%;height:2.5em;border:1px solid #cccccc;background:#ffda44;"></div>
 
-                                <p>Accent gradient to <code>#f6c600</code></p>
+                                <p class="information">Accent gradient to <code>#f6c600</code></p>
                                 <div style="width:100%;height:2.5em;border:1px solid #cccccc;background:#f6c600;"></div>
                             </div>
 
                             <div class="layout--span-7-9 at-break1">
                                 <h3>Interaction</h3>
 
-                                <p>Selected <code>#e3edfc</code></p>
+                                <p class="information">Selected <code>#e3edfc</code></p>
                                 <div style="width:100%;height:2.5em;border:1px solid #cccccc;background:#e3edfc;"></div>
 
-                                <p>Selecting <code>#c7dbfa</code></p>
+                                <p class="information">Selecting <code>#c7dbfa</code></p>
                                 <div style="width:100%;height:2.5em;border:1px solid #cccccc;background:#c7dbfa;"></div>
 
-                                <p>Link <code>#114eb1</code></p>
+                                <p class="information">Link <code>#114eb1</code></p>
                                 <div style="width:100%;height:2.5em;border:1px solid #cccccc;background:#114eb1;"></div>
 
-                                <p>Link active/hover/focus <code>#0066ff</code></p>
+                                <p class="information">Link active/hover/focus <code>#0066ff</code></p>
                                 <div style="width:100%;height:2.5em;border:1px solid #cccccc;background:#0066ff;"></div>
 
-                                <p>Link visited <code>#183082</code></p>
+                                <p class="information">Link visited <code>#183082</code></p>
                                 <div style="width:100%;height:2.5em;border:1px solid #cccccc;background:#183082;"></div>
                             </div>
 
                             <div class="layout--span-10-12 at-break1">
                                 <h3>Alert</h3>
 
-                                <p>Success <code>#238c23</code></p>
+                                <p class="information">Success <code>#238c23</code></p>
                                 <div style="width:100%;height:2.5em;border:1px solid #cccccc;background:#238c23;"></div>
 
-                                <p>Success background <code>#dff0d8</code></p>
+                                <p class="information">Success background <code>#dff0d8</code></p>
                                 <div style="width:100%;height:2.5em;border:1px solid #cccccc;background:#dff0d8;"></div>
 
-                                <p>Warning <code>#cb8f02</code></p>
+                                <p class="information">Warning <code>#cb8f02</code></p>
                                 <div style="width:100%;height:2.5em;border:1px solid #cccccc;background:#cb8f02;"></div>
 
-                                <p>Warning background <code>#fff6d3</code></p>
+                                <p class="information">Warning background <code>#fff6d3</code></p>
                                 <div style="width:100%;height:2.5em;border:1px solid #cccccc;background:#fff6d3;"></div>
 
-                                <p>Error <code>#9d261d</code></p>
+                                <p class="information">Error <code>#9d261d</code></p>
                                 <div style="width:100%;height:2.5em;border:1px solid #cccccc;background:#9d261d;"></div>
 
-                                <p>Error background <code>#f2dede</code></p>
+                                <p class="information">Error background <code>#f2dede</code></p>
                                 <div style="width:100%;height:2.5em;border:1px solid #cccccc;background:#f2dede;"></div>
 
-                                <p>Info <code>#3a87ad</code></p>
+                                <p class="information">Info <code>#3a87ad</code></p>
                                 <div style="width:100%;height:2.5em;border:1px solid #cccccc;background:#3a87ad;"></div>
 
-                                <p>Info background <code>#e7f6fc</code></p>
+                                <p class="information">Info background <code>#e7f6fc</code></p>
                                 <div style="width:100%;height:2.5em;border:1px solid #cccccc;background:#e7f6fc;"></div>
                             </div>
 
@@ -213,42 +216,80 @@
 
                         <section role="region" id="section-grid" class="section clearfix">
                             <h2>Responsive grid</h2>
-                            <p>Grid layout with 1 to 4 column options. Uses the <a href="http://singularity.gs" rel="external" title="Go to the Singularity website">Singularity</a> grid system.</p>
+                            <p>Grid layout with 1 to 4 column options. Uses the <a rel="external" href="http://singularity.gs" title="Go to the Singularity website">Singularity</a> grid system.</p>
+
+                            <p class="information">Opt1: 1col <code>class="layout--span-1-12"</code></p>
 
                             <div class="layout--span-1-12"><p class="box">Opt1: 1col</p></div>
 
+                            <p class="information">Opt2: 2col cell1 <code>class="layout--span-1-6 at-break2"</code><br>
+                                Opt2: 2col cell2 <code>class="layout--span-7-12 at-break2"</code></p>
+
                             <div class="layout--span-1-6 at-break2"><p class="box">Opt2: 2col cell1</p></div>
                             <div class="layout--span-7-12 at-break2"><p class="box">Opt2: 2col cell2</p></div>
+
+                            <p class="information">Opt3: 3col cell1 <code>class="layout--span-1-4"</code><br>
+                                Opt3: 3col cell2 <code>class="layout--span-5-8"</code><br>
+                                Opt3: 3col cell3 <code>class="layout--span-9-12"</code></p>
 
                             <div class="layout--span-1-4"><p class="box">Opt3: 3col cell1</p></div>
                             <div class="layout--span-5-8"><p class="box">Opt3: 3col cell2</p></div>
                             <div class="layout--span-9-12"><p class="box">Opt3: 3col cell3</p></div>
 
+                            <p class="information">Opt4: 3col cell1and2 <code>class="layout--span-1-8"</code><br>
+                                Opt4: 3col cell3 <code>class="layout--span-9-12"</code></p>
+
                             <div class="layout--span-1-8"><p class="box">Opt4: 3col cell1and2</p></div>
                             <div class="layout--span-9-12"><p class="box">Opt4: 3col cell3</p></div>
 
+                            <p class="information">Opt5: 3col cell1 <code>class="layout--span-1-4"</code><br>
+                                Opt5: 3col cell2and3 <code>class="layout--span-5-12"</code></p>
+
                             <div class="layout--span-1-4"><p class="box">Opt5: 3col cell1</p></div>
                             <div class="layout--span-5-12"><p class="box">Opt5: 3col cell2and3</p></div>
+
+                            <p class="information">Opt6: 4col cell1 <code>class="layout--span-1-3 at-break1"</code><br>
+                                Opt6: 5col cell2 <code>class="layout--span-4-6 at-break1"</code><br>
+                                Opt6: 6col cell3 <code>class="layout--span-7-9 at-break1"</code><br>
+                                Opt6: 7col cell4 <code>class="layout--span-10-12 at-break1"</code></p>
 
                             <div class="layout--span-1-3 at-break1"><p class="box">Opt6: 4col cell1</p></div>
                             <div class="layout--span-4-6 at-break1"><p class="box">Opt6: 5col cell2</p></div>
                             <div class="layout--span-7-9 at-break1"><p class="box">Opt6: 6col cell3</p></div>
                             <div class="layout--span-10-12 at-break1"><p class="box">Opt6: 7col cell4</p></div>
 
+                            <p class="information">Opt7: 4col cell1and2 <code>class="layout--span-1-6"</code><br>
+                                Opt7: 4col cell3 <code>class="layout--span-7-9 at-break1"</code><br>
+                                Opt7: 4col cell4 <code>class="layout--span-10-12 at-break1"</code></p>
+
                             <div class="layout--span-1-6"><p class="box">Opt7: 4col cell1and2</p></div>
                             <div class="layout--span-7-9 at-break1"><p class="box">Opt7: 4col cell3</p></div>
                             <div class="layout--span-10-12 at-break1"><p class="box">Opt7: 4col cell4</p></div>
+
+                            <p class="information">Opt8: 4col cell1 <code>class="layout--span-1-3"</code><br>
+                                Opt8: 4col cell2and3 <code>class="layout--span-4-9"</code><br>
+                                Opt8: 4col cell4 <code>class="layout--span-10-12"</code></p>
 
                             <div class="layout--span-1-3"><p class="box">Opt8: 4col cell1</p></div>
                             <div class="layout--span-4-9"><p class="box">Opt8: 4col cell2and3</p></div>
                             <div class="layout--span-10-12"><p class="box">Opt8: 4col cell4</p></div>
 
+                            <p class="information">Opt9: 4col cell1 <code>class="layout--span-1-3"</code><br>
+                                Opt9: 4col cell2 <code>class="layout--span-4-6"</code><br>
+                                Opt9: 4col cell3and4 <code>class="layout--span-7-12"</code></p>
+
                             <div class="layout--span-1-3"><p class="box">Opt9: 4col cell1</p></div>
                             <div class="layout--span-4-6"><p class="box">Opt9: 4col cell2</p></div>
                             <div class="layout--span-7-12"><p class="box">Opt9: 4col cell3and4</p></div>
 
+                            <p class="information">Opt10: 4col cell1and2and3 <code>class="layout--span-1-9"</code><br>
+                                Opt10: 4col cell4 <code>class="layout--span-10-12"</code></p>
+
                             <div class="layout--span-1-9"><p class="box">Opt10: 4col cell1and2and3</p></div>
                             <div class="layout--span-10-12"><p class="box">Opt10: 4col cell4</p></div>
+
+                            <p class="information">Opt11: 4col cell1 <code>class="layout--span-1-3"</code><br>
+                                Opt11: 4col cell2and3and4 <code>class="layout--span-4-12"</code></p>
 
                             <div class="layout--span-1-3"><p class="box">Opt11: 4col cell1</p></div>
                             <div class="layout--span-4-12"><p class="box">Opt11: 4col cell2and3and4</p></div>
@@ -379,7 +420,7 @@
                             <p><img src="img/160x160.png" alt="Alt text"></p>
 
                             <h3>Images with links</h3>
-                            <p><a href="#" title="Title text"><img src="img/160x160.png" alt="Alt text"></a></p>
+                            <p><a href="#" title="Title text" class="a--img"><img src="img/160x160.png" alt="Alt text"></a></p>
 
                             <h3>Rounded images</h3>
                             <p><img class="img--round" src="img/160x160.png" alt="Alt text"></p>
