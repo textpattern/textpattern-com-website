@@ -43,13 +43,16 @@ footer a {
 
 /* images as links */
 .a--img {
-    @include transition(box-shadow 0.2s linear);
+    img {
+        @include transition(box-shadow 0.2s linear);
+
+    }
 
     &:focus {
         outline: 0;
-    }
 
-    img {
-        @include box-shadow(0 0 4px 2px $color-link-focus);
+        img {
+            @include box-shadow(0 0 4px 2px $color-link-focus);
+        }
     }
 }
