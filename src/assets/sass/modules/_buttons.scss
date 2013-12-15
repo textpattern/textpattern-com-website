@@ -53,13 +53,13 @@ span.button {
 
         border-color: darken($color-success-text, 5%);
         color: #ffffff;
-    
+
         &:hover {
             @include gradient-linear(lighten($color-success-text, 18%), lighten($color-success-text, 8%));
 
             border-color: darken($color-success-text, 12%);
         }
-    
+
         &:active {
             @include gradient-linear($color-success-text, lighten($color-success-text, 8%));
 
@@ -74,13 +74,13 @@ span.button {
 
         border-color: darken($color-error-text, 5%);
         color: #ffffff;
-    
+
         &:hover {
             @include gradient-linear(lighten($color-error-text, 18%), lighten($color-error-text, 8%));
 
             border-color: darken($color-error-text, 12%);
         }
-    
+
         &:active {
             @include gradient-linear($color-error-text, lighten($color-error-text, 8%));
 

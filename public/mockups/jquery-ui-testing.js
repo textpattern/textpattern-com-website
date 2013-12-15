@@ -210,7 +210,7 @@ require(['jquery', 'jqueryui'], function ($)
         });
         event.preventDefault();
     });
-    
+
     // Slider - horizontal
     $(".jquery-ui-slider-horizontal").slider({
         range: true,

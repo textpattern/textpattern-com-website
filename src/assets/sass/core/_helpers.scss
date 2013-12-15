@@ -6,7 +6,7 @@
 
 
 // SVG images with fallback for older browsers (via Modernizr)
-        
+
 @mixin svg-graphic($imgfilename, $imgtype, $imgwidth, $imgheight) {
     .no-svg &,
     .no-js & {
@@ -20,7 +20,7 @@
 }
 
 // higher resolution images for high resolution displays
-        
+
 @mixin hires-graphic($hdfile, $hdtype, $hdwidth, $hdheight) {
     $filename: $hdfile + '.' + $hdtype;
     $hdfilename: $hdfile + '@2x.' + $hdtype;
