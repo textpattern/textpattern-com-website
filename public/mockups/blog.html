@@ -70,14 +70,21 @@
             <main role="main" itemscope itemtype="http://schema.org/Blog" aria-label="Main content">
 
                 <article role="article" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting" class="layout--span-1-8">
-                    <h1 itemprop="name">Blog example title</h1>
+                    <h1 itemprop="name headline">Blog example title</h1>
 
                     <p class="article-publishing-details">
-                        by
+                        By
                         <span itemprop="author" itemscope itemtype="http://schema.org/Person" class="vcard">
                             <a rel="author" href="#" class="url"><span itemprop="name" class="fn n">Joe Q. Public</span></a>
                         </span>
                         <time datetime="2014-01-25T10:43:39Z" itemprop="datePublished">25 January 2014</time>
+                    </p>
+
+                    <p class="article-comment-details">
+                        Comments
+                        <a href="#comments-head" title="View comments" itemprop="discussionUrl" itemscope itemtype="http://schema.org/UserComments">
+                            <span itemprop="interactionCount">3</span>
+                        </a>
                     </p>
 
                     <div itemprop="description" class="article-description">
@@ -108,6 +115,35 @@
                             <a rel="external" class="twitter-share-button" href="https://twitter.com/share" data-via="twitterapi" data-lang="en" data-url="http://textpattern.com/mockups/" data-text="Blog example">Tweet</a>
                         </p>
                     </aside>
+
+                    <section id="comments-head">
+                        <h3>Comments</h3>
+
+                        <ol class="comments-list" itemscope itemtype="http://schema.org/UserComments">
+                            <li>
+                                <article class="comments" itemprop="comment">
+                                    <p>Placeholder</p>
+                                </article>
+                            </li>
+                            <li>
+                                <article class="comments" itemprop="comment">
+                                    <p>Placeholder</p>
+                                </article>
+                            </li>
+                            <li>
+                                <article class="comments" itemprop="comment">
+                                    <p>Placeholder</p>
+                                </article>
+                            </li>
+                        </ol>
+
+                        <section id="comments-form">
+                            <h3>Write a comment</h3>
+                            <form>
+                                <p>Placeholder</p>
+                            </form>
+                        </section>
+                    </section>
 
                 </article>
 
