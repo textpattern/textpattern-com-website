@@ -42,7 +42,7 @@ footer a {
 }
 
 /* images as links */
-.a--img {
+.boxshadow .a--img {
     img {
         @include transition(box-shadow 0.2s linear);
 
