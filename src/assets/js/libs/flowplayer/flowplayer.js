@@ -1,6 +1,6 @@
 /*!
 
-   Flowplayer v5.4.4 (Wednesday, 06. November 2013 01:27PM) | flowplayer.org/license
+   Flowplayer v5.4.5 (Tuesday, 17. December 2013 08:34AM) | flowplayer.org/license
 
 */
 !function($) { 
@@ -64,9 +64,17 @@ $(window).on('beforeunload', function() {
    });
 });
 
+var supportLocalStorage = false;
+try {
+  if (typeof window.localStorage == "object") {
+    window.localStorage.flowplayerTestStorage = "test";
+    supportLocalStorage = true;
+  }
+} catch (ignored) {}
+
 $.extend(flowplayer, {
 
-   version: '5.4.4',
+   version: '5.4.5',
 
    engine: {},
 
@@ -103,14 +111,14 @@ $.extend(flowplayer, {
 
       live: false,
 
-      swf: "//releases.flowplayer.org/5.4.4/flowplayer.swf",
+      swf: "//releases.flowplayer.org/5.4.5/flowplayer.swf",
 
       speeds: [0.25, 0.5, 1, 1.5, 2],
 
       tooltip: true,
 
       // initial volume level
-      volume: typeof localStorage != "object" ? 1 : localStorage.muted == "true" ? 0 : !isNaN(localStorage.volume) ? localStorage.volume || 1 : 1,
+      volume: !supportLocalStorage ? 1 : localStorage.muted == "true" ? 0 : !isNaN(localStorage.volume) ? localStorage.volume || 1 : 1,
 
       // http://www.whatwg.org/specs/web-apps/current-work/multipage/the-video-element.html#error-codes
       errors: [
@@ -159,14 +167,12 @@ $.fn.flowplayer = function(opts, callback) {
          lastSeekPosition,
          engine;
 
-      if (!flowplayer.support.firstframe) videoTag.detach();
-
       if (conf.playlist.length) { // Create initial video tag if called without
          var preload = videoTag.attr('preload'), placeHolder;
          if (videoTag.length) videoTag.replaceWith(placeHolder = $('<p />'));
          videoTag = $('<video />').addClass('fp-engine');
          placeHolder ? placeHolder.replaceWith(videoTag) : root.prepend(videoTag);
-         videoTag.attr('preload', preload);
+         if (flowplayer.support.video) videoTag.attr('preload', preload);
          if (typeof conf.playlist[0] === 'string') videoTag.attr('src', conf.playlist[0]);
          else {
             $.each(conf.playlist[0], function(i, plObj) {
@@ -258,7 +264,7 @@ $.fn.flowplayer = function(opts, callback) {
 
                // Firefox (+others?) does not fire "resume" after finish
                if (api.finished) {
-                  api.trigger("resume");
+                  api.trigger("resume", [api]);
                   api.finished = false;
                }
             }
@@ -411,7 +417,7 @@ $.fn.flowplayer = function(opts, callback) {
                api.forcedSplash = !conf.splash && !root.hasClass("is-splash");
                api.splash = conf.splash = conf.autoplay = true;
                root.addClass("is-splash");
-               videoTag.attr("preload", "none");
+               if (flowplayer.support.video) videoTag.attr("preload", "none");
             }
 
             if (conf.live || root.hasClass('is-live')) {
@@ -421,10 +427,7 @@ $.fn.flowplayer = function(opts, callback) {
 
             // extensions
             $.each(extensions, function(i) {
-               var v;
-               if  (!flowplayer.support.firstframe) v = videoTag.clone().prependTo(root); //Hack for a hack..
                this(api, root);
-               if (v) v.remove();
             });
 
             // 1. use the configured engine
@@ -607,13 +610,16 @@ $.fn.flowplayer = function(opts, callback) {
 
    // flashVideo
    try {
-      var ver = IS_IE ? new ActiveXObject("ShockwaveFlash.ShockwaveFlash").GetVariable('$version') :
-         navigator.plugins["Shockwave Flash"].description;
+      var plugin = navigator.plugins["Shockwave Flash"],
+          ver = IS_IE ? new ActiveXObject("ShockwaveFlash.ShockwaveFlash").GetVariable('$version') : plugin.description;
+      if (!IS_IE && !plugin[0].enabledPlugin) s.flashVideo = false;
+      else {
 
-      ver = ver.split(/\D+/);
-      if (ver.length && !ver[0]) ver = ver.slice(1);
+         ver = ver.split(/\D+/);
+         if (ver.length && !ver[0]) ver = ver.slice(1);
 
-      s.flashVideo = ver[0] > 9 || ver[0] == 9 && ver[3] >= 115;
+         s.flashVideo = ver[0] > 9 || ver[0] == 9 && ver[3] >= 115;
+      }
 
    } catch (ignored) {}
    try {
@@ -785,6 +791,13 @@ flowplayer.engine.flash = function(player, root) {
                } catch (e) {}
             }, 5000);
 
+            // detect disabled flash
+            setTimeout(function() {
+              if (typeof api.PercentLoaded === 'undefined') {
+                root.trigger('flashdisabled', [player]);
+              }
+            }, 1000);
+
             // listen
             $[callbackId] = function(type, arg) {
 
@@ -843,20 +856,26 @@ flowplayer.engine.flash = function(player, root) {
    $.each("pause,resume,seek,volume".split(","), function(i, name) {
 
       engine[name] = function(arg) {
+         try {
+           if (player.ready) {
 
-         if (player.ready) {
+              if (name == 'seek' && player.video.time && !player.paused) {
+                 player.trigger("beforeseek");
+              }
 
-            if (name == 'seek' && player.video.time && !player.paused) {
-               player.trigger("beforeseek");
-            }
+              if (arg === undefined) {
+                 api["__" + name]();
 
-            if (arg === undefined) {
-               api["__" + name]();
+              } else {
+                 api["__" + name](arg);
+              }
 
-            } else {
-               api["__" + name](arg);
-            }
-
+           }
+         } catch (e) {
+           if (typeof api["__" + name] === 'undefined') { //flash lost it's methods
+             return root.trigger('flashdisabled', [player]);
+           }
+           throw e;
          }
       };
 
@@ -1041,12 +1060,12 @@ flowplayer.engine.html5 = function(player, root) {
 
                if (support.zeropreload) {
                   player.trigger("ready", video).trigger("pause").one("ready", function() {
-                     root.trigger("resume");
+                     root.trigger("resume", [player]);
                   });
 
                } else {
                   player.one("ready", function() {
-                     root.trigger("pause");
+                     root.trigger("pause", [player]);
                   });
                }
             }
@@ -1700,6 +1719,10 @@ flowplayer(function(api, root) {
          menu.hide();
          $('html').off('click.outsidemenu');
       });
+   }).bind('flashdisabled', function() {
+     root.addClass('is-flash-disabled').one('ready', function() {
+       root.removeClass('is-flash-disabled').find('.fp-flash-disabled').remove();
+     }).append('<div class="fp-flash-disabled">Adobe Flash is disabled for this page, click player area to enable.</div>');
    });
 
    // poster -> background image
@@ -1940,7 +1963,13 @@ flowplayer(function(player, root) {
       player.isFullscreen = true;
 
    }).bind(FS_EXIT, function(e) {
+      var oldOpacity;
+      if (!FS_SUPPORT && player.engine === "html5") {
+        oldOpacity = root.css('opacity') || '';
+        root.css('opacity', 0);
+      }
       root.removeClass("is-fullscreen");
+      if (!FS_SUPPORT && player.engine === "html5") setTimeout(function() { root.css('opacity', oldOpacity); });
       player.isFullscreen = false;
       win.scrollTop(scrollTop);
 
@@ -1950,11 +1979,18 @@ flowplayer(function(player, root) {
           // above loads "different" clip, resume position below
           fsResume.index = 0;
       } else if (fsResume.pos && !isNaN(fsResume.pos)) {
-         player.resume().seek(fsResume.pos, function () {
+         var fsreset = function () {
             if (!fsResume.play)
                player.pause();
             $.extend(fsResume, {pos: 0, play: false});
-         });
+         };
+
+         if (player.conf.live) {
+            player.resume();
+            fsreset();
+         } else {
+            player.resume().seek(fsResume.pos, fsreset);
+         }
       }
    });
 
@@ -2480,7 +2516,7 @@ flowplayer(function(player, root) {
          tag.append($("<source/>", { type: "video/" + src.type, src: path }));
       });
 
-      var scriptAttrs = { src: "//embed.flowplayer.org/5.4.4/embed.min.js" };
+      var scriptAttrs = { src: "//embed.flowplayer.org/5.4.5/embed.min.js" };
       if ($.isPlainObject(conf.embed)) {
          scriptAttrs['data-swf'] = conf.embed.swf;
          scriptAttrs['data-library'] = conf.embed.library;
