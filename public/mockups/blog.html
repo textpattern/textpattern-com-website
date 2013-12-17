@@ -151,10 +151,39 @@
 
                         <section id="comments-form">
                             <h3>Leave a comment</h3>
-                            <form>
-                                <p>Placeholder</p>
+
+                            <form id="txpCommentInputForm" method="post" action="#">
+                                <div class="comments-wrapper">
+                                    <p><strong>Enter your comment below.</strong> Fields marked <b class="required" title="Required">*</b> are required. You must preview your comment first before finally posting. Email addresses are used for verification only and are <strong>not</strong> displayed with your comment.</p>
+                                    <p>
+                                        <label for="name">Name <b class="required" title="Required">*</b></label><br>
+                                        <input type="text" id="name" name="name" size="32" class="comment_name_input" required>
+                                    </p>
+                                    <p>
+                                        <label for="email">Email <b class="required" title="Required">*</b></label><br>
+                                        <input type="email" id="email" name="email" size="32" class="comment_email_input" required>
+                                    </p>
+                                    <p>
+                                        <label for="web">Website</label><br>
+                                        <input type="text" id="web" name="web" size="32" class="comment_web_input">
+                                    </p>
+                                    <p>
+                                        <input type="checkbox" id="remember" name="remember" value="1" class="checkbox active" checked>
+                                        <label for="remember">Remember</label>
+                                    </p>
+                                    <p>
+                                        <label for="message">Message <b class="required" title="Required">*</b></label><br>
+                                        <textarea id="message" name="message" cols="64" rows="4" class="txpCommentInputMessage" required></textarea>
+                                    </p>
+                                    <p>
+                                        <input type="submit" id="txpCommentPreview" name="preview" value="Preview" class="button">
+                                        <input type="submit" id="txpCommentSubmit" name="submit" value="Submit" class="button disabled" disabled>
+                                    </p>
+                                </div><!-- /.comments-wrapper -->
                             </form>
+
                         </section>
+
                     </section>
 
                 </article>
