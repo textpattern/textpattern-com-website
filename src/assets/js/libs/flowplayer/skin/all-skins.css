@@ -150,7 +150,7 @@
 .minimalist.is-loading .fp-waiting{display:block}
 .minimalist.is-loading .fp-controls,.minimalist.is-loading .fp-time{display:none}
 .minimalist.is-loading .fp-ui{background-position:-9999em}
-.minimalist.is-loading video.fp-engine{display:none}
+.minimalist.is-loading video.fp-engine{position:absolute;top:-9999em}
 .minimalist.is-seeking .fp-waiting{display:block}
 .minimalist.is-fullscreen{position:fixed !important;top:0 !important;left:0 !important;border:0 !important;margin:0 !important;width:100% !important;height:100% !important;max-width:100% !important;z-index:99999 !important;-webkit-box-shadow:0 !important;-moz-box-shadow:0 !important;box-shadow:0 !important;background-image:none !important;background-color:#333;}
 .is-rtl.minimalist.is-fullscreen{left:auto !important;right:0 !important}
@@ -379,7 +379,7 @@
 .functional.is-loading .fp-waiting{display:block}
 .functional.is-loading .fp-controls,.functional.is-loading .fp-time{display:none}
 .functional.is-loading .fp-ui{background-position:-9999em}
-.functional.is-loading video.fp-engine{display:none}
+.functional.is-loading video.fp-engine{position:absolute;top:-9999em}
 .functional.is-seeking .fp-waiting{display:block}
 .functional.is-fullscreen{position:fixed !important;top:0 !important;left:0 !important;border:0 !important;margin:0 !important;width:100% !important;height:100% !important;max-width:100% !important;z-index:99999 !important;-webkit-box-shadow:0 !important;-moz-box-shadow:0 !important;box-shadow:0 !important;background-image:none !important;background-color:#333;}
 .is-rtl.functional.is-fullscreen{left:auto !important;right:0 !important}
@@ -608,7 +608,7 @@
 .playful.is-loading .fp-waiting{display:block}
 .playful.is-loading .fp-controls,.playful.is-loading .fp-time{display:none}
 .playful.is-loading .fp-ui{background-position:-9999em}
-.playful.is-loading video.fp-engine{display:none}
+.playful.is-loading video.fp-engine{position:absolute;top:-9999em}
 .playful.is-seeking .fp-waiting{display:block}
 .playful.is-fullscreen{position:fixed !important;top:0 !important;left:0 !important;border:0 !important;margin:0 !important;width:100% !important;height:100% !important;max-width:100% !important;z-index:99999 !important;-webkit-box-shadow:0 !important;-moz-box-shadow:0 !important;box-shadow:0 !important;background-image:none !important;background-color:#333;}
 .is-rtl.playful.is-fullscreen{left:auto !important;right:0 !important}

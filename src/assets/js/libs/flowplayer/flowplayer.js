@@ -1,6 +1,6 @@
 /*!
 
-   Flowplayer v5.4.5 (Tuesday, 17. December 2013 08:34AM) | flowplayer.org/license
+   Flowplayer v5.4.6 (Tuesday, 17. December 2013 08:57PM) | flowplayer.org/license
 
 */
 !function($) { 
@@ -74,7 +74,7 @@ try {
 
 $.extend(flowplayer, {
 
-   version: '5.4.5',
+   version: '5.4.6',
 
    engine: {},
 
@@ -111,7 +111,7 @@ $.extend(flowplayer, {
 
       live: false,
 
-      swf: "//releases.flowplayer.org/5.4.5/flowplayer.swf",
+      swf: "//releases.flowplayer.org/5.4.6/flowplayer.swf",
 
       speeds: [0.25, 0.5, 1, 1.5, 2],
 
@@ -603,7 +603,7 @@ $.fn.flowplayer = function(opts, callback) {
       volume: !IS_IPAD && !IS_ANDROID && !IS_IPHONE && !IS_SILK && !IS_IPAD_CHROME,
       cachedVideoTag: !IS_IPAD && !IS_IPHONE && !IS_IPAD_CHROME && !IS_WP,
       firstframe: !IS_IPHONE && !IS_IPAD && !IS_ANDROID && !IS_SILK && !IS_IPAD_CHROME && !IS_WP && !IS_ANDROID_FIREFOX,
-      inlineVideo: !IS_IPHONE && !IS_SILK && !IS_WP && (!IS_ANDROID || ANDROID_VER >= 3),
+      inlineVideo: !IS_IPHONE && !IS_WP && (!IS_ANDROID || ANDROID_VER >= 3),
       hlsDuration: !browser.safari || IS_IPAD || IS_IPHONE || IS_IPAD_CHROME,
       seekable: !IS_IPAD && !IS_IPAD_CHROME
    });
@@ -2401,7 +2401,7 @@ if (flowplayer.support.touch || isIeMobile) {
             var originalLoad = player.load;
             player.load = function(video, callback) {
                var ret = originalLoad.apply(player, arguments);
-               player.trigger('ready', player, player.video);
+               player.trigger('ready', [player, player.video]);
                return ret;
             };
          }
@@ -2516,7 +2516,7 @@ flowplayer(function(player, root) {
          tag.append($("<source/>", { type: "video/" + src.type, src: path }));
       });
 
-      var scriptAttrs = { src: "//embed.flowplayer.org/5.4.5/embed.min.js" };
+      var scriptAttrs = { src: "//embed.flowplayer.org/5.4.6/embed.min.js" };
       if ($.isPlainObject(conf.embed)) {
          scriptAttrs['data-swf'] = conf.embed.swf;
          scriptAttrs['data-library'] = conf.embed.library;
