@@ -88,6 +88,19 @@
         }
     }
 
+    li.active a {
+        background-color: $color-selected;
+
+        &:hover,
+        &:focus {
+            background-color: darken($color-selected, 4%);
+        }
+
+        &:active {
+            background-color: $color-selecting;
+        }
+    }
+
     &.opened {
         max-height: 9999px;
     }
