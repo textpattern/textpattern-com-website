@@ -66,11 +66,16 @@
     @include grid-span(9, 4);
 }
 
-h1.masthead {
-    @include svg-graphic(branding/textpattern/textpattern, png, 320px, 52px);
-
+h1.masthead a {
     width: 320px;
     height: 52px;
+}
+
+.svg .masthead a,
+.no-svg .masthead a,
+.no-js .masthead a {
+    background-image: url(/style/Textpattern/img/branding/textpattern/textpattern.png);
+    background-size: 320px 52px;
 }
 
 /* show standard `<nav>` menu on larger screens */
