@@ -7,7 +7,6 @@
         {
             'jquery': '//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min',
             'jqueryui': '//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min',
-            'webfont' : '//ajax.googleapis.com/ajax/libs/webfont/1.4.10/webfont',
             'flowplayer': 'flowplayer/flowplayer.min'
         },
         shim:
@@ -113,18 +112,6 @@
                 });
             });
         }
-    });
-
-    // Fonts.
-
-    require(['webfont'], function ()
-    {
-        WebFont.load({
-            google:
-            {
-                families: ['PT+Serif:400,700,400italic,700italic:latin']
-            }
-        });
     });
 
     // Google+ '+1' button.
