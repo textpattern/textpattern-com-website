@@ -3,22 +3,22 @@
 
 
 /* TEAM */
-  The Textpattern Development Team
-  Site: http://textpattern.com
-  Twitter: http://twitter.com/textpattern
-  Location: Everywhere
+    The Textpattern Development Team
+    Site: http://textpattern.com
+    Twitter: http://twitter.com/textpattern
+    Location: Everywhere
 
 /* THANKS */
-  Names (& URL):
-  	Destry Wion (http://wion.com)
-  	Philipp Schilling (http://www.psgd.de)
-  	Stuart Butcher (http://thebombsite.com)
-  	Patrick Woods (http://www.hakjoon.com)
-  	Peter Moulding (http://01010.org)
+    Names (& URL):
+        Destry Wion (http://wion.com)
+        Philipp Schilling (http://www.psgd.de)
+        Stuart Butcher (http://thebombsite.com)
+        Patrick Woods (http://www.hakjoon.com)
+        Peter Moulding (http://01010.org)
 
 /* SITE */
-  Standards: HTML5, CSS3
-  Components: Textpattern CMS, jQuery, Require.js, Modernizr,
+    Standards: HTML5, CSS3
+    Components: Textpattern CMS, jQuery, Require.js, Modernizr,
         Google Code Prettify, jQuery.cookie, Responsive Nav
     Software: Node.js, Grunt.js, Bower, Composer, Compass, git,
         Panic Coda, Adobe Photoshop, Adobe Illustrator, ImageOptim,
