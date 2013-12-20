@@ -18,9 +18,14 @@
 
 /* SITE */
   Standards: HTML5, CSS3
-  Components: Textpattern CMS, jQuery, Modernizr
-  Software: Panic Coda, CodeKit, Adobe Photoshop,
-    Adobe Illustrator, ImageOptim, ImageAlpha
+  Components: Textpattern CMS, jQuery, Require.js, Modernizr,
+        Google Code Prettify, jQuery.cookie, Responsive Nav
+    Software: Node.js, Grunt.js, Bower, Composer, Compass, git,
+        Panic Coda, Adobe Photoshop, Adobe Illustrator, ImageOptim,
+        ImageAlpha, grunt-contrib-compass, grunt-contrib-copy,
+        grunt-contrib-cssmin, grunt-contrib-jshint,
+        grunt-contrib-uglify, grunt-contrib-watch, grunt-shell
+    Source: https://github.com/textpattern/textpattern-com-website
 
 
 
