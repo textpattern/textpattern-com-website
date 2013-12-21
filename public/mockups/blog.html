@@ -154,33 +154,33 @@
                             <h3>Leave a comment</h3>
 
                             <form id="txpCommentInputForm" method="post" action="#">
-                                <div class="comments-wrapper">
-                                    <p><strong>Enter your comment below.</strong> Fields marked <b class="required" title="Required">*</b> are required. You must preview your comment first before finally posting. Email addresses are used for verification only and are <strong>not</strong> displayed with your comment.</p>
-                                    <p>
-                                        <label for="name">Name <b class="required" title="Required">*</b></label><br>
-                                        <input type="text" id="name" name="name" size="32" class="comment_name_input" required>
+                                <fieldset>
+                                    <p><strong>Enter your comment below.</strong> You must preview your comment first before finally posting. Email addresses are used for verification only and are <strong>not</strong> displayed with your comment.</p>
+                                    <p class="layout--span-1-6 at-break2" style="margin:0.5em 0;">
+                                        <label for="name"><strong>Name (Required)</strong></label><br>
+                                        <input style="width:100%;max-width:24em;" type="text" id="name" name="name" size="32" class="comment_name_input" required>
                                     </p>
-                                    <p>
-                                        <label for="email">Email <b class="required" title="Required">*</b></label><br>
-                                        <input type="email" id="email" name="email" size="32" class="comment_email_input" required>
+                                    <p class="layout--span-7-12 at-break2" style="margin:0.5em 0;">
+                                        <label for="email"><strong>Email (Required)</strong></label><br>
+                                        <input style="width:100%;max-width:24em;" type="email" id="email" name="email" size="32" class="comment_email_input" required>
                                     </p>
-                                    <p>
-                                        <label for="web">Website</label><br>
-                                        <input type="text" id="web" name="web" size="32" class="comment_web_input">
+                                    <p class="layout--span-1-6 at-break2" style="margin:0.5em 0;">
+                                        <label for="web"><strong>Website</strong></label><br>
+                                        <input style="width:100%;max-width:24em;" type="text" id="web" name="web" size="32" class="comment_web_input">
                                     </p>
-                                    <p>
-                                        <input type="checkbox" id="remember" name="remember" value="1" class="checkbox active" checked>
-                                        <label for="remember">Remember</label>
-                                    </p>
-                                    <p>
-                                        <label for="message">Message <b class="required" title="Required">*</b></label><br>
+                                    <p class="layout--span-1-12" style="margin:0.5em 0;">
+                                        <label for="message"><strong>Message (Required)</strong></label><br>
                                         <textarea id="message" name="message" cols="64" rows="4" class="txpCommentInputMessage" required></textarea>
                                     </p>
-                                    <p>
+                                    <p class="layout--span-1-12">
+                                        <span style="float:right;;margin:0.5384615em 0 0.5384615em 1em;">
+                                            <input type="checkbox" id="remember" name="remember" value="1" class="checkbox active" checked>
+                                            <label for="remember">Remember</label>
+                                        </span>
                                         <input type="submit" id="txpCommentPreview" name="preview" value="Preview" class="button">
                                         <input type="submit" id="txpCommentSubmit" name="submit" value="Submit" class="button disabled" disabled>
                                     </p>
-                                </div><!-- /.comments-wrapper -->
+                                </fieldset>
                             </form>
 
                         </section>
