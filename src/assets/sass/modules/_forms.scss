@@ -98,6 +98,7 @@ textarea {
     &:focus {
         @include box-shadow(0 0 4px 2px $color-link-focus);
 
+        border-color: $color-link-focus;
         outline: 0;
     }
 }
@@ -213,34 +214,5 @@ textarea {
 
     &.large {
         height: 12em;
-    }
-}
-
-.required {
-    color: $color-error-text;
-    cursor: help;
-}
-
-/* focus fallback for browsers that don't support `box-shadow` */
-.no-boxshadow {
-    input[type="color"],
-    input[type="date"],
-    input[type="datetime"],
-    input[type="datetime-local"],
-    input[type="email"],
-    input[type="month"],
-    input[type="number"],
-    input[type="password"],
-    input[type="search"],
-    input[type="tel"],
-    input[type="text"],
-    input[type="time"],
-    input[type="url"],
-    input[type="week"],
-    select,
-    textarea {
-        &:focus {
-            outline: thin dotted $color-link-focus;
-        }
     }
 }
