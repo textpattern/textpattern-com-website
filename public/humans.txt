@@ -3,9 +3,10 @@
 
 
 /* TEAM */
-    The Textpattern Development Team
+    Developer: Team Textpattern
     Site: http://textpattern.com
     Twitter: http://twitter.com/textpattern
+    GitHub: https://github.com/textpattern
     Location: Everywhere
 
 /* THANKS */
@@ -18,13 +19,30 @@
 
 /* SITE */
     Standards: HTML5, CSS3
-    Components: Textpattern CMS, jQuery, Require.js, Modernizr,
-        Google Code Prettify, jQuery.cookie, Responsive Nav
-    Software: Node.js, Grunt.js, Bower, Composer, Compass, git,
-        Panic Coda, Adobe Photoshop, Adobe Illustrator, ImageOptim,
-        ImageAlpha, grunt-contrib-compass, grunt-contrib-copy,
-        grunt-contrib-cssmin, grunt-contrib-jshint,
-        grunt-contrib-uglify, grunt-contrib-watch, grunt-shell
+    Server: Apache, MySQL, PHP
+    Components:
+        Textpattern CMS: http://textpattern.com
+        jQuery: http://jquery.com
+        Require.js: http://requirejs.org
+        Modernizr: http://modernizr.com
+        Google Code Prettify: https://code.google.com/p/google-code-prettify/
+        jQuery.cookie: https://github.com/carhartl/jquery-cookie
+        Responsive Nav: http://responsive-nav.com
+    Software:
+        Node.js: http://nodejs.org
+        Grunt.js: http://gruntjs.com
+        Bower: http://bower.io
+        Composer: http://getcomposer.org
+        Compass: http://compass-style.org
+        git: http://git-scm.com
+        grunt-contrib-compass: https://github.com/gruntjs/grunt-contrib-compass
+        grunt-contrib-copy: https://github.com/gruntjs/grunt-contrib-copy
+        grunt-contrib-cssmin: https://github.com/gruntjs/grunt-contrib-cssmin
+        grunt-contrib-jshint: https://github.com/gruntjs/grunt-contrib-jshint
+        grunt-contrib-uglify: https://github.com/gruntjs/grunt-contrib-uglify
+        grunt-contrib-watch: https://github.com/gruntjs/grunt-contrib-watch
+        grunt-modernizr: https://github.com/Modernizr/grunt-modernizr
+        grunt-shell: https://github.com/sindresorhus/grunt-shell
     Source: https://github.com/textpattern/textpattern-com-website
 
 
