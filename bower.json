@@ -5,6 +5,7 @@
         "google-code-prettify": "1.0.0",
         "jquery.cookie": "1.4.0",
         "jquery-details": "0.1.0",
+        "modernizr": "2.7.1",
         "responsive-nav": "1.0.25",
         "requirejs": "2.1.9",
         "textpattern-branding": "*"
