@@ -11,16 +11,11 @@
     .js & {
         clip: rect(0 0 0 0);
         max-height: 0;
-        position: absolute;
         display: block;
         overflow: hidden;
 
         @include breakpoint($breakpoint-2) {
-            position: relative;
-
-            &.closed {
-                max-height: none;
-            }
+            max-height: none;
         }
     }
 
