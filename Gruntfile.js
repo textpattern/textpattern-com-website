@@ -120,7 +120,8 @@ module.exports = function (grunt) {
                         'public/assets/js/prettify.js': ['bower_components/google-code-prettify/src/prettify.js'],
                         'public/assets/js/require.js': ['bower_components/requirejs/require.js'],
                         'public/assets/js/cookie.js': ['bower_components/jquery.cookie/jquery.cookie.js'],
-                        'public/assets/js/responsivenav.js': ['bower_components/responsive-nav/responsive-nav.js']
+                        'public/assets/js/responsivenav.js': ['bower_components/responsive-nav/responsive-nav.js'],
+                        'public/assets/js/html5shiv.js': ['bower_components/html5shiv/dist/html5shiv.js']
                     },
                     {
                         expand: true,
@@ -143,7 +144,7 @@ module.exports = function (grunt) {
                 'touch'
             ],
             'extra': {
-                'shiv': true,
+                'shiv': false,
                 'printshiv': false,
                 'load': false,
                 'mq': false,
