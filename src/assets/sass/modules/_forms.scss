@@ -196,17 +196,3 @@ input {
         width: 100%;
     }
 }
-
-textarea {
-    &.small {
-        height: 4em;
-    }
-
-    &.medium {
-        height: 8em;
-    }
-
-    &.large {
-        height: 12em;
-    }
-}
