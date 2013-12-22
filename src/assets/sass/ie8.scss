@@ -76,7 +76,7 @@ h1.masthead a {
 /* show standard `<nav>` menu on larger screens */
 .nav-collapse {
     .js & {
-        position: relative;
+        max-height: none;
     }
 
     ul {
