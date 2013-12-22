@@ -118,8 +118,8 @@
     border: 1px solid $color-border;
     width: 32px;
     height: 32px;
-    background-image: url("../img/branding/misc/hamburger.svg");
-    background-size: 32px 32px;
+    background-image: url("../img/branding/misc/icon-sprite.svg");
+    background-size: 160px 32px;
 
     @include breakpoint($breakpoint-2) {
         display: none;

@@ -98,30 +98,14 @@ h1.masthead a {
 }
 
 /* PNG fallback for lack of SVG support */
-.nav-toggle {
-    background-image: url("../img/branding/misc/hamburger.png");
-}
-
-#search-form input#search-query {
-    background-image: url("../img/branding/misc/search.png");
+.nav-toggle,
+#search-form input#search-query,
+.social-channels a {
+    background-image: url("../img/branding/misc/icon-sprite.png");
 }
 
 hr {
     background-image: url("../img/com/hr.png");
-}
-
-.social-channels a {
-    &.facebook {
-        background-image: url("../img/branding/social-media/facebook.png");
-    }
-
-    &.googleplus {
-        background-image: url("../img/branding/social-media/googleplus.png");
-    }
-
-    &.twitter {
-        background-image: url("../img/branding/social-media/twitter.png");
-    }
 }
 
 

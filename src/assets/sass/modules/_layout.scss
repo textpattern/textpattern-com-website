@@ -84,8 +84,9 @@ h1.masthead {
         width: 240px;
         height: 34px;
         padding-left: 32px;
-        background: url("../img/branding/misc/search.svg") no-repeat left center;
-        background-size: 32px 32px;
+        background: url("../img/branding/misc/icon-sprite.svg") no-repeat left center;
+        background-size: 160px 32px;
+        background-position: -128px 0;
         -webkit-transition: width 0.2s linear, box-shadow 0.2s linear;
         -moz-transition: width 0.2s linear, box-shadow 0.2s linear;
         transition: width 0.2s linear, box-shadow 0.2s linear;

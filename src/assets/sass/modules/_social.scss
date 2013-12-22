@@ -15,18 +15,19 @@
         display: block;
         width: 32px;
         height: 32px;
-        background-size: 32px 32px;
+        background-image: url("../img/branding/misc/icon-sprite.svg");
+        background-size: 160px 32px;
 
         &.facebook {
-            background-image: url("../img/branding/social-media/facebook.svg");
-        }
-
-        &.googleplus {
-            background-image: url("../img/branding/social-media/googleplus.svg");
+            background-position: -32px 0;
         }
 
         &.twitter {
-            background-image: url("../img/branding/social-media/twitter.svg");
+            background-position: -64px 0;
+        }
+
+        &.googleplus {
+            background-position: -96px 0;
         }
 
         //&:hover {
