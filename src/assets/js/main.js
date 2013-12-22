@@ -38,7 +38,7 @@
         };
     });
 
-    define('growfields', ['jquery', 'autosize'], function ($)
+    require(['jquery', 'autosize'], function ($)
     {
         $('form textarea').autosize();
     });
