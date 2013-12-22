@@ -140,7 +140,6 @@ module.exports = function (grunt) {
                 'boxshadow',
                 'flexbox',
                 'rgba',
-                'svg',
                 'touch'
             ],
             'extra': {

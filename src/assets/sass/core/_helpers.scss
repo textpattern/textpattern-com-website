@@ -5,26 +5,12 @@
 @import "singularitygs";
 
 
-// SVG images with fallback for older browsers (via Modernizr)
-
-@mixin svg-graphic($imgfilename, $imgtype, $imgwidth, $imgheight) {
-    .no-svg &,
-    .no-js & {
-        background-image: url('../img/' + $imgfilename + '.' + $imgtype);
-        background-size: $imgwidth $imgheight;
-    }
-    .svg & {
-        background-image: url('../img/' + $imgfilename + '.svg');
-        background-size: $imgwidth $imgheight;
-    }
-}
-
 // higher resolution images for high resolution displays
 
 @mixin hires-graphic($hdfile, $hdtype, $hdwidth, $hdheight) {
-    $filename: $hdfile + '.' + $hdtype;
-    $hdfilename: $hdfile + '@2x.' + $hdtype;
-    background-image: url('../img/' + $filename);
+    $filename: $hdfile + "." + $hdtype;
+    $hdfilename: $hdfile + "@2x." + $hdtype;
+    background-image: url("../img/" + $filename);
     background-size: $hdwidth $hdheight;
     @media print,
         (-webkit-min-device-pixel-ratio: 2),
@@ -33,7 +19,7 @@
         (min-device-pixel-ratio: 2),
         (min-resolution: 192dpi),
         (min-resolution: 2dppx) {
-        background-image: url('../img/' + $hdfilename) !important;
+        background-image: url("../img/" + $hdfilename) !important;
     }
 }
 
