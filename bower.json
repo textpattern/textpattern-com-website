@@ -4,9 +4,9 @@
     "dependencies": {
         "google-code-prettify": "1.0.0",
         "html5shiv": "3.7.0",
+        "jquery-autosize": "1.18.1",
         "jquery.cookie": "1.4.0",
         "jquery-details": "0.1.0",
-        "modernizr": "2.7.1",
         "responsive-nav": "1.0.25",
         "requirejs": "2.1.9",
         "textpattern-branding": "*"
