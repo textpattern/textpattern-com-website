@@ -97,8 +97,11 @@ h1.masthead a {
     }
 }
 
+.nav-toggle {
+    display: none;
+}
+
 /* PNG fallback for lack of SVG support */
-.nav-toggle,
 #search-form input#search-query,
 .social-channels a {
     background-image: url("../img/branding/misc/icon-sprite.png");
