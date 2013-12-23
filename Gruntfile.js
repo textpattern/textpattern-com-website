@@ -87,8 +87,7 @@ module.exports = function (grunt) {
                     require: true,
                     requirejs: true,
                     responsiveNav: true,
-                    prettyPrint: true,
-                    WebFont: true
+                    prettyPrint: true
                 }
             }
         },
