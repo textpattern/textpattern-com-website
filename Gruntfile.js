@@ -107,7 +107,6 @@ module.exports = function (grunt) {
         uglify: {
             dist: {
                 options: {
-                    mangle: false,
                     preserveComments: 'some'
                 },
 
