@@ -192,7 +192,7 @@ Redirect permanent /forum http://forum.textpattern.com
 # ------------------------------------------------------------------------------
 
 Redirect temp /@textpattern https://twitter.com/textpattern
-Redirect temp /+ https://plus.google.com/u/0/communities/111366418300163664690
+Redirect temp /+ https://plus.google.com/communities/111366418300163664690
 Redirect temp /facebook https://www.facebook.com/groups/textpattern/
 
 # ------------------------------------------------------------------------------
