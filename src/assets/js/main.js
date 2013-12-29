@@ -133,26 +133,6 @@
         }
     });
 
-    // Google+ '+1' button.
-
-    require(['jquery'], function ($)
-    {
-        if ($('.g-plusone').length)
-        {
-            require(['//apis.google.com/js/plusone.js']);
-        }
-    });
-
-    // Twitter 'Tweet' button.
-
-    require(['jquery'], function ($)
-    {
-        if ($('.twitter-share-button').length)
-        {
-            require(['//platform.twitter.com/widgets.js']);
-        }
-    });
-
     require(['track'], function(track)
     {
         if (track.allow) {
