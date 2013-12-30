@@ -44,14 +44,11 @@
         };
     });
 
-    require(['jquery', 'autosize'], function ($)
-    {
-        $('form textarea').autosize();
-    });
-
     require(['jquery'], function ($)
     {
-        var details = $('details'), code = $('pre code');
+        var details = $('details'),
+            code = $('pre code'),
+            fields = $('form textarea');
 
         // Details polyfill.
 
@@ -73,6 +70,15 @@
             require(['prettify'], function ()
             {
                 prettyPrint();
+            });
+        }
+
+        // Auto-growing textareas.
+
+        if (fields.length) {
+            require(['autosize'], function ()
+            {
+                fields.autosize();
             });
         }
     });
