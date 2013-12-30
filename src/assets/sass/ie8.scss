@@ -101,6 +101,11 @@ h1.masthead a {
     display: none;
 }
 
+/* fallback for lack of box-shadow support */
+.a--img:focus {
+    outline: thin dotted $color-link-focus;
+}
+
 /* PNG fallback for lack of SVG support */
 #search-form input#search-query,
 .social-channels a {
