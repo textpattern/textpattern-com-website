@@ -44,7 +44,7 @@ footer a {
 /* images as links */
 .a--img {
     img {
-        @include transition(box-shadow 0.2s linear);
+        @include transition(box-shadow 0.1s linear);
 
     }
 

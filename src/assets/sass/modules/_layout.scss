@@ -80,6 +80,7 @@ h1.masthead {
     // search input field
     input#search-query {
         @include border-radius;
+        @include transition(width 0.2s linear, box-shadow 0.1s linear);
 
         width: 240px;
         height: 34px;
@@ -87,9 +88,6 @@ h1.masthead {
         background: url("../img/branding/misc/icon-sprite.svg") no-repeat left center;
         background-size: 160px 32px;
         background-position: -128px 0;
-        -webkit-transition: width 0.2s linear, box-shadow 0.2s linear;
-        -moz-transition: width 0.2s linear, box-shadow 0.2s linear;
-        transition: width 0.2s linear, box-shadow 0.2s linear;
 
         @include breakpoint(max-width $breakpoint-2) {
             @include input-placeholder {
