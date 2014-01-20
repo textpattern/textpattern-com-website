@@ -31,11 +31,16 @@ summary {
     }
 }
 
-/* address `[hidden]` styling not present in IE8-9.
+/* address `[hidden]` styling not present in IE8-9
    hide the `template` element in IE, Safari, and Firefox < 22 */
 [hidden],
 template {
     display: none;
+}
+
+/* set correct display for `progress` in IE8-9 */
+progress {
+    display: inline-block;
 }
 
 /* remove tap delay in IE10+ */
