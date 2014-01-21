@@ -34,6 +34,7 @@ span.button {
     @include adjust-font-size-to(13px, 0.8);
 
     margin: 0; // address margins set differently in Firefox4+, Safari5+ and Chrome
+    max-width: 100%; // prevent elements from spilling out of their parent
     font-family: $font-sans-serif;
     vertical-align: baseline;
 }
