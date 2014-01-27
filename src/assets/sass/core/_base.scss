@@ -38,9 +38,11 @@ template {
     display: none;
 }
 
-/* set correct display for `progress` in IE8-9 */
+/* set correct display for `progress` in IE8-9
+   improve vertical alignment of `progress` in Chrome, Firefox, and Opera */
 progress {
     display: inline-block;
+    vertical-align: baseline;
 }
 
 /* remove tap delay in IE10+ */
