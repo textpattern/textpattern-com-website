@@ -49,9 +49,9 @@ h1.masthead {
         background-image: url("../img/branding/textpattern/textpattern-mobile.svg");
         background-size: 208px 34px;
 
-        //&:hover {
-            //@include filter(brightness(1.1));
-        //}
+        &:hover {
+            @include filter(#{"brightness(1.1)"}); // temporary workaround for Sass/Compass bug when using @include filter(brightness(1.1));
+        }
 
         @include breakpoint($breakpoint-2) {
             width: 320px;

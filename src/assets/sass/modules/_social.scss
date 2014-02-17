@@ -31,8 +31,8 @@
             background-position: -96px 0;
         }
 
-        //&:hover {
-            //@include filter(brightness(1.1));
-        //}
+        &:hover {
+            @include filter(#{"brightness(1.1)"}); // temporary workaround for Sass/Compass bug when using @include filter(brightness(1.1));
+        }
     }
 }
