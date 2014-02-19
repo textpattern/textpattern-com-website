@@ -33,7 +33,7 @@ span.button {
     font-size: 100%;
     @include adjust-font-size-to(13px, 0.8);
 
-    margin: 0; // address margins set differently in Firefox4+, Safari5+ and Chrome
+    margin: 0; // address margins set differently in Firefox 4+, Safari 5+, Chrome
     max-width: 100%; // prevent elements from spilling out of their parent
     font-family: $font-sans-serif;
     vertical-align: baseline;
@@ -54,7 +54,7 @@ input::-moz-focus-inner {
     padding: 0;
 }
 
-/* remove inner padding and search cancel button in Safari5+ and Chrome on OS X */
+/* remove inner padding and search cancel button in Safari 5+ and Chrome on OS X */
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-decoration {
     -webkit-appearance: none;
@@ -109,13 +109,13 @@ input[type="number"]::-webkit-outer-spin-button {
     height: auto;
 }
 
-/* address box sizing set to `content-box` and excess padding in IE8-9 */
+/* address box sizing set to `content-box` and excess padding in IE 8-9 */
 input[type="checkbox"],
 input[type="radio"] {
     padding: 0;
 }
 
-/* address inconsistent `text-transform` inheritance for `select` in Firefox 4+ and Opera */
+/* address inconsistent `text-transform` inheritance for `select` in Firefox 4+ */
 select {
     text-transform: none;
 }
@@ -130,7 +130,7 @@ select[size="1"] {
     height: 2.4615384em; // 32px / 13px
 }
 
-/* address `<select>` alignment in Safari/Chrome */
+/* address `<select>` alignment in Safari, Chrome */
 @media (-webkit-min-device-pixel-ratio: 0) {
 
     select[size],
@@ -164,7 +164,7 @@ optgroup {
 textarea {
     height: auto;
     min-height: 3em;
-    overflow: auto; // remove default vertical scrollbar in IE8-9
+    overflow: auto; // remove default vertical scrollbar in IE 8-11
     resize: vertical;
     width: 100%;
 }

@@ -145,6 +145,11 @@ footer {
     position: relative;
 }
 
+/* prevent really, really long words from breaking layout */
+article {
+    word-wrap: break-word;
+}
+
 .legal {
     @include adjust-font-size-to(11px, 0.85);
 }

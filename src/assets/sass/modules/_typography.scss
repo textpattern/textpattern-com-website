@@ -55,7 +55,7 @@ h6 {
     margin: rhythm(1, 20px) 0;
 }
 
-/* address style set to `bolder` in Firefox4+, Safari5, and Chrome */
+/* address style set to `bolder` in Firefox 4+, Safari, Chrome */
 b,
 strong {
     font-weight: bold;
@@ -71,12 +71,12 @@ blockquote {
     padding: 0 0 0 1em;
 }
 
-/* address styling not present in Safari5 and Chrome */
+/* address styling not present in Safari, Chrome */
 dfn {
     font-style: italic;
 }
 
-/* address styling not present in IE8-9, Safari5, Chrome */
+/* address styling not present in IE 8-9, Safari5, Chrome */
 abbr[title],
 dfn[title] {
     border-bottom: dotted 1px;
