@@ -1,7 +1,10 @@
 // import all Compass core mixins
 @import "compass";
 
-// import Singularity Grid System (includes Breakpoint module)
+// import Breakpoint
+@import "breakpoint";
+
+// import Singularity Grid System
 @import "singularitygs";
 
 
