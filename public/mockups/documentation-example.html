@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+<head>
+    <meta charset="utf-8">
+    <title>Article custom | Textpattern CMS Documentation</title>
+    <meta name="description" content="">
+    <meta name="generator" content="Textpattern CMS">
+    <meta name="robots" content="index, follow, noodp, noydir">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="application-name" content="Textpattern CMS">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="mstile-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="../apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="../apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="../apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="../apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../apple-touch-icon-144x144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../apple-touch-icon-114x114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../apple-touch-icon-72x72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../apple-touch-icon-precomposed.png">
+    <link rel="icon" sizes="196x196" href="../favicon-196x196.png">
+    <link rel="icon" sizes="96x96" href="../favicon-96x96.png">
+    <link rel="icon" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" sizes="16x16" href="../favicon-16x16.png">
+
+<!-- CSS -->
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,700,400italic,700italic">
+    <link rel="stylesheet" href="../assets/css/main.css">
+
+<!-- Fix IE8 -->
+    <!--[if lt IE 9]>
+        <script src="../assets/js/html5shiv.js"></script>
+        <link rel="stylesheet" href="../assets/css/ie8.css">
+    <![endif]-->
+</head>
+
+<body>
+    <div class="wrapper">
+
+
+<!-- Header -->
+        <header role="banner" itemscope itemtype="http://schema.org/Organization">
+            <h1 itemprop="name" class="masthead"><a rel="home" itemprop="url" href="/" title="Go to the Textpattern homepage">Textpattern CMS</a></h1>
+
+            <form id="search-form" role="search" method="get" action="#">
+                <input id="search-query" type="search" size="32" placeholder="Search Textpattern.com…">
+            </form>
+        </header>
+
+
+<!-- Navigation -->
+        <div class="nav-container">
+            <nav role="navigation" class="nav-collapse" aria-label="Site navigation">
+                <ul>
+                    <li><a href="http://textpattern.com/start">Get started</a></li>
+                    <li class="active"><a href="http://textpattern.net/">Documentation</a></li>
+                    <li><a href="http://textpattern.com/themes">Themes</a></li>
+                    <li><a href="http://textpattern.org/">Plugins</a></li>
+                    <li><a href="http://forum.textpattern.com/">Forum</a></li>
+                    <li><a href="http://textpattern.com/weblog">Blog</a></li>
+                    <li><a href="http://textpattern.com/about">About</a></li>
+                </ul>
+            </nav>
+        </div>
+
+
+<!-- Primary Content -->
+        <div class="container">
+            <main role="main" itemscope itemtype="http://schema.org/Blog" aria-label="Main content">
+
+                <article role="article" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting" class="layout--span-1-8">
+                    <h1 itemprop="name headline">Article custom</h1>
+
+                    <div itemprop="articleBody">
+                        <h2>Syntax</h2>
+                        <pre><code>&lt;txp:article_custom /&gt;</code></pre>
+                        <p>The <strong>article_custom</strong> tag is a <em>single</em> or a <em>container</em> tag that provides a variety of custom options for sorting, selecting, and displaying articles (the tag will be replaced with one or more articles).</p>
+                        <p>If used as a container, it must be specified as an opening and closing pair of tags, like this:</p>
+                        <pre><code>&lt;txp:article_custom&gt;
+    ...contained statements...
+&lt;/txp:article_custom&gt;</code></pre>
+                        <p>This is equivalent to putting the contained statements into a form named ‘my_form’ and using <code>&lt;txp:article_custom form=&quot;my_form&quot; /&gt;</code>.</p>
+                        <p>Unlike the <a href="http://www.textpattern.dev/article.textile">article</a> tag, <code>&lt;txp:article_custom&gt;</code> will always return an article list and <strong>is not context-sensitive</strong>. This means while the <a href="http://www.textpattern.dev/article.textile">article</a> tag can only see posts within the currently viewed section/category/author and so forth, <code>&lt;txp:article_custom /&gt;</code> can see all posts from all sections, categories and authors unless you restrict it via attributes (see below), thus context-sensitive navigation tags, such as <a href="http://www.textpattern.dev/older.textile">older</a> and <a href="http://www.textpattern.dev/newer.textile">newer</a>, will not work.</p>
+                        <p><code>&lt;txp:article_custom /&gt;</code> offers many additional attributes that <code>&lt;txp:article /&gt;</code> does not.. but only <code>&lt;txp:article /&gt;</code> will produce the full single article page. If you have only <code>&lt;txp:article_custom /&gt;</code> on a page, rather than <code>&lt;txp:article /&gt;</code>, then you will never reach the permalinked article page &#8211; you&#8217;ll always get an article list page.</p>
+                        <p>However, you can have the added features and functionality of <code>&lt;txp:article_custom /&gt;</code>, while keeping the necessary <code>&lt;txp:article /&gt;</code> in full force by using conditionals: <code>&lt;txp:if_individual_article&gt;</code> and <code>&lt;txp:if_article_list&gt;</code>, e.g.:</p>
+                        <pre><code>&lt;txp:if_article_list&gt;
+    &lt;txp:article_custom form=&quot;myform&quot; limit=&quot;10&quot; category=&quot;ideas&quot; section=&quot;article&quot; sortby=&quot;Posted&quot; sortdir=&quot;desc&quot; /&gt;
+&lt;/txp:if_article_list&gt;</code>
+<code>&lt;txp:if_individual_article&gt;
+    &lt;txp:article /&gt;
+&lt;/txp:if_individual_article&gt;
+</code></pre>
+                        <h2>Attributes</h2>
+                        <p>Tag will accept the following attributes (<strong>case-sensitive</strong>):</p>
+                        <dl>
+                        	<dt>[[allowoverride]]=&quot;boolean&quot;</dt>
+                        	<dd>Whether to use override forms for the generated article list.</dd>
+                        	<dd>Values: <code>0</code> (no) or <code>1</code> (yes).</dd>
+                        	<dd>Default: <code>0</code>.</dd>
+                        	<dt>[[author]]=&quot;author name&quot;</dt>
+                        	<dd>Restrict to articles by specified author(s) <strong>login name</strong>.</dd>
+                        	<dd>Values: (comma separated list of) author login name(s).</dd>
+                        	<dd>Default: unset, retrieves from all authors.</dd>
+                        	<dt>[[category]]=&quot;category name&quot;</dt>
+                        	<dd>Restrict to articles from specified category/categories. Note: the category names may be different to the title you typed when you created the category, as the names are sanitised for <span class="caps">URL</span> use. Check the [[Categories page]] to ensure you are using the correct names.</dd>
+                        	<dd>Values: (comma separated list of) category name(s).</dd>
+                        	<dd>Default: unset, retrieves from all categories.</dd>
+                        	<dt>[[customfieldname]]=&quot;value&quot;</dt>
+                        	<dd>Restrict to articles with specified value for specified custom field name. Replace <em>customfieldname</em> with the actual name of the custom field.</dd>
+                        	<dd><strong>Important:</strong> Using dashes <code>-</code> or spaces may cause errors or render this feature ineffectual. Underscores in both custom field names and values are confirmed to work.</dd>
+                        	<dd>Default: unset.</dd>
+                        	<dt>[[excerpted]]=&quot;y&quot;</dt>
+                        	<dd>Restrict to articles with/without an excerpt.</dd>
+                        	<dd>Values: <code>0</code> (no, return all) or <code>1</code> (yes return only those containing an excerpt).</dd>
+                        	<dd>Default: <code>0</code>.</dd>
+                        	<dt>[[expired]]=&quot;boolean&quot;</dt>
+                        	<dd>Whether to include articles that have expired or not.</dd>
+                        	<dd>Values: <code>0</code> (no, don&#8217;t include expired articles) or <code>1</code> (yes, include expired articles).</dd>
+                        	<dd>Default: Setting of preference ‘Publish expired articles’.</dd>
+                        	<dt>[[form]]=&quot;form name&quot;</dt>
+                        	<dd>Use specified form.</dd>
+                        	<dd>Default: <code>default</code>.</dd>
+                        	<dt>[[id]]=&quot;article ID&quot;</dt>
+                        	<dd>Display the specific article or list of articles (each ID separated by a comma).</dd>
+                        	<dd><strong>Important:</strong> When a list is supplied, this does <strong>not</strong> imply a sort order (see <strong>Example 6</strong> below).</dd>
+                        	<dd>Default: unset.</dd>
+                        	<dt>[[keywords]]=&quot;keyword(s)&quot;</dt>
+                        	<dd>Restrict to articles with specified keyword(s).</dd>
+                        	<dd>Default: unset.</dd>
+                        	<dt>[[limit]]=&quot;integer&quot;</dt>
+                        	<dd>The number of articles to display.</dd>
+                        	<dd>Default: <code>10</code>.</dd>
+                        	<dt>[[month]]=&quot;yyyy&quot;/&quot;yyyy-mm&quot;/&quot;yyyy-mm-dd&quot;</dt>
+                        	<dd>Restrict to articles posted within the specified year/month/day.</dd>
+                        	<dd>Default: unset.</dd>
+                        	<dt>[[offset]]=&quot;integer&quot;</dt>
+                        	<dd>The number of articles to skip.</dd>
+                        	<dd>Default: <code>0</code>.</dd>
+                        	<dt>[[section]]=&quot;section name&quot;</dt>
+                        	<dd>Restrict to articles from specified section(s).</dd>
+                        	<dd>Values: (comma separated list of) section name(s).</dd>
+                        	<dd>Default: unset, retrieves from all sections.</dd>
+                        	<dt>[[sort]]=&quot;sort value(s)&quot;</dt>
+                        	<dd>How to sort resulting list.</dd>
+                        	<dd>Values:
+                        	    <dl>
+                        			<dd><code>AuthorID</code> (author name).</dd>
+                        			<dd><code>Category1</code>.</dd>
+                        			<dd><code>Category2</code>.</dd>
+                        			<dd><code>comments_count</code>.</dd>
+                        			<dd><code>custom_1&amp;</code> through <code>custom_10</code> (from Textpattern 4.2.0 onwards: <code>custom_n</code> where ‘n’ is the number of your custom field &#8211; for numeric values use <code>(custom_n+0)</code>).</dd>
+                        			<dd><code>Expires</code> (expiry date).</dd>
+                        			<dd><code>ID</code> (article id#).</dd>
+                        			<dd><code>Image</code> (article image id#).</dd>
+                        			<dd><code>Keywords</code>.</dd>
+                        			<dd><code>LastMod</code> (date last modified).</dd>
+                        			<dd><code>LastModID</code> (author name of last modification).</dd>
+                        			<dd><code>Posted</code> (date posted).</dd>
+                        			<dd><code>rand()</code> (<a href="http://dev.mysql.com/doc/refman/5.0/en/mathematical-functions.html#function_rand">random</a>).</dd>
+                        			<dd><code>Section</code>.</dd>
+                        			<dd><code>Status</code>.</dd>
+                        			<dd><code>Title</code>.</dd>
+                        			<dd><code>url_title</code>.</dd>
+                        			<dd>Each field in the <code>textpattern</code> database table can be used as a sort key.</dd>
+                                </dl>
+                            </dd>
+                    		<dd>Default: <code>Posted desc</code>.</dd>
+                    		<dt>[[status]]=&quot;status&quot;</dt>
+                    		<dd>Restrict to articles with the specified <code>status</code>.</dd>
+                    		<dd>Values: <code>live</code> or <code>sticky</code>.</dd>
+                    		<dd>Default: <code>live</code>.</dd>
+                    		<dt>[[time]]=&quot;time&quot;</dt>
+                    		<dd>Restrict to articles posted within specified timeframe.</dd>
+                    		<dd>Values: <code>past</code>, <code>future</code> or <code>any</code> (both <code>past</code> and <code>future</code>).</dd>
+                    		<dd>Default: <code>past</code>.</dd>
+                    	</dl>
+                        <h3>Common presentational attributes</h3>
+                        <p>These attributes, which affect presentation, are shared by many tags. Note that default values can vary among tags.</p>
+                    	<dl>
+                    		<dt>[[break]]=&quot;value&quot;</dt>
+                    		<dd>Where value is an <span class="caps">HTML</span> element (e.g., <code>break=&quot;li&quot;</code>) or some string to separate list items.</dd>
+                    		<dd>Default: <code>br</code> (but see [[break cross-reference]] for exceptions).</dd>
+                    		<dt>[[class]]=&quot;name&quot;</dt>
+                    		<dd><span class="caps">HTML</span> <code>class</code> to apply to the <code>wraptag</code> attribute value.</dd>
+                    		<dd>Default: tag name or unset (see [[class cross-reference]]).</dd>
+                    		<dt>[[label]]=&quot;text&quot;</dt>
+                    		<dd>Label prepended to item.</dd>
+                    		<dd>Default: unset (but see [[label cross-reference]] for exceptions).</dd>
+                    		<dt>[[labeltag]]=&quot;element&quot;</dt>
+                    		<dd><span class="caps">HTML</span> element to wrap (markup) label (e.g., <code>labeltag=&quot;h3&quot;</code>).</dd>
+                    		<dd>Default: unset.</dd>
+                    		<dt>[[wraptag]]=&quot;element&quot;</dt>
+                    		<dd><span class="caps">HTML</span> element to wrap (markup) list block (e.g., <code>wraptag=&quot;ul&quot;</code>).</dd>
+                    		<dd>Default: unset (but see [[wraptag cross-reference]] for exceptions).</dd>
+                    	</dl>
+                        <h2>Examples</h2>
+                        <h3>Example 1: Display 5 articles from a specific section on the homepage</h3>
+                        <p>To show 5 articles from a ‘news’ section within the homepage <code>default</code> page template (or the template you use for displaying your homepage), add:</p>
+                        <pre><code>&lt;txp:article_custom section=&quot;news&quot; limit=&quot;5&quot; form=&quot;homepage_articles&quot; /&gt;</code></pre>
+                        <p>Then create an ‘article’ type form template called <code>homepage_articles</code>, containing:</p>
+                        <pre><code>&lt;article&gt;
+    &lt;h1&gt;
+        &lt;txp:title /&gt;
+    &lt;/h1&gt;
+    &lt;txp:if_article_image&gt;
+        &lt;p&gt;
+            &lt;txp:article_image /&gt;
+        &lt;/p&gt;
+    &lt;/txp:if_article_image&gt;
+    &lt;txp:body /&gt;
+&lt;/article&gt;</code></pre>
+                        <p>Other tags used: <a href="http://www.textpattern.dev/article-image.textile">article_image</a>, <a href="http://www.textpattern.dev/body.textile">body</a>, <a href="http://www.textpattern.dev/if-article-image.textile">if_article_image</a>, <a href="http://www.textpattern.dev/title.textile">title</a>.</p>
+                        <h3>Example 2: List articles published in specified month</h3>
+                        <pre><code>&lt;txp:article_custom form=&quot;month_list&quot; sort=&quot;Section asc&quot; month=&quot;2004-14&quot; /&gt;</code></pre>
+                        <p>This code will display a monthly list articles by section and in ascending order, between the years of 2004 and 2014. See <strong>Example 5</strong> below for more information on article sorting.</p>
+                        <h3>Example 3: Select by keyword</h3>
+                        <pre><code>&lt;txp:article_custom sort=&quot;Posted desc&quot; keywords=&quot;One&quot; /&gt;</code></pre>
+                        <p>This code will display articles that have a keyword with a value <code>One</code>.</p>
+                        <h3>Example 4a: Select by author (using single tag)</h3>
+                        <pre><code>&lt;txp:article_custom form=&quot;author_list&quot; author=&quot;Parkling&quot; /&gt;</code></pre>
+                        <p>This code will display articles that have a authored by author with login name of <code>Parkling</code>. The referenced <code>author_list</code> article form might go thus:</p>
+                        <pre><code>&lt;p&gt;
+    &lt;txp:permlink&gt;
+        &lt;txp:title /&gt;
+    &lt;/txp:permlink&gt;
+&lt;/p&gt;</code></pre>
+                        <p>Other tags used: <a href="http://www.textpattern.dev/permlink.textile">permlink</a>, <a href="http://www.textpattern.dev/title.textile">title</a>.</p>
+                        <h3>Example 4b: Select by author (using container tag)</h3>
+                        <pre><code>&lt;txp:article_custom author=&quot;Parkling&quot;&gt;
+    &lt;p&gt;
+        &lt;txp:permlink&gt;
+            &lt;txp:title /&gt;
+        &lt;/txp:permlink&gt;
+    &lt;/p&gt;
+&lt;/txp:article_custom&gt;</code></pre>
+                        <p>This is exactly equivalent to <strong>Example 3a</strong>, just using a container tag instead of a single tag with referenced form.</p>
+                        <p>Other tags used: <a href="http://www.textpattern.dev/permlink.textile">permlink</a>, <a href="http://www.textpattern.dev/title.textile">title</a>.</p>
+                        <h3>Example 5: Combined with custom fields</h3>
+                        <pre><code>&lt;txp:article_custom colour=&quot;red&quot; /&gt;</code></pre>
+                        <p>This code will display articles that have a custom field named <code>colour</code> with a value <code>red</code>.</p>
+                        <h3>Example 6: Article sorting</h3>
+                        <pre><code>&lt;txp:article_custom sort=&quot;AuthorID asc, Posted asc&quot; /&gt;</code></pre>
+                        <p>Uses the <code>sort</code> attribute to define values by which to order article output. In this case two values are declared. <code>AuthorID asc</code> first orders articles alphabetically by author names, then <code>Posted desc</code> orders them by date published (<code>desc</code> meaning newest to oldest).</p>
+                        <p>Why might you do it? Sorting is a powerful way to group articles (e.g., by author), and/or give priority to articles most recently published (typically better for your website visitors).</p>
+                        <h3>Example 7: Select by article ID(s)</h3>
+                        <pre><code>&lt;txp:article_custom id=&quot;81,73&quot; /&gt;</code></pre>
+                        <p>Outputs articles specified by list of IDs, in this example that would be articles <code>81</code> and <code>73</code>. Order of articles may not match the order of the IDs in the list, that depends on what <code>sort</code> ordering you have specified, for example:</p>
+                        <pre><code>&lt;txp:article_custom id=&quot;81,73&quot; sort=&quot;field(id,81,73)&quot; /&gt;</code></pre>
+                        <p>Outputs articles specified by list of IDs, in the order given in the <code>sort</code> field.</p>
+                        <h2>Genealogy</h2>
+                        <h3>Version 4.5.0</h3>
+                        <p><code>expired</code> attribute added.</p>
+                        <h3>Version 4.0.7</h3>
+                        <p>
+                            Can be used as a container tag.<br />
+                            <code>id</code> attribute can take a comma-separated list of IDs.<br />
+                            <code>wraptag</code> and <code>break</code> attributes added.
+                        </p>
+                        <h3>Version 4.0.6</h3>
+                        <p>Support added for comma separated lists for <code>section</code>, <code>category</code> and <code>author</code> attributes.</p>
+                        <h3>Version 4.0.4</h3>
+                        <p>
+                            <code>listform</code> attribute deprecated (it never made a difference to article_custom anyway).<br>
+                            <code>sort</code> attribute added (replaces <code>sortby</code> and <code>sortdir</code> attributes).<br>
+                            <code>sortby</code> and <code>sortdir</code> attributes deprecated.
+                        </p>
+
+                    </div><!-- /itemprop="articleBody" -->
+                </article>
+
+            </main>
+        </div><!-- /.container -->
+
+
+    </div><!-- /.wrapper -->
+
+
+<!-- Secondary Content -->
+    <div role="complementary" class="container">
+
+
+        <div class="layout--span-1-8">
+            <section role="region" class="layout--span-1-6 at-break2">
+                <h4>Social channels</h4>
+                <ul class="social-channels">
+                    <li><a rel="external" class="facebook" href="http://textpattern.com/facebook" title="Follow us on Facebook+">Facebook</a></li>
+                    <li><a rel="external" class="twitter" href="http://textpattern.com/@textpattern" title="Follow us on Twitter">Twitter</a></li>
+                    <li><a rel="external" class="googleplus" href="http://textpattern.com/+" title="Follow us on Google+">Google+</a></li>
+                </ul>
+                <h4>Donate</h4>
+                <p>Your kind donations help us keep Textpattern CMS development alive!</p>
+                <p><a class="button button-donate" href="http://textpattern.com/patrons">Donate…</a></p>
+            </section>
+            <section role="region" class="layout--span-7-12 at-break2 community-details">
+                <h4>External links</h4>
+                <ul class="community-links">
+                    <li><a rel="external" href="https://github.com/textpattern">Textpattern on GitHub</a></li>
+                    <li><a rel="external" href="https://github.com/textile">Textile on GitHub</a></li>
+                    <li><a rel="external" href="http://txpmag.com/">TXP Magazine</a></li>
+                    <li><a rel="external" href="http://txptips.com/">TXP Tips</a></li>
+                    <li><a rel="external" href="http://txplanet.net/">Textpattern Planet</a></li>
+                    <li><a rel="external" href="http://textpattern.ru/">Textpattern.ru</a></li>
+                    <li><a rel="external" href="http://welovetxp.com/">We love Textpattern</a></li>
+                </ul>
+            </section>
+        </div>
+
+
+        <section role="region" class="layout--span-9-12 host-details">
+            <h4 class="accessibility">Host details</h4>
+            <p><img class="svg" src="../assets/img/branding/textpattern-network/textpattern-network-white.svg" alt="Textpattern Network"></p>
+            <p>
+                <small>
+                    Kindly hosted by<br>
+                    <a rel="external" class="joyent" href="http://joyent.com/" title="Go to the Joyent website"><img class="svg" src="../assets/img/branding/misc/joyent-inverse.png" alt="Joyent"></a>
+                </small>
+            </p>
+        </section>
+
+    </div><!-- /role="complementary" -->
+
+
+<!-- Footer -->
+    <footer role="contentinfo">
+        <p class="legal">
+            Copyright 2004–2013 The Textpattern Development Team.
+            <a href="http://textpattern.com/contact">Contact us</a>.
+            <a href="http://textpattern.com/privacy">Privacy</a>.
+            <a href="http://textpattern.com/humans.txt">Colophon</a>.
+            Textpattern is both free and open source. <a href="http://textpattern.com/license">GPLv2 license</a>.
+        </p>
+    </footer>
+
+
+<!-- JavaScript -->
+    <script data-main="../assets/js/main.js" src="../assets/js/require.js"></script>
+
+
+</body>
+</html>
