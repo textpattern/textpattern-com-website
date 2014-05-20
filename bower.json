@@ -3,12 +3,12 @@
     "directory": "bower_components",
     "dependencies": {
         "google-code-prettify": "1.0.1",
-        "html5shiv": "3.7.0",
-        "jquery-autosize": "1.18.1",
-        "jquery.cookie": "1.4.0",
+        "html5shiv": "3.7.2",
+        "jquery-autosize": "1.18.7",
+        "jquery.cookie": "1.4.1",
         "jquery-details": "0.1.0",
         "responsive-nav": "1.0.25",
-        "requirejs": "2.1.9",
+        "requirejs": "2.1.11",
         "textpattern-branding": "*"
     }
 }
