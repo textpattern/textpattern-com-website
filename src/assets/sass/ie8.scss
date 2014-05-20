@@ -101,12 +101,24 @@ h1.masthead a {
     display: none;
 }
 
-/* fallback for lack of box-shadow support */
+
+
+/* ==========================================================================
+   Fallbacks for unsupported browser features
+   ========================================================================== */
+
+/**
+ * Fallback for lack of `box-shadow` support.
+ */
+
 .a--img:focus {
     outline: thin dotted $color-link-focus;
 }
 
-/* PNG fallback for lack of SVG support */
+/**
+ * PNG fallback for lack of SVG support.
+ */
+
 #search-form input#search-query,
 .social-channels a {
     background-image: url("../img/branding/misc/icon-sprite.png");
@@ -119,7 +131,7 @@ hr {
 
 
 /* ==========================================================================
-   jQuery UI opacity support
+   jQuery UI support
    ========================================================================== */
 
 .ui-helper-zfix {
