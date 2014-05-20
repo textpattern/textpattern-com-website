@@ -40,7 +40,7 @@ $gutters: add-gutter(0.5);
 .layout--span-4-12,
 .nested {
     @include grid-span(12, 1);
-    @include box-sizing;
+    @include box-sizing(border-box);
 
     clear: both;
 }
