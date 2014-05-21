@@ -48,22 +48,3 @@
         }
     }
 }
-
-/**
- * Add margin to left of inline Twitter 'Tweet' buttons.
- */
-
-.twitter-tweet-button {
-    margin-left: 1em;
-}
-
-/**
- * Normalise Facebook 'Like' buttons for inline use.
- */
-
-.facebook-like-button {
-    margin-left: 1em;
-    border: 0;
-    height: 20px;
-    overflow: hidden;
-}
