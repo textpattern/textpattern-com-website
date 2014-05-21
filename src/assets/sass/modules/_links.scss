@@ -12,7 +12,7 @@
 a {
     text-decoration: none; /* 1 */
     text-decoration-skip: ink edges; /* 2 */
-    color: $color-link;
+    color: $color-link; /* 3 */
     background: transparent; /* 4 */
 }
 
