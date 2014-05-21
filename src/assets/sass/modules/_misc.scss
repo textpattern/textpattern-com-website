@@ -1,7 +1,15 @@
 /* Miscellenaeous
    ========================================================================== */
 
-/* AJAX spinners */
+/**
+ * AJAX spinners.
+ *
+ * Example HTML:
+ *
+ * <span class="spinner"></span>
+ * <span class="spinner inverse"></span>
+ */
+
 span.spinner {
     @include hires-graphic(branding/misc/spinner, gif, 16px, 16px);
 
@@ -14,7 +22,14 @@ span.spinner {
     }
 }
 
-/* hide text but still allow screen reader access */
+/**
+ * Hide text but still allow screen reader access.
+ *
+ * Example HTML:
+ *
+ * <h1 class="accessibility">
+ */
+
 .accessibility {
     position: absolute;
     left: -1000em;

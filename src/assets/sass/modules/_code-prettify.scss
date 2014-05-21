@@ -1,6 +1,10 @@
 /* Google Code Prettify
    ========================================================================== */
 
+/**
+ * Colouring for code language syntax.
+ */
+
 .atn,
 .dec,
 .typ,
@@ -47,7 +51,14 @@
     color: #1e347b;
 }
 
-/* Google Code Prettify - line number colouring */
+/**
+ * Colouring for optional code line numbers.
+ *
+ * Example HTML:
+ *
+ * <pre class="linenums">
+ */
+
 .linenums {
     padding-left: 2em;
 

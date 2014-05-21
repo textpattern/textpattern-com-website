@@ -1,13 +1,21 @@
 /* Forms
    ========================================================================== */
 
-/* define consistent fieldset margin, border and padding */
+/**
+ * 1. Define consistent fieldset border, margin, and padding.
+ * 2. Address width being affected by wide descendants in Chrome, Firefox.
+ */
+
 fieldset {
-    margin: 1em 0;
-    border: 1px solid $color-border;
-    padding: 0 1em;
-    min-width: 0; // address width being affected by wide descendants in Chrome and Firefox
+    margin: 1em 0; /* 1 */
+    border: 1px solid $color-border; /* 1 */
+    padding: 1px 1em; /* 1 */
+    min-width: 0; /* 2 */
 }
+
+/**
+ * Stylise fieldset legends.
+ */
 
 legend {
     @include adjust-font-size-to(14px, 1);
@@ -20,6 +28,12 @@ legend {
     background-color: $color-background-box;
 }
 
+/**
+ * 1. Correct font properties not being inherited.
+ * 2. Address margins set differently in Firefox 4+, Safari, and Chrome.
+ * 3. Prevent elements from spilling out of their parent.
+ */
+
 button,
 input,
 optgroup,
@@ -29,17 +43,19 @@ a.button,
 span.button {
     @include box-sizing(border-box);
 
-    /* correct font size not being inherited in all browsers */
-    font-size: 100%;
+    font-size: 100%; /* 1 */
     @include adjust-font-size-to(13px, 0.8);
 
-    margin: 0; // address margins set differently in Firefox 4+, Safari 5+, Chrome
-    max-width: 100%; // prevent elements from spilling out of their parent
+    margin: 0;  /* 2 */
+    max-width: 100%;  /* 3 */
     font-family: $font-sans-serif;
     vertical-align: baseline;
 }
 
-/* colour placeholder text */
+/**
+ * Colour for placeholder text.
+ */
+
 input,
 textarea {
     @include input-placeholder {
@@ -47,18 +63,34 @@ textarea {
     }
 }
 
-/* remove inner padding and border in Firefox 4+ */
+/**
+ * Remove inner padding and border in Firefox 4+.
+ */
+
 button::-moz-focus-inner,
 input::-moz-focus-inner {
     border: 0;
     padding: 0;
 }
 
-/* remove inner padding and search cancel button in Safari 5+ and Chrome on OS X */
+/**
+ * Remove inner padding and search cancel button in Safari and Chrome on OS X.
+ * Safari (but not Chrome) clips the cancel button when the search input has
+ * padding (and `textfield` appearance).
+ */
+
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-decoration {
     -webkit-appearance: none;
 }
+
+/**
+ * Styling of form input fields.
+ *
+ * 1. Remove iOS Safari default styling.
+ * 2. Make form element text on mobile 16px, to avoid auto-zooming.
+ * 3. `!important` fixes autosize on viewport changes.
+ */
 
 input[type="color"],
 input[type="date"],
@@ -79,7 +111,7 @@ textarea {
     @include border-radius(0);
     @include transition(border-color 0.1s linear, box-shadow 0.1s linear);
 
-    -webkit-appearance: none; // remove iOS Safari default styling
+    -webkit-appearance: none; /* 1 */
     border: 1px solid $color-border;
     padding: 0.5384615em; // 7px / 13px
     height: 2.4615384em; // 32px / 13px
@@ -93,45 +125,79 @@ textarea {
     }
 
     @include breakpoint(max-width $breakpoint-2) {
-        /* make form element text on mobile 16px, to avoid auto-zooming */
-        font-size: 16px !important;
-        line-height: 1.375 !important; // `!important` fixes autosize on viewport changes
+        font-size: 16px !important; /* 2 */
+        line-height: 1.375 !important; /* 3 */ 
     }
 }
+
+/**
+ * Remove padding from `color` fields.
+ */
 
 input[type="color"] {
     padding: 0;
 }
 
-/* fix the cursor style for Chrome's increment/decrement buttons */
+/**
+ * Fix the cursor style for Chrome's increment/decrement buttons. For certain
+ * `font-size` values of the `input`, it causes the cursor style of the
+ * decrement button to change from `default` to `text`.
+ */
+
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
     height: auto;
 }
 
-/* address excess padding in IE 8-9 */
+/**
+ * 1. Remove excess padding in IE 8/9/10.
+ * 2. Correct margins for inline checkbox/radio labels.
+ */
+
 input[type="checkbox"],
 input[type="radio"] {
-    padding: 0;
+    padding: 0; /* 1 */
+
+    & + label {
+        margin-right: 0.5em; /* 2 */
+
+        &:last-of-type {
+            margin-right: 0; /* 2 */
+        }
+    }
 }
 
-/* address inconsistent `text-transform` inheritance for `select` in Firefox 4+ */
+/**
+ * Correct `select` style inheritance in Firefox.
+ */
+
 select {
     text-transform: none;
 }
+
+/**
+ * Override height set in a previous rule and allow auto heght.
+ */
 
 select[size],
 select[multiple] {
     height: auto;
 }
 
+/**
+ * Override height set in rule above and restrict to one line field.
+ */
+
 select[size="0"],
 select[size="1"] {
     height: 2.4615384em; // 32px / 13px
 }
 
-/* address `<select>` alignment in Safari, Chrome */
 @media (-webkit-min-device-pixel-ratio: 0) {
+
+    /**
+     * Address `select` alignment in Safari, Chrome, Opera.
+     */
 
     select[size],
     select[multiple],
@@ -140,38 +206,53 @@ select[size="1"] {
         background-image: none;
     }
 
+    /**
+     * Use indicator icon to signify the downdown ability of `select` in Safari,
+     * Chrome, Opera.
+     */
+
     select,
     select[size="0"],
     select[size="1"] {
         padding-right: 2em;
-        background: #ffffff url("data:image/svg+xml,<svg version='1.1' baseProfile='full' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' width='13px' height='4px' viewBox='0 0 13 4' enable-background='new 0 0 13 4' xml:space='preserve'><polygon fill='#333333' points='3.5,4 0,0 7,0'/></svg>") no-repeat right center;
-        background-size: 1em 0.30769em;
+        background: #ffffff url("data:image/svg+xml,<svg version='1.1' baseProfile='full' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' width='13px' height='4px' viewBox='0 0 13 4' enable-background='new 0 0 13 4' xml:space='preserve'><polygon fill='#333333' points='3.5,4 0,0 7,0'/></svg>") no-repeat right center / 1em 0.30769em;
     }
 
 }
+
+/**
+ * Normalise styling of `optgroup`.
+ */
 
 optgroup {
     font-style: normal;
     font-weight: bold;
     color: $color-text;
-
-    &::-moz-focus-inner { // kill phantom spacing and dotted border that appears in Firefox
-        border: 0;
-        padding: 0;
-    }
 }
+
+/**
+ * 1. Remove default vertical scrollbar in IE 8/9/10/11.
+ * 2. Restrict to vertical resizing to prevent layout breakage.
+ */
 
 textarea {
     height: auto;
     min-height: 3em;
-    overflow: auto; // remove default vertical scrollbar in IE 8-11
-    resize: vertical;
+    overflow: auto; /* 1 */
+    resize: vertical; /* 2 */
     width: 100%;
 }
 
-/* make sure disable elements really are disabled */
+/**
+ * Make sure disabled elements really are disabled and styled appropriately.
+ *
+ * 1. `html` is a workaround for an Android 4 bug.
+ * 2. Override default iOS opacity setting.
+ * 3. Re-set default cursor for disabled elements.
+ */
+
 button[disabled],
-html input[disabled], // `html` is a workaround for Android 4 bug
+html input[disabled], /* 1 */
 input[type="button"][disabled],
 input[type="reset"][disabled],
 input[type="submit"][disabled],
@@ -182,13 +263,23 @@ textarea[disabled],
 span.disabled {
     @include box-shadow(none !important);
 
-    opacity: 1; // overrides iOS opacity setting
+    opacity: 1; /* 2 */
     border-color: lighten($color-border, 9%) !important;
     color: #aaaaaa !important;
     background: #eeeeee !important;
     text-shadow: none !important;
-    cursor: default !important;
+    cursor: default !important; /* 3 */
 }
+
+/**
+ * Width display options for `input` fields.
+ *
+ * Example HTML:
+ *
+ * <input class="small">
+ * <input class="medium">
+ * <input class="large">
+ */
 
 input {
     &.small {
@@ -202,4 +293,17 @@ input {
     &.large {
         width: 100%;
     }
+}
+
+/**
+ * Styling for required field indicators.
+ *
+ * Example HTML:
+ *
+ * <abbr class="required" title="Required">*</abbr>
+ */
+
+abbr.required {
+    color: $color-error-text;
+    border: 0;
 }

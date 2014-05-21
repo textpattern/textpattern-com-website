@@ -1,12 +1,21 @@
 /* Buttons
    ========================================================================== */
 
-/* address inconsistent `text-transform` inheritance for `button` in Chrome, Safari 5+, IE 6+
-   address `overflow` set to `hidden` in IE 8-10. */
+/**
+ * 1. Address `overflow` set to `hidden` in IE 8/9/10/11.
+ * 2. Correct `button` style inheritance in Firefox, IE 8/9/10/11, and Opera.
+ */
+
 button {
-    text-transform: none;
-    overflow: visible;
+    overflow: visible; /* 1 */
+    text-transform: none; /* 2 */
 }
+
+/**
+ * 1. Remove iOS Safari default styling.
+ * 2. Improve usability and consistency of cursor style between image-type
+ *    `input` and others.
+ */
 
 button,
 input[type="button"],
@@ -21,7 +30,7 @@ span.button {
     @include gradient-linear($color-gradient-from, $color-gradient-to);
     @include transition(box-shadow 0.1s linear);
 
-    -webkit-appearance: none; // remove iOS Safari default styling
+    -webkit-appearance: none; /* 1 */ 
     display: inline-block;
     border: solid 1px $color-gradient-border;
     padding: 0.5384615em 0.75em;
@@ -30,7 +39,7 @@ span.button {
     font-weight: normal;
     text-align: center;
     color: $color-text;
-    cursor: pointer;
+    cursor: pointer; /* 2 */
 
     &:hover {
         @include gradient-linear(lighten($color-gradient-from, 4%), lighten($color-gradient-to, 4%));
@@ -106,7 +115,14 @@ span.button {
     }
 }
 
-/* donations link button */
+/**
+ * Donations link button.
+ *
+ * Example HTML:
+ *
+ * <a class="button button-donate">
+ */
+
 a.button.button-donate {
     @include text-shadow($text-shadow-dark);
     @include gradient-linear(#555555, #444444);

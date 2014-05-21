@@ -1,18 +1,34 @@
 /* Tables
    ========================================================================== */
 
-/* allow overflow scroll on tables */
+/**
+ * Allow overflow scroll on tables.
+ *
+ * Example HTML:
+ *
+ * <div class="tabular-data">
+ *     <table></table>
+ * </div>
+ */
+
 .tabular-data {
     overflow-x: auto;
     margin-bottom: 1em;
 }
 
-/* consistent tables */
+/**
+ * Consistent tables.
+ */
+
 table {
     border-collapse: collapse;
     border-spacing: 0;
     width: 100%;
 }
+
+/**
+ * Styling of table captions.
+ */
 
 caption {
     font-style: italic;
@@ -20,13 +36,20 @@ caption {
     margin-bottom: 0.5em;
 }
 
+/**
+ * Make table cells align top and left by default.
+ */
+
 th,
 td {
-    /* make table cells align top and left by default */
     vertical-align: top;
     text-align: left;
     padding: 0.2307692em 0; // 3px / 13px
 }
+
+/**
+ * Remove padding from top cells of table header.
+ */
 
 thead tr:first-child {
     th,
@@ -34,6 +57,10 @@ thead tr:first-child {
         padding-top: 0;
     }
 }
+
+/**
+ * Adjust padding of table footer due to smaller font size.
+ */
 
 tfoot {
     th,
@@ -49,17 +76,38 @@ tfoot {
     }
 }
 
-/* multi-row span vertical cell alignments */
+/**
+ * Multi-row span vertical cell alignments.
+ */
+
 [rowspan] {
     vertical-align: middle;
 }
 
-/* range values right in numerical cells */
+/**
+ * Range values right in numerical cells.
+ *
+ * Example HTML:
+ *
+ * <tr>
+ *     <td></td>
+ *     <td></td>
+ *     <td class="numerical"></td>
+ * </tr>
+ */
+
 .numerical {
     text-align: right;
 }
 
-/* bordered tables */
+/**
+ * Bordered tables.
+ *
+ * Example HTML:
+ *
+ * <table class="table--bordered">
+ */
+
 .table--bordered {
     th,
     td {
@@ -100,19 +148,21 @@ tfoot {
     }
 }
 
-/* set widths of `col` elements using classes whose numbers represent a percentage
-   width for that column - we leave one column free of a class so that column can
-   soak up the effects of any accidental breakage in the table.
-
-   <table>
-     <colgroup>
-       <col class="t10">
-       <col class="t10">
-       <col class="t10">
-       <col>
-     </colgroup>
-     ..etc..
-*/
+/**
+ * Set widths of `col` elements using classes whose numbers represent a percentage
+ * width for that column - we leave one column free of a class so that column can
+ * soak up the effects of any accidental breakage in the table.
+ *
+ * Example HTML:
+ *
+ * <table>
+ *     <colgroup>
+ *         <col class="t10">
+ *         <col class="t10">
+ *         <col class="t10">
+ *         <col>
+ *     </colgroup>
+ */
 
 .t5  { width: 5%; }
 .t10 { width: 10%; }

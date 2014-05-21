@@ -1,14 +1,20 @@
 /* Lists
    ========================================================================== */
 
-/* address paddings set differently */
+/**
+ * Address paddings set differently.
+ */
+
 menu,
 ol,
 ul {
     padding: 0 0 0 2em;
 }
 
-/* remove margins from nested lists */
+/**
+ * Remove margins from nested lists.
+ */
+
 li {
     > ul,
     > ol {
@@ -16,20 +22,44 @@ li {
     }
 }
 
+/**
+ * Address margins set differently.
+ */
+
 dd {
     margin: 0 0 0 2em;
 }
 
+/**
+ * Italicise definition terms.
+ */
+
 dt {
     font-style: italic;
 }
+
+/**
+ * Have a list with no bullets/numerals.
+ *
+ * Example HTML:
+ *
+ * <ul class="list--no-bullets">
+ * <ol class="list--no-bullets">
+ */
 
 .list--no-bullets {
     list-style: none;
     padding: 0;
 }
 
-/* have a numbered `ul` without the semantics implied by using an `ol` */
+/**
+ * Have a numbered `ul` without the semantics implied by using an `ol`.
+ *
+ * Example HTML:
+ *
+ * <ul class="list--numbered">
+ */
+
 .list--numbered {
     list-style-type: decimal;
 }

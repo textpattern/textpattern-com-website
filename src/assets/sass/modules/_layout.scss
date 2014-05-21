@@ -1,18 +1,28 @@
 /* Layout
    ========================================================================== */
 
+/**
+ * 1. Always force scrollbar padding so we don't get 'jumping'.
+ * 2. Prevent iOS text size adjust after orientation change, without disabling
+ *    user zoom.
+ * 3. As 2 above, for Windows Phone.
+ */
+
 html {
     -webkit-tap-highlight-color: rgba($color-link-hover, 0.5);
-    /* always force scrollbar padding so we don't get 'jumping' */
-    overflow-y: scroll;
-    /* prevent iOS text size adjust after orientation change, without disabling user zoom */
-    -webkit-text-size-adjust: 100%;
-    /* as above, for Windows Phone */
-    -ms-text-size-adjust: 100%;
+    overflow-y: scroll; /* 1 */
+    -webkit-text-size-adjust: 100%; /* 2 */
+    -ms-text-size-adjust: 100%; /* 3 */
 }
 
+/**
+ * 1. Set `body` to `relative` to allow positioning of absolute elements.
+ * 2. Remove default margin.
+ */
+
 body {
-    margin: 0;
+    position: relative; /* 1 */
+    margin: 0; /* 2 */
     color: $color-text-inverse;
     background-color: $color-text;
 }
@@ -145,7 +155,10 @@ footer {
     position: relative;
 }
 
-/* prevent really, really long words from breaking layout */
+/**
+ * Prevent really, really long words in article from breaking layout.
+ */
+
 article {
     word-wrap: break-word;
 }
@@ -154,11 +167,14 @@ article {
     @include adjust-font-size-to(11px, 0.85);
 }
 
+/**
+ * Address differences between Firefox and other browsers.
+ */
+
 hr {
     @include box-sizing(content-box);
 
     border: 0; // remove the default `hr` border
     height: 24px;
-    background: url("../img/com/hr.svg") no-repeat 50% 50%;
-    background-size: 240px 24px;
+    background: url("../img/com/hr.svg") no-repeat 50% 50% / 240px 24px;
 }

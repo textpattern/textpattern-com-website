@@ -1,7 +1,16 @@
 /* Alert messages
    ========================================================================== */
 
-/* label colours */
+/**
+ * Alert labels.
+ *
+ * Example HTML:
+ *
+ * <span class="success">
+ * <span class="error">
+ * <strong class="success">
+ * <strong class="error">
+ */
 
 .success,
 .warning,
@@ -32,11 +41,31 @@
     background: $color-info-background;
 }
 
+/**
+ * Highlight background.
+ *
+ * Example HTML:
+ *
+ * <table>
+ *     <tr>
+ *         <td class="highlight></td>
+ *         <td></td>
+ *     </tr>
+ * </table>
+ */
+
 .highlight {
     background: $color-highlight-box;
 }
 
-/* alert boxes */
+/**
+ * Alert boxes.
+ *
+ * Example HTML:
+ *
+ * <p class="alert-block success">
+ * <p class="alert-block error">
+ */
 
 .alert-block {
     border: 1px solid;

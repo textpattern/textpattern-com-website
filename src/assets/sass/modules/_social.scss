@@ -1,6 +1,18 @@
 /* Social media
    ========================================================================== */
 
+/**
+ * Link list of social media channel icons.
+ *
+ * Example HTML:
+ *
+ * <ul class="social-channels">
+ *     <li><a class="facebook">Facebook</a></li>
+ *     <li><a class="googleplus">Google+</a></li>
+ *     <li><a class="twitter">Twitter</a></li>
+ * </ul>
+ */
+
 .social-channels {
     list-style: none;
     padding: 0;
@@ -35,4 +47,23 @@
             @include filter(#{"brightness(1.1)"}); // temporary workaround for Sass/Compass bug when using @include filter(brightness(1.1));
         }
     }
+}
+
+/**
+ * Add margin to left of inline Twitter 'Tweet' buttons.
+ */
+
+.twitter-tweet-button {
+    margin-left: 1em;
+}
+
+/**
+ * Normalise Facebook 'Like' buttons for inline use.
+ */
+
+.facebook-like-button {
+    margin-left: 1em;
+    border: 0;
+    height: 20px;
+    overflow: hidden;
 }
