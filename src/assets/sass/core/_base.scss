@@ -100,5 +100,9 @@ footer,
 .nested-list-3-column,
 .nested-list-4-column,
 .paginator {
-    @include pie-clearfix;
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
 }
