@@ -66,14 +66,21 @@
     @include grid-span(9, 4);
 }
 
-h1.masthead a {
-    width: 320px;
-    height: 52px;
-    background-image: url("../img/branding/textpattern/textpattern.png");
-    background-size: 320px 52px;
+/**
+ * Don't allow site to collapse smaller than large breakpoint.
+ */
+
+header,
+footer,
+.container,
+.nav-collapse ul {
+    min-width: $breakpoint-3;
 }
 
-/* show standard `<nav>` menu on larger screens */
+/**
+ * Desktop version of navigation menu.
+ */
+
 .nav-collapse {
     .js & {
         max-height: none;
@@ -118,6 +125,13 @@ h1.masthead a {
 /**
  * PNG fallback for lack of SVG support.
  */
+
+h1.masthead a {
+    width: 320px;
+    height: 52px;
+    background-image: url("../img/branding/textpattern/textpattern.png");
+    background-size: 320px 52px;
+}
 
 #search-form input#search-query,
 .social-channels a {
