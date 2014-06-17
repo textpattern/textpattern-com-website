@@ -6,9 +6,9 @@
 # | Better website experience                                                  |
 # ------------------------------------------------------------------------------
 
-# Force Internet Explorer to render pages in the highest available mode
-# in the various cases when it may not.
-# http://hsivonen.iki.fi/doctype/ie-mode.pdf
+# Force Internet Explorer to render pages in the highest available
+# mode in the various cases when it may not.
+# https://hsivonen.fi/doctype/#ie8
 
 <IfModule mod_headers.c>
     Header set X-UA-Compatible "IE=edge"
