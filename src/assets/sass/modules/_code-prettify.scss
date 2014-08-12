@@ -5,48 +5,63 @@
  * Colouring for code language syntax.
  */
 
+/* html/xml attribute name */
 .atn,
+/* decimal */
 .dec,
+/* type */
 .typ,
+/* variable */
 .var {
     color: teal;
 }
 
+/* html/xml attribute value */
 .atv,
+/* string */
 .str {
     color: #dd1144;
 }
 
+/* closure */
 .clo,
+/* opening */
 .opn {
     color: #93a1a1;
 }
 
+/* punctuation */
 .pun {
     color: #000;
 }
 
+/* comment */
 .com {
     color: #93a1a1;
 }
 
+/* function */
 .fun {
     color: #dc322f;
 }
 
+/* keyword */
 .kwd {
     color: #1e347b;
     font-weight: bold;
 }
 
+/* literal */
 .lit {
     color: #195f91;
 }
 
+/* plaintext */
 .pln {
     color: #48484c;
 }
 
+/* html/xml tag */
 .tag {
     color: #1e347b;
 }
