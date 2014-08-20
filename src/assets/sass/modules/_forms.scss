@@ -41,7 +41,7 @@ select,
 textarea,
 a.button,
 span.button {
-    @include box-sizing(border-box);
+    @include box-sizing;
 
     font-size: 100%; /* 1 */
     @include adjust-font-size-to(13px, 0.8);
