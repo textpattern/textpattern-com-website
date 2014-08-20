@@ -4,11 +4,11 @@
   "dependencies": {
     "google-code-prettify": "1.0.2",
     "html5shiv": "3.7.2",
-    "jquery-autosize": "1.18.7",
+    "jquery-autosize": "1.18.9",
     "jquery.cookie": "1.4.1",
     "jquery-details": "0.1.0",
-    "responsive-nav": "1.0.25",
-    "requirejs": "2.1.11",
+    "responsive-nav": "1.0.32",
+    "requirejs": "2.1.14",
     "textpattern-branding": "*"
   }
 }
