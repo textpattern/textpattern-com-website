@@ -40,7 +40,7 @@
 
 <!-- Header -->
         <header role="banner" itemscope itemtype="http://schema.org/Organization">
-            <h1 itemprop="name" class="masthead"><a rel="home" itemprop="url" href="/" title="Go to the Textpattern homepage">Textpattern CMS</a></h1>
+            <h1 class="masthead" itemprop="name"><a rel="home" itemprop="url" href="/" title="Go to the Textpattern homepage">Textpattern CMS</a></h1>
 
             <form id="search-form" role="search" method="get" action="#">
                 <input id="search-query" type="search" size="32" placeholder="Search Textpattern.com…">
@@ -50,7 +50,7 @@
 
 <!-- Navigation -->
         <div class="nav-container">
-            <nav role="navigation" class="nav-collapse" aria-label="Site navigation">
+            <nav class="nav-collapse" role="navigation" aria-label="Site navigation">
                 <ul>
                     <li><a href="http://textpattern.com/start">Get started</a></li>
                     <li><a href="http://textpattern.net/">Documentation</a></li>
@@ -68,13 +68,13 @@
         <div class="container">
             <main role="main" itemscope itemtype="http://schema.org/Blog" aria-label="Main content">
 
-                <article role="article" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting" class="layout--span-1-8">
+                <article class="layout--span-1-8" role="article" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
                     <h1 itemprop="name headline">Blog example title</h1>
 
                     <p class="article-publishing-details">
                         By
-                        <span itemprop="author" itemscope itemtype="http://schema.org/Person" class="vcard">
-                            <a rel="author" href="#" class="url"><span itemprop="name" class="fn n">Joe Q. Public</span></a>
+                        <span class="vcard" itemprop="author" itemscope itemtype="http://schema.org/Person">
+                            <a class="url" rel="author" href="#"><span class="fn n" itemprop="name">Joe Q. Public</span></a>
                         </span>
                         <time datetime="2014-01-25T10:43:39Z" itemprop="datePublished">25 January 2014 at 10:43:39</time>
                     </p>
@@ -86,7 +86,7 @@
                         </a>
                     </p>
 
-                    <div itemprop="description" class="article-description">
+                    <div class="article-description" itemprop="description">
                         <p>This is where an article extract/description would be. Ne sea soluta voluptatum. Ut nec augue disputationi, unum utamur vis in. Ea menandri persecuti dissentiunt usu, causae equidem.</p>
                     </div>
 
@@ -114,7 +114,7 @@
 
                         <ol class="comments-list">
                             <li>
-                                <article itemscope itemtype="http://schema.org/Comment" class="comments">
+                                <article class="comments" itemscope itemtype="http://schema.org/Comment">
                                     <h4>
                                         <span class="comment-author" itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">Donald Swain</span></span>
                                         <a class="comment-anchor" href="#" itemprop="url">#</a>
@@ -128,7 +128,7 @@
                                 </article>
                             </li>
                             <li>
-                                <article itemscope itemtype="http://schema.org/Comment" class="comments comments-author">
+                                <article class="comments comments-author" itemscope itemtype="http://schema.org/Comment">
                                     <h4>
                                         <span class="comment-author" itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">Joe Q. Public</span></span> (author)
                                         <a class="comment-anchor" href="#" itemprop="url">#</a>
@@ -150,27 +150,27 @@
                                     <p><strong>Enter your comment below.</strong> You must preview your comment first before finally posting. Email addresses are used for verification only and are <strong>not</strong> displayed with your comment.</p>
                                     <p class="layout--span-1-6 at-break2" style="margin:0.5em 0;">
                                         <label for="name"><strong>Name (Required)</strong></label><br>
-                                        <input style="width:100%;max-width:24em;" type="text" id="name" name="name" size="32" class="comment_name_input" required>
+                                        <input class="comment_name_input" id="name" name="name" type="text" size="32" required style="width:100%;max-width:24em;">
                                     </p>
                                     <p class="layout--span-7-12 at-break2" style="margin:0.5em 0;">
                                         <label for="email"><strong>Email (Required)</strong></label><br>
-                                        <input style="width:100%;max-width:24em;" type="email" id="email" name="email" size="32" class="comment_email_input" required>
+                                        <input class="comment_email_input" id="email" name="email" type="email" size="32" required style="width:100%;max-width:24em;">
                                     </p>
                                     <p class="layout--span-1-6 at-break2" style="margin:0.5em 0;">
                                         <label for="web"><strong>Website</strong></label><br>
-                                        <input style="width:100%;max-width:24em;" type="text" id="web" name="web" size="32" class="comment_web_input">
+                                        <input class="comment_web_input" id="web" name="web" type="text" size="32" style="width:100%;max-width:24em;">
                                     </p>
                                     <p class="layout--span-1-12" style="margin:0.5em 0;">
                                         <label for="message"><strong>Message (Required)</strong></label><br>
-                                        <textarea id="message" name="message" cols="64" rows="4" class="txpCommentInputMessage" required></textarea>
+                                        <textarea class="txpCommentInputMessage" id="message" name="message" cols="64" rows="4" required></textarea>
                                     </p>
                                     <p class="layout--span-1-12">
                                         <span style="float:right;;margin:0.5384615em 0 0.5384615em 1em;">
-                                            <input type="checkbox" id="remember" name="remember" value="1" class="checkbox active" checked>
+                                            <input class="checkbox active" id="remember" name="remember" type="checkbox" value="1" checked>
                                             <label for="remember">Remember</label>
                                         </span>
-                                        <input type="submit" id="txpCommentPreview" name="preview" value="Preview" class="button">
-                                        <input type="submit" id="txpCommentSubmit" name="submit" value="Submit" class="button disabled" disabled>
+                                        <input class="button" id="txpCommentPreview" name="preview" type="submit" value="Preview">
+                                        <input class="button disabled" id="txpCommentSubmit" name="submit" type="submit" value="Submit" disabled>
                                     </p>
                                 </fieldset>
                             </form>
@@ -189,22 +189,22 @@
 
 
 <!-- Secondary Content -->
-    <div role="complementary" class="container">
+    <div class="container" role="complementary">
 
 
         <div class="layout--span-1-8">
-            <section role="region" class="layout--span-1-6 at-break2">
+            <section class="layout--span-1-6 at-break2" role="region">
                 <h4>Social channels</h4>
                 <ul class="social-channels">
-                    <li><a rel="external" class="facebook" href="http://textpattern.com/facebook" title="Follow us on Facebook+">Facebook</a></li>
-                    <li><a rel="external" class="twitter" href="http://textpattern.com/@textpattern" title="Follow us on Twitter">Twitter</a></li>
-                    <li><a rel="external" class="googleplus" href="http://textpattern.com/+" title="Follow us on Google+">Google+</a></li>
+                    <li><a class="facebook" rel="external" href="http://textpattern.com/facebook" title="Follow us on Facebook+">Facebook</a></li>
+                    <li><a class="twitter" rel="external" href="http://textpattern.com/@textpattern" title="Follow us on Twitter">Twitter</a></li>
+                    <li><a class="googleplus" rel="external" href="http://textpattern.com/+" title="Follow us on Google+">Google+</a></li>
                 </ul>
                 <h4>Donate</h4>
                 <p>Your kind donations help us keep Textpattern CMS development alive!</p>
                 <p><a class="button button-donate" href="http://textpattern.com/patrons">Donate…</a></p>
             </section>
-            <section role="region" class="layout--span-7-12 at-break2 community-details">
+            <section class="layout--span-7-12 at-break2 community-details" role="region">
                 <h4>External links</h4>
                 <ul class="community-links">
                     <li><a rel="external" href="https://github.com/textpattern">Textpattern on GitHub</a></li>
@@ -219,13 +219,13 @@
         </div>
 
 
-        <section role="region" class="layout--span-9-12 host-details">
+        <section class="layout--span-9-12 host-details" role="region">
             <h4 class="accessibility">Host details</h4>
             <p><img class="svg" src="../assets/img/branding/textpattern-network/textpattern-network-white.svg" alt="Textpattern Network"></p>
             <p>
                 <small>
                     Kindly hosted by<br>
-                    <a rel="external" class="joyent" href="http://joyent.com/" title="Go to the Joyent website"><img class="svg" src="../assets/img/branding/misc/joyent-inverse.png" alt="Joyent"></a>
+                    <a class="joyent" rel="external" href="http://joyent.com/" title="Go to the Joyent website"><img class="svg" src="../assets/img/branding/misc/joyent-inverse.png" alt="Joyent"></a>
                 </small>
             </p>
         </section>
