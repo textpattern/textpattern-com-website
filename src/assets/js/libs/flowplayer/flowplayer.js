@@ -1,6 +1,6 @@
 /*!
 
-   Flowplayer v5.4.6 (Tuesday, 17. December 2013 08:57PM) | flowplayer.org/license
+   Flowplayer v5.5.0 (Tuesday, 26. August 2014 10:09AM) | flowplayer.org/license
 
 */
 !function($) { 
@@ -74,7 +74,7 @@ try {
 
 $.extend(flowplayer, {
 
-   version: '5.4.6',
+   version: '5.5.0',
 
    engine: {},
 
@@ -111,7 +111,7 @@ $.extend(flowplayer, {
 
       live: false,
 
-      swf: "//releases.flowplayer.org/5.4.6/flowplayer.swf",
+      swf: "//releases.flowplayer.org/5.5.0/flowplayer.swf",
 
       speeds: [0.25, 0.5, 1, 1.5, 2],
 
@@ -168,7 +168,7 @@ $.fn.flowplayer = function(opts, callback) {
          engine;
 
       if (conf.playlist.length) { // Create initial video tag if called without
-         var preload = videoTag.attr('preload'), placeHolder;
+         var preload = conf.preload || videoTag.attr('preload'), placeHolder;
          if (videoTag.length) videoTag.replaceWith(placeHolder = $('<p />'));
          videoTag = $('<video />').addClass('fp-engine');
          placeHolder ? placeHolder.replaceWith(videoTag) : root.prepend(videoTag);
@@ -194,7 +194,7 @@ $.fn.flowplayer = function(opts, callback) {
       root.data('fp-player_id', root.data('fp-player_id') || playerCount++);
 
       try {
-         storage = window.localStorage || storage;
+         storage = supportLocalStorage ? window.localStorage : storage;
       } catch(e) {}
 
       var isRTL = (this.currentStyle && this.currentStyle['direction'] === 'rtl')
@@ -439,11 +439,13 @@ $.fn.flowplayer = function(opts, callback) {
 
             // 2. failed -> try another
             } else {
-               $.each(flowplayer.engine, function(name, impl) {
+              $.each(flowplayer.engine, function(name, impl) {
                   if (name != conf.engine) {
                      engine = this(api, root);
-                     if (engine.pick(urlResolver.initialSources)) api.engine = name;
-                     return false;
+                     if (engine.pick(urlResolver.initialSources)) {
+                       api.engine = name;
+                       return false;
+                     }
                   }
                });
             }
@@ -579,8 +581,8 @@ $.fn.flowplayer = function(opts, callback) {
    var s = flowplayer.support,
       browser = $.browser,
       video = $("<video loop autoplay preload/>")[0],
-      IS_IE = browser.msie,
       UA = navigator.userAgent,
+      IS_IE = browser.msie || /Trident\/7/.test(UA),
       IS_IPAD = /iPad|MeeGo/.test(UA) && !/CriOS/.test(UA),
       IS_IPAD_CHROME = /iPad/.test(UA) && /CriOS/.test(UA),
       IS_IPHONE = /iP(hone|od)/i.test(UA) && !/iPad/.test(UA),
@@ -592,10 +594,10 @@ $.fn.flowplayer = function(opts, callback) {
       ANDROID_VER = IS_ANDROID ? parseFloat(/Android\ (\d\.\d)/.exec(UA)[1], 10) : 0;
    $.extend(s, {
       subtitles: !!video.addTextTrack,
-      fullscreen: !IS_ANDROID &&
-         (typeof document.webkitCancelFullScreen == 'function' && !/Mac OS X 10_5.+Version\/5\.0\.\d Safari/.test(UA) ||
+      fullscreen: typeof document.webkitCancelFullScreen == 'function' && !/Mac OS X 10_5.+Version\/5\.0\.\d Safari/.test(UA) ||
             document.mozFullScreenEnabled ||
-            typeof document.exitFullscreen == 'function'),
+            typeof document.exitFullscreen == 'function' ||
+            typeof document.msExitFullscreen == 'function',
       inlineBlock: !(IS_IE && browser.version < 8),
       touch: ('ontouchstart' in window),
       dataload: !IS_IPAD && !IS_IPHONE && !IS_WP,
@@ -604,7 +606,7 @@ $.fn.flowplayer = function(opts, callback) {
       cachedVideoTag: !IS_IPAD && !IS_IPHONE && !IS_IPAD_CHROME && !IS_WP,
       firstframe: !IS_IPHONE && !IS_IPAD && !IS_ANDROID && !IS_SILK && !IS_IPAD_CHROME && !IS_WP && !IS_ANDROID_FIREFOX,
       inlineVideo: !IS_IPHONE && !IS_WP && (!IS_ANDROID || ANDROID_VER >= 3),
-      hlsDuration: !browser.safari || IS_IPAD || IS_IPHONE || IS_IPAD_CHROME,
+      hlsDuration: !IS_ANDROID && (!browser.safari || IS_IPAD || IS_IPHONE || IS_IPAD_CHROME),
       seekable: !IS_IPAD && !IS_IPAD_CHROME
    });
 
@@ -699,6 +701,70 @@ flowplayer.engine.flash = function(player, root) {
       objectTag,
       api;
 
+   var win = $(window);
+
+   var readyCallback = function () {
+      // write out video url to handle fullscreen toggle and api load
+      // in WebKit and Safari - see also fsResume
+      if (VENDOR == "webkit" || IS_SAFARI) {
+         var flashvars = $("object param[name='flashvars']", root),
+            flashprops = (flashvars.attr("value") || '').split("&");
+
+         $.each(flashprops, function (i, prop) {
+			prop = prop.split("=");
+            if (prop[0] == "url" && prop[1] != player.video.url) {
+			   flashprops[i] = "url=" + player.video.url;
+			   flashvars.attr({value: flashprops.join("&")});
+               return false;
+            }
+         });
+      }
+
+   };
+   var fullscreenCallback = function(e) {
+      // handle Flash object aspect ratio
+      var origH = root.height(),
+         origW = root.width();
+
+      if (player.conf.flashfit || /full/.test(e.type)) {
+
+         var fs = player.isFullscreen,
+            truefs = fs && FS_SUPPORT,
+            ie7 = !flowplayer.support.inlineBlock,
+            screenW = fs ? (truefs ? screen.width : win.width()) : origW,
+            screenH = fs ? (truefs ? screen.height : win.height()) : origH,
+
+            // default values for fullscreen-exit without flashfit
+            hmargin = 0,
+            vmargin = 0,
+            objwidth = ie7 ? origW : '',
+            objheight = ie7 ? origH : '',
+
+            aspectratio, dataratio;
+
+         if (player.conf.flashfit || e.type === "fullscreen") {
+            aspectratio = player.video.width / player.video.height,
+            dataratio = player.video.height / player.video.width,
+            objheight = Math.max(dataratio * screenW),
+            objwidth = Math.max(aspectratio * screenH);
+            objheight = objheight > screenH ? objwidth * dataratio : objheight;
+            objheight = Math.min(Math.round(objheight), screenH);
+            objwidth = objwidth > screenW ? objheight * aspectratio : objwidth;
+            objwidth = Math.min(Math.round(objwidth), screenW);
+            vmargin = Math.max(Math.round((screenH + vmargin - objheight) / 2), 0);
+            hmargin = Math.max(Math.round((screenW + hmargin - objwidth) / 2), 0);
+         }
+
+         $("object", root).css({
+            width: objwidth,
+            height: objheight,
+            marginTop: vmargin,
+            marginLeft: hmargin
+         });
+      }
+   };
+
+
    var engine = {
 
       pick: function(sources) {
@@ -711,7 +777,7 @@ flowplayer.engine.flash = function(player, root) {
 
             for (var i = 0, source; i < sources.length; i++) {
                source = sources[i];
-               if (/mp4|flv/.test(source.type)) return source;
+               if (/mp4|flv/i.test(source.type)) return source;
             }
          }
       },
@@ -726,12 +792,6 @@ flowplayer.engine.flash = function(player, root) {
             url = escapeURL(video.src);
             is_absolute = /^https?:/.test(url);
 
-         // html5 tag not needed (pause needed for firefox)
-         try {
-            if (html5Tag.length > 0 && flowplayer.support.video) html5Tag[0].pause();
-         } catch (e) {
-            // Omit errors on calling pause(), see https://github.com/flowplayer/flowplayer/issues/490
-         }
          var removeTag = function() {
             html5Tag.remove();
          };
@@ -753,6 +813,9 @@ flowplayer.engine.flash = function(player, root) {
 
          } else {
 
+            player.bind('ready', readyCallback)
+                  .bind("ready fullscreen fullscreen-exit", fullscreenCallback);
+
             callbackId = "fp" + ("" + Math.random()).slice(3, 15);
 
             var opts = {
@@ -767,13 +830,17 @@ flowplayer.engine.flash = function(player, root) {
             if (is_absolute) delete conf.rtmp;
 
             // optional conf
-            $.each(['key', 'autoplay', 'preload', 'rtmp', 'loop', 'debug', 'preload', 'splash', 'bufferTime'], function(i, key) {
+            $.each(['key', 'autoplay', 'preload', 'rtmp', 'subscribe', 'live', 'loop', 'debug', 'splash'], function(i, key) {
                if (conf[key]) opts[key] = conf[key];
             });
+            // bufferTime might be 0
+            if (conf.bufferTime !== undefined) opts.bufferTime = conf.bufferTime;
 
-            // issue #376
+            // issues #376, #509
             if (opts.rtmp) {
                opts.rtmp = escapeURL(opts.rtmp);
+
+               if (opts.live) opts.preload = "none";
             }
 
             objectTag = embed(conf.swf, opts);
@@ -849,6 +916,7 @@ flowplayer.engine.flash = function(player, root) {
          delete $[callbackId];
          $("object", root).remove();
          api = 0;
+         player.unbind('ready', readyCallback).unbind('ready fullscreen fullscreen-exit', fullscreenCallback);
       }
 
    };
@@ -879,50 +947,6 @@ flowplayer.engine.flash = function(player, root) {
          }
       };
 
-   });
-
-   var win = $(window);
-
-   // handle Flash object aspect ratio
-   player.bind("ready fullscreen fullscreen-exit", function(e) {
-      var origH = root.height(),
-         origW = root.width();
-      if (player.conf.flashfit || /full/.test(e.type)) {
-
-         var fs = player.isFullscreen,
-            truefs = fs && FS_SUPPORT,
-            ie7 = !flowplayer.support.inlineBlock,
-            screenW = fs ? (truefs ? screen.width : win.width()) : origW,
-            screenH = fs ? (truefs ? screen.height : win.height()) : origH,
-
-            // default values for fullscreen-exit without flashfit
-            hmargin = 0,
-            vmargin = 0,
-            objwidth = ie7 ? origW : '',
-            objheight = ie7 ? origH : '',
-
-            aspectratio, dataratio;
-
-         if (player.conf.flashfit || e.type === "fullscreen") {
-            aspectratio = player.video.width / player.video.height,
-            dataratio = player.video.height / player.video.width,
-            objheight = Math.max(dataratio * screenW),
-            objwidth = Math.max(aspectratio * screenH);
-            objheight = objheight > screenH ? objwidth * dataratio : objheight;
-            objheight = Math.min(Math.round(objheight), screenH);
-            objwidth = objwidth > screenW ? objheight * aspectratio : objwidth;
-            objwidth = Math.min(Math.round(objwidth), screenW);
-            vmargin = Math.max(Math.round((screenH + vmargin - objheight) / 2), 0);
-            hmargin = Math.max(Math.round((screenW + hmargin - objwidth) / 2), 0);
-         }
-
-         $("object", root).css({
-            width: objwidth,
-            height: objheight,
-            marginTop: vmargin,
-            marginLeft: hmargin
-         });
-      }
    });
 
    return engine;
@@ -971,7 +995,7 @@ function getType(type) {
 }
 
 function canPlay(type) {
-   if (!/^(video|application)/.test(type))
+   if (!/^(video|application)/i.test(type))
       type = getType(type);
    return !!VIDEO.canPlayType(type).replace("no", '');
 }
@@ -1006,7 +1030,8 @@ flowplayer.engine.html5 = function(player, root) {
       conf = player.conf,
       self,
       timer,
-      api;
+      api,
+      volumeLevel;
 
    return self = {
 
@@ -1040,6 +1065,9 @@ flowplayer.engine.html5 = function(player, root) {
             if (conf.loop) videoTag.attr("loop", "loop");
 
             api = videoTag[0];
+            if (typeof volumeLevel !== 'undefined') {
+              api.volume = volumeLevel;
+            }
 
          } else {
 
@@ -1075,7 +1103,7 @@ flowplayer.engine.html5 = function(player, root) {
          listen(api, $("source", videoTag).add(videoTag), video);
 
          // iPad (+others?) demands load()
-         if (conf.preload != 'none' || !support.zeropreload || !support.dataload) api.load();
+         if (conf.preload != 'none' && video.type != "mpegurl" || !support.zeropreload || !support.dataload) api.load();
          if (conf.splash) api.load();
       },
 
@@ -1100,7 +1128,10 @@ flowplayer.engine.html5 = function(player, root) {
       },
 
       volume: function(level) {
-         api.volume = level;
+         volumeLevel = level;
+         if (api) {
+            api.volume = level;
+         }
       },
 
       unload: function() {
@@ -1136,7 +1167,7 @@ flowplayer.engine.html5 = function(player, root) {
             // safari hack for bad URL (10s before fails)
             if (flow == "progress" && e.srcElement && e.srcElement.readyState === 0) {
                setTimeout(function() {
-                  if (!player.video.duration) {
+                  if (!player.video.duration && (!player.conf.live || (player.video.type === 'mpegurl' && support.hlsDuration))) {
                      flow = "error";
                      player.trigger(flow, { code: 4 });
                   }
@@ -1148,7 +1179,7 @@ flowplayer.engine.html5 = function(player, root) {
             // no events if player not ready
             if (!player.ready && !/ready|error/.test(flow) || !flow || !$("video", root).length) { return; }
 
-            var event = $.Event(flow), arg;
+            var event = $.Event(flow), arg, vtype;
 
             switch (flow) {
 
@@ -1163,7 +1194,8 @@ flowplayer.engine.html5 = function(player, root) {
                   });
 
                   try {
-                     arg.seekable = api.seekable && api.seekable.end(null);
+                     vtype = getType($("video", root).attr("type"));
+                     arg.seekable = !conf.live && /mpegurl/i.test(vtype) && api.duration || api.seekable && api.seekable.end(null);
 
                   } catch (ignored) {}
 
@@ -1252,7 +1284,7 @@ function parseSource(el) {
       type = el.attr("type") || "",
       suffix = src.split(TYPE_RE)[1];
 
-   type = /mpegurl/.test(type) ? "mpegurl" : type.replace("video/", "");
+   type = /mpegurl/i.test(type) ? "mpegurl" : type.replace("video/", "");
 
    return { src: src, suffix: suffix || type, type: type || suffix };
 }
@@ -1841,6 +1873,10 @@ flowplayer(function(api, root) {
       if (focused) focusedRoot = root;
    });
 
+   var speedhelp = flowplayer.support.video && api.conf.engine !== "flash" &&
+      !!$("<video/>")[0].playbackRate ?
+      '<p><em>shift</em> + <em>&#8592;</em><em>&#8594;</em>slower / faster</p>' : '';
+
    // TODO: add to player-layout.html
    root.append('\
       <div class="fp-help">\
@@ -1848,8 +1884,7 @@ flowplayer(function(api, root) {
          <div class="fp-help-section fp-help-basics">\
             <p><em>space</em>play / pause</p>\
             <p><em>q</em>unload | stop</p>\
-            <p><em>f</em>fullscreen</p>\
-            <p><em>shift</em> + <em>&#8592;</em><em>&#8594;</em>slower / faster <small>(latest Chrome and Safari)</small></p>\
+            <p><em>f</em>fullscreen</p>' + speedhelp + '\
          </div>\
          <div class="fp-help-section">\
             <p><em>&#8593;</em><em>&#8595;</em>volume</p>\
@@ -1858,7 +1893,7 @@ flowplayer(function(api, root) {
          <div class="fp-help-section">\
             <p><em>&#8592;</em><em>&#8594;</em>seek</p>\
             <p><em>&nbsp;. </em>seek to previous\
-            </p><p><em>1</em><em>2</em>&hellip;<em>6</em> seek to 10%, 20%, &hellip;60% </p>\
+            </p><p><em>1</em><em>2</em>&hellip; <em>6</em> seek to 10%, 20% &hellip; 60% </p>\
          </div>\
       </div>\
    ');
@@ -1886,8 +1921,8 @@ var VENDOR = $.browser.mozilla ? "moz": "webkit",
 
 
 // esc button
-$(document).bind(FS_NATIVE_SUPPORT ? "fullscreenchange" : VENDOR + "fullscreenchange", function(e) {
-   var el = $(document.webkitCurrentFullScreenElement || document.mozFullScreenElement || document.fullscreenElement || e.target);
+$(document).bind("fullscreenchange webkitfullscreenchange mozfullscreenchange MSFullscreenChange", function(e) {
+   var el = $(document.webkitCurrentFullScreenElement || document.mozFullScreenElement || document.fullscreenElement || document.msFullscreenElement || e.target);
    if (el.length && !FULL_PLAYER) {
       FULL_PLAYER = el.trigger(FS_ENTER, [el]);
    } else {
@@ -1903,7 +1938,7 @@ flowplayer(function(player, root) {
    if (!player.conf.fullscreen) return;
 
    var win = $(window),
-      fsResume = {index: 0, pos: 0, play: false},
+      fsResume = {apply: false, pos: 0, play: false},
       scrollTop;
 
    player.isFullscreen = false;
@@ -1916,32 +1951,30 @@ flowplayer(function(player, root) {
 
       if (flag) scrollTop = win.scrollTop();
 
-      if ((VENDOR == "webkit" || IS_SAFARI) && player.engine == "flash") {
-         // play current index on fullscreen toggle
-         fsResume.index = player.video.index;
-         if (player.conf.rtmp)
-            // avoid restart
-            $.extend(fsResume, {pos: player.video.time, play: player.playing});
-      }
+      if ((VENDOR == "webkit" || IS_SAFARI) && player.engine == "flash")
+         fsResume = {apply: true, pos: player.video.time, play: player.playing};
 
       if (FS_SUPPORT) {
 
          if (flag) {
-            if (FS_NATIVE_SUPPORT) {
-               root[0].requestFullscreen();
-            } else {
-               root[0][VENDOR + 'RequestFullScreen'](Element.ALLOW_KEYBOARD_INPUT);
-               if (IS_SAFARI && !document.webkitCurrentFullScreenElement && !document.mozFullScreenElement) { // Element.ALLOW_KEYBOARD_INPUT not allowed
-                  root[0][VENDOR + 'RequestFullScreen']();
+            var r = root[0];
+            $.each(['requestFullScreen', 'webkitRequestFullScreen', 'mozRequestFullScreen', 'msRequestFullscreen'], function(i, fName) {
+               if (typeof r[fName] === 'function') {
+                  r[fName](Element.ALLOW_KEYBOARD_INPUT);
+                  if (IS_SAFARI && !document.webkitCurrentFullScreenElement && !document.mozFullScreenElement) { // Element.ALLOW_KEYBOARD_INPUT not allowed
+                     r[fName]();
+                  }
+                  return false;
                }
-            }
+            });
 
          } else {
-            if (FS_NATIVE_SUPPORT) {
-              document.exitFullscreen();
-            } else {
-              document[VENDOR + 'CancelFullScreen']();
-            }
+            $.each(['exitFullscreen', 'webkitCancelFullScreen', 'mozCancelFullScreen', 'msExitFullscreen'], function(i, fName) {
+              if (typeof document[fName] === 'function') {
+                document[fName]();
+                return false;
+              }
+            });
          }
 
       } else {
@@ -1974,13 +2007,9 @@ flowplayer(function(player, root) {
       win.scrollTop(scrollTop);
 
    }).bind("ready", function () {
-      if (fsResume.index > 0) {
-          player.play(fsResume.index);
-          // above loads "different" clip, resume position below
-          fsResume.index = 0;
-      } else if (fsResume.pos && !isNaN(fsResume.pos)) {
+      if (fsResume.apply) {
          var fsreset = function () {
-            if (!fsResume.play)
+            if (!fsResume.play && !player.conf.live)
                player.pause();
             $.extend(fsResume, {pos: 0, play: false});
          };
@@ -1988,8 +2017,10 @@ flowplayer(function(player, root) {
          if (player.conf.live) {
             player.resume();
             fsreset();
+         } else if (player.conf.rtmp && fsResume.pos && !isNaN(fsResume.pos)) {
+            player.seek(fsResume.pos, fsreset);
          } else {
-            player.resume().seek(fsResume.pos, fsreset);
+            fsreset();
          }
       }
    });
@@ -2250,7 +2281,7 @@ flowplayer(function(player, root, engine) {
    // avoid duplicate loads
    track.remove();
 
-   var TIMECODE_RE = /^(([0-9]{2}:)?[0-9]{2}:[0-9]{2}[,.]{1}[0-9]{3}) --\> (([0-9]{2}:)?[0-9]{2}:[0-9]{2}[,.]{1}[0-9]{3})(.*)/;
+   var TIMECODE_RE = /^(([0-9]{2}:){1,2}[0-9]{2}[,.][0-9]{3}) --\> (([0-9]{2}:){1,2}[0-9]{2}[,.][0-9]{3})(.*)/;
 
    function seconds(timecode) {
       var els = timecode.split(':');
@@ -2283,7 +2314,7 @@ flowplayer(function(player, root, engine) {
                entry = {
                   title: title,
                   startTime: seconds(timecode[1]),
-                  endTime: seconds(timecode[2] || timecode[3]),
+                  endTime: seconds(timecode[3]),
                   text: text
                };
 
@@ -2396,7 +2427,6 @@ if (flowplayer.support.touch || isIeMobile) {
 
       // custom load for android
       if (isAndroid) {
-         player.conf.videoTypePreference = "mp4"; // Android has problems with webm aspect ratio
          if (!/Chrome/.test(UA) && androidVer < 4) {
             var originalLoad = player.load;
             player.load = function(video, callback) {
@@ -2498,8 +2528,10 @@ flowplayer(function(player, root) {
          tag = $("<video/>").appendTo(el);
 
       // configuration
-      $.each(['origin', 'analytics', 'key', 'rtmp'], function(i, key) {
-         if (conf[key]) el.attr("data-" + key, conf[key]);
+      $.each(['origin', 'analytics', 'key', 'rtmp', 'subscribe', 'bufferTime'], function(i, key) {
+         if (conf.hasOwnProperty(key)) {
+             el.attr("data-" + key, conf[key]);
+         }
       });
 
       //logo
@@ -2513,10 +2545,11 @@ flowplayer(function(player, root) {
          if (!/^https?:/.test(src.src) && src.type !== 'flash' || !conf.rtmp) {
             path = $("<img/>").attr("src", src.src)[0].src;
          }
-         tag.append($("<source/>", { type: "video/" + src.type, src: path }));
+         tag.append($("<source/>",
+               { type: src.type != "mpegurl" ? "video/" + src.type : "application/x-mpegurl", src: path }));
       });
 
-      var scriptAttrs = { src: "//embed.flowplayer.org/5.4.6/embed.min.js" };
+      var scriptAttrs = { src: "//embed.flowplayer.org/5.5.0/embed.min.js" };
       if ($.isPlainObject(conf.embed)) {
          scriptAttrs['data-swf'] = conf.embed.swf;
          scriptAttrs['data-library'] = conf.embed.library;
@@ -2578,4 +2611,4 @@ $.fn.fptip = function(trigger, active) {
 };
 
 }(jQuery);
-flowplayer(function(e,o){function l(e){var o=a("<a/>")[0];return o.href=e,o.hostname}var a=jQuery,r=e.conf,i=r.swf.indexOf("flowplayer.org")&&r.e&&o.data("origin"),n=i?l(i):location.hostname,t=r.key;if("file:"==location.protocol&&(n="localhost"),e.load.ed=1,r.hostname=n,r.origin=i||location.href,i&&o.addClass("is-embedded"),"string"==typeof t&&(t=t.split(/,\s*/)),t&&"function"==typeof key_check&&key_check(t,n))r.logo&&o.append(a("<a>",{"class":"fp-logo",href:i}).append(a("<img/>",{src:r.logo})));else{var s=a("<a/>").attr("href","http://flowplayer.org").appendTo(o);a(".fp-controls",o);var p=a('<div class="fp-context-menu"><ul><li class="copyright">&copy; 2013</li><li><a href="http://flowplayer.org">About Flowplayer</a></li><li><a href="http://flowplayer.org/license">GPL based license</a></li></ul></div>').appendTo(o);e.bind("pause resume finish unload",function(e,l){var r=-1;l.video.src&&a.each([["org","flowplayer","drive"],["org","flowplayer","my"]],function(e,o){return r=l.video.src.indexOf("://"+o.reverse().join(".")),-1===r}),/pause|resume/.test(e.type)&&"flash"!=l.engine&&4!=r&&5!=r?(s.show().css({position:"absolute",left:16,bottom:36,zIndex:99999,width:100,height:20,backgroundImage:"url("+[".png","logo","/",".net",".cloudfront","d32wqyuo10o653","//"].reverse().join("")+")"}),l.load.ed=s.is(":visible")&&a.contains(o[0],p[0]),l.load.ed||l.pause()):s.hide()})}});
+flowplayer(function(e,o){function l(e){var o=a("<a/>")[0];return o.href=e,o.hostname}var a=jQuery,r=e.conf,i=r.swf.indexOf("flowplayer.org")&&r.e&&o.data("origin"),n=i?l(i):location.hostname,t=r.key;if("file:"==location.protocol&&(n="localhost"),e.load.ed=1,r.hostname=n,r.origin=i||location.href,i&&o.addClass("is-embedded"),"string"==typeof t&&(t=t.split(/,\s*/)),t&&"function"==typeof key_check&&key_check(t,n))r.logo&&o.append(a("<a>",{"class":"fp-logo",href:i}).append(a("<img/>",{src:r.logo})));else{var s=a("<a/>").attr("href","http://flowplayer.org").appendTo(o);a(".fp-controls",o);var p=a('<div class="fp-context-menu"><ul><li class="copyright">&copy; 2014</li><li><a href="http://flowplayer.org">About Flowplayer</a></li><li><a href="http://flowplayer.org/license">GPL based license</a></li></ul></div>').appendTo(o);e.bind("pause resume finish unload",function(e,l){var r=-1;l.video.src&&a.each([["org","flowplayer","drive"],["org","flowplayer","my"]],function(e,o){return r=l.video.src.indexOf("://"+o.reverse().join(".")),-1===r}),/pause|resume/.test(e.type)&&"flash"!=l.engine&&4!=r&&5!=r?(s.show().css({position:"absolute",left:16,bottom:36,zIndex:99999,width:100,height:20,backgroundImage:"url("+[".png","logo","/",".net",".cloudfront","d32wqyuo10o653","//"].reverse().join("")+")"}),l.load.ed=s.is(":visible")&&a.contains(o[0],p[0]),l.load.ed||l.pause()):s.hide()})}});
