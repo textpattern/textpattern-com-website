@@ -1,4 +1,4 @@
 source 'https://rubygems.org'
 gem 'compass', '1.0.1'
-gem 'sass', '3.4.0'
-gem 'singularitygs', '1.3.0'
+gem 'sass', '3.4.3'
+gem 'singularitygs', '1.4.0'
