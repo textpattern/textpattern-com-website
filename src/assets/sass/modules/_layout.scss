@@ -166,16 +166,3 @@ article {
 .legal {
     @include adjust-font-size-to(11px, 0.85);
 }
-
-/**
- * Address differences between Firefox and other browsers.
- */
-
-hr {
-    @include box-sizing(content-box);
-
-    border: 0; // remove the default `hr` border
-    height: 24px;
-    background: url("../img/com/hr.svg") 50% 50% no-repeat;
-    background-size: 240px 24px;
-}

@@ -7,7 +7,7 @@
 
 
 /* ==========================================================================
-   Desktop version layout for IE8 due to lack of media queries support
+   Desktop version layout for IE 8 due to lack of media queries support
    ========================================================================== */
 
 .layout--span-1-6 {
@@ -168,6 +168,10 @@ hr {
     filter: Alpha(Opacity=33);
 }
 
+.ui-widget-overlay {
+    background: url("../img/overlay-no-rgba.png");
+}
+
 .ui-slider.ui-state-disabled {
     .ui-slider-handle,
     .ui-slider-range {
@@ -178,7 +182,7 @@ hr {
 
 
 /* ==========================================================================
-   Fix for reponsive embedded content in IE8
+   Fix for reponsive embedded content in IE 8
    ========================================================================== */
 
 img,

@@ -58,34 +58,6 @@ a {
 }
 
 /**
- * Show URLs for certain links in print.
- */
-
-a[href]:after {
-    content: " (" attr(href) ")";
-}
-
-/**
- * Don't show URLs for certain links in print.
- */
-
-h1 a[href],
-h2 a[href],
-h3 a[href],
-h4 a[href],
-h5 a[href],
-h6 a[href],
-sup a[href],
-a[itemprop="discussionUrl"],
-a[rel="tag"],
-a[href^="#"],
-a[href^="javascript:"] {
-    &:after {
-        content: "";
-    }
-}
-
-/**
  *  Show long-form for abbreviations in print.
  */
 
@@ -275,7 +247,7 @@ figcaption {
 
 ul {
     list-style: square;
-    margin: 0 0 8pt 1.8em;
+    padding: 0 0 8pt 1.8em;
 }
 
 /**
@@ -284,7 +256,7 @@ ul {
 
 ol {
     list-style: decimal;
-    margin: 0 0 8pt 1.8em;
+    padding: 0 0 8pt 1.8em;
 }
 
 /**
@@ -292,7 +264,21 @@ ol {
  */
 
 dl {
-    margin: 0 0 8pt 1.8em;
+    padding: 0 0 8pt 1.8em;
+}
+
+/**
+ * Have a list with no bullets/numerals.
+ *
+ * Example HTML:
+ *
+ * <ul class="list--no-bullets">
+ * <ol class="list--no-bullets">
+ */
+
+.list--no-bullets {
+    list-style: none;
+    padding: 0;
 }
 
 /**
