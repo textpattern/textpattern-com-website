@@ -15,39 +15,40 @@
  * </p>
  */
 
-//.article-date {
+.article-date {
 //    position: absolute;
 //    top: 0;
 //    left: 0;
 //    z-index: 2;
 //    margin: 0;
-//}
 
-time {
-    display: block;
-    border: 2px solid $color-text;
-    border-bottom: 0;
-    width: 3.25em;
-    text-align: center;
-    background-color: $color-background;
-}
+    time {
+        display: block;
+        border: 2px solid $color-text;
+        border-bottom: 0;
+        width: 3.25em;
+        text-align: center;
+        background-color: $color-background;
+    }
 
-time * {
-    display: block;
-}
+    time * {
+        display: block;
+    }
 
-.time-day {
-    @include adjust-font-size-to(30px, 1.2); // 24px line height
+    .time-day {
+        @include adjust-font-size-to(30px, 1.2); // 24px line height
+    
+        padding-top: 0.1em; // 3px / 30px
+        font-family: $font-serif;
+    }
 
-    padding-top: 0.1em; // 3px / 30px
-    font-family: $font-serif;
-}
+    .time-month {
+        @include adjust-font-size-to(18px, 1.2); // 24px line height
+    }
 
-.time-month {
-    @include adjust-font-size-to(18px, 1.2); // 24px line height
-}
+    .time-year {
+        color: $color-background;
+        background-color: $color-text;
+    }
 
-.time-year {
-    color: $color-background;
-    background-color: $color-text;
 }
