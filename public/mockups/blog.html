@@ -65,21 +65,16 @@
             <main role="main" itemscope itemtype="http://schema.org/Blog" aria-label="Main content">
 
                 <article class="layout--span-1-8" role="article" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+
                     <h1 itemprop="name headline">Blog example title</h1>
 
-                    <p class="article-publishing-details">
-                        By
-                        <span class="vcard" itemprop="author" itemscope itemtype="http://schema.org/Person">
-                            <a class="url" rel="author" href="#"><span class="fn n" itemprop="name">Joe Q. Public</span></a>
-                        </span>
-                        <time datetime="2014-01-25T10:43:39Z" itemprop="datePublished">25 January 2014 at 10:43:39</time>
-                    </p>
 
-                    <p class="article-comment-details">
-                        Comments
-                        <a href="#comments-head" title="View comments" itemprop="discussionUrl" itemscope itemtype="http://schema.org/UserComments">
-                            <span itemprop="interactionCount">3</span>
-                        </a>
+                    <p class="article-date">
+                        <time datetime="2014-08-25T10:43:39Z" itemprop="datePublished">
+                            <b class="time-day">25</b>
+                            <b class="time-month">Aug</b>
+                            <span class="time-year">2014</span>
+                        </time>
                     </p>
 
                     <div class="article-description" itemprop="description">
@@ -101,8 +96,24 @@
                         <p>Ex graeci civibus eleifend vim, mel et utroque fastidii. Sed eu omnis disputando, voluptatum appellantur vix an. Exerci detracto at his, at illud debitis vis, augue congue inimicus his ei. Cetero intellegat ius an. Eu sed nobis tation, erant elaboraret eam at.</p>
                     </div><!-- /itemprop="articleBody" -->
 
-                    <p class="article-tags">
-                        <strong>Tag:</strong> <span itemprop="keywords"><a rel="tag" href="#">Releases</a>, <a rel="tag" href="#">Hope for the future</a></span>
+                    <p class="article-authorship">
+                        <span class="ui-icon ui-icon-pencil">By:</span>
+                        <span class="vcard" itemprop="author" itemscope itemtype="http://schema.org/Person">
+                            <a class="url" rel="author" href="#">
+                                <span class="fn n" itemprop="name">Phil Wareham</span>
+                            </a>
+                        </span>
+                        <span class="separator" role="separator">|</span>
+                        <span class="ui-icon ui-icon-comment">Comments:</span>
+                        <a href="#comments-head" title="View comments" itemprop="discussionUrl" itemscope itemtype="http://schema.org/UserComments">
+                            <span itemprop="interactionCount">3</span>
+                        </a>
+                        <span class="separator" role="separator">|</span>
+                        <span class="ui-icon ui-icon-tag">Tags:</span>
+                        <span itemprop="keywords">
+                            <a rel="tag" href="#">Releases</a>,
+                            <a rel="tag" href="#">Hope for the future</a>
+                        </span>
                     </p>
 
                     <section id="comments-head">
