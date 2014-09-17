@@ -14,7 +14,7 @@
     Header set X-UA-Compatible "IE=edge"
     # `mod_headers` cannot match based on the content-type, however, this header
     # should be send only for HTML documents and not for the other resources
-    <FilesMatch "\.(appcache|atom|crx|css|cur|eot|f4[abpv]|flv|gif|htc|ico|jpe?g|js|json(ld)?|m4[av]|manifest|map|mp4|oex|og[agv]|opus|otf|pdf|png|rdf|rss|safariextz|svgz?|swf|tt[cf]|txt|vcf|vtt|webapp|web[mp]|woff|xml|xpi)$">
+    <FilesMatch "\.(appcache|atom|crx|css|cur|eot|f4[abpv]|flv|geojson|gif|htc|ico|jpe?g|js|json(ld)?|m4[av]|manifest|map|mp4|oex|og[agv]|opus|otf|pdf|png|rdf|rss|safariextz|svgz?|swf|topojson|tt[cf]|txt|vcf|vtt|webapp|web[mp]|woff2?|xml|xpi)$">
         Header unset X-UA-Compatible
     </FilesMatch>
 </IfModule>
@@ -30,7 +30,18 @@ AddDefaultCharset utf-8
 
 # Set `UTF-8` as the character encoding for other certain resources.
 <IfModule mod_mime.c>
-    AddCharset utf-8 .atom .css .js .json .jsonld .rss .vtt .webapp .xml
+    AddCharset utf-8 .atom \
+                     .css \
+                     .geojson \
+                     .js \
+                     .json \
+                     .jsonld \
+                     .rdf \
+                     .rss \
+                     .topojson \
+                     .vtt \
+                     .webapp \
+                     .xml
 </IfModule>
 
 
@@ -115,6 +126,8 @@ FileETag None
   # Data interchange
     ExpiresByType application/json                      "access plus 0 seconds"
     ExpiresByType application/ld+json                   "access plus 0 seconds"
+    ExpiresByType application/schema+json               "access plus 0 seconds"
+    ExpiresByType application/vnd.geo+json              "access plus 0 seconds"
     ExpiresByType application/xml                       "access plus 0 seconds"
     ExpiresByType text/xml                              "access plus 0 seconds"
 
@@ -129,6 +142,7 @@ FileETag None
 
   # JavaScript
     ExpiresByType application/javascript                "access plus 1 month"
+    ExpiresByType text/javascript                       "access plus 1 month"
 
   # Manifest files
     ExpiresByType application/manifest+json             "access plus 1 year"
@@ -146,10 +160,12 @@ FileETag None
 
   # Web feeds
     ExpiresByType application/atom+xml                  "access plus 1 hour"
+    ExpiresByType application/rdf+xml                   "access plus 1 hour"
     ExpiresByType application/rss+xml                   "access plus 1 hour"
 
   # Web fonts
     ExpiresByType application/font-woff                 "access plus 1 month"
+    ExpiresByType application/font-woff2                "access plus 1 month"
     ExpiresByType application/vnd.ms-fontobject         "access plus 1 month"
     ExpiresByType application/x-font-ttf                "access plus 1 month"
     ExpiresByType font/opentype                         "access plus 1 month"
