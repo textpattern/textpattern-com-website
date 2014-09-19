@@ -52,7 +52,33 @@
     }
 }
 
-.article-authorship {
+/**
+ * Article footer styling.
+ *
+ * Example HTML:
+ *
+ * <footer class="article-footer">
+ *     <span class="ui-icon ui-icon-pencil">By:</span>
+ *     <span class="vcard">
+ *         <a class="url">
+ *             <span class="fn n">Phil Wareham</span>
+ *         </a>
+ *     </span>
+ *     <span class="separator">|</span>
+ *     <span class="ui-icon ui-icon-tag">Tags:</span>
+ *     <span>
+ *         <a>Releases</a>
+ *         <a>Hope for the future</a>
+ *     </span>
+ *     <span class="separator">|</span>
+ *     <span class="ui-icon ui-icon-comment">Comments:</span>
+ *     <a>
+ *         <span>3</span>
+ *     </a>
+ * </footer>
+ */
+
+.article-footer {
     a {
         @include border-radius(1em);
 
@@ -77,6 +103,7 @@
         }
     }
 
+    // Put a bit more margin on 2nd category link, if it exists (for better touch accessibility).
     a + a {
         margin-left: 0.25em;
     }
