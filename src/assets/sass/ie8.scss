@@ -70,8 +70,8 @@
  * Don't allow site to collapse smaller than large breakpoint.
  */
 
-header,
-footer,
+.site-header,
+.site-footer,
 .container,
 .nav-collapse ul {
     min-width: $breakpoint-3;

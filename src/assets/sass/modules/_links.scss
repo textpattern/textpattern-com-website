@@ -43,11 +43,11 @@ a {
 }
 
 /**
- * Additional styling for child links within `role=complementary` and `footer`.
+ * Additional styling for child links within `role=complementary` and site footer.
  */
 
 [role="complementary"] a,
-footer a {
+.site-footer a {
     color: $color-selecting;
 
     &:hover,

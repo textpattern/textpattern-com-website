@@ -34,15 +34,15 @@ body {
     background: $color-background;
 }
 
-header,
-footer,
+.site-header,
+.site-footer,
 .container {
     margin: 0 auto;
     width: 90%;
     max-width: $container-max-width;
 }
 
-header {
+.site-header {
     position: relative;
 }
 
@@ -150,7 +150,7 @@ h1.masthead {
     line-height: 1;
 }
 
-footer {
+.site-footer {
     clear: both;
     position: relative;
 }

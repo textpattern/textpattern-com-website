@@ -28,7 +28,7 @@ body {
  * Visually separate header from body.
  */
 
-header {
+.site-header {
     border-bottom: solid 1pt black;
 }
 
@@ -36,7 +36,6 @@ header {
  * Hide unnecessary content from print.
  */
 
-footer,
 nav,
 audio,
 video,
@@ -44,6 +43,7 @@ form,
 [role="complementary"],
 #search-form,
 #comments-form,
+.site-footer,
 .comments h4 a:last-child,
 .paginator {
     display: none;
