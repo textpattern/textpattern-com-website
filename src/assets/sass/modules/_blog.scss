@@ -37,7 +37,7 @@
 
     .time-day {
         @include adjust-font-size-to(30px, 1.2); // 24px line height
-    
+
         padding-top: 0.1em; // 3px / 30px
         font-family: $font-serif;
     }
