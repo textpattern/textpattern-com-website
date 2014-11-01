@@ -1,7 +1,10 @@
 # Require any additional Compass plugins here:
 
-# Singularity GS - https://github.com/Team-Sass/Singularity
+# Singularity.gs - https://github.com/at-import/Singularity
 require "singularitygs"
+
+# Toolkit - https://github.com/at-import/toolkit
+require 'toolkit'
 
 
 

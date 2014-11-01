@@ -47,12 +47,12 @@ $color-text-inverse:          #ffffff;
 
 // interaction colours
 
-$color-link:                  #114eb1;
+$color-link:                  #004cbf;
 $color-link-hover:            #0066ff;
-$color-link-focus:            #5b9dd9;
-$color-link-visited:          #183082;
-$color-selecting:             lighten($color-link, 50%);
-$color-selected:              lighten($color-link, 56%);
+$color-link-focus:            tint($color-link-hover, 50%);
+$color-link-visited:          shade($color-link, 33%);
+$color-selecting:             tint($color-link-hover, 80%);
+$color-selected:              tint($color-link-hover, 90%);
 
 // default gradients
 
@@ -87,8 +87,8 @@ $color-accent-gradient-to:    darken($color-accent-gradient-from, 15%);
 $color-success-text:          #238c23;
 $color-success-background:    #dff0d8;
 $color-success-border:        darken($color-success-background, 20%);
-$color-warning-text:          #cb8f02;
-$color-warning-background:    #fff6d3;
+$color-warning-text:          #cc8c00;
+$color-warning-background:    #f7eedb;
 $color-warning-border:        darken($color-warning-background, 20%);
 $color-error-text:            #9d261d;
 $color-error-background:      #f2dede;
