@@ -77,10 +77,10 @@ $text-shadow-dark:            -1px -1px 0 rgba(#000000, 0.1);
 
 // accent colours
 
-$color-highlight-box:         #fff9e1;
-$color-strong-highlight-box:  #fde699;
 $color-accent-gradient-from:  #ffda44;
 $color-accent-gradient-to:    darken($color-accent-gradient-from, 15%);
+$color-highlight-box:         tint($color-accent-gradient-from, 84%);
+$color-strong-highlight-box:  #fde699;
 
 // alert colours
 
