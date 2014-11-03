@@ -60,14 +60,14 @@ $colors: (
 .design-patterns--color {
     position: relative;
     display: block;
-    border: 1px solid lighten($color-border, 9%);
+    border: 1px solid $color-border;
     height: 3em; // 39px / 13px
 
     &:after {
         @include adjust-font-size-to(12px, 0.9);
 
         position: absolute;
-        top: 0.5em;
+        top: 0.75em;
         padding: 1px 0.25em;
         font-family: $font-mono;
         background-color: #ffffff; // IE 8 support.
