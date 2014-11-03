@@ -59,7 +59,8 @@ module.exports = function (grunt)
                         'tmp/assets/css/style.css',
                         'src/assets/js/libs/flowplayer/skin/minimalist.css'
                     ],
-                    'public/assets/css/ie8.css': ['tmp/assets/css/ie8.css']
+                    'public/assets/css/ie8.css': ['tmp/assets/css/ie8.css'],
+                    'public/assets/css/design-patterns.css': ['tmp/assets/css/design-patterns.css']
                 }
             }
         },
@@ -110,13 +111,13 @@ module.exports = function (grunt)
                 files: [
                     {
                         'public/assets/js/main.js': ['src/assets/js/main.js'],
+                        'public/assets/js/autosize.js': ['bower_components/jquery-autosize/jquery.autosize.js'],
+                        'public/assets/js/cookie.js': ['bower_components/jquery.cookie/jquery.cookie.js'],
                         'public/assets/js/details.js': ['bower_components/jquery-details/jquery.details.js'],
+                        'public/assets/js/html5shiv.js': ['bower_components/html5shiv/dist/html5shiv.js'],
                         'public/assets/js/prettify.js': ['bower_components/google-code-prettify/src/prettify.js'],
                         'public/assets/js/require.js': ['bower_components/requirejs/require.js'],
-                        'public/assets/js/cookie.js': ['bower_components/jquery.cookie/jquery.cookie.js'],
-                        'public/assets/js/responsivenav.js': ['bower_components/responsive-nav/responsive-nav.js'],
-                        'public/assets/js/autosize.js': ['bower_components/jquery-autosize/jquery.autosize.js'],
-                        'public/assets/js/html5shiv.js': ['bower_components/html5shiv/dist/html5shiv.js']
+                        'public/assets/js/responsivenav.js': ['bower_components/responsive-nav/responsive-nav.js']
                     },
                     {
                         expand: true,
