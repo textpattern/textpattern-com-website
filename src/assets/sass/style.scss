@@ -11,7 +11,6 @@
    ========================================================================== */
 
 @import "core/base";
-@import "core/layout";
 
 
 
@@ -21,6 +20,7 @@
 
 @media screen {
 
+@import "core/layout";
 @import "modules/layout";
 @import "modules/navigation";
 @import "modules/links";

@@ -6,6 +6,7 @@
     "grunt-cli": "~0.1",
     "grunt-combine-media-queries": "1.0.19",
     "grunt-contrib-compass": "1.0.1",
+    "grunt-contrib-concat": "0.5.0",
     "grunt-contrib-copy": "0.7.0",
     "grunt-contrib-cssmin": "0.10.0",
     "grunt-contrib-jshint": "0.10.0",
