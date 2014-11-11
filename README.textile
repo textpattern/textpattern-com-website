@@ -1,6 +1,6 @@
 h1. Textpattern.com website
 
-!https://travis-ci.org/textpattern/textpattern-com-website.png?branch=master!:https://travis-ci.org/textpattern/textpattern-com-website
+!https://travis-ci.org/textpattern/textpattern-com-website.png?branch=master!:https://travis-ci.org/textpattern/textpattern-com-website !https://cdn.gruntjs.com/builtwith.png(Built with Grunt)!:http://gruntjs.com/
 
 Official website of the Textpattern project. *Currently under development.*
 
