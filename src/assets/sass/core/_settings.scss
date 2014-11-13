@@ -34,35 +34,8 @@ $breakpoint-3:                64em;         // 1024px / 16px
 $breakpoint-2:                46.625em;     // 746px / 16px
 $breakpoint-1:                30em;         // 480px / 16px
 
-// page colours
-
-$color-background:            #ffffff;
-$color-background-box:        #f7f7f7;
-
-// text colours
-
-$color-text:                  #333333;
-$color-text-footnote:         #888888;
-$color-text-inverse:          #ffffff;
-
-// interaction colours
-
-$color-link:                  #004cbf;
-$color-link-hover:            #0066ff;
-$color-link-focus:            tint($color-link-hover, 50%);
-$color-link-visited:          shade($color-link, 33%);
-$color-selecting:             tint($color-link-hover, 80%);
-$color-selected:              tint($color-link-hover, 90%);
-
-// default gradients
-
-$color-gradient-from:         #eeeeee;
-$color-gradient-to:           darken($color-gradient-from, 6.5%);
-$color-gradient-border:       darken($color-gradient-from, 13.5%);
-
 // borders
 
-$color-border:                #cccccc;
 $default-border-radius:       0.5384615em; // 7px / 13px
 
 // shadows
@@ -74,25 +47,3 @@ $default-box-shadow-blur:     2px;
 $inset-highlighting:          inset 0 1px 0 rgba(#ffffff, 0.25);
 $text-shadow-light:           1px 1px 0 rgba(#ffffff, 0.5);
 $text-shadow-dark:            -1px -1px 0 rgba(#000000, 0.1);
-
-// accent colours
-
-$color-accent-gradient-from:  #ffda44;
-$color-accent-gradient-to:    darken($color-accent-gradient-from, 15%);
-$color-highlight-box:         tint($color-accent-gradient-from, 84%);
-$color-strong-highlight-box:  tint($color-accent-gradient-from, 36%);
-
-// alert colours
-
-$color-success-text:          #238c23;
-$color-success-background:    #dff0d8;
-$color-success-border:        darken($color-success-background, 20%);
-$color-warning-text:          #cc8c00;
-$color-warning-background:    #f7eedb;
-$color-warning-border:        darken($color-warning-background, 20%);
-$color-error-text:            #9d261d;
-$color-error-background:      #f2dede;
-$color-error-border:          darken($color-error-background, 12%);
-$color-info-text:             #3a87ad;
-$color-info-background:       #e7f6fc;
-$color-info-border:           darken($color-info-background, 12%);
