@@ -89,11 +89,11 @@ h1.masthead {
 
     // search input field
     input#search-query {
-        @include border-radius;
         @include transition(width 0.2s linear, box-shadow 0.1s linear);
 
         width: 240px;
         height: 34px;
+        border-radius: $default-border-radius;
         padding-left: 32px;
         background: url("../img/branding/misc/icon-sprite.svg") no-repeat left center;
         background-size: 160px 32px;

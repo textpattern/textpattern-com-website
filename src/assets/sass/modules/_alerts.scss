@@ -16,8 +16,7 @@
 .warning,
 .error,
 .information {
-    @include border-radius(0.2307692em); // 3px / 13px
-
+    border-radius: 0.2307692em; // 3px / 13px
     padding: 1px 0.2307692em; // 3px / 13px
 }
 

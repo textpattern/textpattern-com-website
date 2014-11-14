@@ -57,7 +57,7 @@ img {
  */
 
 .img--rounded {
-    @include border-radius;
+    border-radius: $default-border-radius;
 }
 
 /**
@@ -69,7 +69,7 @@ img {
  */
 
 .img--circular {
-    @include border-radius(50%);
+    border-radius: 50%;
 }
 
 /**

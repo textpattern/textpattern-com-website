@@ -80,10 +80,9 @@
 
 .article-footer {
     a {
-        @include border-radius(1em);
-
         display: inline-block;
         margin-top: 1em;
+        border-radius: 1em;
         padding: 0.25em 0.75em; // 3px / 12px + 9px / 12px
         color: $color-text-inverse;
         background: $color-text;

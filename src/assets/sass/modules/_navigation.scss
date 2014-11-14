@@ -75,9 +75,9 @@
 
         @include breakpoint($breakpoint-2) {
             @include adjust-font-size-to(20px, 1);
-            @include border-radius($default-border-radius / 2);
 
             margin: 0 0.4em 0.4em -0.4em;
+            border-radius: $default-border-radius / 2;
             padding: 0.4em;
             font-weight: normal;
         }
@@ -124,7 +124,6 @@
 
 .nav-toggle {
     @include hide-text;
-    @include border-radius;
 
     -webkit-touch-callout: none; /* 1 */
     position: absolute;
@@ -133,6 +132,7 @@
     z-index: 2;
     margin-top: 1px;
     border: 1px solid $color-border;
+    border-radius: $default-border-radius;
     width: 32px;
     height: 32px;
     background-image: url("../img/branding/misc/icon-sprite.svg");
