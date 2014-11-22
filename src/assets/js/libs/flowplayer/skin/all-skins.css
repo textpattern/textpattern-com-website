@@ -99,6 +99,7 @@
 .is-rtl.play-button.no-time.minimalist .fp-timeline,.is-rtl.play-button.aside-time.minimalist .fp-timeline{margin-right:27px}
 .minimalist .fp-buffer,.minimalist .fp-progress{position:absolute;top:0;left:auto;height:100%;cursor:col-resize}
 .minimalist .fp-buffer{-webkit-transition:width .25s linear;-moz-transition:width .25s linear;transition:width .25s linear}
+.minimalist .fp-timeline.no-animation .fp-buffer{-webkit-transition:none;-moz-transition:none;transition:none}
 .minimalist.is-touch .fp-timeline{overflow:visible}
 .minimalist.is-touch .fp-progress{-webkit-transition:width .2s linear;-moz-transition:width .2s linear;transition:width .2s linear}
 .minimalist.is-touch .fp-timeline.is-dragging .fp-progress{-webkit-transition:right .1s linear,border .1s linear,top .1s linear,left .1s linear;-moz-transition:right .1s linear,border .1s linear,top .1s linear,left .1s linear;transition:right .1s linear,border .1s linear,top .1s linear,left .1s linear}
@@ -152,6 +153,8 @@
 .minimalist.is-loading .fp-ui{background-position:-9999em}
 .minimalist.is-loading video.fp-engine{position:absolute;top:-9999em}
 .minimalist.is-seeking .fp-waiting{display:block}
+.minimalist.is-playing{background-image:none !important;background-color:#333;}
+.minimalist.is-playing.hls-fix.is-finished .fp-engine{position:absolute;top:-9999em}
 .minimalist.is-fullscreen{position:fixed !important;top:0 !important;left:0 !important;border:0 !important;margin:0 !important;width:100% !important;height:100% !important;max-width:100% !important;z-index:99999 !important;-webkit-box-shadow:0 !important;-moz-box-shadow:0 !important;box-shadow:0 !important;background-image:none !important;background-color:#333;}
 .is-rtl.minimalist.is-fullscreen{left:auto !important;right:0 !important}
 .minimalist.is-error{border:1px solid #909090;background:#fdfdfd !important;}
@@ -328,6 +331,7 @@
 .is-rtl.play-button.no-time.functional .fp-timeline,.is-rtl.play-button.aside-time.functional .fp-timeline{margin-right:27px}
 .functional .fp-buffer,.functional .fp-progress{position:absolute;top:0;left:auto;height:100%;cursor:col-resize}
 .functional .fp-buffer{-webkit-transition:width .25s linear;-moz-transition:width .25s linear;transition:width .25s linear}
+.functional .fp-timeline.no-animation .fp-buffer{-webkit-transition:none;-moz-transition:none;transition:none}
 .functional.is-touch .fp-timeline{overflow:visible}
 .functional.is-touch .fp-progress{-webkit-transition:width .2s linear;-moz-transition:width .2s linear;transition:width .2s linear}
 .functional.is-touch .fp-timeline.is-dragging .fp-progress{-webkit-transition:right .1s linear,border .1s linear,top .1s linear,left .1s linear;-moz-transition:right .1s linear,border .1s linear,top .1s linear,left .1s linear;transition:right .1s linear,border .1s linear,top .1s linear,left .1s linear}
@@ -381,6 +385,8 @@
 .functional.is-loading .fp-ui{background-position:-9999em}
 .functional.is-loading video.fp-engine{position:absolute;top:-9999em}
 .functional.is-seeking .fp-waiting{display:block}
+.functional.is-playing{background-image:none !important;background-color:#333;}
+.functional.is-playing.hls-fix.is-finished .fp-engine{position:absolute;top:-9999em}
 .functional.is-fullscreen{position:fixed !important;top:0 !important;left:0 !important;border:0 !important;margin:0 !important;width:100% !important;height:100% !important;max-width:100% !important;z-index:99999 !important;-webkit-box-shadow:0 !important;-moz-box-shadow:0 !important;box-shadow:0 !important;background-image:none !important;background-color:#333;}
 .is-rtl.functional.is-fullscreen{left:auto !important;right:0 !important}
 .functional.is-error{border:1px solid #909090;background:#fdfdfd !important;}
@@ -557,6 +563,7 @@
 .is-rtl.play-button.no-time.playful .fp-timeline,.is-rtl.play-button.aside-time.playful .fp-timeline{margin-right:27px}
 .playful .fp-buffer,.playful .fp-progress{position:absolute;top:0;left:auto;height:100%;cursor:col-resize}
 .playful .fp-buffer{-webkit-transition:width .25s linear;-moz-transition:width .25s linear;transition:width .25s linear}
+.playful .fp-timeline.no-animation .fp-buffer{-webkit-transition:none;-moz-transition:none;transition:none}
 .playful.is-touch .fp-timeline{overflow:visible}
 .playful.is-touch .fp-progress{-webkit-transition:width .2s linear;-moz-transition:width .2s linear;transition:width .2s linear}
 .playful.is-touch .fp-timeline.is-dragging .fp-progress{-webkit-transition:right .1s linear,border .1s linear,top .1s linear,left .1s linear;-moz-transition:right .1s linear,border .1s linear,top .1s linear,left .1s linear;transition:right .1s linear,border .1s linear,top .1s linear,left .1s linear}
@@ -610,6 +617,8 @@
 .playful.is-loading .fp-ui{background-position:-9999em}
 .playful.is-loading video.fp-engine{position:absolute;top:-9999em}
 .playful.is-seeking .fp-waiting{display:block}
+.playful.is-playing{background-image:none !important;background-color:#333;}
+.playful.is-playing.hls-fix.is-finished .fp-engine{position:absolute;top:-9999em}
 .playful.is-fullscreen{position:fixed !important;top:0 !important;left:0 !important;border:0 !important;margin:0 !important;width:100% !important;height:100% !important;max-width:100% !important;z-index:99999 !important;-webkit-box-shadow:0 !important;-moz-box-shadow:0 !important;box-shadow:0 !important;background-image:none !important;background-color:#333;}
 .is-rtl.playful.is-fullscreen{left:auto !important;right:0 !important}
 .playful.is-error{border:1px solid #909090;background:#fdfdfd !important;}
