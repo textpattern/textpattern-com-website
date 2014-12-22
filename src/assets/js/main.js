@@ -4,10 +4,10 @@
 
     document.documentElement.className = 'js';
 
-    var jqueryVersion = '1.11.1';
+    var jqueryVersion = '1.11.2';
 
     if (typeof JSON !== 'undefined' && 'querySelector' in document && 'addEventListener' in window) {
-        jqueryVersion = '2.1.1';
+        jqueryVersion = '2.1.3';
     }
 
     requirejs.config({
