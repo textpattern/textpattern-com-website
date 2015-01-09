@@ -99,9 +99,10 @@
 
     require(['responsivenav'], function ()
     {
-        responsiveNav('.nav-collapse', {
+        responsiveNav('.site-navigation', {
             transition: 400,
-            insert: 'before'
+            insert: 'before',
+            navClass: 'site-navigation'
         });
     });
 

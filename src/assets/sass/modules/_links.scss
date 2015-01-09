@@ -46,7 +46,7 @@ a {
  * Additional styling for child links within `role=complementary` and site footer.
  */
 
-[role="complementary"] a,
+.complementary-content a,
 .site-footer a {
     color: $color-selecting;
 

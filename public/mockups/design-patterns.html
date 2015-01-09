@@ -41,7 +41,7 @@
     <![endif]-->
 </head>
 
-<body>
+<body itemscope itemtype="http://schema.org/WebPage">
     <div class="wrapper">
 
 
@@ -57,15 +57,15 @@
 
 <!-- Navigation -->
         <div class="nav-container">
-            <nav class="nav-collapse" role="navigation" aria-label="Site navigation">
+            <nav class="site-navigation" role="navigation" aria-label="Site navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
                 <ul>
-                    <li><a href="http://textpattern.com/start">Get started</a></li>
-                    <li><a href="http://textpattern.net/">Documentation</a></li>
-                    <li><a href="http://textpattern.com/themes">Themes</a></li>
-                    <li><a href="http://textpattern.org/">Plugins</a></li>
-                    <li><a href="http://forum.textpattern.com/">Forum</a></li>
-                    <li><a href="http://textpattern.com/weblog">Blog</a></li>
-                    <li><a href="http://textpattern.com/about">About</a></li>
+                    <li><a itemprop="url" href="http://textpattern.com/start">Get started</a></li>
+                    <li><a itemprop="url" href="http://textpattern.net/">Documentation</a></li>
+                    <li><a itemprop="url" href="http://textpattern.com/themes">Themes</a></li>
+                    <li><a itemprop="url" href="http://textpattern.org/">Plugins</a></li>
+                    <li><a itemprop="url" href="http://forum.textpattern.com/">Forum</a></li>
+                    <li><a itemprop="url" href="http://textpattern.com/weblog">Blog</a></li>
+                    <li><a itemprop="url" href="http://textpattern.com/about">About</a></li>
                 </ul>
             </nav>
         </div>
@@ -1715,7 +1715,7 @@
 
 
 <!-- Footer -->
-    <footer class="site-footer" role="contentinfo">
+    <footer class="site-footer" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter">
         <p class="legal">
             <a href="http://textpattern.com/copyright">Copyright</a> 2004–2013 The Textpattern Development Team.
             <a href="http://textpattern.com/contact">Contact us</a>.

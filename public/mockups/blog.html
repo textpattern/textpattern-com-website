@@ -39,7 +39,7 @@
     <![endif]-->
 </head>
 
-<body>
+<body itemscope itemtype="http://schema.org/WebPage">
     <div class="wrapper">
 
 
@@ -55,15 +55,15 @@
 
 <!-- Navigation -->
         <div class="nav-container">
-            <nav class="nav-collapse" role="navigation" aria-label="Site navigation">
+            <nav class="site-navigation" role="navigation" aria-label="Site navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
                 <ul>
-                    <li><a href="http://textpattern.com/start">Get started</a></li>
-                    <li><a href="http://textpattern.net/">Documentation</a></li>
-                    <li><a href="http://textpattern.com/themes">Themes</a></li>
-                    <li><a href="http://textpattern.org/">Plugins</a></li>
-                    <li><a href="http://forum.textpattern.com/">Forum</a></li>
-                    <li class="active"><a href="http://textpattern.com/weblog">Blog</a></li>
-                    <li><a href="http://textpattern.com/about">About</a></li>
+                    <li><a itemprop="url" href="http://textpattern.com/start">Get started</a></li>
+                    <li><a itemprop="url" href="http://textpattern.net/">Documentation</a></li>
+                    <li><a itemprop="url" href="http://textpattern.com/themes">Themes</a></li>
+                    <li><a itemprop="url" href="http://textpattern.org/">Plugins</a></li>
+                    <li><a itemprop="url" href="http://forum.textpattern.com/">Forum</a></li>
+                    <li class="active"><a itemprop="url" href="http://textpattern.com/weblog">Blog</a></li>
+                    <li><a itemprop="url" href="http://textpattern.com/about">About</a></li>
                 </ul>
             </nav>
         </div>
@@ -71,7 +71,7 @@
 
 <!-- Primary Content -->
         <div class="container">
-            <main role="main" itemscope itemtype="http://schema.org/Blog" aria-label="Main content">
+            <main role="main" aria-label="Main content" itemscope itemtype="http://schema.org/Blog">
 
                 <article class="layout--span-1-8" role="article" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
 
@@ -250,7 +250,7 @@
 
 
 <!-- Footer -->
-    <footer class="site-footer" role="contentinfo">
+    <footer class="site-footer" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter">
         <p class="legal">
             Copyright 2004–2013 The Textpattern Development Team.
             <a href="http://textpattern.com/contact">Contact us</a>.
