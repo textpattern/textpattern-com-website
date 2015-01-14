@@ -11,6 +11,7 @@ module.exports = function (grunt)
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-shell');
 
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
@@ -125,6 +126,18 @@ module.exports = function (grunt)
             }
         },
 
+        // Run Textpattern setup script.
+        shell: {
+            setup: {
+                command: [
+                    'php src/setup/setup.php'
+                ].join('&&'),
+                options: {
+                    stdout: true
+                }
+            }
+        },
+
         // Uglify and copy JavaScript files from `bower-components`, and also `main.js`, to `public/assets/js/`.
         uglify: {
             dist: {
@@ -171,6 +184,7 @@ module.exports = function (grunt)
     grunt.registerTask('build', ['jshint', 'sass', 'copy:img', 'copy:js', 'uglify']);
     grunt.registerTask('default', ['watch']);
     grunt.registerTask('sass', ['compass', 'concat', 'cmq', 'cssmin', 'copy:css']);
+    grunt.registerTask('setup', ['shell:setup']);
     grunt.registerTask('test', ['jshint']);
     grunt.registerTask('travis', ['jshint', 'compass']);
 };
