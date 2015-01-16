@@ -5,3 +5,5 @@ node_js:
   - "0.10"
 before_install:
   - bundle install
+notifications:
+  slack: textpattern:QUmLD6S3qbRyTcIT5BjZMXuk
