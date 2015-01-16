@@ -46,8 +46,8 @@
 
 
 <!-- Header -->
-        <header class="site-header" role="banner" itemscope itemtype="http://schema.org/Organization">
-            <h1 class="masthead" itemprop="name"><a rel="home" itemprop="url" href="/" title="Go to the Textpattern homepage">Textpattern CMS</a></h1>
+        <header class="site-header" role="banner" itemscope itemtype="http://schema.org/WPHeader">
+            <h1 class="masthead" itemscope itemtype="http://schema.org/Organization"><a rel="home" itemprop="url" href="http://textpattern.com/" title="Go to the Textpattern homepage"><span itemprop="name">Textpattern CMS</span></a></h1>
 
             <form id="search-form" role="search" method="get" action="#">
                 <input id="search-query" type="search" size="32" placeholder="Search Textpattern.com…">
@@ -1670,8 +1670,7 @@
 
 
 <!-- Secondary Content -->
-    <div class="container" role="complementary">
-
+    <div class="container complementary-content" role="complementary" itemscope itemtype="http://schema.org/WPSideBar">
 
         <div class="layout--span-1-8">
             <section class="layout--span-1-6 at-break2" role="region">
@@ -1699,25 +1698,24 @@
             </section>
         </div>
 
-
         <section class="layout--span-9-12 host-details" role="region">
             <h4 class="accessibility">Host details</h4>
             <p><img class="svg" src="../assets/img/branding/textpattern-network/textpattern-network-white.svg" alt="Textpattern Network"></p>
             <p>
                 <small>
                     Kindly hosted by<br>
-                    <a class="joyent" rel="external" href="http://joyent.com/" title="Go to the Joyent website"><img class="svg" src="../assets/img/branding/misc/joyent-inverse.png" alt="Joyent"></a>
+                    <a class="joyent" rel="external" href="http://joyent.com/" title="Go to the Joyent website"><img class="svg" src="../assets/img/branding/misc/joyent-inverse.svg" alt="Joyent"></a>
                 </small>
             </p>
         </section>
 
-    </div><!-- /role="complementary" -->
+    </div><!-- /.complementary-content -->
 
 
 <!-- Footer -->
     <footer class="site-footer" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter">
         <p class="legal">
-            <a href="http://textpattern.com/copyright">Copyright</a> 2004–2013 The Textpattern Development Team.
+            Copyright 2004–2015 The Textpattern Development Team.
             <a href="http://textpattern.com/contact">Contact us</a>.
             <a href="http://textpattern.com/privacy">Privacy</a>.
             <a href="http://textpattern.com/humans.txt">Colophon</a>.
