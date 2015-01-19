@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
 gem 'compass', '1.0.3'
-gem 'sass', '3.4.9'
-gem 'singularitygs', '1.4.0'
+gem 'sass', '3.4.10'
+gem 'singularitygs', '1.5.1'
 gem 'toolkit', '2.6.0'
