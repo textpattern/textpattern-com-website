@@ -83,6 +83,9 @@ module.exports = function (grunt)
         // Minify and copy CSS files to `public/assets/css/`.
         cssmin: {
             main: {
+                options: {
+                    rebase: false
+                },
                 files: {
                     'public/assets/css/main.css': ['tmp/assets/css/main.css'],
                     'public/assets/css/ie8.css': ['tmp/assets/css/ie8.css'],
