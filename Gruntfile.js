@@ -154,7 +154,6 @@ module.exports = function (grunt)
                     jQuery: true,
                     Zepto: true,
                     define: true,
-                    google: true,
                     module: true,
                     require: true,
                     requirejs: true,
