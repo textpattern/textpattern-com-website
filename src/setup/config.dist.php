@@ -10,6 +10,5 @@ $txpcfg['table_prefix'] = '';
 $txpcfg['txpath'] = '/path/to/txpmag-website/public/textpattern';
 $txpcfg['dbcharset'] = 'utf8';
 
-// Hide parts of admin-side we don't need
-//define('hive_theme_hide_preview_tabs_group', true);
-//define('hive_theme_hide_form_preview', true);
+// Use a subdomain for image assets (for browser parallelisation).
+//define('ihu', 'http://static1.textpattern.com/');

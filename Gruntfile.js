@@ -11,19 +11,17 @@ module.exports = function (grunt)
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-critical');
+    grunt.loadNpmTasks('grunt-dev-update');
+    grunt.loadNpmTasks('grunt-replace');
     grunt.loadNpmTasks('grunt-shell');
 
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
 
-        // Use 'config.rb' file to configure Compass.
-        compass: {
-            dev: {
-                options: {
-                    config: 'config.rb',
-                    force: true
-                }
-            }
+        // Set up timestamp.
+        opt : {
+            timestamp: '<%= new Date().getTime() %>'
         },
 
         // Combine any matching media queries.
@@ -36,6 +34,16 @@ module.exports = function (grunt)
                         '!tmp/assets/css/style.css',
                         '!tmp/assets/css/jquery-ui.css'
                     ]
+                }
+            }
+        },
+
+        // Use 'config.rb' file to configure Compass.
+        compass: {
+            dev: {
+                options: {
+                    config: 'config.rb',
+                    force: true
                 }
             }
         },
@@ -80,6 +88,22 @@ module.exports = function (grunt)
             }
         },
 
+        // Dissect and provide example file of critical above-the-fold CSS (we may use this in future).
+        critical: {
+            test: {
+                options: {
+                    css: [
+                        'tmp/assets/css/main.css'
+                    ],
+                    width: 1280,
+                    height: 900,
+                    minify: false
+                },
+                src: 'public/mockups/index.html',
+                dest: 'public/assets/css/critical.css'
+            }
+        },
+
         // Minify and copy CSS files to `public/assets/css/`.
         cssmin: {
             main: {
@@ -90,6 +114,16 @@ module.exports = function (grunt)
                     'public/assets/css/main.css': ['tmp/assets/css/main.css'],
                     'public/assets/css/ie8.css': ['tmp/assets/css/ie8.css'],
                     'public/assets/css/design-patterns.css': ['tmp/assets/css/design-patterns.css']
+                }
+            }
+        },
+
+        // Report on any available updates for development dependencies.
+        devUpdate: {
+            main: {
+                options: {
+                    updateType: 'report',
+                    reportUpdated: false // Don't report up-to-date packages.
                 }
             }
         },
@@ -112,7 +146,7 @@ module.exports = function (grunt)
                 nonew: true,
                 quotmark: 'single',
                 undef: true,
-                unused: true,
+                unused: false,
                 strict: true,
                 trailing: true,
                 browser: true,
@@ -120,12 +154,30 @@ module.exports = function (grunt)
                     jQuery: true,
                     Zepto: true,
                     define: true,
+                    google: true,
                     module: true,
                     require: true,
                     requirejs: true,
                     responsiveNav: true,
                     prettyPrint: true
                 }
+            }
+        },
+
+        // Generate filename timestamps within template/mockup files.
+        replace: {
+            theme: {
+                options: {
+                    patterns: [{
+                            match: 'timestamp',
+                            replacement: '<%= opt.timestamp %>'
+                    }]
+                },
+                files: [
+                    {expand: true, cwd: 'src/templates/', src: ['**'], dest: 'public/templates/'},
+                    {expand: true, cwd: 'src/mockups/', src: ['*.html'], dest: 'public/mockups/'},
+                    {src: ['src/assets/js/main.js'], dest: 'tmp/assets/js/main.js'}
+                ]
             }
         },
 
@@ -152,9 +204,10 @@ module.exports = function (grunt)
                 files: [
                     {
                         'public/assets/js/main.js': ['src/assets/js/main.js'],
-                        'public/assets/js/autosize.js': ['bower_components/jquery-autosize/jquery.autosize.js'],
+                        'public/assets/js/autosize.js': ['bower_components/autosize/jquery.autosize.js'],
                         'public/assets/js/cookie.js': ['bower_components/jquery.cookie/jquery.cookie.js'],
                         'public/assets/js/details.js': ['bower_components/jquery-details/jquery.details.js'],
+                        'public/assets/js/picturefill.js': ['bower_components/picturefill/dist/picturefill.js'],
                         'public/assets/js/prettify.js': ['bower_components/google-code-prettify/src/prettify.js'],
                         'public/assets/js/require.js': ['bower_components/requirejs/require.js'],
                         'public/assets/js/responsivenav.js': ['bower_components/responsive-nav/responsive-nav.js']
@@ -184,10 +237,12 @@ module.exports = function (grunt)
     });
 
     // Register tasks.
-    grunt.registerTask('build', ['jshint', 'sass', 'copy:img', 'copy:js', 'uglify']);
+    grunt.registerTask('build', ['jshint', 'sass', 'copy:img', 'copy:js', 'replace', 'uglify']);
+    grunt.registerTask('criticalcss', ['sass', 'critical']);
     grunt.registerTask('default', ['watch']);
     grunt.registerTask('sass', ['compass', 'concat', 'cmq', 'cssmin', 'copy:css']);
     grunt.registerTask('setup', ['shell:setup']);
     grunt.registerTask('test', ['jshint']);
     grunt.registerTask('travis', ['jshint', 'compass']);
+    grunt.registerTask('updatedev', ['devUpdate']);
 };

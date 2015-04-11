@@ -4,6 +4,8 @@
 
     document.documentElement.className = 'js';
 
+    // Detect whether jQuery v2 features required, otherwise use jQuery v1 for higher compatibility.
+
     var jqueryVersion = '1.11.2';
 
     if (typeof JSON !== 'undefined' && 'querySelector' in document && 'addEventListener' in window) {
@@ -19,13 +21,12 @@
         },
         shim:
         {
-            'autosize': ['jquery'],
-            'details': ['jquery'],
-            'flowplayer': ['jquery'],
-            'cookie': ['jquery'],
+            'cookie.@@timestamp': ['jquery'],
             'jqueryui': ['jquery']
         }
     });
+
+    // Detect whether browser supports SVG format.
 
     define('feature', function ()
     {
@@ -37,6 +38,8 @@
         };
     });
 
+    // Detect whether user enabled 'Do No Track' in their browser, and honour it.
+
     define('track', function ()
     {
         return {
@@ -46,39 +49,73 @@
 
     require(['jquery'], function ($)
     {
-        var details = $('details'),
-            code = $('pre code'),
-            fields = $('form textarea');
+        // Load objects as variables.
 
-        // Details polyfill.
+        var code = $('pre code'),
+            details = $('details'),
+            fields = $('form textarea'),
+            vidplayer = $('.videoplayer');
 
-        if (details.length)
+        /**
+         * Syntax highlighting, via 'Google Code Prettify'.
+         *
+         * Automatically applies syntax highlighting to `pre code` HTML elements.
+         * More info - https://github.com/tcollard/google-code-prettify.
+         */
+
+        if (code.length)
         {
-            require(['details'], function ()
+            code.parent().addClass('prettyprint');
+
+            require(['prettify.@@timestamp'], function ()
+            {
+                prettyPrint();
+            });
+        }
+
+        /**
+         * Details polyfill, via 'jQuery Details'.
+         *
+         * Adds `details` and `summary` HTML elements for unsupported browsers.
+         * More info - https://github.com/mathiasbynens/jquery-details.
+         * Browser support info - http://caniuse.com/#feat=details.
+         */
+
+        if (details.length) {
+            require(['details.@@timestamp'], function ()
             {
                 details.details();
                 $('html').addClass($.fn.details.support ? 'details' : 'no-details');
             });
         }
 
-        // Syntax highlighting.
+        /**
+         * Auto-growing textareas, via 'Autosize'.
+         *
+         * Allows dynamic resizing of textarea height, so that it grows as based on
+         * visitor input. More info - https://github.com/jackmoore/autosize.
+         */
 
-        if (code.length)
-        {
-            code.parent().addClass('prettyprint');
-
-            require(['prettify'], function ()
+        if (fields.length) {
+            require(['autosize.@@timestamp'], function ()
             {
-                prettyPrint();
+                fields.autosize();
             });
         }
 
-        // Auto-growing textareas.
+        /**
+         * HTML5 videos (with Flash fallback), via 'Flowplayer'.
+         *
+         * More info - https://github.com/flowplayer/flowplayer.
+         */
 
-        if (fields.length) {
-            require(['autosize'], function ()
+        if (vidplayer.length) {
+            require(['flowplayer'], function ()
             {
-                fields.autosize();
+                vidplayer.flowplayer({
+                    splash: true,
+                    ratio: 0.417
+                });
             });
         }
     });
@@ -95,9 +132,14 @@
         }
     });
 
-    // Responsive navigation.
+    /**
+     * Responsive navigation menu, via 'Responsive Nav'.
+     *
+     * More info - https://github.com/viljamis/responsive-nav.js.
+     */
 
-    require(['responsivenav'], function ()
+
+    require(['responsivenav.@@timestamp'], function ()
     {
         responsiveNav('.site-navigation', {
             transition: 400,
@@ -106,9 +148,26 @@
         });
     });
 
-    // EU-cookie disclaimer.
+    /**
+     * `picture` tag and/or `img` tag with `srcset` and `sizes` attributes polyfill, via 'Picturefill'.
+     *
+     * More info - https://github.com/scottjehl/picturefill.
+     */
 
-    require(['jquery', 'cookie'], function ($)
+    require(['jquery'], function ($)
+    {
+        if ($('img[srcset], img[sizes], picture').length) {
+            require(['picturefill.@@timestamp']);
+        }
+    });
+
+    /**
+     * EU-cookie disclaimer, via 'jquery.cookie'.
+     *
+     * More info - https://github.com/carhartl/jquery-cookie.
+     */
+
+    require(['jquery', 'cookie.@@timestamp'], function ($)
     {
         if (!$.cookie('acceptedCookies'))
         {
@@ -128,29 +187,11 @@
         }
     });
 
-    // Flowplayer.
-
-    require(['jquery'], function ($)
-    {
-        var player = $('.videoplayer');
-
-        if (player.length)
-        {
-            require(['flowplayer'], function ()
-            {
-                player.flowplayer({
-                    splash: true,
-                    ratio: 0.417
-                });
-            });
-        }
-    });
+    // Google Analytics - remember to amend the user account ID number!
 
     require(['track'], function(track)
     {
         if (track.allow) {
-            // Analytics.
-
             window._gaq = window._gaq || [];
             window._gaq.push(['_setAccount', 'UA-xxxxxxxx-x']);
             window._gaq.push(['_setDomainName', 'none']);

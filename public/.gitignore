@@ -3,6 +3,7 @@
 /js
 /rpc
 /sites
+/templates/*/
 /textpattern
 /.htaccess
 /HISTORY.txt

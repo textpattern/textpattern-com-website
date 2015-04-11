@@ -11,19 +11,15 @@
 @import "toolkit";
 
 
-// higher resolution images for high resolution displays
+// higher resolution background images for high resolution displays
 
 @mixin hires-graphic($hdfile, $hdtype, $hdwidth, $hdheight) {
     $filename: $hdfile + "." + $hdtype;
     $hdfilename: $hdfile + "@2x." + $hdtype;
     background-image: url("../img/" + $filename);
     background-size: $hdwidth $hdheight;
-    @media (-webkit-min-device-pixel-ratio: 2),
-        (min--moz-device-pixel-ratio: 2),
-        (-o-min-device-pixel-ratio: 2/1),
-        (min-device-pixel-ratio: 2),
-        (min-resolution: 192dpi),
-        (min-resolution: 2dppx) {
+    @media (min-resolution: 1.25dppx),
+        (min-resolution: 120dpi) {
         background-image: url("../img/" + $hdfilename) !important;
     }
 }

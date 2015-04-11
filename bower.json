@@ -2,11 +2,12 @@
   "name": "textpattern-com-website",
   "directory": "bower_components",
   "dependencies": {
+    "autosize": "1.18.18",
     "google-code-prettify": "1.0.4",
-    "jquery-autosize": "1.18.18",
     "jquery.cookie": "1.4.1",
     "jquery-details": "0.1.0",
-    "responsive-nav": "1.0.36",
+    "picturefill": "2.3.1",
+    "responsive-nav": "1.0.39",
     "requirejs": "2.1.17",
     "textpattern-branding": "*"
   }

@@ -14,7 +14,7 @@ chdir('textpattern');
 
 foreach (array_merge((array) glob('*'), array('.gitignore')) as $file)
 {
-    if (!in_array($file, array('textpattern', 'css.php', 'index.php', 'rpc')))
+    if (!in_array($file, array('textpattern', 'index.php')))
     {
         echo "Remove {$file}...\n";
         `rm -Rf '{$file}'`;
@@ -58,13 +58,12 @@ if (is_dir('public/textpattern/theme') && chdir('public/textpattern/theme'))
 
 echo "Moving in the new installation...\n";
 `rm -Rf public/textpattern`;
-`rm -f public/css.php`;
 `rm -f public/index.php`;
-`rm -Rf public/rpc`;
 `cp -rf tmp/textpattern/ public/`;
 `mkdir -p -m 755 public/files`;
-`mkdir -p -m 755 public/images`;
+`mkdir -p -m 755 public/img-cms`;
 `mkdir -p -m 755 cache`;
+`chmod 755 public/textpattern/tmp`;
 
 echo "Removing trash...\n";
 `rm -Rf tmp`;
