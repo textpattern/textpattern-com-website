@@ -4,6 +4,16 @@ h1. Textpattern.com website
 
 Official website of the Textpattern project. *Currently under development.*
 
+h2. Minimum browser support
+
+* Apple Safari 5+
+* Google Chrome 30+
+* Microsoft Internet Explorer 8+
+* Mozilla Firefox 24+
+* Opera Browser 12+
+
+Older versions of the above and other browsers may work, but these are the ones we verify.
+
 h2. Requirements
 
 Building this repository requires:
@@ -70,6 +80,8 @@ bc. $ grunt [task]
 Where the @[task]@ is either @build@, @setup@, @test@ or @watch@.
 
 * The @build@ task builds the project.
+* The @criticalcss@ task analyses a page of your website and provides an example file of CSS rules that it deduces are critical to rendering 'above-the-fold content'. This can be helpful in improving page rendering performance and speed test results (e.g., "Google PageSpeed Insights":https://developers.google.com/speed/pagespeed/insights/).
 * The @setup@ task installs the latest build of Textpattern master branch from GitHub.
 * The @test@ task runs JSHint over your JavaScript files, checking the code quality.
+* The @updatedev@ task checks that development dependencies (Grunt plugins) are the latest versions, and if not, updates them.
 * The @watch@ task will launch a task that watches for file changes; the project is then automatically built if a source file is modified.
