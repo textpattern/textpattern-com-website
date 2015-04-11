@@ -15,6 +15,6 @@ trim_trailing_whitespace = true
 [{*.md}]
 trim_trailing_whitespace = false
 
-[{.travis.yml,bower.json,Gemfile.lock,package.json}]
+[{.travis.yml,bower.json,Gemfile.lock,humans.txt,package.json}]
 indent_size = 2
 indent_style = space
