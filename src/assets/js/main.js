@@ -138,7 +138,6 @@
      * More info - https://github.com/viljamis/responsive-nav.js.
      */
 
-
     require(['responsivenav.@@timestamp'], function ()
     {
         responsiveNav('.site-navigation', {
@@ -187,11 +186,11 @@
         }
     });
 
-    // Google Analytics - remember to amend the user account ID number!
-
     require(['track'], function(track)
     {
         if (track.allow) {
+            // Google Analytics - remember to amend the user account ID number!
+
             window._gaq = window._gaq || [];
             window._gaq.push(['_setAccount', 'UA-xxxxxxxx-x']);
             window._gaq.push(['_setDomainName', 'none']);
