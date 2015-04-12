@@ -17,7 +17,9 @@
     <meta name="robots" content="index, follow, noodp, noydir">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Textpattern CMS is a free, open source content management system with a browser-based interface in over 40 languages, excellent support and full range of features.">
-    <meta name="generator" content="Textpattern CMS">
+    <meta name="keywords" content="cms, content management systems, open source, blogs, blogging, free, wordpress alternatives, fast, lightweight, web design, web site design, web development, web site development, php">
+
+<!-- All the favicons, touch icons, etc. -->
     <meta name="theme-color" content="#ffda44">
     <meta name="application-name" content="Textpattern CMS">
     <meta name="msapplication-TileColor" content="#ffffff">
@@ -32,6 +34,16 @@
     <link rel="icon" sizes="32x32" href="../favicon-32x32.png">
     <link rel="icon" sizes="16x16" href="../favicon-16x16.png">
 
+    <link rel="canonical" href="http://textpattern.dev">
+
+<!-- Twitter card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@textpattern">
+    <meta name="twitter:title" content="Textpattern CMS">
+    <meta name="twitter:description" content="Textpattern CMS is a free, open source content management system with a browser-based interface in over 40 languages, excellent support and full range of features.">
+    <meta name="twitter:image:src" content="http://textpattern.com/assets/img/branding/textpattern/textpattern.svg">
+    <meta name="twitter:url" content="http://textpattern.dev/">
+
 <!-- Fix IE8 -->
     <!--[if lt IE 9]>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -40,22 +52,34 @@
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
+    <meta itemprop="accessibilityControl" content="fullKeyboardControl">
+    <meta itemprop="accessibilityControl" content="fullMouseControl">
+    <meta itemprop="accessibilityHazard" content="noFlashing">
+    <meta itemprop="accessibilityHazard" content="noMotionSimulation">
+    <meta itemprop="accessibilityHazard" content="noSound">
+    <meta itemprop="accessibilityAPI" content="ARIA">
+
     <div class="wrapper">
 
 
 <!-- Header -->
-        <header class="site-header" role="banner" itemscope itemtype="http://schema.org/WPHeader">
-            <h1 class="masthead" itemscope itemtype="http://schema.org/Organization"><a rel="home" itemprop="url" href="http://textpattern.com/" title="Go to the Textpattern homepage"><span itemprop="name">Textpattern CMS</span></a></h1>
+        <header class="site-header" itemscope itemtype="http://schema.org/Organization">
+            <h1 class="masthead" itemprop="name"><a rel="home" itemprop="url" href="http://textpattern.dev/" title="Go to the Textpattern homepage">Textpattern CMS</a></h1>
+            <meta itemprop="logo" content="http://textpattern.com/assets/img/branding/textpattern/textpattern.svg">
 
-            <form id="search-form" role="search" method="get" action="#">
-                <input id="search-query" type="search" size="32" placeholder="Search Textpattern.com…">
-            </form>
+            <div itemscope itemtype="http://schema.org/WebSite">
+                <meta itemprop="url" content="http://textpattern.dev/">
+                <form class="search-form" itemprop="potentialAction" itemscope itemtype="http://schema.org/SearchAction">
+                    <meta itemprop="target" content="http://textpattern.dev/?q={q}">
+                    <input class="form-search-input" name="q" type="search" size="32" placeholder="Search Textpattern.com…" itemprop="query-input">
+                </form>
+            </div>
         </header>
 
 
 <!-- Navigation -->
         <div class="nav-container">
-            <nav class="site-navigation" role="navigation" aria-label="Site navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+            <nav class="site-navigation" aria-label="Site navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
                 <ul>
                     <li><a itemprop="url" href="http://textpattern.com/start">Get started</a></li>
                     <li><a itemprop="url" href="http://textpattern.net/">Documentation</a></li>
@@ -71,7 +95,7 @@
 
 <!-- Primary Content -->
         <div class="container">
-            <main role="main" aria-label="Main content">
+            <main aria-label="Main content">
 
                 <p>PLACHOLDER TEXT</p>
 
@@ -83,21 +107,22 @@
 
 
 <!-- Secondary Content -->
-    <div class="container complementary-content" role="complementary" itemscope itemtype="http://schema.org/WPSideBar">
+    <aside class="container complementary-content">
 
         <div class="layout--span-1-8">
-            <section class="layout--span-1-6 at-break2" role="region">
+            <section class="layout--span-1-6 at-break2" itemscope itemtype="http://schema.org/Organization">
                 <h4>Social channels</h4>
+                <meta itemprop="name" content="Textpattern CMS">
                 <ul class="social-channels">
-                    <li><a class="facebook" rel="external" href="http://textpattern.com/facebook" title="Follow us on Facebook+">Facebook</a></li>
-                    <li><a class="twitter" rel="external" href="http://textpattern.com/@textpattern" title="Follow us on Twitter">Twitter</a></li>
-                    <li><a class="googleplus" rel="external" href="http://textpattern.com/+" title="Follow us on Google+">Google+</a></li>
+                    <li><a class="facebook" rel="external" itemprop="url" href="http://textpattern.com/facebook" title="Follow us on Facebook+">Facebook</a></li>
+                    <li><a class="twitter" rel="external" itemprop="url" href="http://textpattern.com/@textpattern" title="Follow us on Twitter">Twitter</a></li>
+                    <li><a class="googleplus" rel="external" itemprop="url" href="http://textpattern.com/+" title="Follow us on Google+">Google+</a></li>
                 </ul>
                 <h4>Donate</h4>
                 <p>Your kind donations help us keep Textpattern CMS development alive!</p>
                 <p><a class="button button-donate" href="http://textpattern.com/patrons">Donate…</a></p>
             </section>
-            <section class="layout--span-7-12 at-break2 community-details" role="region">
+            <section class="layout--span-7-12 at-break2 community-details">
                 <h4>External links</h4>
                 <ul class="community-links">
                     <li><a rel="external" href="https://github.com/textpattern">Textpattern on GitHub</a></li>
@@ -111,7 +136,7 @@
             </section>
         </div>
 
-        <section class="layout--span-9-12 host-details" role="region">
+        <section class="layout--span-9-12 host-details">
             <h4 class="accessibility">Host details</h4>
             <p><img class="svg" src="../assets/img/branding/textpattern-network/textpattern-network-white.svg" alt="Textpattern Network"></p>
             <p>
@@ -122,11 +147,11 @@
             </p>
         </section>
 
-    </div><!-- /.complementary-content -->
+    </aside><!-- /.complementary-content -->
 
 
 <!-- Footer -->
-    <footer class="site-footer" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter">
+    <footer class="site-footer" role="contentinfo">
         <p class="legal">
             Copyright 2004–2015 The Textpattern Development Team.
             <a href="http://textpattern.com/contact">Contact us</a>.
@@ -140,6 +165,5 @@
 <!-- JavaScript -->
     <script data-main="../assets/js/main.@@timestamp.js" src="../assets/js/require.@@timestamp.js"></script>
     <noscript>JavaScript is currently disabled in your browser - activate it for the best experience.</noscript>
-
 </body>
 </html>

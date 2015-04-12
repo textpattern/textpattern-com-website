@@ -136,7 +136,7 @@ h1.masthead a {
     background-size: 320px 52px;
 }
 
-#search-form input#search-query,
+.search-form input[type="search"],
 .social-channels a {
     background-image: url("../img/branding/misc/icon-sprite.png");
 }

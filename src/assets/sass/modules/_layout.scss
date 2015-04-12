@@ -72,7 +72,7 @@ h1.masthead {
     }
 }
 
-#search-form {
+.search-form {
     position: absolute;
     top: 0.75em;
     right: 0;
@@ -88,7 +88,7 @@ h1.masthead {
     }
 
     // search input field
-    input#search-query {
+    input[type="search"] {
         @include transition(width 0.2s linear, box-shadow 0.1s linear);
 
         width: 240px;
