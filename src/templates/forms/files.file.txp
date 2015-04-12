@@ -1,0 +1,29 @@
+<txp:variable name="file_download_title" value='<txp:file_download_name title="1" />' />
+<txp:variable name="file_download_description" value='<txp:file_download_description />' />
+<section itemscope itemtype="http://schema.org/DataDownloads">
+    <h6 class="accessibility">File download</h6>
+    <p>
+        <a href="<txp:file_download_link />" itemprop="contentUrl">
+            <strong itemprop="name">
+                <txp:if_variable name="file_download_title" value="">
+                    <txp:file_download_name />
+                <txp:else />
+                    <txp:file_download_name title="1" />
+                </txp:if_variable>
+            </strong>
+        </a>
+    </p>
+    <footer class="footnote">
+        <txp:if_variable name="file_download_description" value="">
+        <txp:else />
+            <div itemprop="description">
+                <txp:file_download_description />
+            </div>
+        </txp:if_variable>
+        File size:
+        <span itemprop="contentSize"><txp:file_download_size /></span>
+        <span class="separator" role="separator">|</span>
+        Last modified:
+        <time datetime="<txp:file_download_modified format="iso8601" />" itemprop="dateModified"><txp:file_download_modified format="%d %b %Y" /></time>
+    </footer>
+</section>
