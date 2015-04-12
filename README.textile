@@ -77,7 +77,7 @@ This repository hosts sources and needs to be built before it can be used. After
 
 bc. $ grunt [task]
 
-Where the @[task]@ is either @build@, @setup@, @test@ or @watch@.
+Where the @[task]@ is either @build@, @criticalcss@, @setup@, @test@, @updatedev@ or @watch@.
 
 * The @build@ task builds the project.
 * The @criticalcss@ task analyses a page of your website and provides an example file of CSS rules that it deduces are critical to rendering 'above-the-fold content'. This can be helpful in improving page rendering performance and speed test results (e.g., "Google PageSpeed Insights":https://developers.google.com/speed/pagespeed/insights/).
