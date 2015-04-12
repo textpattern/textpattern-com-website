@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+<head>
+    <meta charset="utf-8">
+    <txp:if_search>
+        <title>Search results: <txp:search_term /> | Textpattern CMS</title>
+        <meta name="description" content="Search results.">
+        <meta name="robots" content="none">
+        <txp:output_form form="head" />
+    <txp:else />
+        <txp:if_category>
+            <title>Category: <txp:category title="1" /> | Textpattern CMS</title>
+            <meta name="description" content="Blog article ‘<txp:category title="1" />’ category archive.">
+            <meta name="robots" content="noindex, follow, noodp, noydir">
+            <txp:output_form form="head" />
+        <txp:else />
+            <title>Textpattern CMS | An open source content management system</title>
+            <meta name="description" content="Textpattern CMS is a free, open source content management system with a browser-based interface in over 40 languages, excellent support and full range of features.">
+            <meta name="keywords" content="cms, content management systems, open source, blogs, blogging, free, wordpress alternatives, fast, lightweight, web design, web site design, web development, web site development, php">
+            <meta name="robots" content="index, follow, noodp, noydir">
+            <link rel="canonical" href="http://textpattern.com/">
+            <txp:output_form form="head" />
+            <meta name="twitter:card" content="summary_large_image">
+            <meta name="twitter:site" content="@textpattern">
+            <meta name="twitter:title" content="Textpattern CMS | An open source content management system">
+            <meta name="twitter:description" content="Textpattern CMS is a free, open source content management system with a browser-based interface in over 40 languages, excellent support and full range of features.">
+            <meta name="twitter:image:src" content="http://textpattern.com/assets/img/branding/textpattern/textpattern.svg">
+            <meta name="twitter:url" content="http://textpattern.com/">
+            <txp:variable name="homepage" value="1" />
+        </txp:if_category>
+    </txp:if_search>
+</head>
+<txp:if_variable name="homepage">
+<body id="top" itemscope itemtype="http://schema.org/WebPage">
+    <txp:output_form form="body_header" />
+
+    ...homepage content placeholder...
+
+<txp:else />
+<txp:if_search>
+    <body id="top" itemscope itemtype="http://schema.org/SearchResultsPage">
+<txp:else />
+    <body id="top" itemscope itemtype="http://schema.org/CollectionPage">
+</txp:if_search>
+    <txp:output_form form="body_header" />
+
+    ...search or category content placeholder...
+
+</txp:if_variable>
+    <txp:output_form form="body_footer" />
+</body>
+</html>
