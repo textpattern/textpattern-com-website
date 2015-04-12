@@ -1,0 +1,20 @@
+<link rel="dns-prefetch" href="http://fonts.googleapis.com">
+<link rel="prefetch" href="http://textpattern.com/assets/img/branding/misc/icon-sprite.svg">
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,700,400italic,700italic">
+<link rel="stylesheet" href="http://textpattern.com/assets/css/main.@@timestamp.css">
+<link rel="apple-touch-icon" sizes="180x180" href="http://textpattern.com/apple-touch-icon-180x180.png">
+<link rel="apple-touch-icon" sizes="152x152" href="http://textpattern.com/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="120x120" href="http://textpattern.com/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="76x76" href="http://textpattern.com/apple-touch-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="60x60" href="http://textpattern.com/apple-touch-icon-60x60.png">
+<link rel="icon" sizes="192x192" href="http://textpattern.com/favicon-192x192.png">
+<link rel="icon" sizes="96x96" href="http://textpattern.com/favicon-96x96.png">
+<link rel="icon" sizes="32x32" href="http://textpattern.com/favicon-32x32.png">
+<link rel="icon" sizes="16x16" href="http://textpattern.com/favicon-16x16.png">
+<txp:feed_link format="link" label="RSS" section="blog" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="Textpattern CMS">
+<meta name="theme-color" content="#ffda44">
+<meta name="application-name" content="Textpattern">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="http://textpattern.com/mstile-144x144.png">
