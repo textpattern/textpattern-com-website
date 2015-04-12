@@ -7,7 +7,7 @@
     <meta name="robots" content="none">
     <txp:output_form form="head" />
 </head>
-<body id="top" itemscope itemtype="http://schema.org/WebPage">
+<body itemscope itemtype="http://schema.org/WebPage">
     <txp:output_form form="body_header" />
 
     ...error content placeholder...
