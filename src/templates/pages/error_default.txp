@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title><txp:error_status /> | Textpattern CMS</title>
+    <meta name="description" content="<txp:error_message/>">
+    <meta name="robots" content="none">
+    <txp:output_form form="head" />
+</head>
+<body id="top" itemscope itemtype="http://schema.org/WebPage">
+    <txp:output_form form="body_header" />
+
+    ...error content placeholder...
+
+    <txp:output_form form="body_footer" />
+</body>
+</html>
