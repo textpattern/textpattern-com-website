@@ -31,16 +31,16 @@
     </txp:if_search>
 </head>
 <txp:if_variable name="homepage">
-<body id="top" itemscope itemtype="http://schema.org/WebPage">
+<body itemscope itemtype="http://schema.org/WebPage">
     <txp:output_form form="body_header" />
 
     ...homepage content placeholder...
 
 <txp:else />
 <txp:if_search>
-    <body id="top" itemscope itemtype="http://schema.org/SearchResultsPage">
+    <body itemscope itemtype="http://schema.org/SearchResultsPage">
 <txp:else />
-    <body id="top" itemscope itemtype="http://schema.org/CollectionPage">
+    <body itemscope itemtype="http://schema.org/CollectionPage">
 </txp:if_search>
     <txp:output_form form="body_header" />
 
