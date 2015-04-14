@@ -291,7 +291,8 @@ input {
         width: 66%;
     }
 
-    &.large {
+    &.large,
+    &[size="32"] {
         width: 100%;
     }
 }
@@ -301,10 +302,17 @@ input {
  *
  * Example HTML:
  *
- * <abbr class="required" title="Required">*</abbr>
+ * <span class="required" title="Required" aria-label="Required">●</span>
  */
 
-abbr.required {
-    color: $color-error-text;
-    border: 0;
+span.required {
+    color: $color-warning-text;
+}
+
+label.zemRequired,
+label.zemRequirederrorElement {
+    &:after {
+        color: $color-warning-text;
+        content: "\00A0" "\25CF";
+    }
 }
