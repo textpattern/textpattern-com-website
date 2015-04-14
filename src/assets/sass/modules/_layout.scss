@@ -27,12 +27,38 @@ body {
     background-color: $color-text;
 }
 
+/**
+ * Outer wrapper for main layouts.
+ *
+ * Example HTML:
+ *
+ * <div class="wrapper">
+ *     <header></header>
+ *     <div class="nav-container">
+ *         <nav></nav>
+ *     </div>
+ *     <main></main>
+ * </div>
+ */
+
 .wrapper {
     position: relative;
     padding: 1px 0;
     color: $color-text;
     background: $color-background;
 }
+
+/**
+ * Wrapper for layouts, and for header/footer.
+ *
+ * Example HTML:
+ *
+ * <div class="wrapper">
+ *     <div class="container">
+ *         Content
+ *     </div>
+ * </div>
+ */
 
 .site-header,
 .site-footer,
