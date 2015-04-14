@@ -112,10 +112,18 @@
 
                     <div class="article-description" itemprop="description">
                         <p>This is where a blog article extract/description would be. Ne sea soluta voluptatum. Ut nec augue disputationi, unum utamur vis in. Ea menandri persecuti dissentiunt usu, causae equidem.</p>
-                    </div>
+                    </div><!-- /.article-description -->
 
-                    <figure itemscope itemtype="http://schema.org/ImageObject">
-                        <span itemprop="image"><img src="img/672x448.png" alt="Alt text"></span>
+                    <figure itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
+                        <img itemprop="contentUrl" alt="Figure Example"
+                               src="../img-cms/640/1.jpg"
+                            srcset="../img-cms/1280/1.jpg 1280w,
+                                    ../img-cms/640/1.jpg 640w,
+                                    ../img-cms/548/1.jpg 548w,
+                                    ../img-cms/274/1.jpg 274w"
+                             sizes="(min-width: 48.5em) 640px,
+                                    (min-width: 44.5em) 442px,
+                                    calc(93.75vw - 26px)">
                         <figcaption itemprop="caption">This is a figcaption example. Lorem ipsum dolor sit amet, quo epicuri volutpat no.</figcaption>
                     </figure>
 
@@ -124,57 +132,74 @@
                         <p>Timeam mentitum an nam. Mei ne prima perfecto adversarium. Quo eu tamquam invidunt verterem, albucius dissentiet ea eum. Facete fabellas referrentur et qui. Cu harum tempor vivendum vel. Nec quem movet nullam in. No stet tota pri.</p>
                         <h3>h3 subheading example</h3>
                         <p>Inermis indoctum vis in, has soleat complectitur te. Ut est stet civibus, mucius iriure ad duo. Sumo tantas et est, ea duo elitr utroque, ne mea dicant tincidunt scribentur. Sit dico accusata et. Sint inimicus cu nam, odio velit minim sit ut.</p>
+                        <p itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
+                            <img itemprop="contentUrl" alt="Image example"
+                                   src="../img-cms/640/2.jpg"
+                                srcset="../img-cms/1280/2.jpg 1280w,
+                                        ../img-cms/640/2.jpg 640w,
+                                        ../img-cms/548/2.jpg 548w,
+                                        ../img-cms/274/2.jpg 274w"
+                                 sizes="(min-width: 48.5em) 640px,
+                                        (min-width: 44.5em) 442px,
+                                        calc(93.75vw - 26px)">
+                        </p>
                         <p>Ne sea soluta voluptatum. Ut nec augue disputationi, unum utamur vis in. Ea menandri persecuti dissentiunt usu, causae equidem quo ea. Possit gubergren at mea. Sed an erant movet accusata.</p>
                         <hr>
                         <p>Ex graeci civibus eleifend vim, mel et utroque fastidii. Sed eu omnis disputando, voluptatum appellantur vix an. Exerci detracto at his, at illud debitis vis, augue congue inimicus his ei. Cetero intellegat ius an. Eu sed nobis tation, erant elaboraret eam at.</p>
                     </div><!-- /itemprop="articleBody" -->
 
+                    <p class="article-modified footnote">
+                        Last modified:
+                        <time datetime="2015-03-22T18:06:40Z" itemprop="dateModified">22/03/2015 06:40 pm</time>
+                    </p>
+
                     <footer class="article-footer">
                         <span class="ui-icon ui-icon-pencil">By:</span>
-                        <span class="vcard" itemprop="author" itemscope itemtype="http://schema.org/Person">
+                        <span itemprop="author" itemscope itemtype="http://schema.org/Person">
                             <a class="url" rel="author" href="#" title="View author biography">
                                 <span class="fn n" itemprop="name">Phil Wareham</span>
                             </a>
+                            <meta itemprop="jobTitle" content="Core Designer">
                         </span>
                         <span class="separator" role="separator">|</span>
                         <span class="ui-icon ui-icon-tag">Tags:</span>
                         <span itemprop="keywords">
-                            <a rel="tag" href="#" title="View articles in this category">Releases</a>
-                            <a rel="tag" href="#" title="View articles in this category">Hope for the future</a>
+                            <a rel="category tag" href="#" title="View articles in this category">Releases</a>
+                            <a rel="category tag" href="#" title="View articles in this category">Hope for the future</a>
                         </span>
                         <span class="separator" role="separator">|</span>
                         <span class="ui-icon ui-icon-comment">Comments:</span>
-                        <a href="#comments-head" title="View article comments" itemprop="discussionUrl" itemscope itemtype="http://schema.org/UserComments">
-                            <span itemprop="interactionCount">3</span>
-                        </a>
+                        <a href="#comments-head" title="View article comments" itemprop="discussionUrl">3</a>
+                        <meta itemprop="interactionCount" content="UserComments:3">
                     </footer>
 
                     <section id="comments-head">
                         <h3>Comments</h3>
 
-                        <ol class="comments-list">
+                        <ol class="list--comments">
                             <li>
                                 <article class="comments" itemscope itemtype="http://schema.org/Comment">
-                                    <h4>
-                                        <span class="comment-author" itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">Donald Swain</span></span>
-                                        <a class="comment-anchor" href="#" itemprop="url">#</a>
+                                    <a class="comment-anchor" href="#" itemprop="url">#</a>
+                                    <h4 class="comment-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+                                        <span itemprop="name">Donald Swain</span>
                                     </h4>
-
-                                    <p class="footnote"><time datetime="2014-01-25T16:55:03Z" itemprop="dateCreated">25 January 2014 at 16:55:03 (3 days ago)</time></p>
-
+                                    <p class="comment-date">
+                                        <time datetime="2015-01-25T16:55:03Z" itemprop="dateCreated">25 Jan 2015 at 16:55</time>
+                                    </p>
                                     <div itemprop="text">
                                         <p>Inermis indoctum vis in, has soleat complectitur te. Ut est stet civibus, mucius iriure ad duo. Sumo tantas et est, ea duo elitr utroque, ne mea dicant tincidunt scribentur. Sit dico accusata et. Sint inimicus cu nam, odio velit minim sit ut.</p>
                                     </div>
                                 </article>
                             </li>
                             <li>
-                                <article class="comments comments-author" itemscope itemtype="http://schema.org/Comment">
-                                    <h4>
-                                        <span class="comment-author" itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">Joe Q. Public</span></span> (author)
-                                        <a class="comment-anchor" href="#" itemprop="url">#</a>
+                                <article class="comments article-author" itemscope itemtype="http://schema.org/Comment">
+                                    <a class="comment-anchor" href="#" itemprop="url">#</a>
+                                    <h4 class="comment-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+                                        <span itemprop="name">Joe Q. Public</span>
                                     </h4>
-                                    <p class="footnote"><time datetime="2014-01-26T11:20:01Z" itemprop="dateCreated">25 January 2014 at 11:20:01 (2 days ago)</time></p>
-
+                                    <p class="comment-date">
+                                        <time datetime="2015-01-26T11:20:01Z" itemprop="dateCreated">26 Jan 2014 at 11:20</time>
+                                    </p>
                                     <div itemprop="text">
                                         <p>Lorem ipsum dolor sit amet, quo epicuri volutpat no. Causae option accusamus in est.</p>
                                     </div>
@@ -186,33 +211,32 @@
                             <h3>Leave a comment</h3>
 
                             <form id="txpCommentInputForm" method="post" action="#">
-                                <fieldset>
-                                    <p><strong>Enter your comment below.</strong> You must preview your comment first before finally posting. Email addresses are used for verification only and are <strong>not</strong> displayed with your comment.</p>
-                                    <p class="layout--span-1-6 at-break2" style="margin:0.5em 0;">
-                                        <label for="name"><strong>Name (Required)</strong></label><br>
-                                        <input class="comment_name_input" id="name" name="name" type="text" size="32" required style="width:100%;max-width:24em;">
-                                    </p>
-                                    <p class="layout--span-7-12 at-break2" style="margin:0.5em 0;">
-                                        <label for="email"><strong>Email (Required)</strong></label><br>
-                                        <input class="comment_email_input" id="email" name="email" type="email" size="32" required style="width:100%;max-width:24em;">
-                                    </p>
-                                    <p class="layout--span-1-6 at-break2" style="margin:0.5em 0;">
-                                        <label for="web"><strong>Website</strong></label><br>
-                                        <input class="comment_web_input" id="web" name="web" type="text" size="32" style="width:100%;max-width:24em;">
-                                    </p>
-                                    <p class="layout--span-1-12" style="margin:0.5em 0;">
-                                        <label for="message"><strong>Message (Required)</strong></label><br>
-                                        <textarea class="txpCommentInputMessage" id="message" name="message" cols="64" rows="4" required></textarea>
-                                    </p>
-                                    <p class="layout--span-1-12">
-                                        <span style="float:right;;margin:0.5384615em 0 0.5384615em 1em;">
-                                            <input class="checkbox active" id="remember" name="remember" type="checkbox" value="1" checked>
-                                            <label for="remember">Remember</label>
-                                        </span>
-                                        <input class="button" id="txpCommentPreview" name="preview" type="submit" value="Preview">
-                                        <input class="button disabled" id="txpCommentSubmit" name="submit" type="submit" value="Submit" disabled>
-                                    </p>
-                                </fieldset>
+                                <p>You must preview your comment before submitting it. Email addresses are used for verification only and are not displayed with your comment. Fields marked <span class="required" title="Required" aria-label="Required">●</span> are required.</p>
+                                <ul class="zemError">
+                                    <li>Please enter your name.</li>
+                                    <li>Please enter a valid email address.</li>
+                                    <li>Please enter a comment.</li>
+                                </ul>
+                                <div class="field layout--span-1-6 at-break2">
+                                    <label for="name">Name <span class="required" title="Required" aria-label="Required">●</span></label><br>
+                                    <input class="comment_name_input comments_error" id="name" name="name" type="text" size="32" required>
+                                </div>
+                                <div class="field layout--span-7-12 at-break2">
+                                    <label for="email">Email <span class="required" title="Required" aria-label="Required">●</span></label><br>
+                                    <input class="comment_email_input" id="email" name="email" type="email" size="32" required>
+                                </div>
+                                <div class="field layout--span-1-6 at-break2">
+                                    <label for="web">Website</label><br>
+                                    <input class="comment_web_input" id="web" name="web" type="text" size="32" placeholder="http://">
+                                </div>
+                                <div class="field layout--span-1-12">
+                                    <label for="message">Message <span class="required" title="Required" aria-label="Required">●</span></label><br>
+                                    <textarea class="txpCommentInputMessage" id="message" name="message" cols="64" rows="4" required></textarea>
+                                </div>
+                                <div class="field layout--span-1-12">
+                                    <input class="button" id="txpCommentPreview" name="preview" type="submit" value="Preview">
+                                    <input class="button disabled" id="txpCommentSubmit" name="submit" type="submit" value="Submit" disabled>
+                                </div>
                             </form>
 
                         </section>
