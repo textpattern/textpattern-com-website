@@ -44,7 +44,7 @@
         }
 
         &:hover {
-            @include filter(#{"brightness(1.1)"}); // TODO: temporary workaround for Sass/Compass bug when using @include filter(brightness(1.1));
+            @include filter(brightness(1.1));
         }
     }
 }

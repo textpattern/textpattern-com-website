@@ -33,9 +33,9 @@ body {
  * Example HTML:
  *
  * <div class="wrapper">
- *     <header></header>
+ *     <header class="site-header"></header>
  *     <div class="nav-container">
- *         <nav></nav>
+ *         <nav class="site-navigation"></nav>
  *     </div>
  *     <main></main>
  * </div>
@@ -68,6 +68,10 @@ body {
     max-width: $container-max-width;
 }
 
+/**
+ * Additional styling for site header.
+ */
+
 .site-header {
     position: relative;
 }
@@ -86,7 +90,7 @@ h1.masthead {
         background-size: 208px 34px;
 
         &:hover {
-            @include filter(#{"brightness(1.1)"}); // temporary workaround for Sass/Compass bug when using @include filter(brightness(1.1));
+            @include filter(brightness(1.1));
         }
 
         @include breakpoint($breakpoint-2) {
