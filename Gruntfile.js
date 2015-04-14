@@ -167,10 +167,16 @@ module.exports = function (grunt)
         replace: {
             theme: {
                 options: {
-                    patterns: [{
+                    patterns: [
+                        {
                             match: 'timestamp',
                             replacement: '<%= opt.timestamp %>'
-                    }]
+                        },
+                        {
+                            match: 'year',
+                            replacement: '<%= new Date().getFullYear() %>'
+                        }
+                    ]
                 },
                 files: [
                     {expand: true, cwd: 'src/templates/', src: ['**'], dest: 'public/templates/'},
