@@ -324,7 +324,15 @@ Redirect temp /textile-sub-and-sup http://txstyle.org/doc/18/subscript-and-super
 Redirect temp /textile-table http://txstyle.org/doc/15/tables
 Redirect temp /textile-ul-list http://txstyle.org/doc/8/bullet-list
 
-# To be removed when new site created
+# ------------------------------------------------------------------------------
+# | Eternal links to the latest release. Amend for new releases.
+# ------------------------------------------------------------------------------
+Redirect temp /latest.zip http://textpattern.com/file_download/99/textpattern-4.5.7.zip
+Redirect temp /latest.tar.gz http://textpattern.com/file_download/98/textpattern-4.5.7.tar.gz&
+
+
+
+# TODO: To be removed when new site created.
 Redirect temp /start http://textpattern.net/wiki/index.php?title=Textpattern_Quickstart:_Hello_World
 Redirect temp /donate http://textpattern.com/patrons
 Redirect temp /themes http://textgarden.org/
