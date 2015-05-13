@@ -325,7 +325,7 @@ Redirect temp /textile-table http://txstyle.org/doc/15/tables
 Redirect temp /textile-ul-list http://txstyle.org/doc/8/bullet-list
 
 # ------------------------------------------------------------------------------
-# | Eternal links to the latest release. Amend for new releases.
+# | Eternal links to the latest release. Amend for new releases.               |
 # ------------------------------------------------------------------------------
 Redirect temp /latest.zip http://textpattern.com/file_download/99/textpattern-4.5.7.zip
 Redirect temp /latest.tar.gz http://textpattern.com/file_download/98/textpattern-4.5.7.tar.gz&
