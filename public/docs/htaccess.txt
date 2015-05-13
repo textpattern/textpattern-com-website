@@ -301,8 +301,8 @@ Redirect temp /facebook https://www.facebook.com/groups/textpattern/
 Redirect temp /textpattern-first-steps http://textpattern.net/wiki/index.php?title=Textpattern_Quickstart:_Hello_World
 Redirect temp /textpattern-semantic-model http://textpattern.net/wiki/index.php?title=Textpattern_Semantic_Model
 Redirect temp /textpattern-tag-reference http://textpattern.net/wiki/index.php?title=Category:Tag_Reference
-Redirect temp /default-theme https://github.com/philwareham/txp-h5bp-theme
-Redirect temp /textile-changelog https://github.com/netcarver/textile/wiki/PHP-Textile-Changelog
+Redirect temp /default-theme https://github.com/textpattern/textpattern-default-theme
+Redirect temp /textile-changelog https://github.com/textile/php-textile/blob/master/CHANGELOG.textile
 Redirect temp /hidden-files-osx http://osxdaily.com/2009/02/25/show-hidden-files-in-os-x/
 
 Redirect temp /textile-sandbox http://txstyle.org/
