@@ -56,12 +56,9 @@
             fields = $('form textarea'),
             vidplayer = $('.videoplayer');
 
-        /**
-         * Syntax highlighting, via 'Google Code Prettify'.
-         *
-         * Automatically applies syntax highlighting to `pre code` HTML elements.
-         * More info - https://github.com/tcollard/google-code-prettify.
-         */
+        // Syntax highlighting, via 'Google Code Prettify'.
+        // Automatically applies syntax highlighting to `pre code` HTML elements.
+        // More info - https://github.com/tcollard/google-code-prettify.
 
         if (code.length)
         {
@@ -73,13 +70,10 @@
             });
         }
 
-        /**
-         * Details polyfill, via 'jQuery Details'.
-         *
-         * Adds `details` and `summary` HTML elements for unsupported browsers.
-         * More info - https://github.com/mathiasbynens/jquery-details.
-         * Browser support info - http://caniuse.com/#feat=details.
-         */
+        // Details polyfill, via 'jQuery Details'.
+        // Adds `details` and `summary` HTML elements for unsupported browsers.
+        // More info - https://github.com/mathiasbynens/jquery-details.
+        // Browser support info - http://caniuse.com/#feat=details.
 
         if (details.length) {
             require(['details.@@timestamp'], function ()
@@ -89,12 +83,9 @@
             });
         }
 
-        /**
-         * Auto-growing textareas, via 'Autosize'.
-         *
-         * Allows dynamic resizing of textarea height, so that it grows as based on
-         * visitor input. More info - https://github.com/jackmoore/autosize.
-         */
+        // Auto-growing textareas, via 'Autosize'.
+        // Allows dynamic resizing of textarea height, so that it grows as based
+        // on visitor input. More info - https://github.com/jackmoore/autosize.
 
         if (fields.length) {
             require(['autosize.@@timestamp'], function ()
@@ -103,11 +94,8 @@
             });
         }
 
-        /**
-         * HTML5 videos (with Flash fallback), via 'Flowplayer'.
-         *
-         * More info - https://github.com/flowplayer/flowplayer.
-         */
+        // HTML5 videos (with Flash fallback), via 'Flowplayer'.
+        // More info - https://github.com/flowplayer/flowplayer.
 
         if (vidplayer.length) {
             require(['flowplayer'], function ()
@@ -132,11 +120,8 @@
         }
     });
 
-    /**
-     * Responsive navigation menu, via 'Responsive Nav'.
-     *
-     * More info - https://github.com/viljamis/responsive-nav.js.
-     */
+    // Responsive navigation menu, via 'Responsive Nav'.
+    // More info - https://github.com/viljamis/responsive-nav.js.
 
     require(['responsivenav.@@timestamp'], function ()
     {
@@ -147,11 +132,8 @@
         });
     });
 
-    /**
-     * `picture` tag and/or `img` tag with `srcset` and `sizes` attributes polyfill, via 'Picturefill'.
-     *
-     * More info - https://github.com/scottjehl/picturefill.
-     */
+    // `picture` tag and/or `img` tag with `srcset` and `sizes` attributes polyfill, via 'Picturefill'.
+    // More info - https://github.com/scottjehl/picturefill.
 
     require(['jquery'], function ($)
     {
@@ -160,11 +142,8 @@
         }
     });
 
-    /**
-     * EU-cookie disclaimer, via 'jquery.cookie'.
-     *
-     * More info - https://github.com/carhartl/jquery-cookie.
-     */
+    // EU-cookie disclaimer, via 'jquery.cookie'.
+    // More info - https://github.com/carhartl/jquery-cookie.
 
     require(['jquery', 'cookie.@@timestamp'], function ($)
     {
