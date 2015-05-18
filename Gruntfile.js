@@ -14,6 +14,7 @@ module.exports = function (grunt)
     grunt.loadNpmTasks('grunt-critical');
     grunt.loadNpmTasks('grunt-dev-update');
     grunt.loadNpmTasks('grunt-replace');
+    grunt.loadNpmTasks('grunt-scss-lint');
     grunt.loadNpmTasks('grunt-shell');
 
     grunt.initConfig({
@@ -186,6 +187,18 @@ module.exports = function (grunt)
             }
         },
 
+        // Validate Sass files via scss-lint.
+        scsslint: {
+            all: ['src/assets/sass/**/*.scss'],
+            options: {
+                bundleExec: true,
+                colorizeOutput: false,
+                config: '.scss-lint.yml',
+                force: true,
+                reporterOutput: 'scss-lint-report.xml'
+            }
+        },
+
         // Run Textpattern setup script.
         shell: {
             setup: {
@@ -245,7 +258,7 @@ module.exports = function (grunt)
     grunt.registerTask('build', ['jshint', 'sass', 'copy:img', 'copy:js', 'replace', 'uglify']);
     grunt.registerTask('criticalcss', ['sass', 'critical']);
     grunt.registerTask('default', ['watch']);
-    grunt.registerTask('sass', ['compass', 'concat', 'cmq', 'cssmin', 'copy:css']);
+    grunt.registerTask('sass', ['scsslint', 'compass', 'concat', 'cmq', 'cssmin', 'copy:css']);
     grunt.registerTask('setup', ['shell:setup']);
     grunt.registerTask('test', ['jshint']);
     grunt.registerTask('travis', ['jshint', 'compass']);
