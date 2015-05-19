@@ -1,13 +1,11 @@
 /**
  * Remove unnecessary global styling from printed media.
- *
- * 1. Black prints faster.
  */
 
 * {
     @include box-shadow(none !important);
 
-    color: black !important; /* 1 */
+    color: $color-text-print !important; /* 1 */
     text-shadow: none !important;
     background: transparent !important;
 }
@@ -29,7 +27,7 @@ body {
  */
 
 .site-header {
-    border-bottom: solid 1pt black;
+    border-bottom: solid 1pt $color-text-print;
 }
 
 /**
@@ -152,7 +150,7 @@ small,
 
 blockquote {
     font-size: 16pt;
-    border-left: 3pt solid black;
+    border-left: 3pt solid $color-text-print;
     padding: 0 0 0 8pt;
     page-break-inside: avoid; /* 1 */
 }
@@ -163,7 +161,7 @@ blockquote {
 
 pre {
     margin-bottom: 8pt;
-    border: solid 1pt black;
+    border: solid 1pt $color-text-print;
     padding: 8pt;
 }
 
@@ -309,7 +307,7 @@ thead {
     display: table-header-group;
 
     th {
-        border-top: solid 1pt black;
+        border-top: solid 1pt $color-text-print;
     }
 }
 
@@ -327,6 +325,6 @@ tr {
 
 th,
 td {
-    border-bottom: solid 1pt black;
+    border-bottom: solid 1pt $color-text-print;
     padding: 4pt 8pt;
 }

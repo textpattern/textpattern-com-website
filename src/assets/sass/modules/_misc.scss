@@ -10,7 +10,7 @@
  * <span class="spinner inverse"></span>
  */
 
-span.spinner {
+.spinner {
     @include hires-graphic(branding/misc/spinner, gif, 16px, 16px);
 
     display: inline-block;
