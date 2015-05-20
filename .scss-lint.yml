@@ -27,7 +27,7 @@ linters:
 # Prefer color literals (keywords or hexadecimal codes) to be used only in
 # variable declarations.
   ColorVariable:
-    enabled: true
+    enabled: false
     severity: warning
 
 # Prefer `//` comments over `/* ... */`.
@@ -129,6 +129,7 @@ linters:
 # lowercase letters and hyphens instead of underscores.
   NameFormat:
     enabled: true
+    severity: warning
     allow_leading_underscore: false
     convention: hyphenated_lowercase
 
@@ -294,7 +295,7 @@ linters:
 # Properties, like color and font, are easier to read and maintain when defined
 # using variables rather than literals.
   VariableForProperty:
-    enabled: true
+    enabled: false
     severity: warning
     properties: [
       'color',

@@ -12,16 +12,11 @@ video {
 }
 
 /**
+ * Images.
+ *
  * 1. Remove the gap between images and the bottom of their containers.
  * 2. Remove border when inside `a` element in IE 8-10.
- */
-
-img {
-    vertical-align: middle; /* 1 */
-    border: 0; /* 2 */
-}
-
-/**
+ *
  * Image alignment (compatible with Textile markup syntax).
  *
  * Example HTML:
@@ -32,6 +27,9 @@ img {
  */
 
 img {
+    vertical-align: middle; /* 1 */
+    border: 0; /* 2 */
+
     &.align-left {
         float: left;
         margin: 1em 1em 1em 0;
@@ -112,5 +110,5 @@ svg:not(:root) {
 
 .videoplayer {
     font-family: sans-serif;
-    background-color: #333333;
+    background-color: $color-text;
 }

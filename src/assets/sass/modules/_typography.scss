@@ -136,9 +136,9 @@ samp {
 
     border: 1px solid lighten($color-border, 9%);
     border-radius: 0.25em; // 3px / 12px
+    font-family: $font-mono;
     color: $color-text;
     background-color: $color-background-box;
-    font-family: $font-mono;
 }
 
 code,

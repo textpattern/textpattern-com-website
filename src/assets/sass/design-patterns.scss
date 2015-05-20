@@ -18,7 +18,7 @@
  */
 
 .information code {
-    color: #333333;
+    color: $color-text;
 }
 
 
@@ -74,7 +74,7 @@ $colors: (
         top: 0.75em;
         padding: 1px 0.25em;
         font-family: $font-mono;
-        background-color: #ffffff; // IE 8 support.
+        background-color: $color-background; // IE 8 support.
         background-color: rgba(255, 255, 255, 0.66);
     }
 }
@@ -121,11 +121,11 @@ $colors: (
 }
 
 .jquery-ui-icons li {
-    margin: 2px;
     position: relative;
+    float: left;
+    margin: 2px;
     padding: 4px 0;
     cursor: pointer;
-    float: left;
     list-style: none;
 }
 
@@ -139,9 +139,9 @@ $colors: (
  */
 
 .jquery-ui-slider-vertical span {
-    height: 120px;
     float: left;
     margin: 15px;
+    height: 120px;
 }
 
 /**
@@ -186,9 +186,9 @@ $colors: (
 .design-patterns--breakpoint-1,
 .design-patterns--breakpoint-2,
 .design-patterns--breakpoint-3 {
-    color: #ffffff;
-    background-color: red;
     padding: 0.5em;
+    color: $color-text-inverse;
+    background-color: #ff0000;
 }
 
 .design-patterns--breakpoint-1,

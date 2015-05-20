@@ -5,7 +5,7 @@
 * {
     @include box-shadow(none !important);
 
-    color: $color-text-print !important; /* 1 */
+    color: $color-text-print !important;
     text-shadow: none !important;
     background: transparent !important;
 }
@@ -15,11 +15,11 @@
  */
 
 body {
+    margin: 0.5cm;
+    padding: 2em 5em;
     font-family: $font-print;
     font-size: 8pt;
     line-height: 1.5;
-    margin: 0.5cm;
-    padding: 2em 5em;
 }
 
 /**
@@ -188,16 +188,11 @@ dt {
 }
 
 /**
+ * Images.
+ *
  * 1. Ensure images are maximum possible width.
  * 2. Avoid images breaking across mutiple pages.
- */
-
-img {
-    max-width: 100% !important; /* 1 */
-    page-break-inside: avoid; /* 2 */
-}
-
-/**
+ *
  * Image alignment (compatible with Textile markup syntax).
  *
  * Example HTML:
@@ -208,6 +203,9 @@ img {
  */
 
 img {
+    max-width: 100% !important; /* 1 */
+    page-break-inside: avoid; /* 2 */
+
     &.align-left {
         float: left;
         margin: 1em 1em 1em 0;
@@ -217,6 +215,7 @@ img {
         float: right;
         margin: 1em 0 1em 1em;
     }
+
     &.align-center {
         display: block;
         margin: 1em auto;
