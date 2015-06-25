@@ -81,10 +81,11 @@ module.exports = function (grunt)
                 ]
             },
 
-            // Copy Flowplayer images to CSS folder (because Flowplayer's CSS expects relative path of `img/`).
+            // Copy Flowplayer images and fonts to CSS folder (because Flowplayer's CSS expects relative path of `img/`).
             css: {
                 files: [
-                    {expand: true, cwd: 'src/assets/js/libs/flowplayer/skin/img/', src: ['**'], dest: 'public/assets/css/img/'}
+                    {expand: true, cwd: 'src/assets/js/libs/flowplayer/skin/img/', src: ['**'], dest: 'public/assets/css/img/'},
+                    {expand: true, cwd: 'src/assets/js/libs/flowplayer/skin/fonts/', src: ['**'], dest: 'public/assets/css/fonts/'}
                 ]
             }
         },
