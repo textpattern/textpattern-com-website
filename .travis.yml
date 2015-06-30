@@ -6,5 +6,3 @@ node_js:
 before_install:
   - bundle install
 sudo: false
-notifications:
-  slack: textpattern:QUmLD6S3qbRyTcIT5BjZMXuk
