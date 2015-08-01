@@ -17,16 +17,16 @@ GEM
       sass (>= 3.3.0, < 3.5)
     compass-import-once (1.0.5)
       sass (>= 3.2, < 3.5)
-    ffi (1.9.8)
-    multi_json (1.11.1)
+    ffi (1.9.10)
+    multi_json (1.11.2)
     rainbow (2.0.0)
     rb-fsevent (0.9.5)
     rb-inotify (0.9.5)
       ffi (>= 0.5.0)
-    sass (3.4.15)
+    sass (3.4.16)
     sassy-maps (0.4.0)
       sass (~> 3.3)
-    scss_lint (0.39.0)
+    scss_lint (0.40.1)
       rainbow (~> 2.0)
       sass (~> 3.4.1)
     singularitygs (1.6.2)
@@ -40,10 +40,10 @@ PLATFORMS
 
 DEPENDENCIES
   compass (= 1.0.3)
-  sass (= 3.4.15)
-  scss_lint (= 0.39.0)
+  sass (= 3.4.16)
+  scss_lint (= 0.40.1)
   singularitygs (= 1.6.2)
   toolkit (= 2.9.0)
 
 BUNDLED WITH
-   1.10.5
+   1.10.6
