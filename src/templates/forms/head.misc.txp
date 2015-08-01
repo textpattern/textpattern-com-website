@@ -18,3 +18,7 @@
 <meta name="application-name" content="Textpattern">
 <meta name="msapplication-TileColor" content="#ffffff">
 <meta name="msapplication-TileImage" content="http://textpattern.com/mstile-144x144.png">
+<!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <link rel="stylesheet" href="http://textpattern.com/assets/css/ie8.css">
+<![endif]-->
