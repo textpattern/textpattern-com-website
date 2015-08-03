@@ -17,7 +17,7 @@
         {
             'jquery': 'https://ajax.googleapis.com/ajax/libs/jquery/'+jqueryVersion+'/jquery.min',
             'jqueryui': 'https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min',
-            'flowplayer': 'flowplayer/flowplayer.min'
+            'flowplayer': 'http://textpattern.com/assets/js/flowplayer/flowplayer.min'
         },
         shim:
         {
@@ -64,7 +64,7 @@
         {
             code.parent().addClass('prettyprint');
 
-            require(['prettify.@@timestamp'], function ()
+            require(['http://textpattern.com/assets/js/prettify.@@timestamp'], function ()
             {
                 prettyPrint();
             });
@@ -76,7 +76,7 @@
         // Browser support info - http://caniuse.com/#feat=details.
 
         if (details.length) {
-            require(['details.@@timestamp'], function ()
+            require(['http://textpattern.com/assets/js/details.@@timestamp'], function ()
             {
                 details.details();
                 $('html').addClass($.fn.details.support ? 'details' : 'no-details');
@@ -88,7 +88,7 @@
         // on visitor input. More info - https://github.com/jackmoore/autosize.
 
         if (fields.length) {
-            require(['autosize.@@timestamp'], function ()
+            require(['http://textpattern.com/assets/js/autosize.@@timestamp'], function ()
             {
                 fields.autosize();
             });
@@ -123,7 +123,7 @@
     // Responsive navigation menu, via 'Responsive Nav'.
     // More info - https://github.com/viljamis/responsive-nav.js.
 
-    require(['responsivenav.@@timestamp'], function ()
+    require(['http://textpattern.com/assets/js/responsivenav.@@timestamp'], function ()
     {
         responsiveNav('.site-navigation', {
             transition: 400,
@@ -145,7 +145,7 @@
     // EU-cookie disclaimer, via 'jquery.cookie'.
     // More info - https://github.com/carhartl/jquery-cookie.
 
-    require(['jquery', 'cookie.@@timestamp'], function ($)
+    require(['jquery', 'http://textpattern.com/assets/js/cookie.@@timestamp'], function ($)
     {
         if (!$.cookie('acceptedCookies'))
         {
