@@ -344,4 +344,4 @@ Redirect temp /latest.tar.gz http://textpattern.com/file_download/98/textpattern
 # TODO: To be removed when new site created.
 Redirect temp /start http://textpattern.net/wiki/index.php?title=Textpattern_Quickstart:_Hello_World
 Redirect temp /donate http://textpattern.com/patrons
-Redirect temp /themes http://textgarden.org/
+Redirect temp /themes http://www.textpattern.net/wiki/index.php?title=Creating_Textpattern_themes
