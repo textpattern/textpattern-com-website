@@ -331,6 +331,15 @@ Redirect temp /latest.zip http://textpattern.com/file_download/99/textpattern-4.
 Redirect temp /latest.tar.gz http://textpattern.com/file_download/98/textpattern-4.5.7.tar.gz&
 
 
+# ----------------------------------------------------------------------
+# | Temporarily redirect old FAQ categories to new docs site           |
+# ----------------------------------------------------------------------
+
+<IfModule mod_rewrite.c>
+    RewriteCond %{QUERY_STRING}  ^c=diagnostics$
+    RewriteRule (.*)  http://docs.textpattern.io/administration/admin/diagnostics-panel?  [R=301,L]
+</IfModule>
+
 
 # TODO: To be removed when new site created.
 Redirect temp /start http://textpattern.net/wiki/index.php?title=Textpattern_Quickstart:_Hello_World
