@@ -4,19 +4,19 @@
 </txp:if_comments_error>
 <div class="field layout--span-1-6 at-break2">
     <label for="name">Name <span class="required" title="Required" aria-label="Required">●</span></label><br>
-    <txp:comment_name_input />
+    <txp:comment_name_input size="32" />
 </div>
 <div class="field layout--span-7-12 at-break2">
     <label for="email">Email <span class="required" title="Required" aria-label="Required">●</span></label><br>
-    <txp:comment_email_input />
+    <txp:comment_email_input size="32" />
 </div>
 <div class="field layout--span-1-6 at-break2">
     <label for="web">Website</label><br>
-    <txp:comment_web_input />
+    <txp:comment_web_input size="32" />
 </div>
 <div class="field layout--span-1-12">
     <label for="message">Message <span class="required" title="Required" aria-label="Required">●</span></label><br>
-    <txp:comment_message_input />
+    <txp:comment_message_input cols="64" rows="4" />
 </div>
 <div class="field layout--span-1-12">
     <txp:comment_preview />
