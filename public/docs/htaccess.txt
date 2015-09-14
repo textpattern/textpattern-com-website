@@ -337,7 +337,10 @@ Redirect temp /latest.tar.gz http://textpattern.com/file_download/98/textpattern
 
 <IfModule mod_rewrite.c>
     RewriteCond %{QUERY_STRING}  ^c=diagnostics$
-    RewriteRule (.*)  http://docs.textpattern.io/administration/admin/diagnostics-panel?  [R=301,L]
+    RewriteRule (.*)  http://docs.textpattern.io/administration/diagnostics-panel?  [R=301,L]
+
+    RewriteCond %{QUERY_STRING}  ^c=forum$
+    RewriteRule (.*)  http://forum.textpattern.com/help.php?  [R=301,L]
 </IfModule>
 
 
