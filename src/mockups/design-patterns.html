@@ -720,47 +720,38 @@
                             <h2>Tables</h2>
 
                             <h3>Plain table</h3>
-                            <p class="information">Plain table with <code>&lt;thead&gt;</code> included</p>
+                            <p class="information">Simple table (without <code>&lt;thead&gt;</code>, <code>&lt;tfoot&gt;</code>, <code>&lt;tbody&gt;</code> tags)</p>
 
                             <div class="tabular-data">
                                 <table>
-                                    <colgroup>
-                                        <col class="t33">
-                                        <col class="t33">
-                                        <col>
-                                    </colgroup>
-                                    <thead>
-                                        <tr>
-                                            <th scope="col">Primary</th>
-                                            <th scope="col">Secondary</th>
-                                            <th scope="col">Tertiary</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <th scope="row">Roast duck</th>
-                                            <td>Seasonal vegetables</td>
-                                            <td>New potatoes</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">Grilled lobster</th>
-                                            <td>Mixed seafood</td>
-                                            <td>Side salad</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">Chicken dinosaurs</th>
-                                            <td>Baked beans</td>
-                                            <td>Waffles</td>
-                                        </tr>
-                                    </tbody>
+                                    <tr>
+                                        <th>Primary</th>
+                                        <th>Secondary</th>
+                                        <th>Tertiary</th>
+                                    </tr>
+                                    <tr>
+                                        <th>Roast duck</th>
+                                        <td>Seasonal vegetables</td>
+                                        <td>New potatoes</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Grilled lobster</th>
+                                        <td>Mixed seafood</td>
+                                        <td>Side salad</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Chicken dinosaurs</th>
+                                        <td>Baked beans</td>
+                                        <td>Waffles</td>
+                                    </tr>
                                 </table>
                             </div>
 
-                            <h3>Bordered table</h3>
-                            <p class="information">Bordered table <code>&lt;table class="table--bordered"&gt;</code> with <code>&lt;caption&gt;</code>, <code>&lt;thead&gt;</code> and <code>&lt;tfoot&gt;</code> included</p>
+                            <h3>Full Table</h3>
+                            <p class="information">Full-feautured table with <code>scope</code>, <code>rowspan</code> <code>colspan</code> attributes, and <code>&lt;caption&gt;</code>, <code>&lt;colgroup&gt;</code>, <code>&lt;thead&gt;</code>, <code>&lt;tfoot&gt;</code>, <code>&lt;tbody&gt;</code> tags included</p>
 
                             <div class="tabular-data">
-                                <table class="table--bordered">
+                                <table>
                                     <caption>This is a table caption</caption>
                                     <colgroup>
                                         <col class="t25">

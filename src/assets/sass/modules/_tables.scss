@@ -37,14 +37,26 @@ caption {
 }
 
 /**
- * Make table cells align top and left by default.
+ * Make table cells align top and left by default and include border.
  */
 
 th,
 td {
     vertical-align: top;
     text-align: left;
-    padding: 0.2307692em 0; // 3px / 13px
+    border-bottom: 1px solid $color-border;
+    padding: 0.2307692em; // 3px / 13px
+
+    &:empty {
+        border: 0;
+    }
+}
+
+tbody tr:first-child {
+    td,
+    th {
+        border-top: 1px solid $color-border;
+    }
 }
 
 /**
@@ -59,13 +71,24 @@ thead tr:first-child {
 }
 
 /**
+ * Thicker border below table header.
+ */
+
+thead tr:last-child {
+    th,
+    td {
+        border-bottom: 2px solid $color-border;
+    }
+}
+
+/**
  * Adjust padding of table footer due to smaller font size.
  */
 
 tfoot {
     th,
     td {
-        padding: 0.2727273em 0; // 3px / 11px
+        padding: 0.2727273em; // 3px / 11px
     }
 
     tr:last-child {
@@ -98,54 +121,6 @@ tfoot {
 
 .numerical {
     text-align: right;
-}
-
-/**
- * Bordered tables.
- *
- * Example HTML:
- *
- * <table class="table--bordered">
- */
-
-.table--bordered {
-    th,
-    td {
-        border-bottom: 1px solid $color-border;
-        padding: 0.2307692em; // 3px / 13px
-
-        &:empty {
-            border: 0;
-        }
-    }
-
-    thead tr:last-child {
-        th,
-        td {
-            border-bottom: 2px solid $color-border;
-        }
-    }
-
-    tfoot {
-        th,
-        td {
-            padding: 0.2727273em; // 3px / 11px
-        }
-
-        tr:last-child {
-            th,
-            td {
-                border-bottom: 0;
-            }
-        }
-    }
-
-    tbody tr:first-child {
-        td,
-        th {
-            border-top: 1px solid $color-border;
-        }
-    }
 }
 
 /**
