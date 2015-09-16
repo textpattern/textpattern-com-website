@@ -45,7 +45,7 @@ td {
     vertical-align: top;
     text-align: left;
     border-bottom: 1px solid $color-border;
-    padding: 0.3076923em; // 4px / 13px
+    padding: 0.3846154em; // 5px / 13px
 
     &:empty {
         border: 0;
@@ -56,6 +56,17 @@ tbody tr:first-child {
     td,
     th {
         border-top: 1px solid $color-border;
+    }
+}
+
+/**
+ * 'Zebra striping' of `tbody` rows.
+ */
+
+tbody tr:nth-child(even) {
+    td,
+    th {
+        background: $color-background-box;
     }
 }
 
@@ -88,7 +99,7 @@ thead tr:last-child {
 tfoot {
     th,
     td {
-        padding: 0.3636364em; // 4px / 11px
+        padding: 0.4545455em; // 5px / 11px
     }
 
     tr:last-child {
