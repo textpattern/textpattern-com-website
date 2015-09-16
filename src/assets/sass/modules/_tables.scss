@@ -45,7 +45,7 @@ td {
     vertical-align: top;
     text-align: left;
     border-bottom: 1px solid $color-border;
-    padding: 0.2307692em; // 3px / 13px
+    padding: 0.3076923em; // 4px / 13px
 
     &:empty {
         border: 0;
@@ -88,7 +88,7 @@ thead tr:last-child {
 tfoot {
     th,
     td {
-        padding: 0.2727273em; // 3px / 11px
+        padding: 0.3636364em; // 4px / 11px
     }
 
     tr:last-child {
