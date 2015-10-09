@@ -63,24 +63,6 @@ summary {
     cursor: pointer;
 }
 
-/**
- * `summary` styling for jquery-details polyfill.
- *
- * This rule can be removed if you are not using the polyfill.
- */
-
-.no-details details {
-    > summary:before {
-        float: left;
-        width: 20px;
-        content: "► ";
-    }
-
-    &.open > summary:before {
-        content: "▼ ";
-    }
-}
-
 
 /* Clearfix
    ========================================================================== */

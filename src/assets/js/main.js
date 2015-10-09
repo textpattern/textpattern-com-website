@@ -52,7 +52,6 @@
         // Load objects as variables.
 
         var code = $('pre code'),
-            details = $('details'),
             fields = $('form textarea'),
             vidplayer = $('.videoplayer');
 
@@ -67,19 +66,6 @@
             require(['http://textpattern.com/assets/js/prettify.@@timestamp'], function ()
             {
                 prettyPrint();
-            });
-        }
-
-        // Details polyfill, via 'jQuery Details'.
-        // Adds `details` and `summary` HTML elements for unsupported browsers.
-        // More info - https://github.com/mathiasbynens/jquery-details.
-        // Browser support info - http://caniuse.com/#feat=details.
-
-        if (details.length) {
-            require(['http://textpattern.com/assets/js/details.@@timestamp'], function ()
-            {
-                details.details();
-                $('html').addClass($.fn.details.support ? 'details' : 'no-details');
             });
         }
 
