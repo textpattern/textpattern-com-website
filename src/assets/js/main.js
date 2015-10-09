@@ -94,18 +94,6 @@
         }
     });
 
-    // If no SVG support, replace SVGs with PNGs.
-
-    require(['jquery', 'feature'], function ($, supports)
-    {
-        if (!supports.svg) {
-            $('img.svg').attr('src', function ()
-            {
-                return $(this).attr('src').replace('.svg', '.png');
-            });
-        }
-    });
-
     // Responsive navigation menu, via 'Responsive Nav'.
     // More info - https://github.com/viljamis/responsive-nav.js.
 

@@ -2,7 +2,7 @@
    ========================================================================== */
 
 /**
- * Correct `block` display not defined for any HTML5 element in IE 8/9.
+ * Correct `block` display not defined for any HTML5 element in IE 9.
  * Correct `block` display not defined for `main` in IE 11.
  */
 
@@ -19,7 +19,7 @@ section {
 }
 
 /**
- * 1. Correct `inline-block` display not defined in IE 8/9.
+ * 1. Correct `inline-block` display not defined in IE 9.
  * 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
  */
 
@@ -31,8 +31,7 @@ video {
 }
 
 /**
- * Address `[hidden]` styling not present in IE 8/9/10.
- * Hide the `template` element in IE 8/9/11, Safari, and Firefox < 22.
+ * Address `[hidden]` styling not present in IE 9/10.
  */
 
 [hidden] {

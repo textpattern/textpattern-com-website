@@ -114,7 +114,6 @@ module.exports = function (grunt)
                 },
                 files: {
                     'public/assets/css/main.css': ['tmp/assets/css/main.css'],
-                    'public/assets/css/ie8.css': ['tmp/assets/css/ie8.css'],
                     'public/assets/css/design-patterns.css': ['tmp/assets/css/design-patterns.css']
                 }
             }
