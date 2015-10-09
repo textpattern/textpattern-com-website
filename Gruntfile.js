@@ -182,7 +182,6 @@ module.exports = function (grunt)
                 },
                 files: [
                     {expand: true, cwd: 'src/templates/', src: ['**'], dest: 'public/templates/'},
-                    {expand: true, cwd: 'src/mockups/', src: ['*.html'], dest: 'public/mockups/'},
                     {src: ['src/assets/js/main.js'], dest: 'tmp/assets/js/main.js'}
                 ]
             }
