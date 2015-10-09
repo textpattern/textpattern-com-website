@@ -23,7 +23,6 @@ section {
  * 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
  */
 
-audio,
 canvas,
 progress,
 video {
@@ -36,8 +35,7 @@ video {
  * Hide the `template` element in IE 8/9/11, Safari, and Firefox < 22.
  */
 
-[hidden],
-template {
+[hidden] {
     display: none;
 }
 
@@ -49,14 +47,6 @@ a,
 input,
 button {
     @include touch-action;
-}
-
-/**
- * Correct `summary` not showing as clickable.
- */
-
-summary {
-    cursor: pointer;
 }
 
 
