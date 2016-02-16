@@ -12,6 +12,9 @@ indent_style = space
 insert_final_newline = true
 trim_trailing_whitespace = true
 
-[{*.yml,*.json,Gemfile.lock,humans.txt}]
+[*.md]
+trim_trailing_whitespace = false
+
+[{*.json,*.yml,humans.txt}]
 indent_size = 2
 indent_style = space
