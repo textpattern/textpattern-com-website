@@ -11,14 +11,8 @@ Thumbs.db
 
 # Development files  #
 ######################
-.sass-cache
 /bower_components
 /node_modules
 /npm-debug.log
-/scss-lint-report.xml
 /tmp
 /vendor
-
-# Page cache #
-##############
-/cache

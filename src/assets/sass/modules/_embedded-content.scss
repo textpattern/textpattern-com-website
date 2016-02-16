@@ -79,16 +79,6 @@ figure {
 }
 
 /**
- * Prevent modern browsers from displaying `audio` without controls.
- * Remove excess height in iOS 5 devices.
- */
-
-audio:not([controls]) {
-    display: none;
-    height: 0;
-}
-
-/**
  * Correct overflow not hidden in IE 9/10/11.
  */
 

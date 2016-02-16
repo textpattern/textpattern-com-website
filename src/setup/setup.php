@@ -11,6 +11,7 @@ echo "Cleaning up the downloaded package...\n";
 chdir('textpattern');
 
 `rm -Rf .git`;
+`rm -f .phpstorm.meta.php`;
 
 foreach (array_merge((array) glob('*'), array('.gitignore')) as $file)
 {
