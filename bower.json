@@ -1,7 +1,0 @@
-{
-  "name": "textpattern-com-website",
-  "directory": "bower_components",
-  "dependencies": {
-    "textpattern-branding": "*"
-  }
-}

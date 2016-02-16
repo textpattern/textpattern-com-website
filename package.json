@@ -25,7 +25,8 @@
     "load-grunt-tasks": "~3.4",
     "node-sass": "3.4.2",
     "sass-lint": "1.5.0",
-    "singularitygs": "1.6.2"
+    "singularitygs": "1.6.2",
+    "textpattern-branding": "0.1.0"
   },
   "dependencies": {
     "autosize": "3.0.15",

@@ -69,11 +69,11 @@ module.exports = function (grunt)
             img: {
                 files: [
                     {expand: true, cwd: 'src/assets/img/', src: ['**'], dest: 'public/assets/img/com/'},
-                    {expand: true, cwd: 'bower_components/textpattern-branding/assets/img/', src: ['**'], dest: 'public/assets/img/branding/'},
-                    {expand: true, cwd: 'bower_components/textpattern-branding/assets/img/apple-touch-icon/textpattern/', src: ['**'], dest: 'public/'},
-                    {expand: true, cwd: 'bower_components/textpattern-branding/assets/img/favicon/textpattern/', src: ['**'], dest: 'public/'},
-                    {expand: true, cwd: 'bower_components/textpattern-branding/assets/img/windows-site-tile/textpattern/', src: ['**'], dest: 'public/'},
-                    {expand: true, cwd: 'bower_components/textpattern-branding/assets/img/misc/', src: ['hi.png', 'hi@2x.png'], dest: 'public/'}
+                    {expand: true, cwd: 'node_modules/textpattern-branding/assets/img/', src: ['**'], dest: 'public/assets/img/branding/'},
+                    {expand: true, cwd: 'node_modules/textpattern-branding/assets/img/apple-touch-icon/textpattern/', src: ['**'], dest: 'public/'},
+                    {expand: true, cwd: 'node_modules/textpattern-branding/assets/img/favicon/textpattern/', src: ['**'], dest: 'public/'},
+                    {expand: true, cwd: 'node_modules/textpattern-branding/assets/img/windows-site-tile/textpattern/', src: ['**'], dest: 'public/'},
+                    {expand: true, cwd: 'node_modules/textpattern-branding/assets/img/misc/', src: ['hi.png', 'hi@2x.png'], dest: 'public/'}
                 ]
             },
             // Copy JavaScript files from various sources.
