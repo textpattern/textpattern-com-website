@@ -16,44 +16,44 @@
 .warning,
 .error,
 .information {
-    border-radius: 0.2307692em; // 3px / 13px
-    padding: 1px 0.2307692em; // 3px / 13px
+    padding: 0 0.25em; // 4px / 16px
+    border-radius: $border-radius / 2;
 }
 
 .success {
-    color: $color-success-text;
     background: $color-success-background;
+    color: $color-success-text;
 }
 
 .warning {
-    color: $color-warning-text;
     background: $color-warning-background;
+    color: $color-warning-text;
 }
 
 .error {
-    color: $color-error-text;
     background: $color-error-background;
+    color: $color-error-text;
 }
 
 .information {
-    color: $color-info-text;
     background: $color-info-background;
+    color: $color-info-text;
 }
 
 /**
- * Highlight background.
+ * Highlighted background.
  *
  * Example HTML:
  *
  * <table>
  *     <tr>
- *         <td class="highlight></td>
+ *         <td class="highlighted></td>
  *         <td></td>
  *     </tr>
  * </table>
  */
 
-.highlight {
+.highlighted {
     background: $color-highlight-box;
 }
 
@@ -69,8 +69,8 @@
  */
 
 .alert-block {
+    padding: 0.5em 1em;
     border: 1px solid;
-    padding: 0.5384615em 1em; // 7px / 13px
     word-wrap: break-word; /* 1 */
 
     &.success {
