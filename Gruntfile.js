@@ -172,6 +172,25 @@ module.exports = function (grunt)
             ]
         },
 
+        // Add vendor prefixed styles and other post-processing transformations.
+        postcss: {
+            options: {
+                processors: [
+                    require('css-mqpacker')(),
+                    require('autoprefixer')({
+                        browsers: ['last 2 versions']
+                    }),
+                    require('cssnano')()
+                ]
+            },
+            dist: {
+                files: [
+                    {'<%= paths.dest.css %>main.css': '<%= paths.tmp.css %>main.css'},
+                    {'<%= paths.dest.css %>design-patterns.css': '<%= paths.tmp.css %>design-patterns.css'}
+                ]
+            }
+        },
+
         // Generate filename timestamps within templates files and main.js.
         replace: {
             theme: {
@@ -192,6 +211,21 @@ module.exports = function (grunt)
                         src: '<%= paths.src.js %>main.js',
                         dest: '<%= paths.tmp.js %>main.js'
                     }
+                ]
+            }
+        },
+
+        // Sass configuration.
+        sass: {
+            options: require('eyeglass')({
+                outputStyle: 'expanded', // outputStyle = expanded, nested, compact or compressed.
+                sourceMap: false
+            }),
+            dist: {
+                files: [
+                    {'<%= paths.tmp.css %>style.css': '<%= paths.src.sass %>style.scss'},
+                    //{'<%= paths.tmp.css %>jquery-ui.css': '<%= paths.src.sass %>jquery-ui.scss'},
+                    {'<%= paths.tmp.css %>design-patterns.css': '<%= paths.src.sass %>design-patterns.scss'}
                 ]
             }
         },
@@ -231,6 +265,7 @@ module.exports = function (grunt)
                             'node_modules/prismjs/plugins/line-numbers/prism-line-numbers.js',
                             'node_modules/prismjs/plugins/show-language/prism-show-language.js',
                             // Add any additional languages
+                            'node_modules/prismjs/components/prism-php.js',
                             'node_modules/prismjs/components/prism-scss.js',
                             'node_modules/prismjs/components/prism-textile.js'
                         ],

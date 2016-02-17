@@ -1,11 +1,11 @@
 // import global variables
-@import "core/settings";
+@import "setup/settings";
 
-// import Compass, Compass Plugins and any additional mixins
-@import "core/helpers";
+// import any additional mixins
+@import "setup/helpers";
 
 // import colourscheme
-@import "core/colours";
+@import "setup/colours";
 
 
 
@@ -13,7 +13,7 @@
    Styling and layout for all media
    ========================================================================== */
 
-@import "core/base";
+@import "modules/base";
 
 
 
@@ -23,7 +23,7 @@
 
 @media screen {
 
-    @import "core/layout";
+    @import "modules/grid";
     @import "modules/layout";
     @import "modules/navigation";
     @import "modules/links";
@@ -35,9 +35,9 @@
     @import "modules/forms";
     @import "modules/buttons";
     @import "modules/cookie-disclaimer";
-    @import "modules/code-prettify";
-    @import "modules/breadcrumbs";
+    @import "modules/code-highlighting";
     @import "modules/pagination";
+    @import "modules/breadcrumbs";
     //@import "modules/slider";
     @import "modules/social";
     @import "modules/misc";
@@ -55,6 +55,6 @@
 
 @media print {
 
-    @import "core/print";
+    @import "modules/print";
 
 }

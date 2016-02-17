@@ -1,11 +1,11 @@
 // import global variables
-@import "core/settings";
+@import "setup/settings";
 
-// import Compass, Compass Plugins and any additional mixins
-@import "core/helpers";
+// import any additional mixins
+@import "setup/helpers";
 
 // import colourscheme
-@import "core/colours";
+@import "setup/colours";
 
 
 
