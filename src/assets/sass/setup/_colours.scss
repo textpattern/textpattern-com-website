@@ -1,14 +1,24 @@
-// page colours
+// slightly lighten a colour
+@function tint($color, $percentage) {
+    @return mix(white, $color, $percentage);
+}
 
-$color-background:            #ffffff;
-$color-background-box:        #f7f7f7;
+// slightly darken a colour
+@function shade($color, $percentage) {
+    @return mix(black, $color, $percentage);
+}
 
 // text colours
 
 $color-text:                  #333333;
-$color-text-footnote:         #888888;
+$color-text-footnote:         #777777;
 $color-text-inverse:          #ffffff;
 $color-text-print:            #000000; // solid black prints faster/cleaner
+
+// page colours
+
+$color-background:            #ffffff;
+$color-background-box:        #f7f7f7;
 
 // interaction colours
 
