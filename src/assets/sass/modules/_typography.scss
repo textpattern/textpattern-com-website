@@ -2,10 +2,13 @@
    ========================================================================== */
 
 /**
- * Global font size and leading.
+ * Establish baseline.
  */
 
-@include establish-baseline;
+html {
+    font-size: $base-font-size;
+    line-height: $base-line-height;
+}
 
 /**
  * Global font.
@@ -82,6 +85,7 @@ strong {
 
 address {
     margin: 1em 0;
+    font-style: normal;
 }
 
 /**
@@ -103,48 +107,48 @@ dfn {
 }
 
 /**
- * Address styling not present in IE 9/10/11, Safari, and Chrome.
+ * Address styling not present in Safari and Chrome.
  */
 
 abbr[title],
 dfn[title] {
-    border-bottom: dotted 1px;
+    text-decoration: dotted underline;
     cursor: help;
 }
 
 /**
- * Address styling not present in IE 9.
+ * Consistent styling for `mark` and `var` tags.
  */
 
 mark,
 var {
-    border-radius: 0.2307692em; // 3px / 13px
-    padding: 1px 0.2307692em; // 3px / 13px
-    color: $color-text;
+    padding: 0 0.25em; // 0 4px
+    border-radius: $border-radius / 2;
     background: $color-selected;
+    color: $color-text;
 }
 
 /**
- * Harmonise size and style of computer text.
+ * Harmonize size and style of computer text.
  */
 
 pre,
 code,
 kbd,
 samp {
-    @include adjust-font-size-to(12px, 0.9);
-
     border: 1px solid lighten($color-border, 9%);
-    border-radius: 0.25em; // 3px / 12px
-    font-family: $font-mono;
-    color: $color-text;
+    border-radius: 0.2857143em; // 4px / 14px
     background-color: $color-background-box;
+    color: $color-text;
+    font-family: $font-code;
+    font-size: $code-font-size;
+    line-height: $base-line-height;
 }
 
 code,
 kbd,
 samp {
-    padding: 1px 0.25em;
+    padding: 1px 0.2142857em; // 3px / 14px
 }
 
 /**
@@ -156,17 +160,16 @@ samp {
  */
 
 pre {
+    padding: 0.5714286em 1.1428571em; // 8px / 14px + 16px / 14px
     word-wrap: normal; /* 1 */
     overflow-x: auto; /* 2 */
-    margin: 1.0833333em 0; // 13px / 12px
-    padding: 0.5833333em 1.0833333em; // 7px / 12px + 13px / 12px
     tab-size: 4; /* 3 */
 
     code {
-        font-size: 1em; // 12px
-        border: 0;
         padding: 0;
+        border: 0;
         background-color: transparent;
+        font-size: 1em; // 14px
     }
 }
 
@@ -175,11 +178,12 @@ pre {
  */
 
 sub,
-sup.footnote, // override Textile class
+// override Textile class
+sup.footnote,
 sup {
-    @include adjust-font-size-to(9px, 0);
-
     position: relative;
+    font-size: 0.625em; // 10px / 16px
+    line-height: 0;
     vertical-align: baseline;
 }
 
@@ -188,18 +192,19 @@ sup {
 }
 
 sub {
-    bottom: -0.3333333em;
+    bottom: -0.25em;
 }
 
 /**
- * Harmonise size and style of small text.
+ * Harmonize size and style of small text.
  */
 
 small,
 figcaption,
 tfoot,
 .footnote {
-    @include adjust-font-size-to(11px, 0.8);
+    font-size: $small-font-size;
+    line-height: $base-line-height;
 }
 
 figcaption,
@@ -218,10 +223,9 @@ figcaption {
  */
 
 hr {
-    @include box-sizing(content-box);
-
-    border: 0; // remove the default `hr` border
     height: 24px;
-    background: url("../img/com/hr.svg") 50% 50% no-repeat;
+    border: 0; // remove the default `hr` border
+    background: url("http://static2.designhive.com/assets/img/hr.svg") 50% 50% no-repeat;
     background-size: 240px 24px;
+    box-sizing: content-box;
 }
