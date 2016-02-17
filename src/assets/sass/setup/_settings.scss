@@ -1,49 +1,33 @@
-// set Compass minimum browser support and caniuse thresholds
-
-$graceful-usage-threshold:     1;
-$critical-usage-threshold:     0.1;
-$supported-browsers:           ("chrome", "firefox", "ie", "safari");
-$browser-minimum-versions:     ("chrome": "36", "firefox": "34", "ie": "9", "safari": "7");
-$debug-browser-support:        true;
-
-// use the Kellum method for hiding text
-// http://www.zeldman.com/2012/03/01/replacing-the-9999px-hack-new-image-replacement/
-
-$hide-text-direction:         right;
-
 // font families
 
-$font-serif:                  "PT Serif", Georgia, serif;
-$font-sans-serif:             Helvetica, Arial, sans-serif;
-$font-mono:                   Menlo, Consolas, Monaco, monospace;
-$font-print:                  "Helvetica Neue", sans-serif;
+$font-serif:          "PT Serif", Georgia, serif;
+$font-sans-serif:     Helvetica, Arial, sans-serif;
+$font-form:           Helvetica, Arial, sans-serif;
+$font-code:           Menlo, Consolas, Monaco, monospace;
+$font-print:          "Helvetica Neue", sans-serif;
 
 // typography grid
 
-$base-font-size:              13px;
-$base-line-height:            20px;
+$base-font-size:      16px;
+$base-line-height:    1.5em;
+$code-font-size:      0.875em; // 14px / 16px
+$small-font-size:     0.75em; // 12px / 16px
 
 // layout grid
 
-$grid-gutter:                 2em;          // 26px / 13px
-$container-max-width:         78.7692308em; // 1024px / 13px
-
-// breakpoints
-
-$breakpoint-3:                64em;         // 1024px / 16px
-$breakpoint-2:                46.625em;     // 746px / 16px
-$breakpoint-1:                30em;         // 480px / 16px
+$container-max-width: 64em; // 1024px / 16px
+$breakpoint-3:        48.5em; // 776px / 16px
+$breakpoint-2:        44.5em; // 712px / 16px
+$breakpoint-1:        24em; // 384px / 16px
 
 // borders
 
-$default-border-radius:       0.5384615em; // 7px / 13px
+$border-radius:       0.5em; // 8px / 16px
 
 // shadows
 
-$default-box-shadow-color:    rgba(#000000, 0.2);
-$default-box-shadow-h-offset: 0;
-$default-box-shadow-v-offset: 1px;
-$default-box-shadow-blur:     2px;
-$inset-highlighting:          inset 0 1px 0 rgba(#ffffff, 0.25);
-$text-shadow-light:           1px 1px 0 rgba(#ffffff, 0.5);
-$text-shadow-dark:            -1px -1px 0 rgba(#000000, 0.1);
+$standard-shadow:     0 0 0.5em rgba(0, 0, 0, 0.2) !default;
+$inset-highlighting:  inset 0 1px 0 rgba(#ffffff, 0.25) !default;
+$inset-lowlighting:   inset 0 0.2em 0.25em rgba(#000000, 0.15) !default;
+$text-shadow-light:   1px 1px 0 rgba(#ffffff, 0.5) !default;
+$text-shadow-dark:    -1px -1px 0 rgba(#000000, 0.1) !default;
