@@ -6,10 +6,10 @@
 
     // Detect whether jQuery v2 features required, otherwise use jQuery v1 for higher compatibility.
 
-    var jqueryVersion = '1.11.3';
+    var jqueryVersion = '1.12.0';
 
     if (typeof JSON !== 'undefined' && 'querySelector' in document && 'addEventListener' in window) {
-        jqueryVersion = '2.1.4';
+        jqueryVersion = '2.2.0';
     }
 
     requirejs.config({
@@ -26,18 +26,6 @@
         }
     });
 
-    // Detect whether browser supports SVG format.
-
-    define('feature', function ()
-    {
-        return {
-            svg: function ()
-            {
-                return document.createElementNS || document.createElementNS('http://www.w3.org/2000/svg', 'svg').createSVGRect;
-            }
-        };
-    });
-
     // Detect whether user enabled 'Do No Track' in their browser, and honour it.
 
     define('track', function ()
@@ -52,20 +40,21 @@
         // Load objects as variables.
 
         var code = $('pre code'),
-            fields = $('form textarea'),
+            fields = $('textarea'),
             vidplayer = $('.videoplayer');
 
-        // Syntax highlighting, via 'Google Code Prettify'.
-        // Automatically applies syntax highlighting to `pre code` HTML elements.
-        // More info - https://github.com/tcollard/google-code-prettify.
+        // Syntax highlighting, via 'Prism'.
+        // Applies syntax highlighting to `code` HTML elements.
+        // More info - http://prismjs.com.
 
-        if (code.length)
-        {
-            code.parent().addClass('prettyprint');
+        if (code.length) {
+            // Workaround for Textile limitation (you can't specify a class for inner `code` tags with Textile).
+            var language = code.parent().attr('class').split(' ')[0];
+            code.addClass(language);
 
-            require(['http://textpattern.com/assets/js/prettify.@@timestamp'], function ()
+            require(['http://textpattern.com/assets/js/prism.@@timestamp'], function ()
             {
-                prettyPrint();
+                Prism.highlightAll();
             });
         }
 
@@ -74,9 +63,9 @@
         // on visitor input. More info - https://github.com/jackmoore/autosize.
 
         if (fields.length) {
-            require(['http://textpattern.com/assets/js/autosize.@@timestamp'], function ()
+            require(['http://textpattern.com/assets/js/autosize.@@timestamp'], function (autosize)
             {
-                fields.autosize();
+                autosize(fields);
             });
         }
 
