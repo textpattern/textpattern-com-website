@@ -205,7 +205,7 @@ module.exports = function (grunt)
                     {
                         expand: true,
                         cwd: '<%= paths.src.mockups %>',
-                        src: '*.html',
+                        src: '**',
                         dest: '<%= paths.dest.mockups %>'
                     },
                     {
