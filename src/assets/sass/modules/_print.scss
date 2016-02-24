@@ -209,13 +209,13 @@ img {
     page-break-inside: avoid; /* 2 */
 
     &.align-left {
-        float: left;
         margin: 1em 1em 1em 0;
+        float: left;
     }
 
     &.align-right {
-        float: right;
         margin: 1em 0 1em 1em;
+        float: right;
     }
 
     &.align-center {
@@ -276,8 +276,8 @@ dl {
  */
 
 .list--no-bullets {
-    list-style: none;
     padding: 0;
+    list-style: none;
 }
 
 /**

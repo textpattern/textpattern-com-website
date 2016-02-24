@@ -14,8 +14,8 @@
  */
 
 .social-channels {
-    list-style: none;
     padding: 0;
+    list-style: none;
 
     li {
         display: inline-block;
@@ -28,8 +28,12 @@
         display: block;
         width: 32px;
         height: 32px;
-        background-image: url("../img/branding/misc/icon-sprite.svg");
+        background-image: url("http://textpattern.com/assets/img/branding/misc/icon-sprite.svg");
         background-size: 160px 32px;
+
+        &:hover {
+            filter: brightness(1.1);
+        }
 
         &.facebook {
             background-position: -32px 0;
@@ -41,10 +45,6 @@
 
         &.googleplus {
             background-position: -96px 0;
-        }
-
-        &:hover {
-            @include filter(brightness(1.1));
         }
     }
 }

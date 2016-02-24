@@ -12,14 +12,17 @@ html {
 
 /**
  * Global font.
+ *
+ * 1. Enable font ligatures globally, where supported by OpenType fonts.
  */
 
 body {
     font-family: $font-sans-serif;
+    font-feature-settings: "liga", "dlig"; /* 1 */
 }
 
 /**
- * Harmonise size, style and vertical margin of headings.
+ * Harmonize size, style and vertical margin of headings.
  */
 
 h1,
@@ -34,40 +37,40 @@ h6,
 }
 
 h1 {
-    @include adjust-font-size-to(36px, 2);
-
-    margin: rhythm(1, 40px) 0;
+    margin: 0.6315789em 0; // 24px / 38px
+    font-size: 2.375em; // 38px / 16px
+    line-height: 1.1842105; // 45px / 38px
 }
 
 h2 {
-    @include adjust-font-size-to(30px, 1.75);
-
-    margin: rhythm(1, 32px) 0;
+    margin: 0.8em 0; // 24px / 30px
+    font-size: 1.875em; // 30px / 16px
+    line-height: 1.2666667; // 38px / 30px
 }
 
 h3 {
-    @include adjust-font-size-to(24px, 1.4);
-
-    margin: rhythm(1, 24px) 0;
+    margin: 1em 0; // 24px
+    font-size: 1.5em; // 24px / 16px
+    line-height: 1.3333333; // 32px / 24px
 }
 
 h4 {
-    @include adjust-font-size-to(18px, 1.2);
-
-    margin: rhythm(1, 20px) 0;
+    margin: 1em 0; // 20px
+    font-size: 1.25em; // 20px / 16px
+    line-height: 1.4em; // 28px / 20px
 }
 
 h5,
 .article-description {
-    @include adjust-font-size-to(16px, 1.1);
-
-    margin: rhythm(1, 20px) 0;
+    margin: 1em 0; // 18px
+    font-size: 1.125em; // 18px / 16px
+    line-height: 1.4444444; // 26px / 18px
 }
 
 h6 {
-    @include adjust-font-size-to(14px, 1);
-
-    margin: rhythm(1, 20px) 0;
+    margin: 1em 0; // 16px
+    font-size: 1em;
+    line-height: $base-line-height;
 }
 
 /**
@@ -85,7 +88,6 @@ strong {
 
 address {
     margin: 1em 0;
-    font-style: normal;
 }
 
 /**
@@ -94,8 +96,8 @@ address {
 
 blockquote {
     margin: 1em 0;
-    border-left: 4px solid $color-accent-gradient-to;
     padding: 0 0 0 1em;
+    border-left: 4px solid $color-border;
 }
 
 /**
@@ -225,7 +227,7 @@ figcaption {
 hr {
     height: 24px;
     border: 0; // remove the default `hr` border
-    background: url("http://static2.designhive.com/assets/img/hr.svg") 50% 50% no-repeat;
+    background: url("http://textpattern.com/assets/img/hr.svg") 50% 50% no-repeat;
     background-size: 240px 24px;
     box-sizing: content-box;
 }

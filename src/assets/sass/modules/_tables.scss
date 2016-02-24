@@ -12,8 +12,8 @@
  */
 
 .tabular-data {
-    overflow-x: auto;
     margin-bottom: 1em;
+    overflow-x: auto;
 }
 
 /**
@@ -21,9 +21,9 @@
  */
 
 table {
+    width: 100%;
     border-collapse: collapse;
     border-spacing: 0;
-    width: 100%;
 }
 
 /**
@@ -31,9 +31,9 @@ table {
  */
 
 caption {
+    margin-bottom: 0.5em;
     font-style: italic;
     text-align: left;
-    margin-bottom: 0.5em;
 }
 
 /**
@@ -42,10 +42,10 @@ caption {
 
 th,
 td {
-    vertical-align: top;
-    text-align: left;
+    padding: 0.25em; // 4px / 16px
     border-bottom: 1px solid $color-border;
-    padding: 0.3846154em; // 5px / 13px
+    text-align: left;
+    vertical-align: top;
 
     &:empty {
         border: 0;
@@ -99,7 +99,7 @@ thead tr:last-child {
 tfoot {
     th,
     td {
-        padding: 0.4545455em; // 5px / 11px
+        padding: 0.3333333em; // 4px / 12px
     }
 
     tr:last-child {
