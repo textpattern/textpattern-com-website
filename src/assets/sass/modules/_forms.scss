@@ -247,13 +247,12 @@ textarea {
 /**
  * Make sure disabled elements really are disabled and styled appropriately.
  *
- * 1. `html` is a workaround for an Android 4 bug.
+ * 1. Re-set default cursor for disabled elements.
  * 2. Override default iOS opacity setting.
- * 3. Re-set default cursor for disabled elements.
  */
 
 button[disabled],
-html input[disabled], /* 1 */
+input[disabled],
 input[type="button"][disabled],
 input[type="reset"][disabled],
 input[type="submit"][disabled],
@@ -262,14 +261,13 @@ select[disabled] option,
 select[disabled] optgroup,
 textarea[disabled],
 span.disabled {
-    @include box-shadow(none !important);
-
     border-color: lighten($color-border, 9%) !important;
-    color: #aaaaaa !important;
     background: #eeeeee !important;
+    color: #aaaaaa !important;
     text-shadow: none !important;
+    box-shadow: none !important;
+    cursor: default !important; /* 1 */
     opacity: 1; /* 2 */
-    cursor: default !important; /* 3 */
 }
 
 /**
