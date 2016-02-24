@@ -16,8 +16,7 @@
         paths:
         {
             'jquery': 'https://ajax.googleapis.com/ajax/libs/jquery/'+jqueryVersion+'/jquery.min',
-            'jqueryui': 'https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min',
-            'flowplayer': 'http://textpattern.com/assets/js/flowplayer/flowplayer.min'
+            'flowplayer': 'flowplayer/flowplayer.min'
         },
         shim:
         {
@@ -53,7 +52,7 @@
             var language = code.parent().attr('class').split(' ')[0];
             code.addClass(language);
 
-            require(['http://textpattern.com/assets/js/prism.@@timestamp'], function ()
+            require(['prism.@@timestamp'], function ()
             {
                 Prism.highlightAll();
             });
@@ -64,7 +63,7 @@
         // on visitor input. More info - https://github.com/jackmoore/autosize.
 
         if (fields.length) {
-            require(['http://textpattern.com/assets/js/autosize.@@timestamp'], function (autosize)
+            require(['autosize.@@timestamp'], function (autosize)
             {
                 autosize(fields);
             });
@@ -104,7 +103,7 @@
     // Responsive navigation menu, via 'Responsive Nav'.
     // More info - https://github.com/viljamis/responsive-nav.js.
 
-    require(['http://textpattern.com/assets/js/responsivenav.@@timestamp'], function ()
+    require(['responsivenav.@@timestamp'], function ()
     {
         responsiveNav('.site-navigation', {
             transition: 400,
@@ -126,7 +125,7 @@
     // EU-cookie disclaimer, via 'jquery.cookie'.
     // More info - https://github.com/carhartl/jquery-cookie.
 
-    require(['jquery', 'http://textpattern.com/assets/js/cookie.@@timestamp'], function ($)
+    require(['jquery', 'cookie.@@timestamp'], function ($)
     {
         if (!$.cookie('acceptedCookies'))
         {

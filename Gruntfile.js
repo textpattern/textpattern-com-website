@@ -38,6 +38,7 @@ module.exports = function (grunt)
             'tmp/',
             '<%= paths.dest.css %>',
             '<%= paths.dest.js %>',
+            '<%= paths.dest.mockup %>*/',
             '<%= paths.dest.templates %>*/'
         ],
 
@@ -203,6 +204,12 @@ module.exports = function (grunt)
                 files: [
                     {
                         expand: true,
+                        cwd: '<%= paths.src.mockups %>',
+                        src: '*.html',
+                        dest: '<%= paths.dest.mockups %>'
+                    },
+                    {
+                        expand: true,
                         cwd: '<%= paths.src.templates %>',
                         src: '**',
                         dest: '<%= paths.dest.templates %>'
@@ -224,7 +231,6 @@ module.exports = function (grunt)
             dist: {
                 files: [
                     {'<%= paths.tmp.css %>style.css': '<%= paths.src.sass %>style.scss'},
-                    //{'<%= paths.tmp.css %>jquery-ui.css': '<%= paths.src.sass %>jquery-ui.scss'},
                     {'<%= paths.tmp.css %>design-patterns.css': '<%= paths.src.sass %>design-patterns.scss'}
                 ]
             }
