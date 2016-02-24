@@ -87,7 +87,7 @@ body {
         background-size: 208px 34px;
 
         &:hover {
-            @include filter(brightness(1.1));
+            filter: brightness(1.1);
         }
 
         @include breakpoint($breakpoint-2) {
@@ -116,15 +116,14 @@ body {
 
     // search input field
     input[type="search"] {
-        @include transition(width 0.2s linear, box-shadow 0.1s linear);
-
         width: 240px;
         height: 34px;
         padding-left: 32px;
-        border-radius: $default-border-radius;
+        transition: width 0.2s ease-in-out, border-color 0.2s ease-in-out;
+        border-radius: $border-radius;
         background: url("../img/branding/misc/icon-sprite.svg") no-repeat left center;
-        background-size: 160px 32px;
         background-position: -128px 0;
+        background-size: 160px 32px;
 
         @include breakpoint(max-width $breakpoint-2) {
             width: 34px;
@@ -155,8 +154,8 @@ body {
 }
 
 .community-links {
-    list-style: none;
     padding: 0;
+    list-style: none;
 }
 
 .host-details {
@@ -170,8 +169,8 @@ body {
 }
 
 .site-footer {
-    clear: both;
     position: relative;
+    clear: both;
 }
 
 /**
@@ -183,5 +182,5 @@ article {
 }
 
 .legal {
-    @include adjust-font-size-to(11px, 0.85);
+    font-size: $small-font-size;
 }

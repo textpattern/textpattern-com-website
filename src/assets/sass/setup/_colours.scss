@@ -46,7 +46,10 @@ $color-gradient-border:               darken($color-gradient-from, 13.5%);
 
 // accent colours
 
-$color-highlight-box:                 #fff9e1 !default;
+$color-accent-gradient-from:          #ffda44;
+$color-accent-gradient-to:            darken($color-accent-gradient-from, 15%);
+$color-highlight-box:                 tint($color-accent-gradient-from, 84%);
+$color-strong-highlight-box:          tint($color-accent-gradient-from, 36%);
 
 // button colours
 

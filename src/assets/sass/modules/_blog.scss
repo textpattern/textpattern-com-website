@@ -24,11 +24,11 @@
 
     time {
         display: block;
+        width: 3.25em;
         border: 2px solid $color-text;
         border-bottom: 0;
-        width: 3.25em;
-        text-align: center;
         background-color: $color-background;
+        text-align: center;
     }
 
     time * {
@@ -36,19 +36,20 @@
     }
 
     .time-day {
-        @include adjust-font-size-to(30px, 1.2); // 24px line height
-
         padding-top: 0.1em; // 3px / 30px
         font-family: $font-serif;
+        font-size: 2em; // 32px / 16px
+        line-height: 1;
     }
 
     .time-month {
-        @include adjust-font-size-to(18px, 1.2); // 24px line height
+        font-size: 1.5em; // 24px / 16px
+        line-height: 1;
     }
 
     .time-year {
-        color: $color-background;
         background-color: $color-text;
+        color: $color-background;
     }
 }
 
@@ -82,22 +83,22 @@
     a {
         display: inline-block;
         margin-top: 1em;
-        border-radius: 1em;
         padding: 0.25em 0.75em; // 3px / 12px + 9px / 12px
-        color: $color-text-inverse;
+        border-radius: 1em;
         background: $color-text;
+        color: $color-text-inverse;
 
         &:hover,
         &:focus {
-            color: $color-text;
-            background-color: $color-selected;
-            text-decoration: none;
             outline: 0;
+            background-color: $color-selected;
+            color: $color-text;
+            text-decoration: none;
         }
 
         &:active {
-            color: $color-text;
             background-color: $color-selecting;
+            color: $color-text;
             text-decoration: none;
         }
     }

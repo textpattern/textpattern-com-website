@@ -40,9 +40,9 @@
 .layout--span-4-12,
 .nested {
     @include grid-span(12, 1);
-    @include box-sizing;
 
     clear: both;
+    box-sizing: border-box;
 }
 
 /**
