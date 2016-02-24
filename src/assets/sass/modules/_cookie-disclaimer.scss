@@ -3,11 +3,10 @@
  */
 
 #cookie-disclaimer {
-    @include adjust-font-size-to(11px, 0.8);
-    @include box-shadow(inset 0 -0.25em 0.25em rgba(51, 51, 51, 0.1));
-
-    border-bottom: 1px solid $color-border;
     padding: 1px 0;
-    color: $color-text;
+    border-bottom: 1px solid $color-border;
     background-color: $color-background-box;
+    color: $color-text;
+    font-size: $small-font-size;
+    box-shadow: inset 0 -0.25em 0.25em rgba(51, 51, 51, 0.1);
 }

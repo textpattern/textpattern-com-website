@@ -2,27 +2,24 @@
    ========================================================================== */
 
 /**
- * 1. Remove default underline style from non-hover state links.
- * 2. Interrupt the decoration line to let the shape of the text show through
+ * 1. Remove potential background colour from active links.
+ * 2. Specify link colour.
+ * 3. Remove default underline style from non-hover state links.
+ * 4. Interrupt the decoration line to let the shape of the text show through
  *    in supported browsers.
- * 3. Specify link colour.
- * 4. Remove the grey background colour from active links in IE 10.
- * 5. Expanded CSS level 3 `text-decoration` property in supported browsers,
- *    older browsers will fallback to legacy `text-decoration` property.
  */
 
 a {
-    text-decoration: none; /* 1 */
-    text-decoration-skip: ink edges; /* 2 */
-    color: $color-link; /* 3 */
-    background: transparent; /* 4 */
+    background-color: transparent; /* 1 */
+    color: $color-link; /* 2 */
+    text-decoration: none; /* 3 */
+    text-decoration-skip: ink edges; /* 4 */
 
     &:hover,
     &:active {
         outline: 0;
-        text-decoration: underline;
-        text-decoration: $color-link solid underline; /* 5 */
         color: $color-link-hover;
+        text-decoration: underline;
     }
 
     &:focus {
@@ -35,8 +32,7 @@ a {
 }
 
 /**
- * Additional styling for child links within complementary content and site
- * footer.
+ * Additional styling for links within complementary content and site footer.
  */
 
 .complementary-content a,
@@ -69,7 +65,7 @@ a {
 
 .a--img {
     img {
-        @include transition(box-shadow 0.1s linear);
+        transition: box-shadow 0.1s linear;
 
     }
 
@@ -77,7 +73,7 @@ a {
         outline: 0;
 
         img {
-            @include box-shadow(0 0 4px 2px $color-link-focus);
+            box-shadow: 0 0 4px 2px $color-link-focus;
         }
     }
 }

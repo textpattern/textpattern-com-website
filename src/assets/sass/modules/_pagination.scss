@@ -3,27 +3,27 @@
 
 .paginator {
     margin: 1em 0;
-    border-top: 1px dashed $color-border;
     padding-top: 1em;
+    border-top: 1px dashed $color-border;
 
     strong {
-        border: 1px solid $color-border;
-        border-radius: 0.2307692em; // 3px / 13px
         padding: 0.2em 0.4em;
+        border: 1px solid $color-border;
+        border-radius: 0.25em; // 4px / 16px
     }
 
     a {
+        padding: 0.25em 0.5em;
         border: 1px solid $color-background;
-        border-radius: 0.2307692em; // 3px / 13px
-        padding: 0.2em 0.4em;
+        border-radius: 0.25em; // 4px / 16px
 
         &:hover {
             background-color: $color-selected;
         }
 
         &:active {
-            color: darken($color-text, 10%);
             background-color: $color-selecting;
+            color: darken($color-text, 10%);
         }
     }
 }

@@ -13,16 +13,16 @@
  */
 
 .breadcrumbs {
-    @include adjust-font-size-to(11px, 0.8);
-
-    list-style: none;
-    padding: 0 0.6363636em;
+    padding: 0 0.3333333em; // 4px / 12px
     background-color: $color-background-box;
+    font-size: $small-font-size;
+    list-style: none;
 
     li {
         display: inline-block;
     }
 
+    // Path-like breadcrumb styling.
     > li + li:before {
         content: "\00A0" "\002F" "\00A0";
     }
