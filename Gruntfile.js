@@ -13,7 +13,7 @@ module.exports = function (grunt)
             src: {
                 sass: 'src/assets/sass/',
                 js: 'src/assets/js/',
-                mockup: 'src/mockups/',
+                mockups: 'src/mockups/',
                 templates: 'src/templates/'
             },
             tmp: {
@@ -23,7 +23,7 @@ module.exports = function (grunt)
             dest: {
                 css: 'public/assets/css/',
                 js: 'public/assets/js/',
-                mockup: 'public/mockups/',
+                mockups: 'public/mockups/',
                 templates: 'public/templates/'
             }
         },
@@ -38,7 +38,7 @@ module.exports = function (grunt)
             'tmp/',
             '<%= paths.dest.css %>',
             '<%= paths.dest.js %>',
-            '<%= paths.dest.mockup %>*/',
+            '<%= paths.dest.mockups %>*/',
             '<%= paths.dest.templates %>*/'
         ],
 
@@ -292,8 +292,8 @@ module.exports = function (grunt)
                 files: 'src/assets/js/*.js',
                 tasks: ['jshint', 'uglify', 'copy:js']
             },
-            templates: {
-                files: '<%= paths.src.templates %>**',
+            html: {
+                files: ['<%= paths.src.mockups %>**', '<%= paths.src.templates %>**'],
                 tasks: 'replace'
             }
         }
