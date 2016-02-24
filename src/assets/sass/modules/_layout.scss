@@ -3,16 +3,13 @@
 
 /**
  * 1. Always force scrollbar padding so we don't get 'jumping'.
- * 2. Prevent iOS text size adjust after orientation change, without disabling
- *    user zoom.
- * 3. As 2 above, for Windows Phone.
+ * 2. Prevent text size adjust after mobile device orientation change, without
+ *    disabling user zoom.
  */
 
 html {
-    -webkit-tap-highlight-color: rgba($color-link-hover, 0.5);
     overflow-y: scroll; /* 1 */
-    -webkit-text-size-adjust: 100%; /* 2 */
-    -ms-text-size-adjust: 100%; /* 3 */
+    text-size-adjust: 100%; /* 2 */
 }
 
 /**
@@ -23,8 +20,8 @@ html {
 body {
     position: relative; /* 1 */
     margin: 0; /* 2 */
-    color: $color-text-inverse;
     background-color: $color-text;
+    color: $color-text-inverse;
 }
 
 /**
@@ -44,8 +41,8 @@ body {
 .wrapper {
     position: relative;
     padding: 1px 0;
-    color: $color-text;
     background: $color-background;
+    color: $color-text;
 }
 
 /**
@@ -63,9 +60,9 @@ body {
 .site-header,
 .site-footer,
 .container {
-    margin: 0 auto;
     width: 90%;
     max-width: $container-max-width;
+    margin: 0 auto;
 }
 
 /**
@@ -77,8 +74,8 @@ body {
 }
 
 .masthead {
-    font-size: 1em;
     margin: 1em 0;
+    font-size: 1em;
 
     a {
         @include hide-text;
@@ -123,19 +120,15 @@ body {
 
         width: 240px;
         height: 34px;
-        border-radius: $default-border-radius;
         padding-left: 32px;
+        border-radius: $default-border-radius;
         background: url("../img/branding/misc/icon-sprite.svg") no-repeat left center;
         background-size: 160px 32px;
         background-position: -128px 0;
 
         @include breakpoint(max-width $breakpoint-2) {
-            @include input-placeholder {
-                color: transparent;
-            }
-
-            padding-right: 0;
             width: 34px;
+            padding-right: 0;
             cursor: pointer;
 
             &:hover {
@@ -143,14 +136,10 @@ body {
             }
 
             &:focus {
-                @include input-placeholder {
-                    color: $color-text-footnote;
-                }
-
-                padding-right: 0.5384615em;
                 width: 240px;
-                cursor: auto;
+                padding-right: 0.5384615em;
                 background-color: $color-background;
+                cursor: auto;
             }
         }
     }
