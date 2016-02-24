@@ -32,49 +32,49 @@
  */
 
 $colors: (
-    'text':                 $color-text,
-    'text-footnote':        $color-text-footnote,
-    'gradient-from':        $color-gradient-from,
-    'gradient-to':          $color-gradient-to,
-    'gradient-border':      $color-gradient-border,
-    'border':               $color-border,
-    'link':                 $color-link,
-    'link-hover':           $color-link-hover,
-    'link-focus':           $color-link-focus,
-    'link-visited':         $color-link-visited,
-    'link-selecting':       $color-selecting,
-    'link-selected':        $color-selected,
-    'background':           $color-background,
-    'background-box':       $color-background-box,
-    'highlight-box':        $color-highlight-box,
-    'strong-highlight-box': $color-strong-highlight-box,
-    'accent-gradient-from': $color-accent-gradient-from,
-    'accent-gradient-to':   $color-accent-gradient-to,
-    'success-text':         $color-success-text,
-    'success-background':   $color-success-background,
-    'warning-text':         $color-warning-text,
-    'warning-background':   $color-warning-background,
-    'error-text':           $color-error-text,
-    'error-background':     $color-error-background,
-    'info-text':            $color-info-text,
-    'info-background':      $color-info-background
+    "text":                 $color-text,
+    "text-footnote":        $color-text-footnote,
+    "gradient-from":        $color-gradient-from,
+    "gradient-to":          $color-gradient-to,
+    "gradient-border":      $color-gradient-border,
+    "border":               $color-border,
+    "link":                 $color-link,
+    "link-hover":           $color-link-hover,
+    "link-focus":           $color-link-focus,
+    "link-visited":         $color-link-visited,
+    "link-selecting":       $color-selecting,
+    "link-selected":        $color-selected,
+    "background":           $color-background,
+    "background-box":       $color-background-box,
+    "highlight-box":        $color-highlight-box,
+    "strong-highlight-box": $color-strong-highlight-box,
+    "accent-gradient-from": $color-accent-gradient-from,
+    "accent-gradient-to":   $color-accent-gradient-to,
+    "success-text":         $color-success-text,
+    "success-background":   $color-success-background,
+    "warning-text":         $color-warning-text,
+    "warning-background":   $color-warning-background,
+    "error-text":           $color-error-text,
+    "error-background":     $color-error-background,
+    "info-text":            $color-info-text,
+    "info-background":      $color-info-background
 );
 
 .design-patterns--color {
-    position: relative;
     display: block;
+    position: relative;
+    height: 2.375em; // 38px / 16px
     margin: 1em 0;
     border: 1px solid $color-border;
-    height: 3em; // 39px / 13px
 
     &:after {
-        @include adjust-font-size-to(12px, 0.9);
-
         position: absolute;
-        top: 0.75em;
-        padding: 1px 0.25em;
-        font-family: $font-mono;
+        top: 0.5em;
+        padding: 1px 0.2142857em; // 3px / 14px
         background-color: rgba(255, 255, 255, 0.66);
+        font-family: $font-code;
+        font-size: $code-font-size;
+        line-height: $base-line-height;
     }
 }
 
@@ -121,16 +121,16 @@ $colors: (
 
 .jquery-ui-icons li {
     position: relative;
-    float: left;
     margin: 2px;
     padding: 4px 0;
-    cursor: pointer;
+    float: left;
     list-style: none;
+    cursor: pointer;
 }
 
 .jquery-ui-icons span.ui-icon {
-    float: left;
     margin: 0 4px;
+    float: left;
 }
 
 /**
@@ -138,9 +138,9 @@ $colors: (
  */
 
 .jquery-ui-slider-vertical span {
-    float: left;
-    margin: 15px;
     height: 120px;
+    margin: 15px;
+    float: left;
 }
 
 /**
@@ -148,7 +148,7 @@ $colors: (
  */
 
 .ui-menu {
-    width: 150px;
+    width: 10em;
 }
 
 /**
@@ -186,8 +186,8 @@ $colors: (
 .design-patterns--breakpoint-2,
 .design-patterns--breakpoint-3 {
     padding: 0.5em;
-    color: $color-text-inverse;
     background-color: #ff0000;
+    color: #ffffff;
 }
 
 .design-patterns--breakpoint-1,
