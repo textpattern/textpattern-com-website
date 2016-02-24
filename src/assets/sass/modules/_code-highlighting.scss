@@ -152,3 +152,273 @@ div.prism-show-language > div.prism-show-language-label {
     font-size: $small-font-size;
     z-index: 1;
 }
+
+/* Code highlighting (via Rouge - for Jekyll)
+   ========================================================================== */
+
+.highlighter-rouge .hll {
+    background-color: #ffffcc;
+}
+
+// Error */
+.highlighter-rouge .err {
+    background-color: #e3d2d2;
+    color: #a61717;
+}
+
+// Keyword
+// Operator
+.highlighter-rouge .k,
+.highlighter-rouge .o {
+    color: #000000;
+    font-weight: bold;
+}
+
+// Comment
+// Comment.Single
+// Comment.Multiline
+.highlighter-rouge .c,
+.highlighter-rouge .c1,
+.highlighter-rouge .cm {
+    color: #999988;
+    font-style: italic;
+}
+
+// Comment.Preproc
+// Comment.Special
+.highlighter-rouge .cp,
+.highlighter-rouge .cs {
+    color: #999999;
+    font-style: italic;
+    font-weight: bold;
+}
+
+// Generic.Deleted
+.highlighter-rouge .gd {
+    background-color: #ffdddd;
+    color: #000000;
+}
+
+// Generic.Emph
+.highlighter-rouge .ge {
+    color: #000000;
+    font-style: italic;
+}
+
+/* Generic.Error */
+.highlighter-rouge .gr {
+    color: #aa0000;
+}
+
+/* Generic.Heading */
+.highlighter-rouge .gh {
+    color: #999999;
+}
+
+/* Generic.Inserted */
+.highlighter-rouge .gi {
+    background-color: #ddffdd;
+    color: #000000;
+}
+
+/* Generic.Output */
+.highlighter-rouge .go {
+    color: #888888;
+}
+
+/* Generic.Prompt */
+.highlighter-rouge .gp {
+    color: #555555;
+}
+
+/* Generic.Strong */
+.highlighter-rouge .gs {
+    font-weight: bold;
+}
+
+/* Generic.Subheading */
+.highlighter-rouge .gu {
+    color: #aaaaaa;
+}
+
+/* Generic.Traceback */
+.highlighter-rouge .gt {
+    color: #aa0000;
+}
+
+/* Keyword.Constant */
+.highlighter-rouge .kc {
+    color: #000000;
+    font-weight: bold;
+}
+
+/* Keyword.Declaration */
+.highlighter-rouge .kd {
+    color: #000000;
+    font-weight: bold;
+}
+
+/* Keyword.Namespace */
+.highlighter-rouge .kn {
+    color: #000000;
+    font-weight: bold;
+}
+
+/* Keyword.Pseudo */
+.highlighter-rouge .kp {
+    color: #000000;
+    font-weight: bold;
+}
+
+/* Keyword.Reserved */
+.highlighter-rouge .kr {
+    color: #000000;
+    font-weight: bold;
+}
+
+/* Keyword.Type */
+.highlighter-rouge .kt {
+    color: #445588;
+    font-weight: bold;
+}
+
+/* Literal.Number */
+.highlighter-rouge .m {
+    color: #009999;
+}
+
+/* Literal.String */
+.highlighter-rouge .s {
+    color: #d01040;
+}
+
+/* Name.Attribute */
+.highlighter-rouge .na {
+    color: #008080;
+}
+
+/* Name.Builtin */
+.highlighter-rouge .nb {
+    color: #0086b3;
+}
+
+/* Name.Class */
+.highlighter-rouge .nc {
+    color: #445588;
+    font-weight: bold;
+}
+
+/* Name.Constant */
+.highlighter-rouge .no {
+    color: #008080;
+}
+
+/* Name.Decorator */
+.highlighter-rouge .nd {
+    color: #3c5d5d;
+    font-weight: bold;
+}
+
+/* Name.Entity */
+.highlighter-rouge .ni {
+    color: #800080;
+}
+
+/* Name.Exception */
+.highlighter-rouge .ne {
+    color: #990000;
+    font-weight: bold;
+}
+
+/* Name.Function */
+.highlighter-rouge .nf {
+    color: #990000;
+    font-weight: bold;
+}
+
+/* Name.Label */
+.highlighter-rouge .nl {
+    color: #990000;
+    font-weight: bold;
+}
+
+/* Name.Namespace */
+.highlighter-rouge .nn {
+    color: #555555;
+}
+
+// Name.Tag
+// Name.Variable
+.highlighter-rouge .nt,
+.highlighter-rouge .nv {
+    color: #008080;
+}
+
+/* Operator.Word */
+.highlighter-rouge .ow {
+    color: #000000;
+    font-weight: bold;
+}
+
+// Text.Whitespace
+// Literal.Number.Float
+// Literal.Number.Hex
+// Literal.Number.Integer
+// Literal.Number.Oct
+.highlighter-rouge .w,
+.highlighter-rouge .mf,
+.highlighter-rouge .mh,
+.highlighter-rouge .mi,
+.highlighter-rouge .mo {
+    color: #009999;
+}
+
+// Literal.String.Backtick
+// Literal.String.Char
+// Literal.String.Doc
+// Literal.String.Double
+// Literal.String.Escape
+// Literal.String.Heredoc
+// Literal.String.Interpol
+// Literal.String.Other
+// Literal.String.Single
+.highlighter-rouge .sb,
+.highlighter-rouge .sc,
+.highlighter-rouge .sd,
+.highlighter-rouge .s2,
+.highlighter-rouge .se,
+.highlighter-rouge .sh,
+.highlighter-rouge .si,
+.highlighter-rouge .sx,
+.highlighter-rouge .s1 {
+    color: #d01040;
+}
+
+/* Literal.String.Regex */
+.highlighter-rouge .sr {
+    color: #009926;
+}
+
+/* Literal.String.Symbol */
+.highlighter-rouge .ss {
+    color: #990073;
+}
+
+/* Name.Builtin.Pseudo */
+.highlighter-rouge .bp {
+    color: #999999;
+}
+
+// Name.Variable.Class
+// Name.Variable.Global
+// Name.Variable.Instance
+.highlighter-rouge .vc,
+.highlighter-rouge .vg,
+.highlighter-rouge .vi {
+    color: #008080;
+}
+
+// Literal.Number.Integer.Long
+.highlighter-rouge .il {
+    color: #009999;
+}
