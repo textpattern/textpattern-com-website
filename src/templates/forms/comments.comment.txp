@@ -4,10 +4,6 @@
 <txp:else />
     <article class="comments" itemscope itemtype="http://schema.org/Comment">
 </txp:if_variable>
-    <span class="comment-anchor" itemprop="url">
-        <txp:comment_permlink>#</txp:comment_permlink>
-    </span>
-    <txp:comment_permlink>#</txp:comment_permlink>
     <h4 class="comment-author" itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name"><txp:comment_name /></span></h4>
     <p class="comment-date"><time datetime="<txp:comment_time format="iso8601" />" itemprop="dateCreated"><txp:comment_time /></time></p>
     <div itemprop="text">
