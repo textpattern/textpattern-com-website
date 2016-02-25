@@ -173,14 +173,82 @@ body {
     clear: both;
 }
 
-/**
- * Prevent really, really long words in article from breaking layout.
- */
-
-article {
-    word-wrap: break-word;
-}
-
 .legal {
     font-size: $small-font-size;
+}
+
+/**
+ * 1. Allow positioning within `article` and `section` content.
+ * 2. Prevent really, really long words in `article` and `section` from breaking layout.
+ */
+
+article,
+section {
+    position: relative; /* 1 */
+    z-index: 1; /* 1 */
+    word-wrap: break-word; /* 2 */
+}
+
+/**
+ * Zebra striping in main content area.
+ *
+ * Example HTML:
+ *
+ * <div class="wrapper">
+ *     <div class="inner-wrapper odd">
+ *         <div class="container">
+ *             Content
+ *         </div>
+ *     </div>
+ * </div>
+ */
+
+.wrapper-inner {
+    position: relative;
+
+    &.odd,
+    &.even {
+        .article {
+            padding: 46px 0;
+
+            &:after {
+                position: absolute;
+                bottom: -40px;
+                left: 50%;
+                width: 80px;
+                height: 40px;
+                margin-left: -40px;
+                background-image: url("http://static2.designhive.com/assets/img/sprite.svg");
+                background-size: 1100px 120px;
+                content: "";
+                z-index: 2;
+            }
+        }
+    }
+
+    &.odd {
+        border-color: $color-background-zebra;
+        background-color: $color-background;
+
+        .article:after {
+            background-position: -280px -80px;
+        }
+    }
+
+    &.even {
+        border-color: $color-background;
+        background-color: $color-background-zebra;
+
+        .article:after {
+            background-position: -360px -80px;
+        }
+    }
+
+    &:last-child {
+        padding-bottom: 46px;
+
+        .article:after {
+            display: none;
+        }
+    }
 }

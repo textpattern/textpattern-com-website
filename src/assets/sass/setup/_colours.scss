@@ -36,10 +36,11 @@ $color-border-light:                  #d4d4d4;
 
 // neutral colours
 
-$color-background:                    #ffffff !default;
-$color-background-box:                #f7f7f7 !default;
-$color-background-form:               #ffffff !default;
-$color-background-form-disabled:      #eeeeee !default;
+$color-background:                    #ffffff;
+$color-background-zebra:              #f0f0f0;
+$color-background-box:                #f7f7f7;
+$color-background-form:               #ffffff;
+$color-background-form-disabled:      #eeeeee;
 $color-gradient-from:                 #eeeeee;
 $color-gradient-to:                   darken($color-gradient-from, 6.5%);
 $color-gradient-border:               darken($color-gradient-from, 13.5%);
@@ -53,7 +54,7 @@ $color-strong-highlight-box:          tint($color-accent-gradient-from, 36%);
 
 // button colours
 
-$color-button-gradient-from:          $color-gradient-from !default;
+$color-button-gradient-from:          $color-gradient-from;
 $color-button-gradient-to:            darken($color-button-gradient-from, 6.5%);
 $color-button-border:                 darken($color-button-gradient-to, 7%);
 $color-button-selected-gradient-from: tint($color-link-hover, 90%);
