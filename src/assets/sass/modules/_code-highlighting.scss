@@ -4,8 +4,10 @@
 code[class*="language-"],
 pre[class*="language-"] {
     text-align: left;
+    white-space: pre;
     word-spacing: normal;
     word-break: normal;
+    word-wrap: normal;
     direction: ltr;
     hyphens: none;
 }
