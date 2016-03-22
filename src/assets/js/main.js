@@ -6,10 +6,10 @@
 
     // Detect whether jQuery v2 features required, otherwise use jQuery v1 for higher compatibility.
 
-    var jqueryVersion = '1.12.0';
+    var jqueryVersion = '1.12.2';
 
     if (typeof JSON !== 'undefined' && 'querySelector' in document && 'addEventListener' in window) {
-        jqueryVersion = '2.2.0';
+        jqueryVersion = '2.2.2';
     }
 
     requirejs.config({
