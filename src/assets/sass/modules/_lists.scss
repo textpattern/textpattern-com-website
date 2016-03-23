@@ -31,11 +31,15 @@ dd {
 }
 
 /**
- * Italicize definition terms.
+ * Italicize definition terms (apart from for `code` elements).
  */
 
 dt {
     font-style: italic;
+
+    code {
+        font-style: normal;
+    }
 }
 
 /**
