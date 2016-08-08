@@ -48,7 +48,7 @@ nav ol,
 .nested-list-3-column,
 .nested-list-4-column,
 .paginator {
-    &:after {
+    &::after {
         display: table;
         clear: both;
         content: "";

@@ -41,7 +41,7 @@
 @mixin horizontal-curved-box-shadow {
     position: relative;
 
-    &:before {
+    &::before {
         position: absolute;
         top: 0;
         right: 0.5em;

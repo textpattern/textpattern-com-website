@@ -3,10 +3,10 @@
  */
 
 *,
-*:before,
-*:after,
-*:first-letter,
-*:first-line {
+*::before,
+*::after,
+*::first-letter,
+*::first-line {
     background: transparent !important;
     color: $color-text-print !important;
     text-shadow: none !important;
@@ -62,7 +62,7 @@ a {
  */
 
 abbr[title] {
-    &:after {
+    &::after {
         content: " (" attr(title) ")";
     }
 }

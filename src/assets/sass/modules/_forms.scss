@@ -266,7 +266,7 @@ span.required {
 
 label.zemRequired,
 label.zemRequirederrorElement {
-    &:after {
+    &::after {
         color: $color-warning-text;
         content: "\00A0" "\25CF";
     }

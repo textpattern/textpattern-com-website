@@ -121,7 +121,7 @@ pre.line-numbers > code {
     counter-increment: linenumber;
 }
 
-.line-numbers-rows > span:before {
+.line-numbers-rows > span::before {
     display: block;
     padding-right: 0.8em;
     color: #999999;

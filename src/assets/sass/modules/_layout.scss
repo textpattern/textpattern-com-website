@@ -211,7 +211,7 @@ section {
         .article {
             padding: 46px 0;
 
-            &:after {
+            &::after {
                 position: absolute;
                 bottom: -40px;
                 left: 50%;
@@ -230,7 +230,7 @@ section {
         border-color: $color-background-zebra;
         background-color: $color-background;
 
-        .article:after {
+        .article::after {
             background-position: -280px -80px;
         }
     }
@@ -239,7 +239,7 @@ section {
         border-color: $color-background;
         background-color: $color-background-zebra;
 
-        .article:after {
+        .article::after {
             background-position: -360px -80px;
         }
     }
@@ -247,7 +247,7 @@ section {
     &:last-child {
         padding-bottom: 46px;
 
-        .article:after {
+        .article::after {
             display: none;
         }
     }
