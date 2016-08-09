@@ -5,11 +5,12 @@
     document.documentElement.className = 'js';
 
     // Detect whether jQuery v2 features required, otherwise use jQuery v1 for higher compatibility.
+    // TODO: use jQuery v3?
 
-    var jqueryVersion = '1.12.2';
+    var jqueryVersion = '1.12.4';
 
     if (typeof JSON !== 'undefined' && 'querySelector' in document && 'addEventListener' in window) {
-        jqueryVersion = '2.2.2';
+        jqueryVersion = '2.2.4';
     }
 
     requirejs.config({
