@@ -2,7 +2,7 @@
   "name": "textpattern-com",
   "version": "0.0.0",
   "devDependencies": {
-    "autoprefixer": "6.4.0",
+    "autoprefixer": "6.4.1",
     "breakpoint-sass": "2.7.0",
     "css-mqpacker": "5.0.1",
     "cssnano": "3.7.3",
