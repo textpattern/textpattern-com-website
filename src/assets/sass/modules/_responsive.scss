@@ -42,6 +42,26 @@
         width: 66.666%;
     }
 
+    /**
+     * Additional styling for site header.
+     */
+
+    .masthead a {
+        width: 320px;
+        height: 52px;
+        background-image: url("../img/branding/textpattern/textpattern.svg");
+        background-size: 320px 52px;
+    }
+
+    /**
+     * Additional styling for site footer.
+     */
+
+    .community-details,
+    .host-details {
+        display: block;
+    }
+
 }
 
 

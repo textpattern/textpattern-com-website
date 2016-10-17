@@ -89,13 +89,6 @@ body {
         &:hover {
             filter: brightness(1.1);
         }
-
-        @include breakpoint($breakpoint-2) {
-            width: 320px;
-            height: 52px;
-            background-image: url("../img/branding/textpattern/textpattern.svg");
-            background-size: 320px 52px;
-        }
     }
 }
 
@@ -144,13 +137,13 @@ body {
     }
 }
 
+/**
+ * Additional styling for site footer.
+ */
+
 .community-details,
 .host-details {
     display: none;
-
-    @include breakpoint($breakpoint-2) {
-        display: block;
-    }
 }
 
 .community-links {
