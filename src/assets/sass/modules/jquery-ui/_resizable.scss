@@ -1,0 +1,105 @@
+/* Resizable
+   ========================================================================== */
+
+/**
+ * jQuery UI Selectable.
+ *
+ * Some classes and HTML elements generally added via JavaScript, more info -
+ * https://jqueryui.com/resizable/
+ *
+ * Example HTML:
+ *
+ * <div class="ui-resizable">
+ *     <strong>Resize me!</strong>
+ *     <div class="ui-resizable-handle ui-resizable-e"></div>
+ *     <div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se"></div>
+ * </div>
+ */
+
+.ui-resizable {
+    position: relative;
+}
+
+.ui-resizable-handle {
+    display: block;
+    position: absolute;
+    font-size: 0.1px;
+    touch-action: none;
+}
+
+/**
+ * Disabled or auto-hidden resizables.
+ */
+
+.ui-resizable-disabled .ui-resizable-handle,
+.ui-resizable-autohide .ui-resizable-handle {
+    display: none;
+}
+
+/**
+ * Resize handle positioning options.
+ */
+
+.ui-resizable-n {
+    top: -5px;
+    left: 0;
+    width: 100%;
+    height: 7px;
+    cursor: n-resize;
+}
+
+.ui-resizable-s {
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 7px;
+    cursor: s-resize;
+}
+
+.ui-resizable-e {
+    top: 0;
+    right: -5px;
+    width: 7px;
+    height: 100%;
+    cursor: e-resize;
+}
+
+.ui-resizable-w {
+    top: 0;
+    left: -5px;
+    width: 7px;
+    height: 100%;
+    cursor: w-resize;
+}
+
+.ui-resizable-se {
+    right: 1px;
+    bottom: 1px;
+    width: 12px;
+    height: 12px;
+    cursor: se-resize;
+}
+
+.ui-resizable-sw {
+    bottom: -5px;
+    left: -5px;
+    width: 9px;
+    height: 9px;
+    cursor: sw-resize;
+}
+
+.ui-resizable-nw {
+    top: -5px;
+    left: -5px;
+    width: 9px;
+    height: 9px;
+    cursor: nw-resize;
+}
+
+.ui-resizable-ne {
+    top: -5px;
+    right: -5px;
+    width: 9px;
+    height: 9px;
+    cursor: ne-resize;
+}

@@ -1,0 +1,156 @@
+/* Button
+   ========================================================================== */
+
+/**
+ * jQuery UI Button.
+ *
+ * Some classes and HTML elements generally added via JavaScript, more info -
+ * https://jqueryui.com/button/
+ *
+ * 1. Correct font size not being inherited in all browsers.
+ * 2. Improve usability and consistency of cursor style between image-type
+ *    `input` and others.
+ * 3. The `overflow` property removes extra width in IE.
+ * 4. Remove iOS Safari default styling.
+ *
+ * Example HTML:
+ *
+ * <a class="ui-button ui-corner-all ui-widget">Button</a>
+ */
+
+.ui-button {
+    @include gradient-linear($color-button-gradient-from, $color-button-gradient-to);
+
+    display: inline-block;
+    position: relative;
+    height: 2em; // 32px / 16px
+    margin: 0 0.125em 0 0; // 2px / 16px
+    padding: 0.25em 0.75em; // 8px / 16px, 12px / 16px
+    transition: box-shadow 0.1s linear;
+    border: 1px solid $color-button-border;
+    background-clip: padding-box;
+    color: $color-text;
+    font-family: $font-form;
+    font-size: $base-font-size; /* 1 */
+    line-height: 1.375; // 22px / 16px
+    text-align: center;
+    cursor: pointer; /* 2 */
+    overflow: visible; /* 3 */
+    vertical-align: baseline;
+    box-sizing: border-box;
+    appearance: none; /* 4 */
+    user-select: none;
+
+    &:hover {
+        @include gradient-linear(lighten($color-button-gradient-from, 4%), lighten($color-button-gradient-to, 4%));
+
+        border-color: darken($color-button-border, 13%);
+        color: $color-text-button-hover;
+        text-decoration: none;
+    }
+
+    &:active {
+        @include gradient-linear(darken($color-button-gradient-from, 3%), darken($color-button-gradient-to, 3%));
+
+        border-color: darken($color-button-border, 13%);
+        color: $color-text-button-active;
+        text-decoration: none;
+        box-shadow: inset 0 0.2em 0.25em rgba(#000000, 0.15);
+    }
+}
+
+/**
+ * Remove some styling from `a` links as buttons.
+ */
+
+a.ui-button {
+    color: $color-text-button;
+    text-decoration: none;
+}
+
+/**
+ * Focus styling for buttons.
+ *
+ * 1. `!important` required to override specificity.
+ */
+
+.ui-button.ui-state-focus {
+    border-color: $color-link-focus !important; /* 1 */
+}
+
+/**
+ * Single-icon-only button.
+ *
+ * To make room for the icon, a width needs to be set here.
+ *
+ * Example HTML:
+ *
+ * <a class="ui-button ui-corner-all ui-widget ui-button-icon-only">
+ *     <span class="ui-button-icon ui-icon ui-icon-gear"></span>
+ *     <span class="ui-button-icon-space"> </span>
+ *     Button one icon, no text
+ * </a>
+ */
+
+.ui-button-icon-only {
+    width: 2.25em; // 36px / 16px
+    text-indent: -9999px;
+    white-space: nowrap;
+    box-sizing: border-box;
+}
+
+/**
+ * No icon support for input elements.
+ */
+
+input.ui-button.ui-button-icon-only {
+    text-indent: 0;
+}
+
+/**
+ * Button rounded corners all.
+ */
+
+.ui-button.ui-corner-all {
+    border-radius: $border-radius;
+}
+
+/**
+ * Button rounded corners on right only.
+ */
+
+.ui-button.ui-corner-right {
+    border-radius: 0 $border-radius $border-radius 0;
+}
+
+/**
+ * Button rounded corners on left only.
+ */
+
+.ui-button.ui-corner-left {
+    border-radius: $border-radius 0 0 $border-radius;
+}
+
+/**
+ * Button icon element(s).
+ */
+
+.ui-button-icon-only .ui-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -8px;
+    margin-left: -8px;
+}
+
+.ui-button.ui-icon-notext .ui-icon {
+    padding: 0;
+    text-indent: -9999px;
+    white-space: nowrap;
+}
+
+input.ui-button.ui-icon-notext .ui-icon {
+    padding: 0.4em 1em;
+    text-indent: 0;
+    white-space: normal;
+}

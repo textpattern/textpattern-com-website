@@ -1,0 +1,32 @@
+/* Selectable
+   ========================================================================== */
+
+/**
+ * jQuery UI Selectable.
+ *
+ * Some classes and HTML elements generally added via JavaScript, more info -
+ * https://jqueryui.com/selectable/
+ *
+ * Example HTML:
+ *
+ * <ol class="ui-selectable">
+ *     <li class="ui-selectee">Item 1</li>
+ *     <li class="ui-selectee ui-selected">Item 2 (selected)</li>
+ *     <li class="ui-selectee">Item 3</li>
+ *     <li class="ui-selectee">Item 4</li>
+ * </ol>
+ */
+
+.ui-selectable {
+    touch-action: none;
+}
+
+/**
+ * Drag to select.
+ */
+
+.ui-selectable-helper {
+    position: absolute;
+    border: 1px dotted $color-link;
+    z-index: 100;
+}

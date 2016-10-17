@@ -1,0 +1,136 @@
+/* Menu
+   ========================================================================== */
+
+/**
+ * jQuery UI Menu.
+ *
+ * Menus are vertical format only. Horizontal format menus are not provided by
+ * jQuery UI.
+ *
+ * Some classes and HTML elements generally added via JavaScript, more info -
+ * https://jqueryui.com/menu/
+ *
+ * 1. Correct font size not being inherited in all browsers.
+ * 2. Workaround for IE 11 and Edge incorrectly displaying a list marker.
+ *
+ * Example HTML:
+ *
+ * <ul class="ui-menu">
+ *     <li class="ui-state-disabled ui-menu-item">
+ *         <a>Item 1 (disabled)</a>
+ *     </li>
+ *     <li class="ui-menu-item">
+ *         <a>Item 2</a>
+ *     </li>
+ *     <li class="ui-menu-item">
+ *         <a>
+ *             <span class="ui-menu-icon ui-icon ui-icon-caret-1-e"></span>
+ *             Item 3
+ *         </a>
+ *         <ul class="ui-menu">
+ *             <li class="ui-menu-item">
+ *                 <a>Item 3 subitem 1</a>
+ *             </li>
+ *             <li class="ui-menu-item">
+ *                 <a>Item 3 subitem 2</a>
+ *             </li>
+ *         </ul>
+ *     </li>
+ *     <li class="ui-menu-item">
+ *         <a>
+ *             <span class="ui-menu-icon ui-icon ui-icon-caret-1-e"></span>
+ *             Item 4
+ *         </a>
+ *         <ul class="ui-menu">
+ *             <li class="ui-menu-item">
+ *                 <span class="ui-menu-icon ui-icon ui-icon-caret-1-e"></span>
+ *                 <a>Item 4 subitem 1</a>
+ *                 <ul class="ui-menu">
+ *                     <li class="ui-menu-item">
+ *                         <a>Item 4 subitem 1 subsubitem 1</a>
+ *                     </li>
+ *                     <li class="ui-menu-item">
+ *                         <a>Item 4 subitem 1 subsubitem 2</a>
+ *                     </li>
+ *                 </ul>
+ *             </li>
+ *             <li class="ui-menu-item">
+ *                 <a>Item 3 subitem 2</a>
+ *             </li>
+ *         </ul>
+ *     </li>
+ * </ul>
+ */
+
+.ui-menu {
+    display: block;
+    margin: 0;
+    padding: 0;
+    border-color: $color-border-light;
+    outline-width: 0;
+    font-family: $font-sans-serif;
+    font-size: $base-font-size; /* 1 */
+    line-height: 1.375; // 22px / 16px
+    list-style: none;
+    box-shadow: $standard-shadow;
+
+    .ui-menu {
+        position: absolute;
+    }
+
+    .ui-menu-item {
+        margin: 0;
+        cursor: pointer;
+        list-style-image: url("data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"); /* 2 */
+
+        a {
+            color: $color-text;
+            text-decoration: none;
+        }
+    }
+
+    .ui-menu-item-wrapper {
+        position: relative;
+        padding: 0.25em 1em 0.25em 0.5em; // 4px / 16px + 8px / 16px
+    }
+
+    .ui-menu-divider {
+        height: 0;
+        margin: 0.25em 0; // 4px / 16px
+        border-width: 1px 0 0;
+        font-size: 0;
+        line-height: 0;
+    }
+
+    .ui-state-focus,
+    .ui-state-active {
+        background-color: $color-selected;
+    }
+
+    // left-aligned
+    .ui-icon {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0.25em;
+        margin: auto 0;
+    }
+
+    // right-aligned
+    .ui-menu-icon {
+        right: 0;
+        left: auto;
+    }
+}
+
+/**
+ * Allow additional icons in menu items.
+ */
+
+.ui-menu-icons {
+    position: relative;
+
+    .ui-menu-item-wrapper {
+        padding-left: 2em;
+    }
+}

@@ -1,0 +1,99 @@
+/* Selectmenu
+   ========================================================================== */
+
+/**
+ * jQuery UI Selectmenu.
+ *
+ * Some classes and HTML elements generally added via JavaScript, more info -
+ * https://jqueryui.com/selectmenu/
+ *
+ * 1. Correct font size not being inherited in all browsers.
+ *
+ * Example HTML:
+ *
+ * <p>
+ *     <label>Select a speed</label><br>
+ *     <select class="jquery-ui-selectmenu" style="display:none;">
+ *         <option>Slower</option>
+ *         <option>Slow</option>
+ *         <option selected="selected">Medium</option>
+ *         <option>Fast</option>
+ *         <option>Faster</option>
+ *     </select>
+ *     <span class="ui-selectmenu-button ui-widget ui-state-default ui-corner-all">
+ *         <span class="ui-icon ui-icon-triangle-1-s"></span>
+ *         <span class="ui-selectmenu-text">Medium</span>
+ *     </span>
+ * </p>
+ * <div class="ui-selectmenu-menu ui-front ui-selectmenu-open">
+ *     <ul class="ui-menu ui-widget ui-widget-content ui-corner-bottom">
+ *         <li class="ui-menu-item ui-state-focus">Slower</li>
+ *         <li class="ui-menu-item">Slow</li>
+ *         <li class="ui-menu-item">Medium</li>
+ *         <li class="ui-menu-item">Fast</li>
+ *         <li class="ui-menu-item">Faster</li>
+ *     </ul>
+ * </div>
+ */
+
+.ui-selectmenu-button {
+    display: inline-flex;
+}
+
+.ui-selectmenu-button:not(.ui-controlgroup-item) {
+    border-radius: $border-radius;
+}
+
+.ui-selectmenu-button.ui-controlgroup-item.ui-corner-tr {
+    border-radius: 0 $border-radius $border-radius 0;
+}
+
+.ui-selectmenu-button.ui-controlgroup-item.ui-corner-tl {
+    border-radius: $border-radius 0 0 $border-radius;
+}
+
+.ui-selectmenu-icon {
+    flex: none;
+    order: 2;
+    margin: 0.125em -0.25em 0 0.25em;
+}
+
+.ui-selectmenu-text {
+    display: block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.ui-selectmenu-menu {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+
+    .ui-menu {
+        overflow: auto;
+        overflow-x: hidden;
+
+        .ui-selectmenu-optgroup {
+            height: auto;
+            margin: 0.5em 0 0;
+            padding: 2px 0.5em; // 8px / 16px
+            border-top: 1px solid $color-border;
+            font-size: $base-font-size;
+            font-weight: bold;
+            line-height: 1.5;
+
+            &:first-child {
+                margin: 0;
+                border: 0;
+            }
+        }
+    }
+}
+
+.ui-selectmenu-open {
+    display: block;
+}

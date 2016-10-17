@@ -1,0 +1,25 @@
+/* Autocomplete
+   ========================================================================== */
+
+/**
+ * jQuery UI Autocomplete.
+ *
+ * Some classes and HTML elements generally added via JavaScript, more info -
+ * https://jqueryui.com/autocomplete/
+ *
+ * Example HTML:
+ *
+ * <input type="text" class="ui-autocomplete-input">
+ * <ul class="ui-autocomplete">
+ *     <li><a></a></li>
+ *     <li><a></a></li>
+ *     <li><a></a></li>
+ * </ul>
+ */
+
+.ui-autocomplete {
+    position: absolute;
+    top: 0;
+    left: 0;
+    cursor: default;
+}

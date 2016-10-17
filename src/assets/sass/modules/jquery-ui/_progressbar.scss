@@ -1,0 +1,46 @@
+/* Progressbar
+   ========================================================================== */
+
+/**
+ * jQuery UI Progressbar.
+ *
+ * Some classes and HTML elements generally added via JavaScript, more info -
+ * https://jqueryui.com/progressbar/
+ *
+ * Example HTML:
+ *
+ * <div class="ui-progressbar">
+ *     <div class="ui-progressbar-value" style="width: 37%;"></div>
+ * </div>
+ */
+
+.ui-progressbar {
+    margin-bottom: 1em;
+    text-align: left;
+    overflow: hidden;
+}
+
+.ui-progressbar-value {
+    @include hires-graphic(ui-progressbar, gif, 16px, 16px);
+
+    height: 16px;
+    background-color: $color-selecting;
+}
+
+/**
+ * Progressbar with indeterminate value.
+ *
+ * Example HTML:
+ *
+ * <div class="ui-progressbar ui-progressbar-indeterminate">
+ *     <div class="ui-progressbar-value" style="width:100%;">
+ *         <div class="ui-progressbar-overlay"></div>
+ *     </div>
+ * </div>
+ */
+
+.ui-progressbar-indeterminate .ui-progressbar-value {
+    @include hires-graphic(ui-progressbar-indeterminate, gif, 16px, 16px);
+
+    background-color: $color-border;
+}

@@ -74,7 +74,6 @@ $colors: (
         background-color: rgba(255, 255, 255, 0.66);
         font-family: $font-code;
         font-size: $code-font-size;
-        line-height: $base-line-height;
     }
 }
 
@@ -114,11 +113,6 @@ $colors: (
  * The list of all available icons.
  */
 
-.jquery-ui-icons {
-    margin: 0;
-    padding: 0;
-}
-
 .jquery-ui-icons li {
     position: relative;
     margin: 2px;
@@ -128,7 +122,7 @@ $colors: (
     cursor: pointer;
 }
 
-.jquery-ui-icons span.ui-icon {
+.jquery-ui-icons .ui-icon {
     margin: 0 4px;
     float: left;
 }
