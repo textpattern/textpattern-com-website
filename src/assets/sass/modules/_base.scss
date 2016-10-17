@@ -2,20 +2,37 @@
    ========================================================================== */
 
 /**
- * Correct `block` display not defined for any HTML5 element in older browsers.
- * Correct `block` display not defined for `main` in IE 11.
+ * Add the correct display in various browsers.
  */
 
 article,
 aside,
+details,
 figcaption,
 figure,
 footer,
 header,
 main,
+menu,
 nav,
 section {
     display: block;
+}
+
+summary {
+    display: list-item;
+}
+
+/**
+ * Add the correct display in IE 11.
+ */
+
+canvas {
+    display: inline-block;
+}
+
+template {
+    display: none;
 }
 
 /**
@@ -43,14 +60,18 @@ footer,
 nav ul,
 nav ol,
 .clearfix,
-.container,
-.nested-list-2-column,
-.nested-list-3-column,
-.nested-list-4-column,
 .paginator {
     &::after {
         display: table;
         clear: both;
         content: "";
     }
+}
+
+/**
+ * Basic float clearer.
+ */
+
+.clear {
+    clear: both;
 }

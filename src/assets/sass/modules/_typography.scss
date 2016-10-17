@@ -74,12 +74,12 @@ h6 {
 }
 
 /**
- * Address style set to `bolder` in Firefox 4+, Safari, and Chrome.
+ * Add the correct font weight in Chrome, Edge, and Safari.
  */
 
 b,
 strong {
-    font-weight: bold;
+    font-weight: bolder;
 }
 
 /**
@@ -101,21 +101,22 @@ blockquote {
 }
 
 /**
- * Address styling not present in Safari and Chrome.
+ * 1. Remove the bottom border in Firefox.
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+
+abbr[title] {
+    border-bottom: 0; /* 1 */
+    text-decoration: underline; /* 2 */
+    text-decoration: underline dotted; /* 2 */
+}
+
+/**
+ * Add the correct font style.
  */
 
 dfn {
     font-style: italic;
-}
-
-/**
- * Address styling not present in Safari and Chrome.
- */
-
-abbr[title],
-dfn[title] {
-    text-decoration: dotted underline;
-    cursor: help;
 }
 
 /**
@@ -223,12 +224,13 @@ tfoot,
 }
 
 figcaption {
-    margin-top: 0.5em;
+    margin: 0.5em 0;
     font-style: italic;
 }
 
 /**
- * Address differences between Firefox and other browsers.
+ * 1. Show the overflow in Edge and IE.
+ * 2. Add the correct box sizing in Firefox.
  */
 
 hr {
@@ -236,5 +238,6 @@ hr {
     border: 0; // remove the default `hr` border
     background: url("../img/com/hr.svg") 50% 50% no-repeat;
     background-size: 240px 24px;
-    box-sizing: content-box;
+    overflow: visible; /* 1 */
+    box-sizing: content-box; /* 2 */
 }

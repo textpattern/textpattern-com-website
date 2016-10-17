@@ -2,7 +2,7 @@
    ========================================================================== */
 
 /**
- * AJAX spinners.
+ * Loading spinners.
  *
  * Example HTML:
  *
@@ -11,14 +11,22 @@
  */
 
 .spinner {
-    @include hires-graphic(branding/misc/spinner, gif, 16px, 16px);
-
     display: inline-block;
-    width: 16px;
-    height: 16px;
+    position: relative;
+    top: 50%;
+    width: 1em;
+    height: 1em;
+    margin: -0.5em auto 0;
+    border: 0.25em solid transparent;
+    border-radius: 50%;
+    border-top-color: $color-text;
+    border-bottom-color: $color-text;
+    animation: spinning linear 1s infinite;
 
     &.inverse {
-        @include hires-graphic(branding/misc/spinner-inverse, gif, 16px, 16px);
+        border-top-color: $color-background;
+        border-bottom-color: $color-background;
+        background-color: $color-text;
     }
 }
 
@@ -27,7 +35,7 @@
  *
  * Example HTML:
  *
- * <h1 class="accessibility">
+ * <p class="accessibility">
  */
 
 .accessibility {

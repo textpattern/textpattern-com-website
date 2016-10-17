@@ -1,209 +1,48 @@
 /* ==========================================================================
-   Singularity Grid System
+   Layout grid
    ========================================================================== */
 
-@include add-grid(12);
-@include add-gutter(1.265);
+/**
+ * Flex container.
+ */
+
+.layout-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -1em;
+
+    > * {
+        min-width: 0;
+        padding: 0 1em;
+        box-sizing: border-box;
+    }
+}
 
 /**
  * Generate sizes all for grid column cells.
  *
  * Because this is mobile first, cells are all initially a 1 column span
- * (full width, 12 cell span). We will then adjust them at various breakpoints
- * listed below.
+ * (full width, 12 cell span). We will then adjust them at various breakpoints.
  *
  * Example HTML:
  *
- * <div class="layout--span-1-12"></div>
+ * <div class="layout-1col"></div>
  *
- * <div class="layout--span-1-6 at-break2">
- * <div class="layout--span-7-12 at-break2">
+ * <div class="layout-2col">
+ * <div class="layout-2col">
  *
- * <div class="layout--span-1-4"></div>
- * <div class="layout--span-5-12"></div>
+ * <div class="layout-4col-3span"></div>
+ * <div class="layout-4col"></div>
  */
 
-.layout--span-1-12,
-.layout--span-1-6,
-.layout--span-7-12,
-.layout--span-1-4,
-.layout--span-5-8,
-.layout--span-9-12,
-.layout--span-1-3,
-.layout--span-4-6,
-.layout--span-7-9,
-.layout--span-10-12,
-.layout--span-1-8,
-.layout--span-5-12,
-.layout--span-4-9,
-.layout--span-1-9,
-.layout--span-4-12,
+.layout-1col,
+.layout-2col,
+.layout-3col,
+.layout-3col-2span,
+.layout-4col,
+.layout-4col-alt,
+.layout-4col-2span,
+.layout-4col-3span,
 .nested {
-    @include grid-span(12, 1);
-
-    clear: both;
-    box-sizing: border-box;
-}
-
-/**
- * Grid column cell changes at 1st breakpoint.
- *
- * Cells for 4 column layout are generated if `.at-break1` class is specified,
- * (otherwise they stay as 1 column layout cells), but as 2 column layout
- * intitially (they will change to 4 column at a higher breakpoint).
- *
- * Nested cells for 4 column layout are also generated, also as 2 column layout
- * intitially (they will change to 4 column at a higher breakpoint).
- */
-
-@include breakpoint($breakpoint-1) {
-
-    .layout--span-1-3.at-break1,
-    .nested-list-4-column .nested:nth-child(4n+1) { // 4 column grid, cell 1
-        @include grid-span(6, 1);
-
-        clear: both;
-    }
-
-    .layout--span-4-6.at-break1,
-    .nested-list-4-column .nested:nth-child(4n+2) { // 4 column grid, cell 2
-        @include grid-span(6, 7);
-    }
-
-    .layout--span-7-9.at-break1,
-    .nested-list-4-column .nested:nth-child(4n+3) { // 4 column grid, cell 3
-        @include grid-span(6, 1);
-
-        clear: both;
-    }
-
-    .layout--span-10-12.at-break1,
-    .nested-list-4-column .nested:nth-child(4n) { // 4 column grid, cell 4
-        @include grid-span(6, 7);
-    }
-
-}
-
-/**
- * Grid column cell changes at 2nd breakpoint.
- *
- * Cells for 2 column layout are generated if `.at-break2` class is specified,
- * otherwise they stay as 1 column layout cells.
- *
- * Cells for 3 column layout cells and nested cells for 3 column layout are
- * also generated.
- */
-
-@include breakpoint($breakpoint-2) {
-
-    .layout--span-1-6.at-break2 { // 2 column grid, cell 1
-        @include grid-span(6, 1);
-
-        clear: both;
-    }
-
-    .layout--span-7-12.at-break2 { // 2 column grid, cell 2
-        @include grid-span(6, 7);
-    }
-
-    .layout--span-1-4,
-    .nested-list-3-column .nested:nth-child(3n+1) { // 3 column grid, cell 1
-        @include grid-span(4, 1);
-
-        clear: both;
-    }
-
-    .layout--span-5-8,
-    .nested-list-3-column .nested:nth-child(3n+2) { // 3 column grid, cell 2
-        @include grid-span(4, 5);
-    }
-
-    .layout--span-9-12,
-    .nested-list-3-column .nested:nth-child(3n) { // 3 column grid, cell 3
-        @include grid-span(4, 9);
-    }
-
-    .layout--span-1-8 { // 3 column grid, cell 1 and 2
-        @include grid-span(8, 1);
-
-        clear: both;
-    }
-
-    .layout--span-5-12 { // 3 column grid, cell 2 and 3
-        @include grid-span(8, 5);
-    }
-
-}
-
-/**
- * Grid column cell changes at 3rd (final) breakpoint.
- *
- * Cells for 2 column layout are generated if they were not stated as
- * `.at-break2` class previously. Nested 2 column layout cells as generated.
- *
- * Cells for 4 column layout cells and nested cells for 4 column layout are
- * also generated.
- *
- * Also, various variations of 3 and 4 column cell spans are generated.
- *
- * Example HTML:
- *
- * <div class="layout--span-1-9"></div>
- * <div class="layout--span-10-12"></div>
- */
-
-@include breakpoint($breakpoint-3) {
-
-    .layout--span-1-6,
-    .nested-list-2-column .nested:nth-child(odd) { // 2 column grid, cell 1
-        @include grid-span(6, 1);
-
-        clear: both;
-    }
-
-    .layout--span-7-12,
-    .nested-list-2-column .nested:nth-child(even) { // 2 column grid, cell 2
-        @include grid-span(6, 7);
-    }
-
-    .layout--span-1-3,
-    .layout--span-1-3.at-break1,
-    .nested-list-4-column .nested:nth-child(4n+1) { // 4 column grid, cell 1
-        @include grid-span(3, 1);
-
-        clear: both;
-    }
-
-    .layout--span-4-6,
-    .layout--span-4-6.at-break1,
-    .nested-list-4-column .nested:nth-child(4n+2) { // 4 column grid, cell 2
-        @include grid-span(3, 4);
-    }
-
-    .layout--span-7-9,
-    .layout--span-7-9.at-break1,
-    .nested-list-4-column .nested:nth-child(4n+3) { // 4 column grid, cell 3
-        @include grid-span(3, 7);
-    }
-
-    .layout--span-10-12,
-    .layout--span-10-12.at-break1,
-    .nested-list-4-column .nested:nth-child(4n) { // 4 column grid, cell 4
-        @include grid-span(3, 10);
-    }
-
-    .layout--span-4-9 { // 4 column grid, cell 2 and 3
-        @include grid-span(6, 4);
-    }
-
-    .layout--span-1-9 { // 4 column grid, cell 1, 2 and 3
-        @include grid-span(9, 1);
-
-        clear: both;
-    }
-
-    .layout--span-4-12 { // 4 column grid, cell 2, 3 and 4
-        @include grid-span(9, 4);
-    }
-
+    width: 100%;
 }

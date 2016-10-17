@@ -1,0 +1,76 @@
+/* ==========================================================================
+   Styling and layout for screen media at 1st breakpoint
+   ========================================================================== */
+
+@media screen and (min-width: $breakpoint-1) {
+
+    /**
+     * Cells for 4 column layouts are generated, but as 2 columns at this width.
+     */
+
+    .layout-4col {
+        width: 50%;
+    }
+
+}
+
+
+/* ==========================================================================
+   Styling and layout for screen media at 2nd breakpoint
+   ========================================================================== */
+
+@media screen and (min-width: $breakpoint-2) {
+
+    /**
+     * Cells for 2 column and 3 column layouts are generated.
+     *
+     * Example HTML:
+     *
+     * <div class="layout-3col"></div>
+     * <div class="layout-3col-2span"></div>
+     */
+
+    .layout-2col {
+        width: 50%;
+    }
+
+    .layout-3col {
+        width: 33.333%;
+    }
+
+    .layout-3col-2span {
+        width: 66.666%;
+    }
+
+}
+
+
+/* ==========================================================================
+   Styling and layout for screen media at 3rd (final) breakpoint
+   ========================================================================== */
+
+@media screen and (min-width: $breakpoint-3) {
+
+    /**
+     * Cells for 4 column layouts are generated.
+     *
+     * Example HTML:
+     *
+     * <div class="layout-4col-3span"></div>
+     * <div class="layout-4col-alt"></div>
+     */
+
+    .layout-4col,
+    .layout-4col-alt {
+        width: 25%;
+    }
+
+    .layout-4col-2span {
+        width: 50%;
+    }
+
+    .layout-4col-3span {
+        width: 75%;
+    }
+
+}

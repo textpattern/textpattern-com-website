@@ -12,10 +12,25 @@ pre[class*="language-"] {
     hyphens: none;
 }
 
-/* Code blocks */
+/**
+ * Code blocks.
+ */
+
 pre[class*="language-"] {
     padding: 1.1428571em; // 16px / 14px
 }
+
+/**
+ * Inline code.
+ */
+
+:not(pre) > code[class*="language-"] {
+    white-space: normal;
+}
+
+/**
+ * Syntax colours/styles.
+ */
 
 .token.comment,
 .token.prolog,
@@ -356,12 +371,12 @@ div.prism-show-language > div.prism-show-language-label {
     color: #d01040;
 }
 
-/* Literal.String.Regex */
+// Literal.String.Regex
 .highlighter-rouge .sr {
     color: #009926;
 }
 
-/* Literal.String.Symbol */
+// Literal.String.Symbol
 .highlighter-rouge .ss {
     color: #990073;
 }
