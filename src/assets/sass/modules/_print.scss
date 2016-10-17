@@ -33,7 +33,16 @@ body {
  */
 
 .site-header {
-    border-bottom: solid 1pt $color-text-print;
+    border-bottom: 1pt solid $color-text-print;
+}
+
+/**
+ * Visually separate site footer from body.
+ */
+
+.site-footer {
+    margin-top: 12pt;
+    border-top: 1pt solid $color-text-print;
 }
 
 /**
@@ -45,8 +54,9 @@ audio,
 video,
 form,
 #comments-form,
-.search-form,
+.comments h4 a:last-child,
 .complementary-content,
+.search-form,
 .site-footer,
 .paginator {
     display: none;
@@ -71,7 +81,7 @@ abbr[title] {
 }
 
 /**
- *  Harmonize size, style and vertical margin of headings.
+ * Harmonize size, style and vertical margin of headings.
  */
 
 h1 {

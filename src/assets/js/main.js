@@ -17,7 +17,8 @@
         paths:
         {
             'jquery': 'https://ajax.googleapis.com/ajax/libs/jquery/'+jqueryVersion+'/jquery.min',
-            'flowplayer': 'flowplayer/flowplayer.min'
+            //'jqueryui': 'https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min',
+            'flowplayer': 'https://releases.flowplayer.org/6.0.5/flowplayer.min'
         },
         shim:
         {
@@ -120,29 +121,6 @@
     {
         if ($('img[srcset], img[sizes], picture').length) {
             require(['picturefill.@@timestamp']);
-        }
-    });
-
-    // EU-cookie disclaimer, via 'jquery.cookie'.
-    // More info - https://github.com/carhartl/jquery-cookie.
-
-    require(['jquery', 'cookie.@@timestamp'], function ($)
-    {
-        if (!$.cookie('acceptedCookies'))
-        {
-            var disclaimer = $('<aside id="cookie-disclaimer"><div class="container"><p><strong>This website uses cookies to enhance your experience.</strong> By continuing to use this website you agree to cookies being placed on your computer. If you wish to use this website but do not wish for cookies to be placed on your computer you can change the settings in your internet browser. <a href="#" data-action="close">Close</a>.</p></div></aside>');
-            $('body').prepend(disclaimer);
-            $.cookie('acceptedCookies', 1, {expires: 1461});
-
-            disclaimer.find('a').on('click', function (e)
-            {
-                e.preventDefault();
-
-                disclaimer.slideUp('fast', function ()
-                {
-                    disclaimer.remove();
-                });
-            });
         }
     });
 

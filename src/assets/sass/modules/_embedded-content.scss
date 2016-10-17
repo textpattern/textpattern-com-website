@@ -2,6 +2,15 @@
    ========================================================================== */
 
 /**
+ * Add the correct display in IE 11.
+ */
+
+audio,
+video {
+    display: inline-block;
+}
+
+/**
  * Make embedded elements responsive.
  */
 
@@ -14,8 +23,7 @@ video {
 /**
  * Images.
  *
- * 1. Remove potential border when inside `a` element.
- * 2. Remove the gap between images and the bottom of their containers.
+ * 1. Remove the gap between images and the bottom of their containers.
  *
  * Image alignment (compatible with Textile markup syntax).
  *
@@ -27,8 +35,7 @@ video {
  */
 
 img {
-    border: 0; /* 1 */
-    vertical-align: middle; /* 2 */
+    vertical-align: middle; /* 1 */
 
     &.align-left {
         margin: 1em 1em 1em 0;

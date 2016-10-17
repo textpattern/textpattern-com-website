@@ -145,7 +145,7 @@ rules:
   no-disallowed-properties: 0
 
   # Enforce that duplicate properties are not allowed within the same block.
-  no-duplicate-properties: 1
+  no-duplicate-properties: 0
 
   # Enforce that rulesets are not empty.
   no-empty-rulesets: 1

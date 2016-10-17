@@ -17,7 +17,6 @@ module.exports = function (grunt)
                 templates: 'src/templates/'
             },
             tmp: {
-                css: 'tmp/assets/css/',
                 js: 'tmp/assets/js/'
             },
             dest: {
@@ -52,29 +51,47 @@ module.exports = function (grunt)
             ]
         },
 
-        // Concatenate CSS files prior to matching media queries.
-        concat: {
-            css: {
-                src: [
-                    '<%= paths.tmp.css %>style.css',
-                    //'<%= paths.tmp.css %>jquery-ui.css',
-                    'node_modules/flowplayer/dist/skin/minimalist.css'
-                ],
-                dest: '<%= paths.tmp.css %>main.css'
-            }
-        },
-
         // Copy files.
         copy: {
             // Copy Textpattern branding assets.
             img: {
                 files: [
-                    {expand: true, cwd: 'src/assets/img/', src: ['**'], dest: 'public/assets/img/com/'},
-                    {expand: true, cwd: 'node_modules/textpattern-branding/assets/img/', src: ['**'], dest: 'public/assets/img/branding/'},
-                    {expand: true, cwd: 'node_modules/textpattern-branding/assets/img/apple-touch-icon/textpattern/', src: ['**'], dest: 'public/'},
-                    {expand: true, cwd: 'node_modules/textpattern-branding/assets/img/favicon/textpattern/', src: ['**'], dest: 'public/'},
-                    {expand: true, cwd: 'node_modules/textpattern-branding/assets/img/windows-site-tile/textpattern/', src: ['**'], dest: 'public/'},
-                    {expand: true, cwd: 'node_modules/textpattern-branding/assets/img/misc/', src: ['hi.png', 'hi@2x.png'], dest: 'public/'}
+                    {
+                        expand: true,
+                        cwd: 'src/assets/img/',
+                        src: ['**'],
+                        dest: 'public/assets/img/com/'
+                    },
+                    {
+                        expand: true,
+                        cwd: 'node_modules/textpattern-branding/assets/img/',
+                        src: ['**'],
+                        dest: 'public/assets/img/branding/'
+                    },
+                    {
+                        expand: true,
+                        cwd: 'node_modules/textpattern-branding/assets/img/apple-touch-icon/textpattern/',
+                        src: ['**'],
+                        dest: 'public/'
+                    },
+                    {
+                        expand: true,
+                        cwd: 'node_modules/textpattern-branding/assets/img/favicon/textpattern/',
+                        src: ['**'],
+                        dest: 'public/'
+                    },
+                    {
+                        expand: true,
+                        cwd: 'node_modules/textpattern-branding/assets/img/windows-site-tile/textpattern/',
+                        src: ['**'],
+                        dest: 'public/'
+                    },
+                    {
+                        expand: true,
+                        cwd: 'node_modules/textpattern-branding/assets/img/misc/',
+                        src: ['hi.png', 'hi@2x.png'],
+                        dest: 'public/'
+                    }
                 ]
             },
             // Copy JavaScript files from various sources.
@@ -92,29 +109,6 @@ module.exports = function (grunt)
                         cwd: '<%= paths.src.js %>libs/',
                         src: '**',
                         dest: '<%= paths.dest.js %>'
-                    },
-                    {
-                        expand: true,
-                        cwd: 'node_modules/flowplayer/dist/',
-                        src: '**',
-                        dest: '<%= paths.dest.js %>flowplayer/'
-                    }
-                ]
-            },
-            // Copy Flowplayer images and fonts to CSS folder (because Flowplayer's CSS expects relative path to these).
-            css: {
-                files: [
-                    {
-                        expand: true,
-                        cwd: 'node_modules/flowplayer/dist/skin/img/',
-                        src: '**',
-                        dest: '<%= paths.dest.css %>img/'
-                    },
-                    {
-                        expand: true,
-                        cwd: 'node_modules/flowplayer/dist/skin/fonts/',
-                        src: '**',
-                        dest: '<%= paths.dest.css %>fonts/'
                     }
                 ]
             }
@@ -177,7 +171,6 @@ module.exports = function (grunt)
         postcss: {
             options: {
                 processors: [
-                    require('css-mqpacker')(),
                     require('autoprefixer')({
                         browsers: ['last 2 versions']
                     }),
@@ -186,8 +179,13 @@ module.exports = function (grunt)
             },
             dist: {
                 files: [
-                    {'<%= paths.dest.css %>main.css': '<%= paths.tmp.css %>main.css'},
-                    {'<%= paths.dest.css %>design-patterns.css': '<%= paths.tmp.css %>design-patterns.css'}
+                    {
+                        expand: true,
+                        cwd: '<%= paths.dest.css %>',
+                        src: '*.css',
+                        dest: '<%= paths.dest.css %>',
+                        ext: '.min.css'
+                    }
                 ]
             }
         },
@@ -224,14 +222,14 @@ module.exports = function (grunt)
 
         // Sass configuration.
         sass: {
-            options: require('eyeglass')({
+            options: {
                 outputStyle: 'expanded', // outputStyle = expanded, nested, compact or compressed.
                 sourceMap: false
-            }),
+            },
             dist: {
                 files: [
-                    {'<%= paths.tmp.css %>style.css': '<%= paths.src.sass %>style.scss'},
-                    {'<%= paths.tmp.css %>design-patterns.css': '<%= paths.src.sass %>design-patterns.scss'}
+                    {'<%= paths.dest.css %>style.css': '<%= paths.src.sass %>style.scss'},
+                    {'<%= paths.dest.css %>design-patterns.css': '<%= paths.src.sass %>design-patterns.scss'}
                 ]
             }
         },
@@ -263,7 +261,6 @@ module.exports = function (grunt)
                     {
                         '<%= paths.dest.js %>main.js': ['<%= paths.tmp.js %>main.js'],
                         '<%= paths.dest.js %>autosize.js': ['node_modules/autosize/dist/autosize.js'],
-                        '<%= paths.dest.js %>cookie.js': ['node_modules/jquery.cookie/jquery.cookie.js'],
                         '<%= paths.dest.js %>picturefill.js': ['node_modules/picturefill/dist/picturefill.js'],
                         '<%= paths.dest.js %>prism.js': [
                             'node_modules/prismjs/prism.js',
@@ -302,7 +299,7 @@ module.exports = function (grunt)
 
     // Register tasks.
     grunt.registerTask('build', ['clean', 'concurrent', 'uglify', 'copy:js']);
-    grunt.registerTask('css', ['sasslint', 'sass', 'concat', 'postcss', 'copy:css']);
+    grunt.registerTask('css', ['sasslint', 'sass', 'postcss', 'copy:css']);
     grunt.registerTask('default', ['watch']);
     grunt.registerTask('setup', ['shell:setup']);
     grunt.registerTask('travis', ['jshint', 'build']);

@@ -1,10 +1,3 @@
-// import Breakpoint
-@import "breakpoint";
-
-// import Singularity.gs
-@import "singularitygs";
-
-
 // higher resolution background images for high resolution displays
 
 @mixin hires-graphic($hdfile, $hdtype, $hdwidth, $hdheight) {
