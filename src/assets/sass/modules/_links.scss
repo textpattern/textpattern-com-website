@@ -65,15 +65,18 @@ a {
 
 .a--img {
     img {
-        transition: box-shadow 0.1s linear;
+        border: solid 1px $color-border;
+    }
 
+    &:hover img {
+        border-color: $color-link-hover;
     }
 
     &:focus {
         outline: 0;
 
         img {
-            box-shadow: 0 0 4px 2px $color-link-focus;
+            border-color: $color-link-focus;
         }
     }
 }
