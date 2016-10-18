@@ -45,6 +45,7 @@ module.exports = function (grunt)
         concurrent: {
             dist: [
                 'css',
+                'copy:img',
                 'devUpdate',
                 'jshint',
                 'replace'
@@ -299,7 +300,7 @@ module.exports = function (grunt)
 
     // Register tasks.
     grunt.registerTask('build', ['clean', 'concurrent', 'uglify', 'copy:js']);
-    grunt.registerTask('css', ['sasslint', 'sass', 'postcss', 'copy:css']);
+    grunt.registerTask('css', ['sasslint', 'sass', 'postcss']);
     grunt.registerTask('default', ['watch']);
     grunt.registerTask('setup', ['shell:setup']);
     grunt.registerTask('travis', ['jshint', 'build']);
