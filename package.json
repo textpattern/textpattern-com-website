@@ -29,7 +29,7 @@
     "load-grunt-tasks": "~3.5",
     "node-sass": "3.10.1",
     "sass-lint": "1.9.1",
-    "textpattern-branding": "0.1.0"
+    "textpattern-branding": "0.1.1"
   },
   "dependencies": {
     "autosize": "3.0.17",
