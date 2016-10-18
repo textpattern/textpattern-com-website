@@ -4,9 +4,3 @@
 .http-status-code {
     font-size: 3em; // 48px / 16px
 }
-
-@include breakpoint(max-width $breakpoint-2) {
-    .http-status-description {
-        display: block;
-    }
-}

@@ -98,15 +98,6 @@ body {
     right: 0;
     z-index: 3;
 
-    @include breakpoint(max-width $breakpoint-2) {
-        top: 0;
-        right: 48px;
-    }
-
-    @include breakpoint(max-width $breakpoint-1) {
-        right: 36px;
-    }
-
     // search input field
     input[type="search"] {
         width: 240px;
@@ -117,23 +108,6 @@ body {
         background: url("../img/branding/misc/icon-sprite.svg") no-repeat left center;
         background-position: -128px 0;
         background-size: 160px 32px;
-
-        @include breakpoint(max-width $breakpoint-2) {
-            width: 34px;
-            padding-right: 0;
-            cursor: pointer;
-
-            &:hover {
-                background-color: #e3edfc;
-            }
-
-            &:focus {
-                width: 240px;
-                padding-right: 0.5384615em;
-                background-color: $color-background;
-                cursor: auto;
-            }
-        }
     }
 }
 

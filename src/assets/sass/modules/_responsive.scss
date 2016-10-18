@@ -14,6 +14,18 @@
 
 }
 
+@media screen and (min-width: $breakpoint-1) {
+
+    /**
+     * Changes in styling for search form.
+     */
+
+    .search-form {
+        right: 36px;
+    }
+
+}
+
 
 /* ==========================================================================
    Styling and layout for screen media at 2nd breakpoint
@@ -43,7 +55,7 @@
     }
 
     /**
-     * Additional styling for site header.
+     * Changes in styling for site header.
      */
 
     .masthead a {
@@ -54,11 +66,82 @@
     }
 
     /**
-     * Additional styling for site footer.
+     * Changes in styling for navigation.
+     */
+
+    .site-navigation {
+        font-family: $font-serif;
+
+        .js & {
+            max-height: none;
+        }
+
+        ul {
+            width: 90%;
+        }
+
+        li {
+            float: left;
+            border: 0 !important;
+        }
+
+        a {
+            margin: 0 0.4em 0.4em -0.4em;
+            padding: 0.4em;
+            border-radius: $border-radius / 2;
+            font-size: 1.5em; // 24px / 16px
+            font-weight: normal;
+        }
+    }
+
+    .nav-toggle {
+        display: none;
+    }
+
+    /**
+     * Changes in styling for site footer.
      */
 
     .community-details,
     .host-details {
+        display: block;
+    }
+
+}
+
+@media screen and (max-width: $breakpoint-2) {
+
+    /**
+     * Changes in styling for search form.
+     */
+
+    .search-form {
+        top: 0;
+        right: 48px;
+
+        input[type="search"] {
+            width: 34px;
+            padding-right: 0;
+            cursor: pointer;
+
+            &:hover {
+                background-color: #e3edfc;
+            }
+
+            &:focus {
+                width: 240px;
+                padding-right: 0.5384615em;
+                background-color: $color-background;
+                cursor: auto;
+            }
+        }
+    }
+
+    /**
+     * Changes in styling for error messages.
+     */
+
+    .http-status-description {
         display: block;
     }
 

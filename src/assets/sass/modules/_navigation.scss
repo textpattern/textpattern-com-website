@@ -13,10 +13,6 @@
         max-height: 0;
         overflow: hidden;
         clip: rect(0 0 0 0);
-
-        @include breakpoint($breakpoint-2) {
-            max-height: none;
-        }
     }
 
     ul {
@@ -25,10 +21,6 @@
         margin: 0 auto;
         padding: 0;
         list-style: none;
-
-        @include breakpoint($breakpoint-2) {
-            width: 90%;
-        }
     }
 
     li {
@@ -36,11 +28,6 @@
 
         &:first-child {
             border-top: 2px solid $color-text;
-        }
-
-        @include breakpoint($breakpoint-2) {
-            float: left;
-            border: 0 !important;
         }
     }
 
@@ -69,14 +56,6 @@
         &:focus {
             outline: 0;
             background-color: $color-selected;
-        }
-
-        @include breakpoint($breakpoint-2) {
-            margin: 0 0.4em 0.4em -0.4em;
-            padding: 0.4em;
-            border-radius: $border-radius / 2;
-            font-size: 1.5em; // 24px / 16px
-            font-weight: normal;
         }
     }
 
@@ -126,10 +105,6 @@
     z-index: 2;
     user-select: none;
     -webkit-touch-callout: none; /* 1 */
-
-    @include breakpoint($breakpoint-2) {
-        display: none;
-    }
 
     &:hover {
         background-color: $color-selected;
