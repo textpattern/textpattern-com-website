@@ -219,3 +219,20 @@ section {
         }
     }
 }
+
+/**
+ * Documentation site Kramdown footnotes.
+ */
+
+.footnotes {
+    margin: 2em 0; // 18px / 12px
+    border-top: 1px dashed $color-border;
+}
+
+/**
+ * Documentation site issue report statement.
+ */
+
+.report-issues {
+    margin: 2em 0;
+}

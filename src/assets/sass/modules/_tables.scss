@@ -37,58 +37,45 @@ caption {
 }
 
 /**
+ * Table row borders.
+ */
+
+tr {
+    border: 1px solid $color-border-light;
+}
+
+thead th {
+    background-color: $color-gradient-to;
+}
+
+/**
  * Make table cells align top and left by default and include border.
  */
 
 th,
 td {
-    padding: 0.25em; // 4px / 16px
-    border-bottom: 1px solid $color-border;
+    padding: 0.5em; // 8px / 16px
     text-align: left;
     vertical-align: top;
-
-    &:empty {
-        border: 0;
-    }
-}
-
-tbody tr:first-child {
-    td,
-    th {
-        border-top: 1px solid $color-border;
-    }
 }
 
 /**
  * 'Zebra striping' of `tbody` rows.
  */
 
-tbody tr:nth-child(even) {
-    td,
+tbody {
+    tr {
+        &:nth-child(even) {
+            background: $color-background-box;
+        }
+
+        &.selected {
+            background: $color-selected;
+        }
+    }
+
     th {
-        background: $color-background-box;
-    }
-}
-
-/**
- * Remove padding from top cells of table header.
- */
-
-thead tr:first-child {
-    th,
-    td {
-        padding-top: 0;
-    }
-}
-
-/**
- * Thicker border below table header.
- */
-
-thead tr:last-child {
-    th,
-    td {
-        border-bottom: 2px solid $color-border;
+        font-weight: normal;
     }
 }
 
@@ -99,14 +86,7 @@ thead tr:last-child {
 tfoot {
     th,
     td {
-        padding: 0.3333333em; // 4px / 12px
-    }
-
-    tr:last-child {
-        th,
-        td {
-            padding-bottom: 0;
-        }
+        padding: 0.6666667em; // 8px / 12px
     }
 }
 

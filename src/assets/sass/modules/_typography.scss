@@ -212,15 +212,10 @@ sub {
 small,
 figcaption,
 tfoot,
-.footnote {
+.footnote,
+.footnotes {
     font-size: $small-font-size;
     line-height: $base-line-height;
-}
-
-figcaption,
-tfoot,
-.footnote {
-    color: $color-text-footnote;
 }
 
 figcaption {
