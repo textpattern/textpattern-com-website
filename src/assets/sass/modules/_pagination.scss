@@ -1,29 +1,83 @@
 /* Pagination links
    ========================================================================== */
 
-.paginator {
-    margin: 1em 0;
-    padding-top: 1em;
-    border-top: 1px dashed $color-border;
+/**
+ * Paginator (prev/next) navigation links on articles/article lists.
+ *
+ * Example HTML:
+ *
+ * <nav class="paginator">
+ *     <a rel="prev">
+ *     <a rel="next">
+ */
 
-    strong {
-        padding: 0.2em 0.4em;
-        border: 1px solid $color-border;
-        border-radius: 0.25em; // 4px / 16px
+.paginator {
+    margin: 2em 0 0;
+    padding-top: 1em;
+    text-align: center;
+
+    .prev {
+        margin: 0 1em 0 -0.1875em;
+        padding: 0 0.1875em; // 3px / 16px
+        float: left;
+
+        &::before {
+            content: "\2190" "\00A0";
+        }
     }
 
-    a {
-        padding: 0.25em 0.5em;
-        border: 1px solid $color-background;
-        border-radius: 0.25em; // 4px / 16px
+    .next {
+        margin: 0 -0.1875em 0 1em;
+        padding: 0 0.1875em; // 3px / 16px
+        float: right;
 
-        &:hover {
-            background-color: $color-selected;
+        &::after {
+            content: "\00A0" "\2192";
         }
+    }
+}
 
-        &:active {
-            background-color: $color-selecting;
-            color: darken($color-text, 10%);
+/**
+ * Numerical pagination link lists.
+ *
+ * Example HTML:
+ *
+ * <ul class="pagination">
+ *     <li class="current">
+ *         <b title="Current page">1</b>
+ *     </li>
+ *     <li>
+ *         <a title="Go to page 2">2</a>
+ *     </li>
+ *     <li>
+ *         <a title="Go to page 3">3</a>
+ *     </li>
+ */
+
+.pagination {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    li {
+        float: left;
+
+        &.current {
+            background: $color-text;
+            color: $color-text-inverse;
         }
+    }
+
+    a,
+    b {
+        display: block;
+        min-width: 1.25em;
+        padding: 0 0.1875em; // 3px / 16px
+    }
+
+    b {
+        font-weight: normal;
+        cursor: default;
     }
 }

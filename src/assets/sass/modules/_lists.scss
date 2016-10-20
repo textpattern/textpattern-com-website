@@ -23,23 +23,29 @@ li {
 }
 
 /**
- * Address margins set differently.
+ * Style for definition lists.
  */
 
-dd {
-    margin: 0 0 0 2em;
+dl {
+    padding-bottom: 1em;
+    border-bottom: 1px solid $color-border-light;
 }
 
-/**
- * Italicize definition terms (apart from for `code` elements).
- */
-
 dt {
-    font-style: italic;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    padding-top: 1em;
+    border-top: 1px solid $color-border-light;
+    font-weight: bolder;
 
     code {
-        font-style: normal;
+        border-color: $color-info-border;
+        background-color: $color-info-background;
     }
+}
+
+dd {
+    margin: 0;
 }
 
 /**
