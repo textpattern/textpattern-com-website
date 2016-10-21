@@ -328,8 +328,8 @@ Redirect temp /textile-ul-list http://txstyle.org/doc/8/bullet-list
 # ------------------------------------------------------------------------------
 # | Eternal links to the latest release. Amend for new releases.               |
 # ------------------------------------------------------------------------------
-Redirect temp /latest.zip http://textpattern.com/file_download/109/textpattern-4.6.1.zip
-Redirect temp /latest.tar.gz http://textpattern.com/file_download/108/textpattern-4.6.1.tar.gz
+Redirect temp /latest.zip http://textpattern.com/file_download/111/textpattern-4.6.2.zip
+Redirect temp /latest.tar.gz http://textpattern.com/file_download/110/textpattern-4.6.2.tar.gz
 
 
 # ----------------------------------------------------------------------
