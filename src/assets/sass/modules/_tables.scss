@@ -37,26 +37,30 @@ caption {
 }
 
 /**
- * Table row borders.
- */
-
-tr {
-    border: 1px solid $color-border-light;
-}
-
-thead th {
-    background-color: $color-gradient-to;
-}
-
-/**
  * Make table cells align top and left by default and include border.
  */
 
 th,
 td {
     padding: 0.5em; // 8px / 16px
+    border: 1px solid $color-border-light;
     text-align: left;
     vertical-align: top;
+}
+
+/**
+ * Emphasize table header.
+ */
+
+thead {
+    tr {
+        background-color: $color-gradient-from;
+    }
+
+    th,
+    td {
+        border: 1px solid $color-border;
+    }
 }
 
 /**
@@ -66,11 +70,11 @@ td {
 tbody {
     tr {
         &:nth-child(even) {
-            background: $color-background-box;
+            background-color: $color-background-box;
         }
 
         &.selected {
-            background: $color-selected;
+            background-color: $color-selected;
         }
     }
 
