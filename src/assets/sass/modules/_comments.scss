@@ -1,0 +1,74 @@
+/* Comments
+   ========================================================================== */
+
+/**
+ * Styling for user comments.
+ *
+ * Example HTML:
+ *
+ * <article class="comments">
+ */
+
+.comments {
+    margin-bottom: 1em;
+    padding: 1em 1em 1px;
+    border-radius: $border-radius;
+    background: $color-background-box;
+    word-wrap: break-word;
+}
+
+/**
+ * Remove numerical styling of comments list.
+ *
+ * Example HTML:
+ *
+ * <ol class="list--comments">
+ */
+
+.list--comments {
+    padding: 0;
+    list-style: none;
+}
+
+/**
+ * Additional styling for article author's comments.
+ *
+ * Example HTML:
+ *
+ * <article class="comments article-author">
+ */
+
+.comments.article-author {
+    background: $color-highlight-box;
+}
+
+/**
+ * Comment heading area.
+ *
+ * Example HTML:
+ * <h4 class="comment-author">
+ *     <span>Donald Swain</span>
+ * </h4>
+ * <p class="comment-date">
+ *     <time>25 Jan 2015 at 16:55</time>
+ * </p>
+ */
+
+.comment-author {
+    margin: 0;
+}
+
+.comment-date {
+    margin-top: 0;
+}
+
+/**
+ * Styling for user comments preview.
+ */
+
+#cpreview {
+    margin-bottom: 2px;
+    padding: 1em;
+    border-radius: $border-radius;
+    background-color: $color-highlight-box;
+}

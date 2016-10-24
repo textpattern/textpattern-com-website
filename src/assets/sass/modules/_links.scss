@@ -2,24 +2,25 @@
    ========================================================================== */
 
 /**
- * 1. Remove potential background colour from active links.
- * 2. Specify link colour.
- * 3. Remove default underline style from non-hover state links.
- * 4. Interrupt the decoration line to let the shape of the text show through
+ * 1. Specify link colour.
+ * 2. Remove default underline style from non-hover state links.
+ * 3. Interrupt the decoration line to let the shape of the text show through
  *    in supported browsers.
+ * 4. Expanded CSS level 3 `text-decoration` property in supported browsers,
+ *    older browsers will fallback to legacy `text-decoration` property.
  */
 
 a {
-    background-color: transparent; /* 1 */
-    color: $color-link; /* 2 */
-    text-decoration: none; /* 3 */
-    text-decoration-skip: ink edges; /* 4 */
+    color: $color-link; /* 1 */
+    text-decoration: none; /* 2 */
+    text-decoration-skip: ink edges; /* 3 */
 
     &:hover,
     &:active {
         outline: 0;
         color: $color-link-hover;
         text-decoration: underline;
+        text-decoration: $color-link solid underline; /* 4 */
     }
 
     &:focus {
