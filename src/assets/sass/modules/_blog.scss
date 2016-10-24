@@ -80,6 +80,8 @@
  */
 
 .article-footer {
+    font-size: $small-font-size;
+
     a {
         display: inline-block;
         margin-top: 1em;
@@ -87,18 +89,17 @@
         border-radius: 1em;
         background: $color-text;
         color: $color-text-inverse;
-        font-size: $small-font-size;
 
         &:hover,
         &:focus {
             outline: 0;
-            background-color: $color-selected;
+            background-color: $color-highlight;
             color: $color-text;
             text-decoration: none;
         }
 
         &:active {
-            background-color: $color-selecting;
+            background-color: darken($color-highlight, 6%);
             color: $color-text;
             text-decoration: none;
         }
