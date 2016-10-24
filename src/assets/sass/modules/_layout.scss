@@ -71,6 +71,7 @@ body {
 
 .site-header {
     position: relative;
+    background: #f00;
 }
 
 .masthead {
@@ -94,13 +95,13 @@ body {
 
 .search-form {
     position: absolute;
-    top: 0.75em;
-    right: 0;
+    top: 0;
+    right: 36px;
     z-index: 3;
 
     // search input field
     input[type="search"] {
-        width: 240px;
+        width: 34px;
         height: 34px;
         padding-left: 32px;
         transition: width 0.2s ease-in-out, border-color 0.2s ease-in-out;

@@ -12,16 +12,12 @@
         width: 50%;
     }
 
-}
-
-@media screen and (min-width: $breakpoint-1) {
-
     /**
      * Changes in styling for search form.
      */
 
     .search-form {
-        right: 36px;
+        right: 48px;
     }
 
 }
@@ -63,6 +59,19 @@
         height: 52px;
         background-image: url("../img/branding/textpattern/textpattern.svg");
         background-size: 320px 52px;
+    }
+
+    /**
+     * Changes in styling for search form.
+     */
+
+    .search-form {
+        top: 0.75em;
+        right: 0;
+
+        input[type="search"] {
+            width: 240px;
+        }
     }
 
     /**
@@ -116,11 +125,7 @@
      */
 
     .search-form {
-        top: 0;
-        right: 48px;
-
         input[type="search"] {
-            width: 34px;
             padding-right: 0;
             cursor: pointer;
 
