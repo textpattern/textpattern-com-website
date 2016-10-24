@@ -372,7 +372,7 @@
                             <p>Uses both the <a rel="external" href="http://schema.org/" title="Go to the Schema.org website">Schema.org</a> and <a rel="external" href="http://microformats.org/wiki/hcard" title="Go to the hCard website">hCard</a> mircoformats.</p>
                             <!-- possible schema types: Organization, Corporation, etc (see http://schema.org/Organization for more info) -->
                             <div class="vcard" role="group" itemscope itemtype="http://schema.org/Organization">
-                                <p class="org fn" itemprop="name">Organisation Name</p>
+                                <p class="org fn" itemprop="name">Organization Name</p>
                                 <address class="adr" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
                                     <span class="street-address" itemprop="streetAddress">13 Mystreet</span>,
                                     <span class="locality" itemprop="addressLocality">Mytown</span>,
@@ -577,19 +577,42 @@
                         <section id="section-pagination">
                             <h2>Pagination</h2>
 
-                            <nav class="paginator" role="navigation" aria-label="Article navigation">
-                                Pages:
-                                <a rel="prev" href="#" title="Go to previous page" aria-label="Go to previous page">Previous</a>
-                                <a href="#" title="Go to page 1" aria-label="Go to page 1">1</a>
-                                <a href="#" title="Go to page 2" aria-label="Go to page 2">2</a>
-                                <a href="#" title="Go to page 3" aria-label="Go to page 3">3</a>
-                                <a href="#" title="Go to page 4" aria-label="Go to page 4">4</a>
-                                <strong class="current" title="Current page" aria-label="Current page">5</strong>
-                                <a href="#" title="Go to page 6" aria-label="Go to page 6">6</a>
-                                <a href="#" title="Go to page 7" aria-label="Go to page 7">7</a>
-                                <span role="separator">…</span>
-                                <a href="#" title="Go to page 25" aria-label="Go to page 25">25</a>
-                                <a rel="next" href="#" title="Go to next page" aria-label="Go to next page">Next</a>
+                            <nav class="paginator" aria-label="Blog navigation">
+                                <a class="prev" rel="prev" href="#" title="Go to previous page" aria-label="Go to previous page">Prev</a>
+                                <a class="next" rel="next" href="#" title="Go to next page" aria-label="Go to next page">Next</a>
+
+                                <ul class="pagination">
+                                    <li>
+                                        <a href="#" title="Go to page 1" aria-label="Go to page 1">1</a>
+                                    </li>
+                                    <li class="current">
+                                        <b title="Current page" aria-label="Current page">2</b>
+                                    </li>
+                                    <li>
+                                        <a href="#" title="Go to page 3" aria-label="Go to page 3">3</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" title="Go to page 4" aria-label="Go to page 4">4</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" title="Go to page 5" aria-label="Go to page 5">5</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" title="Go to page 6" aria-label="Go to page 6">6</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" title="Go to page 7" aria-label="Go to page 7">7</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" title="Go to page 8" aria-label="Go to page 8">8</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" title="Go to page 9" aria-label="Go to page 9">9</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" title="More pages" aria-label="More pages">&hellip;</a>
+                                    </li>
+                                </ul>
                             </nav>
                         </section>
 
@@ -641,13 +664,7 @@
                             <dl>
                                 <dt>This is a definition list term 1</dt>
                                 <dd>Definition of term 1 here</dd>
-                                <dd>Another definition of term 1
-                                    <dl>
-                                        <dt>A sub term</dt>
-                                        <dd>With</dd>
-                                        <dd>Subs</dd>
-                                    </dl>
-                                </dd>
+                                <dd>Another definition of term 1</dd>
                             </dl>
                         </section>
 
@@ -681,7 +698,7 @@
                                             <td>Baked beans</td>
                                             <td>Waffles</td>
                                         </tr>
-                                    <tbody>
+                                    </tbody>
                                 </table>
                             </div>
 
