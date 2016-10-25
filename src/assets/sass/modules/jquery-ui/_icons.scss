@@ -19,7 +19,7 @@
     position: relative;
     width: 16px;
     height: 16px;
-    background-image: url("../img/ui-icon-sprite-333333.svg");
+    background-image: url("../img/com/ui-icon-sprite-333333.svg");
     background-repeat: no-repeat;
     background-size: 256px 272px;
     text-indent: -9999px;
@@ -38,8 +38,6 @@
 
 /**
  * Default state icons.
- *
- * TODO: Use `mask` in future.
  */
 
 .ui-state-default .ui-icon {
@@ -48,8 +46,6 @@
 
 /**
  * Weighted content icons and interaction state icons.
- *
- * TODO: Use `mask` in future.
  */
 
 .ui-widget-content .ui-icon,
@@ -74,7 +70,7 @@
  */
 
 .success .ui-icon {
-    background-image: url("../img/ui-icon-sprite-success.svg");
+    background-image: url("../img/com/ui-icon-sprite-success.svg");
 }
 
 /**
@@ -92,7 +88,7 @@
 
 .ui-state-highlight .ui-icon,
 .warning .ui-icon {
-    background-image: url("../img/ui-icon-sprite-warning.svg");
+    background-image: url("../img/com/ui-icon-sprite-warning.svg");
 }
 
 /**
@@ -111,7 +107,7 @@
 .ui-state-error .ui-icon,
 .ui-state-error-text .ui-icon,
 .error .ui-icon {
-    background-image: url("../img/ui-icon-sprite-error.svg");
+    background-image: url("../img/com/ui-icon-sprite-error.svg");
 }
 
 /**
@@ -128,7 +124,7 @@
  */
 
 .information .ui-icon {
-    background-image: url("../img/ui-icon-sprite-info.svg");
+    background-image: url("../img/com/ui-icon-sprite-info.svg");
 }
 
 /**
@@ -138,7 +134,7 @@
  */
 
 .ui-icon-inversed.ui-icon {
-    background-image: url("../img/ui-icon-sprite-ffffff.svg");
+    background-image: url("../img/com/ui-icon-sprite-ffffff.svg");
 }
 
 /**

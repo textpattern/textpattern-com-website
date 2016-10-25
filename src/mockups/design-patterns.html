@@ -2,7 +2,7 @@
 <html lang="en-GB-oxendict">
 <head>
     <meta charset="utf-8">
-    <title>Textpattern CMS | New website design patterns</title>
+    <title>Textpattern CMS | Website design patterns</title>
 
 <!-- CSS -->
     <link rel="dns-prefetch" href="https://fonts.googleapis.com">
@@ -20,7 +20,7 @@
 
     <meta name="robots" content="index, follow, noodp, noydir">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Article containing examples of various inline and block elements that should be considered and styled within the site.">
+    <meta name="description" content="Article containing examples of various inline and block elements that should be considered and styled within the website.">
 
 <!-- All the favicons, touch icons, etc. -->
     <meta name="theme-color" content="#ffda44">
@@ -111,24 +111,8 @@
                             <li><a href="#section-social">Social media</a></li>
                             <li><a href="#section-jquery-ui">jQuery UI widgets</a>
                                 <ol>
-                                    <li><a href="#ui-doc-jquery-ui--draggable">Interactions: Draggable</a></li>
-                                    <li><a href="#ui-doc-jquery-ui--resizable">Interactions: Resizable</a></li>
-                                    <li><a href="#ui-doc-jquery-ui--selectable">Interactions: Selectable</a></li>
-                                    <li><a href="#ui-doc-jquery-ui--sortable">Interactions: Sortable</a></li>
-                                    <li><a href="#ui-doc-jquery-ui--accordion">Widgets: Accordion</a></li>
-                                    <li><a href="#ui-doc-jquery-ui--autocomplete">Widgets: Autocomplete</a></li>
                                     <li><a href="#ui-doc-jquery-ui--button">Widgets: Button</a></li>
-                                    <li><a href="#ui-doc-jquery-ui--datepicker">Widgets: Datepicker</a></li>
-                                    <li><a href="#ui-doc-jquery-ui--dialog">Widgets: Dialog</a></li>
-                                    <li><a href="#ui-doc-jquery-ui--menu">Widgets: Menu</a></li>
-                                    <li><a href="#ui-doc-jquery-ui--progressbar">Widgets: Progressbar</a></li>
-                                    <li><a href="#ui-doc-jquery-ui--selectmenu">Widgets: Selectmenu</a></li>
-                                    <li><a href="#ui-doc-jquery-ui--slider">Widgets: Slider</a></li>
-                                    <li><a href="#ui-doc-jquery-ui--spinner">Widgets: Spinner</a></li>
-                                    <li><a href="#ui-doc-jquery-ui--tabs">Widgets: Tabs</a></li>
-                                    <li><a href="#ui-doc-jquery-ui--tooltip">Widgets: Tooltip</a></li>
                                     <li><a href="#ui-doc-jquery-ui--icons">Styles: Icons</a></li>
-                                    <li><a href="#ui-doc-jquery-ui--overlay">Styles: Overlay and shadow</a></li>
                                 </ol>
                             </li>
                             <li><a href="#section-misc">Miscellaneous</a></li>
@@ -945,14 +929,14 @@
                                     <button>Button tag</button>
                                 </p>
                                 <p>
-                                    <input class="button-success" type="button" value="Success">
-                                    <input class="button-danger" type="button" value="Danger">
-                                </p>
-                                <p>
                                     <a class="button" href="#">Link tag</a>
                                     <span class="button disabled">Span tag (disabled)</span>
                                     <input type="submit" value="Input (disabled)" disabled>
                                     <button disabled>Button (disabled)</button>
+                                </p>
+                                <p>
+                                    <input class="button--primary" type="button" value="Primary Submit">
+                                    <a class="button button--primary" href="#">Primary link tag</a>
                                 </p>
                             </form>
                         </section>
@@ -977,134 +961,16 @@
 
                         <section class="section" id="section-jquery-ui">
                             <h2>jQuery UI widgets</h2>
-                            <p>Collection of all the available <a rel="external" href="http://jqueryui.com/" title="Go to the jQuery User Interface website">jQuery UI</a> widgets.</p>
-
-                            <h3 id="ui-doc-jquery-ui--draggable">Interactions: Draggable</h3>
-                            <div class="jquery-ui-draggable ui-widget-content" style="padding:.5em 1em; margin-bottom:1em;">
-                                <strong>Drag me around!</strong>
-                            </div>
-                            <p><a rel="external" href="http://jqueryui.com/draggable/" title="Go to the jQuery UI documentation">Full documentation</a></p>
-
-                            <h3 id="ui-doc-jquery-ui--resizable">Interactions: Resizable</h3>
-                            <div class="jquery-ui-resizable ui-widget-content" style="padding:.5em 1em; margin-bottom:1em;">
-                                <strong>Resize me!</strong>
-                            </div>
-                            <p><a rel="external" href="http://jqueryui.com/resizable/" title="Go to the jQuery UI documentation">Full documentation</a></p>
-
-                            <h3 id="ui-doc-jquery-ui--selectable">Interactions: Selectable</h3>
-                            <ol class="jquery-ui-selectable list--no-bullets">
-                                <li class="ui-widget-content" style="padding:.5em 1em; border-bottom:0;">Item 1</li>
-                                <li class="ui-widget-content" style="padding:.5em 1em; border-bottom:0;">Item 2</li>
-                                <li class="ui-widget-content" style="padding:.5em 1em; border-bottom:0;">Item 3</li>
-                                <li class="ui-widget-content" style="padding:.5em 1em; border-bottom:0;">Item 4</li>
-                                <li class="ui-widget-content" style="padding:.5em 1em; border-bottom:0;">Item 5</li>
-                                <li class="ui-widget-content" style="padding:.5em 1em; border-bottom:0;">Item 6</li>
-                                <li class="ui-widget-content" style="padding:.5em 1em;">Item 7</li>
-                            </ol>
-                            <p><a rel="external" href="http://jqueryui.com/selectable/" title="Go to the jQuery UI documentation">Full documentation</a></p>
-
-                            <h3 id="ui-doc-jquery-ui--sortable">Interactions: Sortable</h3>
-                            <ul class="jquery-ui-sortable list--no-bullets">
-                                <li class="ui-widget-content" style="padding:.5em 1em .5em .5em; margin:2px 0;">
-                                    <span class="ui-icon ui-icon-arrow-2-n-s"></span>
-                                    Item 1
-                                </li>
-                                <li class="ui-widget-content" style="padding:.5em 1em .5em .5em; margin:2px 0;">
-                                    <span class="ui-icon ui-icon-arrow-2-n-s"></span>
-                                    Item 2
-                                </li>
-                                <li class="ui-widget-content" style="padding:.5em 1em .5em .5em; margin:2px 0;">
-                                    <span class="ui-icon ui-icon-arrow-2-n-s"></span>
-                                    Item 3
-                                </li>
-                                <li class="ui-widget-content" style="padding:.5em 1em .5em .5em; margin:2px 0;">
-                                    <span class="ui-icon ui-icon-arrow-2-n-s"></span>
-                                    Item 4
-                                </li>
-                                <li class="ui-widget-content" style="padding:.5em 1em .5em .5em; margin:2px 0;">
-                                    <span class="ui-icon ui-icon-arrow-2-n-s"></span>
-                                    Item 5
-                                </li>
-                                <li class="ui-widget-content" style="padding:.5em 1em .5em .5em; margin:2px 0;">
-                                    <span class="ui-icon ui-icon-arrow-2-n-s"></span>
-                                    Item 6
-                                </li>
-                                <li class="ui-widget-content" style="padding:.5em 1em .5em .5em; margin:2px 0;">
-                                    <span class="ui-icon ui-icon-arrow-2-n-s"></span>
-                                    Item 7
-                                </li>
-                            </ul>
-                            <p><a rel="external" href="http://jqueryui.com/sortable/" title="Go to the jQuery UI documentation">Full documentation</a></p>
-
-                            <h3 id="ui-doc-jquery-ui--accordion">Widgets: Accordion</h3>
-                            <div class="jquery-ui-accordion">
-                                <h3><a href="#">Section 1</a></h3>
-                                <div>
-                                    <p>Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.</p>
-                                </div>
-
-                                <h3><a href="#">Section 2</a></h3>
-                                <div>
-                                    <p>Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris turpis porttitor velit, faucibus interdum tellus libero ac justo. Vivamus non quam. In suscipit faucibus urna.</p>
-                                </div>
-
-                                <h3><a href="#">Section 3</a></h3>
-                                <div>
-                                    <p> Nam enim risus, molestie et, porta ac, aliquam ac, risus. Quisque lobortis. Phasellus pellentesque purus in massa. Aenean in pede. Phasellus ac libero ac tellus pellentesque semper. Sed ac felis. Sed commodo, magna quis lacinia ornare, quam ante aliquam nisi, eu iaculis leo purus venenatis dui.</p>
-                                    <ul>
-                                        <li>List item one</li>
-                                        <li>List item two</li>
-                                        <li>List item three</li>
-                                    </ul>
-                                </div>
-
-                                <h3><a href="#">Section 4</a></h3>
-                                <div>
-                                    <p>Cras dictum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aenean lacinia mauris vel est.</p>
-                                    <p>Suspendisse eu nisl. Nullam ut libero. Integer dignissim consequat lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
-                                </div>
-                            </div>
-                            <p><a rel="external" href="http://jqueryui.com/accordion/" title="Go to the jQuery UI documentation">Full documentation</a></p>
-
-                            <h3 id="ui-doc-jquery-ui--autocomplete">Widgets: Autocomplete</h3>
-                            <p>
-                                <label for="autocomplete-country">Countries</label><br>
-                                <input type="text" id="autocomplete-country">
-                            </p>
-                            <p><a rel="external" href="http://jqueryui.com/autocomplete/" title="Go to the jQuery UI documentation">Full documentation</a></p>
+                            <p>Collection of useful <a rel="external" href="http://jqueryui.com/" title="Go to the jQuery User Interface website">jQuery UI</a> widgets.</p>
 
                             <h3 id="ui-doc-jquery-ui--button">Widgets: Button</h3>
 
                             <h4>Default functionality buttons</h4>
                             <p>
-                                <a class="jquery-ui-button" href="#">&lt;a&gt; button</a>
                                 <button class="jquery-ui-button">&lt;button&gt; button</button>
                                 <input class="jquery-ui-button" type="button" value="Input button">
                                 <input class="jquery-ui-button" type="submit" value="Submit button">
-                            </p>
-
-                            <h4>Checkboxes as buttons</h4>
-                            <p>
-                                <input class="jquery-ui-button" id="check" type="checkbox">
-                                <label for="check">Toggle</label>
-                            </p>
-                            <p class="jquery-ui-buttonset">
-                                <input id="check1" type="checkbox">
-                                <label for="check1">B</label>
-                                <input id="check2" type="checkbox">
-                                <label for="check2">I</label>
-                                <input id="check3" type="checkbox">
-                                <label for="check3">U</label>
-                            </p>
-
-                            <h4>Radios as buttons</h4>
-                            <p class="jquery-ui-buttonset">
-                                <input id="radio1" name="radio" type="radio" checked>
-                                <label for="radio1">Yes</label>
-                                <input id="radio2" name="radio" type="radio">
-                                <label for="radio2">Maybe</label>
-                                <input id="radio3" name="radio" type="radio">
-                                <label for="radio3">No</label>
+                                <a class="jquery-ui-button" href="#">&lt;a&gt; button</a>
                             </p>
 
                             <h4>Icon buttons</h4>
@@ -1112,284 +978,30 @@
                                 <button class="jquery-ui-button-icon-only">&lt;button&gt; icon only</button>
                                 <button class="jquery-ui-button-icon-left">&lt;button&gt; icon on the left</button>
                                 <button class="jquery-ui-button-icon-right">&lt;button&gt; icon on the right</button>
-                                <button class="jquery-ui-button-icon-two">&lt;button&gt; two icons</button>
-                                <button class="jquery-ui-button-icon-two-only">&lt;button&gt; two icons and no text</button>
+                                <button class="jquery-ui-button-icon-left">&lt;button&gt; two icons <span class="ui-icon ui-icon-gear"></span></button>
                             </p>
                             <p>
                                 <a class="jquery-ui-button-icon-only" href="#">&lt;a&gt; icon only</a>
                                 <a class="jquery-ui-button-icon-left" href="#">&lt;a&gt; icon on the left</a>
-                                <a class="jquery-ui-button-icon-two-only" href="#">&lt;a&gt; two icons and no text</a>
+                                <a class="jquery-ui-button-icon-right" href="#">&lt;a&gt; icon on the right</a>
+                                <a class="jquery-ui-button-icon-left" href="#">&lt;a&gt; two icons <span class="ui-icon ui-icon-gear"></span></a>
                             </p>
 
-                            <h4>Split buttons</h4>
-                            <div>
-                                <p>
-                                    <button id="split-rerun-example">Run last action</button>
-                                    <button id="split-select-example">Select an action</button>
-                                </p>
-                                <ul>
-                                    <li><a href="#">Open&hellip;</a></li>
-                                    <li><a href="#">Save</a></li>
-                                    <li><a href="#">Delete</a></li>
-                                </ul>
-                            </div>
-
-                            <p><a rel="external" href="http://jqueryui.com/button/" title="Go to the jQuery UI documentation">Full documentation</a></p>
-
-                            <h3 id="ui-doc-jquery-ui--datepicker">Widgets: Datepicker</h3>
-                            <div class="jquery-ui-datepicker"></div>
-                            <p><a rel="external" href="http://jqueryui.com/datepicker/" title="Go to the jQuery UI documentation">Full documentation</a></p>
-
-                            <h3 id="ui-doc-jquery-ui--dialog">Widgets: Dialog</h3>
-
-                            <p><a id="jquery-ui-dialog-link" href="#">Open basic dialog&hellip;</a></p>
-                            <!-- Dialog box (basic) -->
-                            <div id="jquery-ui-dialog" title="Basic dialog example">
-                                <h3>Non-modal dialog</h3>
-                                <p>Lorem ipsum dolor sit amet, <a href="#nowhere">Testlink</a> quo epicuri volutpat no. Causae option accusamus in est. Mea id ignota meliore facilis, cu vim omnium appareat mediocrem. Eu oblique voluptua electram his. Mei eu movet recteque. Vis nulla graeci praesent ad, mediocrem expetenda pro ad.</p>
-                            </div>
-
-                            <p><a id="jquery-ui-dialog-modal-link" href="#">Open modal dialog&hellip;</a></p>
-                            <!-- Dialog box (modal) -->
-                            <div id="jquery-ui-dialog-modal" title="Modal dialog example">
-                                <h3>Modal dialog</h3>
-                                <p>Lorem ipsum dolor sit amet, <a href="#nowhere">Testlink</a> quo epicuri volutpat no. Causae option accusamus in est. Mea id ignota meliore facilis, cu vim omnium appareat mediocrem. Eu oblique voluptua electram his. Mei eu movet recteque. Vis nulla graeci praesent ad, mediocrem expetenda pro ad.</p>
-                            </div>
-
-                            <p><a rel="external" href="http://jqueryui.com/dialog/" title="Go to the jQuery UI documentation">Full documentation</a></p>
-
-                            <h3 id="ui-doc-jquery-ui--menu">Widgets: Menu</h3>
-                            <ul class="jquery-ui-menu">
-                                <li class="ui-state-disabled">
-                                    <a href="#">Aberdeen</a>
-                                </li>
-                                <li>
-                                    <a href="#">Ada</a>
-                                </li>
-                                <li>
-                                    <a href="#">Adamsville</a>
-                                </li>
-                                <li>-</li>
-                                <li>
-                                    <a href="#">Addyston</a>
-                                </li>
-                                <li>
-                                    <a href="#">Delphi</a>
-                                    <ul>
-                                        <li class="ui-state-disabled">
-                                            <a href="#">Ada</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Saarland</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Salzburg</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="#">Saarland</a>
-                                </li>
-                                <li>
-                                    <a href="#">Salzburg</a>
-                                    <ul>
-                                        <li>
-                                            <a href="#">Delphi</a>
-                                            <ul>
-                                                <li>
-                                                    <a href="#">Ada</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Saarland</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Salzburg</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <a href="#">Delphi</a>
-                                            <ul>
-                                                <li>
-                                                    <a href="#">Ada</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Saarland</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Salzburg</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <a href="#">Perch</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="ui-state-disabled">
-                                    <a href="#">Amesville</a>
-                                    <ul>
-                                        <li>
-                                            <a href="#">Ada</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Saarland</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-                            <p><span class="warning"><strong>Note:</strong> Currently jQuery UI does not support horizontal menus.</span></p>
-                            <p><a rel="external" href="http://jqueryui.com/menu/" title="Go to the jQuery UI documentation">Full documentation</a></p>
-
-                            <h3 id="ui-doc-jquery-ui--progressbar">Widget: Progressbar</h3>
-                            <h4>Determinate value</h4>
-                            <div class="jquery-ui-progressbar"></div>
-                            <p><a class="jquery-ui-progressbar-animate" href="#">Animate to random number</a></p>
-                            <h4>Indeterminate value</h4>
-                            <div class="jquery-ui-progressbar2"></div>
-                            <p><a rel="external" href="http://jqueryui.com/progressbar/" title="Go to the jQuery UI documentation">Full documentation</a></p>
-
-                            <h3 id="ui-doc-jquery-ui--selectmenu">Widgets: Selectmenu</h3>
-                            <h4>Selectmenu - standard</h4>
-                            <p>
-                                <label for="jquery-ui-selectmenu1">Select a speed</label><br>
-                                <select class="jquery-ui-selectmenu" id="jquery-ui-selectmenu1" name="jquery-ui-selectmenu1">
-                                    <option>Slower</option>
-                                    <option>Slow</option>
-                                    <option selected="selected">Medium</option>
-                                    <option>Fast</option>
-                                    <option>Faster</option>
-                                </select>
-                                <input id="text_inline1" name="text_inline1" type="text">
-                                <input type="button" value="Hello">
-                            </p>
-
-                            <h4>Selectmenu - with option groups</h4>
-                            <p>
-                                <label for="jquery-ui-selectmenu2">Select a file</label><br>
-                                <select class="jquery-ui-selectmenu" id="jquery-ui-selectmenu2" name="jquery-ui-selectmenu2">
-                                    <optgroup label="Scripts">
-                                        <option value="jquery">jQuery.js</option>
-                                        <option value="jqueryui">ui.jQuery.js</option>
-                                    </optgroup>
-                                    <optgroup label="Other files">
-                                        <option value="somefile">Some unknown file</option>
-                                        <option value="someotherfile">Some other file with a very long option text</option>
-                                    </optgroup>
-                                </select>
-                            </p>
-
-                            <h4>Selectmenu - with disabled options</h4>
-                            <p>
-                                <label for="jquery-ui-selectmenu3">Select a number</label><br>
-                                <select class="jquery-ui-selectmenu" id="jquery-ui-selectmenu3" name="jquery-ui-selectmenu3">
-                                    <option value="1">1</option>
-                                    <option value="2" selected="selected">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                    <option value="6">6</option>
-                                    <option value="7" disabled="disabled">7</option>
-                                    <option value="8" disabled="disabled">8</option>
-                                    <option value="9">9</option>
-                                    <option value="10">10</option>
-                                    <option value="11">11</option>
-                                    <option value="12">12</option>
-                                    <option value="13">13</option>
-                                    <option value="14">14</option>
-                                    <option value="15" disabled="disabled">15</option>
-                                    <option value="16">16</option>
-                                    <option value="17">17</option>
-                                    <option value="18">18</option>
-                                    <option value="19">19</option>
-                                </select>
-                            </p>
-
-                            <h4>Selectmenu - with disabled optgroup</h4>
-                            <p>
-                                <label for="jquery-ui-selectmenu4">Select a file 2</label><br>
-                                <select class="jquery-ui-selectmenu" id="jquery-ui-selectmenu4" name="jquery-ui-selectmenu4">
-                                    <optgroup label="Scripts" disabled="disabled">
-                                        <option value="jquery">jQuery.js</option>
-                                        <option value="jqueryui">ui.jQuery.js</option>
-                                    </optgroup>
-                                    <optgroup label="Other files">
-                                        <option value="somefile">Some unknown file</option>
-                                        <option value="someotherfile">Some other file</option>
-                                    </optgroup>
-                                </select>
-                            </p>
-                            <p><a rel="external" href="http://jqueryui.com/selectmenu/" title="Go to the jQuery UI documentation">Full documentation</a></p>
-
-                            <h3 id="ui-doc-jquery-ui--slider">Widgets: Slider</h3>
-                            <h4>Slider - horizontal</h4>
-                            <div class="jquery-ui-slider-horizontal"></div>
-
-                            <h4>Slider - vertical</h4>
-                            <div class="jquery-ui-slider-vertical clearfix">
-                                <span>88</span>
-                                <span>77</span>
-                                <span>55</span>
-                                <span>33</span>
-                                <span>40</span>
-                                <span>45</span>
-                                <span>70</span>
-                            </div>
-
-                            <p><a rel="external" href="http://jqueryui.com/slider/" title="Go to the jQuery UI documentation">Full documentation</a></p>
-
-                            <h3 id="ui-doc-jquery-ui--spinner">Widgets: Spinner</h3>
-                            <p>
-                                <label for="jquery-ui-spinner">Select a value:</label>
-                                <input type="text" id="jquery-ui-spinner" name="value">
-                            </p>
-                            <p><a rel="external" href="http://jqueryui.com/spinner/" title="Go to the jQuery UI documentation">Full documentation</a></p>
-
-                            <h3 id="ui-doc-jquery-ui--tabs">Widgets: Tabs</h3>
-                            <div class="jquery-ui-tabs">
-                                <ul>
-                                    <li>
-                                        <a href="#tabgroup1-tab1">Carnivore</a>
-                                    </li>
-                                    <li>
-                                        <a href="#tabgroup1-tab2">Herbivore</a>
-                                    </li>
-                                    <li>
-                                        <a href="#tabgroup1-tab3">Omnivore</a>
-                                    </li>
-                                </ul>
-                                <div id="tabgroup1-tab1">
-                                    <h4>Carnivore tab contents</h4>
-                                    <p>Lorem ipsum dolor sit amet, <a href="#nowhere">Testlink</a> quo epicuri volutpat no. Causae option accusamus in est. Mea id ignota meliore facilis, cu vim omnium appareat mediocrem. Eu oblique voluptua electram his. Mei eu movet recteque. Vis nulla graeci praesent ad, mediocrem expetenda pro ad.</p>
-                                </div>
-                                <div id="tabgroup1-tab2">
-                                    <h4>Herbivore tab contents</h4>
-                                    <p>Timeam mentitum an nam. Mei ne prima perfecto adversarium. Quo eu tamquam invidunt verterem, albucius dissentiet ea eum <a href="#nowhere">Testlink</a>. Facete fabellas referrentur et qui. Cu harum tempor vivendum vel. Nec quem movet nullam in. No stet tota pri.</p>
-                                </div>
-                                <div id="tabgroup1-tab3">
-                                    <h4>Omnivore tab contents</h4>
-                                    <p>Inermis indoctum vis in, has soleat complectitur te <a href="#nowhere">Testlink</a>. Ut est stet civibus, mucius iriure ad duo. Sumo tantas et est, ea duo elitr utroque, ne mea dicant tincidunt scribentur. Sit dico accusata et. Sint inimicus cu nam, odio velit minim sit ut.</p>
-                                </div>
-                            </div>
-                            <p><a rel="external" href="http://jqueryui.com/tabs/" title="Go to the jQuery UI documentation">Full documentation</a></p>
-
-
-                            <h3 id="ui-doc-jquery-ui--tooltip">Widgets: Tooltip</h3>
-                            <p>Here is an example of a <a class="jquery-ui-tooltip" href="#" title="This is a tooltip, it can be of any length (within practical reason).">link with a tooltip</a>, mouseover to reveal it.</p>
-                            <p><a rel="external" href="http://jqueryui.com/tooltip/" title="Go to the jQuery UI documentation">Full documentation</a></p>
+                            <p><a rel="external" href="https://jqueryui.com/button/" title="Go to the jQuery UI documentation">Full documentation</a></p>
 
                             <h3 id="ui-doc-jquery-ui--icons">Styles: Icons</h3>
-                            <ul class="jquery-ui-icons ui-widget ui-helper-clearfix">
-                                <li class="ui-state-default" title=".ui-icon-carat-1-n"><span class="ui-icon ui-icon-carat-1-n"></span></li>
-                                <li class="ui-state-default" title=".ui-icon-carat-1-ne"><span class="ui-icon ui-icon-carat-1-ne"></span></li>
-                                <li class="ui-state-default" title=".ui-icon-carat-1-e"><span class="ui-icon ui-icon-carat-1-e"></span></li>
-                                <li class="ui-state-default" title=".ui-icon-carat-1-se"><span class="ui-icon ui-icon-carat-1-se"></span></li>
-                                <li class="ui-state-default" title=".ui-icon-carat-1-s"><span class="ui-icon ui-icon-carat-1-s"></span></li>
-                                <li class="ui-state-default" title=".ui-icon-carat-1-sw"><span class="ui-icon ui-icon-carat-1-sw"></span></li>
-                                <li class="ui-state-default" title=".ui-icon-carat-1-w"><span class="ui-icon ui-icon-carat-1-w"></span></li>
-                                <li class="ui-state-default" title=".ui-icon-carat-1-nw"><span class="ui-icon ui-icon-carat-1-nw"></span></li>
-                                <li class="ui-state-default" title=".ui-icon-carat-2-n-s"><span class="ui-icon ui-icon-carat-2-n-s"></span></li>
-                                <li class="ui-state-default" title=".ui-icon-carat-2-e-w"><span class="ui-icon ui-icon-carat-2-e-w"></span></li>
+
+                            <ul class="jquery-ui-icons ui-widget ui-helper-clearfix list--no-bullets">
+                                <li class="ui-state-default" title=".ui-icon-caret-1-n"><span class="ui-icon ui-icon-caret-1-n"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-caret-1-ne"><span class="ui-icon ui-icon-caret-1-ne"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-caret-1-e"><span class="ui-icon ui-icon-caret-1-e"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-caret-1-se"><span class="ui-icon ui-icon-caret-1-se"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-caret-1-s"><span class="ui-icon ui-icon-caret-1-s"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-caret-1-sw"><span class="ui-icon ui-icon-caret-1-sw"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-caret-1-w"><span class="ui-icon ui-icon-caret-1-w"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-caret-1-nw"><span class="ui-icon ui-icon-caret-1-nw"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-caret-2-n-s"><span class="ui-icon ui-icon-caret-2-n-s"></span></li>
+                                <li class="ui-state-default" title=".ui-icon-caret-2-e-w"><span class="ui-icon ui-icon-caret-2-e-w"></span></li>
 
                                 <li class="ui-state-default" title=".ui-icon-triangle-1-n"><span class="ui-icon ui-icon-triangle-1-n"></span></li>
                                 <li class="ui-state-default" title=".ui-icon-triangle-1-ne"><span class="ui-icon ui-icon-triangle-1-ne"></span></li>
@@ -1570,13 +1182,19 @@
                             </ul>
 
                             <h4>My additions to standard jQuery UI icon set</h4>
-                            <ul class="jquery-ui-icons ui-widget ui-helper-clearfix">
+                            <ul class="jquery-ui-icons ui-widget ui-helper-clearfix list--no-bullets">
                                 <li class="ui-state-default" title=".ui-extra-icon-code"><span class="ui-icon ui-extra-icon-code"></span></li>
                                 <li class="ui-state-default" title=".ui-extra-icon-list"><span class="ui-icon ui-extra-icon-list"></span></li>
                                 <li class="ui-state-default" title=".ui-extra-icon-grid"><span class="ui-icon ui-extra-icon-grid"></span></li>
                                 <li class="ui-state-default" title=".ui-extra-icon-download"><span class="ui-icon ui-extra-icon-download"></span></li>
                                 <li class="ui-state-default" title=".ui-extra-icon-upload"><span class="ui-icon ui-extra-icon-upload"></span></li>
                                 <li class="ui-state-default" title=".ui-extra-icon-attach"><span class="ui-icon ui-extra-icon-attach"></span></li>
+                                <li class="ui-state-default" title=".ui-extra-icon-new-document"><span class="ui-icon ui-extra-icon-new-document"></span></li>
+                                <li class="ui-state-default" title=".ui-extra-icon-facebook"><span class="ui-icon ui-extra-icon-facebook"></span></li>
+                                <li class="ui-state-default" title=".ui-extra-icon-googleplus"><span class="ui-icon ui-extra-icon-googleplus"></span></li>
+                                <li class="ui-state-default" title=".ui-extra-icon-linkedin"><span class="ui-icon ui-extra-icon-linkedin"></span></li>
+                                <li class="ui-state-default" title=".ui-extra-icon-twitter"><span class="ui-icon ui-extra-icon-twitter"></span></li>
+                                <li class="ui-state-default" title=".ui-extra-icon-github"><span class="ui-icon ui-extra-icon-github"></span></li>
                             </ul>
 
                             <h4>Icons inline with text</h4>
@@ -1584,7 +1202,7 @@
 
                             <h4>Icons in a (plain) list</h4>
                             <ul class="list--no-bullets">
-                                <li><span class="ui-icon ui-extra-icon-time"></span> List item 1</li>
+                                <li><span class="ui-icon ui-icon-clock"></span> List item 1</li>
                                 <li><span class="ui-icon ui-icon-star"></span> List item 2</li>
                                 <li><span class="ui-icon ui-extra-icon-list"></span> List item 3</li>
                                 <li><span class="ui-icon ui-extra-icon-grid"></span> List item 4</li>
@@ -1679,5 +1297,8 @@
 <!-- JavaScript -->
     <script data-main="../assets/js/main.@@timestamp.js" src="../assets/js/require.@@timestamp.js"></script>
     <noscript>JavaScript is currently disabled in your browser - activate it for the best experience.</noscript>
+
+<!-- Examples of jQuery UI -->
+    <script src="jquery-ui-testing.js"></script>
 </body>
 </html>
