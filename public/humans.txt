@@ -25,33 +25,17 @@
   Server: Apache, MySQL, PHP
   Components:
     Textpattern CMS: http://textpattern.com
-    jQuery: http://jquery.com
+    jQuery: https://jquery.com
     Require.js: http://requirejs.org
     Autosize: https://github.com/jackmoore/autosize
-    Google Code Prettify: https://github.com/tcollard/google-code-prettify
-    jQuery.cookie: https://github.com/carhartl/jquery-cookie
-    jQuery-details: https://github.com/mathiasbynens/jquery-details
+    Prism: http://prismjs.com
     Picturefill: https://github.com/scottjehl/picturefill
     Responsive Nav: https://github.com/viljamis/responsive-nav.js
   Software:
     Node.js: http://nodejs.org
     Grunt.js: http://gruntjs.com
-    Bower: http://bower.io
     Composer: http://getcomposer.org
-    Compass: http://compass-style.org
     git: http://git-scm.com
-    grunt-combine-media-queries: https://github.com/johncashmore/grunt-combine-media-queries
-    grunt-contrib-compass: https://github.com/gruntjs/grunt-contrib-compass
-    grunt-contrib-concat: https://github.com/gruntjs/grunt-contrib-concat
-    grunt-contrib-copy: https://github.com/gruntjs/grunt-contrib-copy
-    grunt-contrib-cssmin: https://github.com/gruntjs/grunt-contrib-cssmin
-    grunt-contrib-jshint: https://github.com/gruntjs/grunt-contrib-jshint
-    grunt-contrib-uglify: https://github.com/gruntjs/grunt-contrib-uglify
-    grunt-contrib-watch: https://github.com/gruntjs/grunt-contrib-watch
-    grunt-critical: https://github.com/bezoerb/grunt-critical
-    grunt-dev-update: https://github.com/pgilad/grunt-dev-update
-    grunt-replace: https://github.com/outaTiME/grunt-replace
-    grunt-shell: https://github.com/sindresorhus/grunt-shell
   Source: https://github.com/textpattern/textpattern-com-website
 
 
