@@ -105,23 +105,21 @@ span.button {
  */
 
 a.button.button-donate {
-    @include gradient-linear(#555555, #444444);
+    @include gradient-linear($color-button-primary-gradient-from, $color-button-primary-gradient-to);
 
-    border-color: #222222;
-    color: $color-text-inverse;
-    font-weight: bold;
+    border-color: $color-button-primary-border;
+    box-shadow: 0 2px 0 $color-button-primary-shadow;
+    font-weight: bolder;
 
     &:hover {
-        @include gradient-linear(lighten(#555555, 4%), lighten(#444444, 4%));
+        @include gradient-linear(lighten($color-button-primary-gradient-from, 6%), lighten($color-button-primary-gradient-to, 6%));
 
-        border-color: #111111;
+        border-color: darken($color-button-primary-border, 13%);
     }
 
     &:active {
-        @include gradient-linear(darken(#444444, 4%), darken(#555555, 4%));
-
-        border-color: #111111;
-        color: darken($color-text-inverse, 10%);
+        border-color: darken($color-button-primary-border, 13%);
+        box-shadow: none;
     }
 
     &:focus {
