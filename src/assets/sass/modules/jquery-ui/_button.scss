@@ -69,16 +69,6 @@ a.ui-button {
 }
 
 /**
- * Focus styling for buttons.
- *
- * 1. `!important` required to override specificity.
- */
-
-.ui-button.ui-state-focus {
-    border-color: $color-link-focus !important; /* 1 */
-}
-
-/**
  * Single-icon-only button.
  *
  * To make room for the icon, a width needs to be set here.
