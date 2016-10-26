@@ -108,8 +108,8 @@ a.button.button-donate {
     @include gradient-linear($color-button-primary-gradient-from, $color-button-primary-gradient-to);
 
     border-color: $color-button-primary-border;
-    box-shadow: 0 2px 0 $color-button-primary-shadow;
     font-weight: bolder;
+    box-shadow: 0 2px 0 $color-button-primary-shadow;
 
     &:hover {
         @include gradient-linear(lighten($color-button-primary-gradient-from, 6%), lighten($color-button-primary-gradient-to, 6%));

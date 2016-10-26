@@ -182,15 +182,7 @@ module.exports = function (grunt)
                 ]
             },
             dist: {
-                files: [
-                    {
-                        expand: true,
-                        cwd: '<%= paths.dest.css %>',
-                        src: '*.css',
-                        dest: '<%= paths.dest.css %>',
-                        ext: '.min.css'
-                    }
-                ]
+                src: '<%= paths.dest.css %>*.css'
             }
         },
 
