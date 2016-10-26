@@ -61,7 +61,7 @@ span.button {
         outline: 0;
     }
 
-    &.button--primary {
+    &.button-primary {
         @include gradient-linear($color-button-primary-gradient-from, $color-button-primary-gradient-to);
 
         height: 2.5em; // 40px / 16px
@@ -85,15 +85,23 @@ span.button {
         &:focus {
             border-color: $color-link-focus;
         }
-
-        .button--txp-version {;
-            display: inline-block;
-            margin: -0.5em 0 0.5em 0.25em;
-            padding: 0.5em 0 0.5em 0.5em;
-            border-left: 1px solid $color-button-primary-shadow;
-            font-weight: normal;
-        }
     }
+}
+
+/**
+ * Verison label in download button.
+ *
+ * Example HTML:
+ *
+ * <a class="button button-donate">
+ */
+
+.button .txp-version {
+    display: inline-block;
+    margin: -0.5em 0 0.5em 0.25em;
+    padding: 0.5em 0 0.5em 0.5em;
+    border-left: 1px solid $color-button-primary-shadow;
+    font-weight: normal;
 }
 
 /**
