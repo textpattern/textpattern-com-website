@@ -32,7 +32,7 @@
     "textpattern-branding": "0.1.2"
   },
   "dependencies": {
-    "autosize": "3.0.17",
+    "autosize": "3.0.18",
     "picturefill": "3.0.2",
     "prismjs": "1.5.1",
     "requirejs": "2.3.2",

@@ -24,7 +24,7 @@ a {
     }
 
     &:focus {
-        outline: thin dotted $color-link-focus;
+        outline: thin solid $color-link-focus;
     }
 
     &:visited {
@@ -46,7 +46,7 @@ a {
     }
 
     &:focus {
-        outline: thin dotted $color-selected;
+        outline: thin solid $color-selecting;
     }
 
     &:visited {

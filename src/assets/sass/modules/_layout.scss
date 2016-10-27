@@ -103,11 +103,15 @@ body {
         width: 34px;
         height: 34px;
         padding-left: 32px;
-        transition: width 0.2s ease-in-out, border-color 0.2s ease-in-out;
-        border-radius: $border-radius;
+        transition: width 0.2s ease-in-out;
+        border-color: $color-background;
         background: url("../img/branding/misc/icon-sprite.svg") no-repeat left center;
         background-position: -128px 0;
         background-size: 160px 32px;
+
+        &:focus {
+            border-color: $color-link-focus;
+        }
     }
 }
 

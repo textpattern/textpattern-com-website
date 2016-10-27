@@ -98,8 +98,7 @@
     width: 32px;
     height: 32px;
     margin-top: 1px;
-    border: 1px solid $color-border;
-    border-radius: $border-radius;
+    border: 1px solid $color-background;
     background-image: url("../img/branding/misc/icon-sprite.svg");
     background-size: 160px 32px;
     z-index: 2;
@@ -110,7 +109,16 @@
         background-color: $color-selected;
     }
 
+    &.active {
+        background-color: $color-strong-highlight-box;
+    }
+
     &:active {
         background-color: $color-selecting;
+    }
+
+    &:focus {
+        border-color: $color-link-focus;
+        outline: 0;
     }
 }
