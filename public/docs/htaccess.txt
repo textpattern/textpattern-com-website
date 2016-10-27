@@ -290,9 +290,10 @@ Redirect permanent /forum http://forum.textpattern.com
 # | Selfish propaganda                                                 |
 # ----------------------------------------------------------------------
 
+Redirect temp /facebook https://www.facebook.com/groups/textpattern/
 Redirect temp /@textpattern https://twitter.com/textpattern
 Redirect temp /+ https://plus.google.com/communities/111366418300163664690
-Redirect temp /facebook https://www.facebook.com/groups/textpattern/
+Redirect temp /github https://github.com/textpattern
 
 # ----------------------------------------------------------------------
 # | Redirect hardcoded URIs to external resources                      |

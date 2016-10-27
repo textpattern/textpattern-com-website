@@ -29,22 +29,26 @@
         width: 32px;
         height: 32px;
         background-image: url("../img/branding/misc/icon-sprite.svg");
-        background-size: 160px 32px;
+        background-size: 192px 32px;
 
         &:hover {
             filter: brightness(1.1);
         }
 
         &.facebook {
-            background-position: -32px 0;
-        }
-
-        &.twitter {
             background-position: -64px 0;
         }
 
-        &.googleplus {
+        &.twitter {
             background-position: -96px 0;
+        }
+
+        &.googleplus {
+            background-position: -128px 0;
+        }
+
+        &.github {
+            background-position: -160px 0;
         }
     }
 }
