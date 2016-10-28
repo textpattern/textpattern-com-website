@@ -108,7 +108,7 @@ $xml = new SimpleXMLElement('https://api.crowdin.com/api/project/textpattern-cms
 <?php foreach ($xml->language as $languageElement) :?>
     <tr>
       <td><code><?php echo $languageElement->code; ?></code></td>
-      <td><?php echo $languageElement->name; ?></td>
+      <td><a rel="external" href="https://crowdin.com/project/textpattern-cms-textpacks/<?php echo $languageElement->code; ?>"><?php echo $languageElement->name; ?></a></td>
       <td><progress value="<?php echo $languageElement->translated_progress; ?>" max="100"></progress> <b class="footnote"><?php echo $languageElement->translated_progress; ?>%</b></td>
     </tr>
 <?php endforeach; ?>
