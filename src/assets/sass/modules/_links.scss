@@ -26,10 +26,6 @@ a {
     &:focus {
         outline: thin solid $color-link-focus;
     }
-
-    &:visited {
-        color: $color-link-visited;
-    }
 }
 
 /**
@@ -47,10 +43,6 @@ a {
 
     &:focus {
         outline: thin solid $color-selecting;
-    }
-
-    &:visited {
-        color: $color-selecting;
     }
 }
 
