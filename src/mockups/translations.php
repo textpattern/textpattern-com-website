@@ -70,8 +70,8 @@
                     <li><a itemprop="url" href="http://textpattern.com/themes">Themes</a></li>
                     <li><a itemprop="url" href="http://textpattern.org/">Plugins</a></li>
                     <li><a itemprop="url" href="http://forum.textpattern.com/">Forum</a></li>
-                    <li class="active"><a itemprop="url" href="http://textpattern.com/weblog">Blog</a></li>
-                    <li><a itemprop="url" href="http://textpattern.com/about">About</a></li>
+                    <li><a itemprop="url" href="http://textpattern.com/weblog">Blog</a></li>
+                    <li class="active"><a itemprop="url" href="http://textpattern.com/about">About</a></li>
                 </ul>
             </nav>
         </div>
@@ -86,7 +86,7 @@
                         <h1 itemprop="name headline">Language translations</h1>
 
                         <div class="article-description" itemprop="description">
-                            <p>This is where a blog article extract/description would be, if available. Ne sea soluta voluptatum. Ut nec augue disputationi, unum utamur vis in. Ea menandri persecuti dissentiunt usu, causae equidem.</p>
+                            <p>This is where an article extract/description would be, if available. Ne sea soluta voluptatum. Ut nec augue disputationi, unum utamur vis in. Ea menandri persecuti dissentiunt usu, causae equidem.</p>
                         </div><!-- /.article-description -->
 
                         <div itemprop="articleBody">
@@ -147,7 +147,7 @@ $xml = new SimpleXMLElement('https://api.crowdin.com/api/project/textpattern-cms
                         </ul>
                         <h4>Donate</h4>
                         <p>Your kind donations help us keep Textpattern CMS development alive!</p>
-                        <p><a class="button button-donate" href="http://textpattern.com/patrons"><span class="ui-icon ui-icon-heart"></span> Donate…</a></p>
+                        <p><a class="button button-primary" href="http://textpattern.com/patrons"><span class="ui-icon ui-icon-heart"></span> Donate…</a></p>
                     </section>
                     <section class="layout-2col community-details">
                         <h4>External links</h4>

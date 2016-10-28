@@ -21,8 +21,7 @@ button,
 [type="button"],
 [type="reset"],
 [type="submit"],
-a.button,
-span.button {
+.button {
     @include gradient-linear($color-button-gradient-from, $color-button-gradient-to);
 
     display: inline-block;
@@ -60,59 +59,17 @@ span.button {
         border-color: $color-link-focus;
         outline: 0;
     }
-
-    &.button-primary {
-        @include gradient-linear($color-button-primary-gradient-from, $color-button-primary-gradient-to);
-
-        height: 2.5em; // 40px / 16px
-        padding: 0.5em 1em; // 8px / 16px
-        border-radius: 1.25em;
-        border-color: $color-button-primary-border;
-        font-weight: bolder;
-        box-shadow: 0 2px 0 $color-button-primary-shadow;
-
-        &:hover {
-            @include gradient-linear(lighten($color-button-primary-gradient-from, 6%), lighten($color-button-primary-gradient-to, 6%));
-
-            border-color: darken($color-button-primary-border, 13%);
-        }
-
-        &:active {
-            border-color: darken($color-button-primary-border, 13%);
-            box-shadow: none;
-        }
-
-        &:focus {
-            border-color: $color-link-focus;
-        }
-    }
 }
 
 /**
- * Verison label in download button.
+ * Primary buttons.
  *
  * Example HTML:
  *
- * <a class="button button-donate">
+ * <a class="button button-primary">
  */
 
-.button .txp-version {
-    display: inline-block;
-    margin: -0.5em 0 0.5em 0.25em;
-    padding: 0.5em 0 0.5em 0.5em;
-    border-left: 1px solid $color-button-primary-shadow;
-    font-weight: normal;
-}
-
-/**
- * Donations link button.
- *
- * Example HTML:
- *
- * <a class="button button-donate">
- */
-
-a.button.button-donate {
+.button-primary {
     @include gradient-linear($color-button-primary-gradient-from, $color-button-primary-gradient-to);
 
     border-color: $color-button-primary-border;
@@ -131,8 +88,50 @@ a.button.button-donate {
     }
 
     &:focus {
-        border-color: $color-background;
+        border-color: $color-link-focus;
     }
+}
+
+/**
+ * Larger buttons.
+ *
+ * Example HTML:
+ *
+ * <a class="button button-large">
+ */
+
+.button-large {
+    height: 2.5em; // 40px / 16px
+    padding: 0.5em 1em; // 8px / 16px
+    border-radius: 1.25em;
+}
+
+/**
+ * Smaller buttons.
+ *
+ * Example HTML:
+ *
+ * <a class="button button-small">
+ */
+
+.button-small {
+    font-size: $small-font-size;
+}
+
+/**
+ * Version label in download button.
+ *
+ * Example HTML:
+ *
+ * <a class="button button-primary button-large">Download Textpattern CMS <span class="txp-version">4.6.2</span></a>
+ */
+
+.button .txp-version {
+    display: inline-block;
+    margin: -0.5em 0 0.5em 0.25em;
+    padding: 0.5em 0 0.5em 0.5em;
+    border-left: 1px solid $color-button-primary-shadow;
+    font-weight: normal;
 }
 
 /**
@@ -147,8 +146,7 @@ button[disabled],
 [type="button"][disabled],
 [type="reset"][disabled],
 [type="submit"][disabled],
-a.button.disabled,
-span.button.disabled {
+.button.disabled {
     position: relative !important;
     top: 2px !important;
 }

@@ -41,8 +41,7 @@ input,
 select,
 optgroup,
 textarea,
-a.button,
-span.button {
+.button {
     max-width: 100%;  /* 1 */
     margin: 0;  /* 2 */
     color: $color-text-form;
