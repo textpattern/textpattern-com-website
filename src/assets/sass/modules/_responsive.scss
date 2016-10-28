@@ -13,11 +13,17 @@
     }
 
     /**
-     * Changes in styling for search form.
+     * Allow two columns of text.
      */
 
-    .search-form {
-        right: 48px;
+    .layout-text2col,
+    .layout-text3col {
+        column-count: 2;
+        column-gap: 2em;
+
+        :first-child {
+            margin-top: 0;
+        }
     }
 
 }
@@ -51,6 +57,14 @@
     }
 
     /**
+     * Allow three columns of text.
+     */
+
+    .layout-text3col {
+        column-count: 3;
+    }
+
+    /**
      * Changes in styling for site header.
      */
 
@@ -70,7 +84,7 @@
         right: 0;
 
         input[type="search"] {
-            width: 240px;
+            width: 244px;
         }
     }
 
@@ -116,18 +130,7 @@
         display: block;
     }
 
-    /**
-     * Allow two columns of text.
-     */
 
-    .layout-text2col,
-    .layout-text3col {
-        column-count: 2;
-
-        :first-child {
-            margin-top: 0;
-        }
-    }
 
 }
 
@@ -147,7 +150,7 @@
             }
 
             &:focus {
-                width: 240px;
+                width: 244px;
                 padding-right: 0.5384615em;
                 background-color: $color-background;
                 cursor: auto;
@@ -192,14 +195,6 @@
 
     .layout-4col-3span {
         width: 75%;
-    }
-
-    /**
-     * Allow three columns of text.
-     */
-
-    .layout-text3col {
-        column-count: 3;
     }
 
 }
