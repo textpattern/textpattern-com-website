@@ -114,7 +114,7 @@ $xml = new SimpleXMLElement('https://api.crowdin.com/api/project/textpattern-cms
     <tr>
       <th scope="row"><?php echo $languageElement->name; ?></th>
       <td><code><?php echo $languageElement->code; ?></code></td>
-      <td><progress value="<?php echo $languageElement->translated_progress; ?>" max="100"></progress> <b class="footnote data-progress" data-progress="<?php echo $languageElement->translated_progress; ?>" ><?php echo $languageElement->translated_progress; ?>%</b> <a class="button button-small button-list" rel="external"href="https://crowdin.com/project/textpattern-cms-textpacks/<?php echo $languageElement->code; ?>">Translate</a></td>
+      <td><progress value="<?php echo $languageElement->translated_progress; ?>" max="100"></progress> <b class="data-progress" data-progress="<?php echo $languageElement->translated_progress; ?>" ><?php echo $languageElement->translated_progress; ?>%</b> <a class="button button-small button-list" rel="external"href="https://crowdin.com/project/textpattern-cms-textpacks/<?php echo $languageElement->code; ?>">Translate</a></td>
     </tr>
 <?php endforeach; ?>
   </tbody>

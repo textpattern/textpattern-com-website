@@ -325,3 +325,10 @@ progress::-webkit-progress-bar {
 progress::-moz-progress-bar {
     background-color: $color-highlight;
 }
+
+.data-progress {
+    display: inline-block;
+    min-width: 2.75em;
+    margin-right: 0.5em;
+    font-size: $small-font-size;
+}
