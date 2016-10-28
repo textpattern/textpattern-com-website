@@ -225,6 +225,15 @@ section {
 }
 
 /**
+ * Sidebar layout.
+ */
+
+.sidebar {
+    padding-top: 1em;
+    background-color: $color-background-box;
+}
+
+/**
  * Documentation site Kramdown footnotes.
  */
 
