@@ -32,7 +32,7 @@ a {
  * Additional styling for links within complementary content and site footer.
  */
 
-.complementary-content a,
+.complementary-content a:not(.button),
 .site-footer a {
     color: $color-selecting;
 

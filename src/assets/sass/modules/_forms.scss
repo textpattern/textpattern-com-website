@@ -306,7 +306,9 @@ textarea {
 
 progress {
     display: inline-block; /* 1 */
+    width: 10em;
     height: 0.75em;
+    margin-right: 0.33em;
     border: 1px solid $color-border-light;
     vertical-align: baseline; /* 2 */
     appearance: none;

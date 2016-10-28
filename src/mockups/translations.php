@@ -96,20 +96,25 @@ $xml = new SimpleXMLElement('https://api.crowdin.com/api/project/textpattern-cms
 ?>
 <div class="tabular-data">
 <table>
-  <thead>
-    <tr>
-      <th>Code</th>
-      <th>Name</th>
-      <th>Translation progress</th>
-    </tr>
-  </thead>
-  <tbody>
+    <colgroup>
+        <col class="t30">
+        <col class="t15">
+        <col>
+    </colgroup>
+    <thead>
+        <tr>
+        <th scope="col">Language</th>
+        <th scope="col">Code</th>
+        <th scope="col">Translation status</th>
+        </tr>
+    </thead>
+    <tbody>
 
 <?php foreach ($xml->language as $languageElement) :?>
     <tr>
+      <th scope="row"><?php echo $languageElement->name; ?></th>
       <td><code><?php echo $languageElement->code; ?></code></td>
-      <td><a rel="external" href="https://crowdin.com/project/textpattern-cms-textpacks/<?php echo $languageElement->code; ?>"><?php echo $languageElement->name; ?></a></td>
-      <td><progress value="<?php echo $languageElement->translated_progress; ?>" max="100"></progress> <b class="footnote"><?php echo $languageElement->translated_progress; ?>%</b></td>
+      <td><progress value="<?php echo $languageElement->translated_progress; ?>" max="100"></progress> <b class="footnote data-progress" data-progress="<?php echo $languageElement->translated_progress; ?>" ><?php echo $languageElement->translated_progress; ?>%</b> <a class="button button-small button-list" rel="external"href="https://crowdin.com/project/textpattern-cms-textpacks/<?php echo $languageElement->code; ?>">Translate</a></td>
     </tr>
 <?php endforeach; ?>
   </tbody>

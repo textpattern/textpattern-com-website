@@ -73,3 +73,16 @@ dd {
 .list--numbered {
     list-style-type: decimal;
 }
+
+/**
+ * Have a list with no bullets/numerals.
+ *
+ * Example HTML:
+ *
+ * <ul class="list--no-bullets">
+ * <ol class="list--no-bullets">
+ */
+
+.button-list {
+    float: right;
+}
