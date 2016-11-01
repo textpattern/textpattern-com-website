@@ -198,20 +198,20 @@ section {
     }
 
     &.odd {
-        border-color: $color-background-zebra;
-        background-color: $color-background;
-
-        .article::after {
-            background-position: -280px -80px;
-        }
-    }
-
-    &.even {
         border-color: $color-background;
         background-color: $color-background-zebra;
 
         .article::after {
             background-position: -360px -80px;
+        }
+    }
+
+    &.even {
+        border-color: $color-background-zebra;
+        background-color: $color-background;
+
+        .article::after {
+            background-position: -280px -80px;
         }
     }
 
