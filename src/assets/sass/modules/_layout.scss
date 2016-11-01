@@ -116,6 +116,19 @@ body {
 }
 
 /**
+ * Large search field on certain pages.
+ */
+
+.search-hero {
+    padding: 2em 0;
+    text-align: center;
+
+    input {
+        font-size: 1.5em;
+    }
+}
+
+/**
  * Additional styling for site footer.
  */
 
@@ -216,7 +229,7 @@ section {
     }
 
     &:last-child {
-        padding-bottom: 46px;
+        padding-bottom: 1.5em;
 
         .article::after {
             display: none;
