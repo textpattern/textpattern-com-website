@@ -17,7 +17,8 @@
      */
 
     .layout-text2col,
-    .layout-text3col {
+    .layout-text3col,
+    .layout-text4col {
         column-gap: 2em;
         column-count: 2;
 
@@ -60,7 +61,8 @@
      * Allow three columns of text.
      */
 
-    .layout-text3col {
+    .layout-text3col,
+    .layout-text4col {
         column-count: 3;
     }
 
@@ -195,6 +197,14 @@
 
     .layout-4col-3span {
         width: 75%;
+    }
+
+    /**
+     * Allow four columns of text.
+     */
+
+    .layout-text4col {
+        column-count: 4;
     }
 
 }

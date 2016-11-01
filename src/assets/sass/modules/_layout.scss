@@ -189,24 +189,19 @@ section {
 
 .wrapper-inner {
     position: relative;
+    padding: 1em 0;
 
     &.odd,
     &.even {
-        .article {
-            padding: 46px 0;
-
-            &::after {
-                position: absolute;
-                bottom: -40px;
-                left: 50%;
-                width: 80px;
-                height: 40px;
-                margin-left: -40px;
-                background-image: url("http://static2.designhive.com/assets/img/sprite.svg");
-                background-size: 1100px 120px;
-                content: "";
-                z-index: 2;
-            }
+        &::after {
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            width: 80px;
+            height: 20px;
+            margin-left: -40px;
+            content: "";
+            z-index: 2;
         }
     }
 
@@ -214,8 +209,8 @@ section {
         border-color: $color-background;
         background-color: $color-background-zebra;
 
-        .article::after {
-            background-position: -360px -80px;
+        &::after {
+            background-image: url("data:image/svg+xml;charset=utf-8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48IURPQ1RZUEUgc3ZnPjxzdmcgdmVyc2lvbj0iMS4xIiBiYXNlUHJvZmlsZT0iZnVsbCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiIHdpZHRoPSI4MHB4IiBoZWlnaHQ9IjIwcHgiIHZpZXdCb3g9IjAgMCA4MCAyMCIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgODAgMjAiIHhtbDpzcGFjZT0icHJlc2VydmUiPiAgICAgPHBvbHlnb24gZmlsbD0iI2YwZjBmMCIgcG9pbnRzPSI0MCwyMCAwLDAgODAsMCIvPjwvc3ZnPg==");
         }
     }
 
@@ -223,17 +218,13 @@ section {
         border-color: $color-background-zebra;
         background-color: $color-background;
 
-        .article::after {
-            background-position: -280px -80px;
+        &::after {
+            background-image: url("data:image/svg+xml;charset=utf-8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48IURPQ1RZUEUgc3ZnPjxzdmcgdmVyc2lvbj0iMS4xIiBiYXNlUHJvZmlsZT0iZnVsbCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiIHdpZHRoPSI4MHB4IiBoZWlnaHQ9IjIwcHgiIHZpZXdCb3g9IjAgMCA4MCAyMCIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgODAgMjAiIHhtbDpzcGFjZT0icHJlc2VydmUiPiAgICAgPHBvbHlnb24gZmlsbD0iI2ZmZmZmZiIgcG9pbnRzPSI0MCwyMCAwLDAgODAsMCIvPjwvc3ZnPg==");
         }
     }
 
-    &:last-child {
-        padding-bottom: 1.5em;
-
-        .article::after {
-            display: none;
-        }
+    &:last-child::after {
+        display: none;
     }
 }
 
