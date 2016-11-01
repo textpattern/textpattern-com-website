@@ -105,6 +105,7 @@
                             <li><a href="#section-labels">Inline text labels</a></li>
                             <li><a href="#section-alerts">Alert boxes</a></li>
                             <li><a href="#section-pagination">Pagination</a></li>
+                            <li><a href="#section-breadcrumbs">Breadcrumbs</a></li>
                             <li><a href="#section-lists">Lists</a></li>
                             <li><a href="#section-tables">Tables</a></li>
                             <li><a href="#section-forms">Forms</a></li>
@@ -591,6 +592,40 @@
                                         <a href="#" title="More pages" aria-label="More pages">&hellip;</a>
                                     </li>
                                 </ul>
+                            </nav>
+                        </section>
+
+
+                        <section class="section" id="section-breadcrumbs">
+                            <h2>Breadcrumbs</h2>
+
+                            <nav aria-label="Breadcrumb navigation">
+                                <ol class="breadcrumbs" itemscope itemtype="http://schema.org/BreadcrumbList">
+                                    <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                                        <a itemprop="item" href="#">
+                                            <span itemprop="name">Home</span>
+                                        </a>
+                                        <meta itemprop="position" content="1">
+                                    </li>
+                                    <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                                        <a itemprop="item" href="#">
+                                            <span itemprop="name">Projects</span>
+                                        </a>
+                                        <meta itemprop="position" content="2">
+                                    </li>
+                                    <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                                        <a itemprop="item" href="#">
+                                            <span itemprop="name">Gene Splicing</span>
+                                        </a>
+                                        <meta itemprop="position" content="3">
+                                    </li>
+                                    <li class="current" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                                        <b itemprop="item">
+                                            <span itemprop="name">Test subject X11</span>
+                                        </b>
+                                        <meta itemprop="position" content="4">
+                                    </li>
+                                </ol>
                             </nav>
                         </section>
 
