@@ -82,7 +82,7 @@
             <div class="container">
                 <div class="layout-container">
 
-                    <article class="layout-3col-2span" itemprop="blogPost" itemscope itemtype="http://schema.org/Article">
+                    <article class="layout-4col-3span" itemprop="blogPost" itemscope itemtype="http://schema.org/Article">
                         <h1 itemprop="name headline">Language translations</h1>
 
                         <div class="article-description" itemprop="description">
@@ -123,7 +123,7 @@ $xml = new SimpleXMLElement('https://api.crowdin.com/api/project/textpattern-cms
 
                     </article>
 
-                    <section class="layout-3col sidebar">
+                    <section class="layout-4col-alt sidebar">
                         <h3>Sidebar placeholder</h3>
                     </section>
 
