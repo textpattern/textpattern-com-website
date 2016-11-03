@@ -27,7 +27,7 @@
     "grunt-sass-lint": "0.2.0",
     "grunt-shell": "2.0.0",
     "load-grunt-tasks": "~3.5",
-    "node-sass": "3.10.1",
+    "node-sass": "3.11.1",
     "sass-lint": "1.9.1"
   },
   "dependencies": {
