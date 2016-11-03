@@ -23,7 +23,7 @@ Building this repository requires:
 Environment must consist of:
 
 * Apache 2
-* Unix-like OS, e.g. Linux or Mac OS
+* Unix-like OS, e.g. Linux or macOS
 
 ## Setup
 
