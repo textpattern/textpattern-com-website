@@ -288,13 +288,27 @@ label.zemRequirederrorElement {
  */
 
 input,
+select,
 textarea {
     &:focus:invalid,
     &.errorElement,
     &.zemRequirederrorElement,
     &.comments_error {
         border-color: $color-error-text;
-        box-shadow: none; // Normalise Firefox styling
+        box-shadow: none; // Normalize Firefox styling
+    }
+}
+
+/**
+ * Styling for Firefox-specfic form field validation.
+ */
+
+input,
+select,
+textarea {
+    &:-moz-ui-invalid {
+        border-color: $color-error-text;
+        box-shadow: none;
     }
 }
 
