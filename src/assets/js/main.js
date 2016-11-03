@@ -18,11 +18,6 @@
         {
             'jquery': 'https://ajax.googleapis.com/ajax/libs/jquery/'+jqueryVersion+'/jquery.min',
             'flowplayer': 'https://releases.flowplayer.org/6.0.5/flowplayer.min'
-        },
-        shim:
-        {
-            'cookie.@@timestamp': ['jquery'],
-            'jqueryui': ['jquery']
         }
     });
 
