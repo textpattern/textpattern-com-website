@@ -253,6 +253,10 @@ module.exports = function (grunt)
         // Uglify and copy JavaScript files from `bower-components`, and also `main.js`, to `public/assets/js/`.
         uglify: {
             dist: {
+                // Preserve all comments that start with a bang (!) or include a closure compiler style.
+                options: {
+                    preserveComments: require('uglify-save-license')
+                },
                 files: [
                     {
                         '<%= paths.dest.js %>main.js': ['<%= paths.tmp.js %>main.js'],
