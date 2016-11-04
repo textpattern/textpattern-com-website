@@ -42,23 +42,7 @@
     @import "modules/http-errors";
     @import "modules/blog";
     @import "modules/comments";
-
-
-    /* ==========================================================================
-       jQuery UI widgets
-       ========================================================================== */
-
-    // comment out any components that are not required
-    @import "modules/jquery-ui/button";
-
-
-    /* ==========================================================================
-       jQuery UI icons
-       ========================================================================== */
-
-    // comment out any components that are not required
-    @import "modules/jquery-ui/icons";
-    @import "modules/jquery-ui/icons-hive-additions"; // requires icons module
+    @import "modules/icons";
 
 }
 

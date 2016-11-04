@@ -10,8 +10,6 @@
  * <span class="ui-icon ui-icon-folder-collapsed"></span>
  * <span class="ui-icon ui-icon-play"></span>
  *
- * TODO: Use `mask` in future (http://caniuse.com/#search=mask), instead of
- * `filter` or dedicated image.
  */
 
 .ui-icon {
@@ -25,27 +23,6 @@
     text-indent: -9999px;
     overflow: hidden;
     vertical-align: text-bottom;
-    //mask: url("../img/ui-icon-sprite.svg");
-    //mask-repeat: no-repeat;
-    //mask-size: 256px 272px;
-}
-
-.ui-widget-icon-block {
-    display: block;
-    left: 50%;
-    margin-left: -8px;
-}
-
-/**
- * Weighted content icons and interaction state icons.
- */
-
-.ui-widget-content .ui-icon,
-.ui-widget-header .ui-icon,
-.ui-state-hover .ui-icon,
-.ui-state-focus .ui-icon,
-.ui-state-active .ui-icon {
-    filter: none;
 }
 
 /**
@@ -57,8 +34,6 @@
  *     <span class="ui-icon ui-icon-check"></span>
  *     Success!
  * </p>
- *
- * TODO: Use `mask` in future.
  */
 
 .success .ui-icon {
@@ -74,11 +49,8 @@
  *     <span class="ui-icon ui-icon-alert"></span>
  *     Warning!
  * </p>
- *
- * TODO: Use `mask` in future.
  */
 
-.ui-state-highlight .ui-icon,
 .warning .ui-icon {
     background-image: url("../img/com/ui-icon-sprite-warning.svg");
 }
@@ -92,12 +64,8 @@
  *     <span class="ui-icon ui-icon-alert"></span>
  *     Error!
  * </p>
- *
- * TODO: Use `mask` in future.
  */
 
-.ui-state-error .ui-icon,
-.ui-state-error-text .ui-icon,
 .error .ui-icon {
     background-image: url("../img/com/ui-icon-sprite-error.svg");
 }
@@ -111,8 +79,6 @@
  *     <span class="ui-icon ui-icon-info"></span>
  *     Content
  * </p>
- *
- * TODO: Use `mask` in future.
  */
 
 .information .ui-icon {
@@ -121,8 +87,6 @@
 
 /**
  * Reversed out (white) icons option.
- *
- * TODO: Use `mask` in future.
  */
 
 .ui-icon-inversed.ui-icon {
@@ -131,8 +95,6 @@
 
 /**
  * Icon sprite positionings.
- *
- * TODO: Use `mask` in future.
  */
 
 .ui-icon-blank { background-position: 16px 16px; }
@@ -324,3 +286,29 @@
 .ui-icon-grip-solid-horizontal { background-position: -48px -224px; }
 .ui-icon-gripsmall-diagonal-se { background-position: -64px -224px; }
 .ui-icon-grip-diagonal-se { background-position: -80px -224px; }
+
+
+/* Hive extra icons
+   ========================================================================== */
+
+/**
+ * Additional handy icons we've added to the standard jQuery UI icon sprite.
+ *
+ * Example HTML:
+ *
+ * <span class="ui-icon ui-extra-icon-code"></span>
+ * <span class="ui-icon ui-extra-icon-download"></span>
+ */
+
+.ui-extra-icon-code { background-position: 0 -256px; }
+.ui-extra-icon-list { background-position: -16px -256px; }
+.ui-extra-icon-grid { background-position: -32px -256px; }
+.ui-extra-icon-download { background-position: -48px -256px; }
+.ui-extra-icon-upload { background-position: -64px -256px; }
+.ui-extra-icon-attach { background-position: -80px -256px; }
+.ui-extra-icon-new-document { background-position: -96px -256px; }
+.ui-extra-icon-facebook { background-position: -112px -256px; }
+.ui-extra-icon-googleplus { background-position: -128px -256px; }
+.ui-extra-icon-linkedin { background-position: -144px -256px; }
+.ui-extra-icon-twitter { background-position: -160px -256px; }
+.ui-extra-icon-github { background-position: -176px -256px; }
