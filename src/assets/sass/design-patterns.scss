@@ -111,45 +111,15 @@ $colors: (
  * The list of all available icons.
  */
 
-.jquery-ui-icons li {
-    position: relative;
-    margin: 2px;
-    padding: 4px 0;
-    float: left;
+.ui-icon-collection li {
+    display: inline-block;
+    margin-right: 0.25em;
+    margin-bottom: 0.5em;
+    padding: 0 4px;
+    border: 1px solid $color-border;
+    background-color: $color-background-box;
     list-style: none;
     cursor: pointer;
-}
-
-.jquery-ui-icons .ui-icon {
-    margin: 0 4px;
-    float: left;
-}
-
-/**
- * The vertical slider example.
- */
-
-.jquery-ui-slider-vertical span {
-    height: 120px;
-    margin: 15px;
-    float: left;
-}
-
-/**
- * Declare a width for jQuery UI menus.
- */
-
-.ui-menu {
-    width: 10em;
-}
-
-/**
- * Absolute positioning for miscellaneous jQuery UI menus.
- */
-
-.ui-menu:not(.jquery-ui-menu) {
-    position: absolute;
-    z-index: 1000;
 }
 
 
