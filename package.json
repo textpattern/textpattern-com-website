@@ -24,11 +24,11 @@
     "grunt-postcss": "0.8.0",
     "grunt-replace": "1.0.1",
     "grunt-sass": "1.2.1",
-    "grunt-sass-lint": "0.2.0",
+    "grunt-sass-lint": "0.2.1",
     "grunt-shell": "2.1.0",
     "load-grunt-tasks": "~3.5",
     "node-sass": "3.11.2",
-    "sass-lint": "1.10.0",
+    "sass-lint": "1.10.1",
     "uglify-save-license": "0.4.1"
   },
   "dependencies": {
