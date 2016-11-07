@@ -198,6 +198,25 @@
 @media screen and (min-width: $breakpoint-3) {
 
     /**
+     * Adjust baseline.
+     */
+
+    html,
+    h5,
+    h6,
+    pre,
+    code,
+    kbd,
+    samp,
+    small,
+    figcaption,
+    tfoot,
+    .footnote,
+    .footnotes {
+        line-height: $line-height-desktop;
+    }
+
+    /**
      * Cells for 4 column layouts are generated.
      *
      * Example HTML:
