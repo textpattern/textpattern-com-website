@@ -261,6 +261,7 @@ module.exports = function (grunt)
                     {
                         '<%= paths.dest.js %>main.js': ['<%= paths.tmp.js %>main.js'],
                         '<%= paths.dest.js %>autosize.js': ['node_modules/autosize/dist/autosize.js'],
+                        '<%= paths.dest.js %>lunr.js': ['node_modules/lunr/lunr.js'],
                         '<%= paths.dest.js %>picturefill.js': ['node_modules/picturefill/dist/picturefill.js'],
                         '<%= paths.dest.js %>prism.js': [
                             'node_modules/prismjs/prism.js',
