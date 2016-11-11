@@ -35,7 +35,6 @@
         // Load objects as variables.
 
         var code = $('pre code'),
-            jekyllsearch = $('#jekyll-search'),
             smoothscroll = $('a[href*="#"]:not([href="#"])'),
             vidplayer = $('.videoplayer');
 
@@ -52,12 +51,6 @@
             {
                 Prism.highlightAll();
             });
-        }
-
-        // Search on the Textpattern Documentation (Jeykll) site.
-
-        if (jekyllsearch.length) {
-            require(['lunr.@@timestamp', 'jekyll-search.@@timestamp']);
         }
 
         // Smooth scroll to anchors within same page.
