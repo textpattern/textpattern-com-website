@@ -29,7 +29,6 @@
     Require.js: http://requirejs.org
     Autosize: https://github.com/jackmoore/autosize
     Prism: http://prismjs.com
-    Picturefill: https://github.com/scottjehl/picturefill
     Responsive Nav: https://github.com/viljamis/responsive-nav.js
   Software:
     Node.js: http://nodejs.org

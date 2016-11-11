@@ -26,7 +26,7 @@
     define('track', function ()
     {
         return {
-            allow : navigator.doNotTrack !== 'yes' && navigator.doNotTrack !== '1' && navigator.doNotTrack !== 1
+            allow : navigator.doNotTrack !== 'yes' && navigator.doNotTrack !== '1' && window.doNotTrack !== 'yes' && window.doNotTrack !== '1'
         };
     });
 
@@ -38,6 +38,7 @@
             fields = $('textarea'),
             smoothscroll = $('a[href*="#"]:not([href="#"])'),
             vidplayer = $('.videoplayer');
+            jekyllsearch = $('#jekyll-search');
 
         // Syntax highlighting, via 'Prism'.
         // Applies syntax highlighting to `code` HTML elements.
@@ -94,6 +95,15 @@
                 });
             });
         }
+
+        // Search on the Textpattern Documentation (Jeykll) site.
+
+        if (jekyllsearch.length) {
+            require(['lunr.@@timestamp', 'jekyll-search.@@timestamp'], function ()
+            {
+
+            });
+        }
     });
 
     // Responsive navigation menu, via 'Responsive Nav'.
@@ -108,30 +118,21 @@
         });
     });
 
-    // `picture` tag and/or `img` tag with `srcset` and `sizes` attributes polyfill, via 'Picturefill'.
-    // More info - https://github.com/scottjehl/picturefill.
-
-    require(['jquery'], function ($)
-    {
-        if ($('img[srcset], img[sizes], picture').length) {
-            require(['picturefill.@@timestamp']);
-        }
-    });
+    // Google Analytics
 
     require(['track'], function(track)
     {
         if (track.allow) {
-            // Google Analytics - remember to amend the user account ID number!
-
-            window._gaq = window._gaq || [];
-            window._gaq.push(['_setAccount', 'UA-xxxxxxxx-x']);
-            window._gaq.push(['_setDomainName', 'none']);
-            window._gaq.push(['_gat._anonymizeIp']);
-            window._gaq.push(['_setVisitorCookieTimeout', 0]);
-            window._gaq.push(['_setSessionCookieTimeout', 0]);
-            window._gaq.push(['_setCampaignCookieTimeout', 0]);
-            window._gaq.push(['_trackPageview']);
-            require(['//www.google-analytics.com/ga.js']);
+            /* jshint ignore:start */
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+            /* jshint ignore:end */
+            ga('create', 'UA-XXXX-Y', 'auto', { // TODO: Remember to amend the GA account ID number!
+                anonymizeIp: true
+            });
+            ga('send', 'pageview');
         }
     });
 
