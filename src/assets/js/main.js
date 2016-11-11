@@ -35,10 +35,9 @@
         // Load objects as variables.
 
         var code = $('pre code'),
-            fields = $('textarea'),
+            jekyllsearch = $('#jekyll-search'),
             smoothscroll = $('a[href*="#"]:not([href="#"])'),
             vidplayer = $('.videoplayer');
-            jekyllsearch = $('#jekyll-search');
 
         // Syntax highlighting, via 'Prism'.
         // Applies syntax highlighting to `code` HTML elements.
@@ -55,15 +54,10 @@
             });
         }
 
-        // Auto-growing textareas, via 'Autosize'.
-        // Allows dynamic resizing of textarea height, so that it grows as based
-        // on visitor input. More info - https://github.com/jackmoore/autosize.
+        // Search on the Textpattern Documentation (Jeykll) site.
 
-        if (fields.length) {
-            require(['autosize.@@timestamp'], function (autosize)
-            {
-                autosize(fields);
-            });
+        if (jekyllsearch.length) {
+            require(['lunr.@@timestamp', 'jekyll-search.@@timestamp']);
         }
 
         // Smooth scroll to anchors within same page.
@@ -93,15 +87,6 @@
                     splash: true,
                     ratio: 0.417
                 });
-            });
-        }
-
-        // Search on the Textpattern Documentation (Jeykll) site.
-
-        if (jekyllsearch.length) {
-            require(['lunr.@@timestamp', 'jekyll-search.@@timestamp'], function ()
-            {
-
             });
         }
     });

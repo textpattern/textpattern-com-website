@@ -32,7 +32,6 @@
     "uglify-save-license": "0.4.1"
   },
   "dependencies": {
-    "autosize": "3.0.18",
     "lunr": "0.7.2",
     "prismjs": "1.5.1",
     "requirejs": "2.3.2",
