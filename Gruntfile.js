@@ -158,7 +158,6 @@ module.exports = function (grunt)
                     require: true,
                     requirejs: true,
                     ga: true,
-                    autosize: true,
                     responsiveNav: true,
                     Prism: true
                 }
