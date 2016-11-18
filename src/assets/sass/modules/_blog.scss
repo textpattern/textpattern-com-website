@@ -7,50 +7,13 @@
  * Example HTML:
  *
  * <p class="article-date">
- *     <time>
- *         <b class="time-day">05</b>
- *         <b class="time-month">Sep</b>
- *         <span class="time-year">2014</span>
- *     </time>
+ *     <time>21 January 2016</time>
  * </p>
  */
 
 .article-date {
-    //position: absolute;
-    //top: 0;
-    //left: 0;
-    //z-index: 2;
-    //margin: 0;
-
-    time {
-        display: block;
-        width: 3.25em;
-        border: 2px solid $color-text;
-        border-bottom: 0;
-        background-color: $color-background;
-        text-align: center;
-    }
-
-    time * {
-        display: block;
-    }
-
-    .time-day {
-        padding-top: 0.1em; // 3px / 30px
-        font-family: $font-serif;
-        font-size: 2em; // 32px / 16px
-        line-height: 1;
-    }
-
-    .time-month {
-        font-size: 1.5em; // 24px / 16px
-        line-height: 1;
-    }
-
-    .time-year {
-        background-color: $color-text;
-        color: $color-background;
-    }
+    font-family: $font-serif;
+    font-size: 1.5em; // 24px / 16px
 }
 
 /**
