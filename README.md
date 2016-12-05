@@ -1,8 +1,8 @@
 # Textpattern.com website
 
-[![Build Status](https://travis-ci.org/textpattern/textpattern-com-website.svg?branch=master)](https://travis-ci.org/textpattern/textpattern-com-website)
-[![Dependency Status](https://david-dm.org/textpattern/textpattern-com-website/status.svg)](https://david-dm.org/textpattern/textpattern-com-website#info=dependencies)
-[![devDependency Status](https://david-dm.org/textpattern/textpattern-com-website/dev-status.svg)](https://david-dm.org/textpattern/textpattern-com-website#info=devDependencies)
+[![Build Status](https://img.shields.io/travis/textpattern/textpattern-com-website/master.svg)](https://travis-ci.org/textpattern/textpattern-com-website)
+[![Dependency Status](http://img.shields.io/david/textpattern/textpattern-com-website.svg)](https://david-dm.org/textpattern/textpattern-com-website)
+[![devDependency Status](http://img.shields.io/david/dev/textpattern/textpattern-com-website.svg)](https://david-dm.org/textpattern/textpattern-com-website?type=dev)
 
 Official website of the [Textpattern](http://textpattern.com) project. **Currently under development.**
 
