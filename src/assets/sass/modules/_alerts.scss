@@ -20,24 +20,19 @@
     border-radius: $border-radius / 2;
 }
 
-.success,
-.data-progress[data-progress="100"] {
-    background: $color-success-background;
+.success {
     color: $color-success-text;
 }
 
 .warning {
-    background: $color-warning-background;
     color: $color-warning-text;
 }
 
 .error {
-    background: $color-error-background;
     color: $color-error-text;
 }
 
 .information {
-    background: $color-info-background;
     color: $color-info-text;
 }
 
@@ -76,17 +71,21 @@
 
     &.success {
         border-color: $color-success-border;
+        background: $color-success-background;
     }
 
     &.warning {
         border-color: $color-warning-border;
+        background: $color-warning-background;
     }
 
     &.error {
         border-color: $color-error-border;
+        background: $color-error-background;
     }
 
     &.information {
         border-color: $color-info-border;
+        background: $color-info-background;
     }
 }

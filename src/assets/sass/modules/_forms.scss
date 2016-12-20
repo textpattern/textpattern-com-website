@@ -369,3 +369,8 @@ progress::-moz-progress-bar {
     margin-right: 0.5em;
     font-size: $small-font-size;
 }
+
+.data-progress[data-progress="100"] {
+    background: $color-success-background;
+    color: $color-success-text;
+}
