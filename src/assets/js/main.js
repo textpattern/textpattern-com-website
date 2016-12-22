@@ -4,6 +4,10 @@
 
     document.documentElement.className = 'js';
 
+    // Load the hostname as a variable so we can provide targetted scripts.
+
+    var whatDomain = window.location.hostname;
+
     // Detect whether jQuery v2 features required, otherwise use jQuery v1 for higher compatibility.
     // TODO: use jQuery v3?
 
@@ -107,9 +111,14 @@
             m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
             })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
             /* jshint ignore:end */
-            ga('create', 'UA-XXXX-Y', 'auto', { // TODO: Remember to amend the GA account ID number!
-                anonymizeIp: true
-            });
+
+            if (whatDomain === 'docs.textpattern.io') {
+                ga('create', 'UA-89386022-1', 'auto');
+            } else {
+                ga('create', 'UA-XXXXX-Y', 'auto'); // TODO: Remember to amend the GA account ID number!
+            }
+
+            ga('set', 'anonymizeIp', true);
             ga('send', 'pageview');
         }
     });
