@@ -247,3 +247,21 @@
     }
 
 }
+
+@media screen and (max-width: $breakpoint-3) {
+
+    /**
+     * Separator as linebreak until 3rd breakpoint.
+     */
+
+    .separator {
+        margin: 0;
+        visibility: hidden;
+
+        &::after {
+            white-space: pre;
+            content: "\a";
+        }
+    }
+
+}

@@ -234,3 +234,18 @@ hr {
     overflow: visible; /* 1 */
     box-sizing: content-box; /* 2 */
 }
+
+/**
+ * Separator pipe between textual elements.
+ *
+ * Example HTML:
+ *
+ * <span class="separator" role="separator">|</span>
+ *
+ * Also see _responsive.scss
+ */
+
+.separator {
+    margin: 0 0.25em;
+    color: lighten($color-text, 30%);
+}
