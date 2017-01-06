@@ -42,6 +42,7 @@ caption {
 
 th,
 td {
+    min-width: 6em; // 96px / 16px
     padding: 0.5em; // 8px / 16px
     border: 1px solid $color-border-light;
     text-align: left;
