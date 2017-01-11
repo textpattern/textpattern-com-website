@@ -3,7 +3,7 @@
 `mkdir -pv tmp`;
 chdir('tmp');
 
-echo "Downloading Textpattern master from GitHub...\n";
+echo "Downloading Textpattern dev branch from GitHub...\n";
 `rm -Rf textpattern`;
 `git clone --depth 1 https://github.com/textpattern/textpattern`;
 echo "Cleaning up the downloaded package...\n";
@@ -40,21 +40,6 @@ if (file_exists('public/textpattern/config.php'))
     copy('public/textpattern/config.php', 'tmp/textpattern/textpattern/config.php');
     echo "Remove setup/...\n";
     `rm -Rf 'tmp/textpattern/textpattern/setup'`;
-}
-
-// Keep existing additional themes.
-
-if (is_dir('public/textpattern/theme') && chdir('public/textpattern/theme'))
-{
-    foreach ((array) glob('*') as $file)
-    {
-        if (!in_array($file, array('classic', 'hive', 'remora', '.htaccess')))
-        {
-            `cp -rf '{$file}/' ../../../tmp/textpattern/textpattern/theme/`;
-        }
-    }
-
-    chdir('../../../');
 }
 
 echo "Moving in the new installation...\n";
