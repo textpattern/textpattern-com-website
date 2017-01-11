@@ -16,9 +16,6 @@ module.exports = function (grunt)
                 mockups: 'src/mockups/',
                 templates: 'src/templates/'
             },
-            tmp: {
-                js: 'tmp/assets/js/'
-            },
             dest: {
                 css: 'public/assets/css/',
                 js: 'public/assets/js/',
@@ -34,7 +31,6 @@ module.exports = function (grunt)
 
         // Clean distribution and temporary directories to start afresh.
         clean: [
-            'tmp/',
             '<%= paths.dest.css %>',
             '<%= paths.dest.js %>',
             '<%= paths.dest.mockups %>*/',
@@ -45,7 +41,7 @@ module.exports = function (grunt)
         concurrent: {
             dist: [
                 'css',
-                'copy:img',
+                'copy',
                 'devUpdate',
                 'jshint',
                 'replace'
@@ -92,24 +88,6 @@ module.exports = function (grunt)
                         cwd: 'node_modules/textpattern-branding/assets/img/misc/',
                         src: ['hi.png', 'hi@2x.png'],
                         dest: 'public/'
-                    }
-                ]
-            },
-            // Copy JavaScript files from various sources.
-            js: {
-                files: [
-                    {
-                        expand: true,
-                        cwd: 'src/',
-                        src: '*',
-                        dest: 'public/',
-                        filter: 'isFile'
-                    },
-                    {
-                        expand: true,
-                        cwd: '<%= paths.src.js %>libs/',
-                        src: '**',
-                        dest: '<%= paths.dest.js %>'
                     }
                 ]
             }
@@ -210,7 +188,7 @@ module.exports = function (grunt)
                     },
                     {
                         src: '<%= paths.src.js %>main.js',
-                        dest: '<%= paths.tmp.js %>main.js'
+                        dest: '<%= paths.dest.js %>main.js'
                     }
                 ]
             }
@@ -259,7 +237,7 @@ module.exports = function (grunt)
                 },
                 files: [
                     {
-                        '<%= paths.dest.js %>main.js': ['<%= paths.tmp.js %>main.js'],
+                        '<%= paths.dest.js %>main.js': ['<%= paths.dest.js %>main.js'],
                         '<%= paths.dest.js %>lunr.js': ['node_modules/lunr/lunr.js'],
                         '<%= paths.dest.js %>prism.js': [
                             'node_modules/prismjs/prism.js',
@@ -286,7 +264,7 @@ module.exports = function (grunt)
             },
             js: {
                 files: 'src/assets/js/*.js',
-                tasks: ['jshint', 'uglify', 'copy:js']
+                tasks: ['jshint', 'uglify']
             },
             html: {
                 files: ['<%= paths.src.mockups %>**', '<%= paths.src.templates %>**'],
@@ -297,7 +275,7 @@ module.exports = function (grunt)
     });
 
     // Register tasks.
-    grunt.registerTask('build', ['clean', 'concurrent', 'uglify', 'copy:js']);
+    grunt.registerTask('build', ['clean', 'concurrent', 'uglify']);
     grunt.registerTask('css', ['sasslint', 'sass', 'postcss']);
     grunt.registerTask('default', ['watch']);
     grunt.registerTask('setup', ['shell:setup']);
