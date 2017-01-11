@@ -27,7 +27,7 @@
     "grunt-sass-lint": "0.2.2",
     "grunt-shell": "2.1.0",
     "load-grunt-tasks": "~3.5",
-    "node-sass": "4.1.1",
+    "node-sass": "4.2.0",
     "sass-lint": "1.10.2",
     "uglify-save-license": "0.4.1"
   },
