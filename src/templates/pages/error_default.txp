@@ -2,10 +2,10 @@
 <html lang="en-GB-oxendict">
 <head>
     <meta charset="utf-8">
+    <txp:output_form form="head" />
     <title><txp:error_status /> | Textpattern CMS</title>
     <meta name="description" content="<txp:error_message/>">
     <meta name="robots" content="none">
-    <txp:output_form form="head" />
 </head>
 <body itemscope itemtype="http://schema.org/WebPage">
     <txp:output_form form="body_header" />
