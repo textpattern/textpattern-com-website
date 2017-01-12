@@ -2,6 +2,7 @@
 <html lang="en-GB-oxendict">
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Textpattern CMS | An open source, flexible, elegant and easy-to-use content management system</title>
 
 <!-- CSS -->
@@ -15,7 +16,6 @@
     <link rel="dns-prefetch" href="https://www.google-analytics.com">
 
     <meta name="robots" content="index, follow, noodp, noydir">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="This is where a blog article extract/description would be.">
 
 <!-- All the favicons, touch icons, etc. -->
