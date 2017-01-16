@@ -171,25 +171,27 @@
                                         <li>Please enter a valid email address.</li>
                                         <li>Please enter a comment.</li>
                                     </ul>
-                                    <div class="field layout--span-1-6 at-break2">
-                                        <label for="name">Name <span class="required" title="Required" aria-label="Required">●</span></label><br>
-                                        <input class="comment_name_input comments_error" id="name" name="name" type="text" size="32" required>
-                                    </div>
-                                    <div class="field layout--span-7-12 at-break2">
-                                        <label for="email">Email <span class="required" title="Required" aria-label="Required">●</span></label><br>
-                                        <input class="comment_email_input" id="email" name="email" type="email" size="32" required>
-                                    </div>
-                                    <div class="field layout--span-1-6 at-break2">
-                                        <label for="web">Website</label><br>
-                                        <input class="comment_web_input" id="web" name="web" type="text" size="32" placeholder="http://">
-                                    </div>
-                                    <div class="field layout--span-1-12">
-                                        <label for="message">Message <span class="required" title="Required" aria-label="Required">●</span></label><br>
-                                        <textarea class="txpCommentInputMessage" id="message" name="message" cols="64" rows="4" required></textarea>
-                                    </div>
-                                    <div class="field layout--span-1-12">
-                                        <input class="button" id="txpCommentPreview" name="preview" type="submit" value="Preview">
-                                        <input class="button disabled" id="txpCommentSubmit" name="submit" type="submit" value="Submit" disabled>
+                                    <div class="layout-container">
+                                        <div class="field field layout-2col at-break2">
+                                            <label for="name">Name <span class="required" title="Required" aria-label="Required">●</span></label><br>
+                                            <input class="comment_name_input comments_error" id="name" name="name" type="text" size="32" required>
+                                        </div>
+                                        <div class="field field layout-2col at-break2">
+                                            <label for="email">Email <span class="required" title="Required" aria-label="Required">●</span></label><br>
+                                            <input class="comment_email_input" id="email" name="email" type="email" size="32" required>
+                                        </div>
+                                        <div class="field field layout-2col at-break2">
+                                            <label for="web">Website</label><br>
+                                            <input class="comment_web_input" id="web" name="web" type="text" size="32" placeholder="http://">
+                                        </div>
+                                        <div class="field layout-1col">
+                                            <label for="message">Message <span class="required" title="Required" aria-label="Required">●</span></label><br>
+                                            <textarea class="txpCommentInputMessage" id="message" name="message" cols="64" rows="4" required></textarea>
+                                        </div>
+                                        <div class="field layout-1col">
+                                            <input class="button" id="txpCommentPreview" name="preview" type="submit" value="Preview">
+                                            <input class="button disabled" id="txpCommentSubmit" name="submit" type="submit" value="Submit" disabled>
+                                        </div>
                                     </div>
                                 </form>
                             </section>

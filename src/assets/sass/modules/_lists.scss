@@ -57,9 +57,14 @@ dd {
  * <ol class="list--no-bullets">
  */
 
-.list--no-bullets {
+.list--no-bullets,
+.zemError {
     padding: 0;
     list-style: none;
+}
+
+.zemError {
+    margin-bottom: 0.5em;
 }
 
 /**

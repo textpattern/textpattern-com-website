@@ -31,6 +31,26 @@ legend {
 }
 
 /**
+ * Margins above and below form fields.
+ *
+ * Example HTML:
+ *
+ * <div class="field">
+ *     <label><br>
+ *     <input>
+ * </div>
+ * <div class="field">
+ *     <label><br>
+ *     <textarea>
+ * </div>
+ */
+
+.field {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+/**
  * 1. Prevent elements from spilling out of their parent.
  * 2. Address margins set differently in Firefox 4+, Safari, and Chrome.
  * 3. Correct font properties not being inherited.
@@ -271,7 +291,7 @@ input {
  * <span class="required" title="Required" aria-label="Required">●</span>
  */
 
-span.required {
+.required {
     color: $color-warning-text;
 }
 
