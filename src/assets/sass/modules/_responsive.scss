@@ -222,11 +222,10 @@
      * Example HTML:
      *
      * <div class="layout-4col-3span"></div>
-     * <div class="layout-4col-alt"></div>
+     * <div class="layout-4col"></div>
      */
 
-    .layout-4col,
-    .layout-4col-alt {
+    .layout-4col {
         width: 25%;
     }
 
@@ -235,7 +234,7 @@
     }
 
     .layout-4col-3span {
-        width: 75%;
+        width: 73%;
     }
 
     /**

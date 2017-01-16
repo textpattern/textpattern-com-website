@@ -123,7 +123,7 @@ $xml = new SimpleXMLElement('https://api.crowdin.com/api/project/textpattern-cms
 
                     </article>
 
-                    <section class="layout-4col-alt sidebar">
+                    <section class="layout-4col sidebar">
                         <h3>Sidebar placeholder</h3>
                     </section>
 

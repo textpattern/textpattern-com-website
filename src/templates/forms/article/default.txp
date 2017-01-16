@@ -1,0 +1,66 @@
+<article class="layout-4col-3span" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+    <h1 itemprop="name headline"><txp:title /></h1>
+    <p class="article-date">
+        <time datetime="<txp:posted format="iso8601" />" itemprop="datePublished"><txp:posted format="%d %B %Y" /></time>
+    </p>
+    <txp:if_excerpt>
+        <div class="article-description" itemprop="description">
+            <txp:excerpt />
+        </div>
+    </txp:if_excerpt>
+    <txp:if_article_image>
+        <txp:images>
+            <txp:variable name="caption" value='<txp:image_info />' />
+            <txp:if_variable name="caption" value="">
+                <p class="photo" itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
+                    <img itemprop="contentUrl" alt="<txp:image_info type='alt' />" src="<txp:smd_thumbnail id='<txp:image_info type="id" />' type='832w' display='url' />" srcset="<txp:image_url link='0' /> 2x, <txp:smd_thumbnail id='<txp:image_info type="id" />' type='832w' display='url' /> 1x">
+                </p>
+            <txp:else />
+                <figure itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
+                    <img itemprop="contentUrl" alt="<txp:image_info type='alt' />" src="<txp:smd_thumbnail id='<txp:image_info type="id" />' type='832w' display='url' />" srcset="<txp:image_url link='0' /> 2x, <txp:smd_thumbnail id='<txp:image_info type="id" />' type='832w' display='url' /> 1x">
+                    <figcaption itemprop="caption">
+                        <txp:image_info />
+                    </figcaption>
+                </figure>
+            </txp:if_variable>
+        </txp:images>
+    </txp:if_article_image>
+    <div itemprop="articleBody">
+        <txp:body />
+    </div>
+    <footer class="article-footer">
+        <span class="ui-icon ui-icon-pencil">By:</span>
+        <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <a rel="author" itemprop="url" href="#" title="View author biography"><span itemprop="name"><txp:author /></span></a>
+            <meta itemprop="jobTitle" content="#">
+        </span>
+        <txp:if_article_category>
+            <span class="separator" role="separator">|</span>
+            <span class="ui-icon ui-icon-tag">Tags:</span>
+            <span itemprop="keywords">
+                <txp:if_article_category number="1"><txp:category1 title="1" link="1" /></txp:if_article_category>
+                <txp:if_article_category number="2"><txp:category2 title="1" link="1" /></txp:if_article_category>
+            </span>
+        </txp:if_article_category>
+        <txp:if_comments>
+            <span class="separator" role="separator">|</span>
+            <span class="ui-icon ui-icon-comment">Comments:</span>
+            <a href="<txp:permlink />#comments-head" title="View article comments" itemprop="discussionUrl"><txp:comments_count /></a>
+            <span itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+                <meta itemprop="interactionType" content="http://schema.org/CommentAction">
+                <meta itemprop="userInteractionCount" content="<txp:comments_count />">
+            </span>
+        <txp:else />
+            <txp:if_comments_allowed>
+                <span class="separator" role="separator">|</span>
+                <span class="ui-icon ui-icon-comment">Comments:</span>
+                <a href="<txp:permlink />#comments-head" title="View article comments" itemprop="discussionUrl">0</a>
+                <span itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+                    <meta itemprop="interactionType" content="http://schema.org/CommentAction">
+                    <meta itemprop="userInteractionCount" content="0">
+                </span>
+            </txp:if_comments_allowed>
+        </txp:if_comments>
+    </footer>
+    <txp:output_form form="comments_display" />
+</article>

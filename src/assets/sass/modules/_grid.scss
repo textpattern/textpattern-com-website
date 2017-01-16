@@ -9,6 +9,7 @@
 .layout-container {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
     margin: 0 -1em;
 
     > * {
@@ -40,7 +41,6 @@
 .layout-3col,
 .layout-3col-2span,
 .layout-4col,
-.layout-4col-alt,
 .layout-4col-2span,
 .layout-4col-3span {
     width: 100%;
