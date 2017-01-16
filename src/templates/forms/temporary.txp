@@ -1,1 +1,0 @@
-<txp:php>echo strip_tags(parse('<txp:excerpt />'));</txp:php>
