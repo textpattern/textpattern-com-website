@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Translation page example | Textpattern CMS</title>
+    <title>Error page example | Textpattern CMS</title>
 
 <!-- CSS -->
     <link rel="dns-prefetch" href="https://fonts.googleapis.com">
@@ -15,24 +15,13 @@
     <link rel="dns-prefetch" href="https://ajax.googleapis.com">
     <link rel="dns-prefetch" href="https://www.google-analytics.com">
 
-    <meta name="robots" content="index, follow, noodp, noydir">
-    <meta name="description" content="This is where a blog article extract/description would be.">
+    <meta name="robots" content="none">
 
 <!-- All the favicons, touch icons, etc. -->
     <meta name="theme-color" content="#ffda44">
     <meta name="application-name" content="Textpattern CMS">
     <link rel="icon" sizes="32x32" href="../favicon-32x32.png">
     <link rel="icon" sizes="16x16" href="../favicon-16x16.png">
-
-    <link rel="canonical" href="http://www.designhive.dev/blog-article.html">
-
-<!-- Twitter card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="@textpattern">
-    <meta name="twitter:title" content="Textpattern CMS">
-    <meta name="twitter:description" content="This is where a blog article extract/description would be.">
-    <meta name="twitter:image:src" content="http://textpattern.com/assets/img/branding/textpattern/textpattern.svg">
-    <meta name="twitter:url" content="http://textpattern.dev/blog-landing.html">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -71,7 +60,7 @@
                     <li><a itemprop="url" href="http://textpattern.org/">Plugins</a></li>
                     <li><a itemprop="url" href="http://forum.textpattern.com/">Forum</a></li>
                     <li><a itemprop="url" href="http://textpattern.com/weblog">Blog</a></li>
-                    <li class="active"><a itemprop="url" href="http://textpattern.com/about">About</a></li>
+                    <li><a itemprop="url" href="http://textpattern.com/about">About</a></li>
                 </ul>
             </nav>
         </div>
@@ -80,55 +69,13 @@
 <!-- Primary Content -->
         <main aria-label="Main content">
             <div class="container">
-                <div class="layout-container">
-
-                    <article class="layout-4col-3span" itemprop="blogPost" itemscope itemtype="http://schema.org/Article">
-                        <h1 itemprop="name headline">Language translations</h1>
-
-                        <div class="article-description" itemprop="description">
-                            <p>This is where an article extract/description would be, if available. Ne sea soluta voluptatum. Ut nec augue disputationi, unum utamur vis in. Ea menandri persecuti dissentiunt usu, causae equidem.</p>
-                        </div><!-- /.article-description -->
-
-                        <div itemprop="articleBody">
-
-<?php
-$xml = new SimpleXMLElement('https://api.crowdin.com/api/project/textpattern-cms-textpacks/status?key=xxxxxx&xml', 0, TRUE);
-?>
-<div class="tabular-data">
-<table>
-    <colgroup>
-        <col class="t30">
-        <col class="t15">
-        <col>
-    </colgroup>
-    <thead>
-        <tr>
-        <th scope="col">Language</th>
-        <th scope="col">Code</th>
-        <th scope="col">Translation status</th>
-        </tr>
-    </thead>
-    <tbody>
-
-<?php foreach ($xml->language as $languageElement) :?>
-    <tr id="<?php echo $languageElement->code; ?>">
-      <th scope="row"><?php echo $languageElement->name; ?></th>
-      <td><code><?php echo $languageElement->code; ?></code></td>
-      <td><progress value="<?php echo $languageElement->translated_progress; ?>" max="100"></progress> <b class="data-progress" data-progress="<?php echo $languageElement->translated_progress; ?>" ><?php echo $languageElement->translated_progress; ?>%</b> <a class="button button-small button-list" rel="external"href="https://crowdin.com/project/textpattern-cms-textpacks/<?php echo $languageElement->code; ?>">Translate</a></td>
-    </tr>
-<?php endforeach; ?>
-  </tbody>
-</table>
-</div>
-
-                    </article>
-
-                    <section class="layout-4col sidebar">
-                        <h3>Sidebar placeholder</h3>
-                    </section>
-
-                </div><!-- /.layout-container -->
-            </div><!-- /.container -->
+                <h1>
+                    <span class="http-status-code">404</span>
+                    <span class="http-status-description">not found</span>
+                </h1>
+                <p>This page may have moved or is no longer available.</p>
+                <p>Please <a href="http://textpattern.dev/">return to the Textpattern homepage</a>.</p>
+            </div>
         </main>
 
 
