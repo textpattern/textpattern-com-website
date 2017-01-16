@@ -12,14 +12,6 @@
  * <strong class="error">
  */
 
-.success,
-.warning,
-.error,
-.information {
-    padding: 0 0.25em; // 4px / 16px
-    border-radius: $border-radius / 2;
-}
-
 .success {
     color: $color-success-text;
 }
@@ -67,6 +59,7 @@
 .alert-block {
     padding: 0.5em 1em;
     border: 1px solid;
+    border-radius: $border-radius / 2;
     word-wrap: break-word; /* 1 */
 
     &.success {
