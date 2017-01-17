@@ -18,6 +18,7 @@ module.exports = function (grunt)
             },
             dest: {
                 css: 'public/assets/css/',
+                img: 'public/assets/img/',
                 js: 'public/assets/js/',
                 mockups: 'public/mockups/',
                 templates: 'public/templates/'
@@ -32,6 +33,7 @@ module.exports = function (grunt)
         // Clean distribution and temporary directories to start afresh.
         clean: [
             '<%= paths.dest.css %>',
+            '<%= paths.dest.img %>',
             '<%= paths.dest.js %>',
             '<%= paths.dest.mockups %>*/',
             '<%= paths.dest.templates %>*/'
@@ -57,13 +59,13 @@ module.exports = function (grunt)
                         expand: true,
                         cwd: 'src/assets/img/',
                         src: ['**'],
-                        dest: 'public/assets/img/com/'
+                        dest: '<%= paths.dest.img %>com/'
                     },
                     {
                         expand: true,
                         cwd: 'node_modules/textpattern-branding/assets/img/',
                         src: ['**'],
-                        dest: 'public/assets/img/branding/'
+                        dest: '<%= paths.dest.img %>branding/'
                     },
                     {
                         expand: true,
