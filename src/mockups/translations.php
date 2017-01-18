@@ -7,7 +7,6 @@
 
 <!-- CSS -->
     <link rel="dns-prefetch" href="https://fonts.googleapis.com">
-    <link rel="prefetch" href="../assets/img/branding/misc/icon-sprite.svg">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,700,400italic,700italic">
     <link rel="stylesheet" href="../assets/css/style.@@timestamp.css">
 
