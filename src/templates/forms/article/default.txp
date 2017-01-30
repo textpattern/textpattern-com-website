@@ -1,7 +1,9 @@
 <article class="layout-4col-3span" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+    <meta itemprop="mainEntityOfPage" content="<txp:permlink />">
     <h1 itemprop="name headline"><txp:title /></h1>
     <p class="article-date">
         <time datetime="<txp:posted format="iso8601" />" itemprop="datePublished"><txp:posted format="%d %B %Y" /></time>
+        <meta itemprop="dateModified" content="<txp:modified format="iso8601" />">
     </p>
     <txp:if_excerpt>
         <div class="article-description" itemprop="description">
@@ -33,6 +35,14 @@
         <span itemprop="author" itemscope itemtype="http://schema.org/Person">
             <a rel="author" itemprop="url" href="#" title="View author biography"><span itemprop="name"><txp:author /></span></a>
             <meta itemprop="jobTitle" content="#">
+        </span>
+        <span itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+            <meta itemprop="name" content="Textpattern CMS">
+            <span itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+                <meta itemprop="logo" content="http://textpattern.com/assets/img/branding/textpattern/textpattern.png">
+                <meta itemprop="width" content="320">
+                <meta itemprop="height" content="52">
+            </span>
         </span>
         <txp:if_article_category>
             <span class="separator" role="separator">|</span>

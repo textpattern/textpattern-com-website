@@ -33,7 +33,7 @@
     <meta name="twitter:site" content="@textpattern">
     <meta name="twitter:title" content="Textpattern CMS">
     <meta name="twitter:description" content="Article containing examples of various inline and block elements that should be considered and styled within the site.">
-    <meta name="twitter:image:src" content="http://textpattern.com/assets/img/branding/textpattern/textpattern.svg">
+    <meta name="twitter:image:src" content="http://textpattern.com/assets/img/branding/textpattern/textpattern.png">
     <meta name="twitter:url" content="http://textpattern.dev/design-patterns.html">
 </head>
 
@@ -51,7 +51,7 @@
 <!-- Header -->
         <header class="site-header" itemscope itemtype="http://schema.org/Organization">
             <h1 class="masthead" itemprop="name"><a rel="home" itemprop="url" href="http://textpattern.dev/" title="Go to the Textpattern homepage">Textpattern CMS</a></h1>
-            <meta itemprop="logo" content="../assets/img/branding/textpattern/textpattern.svg">
+            <meta itemprop="logo" content="../assets/img/branding/textpattern/textpattern.png">
 
             <div itemscope itemtype="http://schema.org/WebSite">
                 <meta itemprop="url" content="http://textpattern.dev/">
@@ -84,10 +84,10 @@
             <div class="container">
 
 
-                <article itemscope itemtype="http://schema.org/Article">
-                    <h1 itemprop="name headline">Design patterns</h1>
+                <article>
+                    <h1>Design patterns</h1>
 
-                    <div class="article-description" itemprop="description">
+                    <div class="article-description">
                         <p>Article containing examples of various inline/block elements that should be considered and styled within the website. Supported browsers: Chrome, Edge, Firefox, Safari and Opera the last two recent stable releases, Internet Explorer 11. Development environment uses <a href="http://gruntjs.com" rel="external" title="Go to the Grunt website">Grunt</a> and <a href="http://sass-lang.com" rel="external" title="Go to the Sass website">Sass</a>.</p>
                     </div>
 
@@ -112,894 +112,890 @@
                         </ol>
                     </nav>
 
-                    <div itemprop="articleBody">
 
+                    <section class="section" id="section-colourways">
+                        <h2 style="margin-bottom:0;">Colourways</h2>
 
-                        <section class="section" id="section-colourways">
-                            <h2 style="margin-bottom:0;">Colourways</h2>
+                        <div class="layout-container">
 
-                            <div class="layout-container">
+                            <div class="layout-4col">
+                                <h3>Neutral</h3>
 
-                                <div class="layout-4col">
-                                    <h3>Neutral</h3>
+                                <p><code>background</code></p>
+                                <div class="design-patterns--color design-patterns--color-background"></div>
 
-                                    <p><code>background</code></p>
-                                    <div class="design-patterns--color design-patterns--color-background"></div>
+                                <p><code>background-box</code></p>
+                                <div class="design-patterns--color design-patterns--color-background-box"></div>
 
-                                    <p><code>background-box</code></p>
-                                    <div class="design-patterns--color design-patterns--color-background-box"></div>
+                                <p><code>gradient-from</code></p>
+                                <div class="design-patterns--color design-patterns--color-gradient-from"></div>
 
-                                    <p><code>gradient-from</code></p>
-                                    <div class="design-patterns--color design-patterns--color-gradient-from"></div>
+                                <p><code>gradient-to</code></p>
+                                <div class="design-patterns--color design-patterns--color-gradient-to"></div>
 
-                                    <p><code>gradient-to</code></p>
-                                    <div class="design-patterns--color design-patterns--color-gradient-to"></div>
+                                <p><code>border</code></p>
+                                <div class="design-patterns--color design-patterns--color-border"></div>
 
-                                    <p><code>border</code></p>
-                                    <div class="design-patterns--color design-patterns--color-border"></div>
+                                <p><code>gradient-border</code></p>
+                                <div class="design-patterns--color design-patterns--color-gradient-border"></div>
 
-                                    <p><code>gradient-border</code></p>
-                                    <div class="design-patterns--color design-patterns--color-gradient-border"></div>
+                                <p><code>text-footnote</code></p>
+                                <div class="design-patterns--color design-patterns--color-text-footnote"></div>
 
-                                    <p><code>text-footnote</code></p>
-                                    <div class="design-patterns--color design-patterns--color-text-footnote"></div>
-
-                                    <p><code>text</code></p>
-                                    <div class="design-patterns--color design-patterns--color-text"></div>
-                                </div>
-
-                                <div class="layout-4col">
-                                    <h3>Accent</h3>
-
-                                    <p><code>highlight-box</code></p>
-                                    <div class="design-patterns--color design-patterns--color-highlight-box"></div>
-
-                                    <p><code>strong-highlight-box</code></p>
-                                    <div class="design-patterns--color design-patterns--color-strong-highlight-box"></div>
-
-                                    <p><code>highlight</code></p>
-                                    <div class="design-patterns--color design-patterns--color-highlight"></div>
-                                </div>
-
-                                <div class="layout-4col">
-                                    <h3>Interaction</h3>
-
-                                    <p><code>selected</code></p>
-                                    <div class="design-patterns--color design-patterns--color-link-selected"></div>
-
-                                    <p><code>selecting</code></p>
-                                    <div class="design-patterns--color design-patterns--color-link-selecting"></div>
-
-                                    <p><code>link-focus</code></p>
-                                    <div class="design-patterns--color design-patterns--color-link-focus"></div>
-
-                                    <p><code>link-hover</code></p>
-                                    <div class="design-patterns--color design-patterns--color-link-hover"></div>
-
-                                    <p><code>link</code></p>
-                                    <div class="design-patterns--color design-patterns--color-link"></div>
-                                </div>
-
-                                <div class="layout-4col">
-                                    <h3>State</h3>
-
-                                    <p><code>success-background</code></p>
-                                    <div class="design-patterns--color design-patterns--color-success-background"></div>
-
-                                    <p><code>success-text</code></p>
-                                    <div class="design-patterns--color design-patterns--color-success-text"></div>
-
-                                    <p><code>warning-background</code></p>
-                                    <div class="design-patterns--color design-patterns--color-warning-background"></div>
-
-                                    <p><code>warning-text</code></p>
-                                    <div class="design-patterns--color design-patterns--color-warning-text"></div>
-
-                                    <p><code>error-background</code></p>
-                                    <div class="design-patterns--color design-patterns--color-error-background"></div>
-
-                                    <p><code>error-text</code></p>
-                                    <div class="design-patterns--color design-patterns--color-error-text"></div>
-
-                                    <p><code>info-background</code></p>
-                                    <div class="design-patterns--color design-patterns--color-info-background"></div>
-
-                                    <p><code>info-text</code></p>
-                                    <div class="design-patterns--color design-patterns--color-info-text"></div>
-                                </div>
-
-                            </div><!-- /.layout-container -->
-
-                        </section>
-
-
-                        <section class="section" id="section-grid">
-                            <h2>Responsive grid</h2>
-                            <p>Grid layout with 1 to 4 column options.</p>
-
-                            <h3>Current active breakpoint</h3>
-                            <ol class="design-patterns--breakpoints list--no-bullets clearfix">
-                                <li class="design-patterns--breakpoint-0">No breakpoint</li>
-                                <li class="design-patterns--breakpoint-1">Breakpoint 1</li>
-                                <li class="design-patterns--breakpoint-2">Breakpoint 2</li>
-                                <li class="design-patterns--breakpoint-3">Breakpoint 3</li>
-                            </ol>
-
-                            <h3>Main layout grid</h3>
-
-                            <div class="layout-container">
-
-                                <div class="layout-1col">
-                                    <h6 class="design-patterns--box">Opt1: 1col</h6>
-                                </div>
-
-                                <div class="layout-2col">
-                                    <h6 class="design-patterns--box">Opt2: 2col cell1</h6>
-                                </div>
-                                <div class="layout-2col">
-                                    <h6 class="design-patterns--box">Opt2: 2col cell2</h6>
-                                </div>
-
-                                <div class="layout-3col">
-                                    <h6 class="design-patterns--box">Opt3: 3col cell1</h6>
-                                </div>
-                                <div class="layout-3col">
-                                    <h6 class="design-patterns--box">Opt3: 3col cell2</h6>
-                                </div>
-                                <div class="layout-3col">
-                                    <h6 class="design-patterns--box">Opt3: 3col cell3</h6>
-                                </div>
-
-                                <div class="layout-3col-2span">
-                                    <h6 class="design-patterns--box">Opt4: 3col cell1and2</h6>
-                                </div>
-                                <div class="layout-3col">
-                                    <h6 class="design-patterns--box">Opt4: 3col cell3</h6>
-                                </div>
-
-                                <div class="layout-3col">
-                                    <h6 class="design-patterns--box">Opt5: 3col cell1</h6>
-                                </div>
-                                <div class="layout-3col-2span">
-                                    <h6 class="design-patterns--box">Opt5: 3col cell2and3</h6>
-                                </div>
-
-                                <div class="layout-4col">
-                                    <h6 class="design-patterns--box">Opt6: 4col cell1</h6>
-                                </div>
-                                <div class="layout-4col">
-                                    <h6 class="design-patterns--box">Opt6: 4col cell2</h6>
-                                </div>
-                                <div class="layout-4col">
-                                    <h6 class="design-patterns--box">Opt6: 4col cell3</h6>
-                                </div>
-                                <div class="layout-4col">
-                                    <h6 class="design-patterns--box">Opt6: 4col cell4</h6>
-                                </div>
-
-                                <div class="layout-4col-2span">
-                                    <h6 class="design-patterns--box">Opt7: 4col cell1and2</h6>
-                                </div>
-                                <div class="layout-4col">
-                                    <h6 class="design-patterns--box">Opt7: 4col cell3</h6>
-                                </div>
-                                <div class="layout-4col">
-                                    <h6 class="design-patterns--box">Opt7: 4col cell4</h6>
-                                </div>
-
-                                <div class="layout-4col">
-                                    <h6 class="design-patterns--box">Opt8: 4col cell1</h6>
-                                </div>
-                                <div class="layout-4col-2span">
-                                    <h6 class="design-patterns--box">Opt8: 4col cell2and3</h6>
-                                </div>
-                                <div class="layout-4col">
-                                    <h6 class="design-patterns--box">Opt8: 4col cell4</h6>
-                                </div>
-
-                                <div class="layout-4col">
-                                    <h6 class="design-patterns--box">Opt9: 4col cell1</h6>
-                                </div>
-                                <div class="layout-4col">
-                                    <h6 class="design-patterns--box">Opt9: 4col cell2</h6>
-                                </div>
-                                <div class="layout-4col-2span">
-                                    <h6 class="design-patterns--box">Opt9: 4col cell3and4</h6>
-                                </div>
-
-                                <div class="layout-4col-3span">
-                                    <h6 class="design-patterns--box">Opt10: 4col cell1and2and3</h6>
-                                </div>
-                                <div class="layout-4col">
-                                    <h6 class="design-patterns--box">Opt10: 4col cell4</h6>
-                                </div>
-
-                                <div class="layout-4col">
-                                    <h6 class="design-patterns--box">Opt11: 4col cell1</h6>
-                                </div>
-                                <div class="layout-4col-3span">
-                                    <h6 class="design-patterns--box">Opt11: 4col cell2and3and4</h6>
-                                </div>
-
-                            </div><!-- /.layout-container -->
-
-                        </section>
-
-
-                        <section id="section-type">
-                            <h2>Typography</h2>
-
-                            <h1>h1 Heading 1 h1 Heading 1 h1 Heading 1 h1 Heading 1</h1>
-                            <h2>h2 Heading 2 h2 Heading 2 h2 Heading 2 h2 Heading 2 h2 Heading 2</h2>
-                            <h3>h3 Heading 3 h3 Heading 3 h3 Heading 3 h3 Heading 3 h3 Heading 3 h3 Heading 3 h3</h3>
-                            <h4>h4 Heading 4 h4 Heading 4 h4 Heading 4 h4 Heading 4 h4 Heading 4 h4 Heading 4 h4 Heading 4 h4 Heading 4</h4>
-
-                            <p><strong>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Etiam sit amet elit vitae arcu interdum ullamcorper.</strong> Nullam ultrices, nisi quis scelerisque convallis, augue neque tempor enim, et mattis justo nibh eu elit.</p>
-                            <p>Quisque ultrices gravida pede. Mauris accumsan vulputate tellus. Phasellus condimentum bibendum dolor. Mauris sed ipsum. Phasellus in diam. Nam sapien ligula, consectetuer id, hendrerit in, cursus sed, leo. Nam tincidunt rhoncus urna. Aliquam id massa ut nibh bibendum imperdiet. Curabitur neque mauris, porta vel, lacinia quis, placerat ultrices, orci.</p>
-
-                            <p>This text has a reference in the footnote<sup class="footnote" id="fnrevanchor1"><a href="#fnanchor1">1</a></sup>.</p>
-                            <p class="footnote" id="fnanchor1"><sup>1</sup> Here is the footnote.</p>
-
-                            <h3>Contact details</h3>
-                            <p>Uses both the <a rel="external" href="http://schema.org/" title="Go to the Schema.org website">Schema.org</a> and <a rel="external" href="http://microformats.org/wiki/hcard" title="Go to the hCard website">hCard</a> mircoformats.</p>
-                            <!-- possible schema types: Organization, Corporation, etc (see http://schema.org/Organization for more info) -->
-                            <div class="vcard" role="group" itemscope itemtype="http://schema.org/Organization">
-                                <p class="org fn" itemprop="name">Organization Name</p>
-                                <address class="adr" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-                                    <span class="street-address" itemprop="streetAddress">13 Mystreet</span>,
-                                    <span class="locality" itemprop="addressLocality">Mytown</span>,
-                                    <span class="region" itemprop="addressRegion">Myshire</span>,
-                                    <span class="postal-code" itemprop="postalCode">GU1 0AB</span>,
-                                    <span class="country" itemprop="addressCountry">United Kingdom</span>
-                                </address>
-                                <p class="tel" itemprop="contactPoint">
-                                    <span class="type" itemprop="name">Telephone</span>
-                                    <span class="value" itemprop="telephone">01234 456789</span>
-                                </p>
-                                <p class="tel" itemprop="contactPoint">
-                                    <span class="type" itemprop="name">Mobile</span>
-                                    <span class="value" itemprop="telephone">07900 123456</span>
-                                </p>
-                                <p itemprop="contactPoint">
-                                    <span itemprop="name">Email</span>
-                                    <a class="email" itemprop="email" href="mailto:anon@anon.com" title="Email us">anon@anon.com</a>
-                                </p>
+                                <p><code>text</code></p>
+                                <div class="design-patterns--color design-patterns--color-text"></div>
                             </div>
 
-                            <h3>Text ranged left</h3>
-                            <p style="text-align:left;">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Etiam sit amet elit vitae arcu interdum ullamcorper. Nullam ultrices, nisi quis scelerisque convallis, augue neque tempor enim, et mattis justo nibh eu elit.</p>
+                            <div class="layout-4col">
+                                <h3>Accent</h3>
 
-                            <h3>Text ranged right</h3>
-                            <p style="text-align:right;">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Etiam sit amet elit vitae arcu interdum ullamcorper. Nullam ultrices, nisi quis scelerisque convallis, augue neque tempor enim, et mattis justo nibh eu elit.</p>
+                                <p><code>highlight-box</code></p>
+                                <div class="design-patterns--color design-patterns--color-highlight-box"></div>
 
-                            <h3>Text centred</h3>
-                            <p style="text-align:center;">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Etiam sit amet elit vitae arcu interdum ullamcorper. Nullam ultrices, nisi quis scelerisque convallis, augue neque tempor enim, et mattis justo nibh eu elit.</p>
+                                <p><code>strong-highlight-box</code></p>
+                                <div class="design-patterns--color design-patterns--color-strong-highlight-box"></div>
 
-                            <h3>Text justified</h3>
-                            <p style="text-align:justify;">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Etiam sit amet elit vitae arcu interdum ullamcorper. Nullam ultrices, nisi quis scelerisque convallis, augue neque tempor enim, et mattis justo nibh eu elit.</p>
-                        </section>
+                                <p><code>highlight</code></p>
+                                <div class="design-patterns--color design-patterns--color-highlight"></div>
+                            </div>
+
+                            <div class="layout-4col">
+                                <h3>Interaction</h3>
+
+                                <p><code>selected</code></p>
+                                <div class="design-patterns--color design-patterns--color-link-selected"></div>
+
+                                <p><code>selecting</code></p>
+                                <div class="design-patterns--color design-patterns--color-link-selecting"></div>
+
+                                <p><code>link-focus</code></p>
+                                <div class="design-patterns--color design-patterns--color-link-focus"></div>
+
+                                <p><code>link-hover</code></p>
+                                <div class="design-patterns--color design-patterns--color-link-hover"></div>
+
+                                <p><code>link</code></p>
+                                <div class="design-patterns--color design-patterns--color-link"></div>
+                            </div>
+
+                            <div class="layout-4col">
+                                <h3>State</h3>
+
+                                <p><code>success-background</code></p>
+                                <div class="design-patterns--color design-patterns--color-success-background"></div>
+
+                                <p><code>success-text</code></p>
+                                <div class="design-patterns--color design-patterns--color-success-text"></div>
+
+                                <p><code>warning-background</code></p>
+                                <div class="design-patterns--color design-patterns--color-warning-background"></div>
+
+                                <p><code>warning-text</code></p>
+                                <div class="design-patterns--color design-patterns--color-warning-text"></div>
+
+                                <p><code>error-background</code></p>
+                                <div class="design-patterns--color design-patterns--color-error-background"></div>
+
+                                <p><code>error-text</code></p>
+                                <div class="design-patterns--color design-patterns--color-error-text"></div>
+
+                                <p><code>info-background</code></p>
+                                <div class="design-patterns--color design-patterns--color-info-background"></div>
+
+                                <p><code>info-text</code></p>
+                                <div class="design-patterns--color design-patterns--color-info-text"></div>
+                            </div>
+
+                        </div><!-- /.layout-container -->
+
+                    </section>
 
 
-                        <section id="section-text-semantics">
-                            <h2>Inline text-level semantics</h2>
+                    <section class="section" id="section-grid">
+                        <h2>Responsive grid</h2>
+                        <p>Grid layout with 1 to 4 column options.</p>
 
-                            <p>
-                                The <a href="http://codeispottery.com/">a element</a> example<br/>
-                                The <abbr>abbr element</abbr> and <abbr title="Title text">abbr element with title</abbr> examples<br/>
-                                The <b>b element</b> example<br/>
-                                The <cite>cite element</cite> example<br/>
-                                The <code>code element</code> example<br/>
-                                The <del>del element</del> example<br/>
-                                The <dfn>dfn element</dfn> and <dfn title="Title text">dfn element with title</dfn> examples<br/>
-                                The <em>em element</em> example<br/>
-                                The <i>i element</i> example<br/>
-                                The <ins>ins element</ins> example<br/>
-                                The <kbd>kbd element</kbd> example<br/>
-                                The <mark>mark element</mark> example<br/>
-                                The <q>q element <q>inside</q> a q element</q> example<br/>
-                                The <s>s element</s> example<br/>
-                                The <samp>samp element</samp> example<br/>
-                                The <small>small element</small> example<br/>
-                                The <span>span element</span> example<br/>
-                                The <strong>strong element</strong> example<br/>
-                                The <sub>sub element</sub> example<br/>
-                                The <sup>sup element</sup> example<br/>
-                                The <u>u element</u> example<br/>
-                                The <var>var element</var> example
+                        <h3>Current active breakpoint</h3>
+                        <ol class="design-patterns--breakpoints list--no-bullets clearfix">
+                            <li class="design-patterns--breakpoint-0">No breakpoint</li>
+                            <li class="design-patterns--breakpoint-1">Breakpoint 1</li>
+                            <li class="design-patterns--breakpoint-2">Breakpoint 2</li>
+                            <li class="design-patterns--breakpoint-3">Breakpoint 3</li>
+                        </ol>
+
+                        <h3>Main layout grid</h3>
+
+                        <div class="layout-container">
+
+                            <div class="layout-1col">
+                                <h6 class="design-patterns--box">Opt1: 1col</h6>
+                            </div>
+
+                            <div class="layout-2col">
+                                <h6 class="design-patterns--box">Opt2: 2col cell1</h6>
+                            </div>
+                            <div class="layout-2col">
+                                <h6 class="design-patterns--box">Opt2: 2col cell2</h6>
+                            </div>
+
+                            <div class="layout-3col">
+                                <h6 class="design-patterns--box">Opt3: 3col cell1</h6>
+                            </div>
+                            <div class="layout-3col">
+                                <h6 class="design-patterns--box">Opt3: 3col cell2</h6>
+                            </div>
+                            <div class="layout-3col">
+                                <h6 class="design-patterns--box">Opt3: 3col cell3</h6>
+                            </div>
+
+                            <div class="layout-3col-2span">
+                                <h6 class="design-patterns--box">Opt4: 3col cell1and2</h6>
+                            </div>
+                            <div class="layout-3col">
+                                <h6 class="design-patterns--box">Opt4: 3col cell3</h6>
+                            </div>
+
+                            <div class="layout-3col">
+                                <h6 class="design-patterns--box">Opt5: 3col cell1</h6>
+                            </div>
+                            <div class="layout-3col-2span">
+                                <h6 class="design-patterns--box">Opt5: 3col cell2and3</h6>
+                            </div>
+
+                            <div class="layout-4col">
+                                <h6 class="design-patterns--box">Opt6: 4col cell1</h6>
+                            </div>
+                            <div class="layout-4col">
+                                <h6 class="design-patterns--box">Opt6: 4col cell2</h6>
+                            </div>
+                            <div class="layout-4col">
+                                <h6 class="design-patterns--box">Opt6: 4col cell3</h6>
+                            </div>
+                            <div class="layout-4col">
+                                <h6 class="design-patterns--box">Opt6: 4col cell4</h6>
+                            </div>
+
+                            <div class="layout-4col-2span">
+                                <h6 class="design-patterns--box">Opt7: 4col cell1and2</h6>
+                            </div>
+                            <div class="layout-4col">
+                                <h6 class="design-patterns--box">Opt7: 4col cell3</h6>
+                            </div>
+                            <div class="layout-4col">
+                                <h6 class="design-patterns--box">Opt7: 4col cell4</h6>
+                            </div>
+
+                            <div class="layout-4col">
+                                <h6 class="design-patterns--box">Opt8: 4col cell1</h6>
+                            </div>
+                            <div class="layout-4col-2span">
+                                <h6 class="design-patterns--box">Opt8: 4col cell2and3</h6>
+                            </div>
+                            <div class="layout-4col">
+                                <h6 class="design-patterns--box">Opt8: 4col cell4</h6>
+                            </div>
+
+                            <div class="layout-4col">
+                                <h6 class="design-patterns--box">Opt9: 4col cell1</h6>
+                            </div>
+                            <div class="layout-4col">
+                                <h6 class="design-patterns--box">Opt9: 4col cell2</h6>
+                            </div>
+                            <div class="layout-4col-2span">
+                                <h6 class="design-patterns--box">Opt9: 4col cell3and4</h6>
+                            </div>
+
+                            <div class="layout-4col-3span">
+                                <h6 class="design-patterns--box">Opt10: 4col cell1and2and3</h6>
+                            </div>
+                            <div class="layout-4col">
+                                <h6 class="design-patterns--box">Opt10: 4col cell4</h6>
+                            </div>
+
+                            <div class="layout-4col">
+                                <h6 class="design-patterns--box">Opt11: 4col cell1</h6>
+                            </div>
+                            <div class="layout-4col-3span">
+                                <h6 class="design-patterns--box">Opt11: 4col cell2and3and4</h6>
+                            </div>
+
+                        </div><!-- /.layout-container -->
+
+                    </section>
+
+
+                    <section id="section-type">
+                        <h2>Typography</h2>
+
+                        <h1>h1 Heading 1 h1 Heading 1 h1 Heading 1 h1 Heading 1</h1>
+                        <h2>h2 Heading 2 h2 Heading 2 h2 Heading 2 h2 Heading 2 h2 Heading 2</h2>
+                        <h3>h3 Heading 3 h3 Heading 3 h3 Heading 3 h3 Heading 3 h3 Heading 3 h3 Heading 3 h3</h3>
+                        <h4>h4 Heading 4 h4 Heading 4 h4 Heading 4 h4 Heading 4 h4 Heading 4 h4 Heading 4 h4 Heading 4 h4 Heading 4</h4>
+
+                        <p><strong>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Etiam sit amet elit vitae arcu interdum ullamcorper.</strong> Nullam ultrices, nisi quis scelerisque convallis, augue neque tempor enim, et mattis justo nibh eu elit.</p>
+                        <p>Quisque ultrices gravida pede. Mauris accumsan vulputate tellus. Phasellus condimentum bibendum dolor. Mauris sed ipsum. Phasellus in diam. Nam sapien ligula, consectetuer id, hendrerit in, cursus sed, leo. Nam tincidunt rhoncus urna. Aliquam id massa ut nibh bibendum imperdiet. Curabitur neque mauris, porta vel, lacinia quis, placerat ultrices, orci.</p>
+
+                        <p>This text has a reference in the footnote<sup class="footnote" id="fnrevanchor1"><a href="#fnanchor1">1</a></sup>.</p>
+                        <p class="footnote" id="fnanchor1"><sup>1</sup> Here is the footnote.</p>
+
+                        <h3>Contact details</h3>
+                        <p>Uses both the <a rel="external" href="http://schema.org/" title="Go to the Schema.org website">Schema.org</a> and <a rel="external" href="http://microformats.org/wiki/hcard" title="Go to the hCard website">hCard</a> mircoformats.</p>
+                        <!-- possible schema types: Organization, Corporation, etc (see http://schema.org/Organization for more info) -->
+                        <div class="vcard" role="group" itemscope itemtype="http://schema.org/Organization">
+                            <p class="org fn" itemprop="name">Organization Name</p>
+                            <address class="adr" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+                                <span class="street-address" itemprop="streetAddress">13 Mystreet</span>,
+                                <span class="locality" itemprop="addressLocality">Mytown</span>,
+                                <span class="region" itemprop="addressRegion">Myshire</span>,
+                                <span class="postal-code" itemprop="postalCode">GU1 0AB</span>,
+                                <span class="country" itemprop="addressCountry">United Kingdom</span>
+                            </address>
+                            <p class="tel" itemprop="contactPoint">
+                                <span class="type" itemprop="name">Telephone</span>
+                                <span class="value" itemprop="telephone">01234 456789</span>
                             </p>
-                        </section>
+                            <p class="tel" itemprop="contactPoint">
+                                <span class="type" itemprop="name">Mobile</span>
+                                <span class="value" itemprop="telephone">07900 123456</span>
+                            </p>
+                            <p itemprop="contactPoint">
+                                <span itemprop="name">Email</span>
+                                <a class="email" itemprop="email" href="mailto:anon@anon.com" title="Email us">anon@anon.com</a>
+                            </p>
+                        </div>
+
+                        <h3>Text ranged left</h3>
+                        <p style="text-align:left;">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Etiam sit amet elit vitae arcu interdum ullamcorper. Nullam ultrices, nisi quis scelerisque convallis, augue neque tempor enim, et mattis justo nibh eu elit.</p>
+
+                        <h3>Text ranged right</h3>
+                        <p style="text-align:right;">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Etiam sit amet elit vitae arcu interdum ullamcorper. Nullam ultrices, nisi quis scelerisque convallis, augue neque tempor enim, et mattis justo nibh eu elit.</p>
+
+                        <h3>Text centred</h3>
+                        <p style="text-align:center;">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Etiam sit amet elit vitae arcu interdum ullamcorper. Nullam ultrices, nisi quis scelerisque convallis, augue neque tempor enim, et mattis justo nibh eu elit.</p>
+
+                        <h3>Text justified</h3>
+                        <p style="text-align:justify;">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Etiam sit amet elit vitae arcu interdum ullamcorper. Nullam ultrices, nisi quis scelerisque convallis, augue neque tempor enim, et mattis justo nibh eu elit.</p>
+                    </section>
 
 
-                        <section id="section-block-semantics">
-                            <h2>Block text-level semantics</h2>
+                    <section id="section-text-semantics">
+                        <h2>Inline text-level semantics</h2>
 
-                            <h3>Pre-formatted text blocks</h3>
-                            <pre>This is an example of a non-code
+                        <p>
+                            The <a href="http://codeispottery.com/">a element</a> example<br/>
+                            The <abbr>abbr element</abbr> and <abbr title="Title text">abbr element with title</abbr> examples<br/>
+                            The <b>b element</b> example<br/>
+                            The <cite>cite element</cite> example<br/>
+                            The <code>code element</code> example<br/>
+                            The <del>del element</del> example<br/>
+                            The <dfn>dfn element</dfn> and <dfn title="Title text">dfn element with title</dfn> examples<br/>
+                            The <em>em element</em> example<br/>
+                            The <i>i element</i> example<br/>
+                            The <ins>ins element</ins> example<br/>
+                            The <kbd>kbd element</kbd> example<br/>
+                            The <mark>mark element</mark> example<br/>
+                            The <q>q element <q>inside</q> a q element</q> example<br/>
+                            The <s>s element</s> example<br/>
+                            The <samp>samp element</samp> example<br/>
+                            The <small>small element</small> example<br/>
+                            The <span>span element</span> example<br/>
+                            The <strong>strong element</strong> example<br/>
+                            The <sub>sub element</sub> example<br/>
+                            The <sup>sup element</sup> example<br/>
+                            The <u>u element</u> example<br/>
+                            The <var>var element</var> example
+                        </p>
+                    </section>
+
+
+                    <section id="section-block-semantics">
+                        <h2>Block text-level semantics</h2>
+
+                        <h3>Pre-formatted text blocks</h3>
+                        <pre>This is an example of a non-code
     pre-formatted text block
         preserving white spaces</pre>
 
-                            <h3>Pre-formatted code blocks</h3>
-                            <pre class="language-markup"><code>&lt;section class=&quot;alert alert-error fade in&quot; role=&quot;alert&quot;&gt;
+                        <h3>Pre-formatted code blocks</h3>
+                        <pre class="language-markup"><code>&lt;section class=&quot;alert alert-error fade in&quot; role=&quot;alert&quot;&gt;
     &lt;a class=&quot;close&quot; data-dismiss=&quot;alert&quot;&gt;&amp;amp;times;&lt;/a&gt;
     &lt;h3&gt;Message pane&lt;/h3&gt;
     &lt;p&gt;Error message goes here.&lt;/p&gt;
 &lt;/section&gt;</code></pre>
 
-                            <h3>Pre-formatted code blocks with line numbers</h3>
-                            <pre class="language-markup line-numbers"><code>&lt;section class=&quot;alert alert-error fade in&quot; role=&quot;alert&quot;&gt;
+                        <h3>Pre-formatted code blocks with line numbers</h3>
+                        <pre class="language-markup line-numbers"><code>&lt;section class=&quot;alert alert-error fade in&quot; role=&quot;alert&quot;&gt;
     &lt;a class=&quot;close&quot; data-dismiss=&quot;alert&quot;&gt;&amp;amp;times;&lt;/a&gt;
     &lt;h3&gt;Message pane&lt;/h3&gt;
     &lt;p&gt;Error message goes here.&lt;/p&gt;
 &lt;/section&gt;</code></pre>
 
-                            <h3>Blockquotes</h3>
-                            <blockquote cite="http://textpattern.com/">
-                                <p>Here is an example of a block quote. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
-                            </blockquote>
+                        <h3>Blockquotes</h3>
+                        <blockquote cite="http://textpattern.com/">
+                            <p>Here is an example of a block quote. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+                        </blockquote>
 
-                            <h3>Thematic break (hr tag)</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Etiam sit amet elit vitae arcu interdum ullamcorper.</p>
-                            <hr>
-                            <p>Nullam ultrices, nisi quis scelerisque convallis, augue neque tempor enim, et mattis justo nibh eu elit.</p>
-                        </section>
+                        <h3>Thematic break (hr tag)</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Etiam sit amet elit vitae arcu interdum ullamcorper.</p>
+                        <hr>
+                        <p>Nullam ultrices, nisi quis scelerisque convallis, augue neque tempor enim, et mattis justo nibh eu elit.</p>
+                    </section>
 
 
-                        <section id="section-media">
-                            <h2>Embedded content</h2>
+                    <section id="section-media">
+                        <h2>Embedded content</h2>
 
-                            <h3>Images</h3>
-                            <p>
+                        <h3>Images</h3>
+                        <p>
+                            <img src="http://placehold.it/160x160/cccccc/666666" alt="Alt text">
+                        </p>
+
+                        <h3>Images with links</h3>
+                        <p>
+                            <a class="a--img" href="#" title="Title text">
                                 <img src="http://placehold.it/160x160/cccccc/666666" alt="Alt text">
-                            </p>
+                            </a>
+                        </p>
 
-                            <h3>Images with links</h3>
-                            <p>
-                                <a class="a--img" href="#" title="Title text">
-                                    <img src="http://placehold.it/160x160/cccccc/666666" alt="Alt text">
-                                </a>
-                            </p>
+                        <h3>Rounded images</h3>
+                        <p>
+                            <img class="img--rounded" src="http://placehold.it/160x160/cccccc/666666" alt="Alt text">
+                        </p>
 
-                            <h3>Rounded images</h3>
-                            <p>
-                                <img class="img--rounded" src="http://placehold.it/160x160/cccccc/666666" alt="Alt text">
-                            </p>
+                        <h3>Circular images</h3>
+                        <p>
+                            <img class="img--circular" src="http://placehold.it/160x160/cccccc/666666" alt="Alt text">
+                        </p>
 
-                            <h3>Circular images</h3>
-                            <p>
-                                <img class="img--circular" src="http://placehold.it/160x160/cccccc/666666" alt="Alt text">
-                            </p>
+                        <h3>Figures</h3>
+                        <figure itemscope itemtype="http://schema.org/ImageObject">
+                            <img itemprop="image" src="http://placehold.it/160x160/cccccc/666666" alt="Alt text">
+                            <figcaption itemprop="caption">Figcaption content</figcaption>
+                        </figure>
 
-                            <h3>Figures</h3>
-                            <figure itemscope itemtype="http://schema.org/ImageObject">
-                                <img itemprop="image" src="http://placehold.it/160x160/cccccc/666666" alt="Alt text">
-                                <figcaption itemprop="caption">Figcaption content</figcaption>
-                            </figure>
+                        <h3>Left ranged image</h3>
+                        <p>Aenean vehicula posuere neque. Nam nibh lectus, laoreet non, convallis sed, vulputate consectetuer, enim. Pellentesque arcu. Vestibulum consequat nisi a ipsum vulputate vehicula. Aliquam lacus diam, ultricies vel, interdum eget, posuere non, tellus. Donec vel ligula. Sed felis. <img class="align-left" src="http://placehold.it/160x160/cccccc/666666" alt="Alt text"> Quisque ultrices gravida pede. Mauris accumsan vulputate tellus. Phasellus condimentum bibendum dolor. Mauris sed ipsum. Phasellus in diam. Nam sapien ligula, consectetuer id, hendrerit in, cursus sed, leo. Nam tincidunt rhoncus urna. Aliquam id massa ut nibh bibendum imperdiet. Curabitur neque mauris, porta vel, lacinia quis, placerat ultrices, orci. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In lectus nisl, porttitor eget, fermentum et, viverra a, odio. Sed semper. Praesent vulputate nibh eget nisi. Sed ligula. Aenean vehicula posuere neque. Nam nibh lectus, laoreet non, convallis sed, vulputate consectetuer, enim. Pellentesque arcu. Vestibulum consequat nisi a ipsum vulputate vehicula. Aliquam lacus diam, ultricies vel, interdum eget, posuere non, tellus. Donec vel ligula. Sed felis.</p>
 
-                            <h3>Left ranged image</h3>
-                            <p>Aenean vehicula posuere neque. Nam nibh lectus, laoreet non, convallis sed, vulputate consectetuer, enim. Pellentesque arcu. Vestibulum consequat nisi a ipsum vulputate vehicula. Aliquam lacus diam, ultricies vel, interdum eget, posuere non, tellus. Donec vel ligula. Sed felis. <img class="align-left" src="http://placehold.it/160x160/cccccc/666666" alt="Alt text"> Quisque ultrices gravida pede. Mauris accumsan vulputate tellus. Phasellus condimentum bibendum dolor. Mauris sed ipsum. Phasellus in diam. Nam sapien ligula, consectetuer id, hendrerit in, cursus sed, leo. Nam tincidunt rhoncus urna. Aliquam id massa ut nibh bibendum imperdiet. Curabitur neque mauris, porta vel, lacinia quis, placerat ultrices, orci. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In lectus nisl, porttitor eget, fermentum et, viverra a, odio. Sed semper. Praesent vulputate nibh eget nisi. Sed ligula. Aenean vehicula posuere neque. Nam nibh lectus, laoreet non, convallis sed, vulputate consectetuer, enim. Pellentesque arcu. Vestibulum consequat nisi a ipsum vulputate vehicula. Aliquam lacus diam, ultricies vel, interdum eget, posuere non, tellus. Donec vel ligula. Sed felis.</p>
+                        <h3>Right ranged image</h3>
+                        <p>Aenean vehicula posuere neque. Nam nibh lectus, laoreet non, convallis sed, vulputate consectetuer, enim. Pellentesque arcu. Vestibulum consequat nisi a ipsum vulputate vehicula. Aliquam lacus diam, ultricies vel, interdum eget, posuere non, tellus. Donec vel ligula. Sed felis. <img class="align-right" src="http://placehold.it/160x160/cccccc/666666" alt="Alt text"> Quisque ultrices gravida pede. Mauris accumsan vulputate tellus. Phasellus condimentum bibendum dolor. Mauris sed ipsum. Phasellus in diam. Nam sapien ligula, consectetuer id, hendrerit in, cursus sed, leo. Nam tincidunt rhoncus urna. Aliquam id massa ut nibh bibendum imperdiet. Curabitur neque mauris, porta vel, lacinia quis, placerat ultrices, orci. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In lectus nisl, porttitor eget, fermentum et, viverra a, odio. Sed semper. Praesent vulputate nibh eget nisi. Sed ligula. Aenean vehicula posuere neque. Nam nibh lectus, laoreet non, convallis sed, vulputate consectetuer, enim. Pellentesque arcu. Vestibulum consequat nisi a ipsum vulputate vehicula. Aliquam lacus diam, ultricies vel, interdum eget, posuere non, tellus. Donec vel ligula. Sed felis.</p>
 
-                            <h3>Right ranged image</h3>
-                            <p>Aenean vehicula posuere neque. Nam nibh lectus, laoreet non, convallis sed, vulputate consectetuer, enim. Pellentesque arcu. Vestibulum consequat nisi a ipsum vulputate vehicula. Aliquam lacus diam, ultricies vel, interdum eget, posuere non, tellus. Donec vel ligula. Sed felis. <img class="align-right" src="http://placehold.it/160x160/cccccc/666666" alt="Alt text"> Quisque ultrices gravida pede. Mauris accumsan vulputate tellus. Phasellus condimentum bibendum dolor. Mauris sed ipsum. Phasellus in diam. Nam sapien ligula, consectetuer id, hendrerit in, cursus sed, leo. Nam tincidunt rhoncus urna. Aliquam id massa ut nibh bibendum imperdiet. Curabitur neque mauris, porta vel, lacinia quis, placerat ultrices, orci. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In lectus nisl, porttitor eget, fermentum et, viverra a, odio. Sed semper. Praesent vulputate nibh eget nisi. Sed ligula. Aenean vehicula posuere neque. Nam nibh lectus, laoreet non, convallis sed, vulputate consectetuer, enim. Pellentesque arcu. Vestibulum consequat nisi a ipsum vulputate vehicula. Aliquam lacus diam, ultricies vel, interdum eget, posuere non, tellus. Donec vel ligula. Sed felis.</p>
+                        <h3>Centred image</h3>
+                        <p>Aenean vehicula posuere neque. Nam nibh lectus, laoreet non, convallis sed, vulputate consectetuer, enim. Pellentesque arcu. Vestibulum consequat nisi a ipsum vulputate vehicula. Aliquam lacus diam, ultricies vel, interdum eget, posuere non, tellus. Donec vel ligula. Sed felis. <img class="align-center" src="http://placehold.it/160x160/cccccc/666666" alt="Alt text"> Quisque ultrices gravida pede. Mauris accumsan vulputate tellus. Phasellus condimentum bibendum dolor. Mauris sed ipsum. Phasellus in diam. Nam sapien ligula, consectetuer id, hendrerit in, cursus sed, leo. Nam tincidunt rhoncus urna. Aliquam id massa ut nibh bibendum imperdiet. Curabitur neque mauris, porta vel, lacinia quis, placerat ultrices, orci. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In lectus nisl, porttitor eget, fermentum et, viverra a, odio. Sed semper. Praesent vulputate nibh eget nisi. Sed ligula. Aenean vehicula posuere neque. Nam nibh lectus, laoreet non, convallis sed, vulputate consectetuer, enim. Pellentesque arcu. Vestibulum consequat nisi a ipsum vulputate vehicula. Aliquam lacus diam, ultricies vel, interdum eget, posuere non, tellus. Donec vel ligula. Sed felis.</p>
 
-                            <h3>Centred image</h3>
-                            <p>Aenean vehicula posuere neque. Nam nibh lectus, laoreet non, convallis sed, vulputate consectetuer, enim. Pellentesque arcu. Vestibulum consequat nisi a ipsum vulputate vehicula. Aliquam lacus diam, ultricies vel, interdum eget, posuere non, tellus. Donec vel ligula. Sed felis. <img class="align-center" src="http://placehold.it/160x160/cccccc/666666" alt="Alt text"> Quisque ultrices gravida pede. Mauris accumsan vulputate tellus. Phasellus condimentum bibendum dolor. Mauris sed ipsum. Phasellus in diam. Nam sapien ligula, consectetuer id, hendrerit in, cursus sed, leo. Nam tincidunt rhoncus urna. Aliquam id massa ut nibh bibendum imperdiet. Curabitur neque mauris, porta vel, lacinia quis, placerat ultrices, orci. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In lectus nisl, porttitor eget, fermentum et, viverra a, odio. Sed semper. Praesent vulputate nibh eget nisi. Sed ligula. Aenean vehicula posuere neque. Nam nibh lectus, laoreet non, convallis sed, vulputate consectetuer, enim. Pellentesque arcu. Vestibulum consequat nisi a ipsum vulputate vehicula. Aliquam lacus diam, ultricies vel, interdum eget, posuere non, tellus. Donec vel ligula. Sed felis.</p>
+                        <h3><span class="caps">SVG</span></h3>
+                        <svg width="160px" height="160px">
+                            <circle cx="160" cy="160" r="160" fill="#999999"/>
+                        </svg>
 
-                            <h3><span class="caps">SVG</span></h3>
-                            <svg width="160px" height="160px">
-                                <circle cx="160" cy="160" r="160" fill="#999999"/>
-                            </svg>
+                        <h3>Videos</h3>
+                        <p>Via <a href="http://flowplayer.org/" rel="external" title="Go to the Flowplayer website">Flowplayer</a> (GPL version).</p>
+                        <div class="videoplayer" itemprop="video" itemscope itemtype="http://schema.org/VideoObject">
+                            <video poster="http://placehold.it/640x360/cccccc/666666">
+                                <source itemprop="contentUrl" type="video/mp4" src="http://clips.vorwaerts-gmbh.de/VfE_html5.mp4">
+                                <source itemprop="contentUrl" type="video/webm" src="http://clips.vorwaerts-gmbh.de/VfE.webm">
+                            </video>
+                            <meta itemprop="duration" content="T60S">
+                        </div>
 
-                            <h3>Videos</h3>
-                            <p>Via <a href="http://flowplayer.org/" rel="external" title="Go to the Flowplayer website">Flowplayer</a> (GPL version).</p>
-                            <div class="videoplayer" itemprop="video" itemscope itemtype="http://schema.org/VideoObject">
-                                <video poster="http://placehold.it/640x360/cccccc/666666">
-                                    <source itemprop="contentUrl" type="video/mp4" src="http://clips.vorwaerts-gmbh.de/VfE_html5.mp4">
-                                    <source itemprop="contentUrl" type="video/webm" src="http://clips.vorwaerts-gmbh.de/VfE.webm">
-                                </video>
-                                <meta itemprop="duration" content="T60S">
-                            </div>
-
-                        </section>
+                    </section>
 
 
-                        <section id="section-labels">
-                            <h2>Inline text labels</h2>
+                    <section id="section-labels">
+                        <h2>Inline text labels</h2>
 
-                            <h3>Safe</h3>
-                            <p class="information"><code>class="success"</code></p>
-                            <p>This is an example of a <span class="success">span success label</span> and a <strong class="success">strong success label</strong>.</p>
+                        <h3>Safe</h3>
+                        <p class="information"><code>class="success"</code></p>
+                        <p>This is an example of a <span class="success">span success label</span> and a <strong class="success">strong success label</strong>.</p>
 
-                            <h3>Warning</h3>
-                            <p class="information"><code>class="warning"</code></p>
-                            <p>This is an example of a <span class="warning">span warning label</span> and a <strong class="warning">strong warning label</strong>.</p>
+                        <h3>Warning</h3>
+                        <p class="information"><code>class="warning"</code></p>
+                        <p>This is an example of a <span class="warning">span warning label</span> and a <strong class="warning">strong warning label</strong>.</p>
 
-                            <h3>Danger</h3>
-                            <p class="information"><code>class="error"</code></p>
-                            <p>This is an example of a <span class="error">span error label</span> and a <strong class="error">strong error label</strong>.</p>
+                        <h3>Danger</h3>
+                        <p class="information"><code>class="error"</code></p>
+                        <p>This is an example of a <span class="error">span error label</span> and a <strong class="error">strong error label</strong>.</p>
 
-                            <h3>Information (no semantic meaning)</h3>
-                            <p class="information"><code>class="information"</code></p>
-                            <p>This is an example of a <span class="information">span information label</span> and a <strong class="information">strong information label</strong>.</p>
+                        <h3>Information (no semantic meaning)</h3>
+                        <p class="information"><code>class="information"</code></p>
+                        <p>This is an example of a <span class="information">span information label</span> and a <strong class="information">strong information label</strong>.</p>
 
-                        </section>
-
-
-                        <section id="section-alerts">
-                            <h2>Alert boxes</h2>
-
-                            <h3>System message: success</h3>
-                            <p class="information"><code>&lt;p class="alert-block success"&gt;</code></p>
-                            <p class="alert-block success"><strong>Success:</strong> a suitable success message goes here.</p>
-
-                            <h3>System message: warning</h3>
-                            <p class="information"><code>&lt;p class="alert-block warning"&gt;</code></p>
-                            <p class="alert-block warning"><strong>Warning:</strong> a suitable warning message goes here.</p>
-
-                            <h3>System message: error</h3>
-                            <p class="information"><code>&lt;p class="alert-block error"&gt;</code></p>
-                            <p class="alert-block error"><strong>Error:</strong> a suitable error message goes here.</p>
-
-                            <h3>System message: information (no semantic meaning)</h3>
-                            <p class="information"><code>&lt;p class="alert-block information"&gt;</code></p>
-                            <p class="alert-block information"><strong>Information:</strong> a suitable information message goes here.</p>
-
-                        </section>
+                    </section>
 
 
-                        <section id="section-pagination">
-                            <h2>Pagination</h2>
+                    <section id="section-alerts">
+                        <h2>Alert boxes</h2>
 
-                            <nav class="paginator" aria-label="Blog navigation">
-                                <a class="prev" rel="prev" href="#" title="Go to previous page" aria-label="Go to previous page">Prev</a>
-                                <a class="next" rel="next" href="#" title="Go to next page" aria-label="Go to next page">Next</a>
+                        <h3>System message: success</h3>
+                        <p class="information"><code>&lt;p class="alert-block success"&gt;</code></p>
+                        <p class="alert-block success"><strong>Success:</strong> a suitable success message goes here.</p>
 
-                                <ul class="pagination">
-                                    <li>
-                                        <a href="#" title="Go to page 1" aria-label="Go to page 1">1</a>
-                                    </li>
-                                    <li class="current">
-                                        <b title="Current page" aria-label="Current page">2</b>
-                                    </li>
-                                    <li>
-                                        <a href="#" title="Go to page 3" aria-label="Go to page 3">3</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" title="Go to page 4" aria-label="Go to page 4">4</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" title="Go to page 5" aria-label="Go to page 5">5</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" title="Go to page 6" aria-label="Go to page 6">6</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" title="Go to page 7" aria-label="Go to page 7">7</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" title="Go to page 8" aria-label="Go to page 8">8</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" title="Go to page 9" aria-label="Go to page 9">9</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" title="More pages" aria-label="More pages">&hellip;</a>
-                                    </li>
-                                </ul>
-                            </nav>
-                        </section>
+                        <h3>System message: warning</h3>
+                        <p class="information"><code>&lt;p class="alert-block warning"&gt;</code></p>
+                        <p class="alert-block warning"><strong>Warning:</strong> a suitable warning message goes here.</p>
+
+                        <h3>System message: error</h3>
+                        <p class="information"><code>&lt;p class="alert-block error"&gt;</code></p>
+                        <p class="alert-block error"><strong>Error:</strong> a suitable error message goes here.</p>
+
+                        <h3>System message: information (no semantic meaning)</h3>
+                        <p class="information"><code>&lt;p class="alert-block information"&gt;</code></p>
+                        <p class="alert-block information"><strong>Information:</strong> a suitable information message goes here.</p>
+
+                    </section>
 
 
-                        <section class="section" id="section-breadcrumbs">
-                            <h2>Breadcrumbs</h2>
+                    <section id="section-pagination">
+                        <h2>Pagination</h2>
 
-                            <nav aria-label="Breadcrumb navigation">
-                                <ol class="breadcrumbs" itemscope itemtype="http://schema.org/BreadcrumbList">
-                                    <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-                                        <a itemprop="item" href="#">
-                                            <span itemprop="name">Home</span>
-                                        </a>
-                                        <meta itemprop="position" content="1">
-                                    </li>
-                                    <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-                                        <a itemprop="item" href="#">
-                                            <span itemprop="name">Projects</span>
-                                        </a>
-                                        <meta itemprop="position" content="2">
-                                    </li>
-                                    <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-                                        <a itemprop="item" href="#">
-                                            <span itemprop="name">Gene Splicing</span>
-                                        </a>
-                                        <meta itemprop="position" content="3">
-                                    </li>
-                                    <li class="current" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-                                        <b itemprop="item">
-                                            <span itemprop="name">Test subject X11</span>
-                                        </b>
-                                        <meta itemprop="position" content="4">
-                                    </li>
-                                </ol>
-                            </nav>
-                        </section>
+                        <nav class="paginator" aria-label="Blog navigation">
+                            <a class="prev" rel="prev" href="#" title="Go to previous page" aria-label="Go to previous page">Prev</a>
+                            <a class="next" rel="next" href="#" title="Go to next page" aria-label="Go to next page">Next</a>
+
+                            <ul class="pagination">
+                                <li>
+                                    <a href="#" title="Go to page 1" aria-label="Go to page 1">1</a>
+                                </li>
+                                <li class="current">
+                                    <b title="Current page" aria-label="Current page">2</b>
+                                </li>
+                                <li>
+                                    <a href="#" title="Go to page 3" aria-label="Go to page 3">3</a>
+                                </li>
+                                <li>
+                                    <a href="#" title="Go to page 4" aria-label="Go to page 4">4</a>
+                                </li>
+                                <li>
+                                    <a href="#" title="Go to page 5" aria-label="Go to page 5">5</a>
+                                </li>
+                                <li>
+                                    <a href="#" title="Go to page 6" aria-label="Go to page 6">6</a>
+                                </li>
+                                <li>
+                                    <a href="#" title="Go to page 7" aria-label="Go to page 7">7</a>
+                                </li>
+                                <li>
+                                    <a href="#" title="Go to page 8" aria-label="Go to page 8">8</a>
+                                </li>
+                                <li>
+                                    <a href="#" title="Go to page 9" aria-label="Go to page 9">9</a>
+                                </li>
+                                <li>
+                                    <a href="#" title="More pages" aria-label="More pages">&hellip;</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </section>
 
 
-                        <section id="section-lists">
-                            <h2>Lists</h2>
+                    <section class="section" id="section-breadcrumbs">
+                        <h2>Breadcrumbs</h2>
 
-                            <h3>Number list</h3>
-                            <p class="information"><code>&lt;ol&gt;</code></p>
-                            <ol>
-                                <li>this is an example</li>
-                                <li>of a numbered</li>
-                                <li>(ordered) list
-                                    <ol>
-                                        <li>and a second level</li>
-                                        <li>numbered list example</li>
-                                    </ol>
+                        <nav aria-label="Breadcrumb navigation">
+                            <ol class="breadcrumbs" itemscope itemtype="http://schema.org/BreadcrumbList">
+                                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                                    <a itemprop="item" href="#">
+                                        <span itemprop="name">Home</span>
+                                    </a>
+                                    <meta itemprop="position" content="1">
+                                </li>
+                                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                                    <a itemprop="item" href="#">
+                                        <span itemprop="name">Projects</span>
+                                    </a>
+                                    <meta itemprop="position" content="2">
+                                </li>
+                                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                                    <a itemprop="item" href="#">
+                                        <span itemprop="name">Gene Splicing</span>
+                                    </a>
+                                    <meta itemprop="position" content="3">
+                                </li>
+                                <li class="current" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                                    <b itemprop="item">
+                                        <span itemprop="name">Test subject X11</span>
+                                    </b>
+                                    <meta itemprop="position" content="4">
                                 </li>
                             </ol>
-
-                            <h3>Bullet list</h3>
-                            <p class="information"><code>&lt;ul&gt;</code></p>
-                            <ul>
-                                <li>this is an example</li>
-                                <li>of a bulletpoint</li>
-                                <li>(unordered) list
-                                    <ul>
-                                        <li>and a second level</li>
-                                        <li>bulletpoint list example</li>
-                                    </ul>
-                                </li>
-                            </ul>
-
-                            <h3>Plain list</h3>
-                            <p class="information"><code>&lt;ul class="list--no-bullets"&gt;</code></p>
-                            <ul class="list--no-bullets">
-                                <li>this is an example</li>
-                                <li>of a no-bullets</li>
-                                <li>(unordered) list
-                                    <ul class="list--no-bullets">
-                                        <li>and a second level</li>
-                                        <li>no-bullets list example</li>
-                                    </ul>
-                                </li>
-                            </ul>
-
-                            <h3>Definition list</h3>
-                            <p class="information"><code>&lt;dl&gt;</code></p>
-                            <dl>
-                                <dt>This is a definition list term</dt>
-                                <dd>Definition of term here</dd>
-                                <dd>Another definition of term</dd>
-                            </dl>
-                        </section>
+                        </nav>
+                    </section>
 
 
-                        <section id="section-tables">
-                            <h2>Tables</h2>
+                    <section id="section-lists">
+                        <h2>Lists</h2>
 
-                            <h3>Plain table</h3>
-                            <p class="information">Simple table (without <code>&lt;thead&gt;</code>, <code>&lt;tfoot&gt;</code> tags)</p>
+                        <h3>Number list</h3>
+                        <p class="information"><code>&lt;ol&gt;</code></p>
+                        <ol>
+                            <li>this is an example</li>
+                            <li>of a numbered</li>
+                            <li>(ordered) list
+                                <ol>
+                                    <li>and a second level</li>
+                                    <li>numbered list example</li>
+                                </ol>
+                            </li>
+                        </ol>
 
-                            <div class="tabular-data">
-                                <table>
-                                    <tbody>
-                                        <tr>
-                                            <th>Primary</th>
-                                            <th>Secondary</th>
-                                            <th>Tertiary</th>
-                                        </tr>
-                                        <tr>
-                                            <th>Roast duck</th>
-                                            <td>Seasonal vegetables</td>
-                                            <td>New potatoes</td>
-                                        </tr>
-                                        <tr>
-                                            <th>Grilled lobster</th>
-                                            <td>Mixed seafood</td>
-                                            <td>Side salad</td>
-                                        </tr>
-                                        <tr>
-                                            <th>Chicken dinosaurs</th>
-                                            <td>Baked beans</td>
-                                            <td>Waffles</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
+                        <h3>Bullet list</h3>
+                        <p class="information"><code>&lt;ul&gt;</code></p>
+                        <ul>
+                            <li>this is an example</li>
+                            <li>of a bulletpoint</li>
+                            <li>(unordered) list
+                                <ul>
+                                    <li>and a second level</li>
+                                    <li>bulletpoint list example</li>
+                                </ul>
+                            </li>
+                        </ul>
 
-                            <h3>Full Table</h3>
-                            <p class="information">Full-feautured table with <code>scope</code>, <code>rowspan</code> <code>colspan</code> attributes, and <code>&lt;caption&gt;</code>, <code>&lt;colgroup&gt;</code>, <code>&lt;thead&gt;</code>, <code>&lt;tfoot&gt;</code>, <code>&lt;tbody&gt;</code> tags included</p>
+                        <h3>Plain list</h3>
+                        <p class="information"><code>&lt;ul class="list--no-bullets"&gt;</code></p>
+                        <ul class="list--no-bullets">
+                            <li>this is an example</li>
+                            <li>of a no-bullets</li>
+                            <li>(unordered) list
+                                <ul class="list--no-bullets">
+                                    <li>and a second level</li>
+                                    <li>no-bullets list example</li>
+                                </ul>
+                            </li>
+                        </ul>
 
-                            <div class="tabular-data">
-                                <table>
-                                    <caption>This is a table caption</caption>
-                                    <colgroup>
-                                        <col class="t25">
-                                        <col class="t25">
-                                        <col class="t25">
-                                        <col>
-                                    </colgroup>
-                                    <thead>
-                                        <tr>
-                                            <th scope="col">Sector</th>
-                                            <th scope="col">Planet</th>
-                                            <th scope="col">Government</th>
-                                            <th scope="col" class="numerical">Population</th>
-                                        </tr>
-                                    </thead>
-                                    <tfoot>
-                                        <tr>
-                                            <td colspan="4">This is the tfoot</td>
-                                        </tr>
-                                    </tfoot>
-                                    <tbody>
-                                        <tr>
-                                            <th scope="row" rowspan="3">Alpha</th>
-                                            <td>Diso</td>
-                                            <td>Democracy</td>
-                                            <td class="numerical">4.137 B</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Lave</td>
-                                            <td>Dictatorship</td>
-                                            <td class="numerical">2.5 B</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Leesti</td>
-                                            <td>Corporate State</td>
-                                            <td class="numerical">5.01 B</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row" rowspan="2">Beta</th>
-                                            <td>Reorte</td>
-                                            <td>Dictatorship</td>
-                                            <td class="numerical">3.119 B</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Zaonce</td>
-                                            <td>Corporate State</td>
-                                            <td class="numerical">5.3 B</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </section>
+                        <h3>Definition list</h3>
+                        <p class="information"><code>&lt;dl&gt;</code></p>
+                        <dl>
+                            <dt>This is a definition list term</dt>
+                            <dd>Definition of term here</dd>
+                            <dd>Another definition of term</dd>
+                        </dl>
+                    </section>
 
 
-                        <section id="section-forms">
-                            <h2>Forms</h2>
+                    <section id="section-tables">
+                        <h2>Tables</h2>
 
-                            <form>
-                                <h3>Inputs</h3>
-                                <p>
-                                    <input id="test_checkbox_1" name="test_checkbox_1" type="checkbox">
-                                    <label for="test_checkbox_1">Test checkbox 1</label>
-                                    <input id="test_checkbox_2" name="test_checkbox_2" type="checkbox">
-                                    <label for="test_checkbox_2">Test checkbox 2</label>
-                                    <input id="test_checkbox_3" name="test_checkbox_3" type="checkbox">
-                                    <label for="test_checkbox_3">Test checkbox 3</label>
-                                </p>
-                                <p>
-                                    <input id="test_radio_1" name="test_radio_group" type="radio">
-                                    <label for="test_radio_1">Test radio 1</label>
-                                    <input id="test_radio_2" name="test_radio_group" type="radio">
-                                    <label for="test_radio_2">Test radio 2</label>
-                                    <input id="test_radio_3" name="test_radio_group" type="radio">
-                                    <label for="test_radio_3">Test radio 3</label>
-                                </p>
-                                <p>
-                                    <label for="select_dd">Inline form elements</label><br>
-                                    <select id="select_dd" name="select_dd">
-                                        <optgroup label="Group 1">
-                                            <option value="1">Some text goes here</option>
-                                            <option value="2">Another choice could be here</option>
-                                            <option value="3">Yet another item to be chosen</option>
-                                        </optgroup>
-                                        <optgroup label="Group 2">
-                                            <option value="4">Some text goes here</option>
-                                            <option value="5">Another choice could be here</option>
-                                            <option value="6">Yet another item to be chosen</option>
-                                        </optgroup>
-                                        <optgroup label="Group 3">
-                                            <option value="7">Some text goes here</option>
-                                            <option value="8">Another choice could be here</option>
-                                            <option value="9">Yet another item to be chosen</option>
-                                        </optgroup>
-                                    </select>
-                                    <input id="text_inline" name="text_inline" type="text">
-                                    <input type="button" value="Hello">
-                                </p>
-                                <p>
-                                    <label for="select_dd2">Inline form elements (disabled)</label><br>
-                                    <select id="select_dd2" name="select_dd2" disabled="disabled">
-                                        <optgroup label="Group 1">
-                                            <option value="1">Some text goes here</option>
-                                            <option value="2">Another choice could be here</option>
-                                            <option value="3">Yet another item to be chosen</option>
-                                        </optgroup>
-                                        <optgroup label="Group 2">
-                                            <option value="4">Some text goes here</option>
-                                            <option value="5">Another choice could be here</option>
-                                            <option value="6">Yet another item to be chosen</option>
-                                        </optgroup>
-                                        <optgroup label="Group 3">
-                                            <option value="7">Some text goes here</option>
-                                            <option value="8">Another choice could be here</option>
-                                            <option value="9">Yet another item to be chosen</option>
-                                        </optgroup>
-                                    </select>
-                                    <input id="text_inline2" name="text_inline2" type="text" disabled="disabled">
-                                    <input type="button" value="Hello" disabled="disabled">
-                                </p>
-                                <p>
-                                    <label for="select_multi">Select multiple</label><br>
-                                    <select id="select_multi" name="select_multi" multiple="multiple" size="10">
-                                        <optgroup label="Group 1">
-                                            <option value="1">Some text goes here</option>
-                                            <option value="2">Another choice could be here</option>
-                                            <option value="3">Yet another item to be chosen</option>
-                                        </optgroup>
-                                        <optgroup label="Group 2">
-                                            <option value="4">Some text goes here</option>
-                                            <option value="5">Another choice could be here</option>
-                                            <option value="6">Yet another item to be chosen</option>
-                                        </optgroup>
-                                        <optgroup label="Group 3">
-                                            <option value="7">Some text goes here</option>
-                                            <option value="8">Another choice could be here</option>
-                                            <option value="9">Yet another item to be chosen</option>
-                                        </optgroup>
-                                    </select>
-                                </p>
-                                <p>
-                                    <label for="textarea">Textarea</label><br>
-                                    <textarea id="textarea" name="textarea" rows="5" placeholder="This is an example of HTML5 placeholder text."></textarea>
-                                </p>
-                                <p>
-                                    <label for="url">URL</label><br>
-                                    <input id="url" name="url" type="url">
-                                </p>
-                                <p>
-                                    <label for="email">Email</label><br>
-                                    <input id="email" name="email" type="email" placeholder="name@example.com">
-                                </p>
-                                <p>
-                                    <label for="text">Text <b class="required" title="Required">*</b></label><br>
-                                    <input id="text" name="text" type="text">
-                                </p>
-                                <p>
-                                    <label for="text-data">Text with data list</label><br>
-                                    <input id="text-data" name="text-data" type="text" list="text-data-list">
-                                    <datalist id="text-data-list">
-                                        <option value="Afghanistan">
-                                        <option value="Albania">
-                                        <option value="Algeria">
-                                        <option value="Andorra">
-                                        <option value="Angola">
-                                    </datalist>
-                                </p>
-                                <p>
-                                    <label for="datetime-local">Datetime local</label><br>
-                                    <input id="datetime-local" name="datetime-local" type="datetime-local">
-                                </p>
-                                <p>
-                                    <label for="number">Number</label><br>
-                                    <input id="number" name="number" type="number" min="0" max="999" step="1">
-                                </p>
-                                <p>
-                                    <label for="tel">Tel (phone)</label><br>
-                                    <input id="tel" name="tel" type="tel">
-                                </p>
-                                <p>
-                                    <label for="datetime">Datetime</label><br>
-                                    <input id="datetime" name="datetime" type="datetime">
-                                </p>
-                                <p>
-                                    <label for="date">Date</label><br>
-                                    <input id="date" name="date" type="date">
-                                </p>
-                                <p>
-                                    <label for="month">Month</label><br>
-                                    <input id="month" name="month" type="month">
-                                </p>
-                                <p>
-                                    <label for="search">Search</label><br>
-                                    <input id="search" name="search" type="search">
-                                </p>
-                                <p>
-                                    <label for="range">Range</label><br>
-                                    <input id="range" name="range" type="range">
-                                </p>
-                                <p>
-                                    <label for="range">Range (min = 100, max = 500, step = 50, start value = 100)</label><br>
-                                    <script>function printValue(sliderID, textbox) { var x = document.getElementById(textbox); var y = document.getElementById(sliderID); x.value = y.value; } window.onload = function() { printValue('range1', 'rangeValue1'); } </script>
-                                    <input id="range1" name="range1" type="range" min="100" max="500" step="50" value="100" onchange="printValue('range1','rangeValue1')"><br>
-                                    <input id="rangeValue1" name="rangeValue1" type="text" size="3">
-                                </p>
-                                <p>
-                                    <label for="color">Colour</label><br>
-                                    <input id="color" name="color" type="color" value="#cc0000">
-                                </p>
+                        <h3>Plain table</h3>
+                        <p class="information">Simple table (without <code>&lt;thead&gt;</code>, <code>&lt;tfoot&gt;</code> tags)</p>
 
-                                <h3>Form Groups</h3>
-                                <fieldset>
-                                    <legend>Fieldset legend</legend>
-                                    <p>
-                                        <span>
-                                            <input id="fieldset_radio_1" name="fieldset_radio_group" type="radio">
-                                            <label for="fieldset_radio_1">Yes</label>
-                                        </span>
-                                        &nbsp;
-                                        <span>
-                                            <input id="fieldset_radio_2" name="fieldset_radio_group" type="radio">
-                                            <label for="fieldset_radio_2">No</label>
-                                        </span>
-                                        &nbsp;
-                                        <span>
-                                            <input id="fieldset_radio_3" name="fieldset_radio_group" type="radio">
-                                            <label for="fieldset_radio_3">Maybe</label>
-                                        </span>
-                                    </p>
-                                </fieldset>
+                        <div class="tabular-data">
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <th>Primary</th>
+                                        <th>Secondary</th>
+                                        <th>Tertiary</th>
+                                    </tr>
+                                    <tr>
+                                        <th>Roast duck</th>
+                                        <td>Seasonal vegetables</td>
+                                        <td>New potatoes</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Grilled lobster</th>
+                                        <td>Mixed seafood</td>
+                                        <td>Side salad</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Chicken dinosaurs</th>
+                                        <td>Baked beans</td>
+                                        <td>Waffles</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
 
-                                <h3>Buttons</h3>
-                                <p>
-                                    <input type="submit" value="Input - Submit">
-                                    <input type="button" value="Input - Button">
-                                    <input type="reset" value="Input - Reset">
-                                    <button>Button tag</button>
-                                </p>
-                                <p>
-                                    <a class="button" href="#">Link tag</a>
-                                    <span class="button disabled">Span tag (disabled)</span>
-                                    <input type="submit" value="Input (disabled)" disabled>
-                                    <button disabled>Button (disabled)</button>
-                                </p>
-                                <p>
-                                    <input class="button-primary" type="button" value="Primary Submit">
-                                    <a class="button button-primary" href="#">Primary link tag</a>
-                                </p>
-                                <p>
-                                    <a class="button button-large" href="#">Large button</a>
-                                    <a class="button button-small" href="#">Small button</a>
-                                </p>
-                            </form>
-                        </section>
+                        <h3>Full Table</h3>
+                        <p class="information">Full-feautured table with <code>scope</code>, <code>rowspan</code> <code>colspan</code> attributes, and <code>&lt;caption&gt;</code>, <code>&lt;colgroup&gt;</code>, <code>&lt;thead&gt;</code>, <code>&lt;tfoot&gt;</code>, <code>&lt;tbody&gt;</code> tags included</p>
+
+                        <div class="tabular-data">
+                            <table>
+                                <caption>This is a table caption</caption>
+                                <colgroup>
+                                    <col class="t25">
+                                    <col class="t25">
+                                    <col class="t25">
+                                    <col>
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Sector</th>
+                                        <th scope="col">Planet</th>
+                                        <th scope="col">Government</th>
+                                        <th scope="col" class="numerical">Population</th>
+                                    </tr>
+                                </thead>
+                                <tfoot>
+                                    <tr>
+                                        <td colspan="4">This is the tfoot</td>
+                                    </tr>
+                                </tfoot>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row" rowspan="3">Alpha</th>
+                                        <td>Diso</td>
+                                        <td>Democracy</td>
+                                        <td class="numerical">4.137 B</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Lave</td>
+                                        <td>Dictatorship</td>
+                                        <td class="numerical">2.5 B</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Leesti</td>
+                                        <td>Corporate State</td>
+                                        <td class="numerical">5.01 B</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" rowspan="2">Beta</th>
+                                        <td>Reorte</td>
+                                        <td>Dictatorship</td>
+                                        <td class="numerical">3.119 B</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Zaonce</td>
+                                        <td>Corporate State</td>
+                                        <td class="numerical">5.3 B</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
 
 
-                        <section id="section-social">
-                            <h2>Social media</h2>
+                    <section id="section-forms">
+                        <h2>Forms</h2>
 
-                            <ul class="social-channels">
-                                <li>
-                                    <a class="facebook" rel="external" itemprop="url" href="http://textpattern.com/facebook" title="Follow us on Facebook+">Facebook</a>
-                                </li>
-                                <li>
-                                    <a class="twitter" rel="external" itemprop="url" href="http://textpattern.com/@textpattern" title="Follow us on Twitter">Twitter</a>
-                                </li>
-                                <li>
-                                    <a class="googleplus" rel="external" itemprop="url" href="http://textpattern.com/+" title="Follow us on Google+">Google+</a>
-                                </li>
-                                <li>
-                                    <a class="github" rel="external" itemprop="url" href="http://textpattern.com/github" title="Follow us on GitHub">GitHub</a>
-                                </li>
-                            </ul>
-                        </section>
+                        <form>
+                            <h3>Inputs</h3>
+                            <p>
+                                <input id="test_checkbox_1" name="test_checkbox_1" type="checkbox">
+                                <label for="test_checkbox_1">Test checkbox 1</label>
+                                <input id="test_checkbox_2" name="test_checkbox_2" type="checkbox">
+                                <label for="test_checkbox_2">Test checkbox 2</label>
+                                <input id="test_checkbox_3" name="test_checkbox_3" type="checkbox">
+                                <label for="test_checkbox_3">Test checkbox 3</label>
+                            </p>
+                            <p>
+                                <input id="test_radio_1" name="test_radio_group" type="radio">
+                                <label for="test_radio_1">Test radio 1</label>
+                                <input id="test_radio_2" name="test_radio_group" type="radio">
+                                <label for="test_radio_2">Test radio 2</label>
+                                <input id="test_radio_3" name="test_radio_group" type="radio">
+                                <label for="test_radio_3">Test radio 3</label>
+                            </p>
+                            <p>
+                                <label for="select_dd">Inline form elements</label><br>
+                                <select id="select_dd" name="select_dd">
+                                    <optgroup label="Group 1">
+                                        <option value="1">Some text goes here</option>
+                                        <option value="2">Another choice could be here</option>
+                                        <option value="3">Yet another item to be chosen</option>
+                                    </optgroup>
+                                    <optgroup label="Group 2">
+                                        <option value="4">Some text goes here</option>
+                                        <option value="5">Another choice could be here</option>
+                                        <option value="6">Yet another item to be chosen</option>
+                                    </optgroup>
+                                    <optgroup label="Group 3">
+                                        <option value="7">Some text goes here</option>
+                                        <option value="8">Another choice could be here</option>
+                                        <option value="9">Yet another item to be chosen</option>
+                                    </optgroup>
+                                </select>
+                                <input id="text_inline" name="text_inline" type="text">
+                                <input type="button" value="Hello">
+                            </p>
+                            <p>
+                                <label for="select_dd2">Inline form elements (disabled)</label><br>
+                                <select id="select_dd2" name="select_dd2" disabled="disabled">
+                                    <optgroup label="Group 1">
+                                        <option value="1">Some text goes here</option>
+                                        <option value="2">Another choice could be here</option>
+                                        <option value="3">Yet another item to be chosen</option>
+                                    </optgroup>
+                                    <optgroup label="Group 2">
+                                        <option value="4">Some text goes here</option>
+                                        <option value="5">Another choice could be here</option>
+                                        <option value="6">Yet another item to be chosen</option>
+                                    </optgroup>
+                                    <optgroup label="Group 3">
+                                        <option value="7">Some text goes here</option>
+                                        <option value="8">Another choice could be here</option>
+                                        <option value="9">Yet another item to be chosen</option>
+                                    </optgroup>
+                                </select>
+                                <input id="text_inline2" name="text_inline2" type="text" disabled="disabled">
+                                <input type="button" value="Hello" disabled="disabled">
+                            </p>
+                            <p>
+                                <label for="select_multi">Select multiple</label><br>
+                                <select id="select_multi" name="select_multi" multiple="multiple" size="10">
+                                    <optgroup label="Group 1">
+                                        <option value="1">Some text goes here</option>
+                                        <option value="2">Another choice could be here</option>
+                                        <option value="3">Yet another item to be chosen</option>
+                                    </optgroup>
+                                    <optgroup label="Group 2">
+                                        <option value="4">Some text goes here</option>
+                                        <option value="5">Another choice could be here</option>
+                                        <option value="6">Yet another item to be chosen</option>
+                                    </optgroup>
+                                    <optgroup label="Group 3">
+                                        <option value="7">Some text goes here</option>
+                                        <option value="8">Another choice could be here</option>
+                                        <option value="9">Yet another item to be chosen</option>
+                                    </optgroup>
+                                </select>
+                            </p>
+                            <p>
+                                <label for="textarea">Textarea</label><br>
+                                <textarea id="textarea" name="textarea" rows="5" placeholder="This is an example of HTML5 placeholder text."></textarea>
+                            </p>
+                            <p>
+                                <label for="url">URL</label><br>
+                                <input id="url" name="url" type="url">
+                            </p>
+                            <p>
+                                <label for="email">Email</label><br>
+                                <input id="email" name="email" type="email" placeholder="name@example.com">
+                            </p>
+                            <p>
+                                <label for="text">Text <b class="required" title="Required">*</b></label><br>
+                                <input id="text" name="text" type="text">
+                            </p>
+                            <p>
+                                <label for="text-data">Text with data list</label><br>
+                                <input id="text-data" name="text-data" type="text" list="text-data-list">
+                                <datalist id="text-data-list">
+                                    <option value="Afghanistan">
+                                    <option value="Albania">
+                                    <option value="Algeria">
+                                    <option value="Andorra">
+                                    <option value="Angola">
+                                </datalist>
+                            </p>
+                            <p>
+                                <label for="datetime-local">Datetime local</label><br>
+                                <input id="datetime-local" name="datetime-local" type="datetime-local">
+                            </p>
+                            <p>
+                                <label for="number">Number</label><br>
+                                <input id="number" name="number" type="number" min="0" max="999" step="1">
+                            </p>
+                            <p>
+                                <label for="tel">Tel (phone)</label><br>
+                                <input id="tel" name="tel" type="tel">
+                            </p>
+                            <p>
+                                <label for="datetime">Datetime</label><br>
+                                <input id="datetime" name="datetime" type="datetime">
+                            </p>
+                            <p>
+                                <label for="date">Date</label><br>
+                                <input id="date" name="date" type="date">
+                            </p>
+                            <p>
+                                <label for="month">Month</label><br>
+                                <input id="month" name="month" type="month">
+                            </p>
+                            <p>
+                                <label for="search">Search</label><br>
+                                <input id="search" name="search" type="search">
+                            </p>
+                            <p>
+                                <label for="range">Range</label><br>
+                                <input id="range" name="range" type="range">
+                            </p>
+                            <p>
+                                <label for="range">Range (min = 100, max = 500, step = 50, start value = 100)</label><br>
+                                <script>function printValue(sliderID, textbox) { var x = document.getElementById(textbox); var y = document.getElementById(sliderID); x.value = y.value; } window.onload = function() { printValue('range1', 'rangeValue1'); } </script>
+                                <input id="range1" name="range1" type="range" min="100" max="500" step="50" value="100" onchange="printValue('range1','rangeValue1')"><br>
+                                <input id="rangeValue1" name="rangeValue1" type="text" size="3">
+                            </p>
+                            <p>
+                                <label for="color">Colour</label><br>
+                                <input id="color" name="color" type="color" value="#cc0000">
+                            </p>
+
+                            <h3>Form Groups</h3>
+                            <fieldset>
+                                <legend>Fieldset legend</legend>
+                                <p>
+                                    <span>
+                                        <input id="fieldset_radio_1" name="fieldset_radio_group" type="radio">
+                                        <label for="fieldset_radio_1">Yes</label>
+                                    </span>
+                                    &nbsp;
+                                    <span>
+                                        <input id="fieldset_radio_2" name="fieldset_radio_group" type="radio">
+                                        <label for="fieldset_radio_2">No</label>
+                                    </span>
+                                    &nbsp;
+                                    <span>
+                                        <input id="fieldset_radio_3" name="fieldset_radio_group" type="radio">
+                                        <label for="fieldset_radio_3">Maybe</label>
+                                    </span>
+                                </p>
+                            </fieldset>
+
+                            <h3>Buttons</h3>
+                            <p>
+                                <input type="submit" value="Input - Submit">
+                                <input type="button" value="Input - Button">
+                                <input type="reset" value="Input - Reset">
+                                <button>Button tag</button>
+                            </p>
+                            <p>
+                                <a class="button" href="#">Link tag</a>
+                                <span class="button disabled">Span tag (disabled)</span>
+                                <input type="submit" value="Input (disabled)" disabled>
+                                <button disabled>Button (disabled)</button>
+                            </p>
+                            <p>
+                                <input class="button-primary" type="button" value="Primary Submit">
+                                <a class="button button-primary" href="#">Primary link tag</a>
+                            </p>
+                            <p>
+                                <a class="button button-large" href="#">Large button</a>
+                                <a class="button button-small" href="#">Small button</a>
+                            </p>
+                        </form>
+                    </section>
 
 
-                        <section id="section-misc">
-                            <h2>Miscellaneous</h2>
+                    <section id="section-social">
+                        <h2>Social media</h2>
 
-                            <h3>AJAX spinner (for light backgrounds)</h3>
-                            <p><span class="spinner"></span></p>
+                        <ul class="social-channels">
+                            <li>
+                                <a class="facebook" rel="external" itemprop="url" href="http://textpattern.com/facebook" title="Follow us on Facebook+">Facebook</a>
+                            </li>
+                            <li>
+                                <a class="twitter" rel="external" itemprop="url" href="http://textpattern.com/@textpattern" title="Follow us on Twitter">Twitter</a>
+                            </li>
+                            <li>
+                                <a class="googleplus" rel="external" itemprop="url" href="http://textpattern.com/+" title="Follow us on Google+">Google+</a>
+                            </li>
+                            <li>
+                                <a class="github" rel="external" itemprop="url" href="http://textpattern.com/github" title="Follow us on GitHub">GitHub</a>
+                            </li>
+                        </ul>
+                    </section>
 
-                            <h3>AJAX spinner (for dark backgrounds)</h3>
-                            <p><span class="spinner inverse"></span></p>
-                        </section>
 
+                    <section id="section-misc">
+                        <h2>Miscellaneous</h2>
 
-                    </div><!-- /itemprop=articleBody -->
+                        <h3>AJAX spinner (for light backgrounds)</h3>
+                        <p><span class="spinner"></span></p>
+
+                        <h3>AJAX spinner (for dark backgrounds)</h3>
+                        <p><span class="spinner inverse"></span></p>
+                    </section>
+
 
                 </article>
 

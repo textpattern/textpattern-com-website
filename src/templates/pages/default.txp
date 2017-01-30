@@ -22,7 +22,7 @@
             <meta name="twitter:site" content="@textpattern">
             <meta name="twitter:title" content="Textpattern CMS | An open source content management system">
             <meta name="twitter:description" content="Textpattern CMS is a free, open source content management system with a browser-based interface in over 40 languages, excellent support and full range of features.">
-            <meta name="twitter:image:src" content="http://textpattern.com/assets/img/branding/textpattern/textpattern.svg">
+            <meta name="twitter:image:src" content="http://textpattern.com/assets/img/branding/textpattern/textpattern.png">
             <meta name="twitter:url" content="http://textpattern.com/">
             <txp:variable name="homepage" value="1" />
         </txp:if_category>

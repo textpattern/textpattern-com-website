@@ -29,7 +29,7 @@
     <meta name="twitter:site" content="@textpattern">
     <meta name="twitter:title" content="Textpattern CMS">
     <meta name="twitter:description" content="This is where a blog article extract/description would be.">
-    <meta name="twitter:image:src" content="http://textpattern.com/assets/img/branding/textpattern/textpattern.svg">
+    <meta name="twitter:image:src" content="http://textpattern.com/assets/img/branding/textpattern/textpattern.png">
     <meta name="twitter:url" content="http://textpattern.dev/blog-landing.html">
 </head>
 
@@ -47,7 +47,7 @@
 <!-- Header -->
         <header class="site-header" itemscope itemtype="http://schema.org/Organization">
             <h1 class="masthead" itemprop="name"><a rel="home" itemprop="url" href="http://textpattern.dev/" title="Go to the Textpattern homepage">Textpattern CMS</a></h1>
-            <meta itemprop="logo" content="../assets/img/branding/textpattern/textpattern.svg">
+            <meta itemprop="logo" content="../assets/img/branding/textpattern/textpattern.png">
 
             <div itemscope itemtype="http://schema.org/WebSite">
                 <meta itemprop="url" content="http://textpattern.dev/">
@@ -80,14 +80,12 @@
             <div class="container">
                 <div class="layout-container">
 
-                    <article class="layout-4col-3span" itemprop="blogPost" itemscope itemtype="http://schema.org/Article">
-                        <h1 itemprop="name headline">Language translations</h1>
+                    <article class="layout-4col-3span">
+                        <h1>Language translations</h1>
 
-                        <div class="article-description" itemprop="description">
+                        <div class="article-description">
                             <p>This is where an article extract/description would be, if available. Ne sea soluta voluptatum. Ut nec augue disputationi, unum utamur vis in. Ea menandri persecuti dissentiunt usu, causae equidem.</p>
                         </div><!-- /.article-description -->
-
-                        <div itemprop="articleBody">
 
 <?php
 $xml = new SimpleXMLElement('https://api.crowdin.com/api/project/textpattern-cms-textpacks/status?key=xxxxxx&xml', 0, TRUE);

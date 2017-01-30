@@ -20,15 +20,15 @@
     <link rel="icon" sizes="32x32" href="../favicon-32x32.png">
     <link rel="icon" sizes="16x16" href="../favicon-16x16.png">
 
-    <link rel="canonical" href="http://www.designhive.dev/blog-article.html">
+    <link rel="canonical" href="http://www.textpattern.dev/blog-article.html">
 
 <!-- Twitter card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@textpattern">
     <meta name="twitter:title" content="Textpattern CMS">
     <meta name="twitter:description" content="This is where a blog article extract/description would be.">
-    <meta name="twitter:image:src" content="http://textpattern.com/assets/img/branding/textpattern/textpattern.svg">
-    <meta name="twitter:url" content="http://textpattern.dev/blog-landing.html">
+    <meta name="twitter:image:src" content="http://textpattern.com/assets/img/branding/textpattern/textpattern.png">
+    <meta name="twitter:url" content="http://textpattern.dev/blog-article.html">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -45,7 +45,7 @@
 <!-- Header -->
         <header class="site-header" itemscope itemtype="http://schema.org/Organization">
             <h1 class="masthead" itemprop="name"><a rel="home" itemprop="url" href="http://textpattern.dev/" title="Go to the Textpattern homepage">Textpattern CMS</a></h1>
-            <meta itemprop="logo" content="../assets/img/branding/textpattern/textpattern.svg">
+            <meta itemprop="logo" content="../assets/img/branding/textpattern/textpattern.png">
 
             <div itemscope itemtype="http://schema.org/WebSite">
                 <meta itemprop="url" content="http://textpattern.dev/">
@@ -79,10 +79,12 @@
                 <div class="layout-container">
 
                     <article class="layout-4col-3span" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+                        <meta itemprop="mainEntityOfPage" content="http://www.textpattern.dev/blog-article.html">
                         <h1 itemprop="name headline">Blog example title</h1>
 
                         <p class="article-date">
                             <time datetime="2016-01-21T10:43:39Z" itemprop="datePublished">21 January 2016</time>
+                            <meta itemprop="dateModified" content="2016-01-21T10:43:39Z">
                         </p>
 
                         <div class="article-description" itemprop="description">
@@ -114,6 +116,14 @@
                                     <span class="fn n" itemprop="name">Phil Wareham</span>
                                 </a>
                                 <meta itemprop="jobTitle" content="Core Designer">
+                            </span>
+                            <span itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+                                <meta itemprop="name" content="Textpattern CMS">
+                                <span itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+                                    <meta itemprop="logo" content="http://textpattern.com/assets/img/branding/textpattern/textpattern.png">
+                                    <meta itemprop="width" content="320">
+                                    <meta itemprop="height" content="52">
+                                </span>
                             </span>
                             <span class="separator" role="separator">|</span>
                             <span class="ui-icon ui-icon-tag">Tags:</span>

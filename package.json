@@ -36,7 +36,7 @@
     "prismjs": "1.6.0",
     "requirejs": "2.3.2",
     "responsive-nav": "1.0.39",
-    "textpattern-branding": "0.2.3"
+    "textpattern-branding": "0.2.4"
   },
   "scripts": {
     "test": "grunt travis --verbose"
