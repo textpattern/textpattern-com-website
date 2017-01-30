@@ -92,7 +92,9 @@
                         </div><!-- /.article-description -->
 
                         <figure itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
-                            <img itemprop="contentUrl" alt="Figure Example" src="http://placehold.it/832x554" srcset="http://placehold.it/1664x1108 2x, http://placehold.it/832x554 1x">
+                            <img itemprop="url" alt="Figure Example" src="http://placehold.it/832x554" srcset="http://placehold.it/1664x1108 2x, http://placehold.it/832x554 1x">
+                            <meta itemprop="width" content="832">
+                            <meta itemprop="height" content="554">
                             <figcaption itemprop="caption">This is a figcaption example. Lorem ipsum dolor sit amet, quo epicuri volutpat no.</figcaption>
                         </figure>
 
@@ -102,7 +104,9 @@
                             <h3>h3 subheading example</h3>
                             <p>Inermis indoctum vis in, has soleat complectitur te. Ut est stet civibus, mucius iriure ad duo. Sumo tantas et est, ea duo elitr utroque, ne mea dicant tincidunt scribentur. Sit dico accusata et. Sint inimicus cu nam, odio velit minim sit ut.</p>
                             <p itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
-                                <img itemprop="contentUrl" alt="Image Example" src="http://placehold.it/832x240" srcset="http://placehold.it/1664x480 2x, http://placehold.it/832x240 1x">
+                                <img itemprop="url" alt="Image Example" src="http://placehold.it/832x240" srcset="http://placehold.it/1664x480 2x, http://placehold.it/832x240 1x">
+                                <meta itemprop="width" content="832">
+                                <meta itemprop="height" content="240">
                             </p>
                             <p>Ne sea soluta voluptatum. Ut nec augue disputationi, unum utamur vis in. Ea menandri persecuti dissentiunt usu, causae equidem quo ea. Possit gubergren at mea. Sed an erant movet accusata.</p>
                             <hr>
@@ -120,7 +124,7 @@
                             <span itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
                                 <meta itemprop="name" content="Textpattern CMS">
                                 <span itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
-                                    <meta itemprop="logo" content="http://textpattern.com/assets/img/branding/textpattern/textpattern.png">
+                                    <meta itemprop="url" content="http://textpattern.com/assets/img/branding/textpattern/textpattern.png">
                                     <meta itemprop="width" content="320">
                                     <meta itemprop="height" content="52">
                                 </span>
@@ -134,7 +138,10 @@
                             <span class="separator" role="separator">|</span>
                             <span class="ui-icon ui-icon-comment">Comments:</span>
                             <a href="#comments-head" title="View article comments" itemprop="discussionUrl">3</a>
-                            <meta itemprop="userInteractionCount" content="3">
+                            <span itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+                                <meta itemprop="interactionType" content="http://schema.org/CommentAction">
+                                <meta itemprop="userInteractionCount" content="3">
+                            </span>
                         </footer>
 
                         <section id="comments-head">
