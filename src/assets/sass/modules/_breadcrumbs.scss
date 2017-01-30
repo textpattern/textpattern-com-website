@@ -13,9 +13,8 @@
  */
 
 .breadcrumbs {
-    margin-top: 0;
-    padding: 0.5em 0.6666667em; // 6px / 12px + 8px / 12px
-    border-radius: 0 0 0.3333333em 0.3333333em; // 4px / 12px
+    margin: 0 -1.3333333em;
+    padding: 0.5em 1.3333333em; // 6px / 12px + 16px / 12px
     background-color: $color-background-box;
     font-size: $small-font-size;
     list-style: none;
