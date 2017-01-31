@@ -46,6 +46,7 @@
                             "mainEntityOfPage": "http://textpattern.dev/blog-article.html",
                             "datePublished": "2016-01-21T10:43:39Z",
                             "dateModified": "2016-01-22T14:32:01Z",
+                            "discussionUrl": "http://textpattern.dev/blog-article.html#comments-head",
                             "image": {
                                 "@type": "ImageObject",
                                 "url": "http://placehold.it/832x554",
@@ -65,9 +66,43 @@
                                     "width": "320",
                                     "height": "52"
                                 }
-                            }
+                            },
+                            "interactionStatistic": {
+                                "@type": "InteractionCounter",
+                                "interactionType": "http://schema.org/CommentAction",
+                                "userInteractionCount": "3"
+                            },
+                            "comment": [
+                                {
+                                    "@type": "Comment",
+                                    "author": {
+                                        "@type": "Person",
+                                        "name": "Joe Q. Public"
+                                    },
+                                    "dateCreated": "2016-01-25T16:55:03Z"
+                                },
+                                {
+                                    "@type": "Comment",
+                                    "author": {
+                                        "@type": "Person",
+                                        "name": "Phil Wareham"
+                                    },
+                                    "dateCreated": "2016-01-26T11:20:01Z"
+                                }
+                            ]
                         }
                     ]
+                },
+                {
+                    "@type": "WebSite",
+                    "name": "Textpattern CMS",
+                    "description": "Textpattern CMS is a free, open source content management system with a browser-based interface in over 40 languages, excellent support and full range of features.",
+                    "url": "http://textpattern.dev/",
+                    "potentialAction": {
+                        "@type": "SearchAction",
+                        "target": "http://textpattern.dev/?q={q}",
+                        "query-input": "required name=q"
+                    }
                 },
                 {
                     "@type": "Organization",
