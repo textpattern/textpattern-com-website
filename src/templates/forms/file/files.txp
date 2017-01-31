@@ -1,6 +1,6 @@
 <txp:variable name="file_download_title" value='<txp:file_download_name title="1" />' />
 <txp:variable name="file_download_description" value='<txp:file_download_description />' />
-<section itemscope itemtype="http://schema.org/DataDownloads">
+<section itemscope itemtype="http://schema.org/DataDownload">
     <h6 class="accessibility">File download</h6>
     <p>
         <a href="<txp:file_download_link />" itemprop="url">
