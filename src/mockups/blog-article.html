@@ -20,7 +20,7 @@
     <link rel="icon" sizes="32x32" href="../favicon-32x32.png">
     <link rel="icon" sizes="16x16" href="../favicon-16x16.png">
 
-    <link rel="canonical" href="http://www.textpattern.dev/blog-article.html">
+    <link rel="canonical" href="http://textpattern.dev/blog-article.html">
 
 <!-- Twitter card -->
     <meta name="twitter:card" content="summary_large_image">
@@ -29,6 +29,23 @@
     <meta name="twitter:description" content="This is where a blog article extract/description would be.">
     <meta name="twitter:image:src" content="http://textpattern.com/assets/img/branding/textpattern/textpattern.png">
     <meta name="twitter:url" content="http://textpattern.dev/blog-article.html">
+
+<!-- JSON-LD -->
+    <script type="application/ld+json">
+        {
+            "@context": "http://schema.org",
+            "@type": "Article",
+            "headline": "Blog example title",
+            "description": "This is where a blog article extract/description would be.",
+            "url": "http://textpattern.dev/blog-article.html",
+            "datePublished": "2016-01-21T10:43:39Z",
+            "dateModified": "2016-01-22T14:32:01Z",
+            "author": {
+                "@type": "Person",
+                "name": "Phil Wareham"
+            }
+        }
+    </script>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -79,12 +96,12 @@
                 <div class="layout-container">
 
                     <article class="layout-4col-3span" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-                        <meta itemprop="mainEntityOfPage" content="http://www.textpattern.dev/blog-article.html">
+                        <meta itemprop="mainEntityOfPage" content="http://textpattern.dev/blog-article.html">
                         <h1 itemprop="name headline">Blog example title</h1>
 
                         <p class="article-date">
                             <time datetime="2016-01-21T10:43:39Z" itemprop="datePublished">21 January 2016</time>
-                            <meta itemprop="dateModified" content="2016-01-21T10:43:39Z">
+                            <meta itemprop="dateModified" content="2016-01-22T14:32:01Z">
                         </p>
 
                         <div class="article-description" itemprop="description">

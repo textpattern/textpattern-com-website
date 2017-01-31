@@ -32,6 +32,32 @@
     <meta name="twitter:description" content="Textpattern CMS is a free, open source content management system with a browser-based interface in over 40 languages, excellent support and full range of features.">
     <meta name="twitter:image:src" content="http://textpattern.com/assets/img/branding/textpattern/textpattern.png">
     <meta name="twitter:url" content="http://textpattern.dev/">
+
+<!-- JSON-LD -->
+    <script type="application/ld+json">
+        {
+            "@context": "http://schema.org",
+            "@graph": [
+                {
+                    "@type": "WebSite",
+                    "name": "Textpattern CMS",
+                    "description": "Textpattern CMS is a free, open source content management system with a browser-based interface in over 40 languages, excellent support and full range of features.",
+                    "url": "http://textpattern.dev/",
+                    "potentialAction": {
+                        "@type": "SearchAction",
+                        "target": "http://textpattern.dev/?q={q}",
+                        "query-input": "required name=q"
+                    }
+                },
+                {
+                    "@type": "Organization",
+                    "name": "Textpattern CMS",
+                    "url": "http://textpattern.dev/",
+                    "logo": "http://textpattern.com/assets/img/branding/textpattern/textpattern.png"
+                }
+            ]
+        }
+    </script>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
