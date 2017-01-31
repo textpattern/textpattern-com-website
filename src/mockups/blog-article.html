@@ -34,16 +34,48 @@
     <script type="application/ld+json">
         {
             "@context": "http://schema.org",
-            "@type": "Article",
-            "headline": "Blog example title",
-            "description": "This is where a blog article extract/description would be.",
-            "url": "http://textpattern.dev/blog-article.html",
-            "datePublished": "2016-01-21T10:43:39Z",
-            "dateModified": "2016-01-22T14:32:01Z",
-            "author": {
-                "@type": "Person",
-                "name": "Phil Wareham"
-            }
+            "@graph": [
+                {
+                    "@type": "Blog",
+                    "blogPost": [
+                        {
+                            "@type": "BlogPosting",
+                            "headline": "Blog example title",
+                            "description": "This is where a blog article extract/description would be.",
+                            "url": "http://textpattern.dev/blog-article.html",
+                            "mainEntityOfPage": "http://textpattern.dev/blog-article.html",
+                            "datePublished": "2016-01-21T10:43:39Z",
+                            "dateModified": "2016-01-22T14:32:01Z",
+                            "image": {
+                                "@type": "ImageObject",
+                                "url": "http://placehold.it/832x554",
+                                "width": "832",
+                                "height": "554"
+                            },
+                            "author": {
+                                "@type": "Person",
+                                "name": "Phil Wareham"
+                            },
+                            "publisher": {
+                                "@type": "Organization",
+                                "name": "Textpattern CMS",
+                                "logo": {
+                                    "@type": "ImageObject",
+                                    "url": "http://textpattern.com/assets/img/branding/textpattern/textpattern.png",
+                                    "width": "320",
+                                    "height": "52"
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "@type": "Organization",
+                    "name": "Textpattern CMS",
+                    "url": "http://textpattern.dev/",
+                    "logo": "http://textpattern.com/assets/img/branding/textpattern/textpattern.png"
+                }
+            ]
         }
     </script>
 </head>
