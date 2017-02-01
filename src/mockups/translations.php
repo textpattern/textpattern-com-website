@@ -171,7 +171,7 @@ $xml = new SimpleXMLElement('https://api.crowdin.com/api/project/textpattern-cms
                 <p>
                     <small>
                         Kindly hosted by<br>
-                        <a class="joyent" rel="external" href="https://joyent.com/" title="Go to the Joyent website">Joyent</a>
+                        <a class="joyent" rel="external" href="https://www.joyent.com/" title="Go to the Joyent website">Joyent</a>
                     </small>
                 </p>
             </section>
