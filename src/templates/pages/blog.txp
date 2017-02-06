@@ -16,10 +16,12 @@
             <meta name="robots" content="noindex, follow, noodp, noydir">
             <link rel="canonical" href="http://textpattern.com/blog/?pg=<txp:page_url type="pg" />">
         </txp:if_variable>
-        <txp:if_variable name="prev">
+        <txp:if_variable name="prev" value="">
+        <txp:else />
             <link rel="prev" href="<txp:variable name="prev" />">
         </txp:if_variable>
-        <txp:if_variable name="next">
+        <txp:if_variable name="next" value="">
+        <txp:else />
             <link rel="next" href="<txp:variable name="next" />">
         </txp:if_variable>
 
