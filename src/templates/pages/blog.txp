@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en-GB-oxendict">
+<head>
+    <meta charset="utf-8">
+    <txp:output_form form="head" />
+    <txp:if_article_list>
+        <title>Blog | Textpattern CMS</title>
+        <meta name="description" content="Latest blogs from The Textpattern Development Team and guest contributors; Textpattern CMS news and various other tidbits of information that we find of interest.">
+        <txp:variable name="page" value='<txp:page_url type="pg" />' />
+        <txp:variable name="prev" value='<txp:newer />' />
+        <txp:variable name="next" value='<txp:older />' />
+        <txp:if_variable name="page" value="">
+            <meta name="robots" content="index, follow, noodp, noydir">
+            <link rel="canonical" href="http://textpattern.com/blog">
+        <txp:else />
+            <meta name="robots" content="noindex, follow, noodp, noydir">
+            <link rel="canonical" href="http://textpattern.com/blog/?pg=<txp:page_url type="pg" />">
+        </txp:if_variable>
+        <txp:if_variable name="prev">
+            <link rel="prev" href="<txp:variable name="prev" />">
+        </txp:if_variable>
+        <txp:if_variable name="next">
+            <link rel="next" href="<txp:variable name="next" />">
+        </txp:if_variable>
+
+    <txp:else />
+        <title><txp:title /> | Textpattern CMS</title>
+        <txp:meta_description />
+        <txp:meta_author title="1" />
+        <meta name="robots" content="index, follow, noodp, noydir">
+        <link rel="canonical" href="<txp:permlink />">
+
+    </txp:if_article_list>
+</head>
+<txp:if_variable name="homepage">
+<body itemscope itemtype="http://schema.org/WebPage">
+    <txp:output_form form="body_header" />
+    <main aria-label="Main content" itemscope itemtype="http://schema.org/Blog">
+        <div class="container">
+            <div class="layout-container">
+
+                <txp:if_article_list>
+
+                    ...blog list content placeholder...
+
+                <txp:else />
+
+                    ...blog article content placeholder...
+
+                </txp:if_article_list>
+
+                <section class="layout-4col sidebar">
+
+                    ...blog sidebar content placeholder...
+
+                </section>
+
+            </div><!-- /.layout-container -->
+        </div><!-- /.container -->
+    </main>
+
+    <txp:output_form form="body_footer" />
+</body>
+</html>
