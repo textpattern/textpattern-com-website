@@ -4,14 +4,15 @@
     <meta charset="utf-8">
     <txp:output_form form="head" />
     <txp:if_article_list>
+        <txp:article limit="3" pgonly="1" />
         <title>Blog | Textpattern CMS</title>
         <meta name="description" content="Latest blogs from The Textpattern Development Team and guest contributors; Textpattern CMS news and various other tidbits of information that we find of interest.">
         <txp:variable name="page" value='<txp:page_url type="pg" />' />
         <txp:variable name="prev" value='<txp:newer />' />
         <txp:variable name="next" value='<txp:older />' />
-        <txp:if_variable name="page" value="">
+        <txp:if_variable name="page" value="1">
             <meta name="robots" content="index, follow, noodp, noydir">
-            <link rel="canonical" href="http://textpattern.com/blog">
+            <link rel="canonical" href="http://textpattern.com/blog/">
         <txp:else />
             <meta name="robots" content="noindex, follow, noodp, noydir">
             <link rel="canonical" href="http://textpattern.com/blog/?pg=<txp:page_url type="pg" />">
@@ -42,9 +43,11 @@
             <div class="layout-container">
 
                 <txp:if_article_list>
+                    <txp:article limit="3">
 
-                    ...blog list content placeholder...
+                        ...blog list content placeholder...
 
+                    </txp:article>
                 <txp:else />
 
                     ...blog article content placeholder...
