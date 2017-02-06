@@ -13,23 +13,23 @@
             <meta name="description" content="Blog article ‘<txp:category title="1" />’ category archive.">
             <meta name="robots" content="noindex, follow, noodp, noydir">
         <txp:else />
-            <title>Textpattern CMS | An open source content management system</title>
-            <meta name="description" content="Textpattern CMS is a free, open source content management system with a browser-based interface in over 40 languages, excellent support and full range of features.">
+            <title>Textpattern CMS | Open source content management system</title>
+            <meta name="description" content="Textpattern CMS is a free, open source content management system with a browser-based interface in over 40 languages.">
             <meta name="keywords" content="cms, content management systems, open source, blogs, blogging, free, wordpress alternatives, fast, lightweight, web design, web site design, web development, web site development, php">
             <meta name="robots" content="index, follow, noodp, noydir">
             <link rel="canonical" href="http://textpattern.com/">
-            <meta name="twitter:card" content="summary_large_image">
+            <meta name="twitter:card" content="summary">
             <meta name="twitter:site" content="@textpattern">
-            <meta name="twitter:title" content="Textpattern CMS | An open source content management system">
-            <meta name="twitter:description" content="Textpattern CMS is a free, open source content management system with a browser-based interface in over 40 languages, excellent support and full range of features.">
-            <meta name="twitter:image:src" content="http://textpattern.com/assets/img/branding/textpattern/textpattern.png">
+            <meta name="twitter:title" content="Textpattern CMS | Open source content management system">
+            <meta name="twitter:description" content="Textpattern CMS is a free, open source content management system with a browser-based interface in over 40 languages.">
+            <meta name="twitter:image:src" content="http://textpattern.com/apple-touch-icon-180x180.png">
             <meta name="twitter:url" content="http://textpattern.com/">
             <script type="application/ld+json">
                 {
                     "@context": "http://schema.org",
                     "@type": "WebSite",
-                    "headline": "Textpattern CMS | An open source content management system",
-                    "description": "Textpattern CMS is a free, open source content management system with a browser-based interface in over 40 languages, excellent support and full range of features.",
+                    "headline": "Textpattern CMS | Open source content management system",
+                    "description": "Textpattern CMS is a free, open source content management system with a browser-based interface in over 40 languages.",
                     "url": "http://textpattern.com/"
                 }
             </script>

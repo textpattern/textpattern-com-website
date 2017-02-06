@@ -13,6 +13,15 @@
         <txp:if_variable name="page" value="1">
             <meta name="robots" content="index, follow, noodp, noydir">
             <link rel="canonical" href="http://textpattern.com/blog/">
+            <script type="application/ld+json">
+                {
+                    "@context": "http://schema.org",
+                    "@type": "WebPage",
+                    "headline": "Blog | Textpattern CMS",
+                    "description": "Latest blogs from The Textpattern Development Team and guest contributors; Textpattern CMS news and various other tidbits of information that we find of interest.",
+                    "url": "http://textpattern.com/blog/"
+                }
+            </script>
         <txp:else />
             <meta name="robots" content="noindex, follow, noodp, noydir">
             <link rel="canonical" href="http://textpattern.com/blog/?pg=<txp:page_url type="pg" />">
@@ -32,6 +41,15 @@
         <txp:meta_author title="1" />
         <meta name="robots" content="index, follow, noodp, noydir">
         <link rel="canonical" href="<txp:permlink />">
+        <script type="application/ld+json">
+            {
+                "@context": "http://schema.org",
+                "@type": "WebPage",
+                "headline": "<txp:title /> | Textpattern CMS",
+                "description": "<txp:meta_description />",
+                "url": "<txp:permlink />"
+            }
+        </script>
 
     </txp:if_article_list>
 </head>
