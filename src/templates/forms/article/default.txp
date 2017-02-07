@@ -37,8 +37,7 @@
     <footer class="article-footer">
         <span class="ui-icon ui-icon-pencil">By:</span>
         <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <a rel="author" itemprop="url" href="#" title="View author biography"><span itemprop="name"><txp:author /></span></a>
-            <meta itemprop="jobTitle" content="#">
+            <span itemprop="name"><txp:author /></span>
         </span>
         <span itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
             <meta itemprop="name" content="Textpattern CMS">
