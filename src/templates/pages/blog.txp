@@ -51,6 +51,23 @@
         <txp:meta_author title="1" />
         <meta name="robots" content="index, follow, noodp, noydir">
         <link rel="canonical" href="<txp:permlink />">
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:site" content="@textpattern">
+        <meta name="twitter:title" content="<txp:title /> / Textpattern CMS">
+        <meta name="twitter:description" content="<txp:meta_description />">
+        <meta name="twitter:url" content="<txp:permlink />">
+        <meta property="og:title" content="<txp:title /> / Textpattern CMS">
+        <meta property="og:description" content="<txp:meta_description />">
+        <meta property="og:url" content="<txp:permlink />">
+        <txp:if_article_image>
+            <txp:images limit="1">
+                <meta name="twitter:image:src" content="<txp:image_url link="0" />">
+                <meta property="og:image" content="<txp:image_url link="0" />">
+            </txp:images>
+        <txp:else />
+            <meta name="twitter:image:src" content="http://textpattern.com/apple-touch-icon-180x180.png">
+            <meta property="og:image" content="http://textpattern.com/assets/img/branding/textpattern/textpattern-og.png">
+        </txp:if_article_image>
         <script type="application/ld+json">
             {
                 "@context": "http://schema.org",
