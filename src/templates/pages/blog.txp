@@ -6,19 +6,29 @@
     <txp:if_article_list>
         <txp:article limit="3" pgonly="1" />
         <title>Blog / Textpattern CMS</title>
-        <meta name="description" content="Latest blogs from The Textpattern Development Team and guest contributors; Textpattern CMS news and various other tidbits of information that we find of interest.">
+        <meta name="description" content="Latest blogs from Team Textpattern and guests; Textpattern news and other tidbits of info that we find of interest.">
         <txp:variable name="page" value='<txp:page_url type="pg" />' />
         <txp:variable name="prev" value='<txp:newer />' />
         <txp:variable name="next" value='<txp:older />' />
         <txp:if_variable name="page" value="1">
             <meta name="robots" content="index, follow, noodp, noydir">
             <link rel="canonical" href="http://textpattern.com/blog/">
+            <meta name="twitter:card" content="summary">
+            <meta name="twitter:site" content="@textpattern">
+            <meta name="twitter:title" content="Blog / Textpattern CMS">
+            <meta name="twitter:description" content="Latest blogs from Team Textpattern and guests; Textpattern news and other tidbits of info that we find of interest.">
+            <meta name="twitter:image:src" content="http://textpattern.com/apple-touch-icon-180x180.png">
+            <meta name="twitter:url" content="http://textpattern.com/blog/">
+            <meta property="og:title" content="Blog / Textpattern CMS">
+            <meta property="og:description" content="Latest blogs from Team Textpattern and guests; Textpattern news and other tidbits of info that we find of interest.">
+            <meta property="og:image" content="http://textpattern.com/assets/img/branding/textpattern/textpattern-og.png">
+            <meta property="og:url" content="http://textpattern.com/blog/">
             <script type="application/ld+json">
                 {
                     "@context": "http://schema.org",
                     "@type": "WebPage",
                     "headline": "Blog / Textpattern CMS",
-                    "description": "Latest blogs from The Textpattern Development Team and guest contributors; Textpattern CMS news and various other tidbits of information that we find of interest.",
+                    "description": "Latest blogs from Team Textpattern and guests; Textpattern news and other tidbits of info that we find of interest.",
                     "url": "http://textpattern.com/blog/"
                 }
             </script>
