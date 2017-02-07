@@ -4,12 +4,12 @@
     <meta charset="utf-8">
     <txp:output_form form="head" />
     <txp:if_search>
-        <title>Search results: <txp:search_term /> | Textpattern CMS</title>
+        <title>Search results: <txp:search_term /> / Textpattern CMS</title>
         <meta name="description" content="Search results.">
         <meta name="robots" content="none">
     <txp:else />
         <txp:if_category>
-            <title>Category: <txp:category title="1" /> | Textpattern CMS</title>
+            <title>Category: <txp:category title="1" /> / Textpattern CMS</title>
             <meta name="description" content="Blog article ‘<txp:category title="1" />’ category archive.">
             <meta name="robots" content="noindex, follow, noodp, noydir">
         <txp:else />
@@ -24,6 +24,10 @@
             <meta name="twitter:description" content="Textpattern CMS is a free, open source content management system with a browser-based interface in over 40 languages.">
             <meta name="twitter:image:src" content="http://textpattern.com/apple-touch-icon-180x180.png">
             <meta name="twitter:url" content="http://textpattern.com/">
+            <meta property="og:title" content="Textpattern CMS | Open source content management system">
+            <meta property="og:description" content="Textpattern CMS is a free, open source content management system with a browser-based interface in over 40 languages.">
+            <meta property="og:image" content="http://textpattern.com/assets/img/branding/textpattern/textpattern-og.png">
+            <meta property="og:url" content="http://textpattern.com/">
             <script type="application/ld+json">
                 {
                     "@context": "http://schema.org",

@@ -5,7 +5,7 @@
     <txp:output_form form="head" />
     <txp:if_article_list>
         <txp:article limit="3" pgonly="1" />
-        <title>Blog | Textpattern CMS</title>
+        <title>Blog / Textpattern CMS</title>
         <meta name="description" content="Latest blogs from The Textpattern Development Team and guest contributors; Textpattern CMS news and various other tidbits of information that we find of interest.">
         <txp:variable name="page" value='<txp:page_url type="pg" />' />
         <txp:variable name="prev" value='<txp:newer />' />
@@ -17,7 +17,7 @@
                 {
                     "@context": "http://schema.org",
                     "@type": "WebPage",
-                    "headline": "Blog | Textpattern CMS",
+                    "headline": "Blog / Textpattern CMS",
                     "description": "Latest blogs from The Textpattern Development Team and guest contributors; Textpattern CMS news and various other tidbits of information that we find of interest.",
                     "url": "http://textpattern.com/blog/"
                 }
@@ -36,7 +36,7 @@
         </txp:if_variable>
 
     <txp:else />
-        <title><txp:title /> | Textpattern CMS</title>
+        <title><txp:title /> / Textpattern CMS</title>
         <txp:meta_description />
         <txp:meta_author title="1" />
         <meta name="robots" content="index, follow, noodp, noydir">
@@ -45,7 +45,7 @@
             {
                 "@context": "http://schema.org",
                 "@type": "WebPage",
-                "headline": "<txp:title /> | Textpattern CMS",
+                "headline": "<txp:title /> / Textpattern CMS",
                 "description": "<txp:meta_description />",
                 "url": "<txp:permlink />"
             }
