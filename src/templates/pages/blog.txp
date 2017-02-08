@@ -51,6 +51,7 @@
         <txp:meta_author title="1" />
         <meta name="robots" content="index, follow, noodp, noydir">
         <link rel="canonical" href="<txp:permlink />">
+        <link rel="amphtml" href="#">
         <meta name="twitter:card" content="summary">
         <meta name="twitter:site" content="@textpattern">
         <meta name="twitter:title" content="<txp:title /> / Textpattern CMS">
