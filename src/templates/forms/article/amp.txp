@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html amp lang="en">
+<head>
+    <meta charset="utf-8">
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"></script>
+    <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+    <title><txp:title /></title>
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,700,400italic,700italic">
+    <link rel="canonical" href="<txp:permlink />">
+    <script type="application/ld+json">
+        {
+            "@context": "http://schema.org",
+            "@type": "BlogPosting",
+            "headline": "<txp:title />",
+            "mainEntityOfPage": "<txp:permlink />",
+            "datePublished": "<txp:posted format="iso8601" />",
+            "dateModified": "<txp:modified format="iso8601" />",
+            "description": "<txp:meta_description type="section" format="" />",
+            "author": {
+                "@type": "Person",
+                "name": "<txp:author />"
+            },
+            "publisher": {
+                "@type": "Organization",
+                "name": "Textpattern CMS",
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": "http://textpattern.com/assets/img/branding/textpattern/textpattern.png",
+                    "width": "320",
+                    "height": "60"
+                }
+            },
+            "image": {
+            <txp:if_article_image>
+                <txp:images limit="1">
+                "@type": "ImageObject",
+                "url": "<txp:image_url link="0" />",
+                "width": "<txp:image_info type="w" />",
+                "height": "<txp:image_info type="h" />"
+                </txp:images>
+            <txp:else />
+                "@type": "ImageObject",
+                "url": "http://textpattern.com/assets/img/branding/textpattern/textpattern-amp.png",
+                "width": "696",
+                "height": "390"
+            </txp:if_article_image>
+            }
+        }
+    </script>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+</head>
+<body>
+    <h1><txp:title /></h1>
+    <txp:if_article_image>
+        <txp:images limit="1">
+            <amp-img layout="responsive" alt="<txp:image_info type="alt" />" src="<txp:image_url link="0" />" width="<txp:image_info type="w" />" height="<txp:image_info type="h" />"></amp-img>
+        </txp:images>
+    </txp:if_article_image>
+    <txp:body />
+</body>
+</html>

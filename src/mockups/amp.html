@@ -3,25 +3,21 @@
 <head>
     <meta charset="utf-8">
     <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"></script>
+    <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
     <title>AMP test</title>
-    <link rel="canonical" href="http://textpattern.com/mockups/blog-article.html">
     <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,700,400italic,700italic">
+    <link rel="canonical" href="http://textpattern.com/mockups/blog-article.html">
     <script type="application/ld+json">
         {
             "@context": "http://schema.org",
-            "@type": "NewsArticle",
+            "@type": "BlogPosting",
             "headline": "Blog example title",
             "mainEntityOfPage": "http://textpattern.com/mockups/blog-article.html",
-            "datePublished": "2016-01-21T10:43:39Z",
-            "dateModified": "2016-01-22T14:32:01Z",
-            "image": [
-                {
-                    "@type": "ImageObject",
-                    "url": "http://textpattern.com/assets/img/branding/textpattern/textpattern-amp.png",
-                    "width": "696",
-                    "height": "390"
-                }
-            ],
+            "datePublished": "2017-02-08T16:52:38Z",
+            "dateModified": "2017-02-08T16:58:22Z",
+            "description": "A sample news article build with AMP.",
             "author": {
                 "@type": "Person",
                 "name": "Phil Wareham"
@@ -35,13 +31,90 @@
                     "width": "320",
                     "height": "60"
                 }
-            }
+            },
+            "image": [
+                {
+                    "@type": "ImageObject",
+                    "url": "http://textpattern.com/assets/img/branding/textpattern/textpattern-amp.png",
+                    "width": "696",
+                    "height": "390"
+                }
+            ]
         }
     </script>
     <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <style amp-custom>
+        body {
+            background-color: #fff;
+            color: #333;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+        h1,h2,h3,h4,h5,h6 {
+            font-family: "PT Serif", Georgia, serif
+        }
+        pre,
+        code,
+        kbd,
+        samp {
+            font-family: Menlo, Consolas, Monaco, monospace;
+        }
+    </style>
 </head>
 <body>
-    <h1>Blog example title</h1>
-    <amp-img layout="responsive" alt="Welcome" src="http://placehold.it/832x554" height="832" width="554"></amp-img>
+
+    <div class="logo">Textpattern CMS</div>
+
+    <amp-img class="open-sidebar" alt="Open sidebar" src="menu.svg" width="24" height="24" on="tap:sidebar.open" role="button" tabindex="0"></amp-img>
+
+    <header>
+        <h1>Blog example title</h1>
+        <p class="article-author">By: Phil Wareham</p>
+        <p class="article-date">
+            <time datetime="2017-02-08T16:52:38Z">08 February 2017</time>
+        </p>
+    </header>
+
+    <div class="article-share">
+        <amp-social-share width="40" height="32" type="facebook" data-param-app_id=""></amp-social-share>
+        <amp-social-share width="40" height="32" type="twitter"></amp-social-share>
+        <amp-social-share width="40" height="32" type="gplus"></amp-social-share>
+        <amp-social-share width="40" height="32" type="linkedin"></amp-social-share>
+    </div>
+
+    <div class="article-description">
+        <p>This is where a blog article extract/description would be, if available. Ne sea soluta voluptatum. Ut nec augue disputationi, unum utamur vis in. Ea menandri persecuti dissentiunt usu, causae equidem.</p>
+    </div>
+
+    <amp-img layout="responsive" alt="Welcome" src="http://placehold.it/832x554" width="832" height="554"></amp-img>
+
+    <div class="article-body">
+        <p>Lorem ipsum dolor sit amet, quo epicuri volutpat no. Causae option accusamus in est. Mea id ignota meliore facilis, cu vim omnium appareat mediocrem. Eu oblique voluptua electram his. Mei eu movet recteque. Vis nulla graeci praesent ad, mediocrem expetenda pro ad.</p>
+        <p>Timeam mentitum an nam. Mei ne prima perfecto adversarium. Quo eu tamquam invidunt verterem, albucius dissentiet ea eum. Facete fabellas referrentur et qui. Cu harum tempor vivendum vel. Nec quem movet nullam in. No stet tota pri.</p>
+    <figure>
+        <amp-img layout="responsive" alt="Figure Example" src="http://placehold.it/832x554" width="832" height="554"></amp-img>
+        <figcaption>This is a figcaption example. Lorem ipsum dolor sit amet, quo epicuri volutpat no.</figcaption>
+    </figure>
+        <h3>h3 subheading example</h3>
+        <p>Inermis indoctum vis in, has soleat complectitur te. Ut est stet civibus, mucius iriure ad duo. Sumo tantas et est, ea duo elitr utroque, ne mea dicant tincidunt scribentur. Sit dico accusata et. Sint inimicus cu nam, odio velit minim sit ut.</p>
+        <p>
+            <amp-img layout="responsive" alt="Image Example" src="http://placehold.it/832x240" width="832" height="240"></amp-img>
+        </p>
+        <p>Ne sea soluta voluptatum. Ut nec augue disputationi, unum utamur vis in. Ea menandri persecuti dissentiunt usu, causae equidem quo ea. Possit gubergren at mea. Sed an erant movet accusata.</p>
+        <hr>
+        <p>Ex graeci civibus eleifend vim, mel et utroque fastidii. Sed eu omnis disputando, voluptatum appellantur vix an. Exerci detracto at his, at illud debitis vis, augue congue inimicus his ei. Cetero intellegat ius an. Eu sed nobis tation, erant elaboraret eam at.</p>
+    </div>
+
+    <amp-sidebar id="sidebar" layout="nodisplay" side="left">
+        <amp-img class="close-sidebar" alt="Close sidebar" src="close.svg" width="24" height="24" on="tap:sidebar.close" role="button" tabindex="0"></amp-img>
+        <ul>
+            <li>Nav item 1</li>
+            <li>Nav item 2 with longer name</li>
+            <li>Nav item 3 with very much much longer text</li>
+            <li>Nav item 4</li>
+            <li>Nav item 5</li>
+            <li>Nav item 6</li>
+        </ul>
+    </amp-sidebar>
+
 </body>
 </html>
