@@ -30,6 +30,10 @@
                 </figure>
             </txp:if_variable>
         </txp:images>
+    <txp:else />
+        <meta itemprop="image" content="http://textpattern.com/assets/img/branding/textpattern/textpattern-og.png">
+        <meta itemprop="width" content="1200">
+        <meta itemprop="height" content="1200">
     </txp:if_article_image>
     <div itemprop="articleBody">
         <txp:body />
@@ -44,7 +48,7 @@
             <span itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
                 <meta itemprop="url" content="http://textpattern.com/assets/img/branding/textpattern/textpattern.png">
                 <meta itemprop="width" content="320">
-                <meta itemprop="height" content="52">
+                <meta itemprop="height" content="60">
             </span>
         </span>
         <txp:if_article_category>
