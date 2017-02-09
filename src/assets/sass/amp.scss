@@ -10,9 +10,21 @@
 
 // BELOW IS INLINED TO AMP TEMPLATE AT BUILD (amp-custom)
 
+html {
+    font-size: $base-font-size;
+    line-height: $line-height-mobile;
+}
+
 body {
+    background-color: $color-background;
     color: $color-text;
     font-family: $font-sans-serif;
+}
+
+a {
+    color: $color-link;
+    text-decoration: none;
+    text-decoration-skip: ink edges;
 }
 
 h1,
@@ -29,4 +41,67 @@ code,
 kbd,
 samp {
     font-family: $font-code;
+}
+
+.container {
+    position: relative;
+    width: 90%;
+    max-width: 768px;
+    margin: 1px auto;
+    padding: 1em 0 0.625em;
+}
+
+.site-header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    border-bottom: 2px solid $color-text;
+    background-color: $color-background;
+    z-index: 10;
+}
+
+.open-sidebar,
+.close-sidebar {
+    position: absolute;
+    top: 1em;
+    border: 1px solid transparent;
+}
+
+.open-sidebar {
+    right: 0;
+}
+
+.close-sidebar {
+    right: 0.75em;
+}
+
+.list--no-bullets {
+    padding: 0;
+    list-style: none;
+}
+
+amp-sidebar {
+    width: 264px;
+    padding: 1px 1em;
+    border-right: 1px solid $color-border;
+    background-color: $color-background;
+
+    ul {
+        border-top: 1px solid $color-border-light;
+    }
+
+    li {
+        padding: 0.5em 0;
+        border-bottom: 1px solid $color-border-light;
+    }
+}
+
+.sponsors {
+    margin: 1.75em 0;
+
+    a {
+        display: block;
+        margin: 1em 0;
+    }
 }

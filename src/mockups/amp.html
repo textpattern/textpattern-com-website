@@ -46,59 +46,73 @@
     <style amp-custom>@@ampcss</style>
 </head>
 <body>
-
-    <div class="logo">Textpattern CMS</div>
-
-    <amp-img class="open-sidebar" alt="Open sidebar" src="menu.svg" width="24" height="24" on="tap:sidebar.open" role="button" tabindex="0"></amp-img>
-
-    <header>
-        <h1>Blog example title</h1>
-        <p class="article-author">By: Phil Wareham</p>
-        <p class="article-date">
-            <time datetime="2017-02-08T16:52:38Z">08 February 2017</time>
-        </p>
-    </header>
-
-    <div class="article-share">
-        <amp-social-share width="40" height="32" type="facebook" data-param-app_id=""></amp-social-share>
-        <amp-social-share width="40" height="32" type="twitter"></amp-social-share>
-        <amp-social-share width="40" height="32" type="gplus"></amp-social-share>
-        <amp-social-share width="40" height="32" type="linkedin"></amp-social-share>
+    <div class="site-header">
+        <div class="container">
+            <a href="index.html"><amp-img class="masthead" alt="Textpattern CMS" src="http://textpattern.com/assets/img/branding/textpattern/textpattern-mobile.svg" width="208" height="34"></amp-img></a>
+            <amp-img class="open-sidebar" alt="Open sidebar" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cg fill='%23333'%3E%3Crect x='4' y='6' width='24' height='4'/%3E%3Crect x='4' y='14' width='24' height='4'/%3E%3Crect x='4' y='22' width='24' height='4'/%3E%3C/g%3E%3C/svg%3E" width="32" height="32" on="tap:sidebar.open" role="button" tabindex="0"></amp-img>
+        </div>
     </div>
 
-    <div class="article-description">
-        <p>This is where a blog article extract/description would be, if available. Ne sea soluta voluptatum. Ut nec augue disputationi, unum utamur vis in. Ea menandri persecuti dissentiunt usu, causae equidem.</p>
+    <div class="container">
+
+        <header>
+            <h1>Blog example title</h1>
+            <p class="article-author">By Phil Wareham</p>
+            <p class="article-date">
+                <time datetime="2017-02-08T16:52:38Z">08 February 2017</time>
+            </p>
+        </header>
+
+        <div class="article-description">
+            <p>This is where a blog article extract/description would be, if available. Ne sea soluta voluptatum. Ut nec augue disputationi, unum utamur vis in. Ea menandri persecuti dissentiunt usu, causae equidem.</p>
+        </div>
+
+        <amp-img layout="responsive" alt="Welcome" src="http://placehold.it/832x554" width="832" height="554"></amp-img>
+
+        <div class="article-body">
+            <p>Lorem ipsum dolor sit amet, quo epicuri volutpat no. Causae option accusamus in est. Mea id ignota meliore facilis, cu vim omnium appareat mediocrem. Eu oblique voluptua electram his. Mei eu movet recteque. Vis nulla graeci praesent ad, mediocrem expetenda pro ad.</p>
+            <p>Timeam mentitum an nam. Mei ne prima perfecto adversarium. Quo eu tamquam invidunt verterem, albucius dissentiet ea eum. Facete fabellas referrentur et qui. Cu harum tempor vivendum vel. Nec quem movet nullam in. No stet tota pri.</p>
+        <figure>
+            <amp-img layout="responsive" alt="Figure Example" src="http://placehold.it/832x554" width="832" height="554"></amp-img>
+            <figcaption>This is a figcaption example. Lorem ipsum dolor sit amet, quo epicuri volutpat no.</figcaption>
+        </figure>
+            <h3>h3 subheading example</h3>
+            <p>Inermis indoctum vis in, has soleat complectitur te. Ut est stet civibus, mucius iriure ad duo. Sumo tantas et est, ea duo elitr utroque, ne mea dicant tincidunt scribentur. Sit dico accusata et. Sint inimicus cu nam, odio velit minim sit ut.</p>
+            <p>
+                <amp-img layout="responsive" alt="Image Example" src="http://placehold.it/832x240" width="832" height="240"></amp-img>
+            </p>
+            <p>Ne sea soluta voluptatum. Ut nec augue disputationi, unum utamur vis in. Ea menandri persecuti dissentiunt usu, causae equidem quo ea. Possit gubergren at mea. Sed an erant movet accusata.</p>
+            <hr>
+            <p>Ex graeci civibus eleifend vim, mel et utroque fastidii. Sed eu omnis disputando, voluptatum appellantur vix an. Exerci detracto at his, at illud debitis vis, augue congue inimicus his ei. Cetero intellegat ius an. Eu sed nobis tation, erant elaboraret eam at.</p>
+        </div>
+
+        <footer class="article-share">
+            <amp-social-share width="40" height="32" type="facebook" data-param-app_id=""></amp-social-share>
+            <amp-social-share width="40" height="32" type="twitter"></amp-social-share>
+            <amp-social-share width="40" height="32" type="gplus"></amp-social-share>
+            <amp-social-share width="40" height="32" type="linkedin"></amp-social-share>
+        </footer>
+
     </div>
 
-    <amp-img layout="responsive" alt="Welcome" src="http://placehold.it/832x554" width="832" height="554"></amp-img>
-
-    <div class="article-body">
-        <p>Lorem ipsum dolor sit amet, quo epicuri volutpat no. Causae option accusamus in est. Mea id ignota meliore facilis, cu vim omnium appareat mediocrem. Eu oblique voluptua electram his. Mei eu movet recteque. Vis nulla graeci praesent ad, mediocrem expetenda pro ad.</p>
-        <p>Timeam mentitum an nam. Mei ne prima perfecto adversarium. Quo eu tamquam invidunt verterem, albucius dissentiet ea eum. Facete fabellas referrentur et qui. Cu harum tempor vivendum vel. Nec quem movet nullam in. No stet tota pri.</p>
-    <figure>
-        <amp-img layout="responsive" alt="Figure Example" src="http://placehold.it/832x554" width="832" height="554"></amp-img>
-        <figcaption>This is a figcaption example. Lorem ipsum dolor sit amet, quo epicuri volutpat no.</figcaption>
-    </figure>
-        <h3>h3 subheading example</h3>
-        <p>Inermis indoctum vis in, has soleat complectitur te. Ut est stet civibus, mucius iriure ad duo. Sumo tantas et est, ea duo elitr utroque, ne mea dicant tincidunt scribentur. Sit dico accusata et. Sint inimicus cu nam, odio velit minim sit ut.</p>
-        <p>
-            <amp-img layout="responsive" alt="Image Example" src="http://placehold.it/832x240" width="832" height="240"></amp-img>
-        </p>
-        <p>Ne sea soluta voluptatum. Ut nec augue disputationi, unum utamur vis in. Ea menandri persecuti dissentiunt usu, causae equidem quo ea. Possit gubergren at mea. Sed an erant movet accusata.</p>
-        <hr>
-        <p>Ex graeci civibus eleifend vim, mel et utroque fastidii. Sed eu omnis disputando, voluptatum appellantur vix an. Exerci detracto at his, at illud debitis vis, augue congue inimicus his ei. Cetero intellegat ius an. Eu sed nobis tation, erant elaboraret eam at.</p>
-    </div>
-
-    <amp-sidebar id="sidebar" layout="nodisplay" side="left">
-        <amp-img class="close-sidebar" alt="Close sidebar" src="close.svg" width="24" height="24" on="tap:sidebar.close" role="button" tabindex="0"></amp-img>
-        <ul>
-            <li>Nav item 1</li>
-            <li>Nav item 2 with longer name</li>
-            <li>Nav item 3 with very much much longer text</li>
-            <li>Nav item 4</li>
-            <li>Nav item 5</li>
-            <li>Nav item 6</li>
+    <amp-sidebar id="sidebar" layout="nodisplay" side="right">
+        <amp-img class="close-sidebar" alt="Close sidebar" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cg fill='%23333'%3E%3Cpath d='M6.1 23.07L23.07 6.1l2.83 2.83L8.93 25.9z'/%3E%3Cpath d='M6.1 8.93L8.93 6.1 25.9 23.07l-2.83 2.83z'/%3E%3C/g%3E%3C/svg%3E" width="32" height="32" on="tap:sidebar.close" role="button" tabindex="0"></amp-img>
+        <h3>Recent blog articles</h3>
+        <ul class="list--no-bullets">
+            <li><a href="#">Nav item 1</a></li>
+            <li><a href="#">Nav item 2 with longer name</a></li>
+            <li><a href="#">Nav item 3 with very much much longer text</a></li>
+            <li><a href="#">Nav item 4</a></li>
+            <li><a href="#">Nav item 5</a></li>
         </ul>
+        <aside class="sponsors">
+            <a rel="external" href="#">
+                <amp-img alt="Ad Example 1" src="http://placehold.it/264x165" width="264" height="165"></amp-img>
+            </a>
+            <a rel="external" href="#">
+                <amp-img alt="Ad Example 2" src="http://placehold.it/264x165" width="264" height="165"></amp-img>
+            </a>
+        </aside>
     </amp-sidebar>
 
 </body>
