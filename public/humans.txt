@@ -22,18 +22,16 @@
 # TECHNOLOGY COLOPHON
 
   Standards: HTML5, CSS3
-  Server: Apache, MySQL, PHP
+  Server: Linux, Apache, MySQL, PHP
   Components:
     Textpattern CMS: http://textpattern.com
     jQuery: https://jquery.com
     Require.js: http://requirejs.org
-    Autosize: https://github.com/jackmoore/autosize
     Prism: http://prismjs.com
     Responsive Nav: https://github.com/viljamis/responsive-nav.js
   Software:
     Node.js: http://nodejs.org
     Grunt.js: http://gruntjs.com
-    Composer: http://getcomposer.org
     git: http://git-scm.com
   Source: https://github.com/textpattern/textpattern-com-website
 
