@@ -45,8 +45,7 @@ module.exports = function (grunt)
                 'css',
                 'copy',
                 'devUpdate',
-                'jshint',
-                'replace'
+                'jshint'
             ]
         },
 
@@ -170,10 +169,16 @@ module.exports = function (grunt)
         replace: {
             theme: {
                 options: {
-                    patterns: [{
-                            match: 'timestamp',
-                            replacement: '<%= opt.timestamp %>'
-                    }]
+                    patterns: [
+                        {
+                                match: 'timestamp',
+                                replacement: '<%= opt.timestamp %>'
+                        },
+                        {
+                                match: 'ampcss',
+                                replacement: '<%= grunt.file.read("public/assets/css/amp.css") %>'
+                        }
+                    ]
                 },
                 files: [
                     {
@@ -205,6 +210,7 @@ module.exports = function (grunt)
             dist: {
                 files: [
                     {'<%= paths.dest.css %>style.css': '<%= paths.src.sass %>style.scss'},
+                    {'<%= paths.dest.css %>amp.css': '<%= paths.src.sass %>amp.scss'},
                     {'<%= paths.dest.css %>design-patterns.css': '<%= paths.src.sass %>design-patterns.scss'}
                 ]
             }
@@ -265,7 +271,7 @@ module.exports = function (grunt)
     });
 
     // Register tasks.
-    grunt.registerTask('build', ['clean', 'concurrent', 'uglify']);
+    grunt.registerTask('build', ['clean', 'concurrent', 'replace', 'uglify']);
     grunt.registerTask('css', ['sasslint', 'sass', 'postcss']);
     grunt.registerTask('default', ['watch']);
     grunt.registerTask('travis', ['jshint', 'build']);

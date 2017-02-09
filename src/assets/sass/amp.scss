@@ -1,0 +1,32 @@
+// import global variables
+@import "setup/settings";
+
+// import any additional mixins
+@import "setup/helpers";
+
+// import colourscheme
+@import "setup/colours";
+
+
+// BELOW IS INLINED TO AMP TEMPLATE AT BUILD (amp-custom)
+
+body {
+    color: $color-text;
+    font-family: $font-sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $font-serif;
+}
+
+pre,
+code,
+kbd,
+samp {
+    font-family: $font-code;
+}
