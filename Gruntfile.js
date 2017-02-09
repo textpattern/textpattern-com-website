@@ -218,18 +218,6 @@ module.exports = function (grunt)
             target: ['<%= paths.src.sass %>**/*.scss']
         },
 
-        // Run Textpattern setup script.
-        shell: {
-            setup: {
-                command: [
-                    'php src/setup/setup.php'
-                ].join('&&'),
-                options: {
-                    stdout: true
-                }
-            }
-        },
-
         // Uglify and copy JavaScript files from `bower-components`, and also `main.js`, to `public/assets/js/`.
         uglify: {
             dist: {
@@ -280,6 +268,5 @@ module.exports = function (grunt)
     grunt.registerTask('build', ['clean', 'concurrent', 'uglify']);
     grunt.registerTask('css', ['sasslint', 'sass', 'postcss']);
     grunt.registerTask('default', ['watch']);
-    grunt.registerTask('setup', ['shell:setup']);
     grunt.registerTask('travis', ['jshint', 'build']);
 };
