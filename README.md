@@ -1,6 +1,6 @@
 # Textpattern.com website
 
-[![Build Status](https://img.shields.io/travis/textpattern/textpattern-com-website.svg)](https://travis-ci.org/textpattern/textpattern-com-website)
+[![Build Status](https://travis-ci.org/textpattern/textpattern-com-website.svg?branch=master)](https://travis-ci.org/textpattern/textpattern-com-website)
 
 Official website of the [Textpattern](http://textpattern.com) project. **Currently under development.**
 
