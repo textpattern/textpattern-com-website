@@ -52,15 +52,33 @@
     <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
     <style amp-custom>@@ampcss</style>
 </head>
+<body>
+    <div class="site-header">
+        <div class="container">
+            <a href="index.html"><amp-img class="masthead" alt="Textpattern CMS" src="http://textpattern.com/assets/img/branding/textpattern/textpattern-mobile.svg" width="208" height="34"></amp-img></a>
+            <amp-img class="open-sidebar" alt="Open sidebar" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cg fill='%23333'%3E%3Crect x='4' y='6' width='24' height='4'/%3E%3Crect x='4' y='14' width='24' height='4'/%3E%3Crect x='4' y='22' width='24' height='4'/%3E%3C/g%3E%3C/svg%3E" width="32" height="32" on="tap:sidebar.open" role="button" tabindex="0"></amp-img>
+        </div>
+    </div>
     <div class="container">
-        <amp-img class="masthead" alt="Textpattern CMS" src="http://textpattern.com/assets/img/branding/textpattern/textpattern-mobile.svg" width="208" height="34"></amp-img>
-        <h1><txp:title /></h1>
+        <header>
+            <h1><txp:title /></h1>
+            <p class="article-details">By <txp:author /> <span role="separator">|</span>  <time datetime="<txp:posted format="iso8601" />" itemprop="datePublished"><b><txp:posted format="%d %B %Y" /></time></p>
+        </header>
+
         <txp:if_article_image>
             <txp:images limit="1">
                 <amp-img layout="responsive" alt="<txp:image_info type="alt" />" src="<txp:image_url link="0" />" width="<txp:image_info type="w" />" height="<txp:image_info type="h" />"></amp-img>
             </txp:images>
         </txp:if_article_image>
+
         <txp:body />
+
+        <footer class="article-share">
+            <amp-social-share width="40" height="32" type="facebook" data-param-app_id=""></amp-social-share>
+            <amp-social-share width="40" height="32" type="twitter"></amp-social-share>
+            <amp-social-share width="40" height="32" type="gplus"></amp-social-share>
+            <amp-social-share width="40" height="32" type="linkedin"></amp-social-share>
+        </footer>
     </div>
 </body>
 </html>

@@ -1,5 +1,4 @@
 User-agent: *
 Disallow: /file_download/
-Disallow: /mockups/
 Disallow: /textpattern/
 Sitemap: http://textpattern.com/sitemap.xml
