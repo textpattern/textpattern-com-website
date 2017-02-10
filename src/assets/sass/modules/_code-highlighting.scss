@@ -135,29 +135,3 @@ pre.line-numbers > code {
     text-align: right;
     content: counter(linenumber);
 }
-
-/*
- * Language indicator (plugin).
- */
-
-div.prism-show-language {
-    position: relative;
-}
-
-div.prism-show-language > div.prism-show-language-label {
-    display: inline-block;
-    position: absolute;
-    top: -0.75em;
-    right: 0;
-    bottom: auto;
-    left: auto;
-    width: auto;
-    height: auto;
-    padding: 0 0.3333333em; // 4px / 12px
-    border-radius: 0 0.3333333em; // 4px / 12px
-    background-color: $color-text-footnote;
-    color: #ffffff;
-    font-family: $font-sans-serif;
-    font-size: $small-font-size;
-    z-index: 1;
-}
