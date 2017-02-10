@@ -8,20 +8,11 @@
 
     var whatDomain = window.location.hostname;
 
-    // Detect whether jQuery v2 features required, otherwise use jQuery v1 for higher compatibility.
-    // TODO: use jQuery v3?
-
-    var jqueryVersion = '1.12.4';
-
-    if (typeof JSON !== 'undefined' && 'querySelector' in document && 'addEventListener' in window) {
-        jqueryVersion = '2.2.4';
-    }
-
     requirejs.config({
         paths:
         {
-            'jquery': 'https://ajax.googleapis.com/ajax/libs/jquery/'+jqueryVersion+'/jquery.min',
-            'flowplayer': 'https://releases.flowplayer.org/6.0.5/flowplayer.min'
+            'jquery': 'https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min',
+            'flowplayer': 'https://releases.flowplayer.org/7.0.2/flowplayer.min'
         }
     });
 
