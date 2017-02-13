@@ -3,8 +3,9 @@
 <head>
     <meta charset="utf-8">
     <script async src="https://cdn.ampproject.org/v0.js"></script>
-    <script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"></script>
+    <script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
     <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+    <script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"></script>
     <title>AMP test</title>
     <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,700,400italic,700italic">
@@ -95,17 +96,20 @@
 
         <aside class="sponsors">
             <h4>Advertisements</h4>
+
+            <amp-ad width="300" height="250"
+                type="adsense"
+                data-ad-client="ca-pub-9763950928323671"
+                data-ad-slot="1234567890">
+                <amp-img placeholder src="placeholder-image.jpg"></amp-img>
+                <amp-img fallback src="fallback-image.jpg"></amp-img>
+            </amp-ad>
+
             <a rel="external" href="#">
-                <amp-img alt="Ad Example 1" src="http://placehold.it/264x165" width="264" height="165"></amp-img>
+                <amp-img alt="Ad Example 2" src="http://placehold.it/300x250" width="300" height="250"></amp-img>
             </a>
             <a rel="external" href="#">
-                <amp-img alt="Ad Example 2" src="http://placehold.it/264x165" width="264" height="165"></amp-img>
-            </a>
-            <a rel="external" href="#">
-                <amp-img alt="Ad Example 3" src="http://placehold.it/264x165" width="264" height="165"></amp-img>
-            </a>
-            <a rel="external" href="#">
-                <amp-img alt="Ad Example 4" src="http://placehold.it/264x165" width="264" height="165"></amp-img>
+                <amp-img alt="Ad Example 3" src="http://placehold.it/300x250" width="300" height="250"></amp-img>
             </a>
         </aside>
 
