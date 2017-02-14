@@ -1,0 +1,23 @@
+<nav class="layout-1col" aria-label="Breadcrumb navigation">
+    <ol class="breadcrumbs" itemscope itemtype="http://schema.org/BreadcrumbList">
+        <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+            <a itemprop="item" href="http://textpattern.com/"><span itemprop="name">Home</span></a>
+            <meta itemprop="position" content="1">
+        </li>
+        <txp:if_article_list>
+            <li class="current" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                <b itemprop="item"><span itemprop="name"><txp:section title="1" /></span></b>
+                <meta itemprop="position" content="2">
+            </li>
+        <txp:else />
+            <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                <a itemprop="item" href="<txp:section url='1' />"><span itemprop="name"><txp:section title="1" /></span></a>
+                <meta itemprop="position" content="2">
+            </li>
+            <li class="current" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                <b itemprop="item"><span itemprop="name"><txp:title /></span></b>
+                <meta itemprop="position" content="3">
+            </li>
+        </txp:if_article_list>
+    </ol>
+</nav>

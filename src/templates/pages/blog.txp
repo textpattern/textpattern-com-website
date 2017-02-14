@@ -87,6 +87,7 @@
     <main aria-label="Main content" itemscope itemtype="http://schema.org/Blog">
         <div class="container">
             <div class="layout-container">
+                <txp:output_form form="body_crumbs" />
 
                 <txp:if_article_list>
                     <txp:article limit="3">

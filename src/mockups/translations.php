@@ -80,6 +80,23 @@
             <div class="container">
                 <div class="layout-container">
 
+                    <nav class="layout-1col" aria-label="Breadcrumb navigation">
+                        <ol class="breadcrumbs" itemscope itemtype="http://schema.org/BreadcrumbList">
+                            <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                                <a itemprop="item" href="#"><span itemprop="name">Home</span></a>
+                                <meta itemprop="position" content="1">
+                            </li>
+                            <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                                <a itemprop="item" href="#"><span itemprop="name">About</span></a>
+                                <meta itemprop="position" content="2">
+                            </li>
+                            <li class="current" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                                <b itemprop="item"><span itemprop="name">Language translations</span></b>
+                                <meta itemprop="position" content="3">
+                            </li>
+                        </ol>
+                    </nav>
+
                     <article class="layout-4col-3span">
                         <h1>Language translations</h1>
 
