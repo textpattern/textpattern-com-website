@@ -264,21 +264,26 @@ span.disabled {
  *
  * Example HTML:
  *
- * <input class="small">
- * <input class="medium">
- * <input class="large">
+ * <input size="8">
+ * <input size="16">
+ * <input size="24">
+ * <input size="32">
  */
 
 input {
-    &.small {
-        width: 33%;
+    &[size="8"] {
+        width: 25%;
     }
 
-    &.medium {
-        width: 66%;
+    &[size="16"] {
+        width: 50%;
     }
 
-    &.large {
+    &[size="24"] {
+        width: 75%;
+    }
+
+    &[size="32"] {
         width: 100%;
     }
 }
