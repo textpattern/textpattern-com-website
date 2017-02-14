@@ -224,12 +224,19 @@ section {
 }
 
 /**
- * Sponsor links.
+ * Advertising links.
  */
 
-.sponsors a {
-    display: block;
-    margin: 1em 0;
+.sponsors {
+    margin: 1em -0.5em 0;
+
+    a {
+        margin: 0.5em;
+    }
+}
+
+.sponsor {
+    display: inline-block;
 }
 
 /**
