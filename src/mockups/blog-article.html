@@ -169,7 +169,7 @@
             <div class="container">
                 <div class="layout-container">
 
-                    <article class="layout-4col-3span" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+                    <article class="layout-4col-3span article" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
                         <meta itemprop="mainEntityOfPage" content="http://textpattern.com/mockups/blog-article.html">
                         <h1 itemprop="headline">Blog example title</h1>
 
@@ -207,7 +207,7 @@
                         <footer class="article-footer">
                             <span class="ui-icon ui-icon-pencil">By:</span>
                             <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-                                <span itemprop="name">Phil Wareham</span>
+                                <span class="article-author" itemprop="name">Phil Wareham</span>
                             </span>
                             <span itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
                                 <meta itemprop="name" content="Textpattern CMS">
@@ -232,6 +232,15 @@
                                 </span>
                             </a>
                         </footer>
+
+                        <aside class="sponsors" aria-label="Advertisements" itemscope itemtype="http://schema.org/WPAdBlock">
+                            <a class="sponsor" rel="external" href="#" itemprop="url">
+                                <img itemprop="image" alt="Ad Example 1" src="../assets/img/com/ad-300x250-placeholder.png" width="300" height="250">
+                            </a>
+                            <a class="sponsor" rel="external" href="#" itemprop="url">
+                                <img itemprop="image" alt="Ad Example 2" src="../assets/img/com/ad-300x250-placeholder.png" width="300" height="250">
+                            </a>
+                        </aside>
 
                         <section id="comments-head">
                             <h3>Comments</h3>
@@ -301,15 +310,6 @@
                             </section>
 
                         </section>
-
-                        <aside class="sponsors" aria-label="Advertisements" itemscope itemtype="http://schema.org/WPAdBlock">
-                            <a class="sponsor" rel="external" href="#" itemprop="url">
-                                <img itemprop="image" alt="Ad Example 1" src="../assets/img/com/ad-300x250-placeholder.png" width="300" height="250">
-                            </a>
-                            <a class="sponsor" rel="external" href="#" itemprop="url">
-                                <img itemprop="image" alt="Ad Example 2" src="../assets/img/com/ad-300x250-placeholder.png" width="300" height="250">
-                            </a>
-                        </aside>
 
                     </article>
 

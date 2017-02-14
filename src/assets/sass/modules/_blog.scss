@@ -1,6 +1,10 @@
 /* Blog section specific
    ========================================================================== */
 
+.article {
+    margin-bottom: 1.5em;
+}
+
 /**
  * Date styling.
  *
@@ -43,29 +47,31 @@
  */
 
 .article-footer {
+    margin: 2em 0;
     font-size: $small-font-size;
 
-    a {
+    a,
+    .article-author {
         display: inline-block;
         margin-top: 1em;
         padding: 0.25em 0.75em; // 3px / 12px + 9px / 12px
         border-radius: 1em;
         background: $color-text;
         color: $color-text-inverse;
+    }
 
-        &:hover,
-        &:focus {
-            outline: 0;
-            background-color: $color-highlight;
-            color: $color-text;
-            text-decoration: none;
-        }
+    a:hover,
+    a:focus {
+        outline: 0;
+        background-color: $color-highlight;
+        color: $color-text;
+        text-decoration: none;
+    }
 
-        &:active {
-            background-color: darken($color-highlight, 6%);
-            color: $color-text;
-            text-decoration: none;
-        }
+    a:active {
+        background-color: darken($color-highlight, 6%);
+        color: $color-text;
+        text-decoration: none;
     }
 
     // Put a bit more margin on 2nd category link, if it exists (for better touch accessibility).
