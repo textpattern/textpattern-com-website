@@ -1,0 +1,9 @@
+{
+    "name": "documentation",
+    "page": "documentation_frontpage",
+    "css": "default",
+    "in_rss": "0",
+    "on_frontpage": "0",
+    "searchable": "0",
+    "title": "Documentation"
+}

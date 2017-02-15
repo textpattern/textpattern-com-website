@@ -1,0 +1,123 @@
+<div id="sidebar">
+
+<txp:if_status>
+
+<txp:output_form form="download_sidebar" />
+<txp:output_form form="adunit_arvixe" />
+<txp:output_form form="adunit_adsense_250x250" />
+
+<txp:if_section name="archive,weblog">
+<div class="articleListing">
+<ul class="directory"><li<txp:if_section name="weblog"> class="active"</txp:if_section>><a rel="bookmark" href="<txp:site_url />weblog">the weblog</a></li><li<txp:if_section name="archive"> class="active"</txp:if_section>><a rel="bookmark" href="<txp:site_url />archive">the archives</a></li></ul>
+</div> <!-- close articleListing -->
+</txp:if_section>
+
+<txp:if_section name="documentation,license,system-requirements">
+<div class="articleListing">
+<ul class="directory"><li><span class="entryTitle"><a rel="bookmark" href="<txp:site_url />faq">faq categories</a></span></li><li><span class="entryTitle"><a rel="bookmark" href="<txp:site_url />releases">releases faq</a></span></li><li<txp:if_individual_article><txp:if_article_id id="119"> class="active"</txp:if_article_id></txp:if_individual_article>><span class="entryTitle"><a rel="bookmark" href="<txp:site_url />about/119/system-requirements">system requirements</a></span></li><li<txp:if_individual_article><txp:if_article_id id="51"> class="active"</txp:if_article_id><txp:else /><txp:if_section name="license"> class="active"</txp:if_section></txp:if_individual_article>><span class="entryTitle"><a rel="bookmark" href="<txp:site_url />license">license</a></span></li></ul>
+</div> <!-- close articleListing -->
+</txp:if_section>
+
+<txp:if_section name="faq">
+<div class="faqMenu">
+<h2 class="faqTitle active"><a rel="bookmark" href="<txp:site_url />faq">faq categories</a></h2>
+<ul>
+<txp:category_list parent="faq" exclude="faq" form="menu_faq_category_list" break="" />
+</ul>
+<h2 class="faqTitle"></h2>
+<ul class="directory"><li><a rel="bookmark" href="<txp:site_url />releases">releases faq</a></li><li<txp:if_individual_article><txp:if_article_id id="119"> class="active"</txp:if_article_id></txp:if_individual_article>><span class="entryTitle"><a rel="bookmark" href="<txp:site_url />about/119/system-requirements">system requirements</a></span></li><li<txp:if_individual_article><txp:if_article_id id="51"> class="active"</txp:if_article_id><txp:else /><txp:if_section name="license"> class="active"</txp:if_section></txp:if_individual_article>><span class="entryTitle"><a rel="bookmark" href="<txp:site_url />license">license</a></span></li></ul>
+</div>
+</txp:if_section>
+
+<txp:if_section name="releases">
+<div class="faqMenu">
+<ul class="directory"><li><a rel="bookmark" href="<txp:site_url />faq">faq categories</a></li></ul>
+<h2 class="faqTitle active"><a rel="bookmark" href="<txp:site_url />releases">releases faq</a></h2>
+<ul>
+<txp:category_list parent="releases-faq" exclude="releases-faq" form="menu_faq_category_list" break="" />
+</ul>
+<ul class="directory"><li<txp:if_individual_article><txp:if_article_id id="119"> class="active"</txp:if_article_id></txp:if_individual_article>><span class="entryTitle"><a rel="bookmark" href="<txp:site_url />about/119/system-requirements">system requirements</a></span></li><li<txp:if_individual_article><txp:if_article_id id="51"> class="active"</txp:if_article_id><txp:else /><txp:if_section name="license"> class="active"</txp:if_section></txp:if_individual_article>><span class="entryTitle"><a rel="bookmark" href="<txp:site_url />license">license</a></span></li></ul>
+</div>
+</txp:if_section>
+
+<txp:if_section name="security,support,contact">
+<div class="articleListing">
+<ul class="directory"><li<txp:if_article_list><txp:if_section name="support"> class="active"</txp:if_section></txp:if_article_list>><span class="entryTitle"><a rel="bookmark" href="<txp:site_url />support">support</a></span></li>
+<li<txp:if_section name="security"> class="active"</txp:if_section>><span class="entryTitle"><a rel="bookmark" href="<txp:site_url />security">security</a></span></li><li<txp:if_section name="contact"> class="active"</txp:if_section>><span class="entryTitle"><a rel="bookmark" href="<txp:site_url />contact">contact us</a></span></li></ul>
+</div> <!-- close articleListing -->
+</txp:if_section>
+
+<txp:if_section name="about,download,contributors,patrons">
+<div class="articleListing">
+<ul class="directory"><li<txp:if_article_list><txp:if_section name="about"> class="active"</txp:if_section></txp:if_article_list>><span class="entryTitle"><a rel="bookmark" href="<txp:site_url />about">what is textpattern?</a></span></li><li<txp:if_individual_article><txp:if_article_id id="119"> class="active"</txp:if_article_id></txp:if_individual_article>><span class="entryTitle"><a rel="bookmark" href="<txp:site_url />about/119/system-requirements">system requirements</a></span></li><li<txp:if_section name="contributors"> class="active"</txp:if_section>><span class="entryTitle"><a rel="bookmark" href="<txp:site_url />contributors">contributors</a></span></li><li<txp:if_section name="patrons"> class="active"</txp:if_section>><span class="entryTitle"><a rel="bookmark" href="<txp:site_url />patrons">patrons</a></span></li></ul>
+</div> <!-- close articleListing -->
+</txp:if_section>
+
+<txp:if_section name="features">
+<div class="articleListing">
+<ul class="directory"><li<txp:if_article_list> class="active"</txp:if_article_list>><span class="entryTitle"><a rel="bookmark" href="<txp:site_url />features">textpattern&#8217;s features</a></span></li><li<txp:if_individual_article><txp:if_article_id id="338"> class="active"</txp:if_article_id></txp:if_individual_article>><span class="entryTitle"><a rel="bookmark" href="<txp:site_url />features/338/for-content-publishers">for publishers</a></span></li><li<txp:if_individual_article><txp:if_article_id id="339"> class="active"</txp:if_article_id></txp:if_individual_article>><span class="entryTitle"><a rel="bookmark" href="<txp:site_url />features/339/for-site-designers">for designers</a></span></li><li<txp:if_individual_article><txp:if_article_id id="340"> class="active"</txp:if_article_id></txp:if_individual_article>><span class="entryTitle"><a rel="bookmark" href="<txp:site_url />features/340/for-web-developers">for developers</a></span></li><li<txp:if_individual_article><txp:if_article_id id="341"> class="active"</txp:if_article_id></txp:if_individual_article>><span class="entryTitle"><a rel="bookmark" href="<txp:site_url />features/341/testimonials">Testimonials</a></span></li><li<txp:if_individual_article><txp:if_article_id id="301"> class="active"</txp:if_article_id></txp:if_individual_article>><span class="entryTitle"><a rel="bookmark" href="<txp:site_url />features/301/languages">languages</a></span></li></ul>
+</div> <!-- close articleListing -->
+</txp:if_section>
+
+<txp:if_section name="weblog,archive">
+<div class="articleListing">
+<h2 class="articleBlockTitle">Feeds</h2>
+<ul class="directory"><li class="first"><txp:feed_link label="RSS" flavor="rss" format="a" limit="10" section="weblog" title="RSS" /></li><li><txp:feed_link label="Atom 1.0" flavor="atom" format="a" limit="10" section="weblog" title="Atom 1.0" /></li></ul>
+</div> <!-- close articleListing -->
+</txp:if_section>
+
+<div class="reasons">
+
+<h2>The many reasons to use Textpattern</h2>
+<p>With a browser-based interface in over 40 languages, excellent support and full range of features, it&#8217;s no wonder that publishers, designers and developers everywhere choose Textpattern.</p>
+
+</div> <!-- close reasons -->
+
+<div class="demoBlock clearfix">
+<a class="exampleButton" rel="bookmark" href="<txp:site_url />featured">see examples</a>
+<a class="demoButton" rel="external" href="http://textpattern.co/demo">try the demo</a>
+</div> <!-- close demoBlock -->
+
+<div class="expand">
+<h2 class="expandTitle">Textpattern is for <strong>Publishers</strong></h2>
+<ul class="sticky">
+<li class="first">Direct, easy to follow interface - &#8216;just write&#8217;</li>
+<li>Fast, intuitive editing of articles, links, comments, page elements</li>
+<li>Quick conversion of plain text to valid HTML with <a href="http://txstyle.org/">Textile</a></li>
+<li>Upload and organise images and files via browser</li>
+<li class="last"><a href="<txp:site_url />features/338/for-content-publishers"><b>More</b> reasons to use Textpattern&hellip;</a></li>
+</ul>
+</div> <!-- close expand -->
+
+<div class="expand">
+<h2 class="expandTitle">Textpattern is for <strong>Designers</strong></h2>
+<ul>
+<li class="first">Fast copy/paste of plugins to extend Textpattern&#8217;s capabilities</li>
+<li>Supported by development team and community on a lively forum</li>
+<li>Standards compliant by default</li>
+<li>No limit to style, layout or sections</li>
+<li class="last"><a href="<txp:site_url />features/339/for-site-designers"><b>More</b> reasons to use Textpattern&hellip;</a></li>
+</ul>
+</div> <!-- close expand -->
+
+<div class="expand">
+<h2 class="expandTitle">Textpattern is for <strong>Developers</strong></h2>
+<ul>
+<li class="first">Lightweight yet powerful core</li>
+<li>PHP and MySQL - easy to develop under</li>
+<li>Plugins are simple to write, document and publish with the standard template or the plugin composer</li>
+<li>Dev team very active on the forum</li>
+<li class="last"><a href="<txp:site_url />features/340/for-web-developers"><b>More</b> reasons to use Textpattern&hellip;</a></li>
+</ul>
+</div> <!-- close expand -->
+<txp:output_form form="sidebar_webinformer_widget" />
+
+<div class="articleListing">
+<h2 class="articleBlockTitle">External Textpattern links</h2>
+<ul class="directory"><li class="external first"><a rel="external" href="http://forum.textpattern.com/">the forum</a></li><li class="external"><a rel="external" href="http://textpattern.net/">the manual</a></li><li class="external"><a rel="external" href="http://textpattern.org/">resources</a></li><li class="external"><a rel="external" href="http://themes.textpattern.com/">themes</a></li><li class="external"><a rel="external" href="http://www.apress.com/9781590598320">textpattern solutions book</a></li></ul>
+</div> <!-- close articleListing -->
+
+<txp:output_form form="sponsors_sidebar" />
+
+</txp:if_status>
+</div> <!-- close sidebar -->

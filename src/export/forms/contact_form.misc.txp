@@ -1,0 +1,23 @@
+<txp:if_section name="contact">
+<txp:zem_contact to="contact@textpattern.com" redirect="contact/264/thanks">
+<div class="names clearfix">
+    <p class="name">Name <i>(required)</i><txp:zem_contact_text label="Name" size="14" /></p>
+    <p class="lastName">Last Name<txp:zem_contact_text label="Last Name" required="no" size="14" /></p>
+</div> <!-- close names -->
+<p>Email Address <i>(required)</i><txp:zem_contact_email size="30" label="Email Address" /></p>
+<p>Your Message <i>(required)</i><txp:zem_contact_textarea label="Your Message" /></p>
+<p id="submitButton" class="none" onclick="changesubmitclass();"><txp:zem_contact_submit><span>Submit</span></txp:zem_contact_submit></p>
+</txp:zem_contact>
+</txp:if_section>
+
+<txp:if_section name="security">
+<txp:zem_contact to="security@textpattern.com" redirect="security/265/thanks">
+<div class="names clearfix">
+    <p class="name">Name <i>(required)</i><txp:zem_contact_text label="Name" size="14" /></p>
+    <p class="lastName">Last Name<txp:zem_contact_text label="Last Name" required="no" size="14" /></p>
+</div> <!-- close names -->
+<p>Email Address <i>(required)</i><txp:zem_contact_email size="30" label="Email Address" /></p>
+<p>Your Message <i>(required)</i><txp:zem_contact_textarea label="Your Message" /></p>
+<p class="button"><txp:zem_contact_submit><span>Submit</span></txp:zem_contact_submit></p>
+</txp:zem_contact>
+</txp:if_section>

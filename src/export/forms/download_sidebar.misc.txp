@@ -1,0 +1,8 @@
+<div class="downloadBlock clearfix">
+<a class="downloadButton" href="<txp:site_url/>latest.zip">download</a>
+<div class="downloadDetails">
+<p>version</p>
+<p class="versionNumber">4.6.2</p>
+</div>
+</div> <!-- close downloadBlock -->
+<p class="downloadMore">File Size: <txp:file_download filename="textpattern-4.6.2.zip" form="file_download_size" />.<txp:if_section name="download"><txp:else /> <a href="<txp:site_url />download">Learn more&hellip;</a></txp:if_section></p>
