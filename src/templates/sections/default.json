@@ -1,10 +1,10 @@
 {
-    "name": "default",
-    "title": "Default",
-    "page": "default",
-    "css": "default",
-    "is_default": false,
-    "in_rss": false,
-    "on_frontpage": true,
-    "searchable": false
+  "name": "default",
+  "title": "Default",
+  "page": "default",
+  "css": "default",
+  "is_default": false,
+  "in_rss": false,
+  "on_frontpage": true,
+  "searchable": false
 }

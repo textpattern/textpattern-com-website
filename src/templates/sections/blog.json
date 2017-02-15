@@ -1,0 +1,10 @@
+{
+  "name": "blog",
+  "title": "Blog",
+  "page": "blog",
+  "css": "default",
+  "is_default": true,
+  "in_rss": true,
+  "on_frontpage": true,
+  "searchable": true
+}

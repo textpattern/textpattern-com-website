@@ -1,0 +1,10 @@
+{
+  "name": "about",
+  "title": "About",
+  "page": "standard",
+  "css": "default",
+  "is_default": false,
+  "in_rss": false,
+  "on_frontpage": false,
+  "searchable": true
+}
