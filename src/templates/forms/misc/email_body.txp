@@ -1,0 +1,9 @@
+Message received via the Textpattern.com website
+------------------------------------------------
+
+Name: <txp:zem_contact_value name="name" />
+<txp:zem_contact_if name="website">Website: <txp:zem_contact_value name="website" /></txp:zem_contact_if>
+
+Message:
+
+<txp:zem_contact_value name="enquiry" />
