@@ -5,31 +5,31 @@
     <txp:output_form form="head" />
     <txp:if_article_list>
         <txp:article limit="3" pgonly="1" />
-        <title>Blog / Textpattern CMS</title>
-        <meta name="description" content="Latest blogs from Team Textpattern and guests; Textpattern news and other tidbits of info that we find of interest.">
+        <title><txp:section title="1" /> / Textpattern CMS</title>
+        <txp:meta_description />
         <txp:variable name="page" value='<txp:page_url type="pg" />' />
         <txp:variable name="prev" value='<txp:newer />' />
         <txp:variable name="next" value='<txp:older />' />
         <txp:if_variable name="page" value="1">
             <meta name="robots" content="index, follow, noodp, noydir">
-            <link rel="canonical" href="http://textpattern.com/blog/">
+            <link rel="canonical" href="<txp:section url='1' />">
             <meta name="twitter:card" content="summary">
             <meta name="twitter:site" content="@textpattern">
-            <meta name="twitter:title" content="Blog / Textpattern CMS">
+            <meta name="twitter:title" content="<txp:section title="1" /> / Textpattern CMS">
             <meta name="twitter:description" content="Latest blogs from Team Textpattern and guests; Textpattern news and other tidbits of info that we find of interest.">
             <meta name="twitter:image:src" content="http://textpattern.com/apple-touch-icon-180x180.png">
-            <meta name="twitter:url" content="http://textpattern.com/blog/">
-            <meta property="og:title" content="Blog / Textpattern CMS">
+            <meta name="twitter:url" content="<txp:section url='1' />">
+            <meta property="og:title" content="<txp:section title="1" /> / Textpattern CMS">
             <meta property="og:description" content="Latest blogs from Team Textpattern and guests; Textpattern news and other tidbits of info that we find of interest.">
             <meta property="og:image" content="http://textpattern.com/assets/img/branding/textpattern/textpattern-og.png">
-            <meta property="og:url" content="http://textpattern.com/blog/">
+            <meta property="og:url" content="<txp:section url='1' />">
             <script type="application/ld+json">
                 {
                     "@context": "http://schema.org",
                     "@type": "WebPage",
-                    "headline": "Blog / Textpattern CMS",
+                    "headline": "<txp:section title="1" /> / Textpattern CMS",
                     "description": "Latest blogs from Team Textpattern and guests; Textpattern news and other tidbits of info that we find of interest.",
-                    "url": "http://textpattern.com/blog/"
+                    "url": "<txp:section url='1' />"
                 }
             </script>
         <txp:else />
@@ -87,10 +87,10 @@
             <div class="layout-container">
                 <txp:output_form form="body_crumbs" />
                 <txp:if_article_list>
-                    <txp:article form="article_listing_blog" limit="5" />
+                    <txp:article limit="999" />
                     </txp:article>
                 <txp:else />
-                    <txp:article form="blog" />
+                    <txp:article />
                 </txp:if_article_list>
 
                 <section class="layout-4col sidebar">

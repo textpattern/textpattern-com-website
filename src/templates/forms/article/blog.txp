@@ -1,0 +1,85 @@
+<article class="layout-4col-3span article" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+    <meta itemprop="mainEntityOfPage" content="<txp:permlink />">
+    <h1 itemprop="headline"><txp:title /></h1>
+    <p class="article-date">
+        <time datetime="<txp:posted format="iso8601" />" itemprop="datePublished"><txp:posted format="%d %B %Y" /></time>
+        <meta itemprop="dateModified" content="<txp:modified format="iso8601" />">
+    </p>
+    <txp:if_excerpt>
+        <div class="article-description" itemprop="description">
+            <txp:excerpt />
+        </div>
+    </txp:if_excerpt>
+    <txp:if_article_image>
+        <txp:images>
+            <txp:variable name="caption" value='<txp:image_info />' />
+            <txp:if_variable name="caption" value="">
+                <p class="photo" itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
+                    <img itemprop="url" alt="<txp:image_info type='alt' />" src="<txp:smd_thumbnail id='<txp:image_info type="id" />' type='832w' display='url' />" srcset="<txp:image_url link='0' /> 2x, <txp:smd_thumbnail id='<txp:image_info type="id" />' type='832w' display='url' /> 1x">
+                    <meta itemprop="width" content="<txp:image_info type="w" />">
+                    <meta itemprop="height" content="<txp:image_info type="h" />">
+                </p>
+            <txp:else />
+                <figure itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
+                    <img itemprop="url" alt="<txp:image_info type='alt' />" src="<txp:smd_thumbnail id='<txp:image_info type="id" />' type='832w' display='url' />" srcset="<txp:image_url link='0' /> 2x, <txp:smd_thumbnail id='<txp:image_info type="id" />' type='832w' display='url' /> 1x">
+                    <meta itemprop="width" content="<txp:image_info type="w" />">
+                    <meta itemprop="height" content="<txp:image_info type="h" />">
+                    <figcaption itemprop="caption">
+                        <txp:image_info />
+                    </figcaption>
+                </figure>
+            </txp:if_variable>
+        </txp:images>
+    <txp:else />
+        <meta itemprop="image" content="http://textpattern.com/assets/img/branding/textpattern/textpattern-og.png">
+        <meta itemprop="width" content="1200">
+        <meta itemprop="height" content="1200">
+    </txp:if_article_image>
+    <div itemprop="articleBody">
+        <txp:body />
+    </div>
+    <footer class="article-footer">
+        <span class="ui-icon ui-icon-pencil">By:</span>
+        <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <span itemprop="name"><txp:author /></span>
+        </span>
+        <span itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+            <meta itemprop="name" content="Textpattern CMS">
+            <span itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+                <meta itemprop="url" content="http://textpattern.com/assets/img/branding/textpattern/textpattern.png">
+                <meta itemprop="width" content="320">
+                <meta itemprop="height" content="60">
+            </span>
+        </span>
+        <txp:if_article_category>
+            <span class="separator" role="separator">|</span>
+            <span class="ui-icon ui-icon-tag">Tags:</span>
+            <span itemprop="keywords">
+                <txp:if_article_category number="1"><txp:category1 title="1" link="1" /></txp:if_article_category>
+                <txp:if_article_category number="2"><txp:category2 title="1" link="1" /></txp:if_article_category>
+            </span>
+        </txp:if_article_category>
+        <txp:if_comments>
+            <span class="separator" role="separator">|</span>
+            <span class="ui-icon ui-icon-comment">Comments:</span>
+            <a href="<txp:permlink />#comments-head" title="View article comments" itemprop="discussionUrl">
+                <span itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+                    <meta itemprop="interactionType" content="http://schema.org/CommentAction">
+                    <span itemprop="userInteractionCount"><txp:comments_count /></span>
+                </span>
+            </a>
+        <txp:else />
+            <txp:if_comments_allowed>
+                <span class="separator" role="separator">|</span>
+                <span class="ui-icon ui-icon-comment">Comments:</span>
+                <a href="<txp:permlink />#comments-head" title="View article comments" itemprop="discussionUrl">
+                    <span itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+                        <meta itemprop="interactionType" content="http://schema.org/CommentAction">
+                        <span itemprop="userInteractionCount">0</span>
+                    </span>
+                </a>
+            </txp:if_comments_allowed>
+        </txp:if_comments>
+    </footer>
+    <txp:output_form form="comments_display" />
+</article>
