@@ -299,9 +299,9 @@ Redirect temp /github https://github.com/textpattern
 # | Redirect hardcoded URIs to external resources                      |
 # ----------------------------------------------------------------------
 
-Redirect temp /textpattern-first-steps http://textpattern.net/wiki/index.php?title=Textpattern_Quickstart:_Hello_World
-Redirect temp /textpattern-semantic-model http://textpattern.net/wiki/index.php?title=Textpattern_Semantic_Model
-Redirect temp /textpattern-tag-reference http://docs.textpattern.io/tags/
+Redirect temp /textpattern-first-steps https://docs.textpattern.io/administration/hello-world
+Redirect temp /textpattern-semantic-model https://docs.textpattern.io/administration/textoattern-semantic-model
+Redirect temp /textpattern-tag-reference https://docs.textpattern.io/tags/
 Redirect temp /default-theme https://github.com/textpattern/textpattern-default-theme
 Redirect temp /textile-changelog https://github.com/textile/php-textile/blob/master/CHANGELOG.textile
 Redirect temp /hidden-files-osx http://osxdaily.com/2009/02/25/show-hidden-files-in-os-x/
@@ -339,7 +339,7 @@ Redirect temp /latest.tar.gz http://textpattern.com/file_download/110/textpatter
 
 <IfModule mod_rewrite.c>
     RewriteCond %{QUERY_STRING}  ^c=diagnostics$
-    RewriteRule (.*)  http://docs.textpattern.io/administration/diagnostics-panel?  [R=301,L]
+    RewriteRule (.*)  https://docs.textpattern.io/administration/diagnostics-panel?  [R=301,L]
 
     RewriteCond %{QUERY_STRING}  ^c=forum$
     RewriteRule (.*)  http://forum.textpattern.com/help.php?  [R=301,L]
@@ -347,6 +347,6 @@ Redirect temp /latest.tar.gz http://textpattern.com/file_download/110/textpatter
 
 
 # TODO: To be removed when new site created.
-Redirect temp /start http://textpattern.net/wiki/index.php?title=Textpattern_Quickstart:_Hello_World
+Redirect temp /start https://docs.textpattern.io/administration/hello-world
 Redirect temp /donate http://textpattern.com/patrons
-Redirect temp /themes http://www.textpattern.net/wiki/index.php?title=Creating_Textpattern_themes
+Redirect temp /themes https://docs.textpattern.io/themes/
