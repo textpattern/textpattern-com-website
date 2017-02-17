@@ -39,7 +39,7 @@
 </div> <!-- close detailBlockLeft -->
 
 <div id="detailBlockRight">
-<h3 class="weblogFrontpage"><a rel="external" href="http://docs.textpattern.io/">Textpattern user documentation<img src="/style/external_link_arrow_content.gif" alt="&gt;" width="12" height="9" /></a></h3>
+<h3 class="weblogFrontpage"><a rel="external" href="https://docs.textpattern.io/">Textpattern user documentation<img src="/style/external_link_arrow_content.gif" alt="&gt;" width="12" height="9" /></a></h3>
 <p>The Textpattern user documentation contains a rich host of information on every aspect of Textpattern. Main topics include Orientation, Installation, Admin-side information, Tag Reference, Tag Basics, Tutorials and Extending Textpattern amongst other things. You should find it extremely helpful.</p>
 </div> <!-- close detailBlockRight -->
 </div> <!-- close innerBlockLeftTop -->

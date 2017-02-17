@@ -114,7 +114,7 @@
 
 <div class="articleListing">
 <h2 class="articleBlockTitle">External Textpattern links</h2>
-<ul class="directory"><li class="external first"><a rel="external" href="http://forum.textpattern.com/">the forum</a></li><li class="external"><a rel="external" href="http://textpattern.net/">the manual</a></li><li class="external"><a rel="external" href="http://textpattern.org/">resources</a></li><li class="external"><a rel="external" href="http://themes.textpattern.com/">themes</a></li><li class="external"><a rel="external" href="http://www.apress.com/9781590598320">textpattern solutions book</a></li></ul>
+<ul class="directory"><li class="external first"><a rel="external" href="http://forum.textpattern.com/">the forum</a></li><li class="external"><a rel="external" href="https://docs.textpattern.io/">the manual</a></li><li class="external"><a rel="external" href="http://textpattern.org/">resources</a></li><li class="external"><a rel="external" href="http://themes.textpattern.com/">themes</a></li><li class="external"><a rel="external" href="http://www.apress.com/9781590598320">textpattern solutions book</a></li></ul>
 </div> <!-- close articleListing -->
 
 <txp:output_form form="sponsors_sidebar" />
