@@ -22,11 +22,11 @@
             <meta name="twitter:site" content="@textpattern">
             <meta name="twitter:title" content="Textpattern CMS | Open source content management system">
             <meta name="twitter:description" content="Textpattern CMS is a free, open source content management system with a browser-based interface in over 40 languages.">
-            <meta name="twitter:image:src" content="http://textpattern.com/apple-touch-icon-180x180.png">
+            <meta name="twitter:image:src" content="https://textpattern.io/apple-touch-icon-180x180.png">
             <meta name="twitter:url" content="http://textpattern.com/">
             <meta property="og:title" content="Textpattern CMS | Open source content management system">
             <meta property="og:description" content="Textpattern CMS is a free, open source content management system with a browser-based interface in over 40 languages.">
-            <meta property="og:image" content="http://textpattern.com/assets/img/branding/textpattern/textpattern-og.png">
+            <meta property="og:image" content="https://textpattern.io/assets/img/branding/textpattern/textpattern-og.png">
             <meta property="og:url" content="http://textpattern.com/">
             <script type="application/ld+json">
                 {

@@ -16,7 +16,7 @@
             <meta itemprop="height" content="<txp:image_info type="h" />">
         </txp:images>
     <txp:else />
-        <meta itemprop="image" content="http://textpattern.com/assets/img/branding/textpattern/textpattern-og.png">
+        <meta itemprop="image" content="https://textpattern.io/assets/img/branding/textpattern/textpattern-og.png">
         <meta itemprop="width" content="1200">
         <meta itemprop="height" content="1200">
     </txp:if_article_image>

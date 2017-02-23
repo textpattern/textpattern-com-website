@@ -29,7 +29,7 @@
     <meta name="twitter:site" content="@textpattern">
     <meta name="twitter:title" content="Textpattern CMS">
     <meta name="twitter:description" content="This is where a blog article extract/description would be.">
-    <meta name="twitter:image:src" content="http://textpattern.com/apple-touch-icon-180x180.png">
+    <meta name="twitter:image:src" content="https://textpattern.io/apple-touch-icon-180x180.png">
     <meta name="twitter:url" content="http://textpattern.dev/blog-landing.html">
 </head>
 
@@ -47,7 +47,7 @@
 <!-- Header -->
         <header class="site-header" itemscope itemtype="http://schema.org/Organization">
             <h1 class="masthead" itemprop="name"><a rel="home" itemprop="url" href="http://textpattern.dev/" title="Go to the Textpattern homepage">Textpattern CMS</a></h1>
-            <meta itemprop="logo" content="http://textpattern.com/assets/img/branding/textpattern/textpattern.png">
+            <meta itemprop="logo" content="https://textpattern.io/assets/img/branding/textpattern/textpattern.png">
 
             <div itemscope itemtype="http://schema.org/WebSite">
                 <meta itemprop="url" content="http://textpattern.dev/">

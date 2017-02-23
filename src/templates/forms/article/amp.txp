@@ -28,7 +28,7 @@
                 "name": "Textpattern CMS",
                 "logo": {
                     "@type": "ImageObject",
-                    "url": "http://textpattern.com/assets/img/branding/textpattern/textpattern.png",
+                    "url": "https://textpattern.io/assets/img/branding/textpattern/textpattern.png",
                     "width": "320",
                     "height": "60"
                 }

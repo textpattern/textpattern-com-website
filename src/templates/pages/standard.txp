@@ -17,11 +17,11 @@
             <meta name="twitter:site" content="@textpattern">
             <meta name="twitter:title" content="<txp:section title="1" /> / Textpattern CMS">
             <meta name="twitter:description" content="Latest blogs from Team Textpattern and guests; Textpattern news and other tidbits of info that we find of interest.">
-            <meta name="twitter:image:src" content="http://textpattern.com/apple-touch-icon-180x180.png">
+            <meta name="twitter:image:src" content="https://textpattern.io/apple-touch-icon-180x180.png">
             <meta name="twitter:url" content="<txp:section url='1' />">
             <meta property="og:title" content="<txp:section title="1" /> / Textpattern CMS">
             <meta property="og:description" content="Latest blogs from Team Textpattern and guests; Textpattern news and other tidbits of info that we find of interest.">
-            <meta property="og:image" content="http://textpattern.com/assets/img/branding/textpattern/textpattern-og.png">
+            <meta property="og:image" content="https://textpattern.io/assets/img/branding/textpattern/textpattern-og.png">
             <meta property="og:url" content="<txp:section url='1' />">
             <script type="application/ld+json">
                 {
@@ -65,8 +65,8 @@
                 <meta property="og:image" content="<txp:image_url link="0" />">
             </txp:images>
         <txp:else />
-            <meta name="twitter:image:src" content="http://textpattern.com/apple-touch-icon-180x180.png">
-            <meta property="og:image" content="http://textpattern.com/assets/img/branding/textpattern/textpattern-og.png">
+            <meta name="twitter:image:src" content="https://textpattern.io/apple-touch-icon-180x180.png">
+            <meta property="og:image" content="https://textpattern.io/assets/img/branding/textpattern/textpattern-og.png">
         </txp:if_article_image>
         <script type="application/ld+json">
             {
