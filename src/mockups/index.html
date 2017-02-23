@@ -49,9 +49,83 @@
             "url": "http://textpattern.com/mockups/index.html"
         }
     </script>
+
+
+    <script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
+    <script src="txp-canvas.js"></script>
+<script>
+var canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;
+function init() {
+	canvas = document.getElementById("canvas");
+	anim_container = document.getElementById("animation_container");
+	dom_overlay_container = document.getElementById("dom_overlay_container");
+	images = images||{};
+	ss = ss||{};
+	var loader = new createjs.LoadQueue(false);
+	loader.addEventListener("fileload", handleFileLoad);
+	loader.addEventListener("complete", handleComplete);
+	loader.loadManifest(lib.properties.manifest);
+}
+function handleFileLoad(evt) {
+	if (evt.item.type == "image") { images[evt.item.id] = evt.result; }
+}
+function handleComplete(evt) {
+	//This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
+	var queue = evt.target;
+	var ssMetadata = lib.ssMetadata;
+	for(i=0; i<ssMetadata.length; i++) {
+		ss[ssMetadata[i].name] = new createjs.SpriteSheet( {"images": [queue.getResult(ssMetadata[i].name)], "frames": ssMetadata[i].frames} )
+	}
+	exportRoot = new lib.txpcanvas();
+	stage = new createjs.Stage(canvas);
+	stage.addChild(exportRoot);
+	//Registers the "tick" event listener.
+	fnStartAnimation = function() {
+		createjs.Ticker.setFPS(lib.properties.fps);
+		createjs.Ticker.addEventListener("tick", stage);
+	}
+	//Code to support hidpi screens and responsive scaling.
+	function makeResponsive(isResp, respDim, isScale, scaleType) {
+		var lastW, lastH, lastS=1;
+		window.addEventListener('resize', resizeCanvas);
+		resizeCanvas();
+		function resizeCanvas() {
+			var w = lib.properties.width, h = lib.properties.height;
+			var iw = window.innerWidth, ih=window.innerHeight;
+			var pRatio = window.devicePixelRatio || 1, xRatio=iw/w, yRatio=ih/h, sRatio=1;
+			if(isResp) {
+				if((respDim=='width'&&lastW==iw) || (respDim=='height'&&lastH==ih)) {
+					sRatio = lastS;
+				}
+				else if(!isScale) {
+					if(iw<w || ih<h)
+						sRatio = Math.min(xRatio, yRatio);
+				}
+				else if(scaleType==1) {
+					sRatio = Math.min(xRatio, yRatio);
+				}
+				else if(scaleType==2) {
+					sRatio = Math.max(xRatio, yRatio);
+				}
+			}
+			canvas.width = w*pRatio*sRatio;
+			canvas.height = h*pRatio*sRatio;
+			canvas.style.width = dom_overlay_container.style.width = anim_container.style.width =  w*sRatio+'px';
+			canvas.style.height = anim_container.style.height = dom_overlay_container.style.height = h*sRatio+'px';
+			stage.scaleX = pRatio*sRatio;
+			stage.scaleY = pRatio*sRatio;
+			lastW = iw; lastH = ih; lastS = sRatio;
+		}
+	}
+	makeResponsive(true,'both',false,1);
+	fnStartAnimation();
+}
+</script>
+
+
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage">
+<body itemscope itemtype="http://schema.org/WebPage" onload="init();">
     <meta itemprop="accessibilityControl" content="fullKeyboardControl">
     <meta itemprop="accessibilityControl" content="fullMouseControl">
     <meta itemprop="accessibilityHazard" content="noFlashingHazard">
@@ -85,7 +159,7 @@
                     <li><a itemprop="url" href="https://docs.textpattern.io/">Documentation</a></li>
                     <li><a itemprop="url" href="http://textpattern.com/themes">Themes</a></li>
                     <li><a itemprop="url" href="http://textpattern.org/">Plugins</a></li>
-                    <li><a itemprop="url" href="http://forum.textpattern.com/">Forum</a></li>
+                    <li><a itemprop="url" href="https://forum.textpattern.io/">Forum</a></li>
                     <li><a itemprop="url" href="http://textpattern.com/weblog">Blog</a></li>
                     <li><a itemprop="url" href="http://textpattern.com/about">About</a></li>
                 </ul>
@@ -97,15 +171,22 @@
         <main aria-label="Main content">
 
 
-            <div class="wrapper-inner odd">
-                <div class="container">
+            <div class="wrapper-inner even">
+                <div class="container" style="position:relative;">
 
-                    <p>
-                        <a class="button button-primary button-large" href="#"><span class="ui-button-icon ui-icon ui-extra-icon-download"></span> Download Textpattern CMS <span class="txp-version">4.6.2</span></a>
-                        <a class="button" href="#">Try a demo</a>
-                    </p>
+                    <div id="animation_container">
+                        <canvas id="canvas" style="position:absolute; z-index:1;"></canvas>
+                        <div id="dom_overlay_container" style="position:absolute; z-index:2;">
 
-                    <iframe src="https://ghbtns.com/github-btn.html?user=textpattern&repo=textpattern&type=star&count=true&size=large" frameborder="0" scrolling="0" width="160px" height="30px"></iframe>
+                            <h1 class="cta"><span>The small content management system that can handle big ideas</span></h1>
+                            <p>
+                                <a class="button button-primary button-large" href="#"><span class="ui-button-icon ui-icon ui-extra-icon-download"></span> Download Textpattern CMS <span class="txp-version">4.6.2</span></a>
+                                <a class="button" href="#">Try a demo</a>
+                            </p>
+                            <iframe src="https://ghbtns.com/github-btn.html?user=textpattern&repo=textpattern&type=star&count=true&size=large" frameborder="0" scrolling="0" width="160px" height="30px"></iframe>
+
+                		</div><!-- /#dom_overlay_container -->
+                	</div><!-- /#animation_container -->
 
                 </div><!-- /.container -->
             </div><!-- /.wrapper-inner -->
@@ -115,16 +196,52 @@
                 <div class="container">
                     <div class="layout-container">
 
-                        <div class="layout-3col">
-                            <p>PLACHOLDER TEXT - SECTION 2</p>
+                        <div class="layout-4col">
+                            <p><img alt="A solid, stable CMS built on PHP" src="../assets/img/com/index-feature-foundations.jpg" srcset="../assets/img/com/index-feature-foundations@2x.jpg 2x, ../assets/img/com/index-feature-foundations.jpg 1x"></p>
+                            <h3>Built on solid foundations</h3>
+                            <p>Textpattern CMS is completely free, open source software and it's built upon proven web technologies too. Furthermore, it doesn’t muddy your HTML with additional code dependencies or script libraries.</p>
                         </div>
 
-                        <div class="layout-3col">
-                            <p>PLACHOLDER TEXT - SECTION 2</p>
+                        <div class="layout-4col">
+                            <p><img alt="Core tags" src="http://placehold.it/200x200" srcset="http://placehold.it/400x400 2x, http://placehold.it/200x200 1x"></p>
+                            <h3>Flexible tag-based templates</h3>
+                            <p>Your designs – your code. Textpattern has a powerful tag-based template language that‘s easy to learn and provides a wealth of ways to structure a website and manipulate content.</p>
                         </div>
 
-                        <div class="layout-3col">
-                            <p>PLACHOLDER TEXT - SECTION 2</p>
+                        <div class="layout-4col">
+                            <p><img alt="Textpattern CMS is fast, lean, secure and extendable" src="../assets/img/com/index-feature-speed.jpg" srcset="../assets/img/com/index-feature-speed@2x.jpg 2x, ../assets/img/com/index-feature-speed.jpg 1x"></p>
+                            <h3>Fast, lean, secure and extendable</h3>
+                            <p>We purposefully keep the core of the CMS lean and responsive. However the system is fully extendable via plugins, of which there are hundreds available via our community of plugin authors.</p>
+                        </div>
+
+                        <div class="layout-4col">
+                            <p><img alt="Core tags" src="http://placehold.it/200x200" srcset="http://placehold.it/400x400 2x, http://placehold.it/200x200 1x"></p>
+                            <h3>Simple, elegant user interface</h3>
+                            <p>Our design philosophy extends to the Textpattern core user interface too. We try to avoid needless clutter within the administration panels and we strive to make the interface fully accessible for all users.</p>
+                        </div>
+
+                        <div class="layout-4col">
+                            <p><img alt="Textpattern CMS available in over 40 languages" src="../assets/img/com/index-feature-languages.jpg" srcset="../assets/img/com/index-feature-languages@2x.jpg 2x, ../assets/img/com/index-feature-languages.jpg 1x"></p>
+                            <h3>Available in over 40 languages</h3>
+                            <p>The Textpattern core user interface has been localized into many languages. Of course, we always welcome further <a href="#">translation by the community</a>. More translations are added all the time!</p>
+                        </div>
+
+                        <div class="layout-4col">
+                            <p><img alt="CMS with community-driven development" src="../assets/img/com/index-feature-community.jpg" srcset="../assets/img/com/index-feature-community@2x.jpg 2x, ../assets/img/com/index-feature-community.jpg 1x"></p>
+                            <h3>Community-driven development</h3>
+                            <p>Well over a decade of development has been lovingly poured into our CMS. The active, friendly and helpful <a href="https://forum.textpattern.io/">community</a> surrounding the platform ensures its continued success and guides its future.</p>
+                        </div>
+
+                        <div class="layout-4col">
+                            <p><img alt="Core tags" src="http://placehold.it/200x200" srcset="http://placehold.it/400x400 2x, http://placehold.it/200x200 1x"></p>
+                            <h3>Another feature or benefit 1</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Excepteur sint occaecat cupidatat non proident.</p>
+                        </div>
+
+                        <div class="layout-4col">
+                            <p><img alt="Core tags" src="http://placehold.it/200x200" srcset="http://placehold.it/400x400 2x, http://placehold.it/200x200 1x"></p>
+                            <h3>Another feature or benefit 2</h3>
+                            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.</p>
                         </div>
 
                     </div><!-- /.layout-container -->
@@ -158,61 +275,27 @@
                 </div><!-- /.container -->
             </div><!-- /.wrapper-inner -->
 
+
             <div class="wrapper-inner even">
                 <div class="container">
                     <div class="layout-container">
 
-                        <div class="layout-4col">
-                            <p><img alt="A solid, stable CMS built on PHP" src="../assets/img/com/index-feature-foundations.jpg" srcset="../assets/img/com/index-feature-foundations@2x.jpg 2x, ../assets/img/com/index-feature-foundations.jpg 1x"></p>
-                            <h3>Built on solid foundations</h3>
-                            <p>Textpattern CMS is completely free, open source software and it's built upon proven web technologies too. Furthermore, it doesn’t muddy your HTML with additional code dependencies or script libraries.</p>
+                        <div class="layout-3col">
+                            <p>PLACHOLDER TEXT - SECTION 2</p>
                         </div>
 
-                        <div class="layout-4col">
-                            <p><img alt="Core tags" src="http://placehold.it/200x200" srcset="http://placehold.it/400x400 2x, http://placehold.it/200x200 1x"></p>
-                            <h3>Flexible tag-based templates</h3>
-                            <p>Your designs – your code. Textpattern has a powerful tag-based template language that‘s easy to learn and provides a wealth of ways to structure a website and manipulate content.</p>
+                        <div class="layout-3col">
+                            <p>PLACHOLDER TEXT - SECTION 2</p>
                         </div>
 
-                        <div class="layout-4col">
-                            <p><img alt="Textpattern CMS is fast, lean, secure and extendable" src="../assets/img/com/index-feature-speed.jpg" srcset="../assets/img/com/index-feature-speed@2x.jpg 2x, ../assets/img/com/index-feature-speed.jpg 1x"></p>
-                            <h3>Fast, lean, secure and extendable</h3>
-                            <p>We purposefully keep the core of the CMS lean and responsive. However the system is fully extendable via plugins, of which there are hundreds available via our community of plugin authors.</p>
-                        </div>
-
-                        <div class="layout-4col">
-                            <p><img alt="Core tags" src="http://placehold.it/200x200" srcset="http://placehold.it/400x400 2x, http://placehold.it/200x200 1x"></p>
-                            <h3>Simple, elegant user interface</h3>
-                            <p>Our design philosophy extends to the Textpattern core user interface too. We try to avoid needless clutter within the administration panels and we strive to make the interface fully accessible for all users.</p>
-                        </div>
-
-                        <div class="layout-4col">
-                            <p><img alt="Textpattern CMS available in over 40 languages" src="../assets/img/com/index-feature-languages.jpg" srcset="../assets/img/com/index-feature-languages@2x.jpg 2x, ../assets/img/com/index-feature-languages.jpg 1x"></p>
-                            <h3>Available in over 40 languages</h3>
-                            <p>The Textpattern core user interface has been localized into many languages. Of course, we always welcome <a href="#">further translation by the community</a>. More translations are added all the time!</p>
-                        </div>
-
-                        <div class="layout-4col">
-                            <p><img alt="CMS with community-driven development" src="../assets/img/com/index-feature-community.jpg" srcset="../assets/img/com/index-feature-community@2x.jpg 2x, ../assets/img/com/index-feature-community.jpg 1x"></p>
-                            <h3>Community-driven development</h3>
-                            <p>Well over a decade of development has been lovingly poured into our CMS. The active, friendly and helpful community surrounding the platform ensures its continued success and guides its future.</p>
-                        </div>
-
-                        <div class="layout-4col">
-                            <p><img alt="Core tags" src="http://placehold.it/200x200" srcset="http://placehold.it/400x400 2x, http://placehold.it/200x200 1x"></p>
-                            <h3>Another feature or benefit 1</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Excepteur sint occaecat cupidatat non proident.</p>
-                        </div>
-
-                        <div class="layout-4col">
-                            <p><img alt="Core tags" src="http://placehold.it/200x200" srcset="http://placehold.it/400x400 2x, http://placehold.it/200x200 1x"></p>
-                            <h3>Another feature or benefit 2</h3>
-                            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.</p>
+                        <div class="layout-3col">
+                            <p>PLACHOLDER TEXT - SECTION 2</p>
                         </div>
 
                     </div><!-- /.layout-container -->
                 </div><!-- /.container -->
             </div><!-- /.wrapper-inner -->
+
 
             <div class="wrapper-inner odd">
                 <div class="container">

@@ -284,7 +284,7 @@ FileETag None
 # ----------------------------------------------------------------------
 
 Redirect permanent /plugins/txp_plugin_template.txt http://svn.textpattern.com/development/4.0-plugin-template/
-Redirect permanent /forum http://forum.textpattern.com
+Redirect permanent /forum https://forum.textpattern.io
 
 # ----------------------------------------------------------------------
 # | Selfish propaganda                                                 |
@@ -342,7 +342,7 @@ Redirect temp /latest.tar.gz http://textpattern.com/file_download/110/textpatter
     RewriteRule (.*)  https://docs.textpattern.io/administration/diagnostics-panel?  [R=301,L]
 
     RewriteCond %{QUERY_STRING}  ^c=forum$
-    RewriteRule (.*)  http://forum.textpattern.com/help.php?  [R=301,L]
+    RewriteRule (.*)  https://forum.textpattern.io/help.php?  [R=301,L]
 </IfModule>
 
 

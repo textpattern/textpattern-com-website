@@ -45,7 +45,7 @@ h1 {
 h2 {
     margin: 0.8571429em 0; // 24px / 28px
     font-size: 1.75em; // 28px / 16px
-    line-height: 1.25; // 35px / 30px
+    line-height: 1.25; // 35px / 28px
 }
 
 h3 {
@@ -66,6 +66,31 @@ h6 {
     margin: 1em 0; // 16px
     font-size: 1em;
     line-height: $line-height-mobile;
+}
+
+/**
+ * Call to action headings.
+ *
+ * Example HTML:
+ *
+ * <h2 class="cta">
+ *     <span>Content</span>
+ * </h2>
+ *
+ * Also see _responsive.scss
+ */
+
+.cta {
+    width: 50%;
+    margin-top: 0.75em;
+    line-height: 1.5; // 42px / 28px
+
+    span {
+        padding: 0 0.2em;
+        background: $color-highlight;
+        color: $color-text;
+        box-decoration-break: clone;
+    }
 }
 
 /**
