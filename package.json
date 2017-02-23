@@ -10,7 +10,7 @@
     "url": "https://github.com/textpattern/textpattern-com-website/issues"
   },
   "devDependencies": {
-    "autoprefixer": "6.7.4",
+    "autoprefixer": "6.7.5",
     "cssnano": "3.10.0",
     "grunt": "~1.0",
     "grunt-cli": "~1",
@@ -31,7 +31,7 @@
     "uglify-save-license": "0.4.1"
   },
   "dependencies": {
-    "lunr": "0.7.2",
+    "lunr": "1.0.0",
     "prismjs": "1.6.0",
     "requirejs": "2.3.3",
     "responsive-nav": "1.0.39",
