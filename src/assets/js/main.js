@@ -42,7 +42,7 @@
             var language = code.parent().attr('class').split(' ')[0];
             code.addClass(language);
 
-            require(['prism'], function () //.@@timestamp
+            require(['prism.@@timestamp'], function ()
             {
                 Prism.highlightAll();
             });
@@ -82,7 +82,7 @@
     // Responsive navigation menu, via 'Responsive Nav'.
     // More info - https://github.com/viljamis/responsive-nav.js.
 
-    require(['responsivenav'], function () //.@@timestamp
+    require(['responsivenav.@@timestamp'], function ()
     {
         responsiveNav('.site-navigation', {
             transition: 400,
