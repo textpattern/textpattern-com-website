@@ -56,9 +56,9 @@
 <script>
 var canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;
 function init() {
-	canvas = document.getElementById("canvas");
-	anim_container = document.getElementById("animation_container");
-	dom_overlay_container = document.getElementById("dom_overlay_container");
+	canvas = document.getElementById("animation");
+	anim_container = document.getElementById("animation-container");
+	dom_overlay_container = document.getElementById("animation-overlay-container");
 	images = images||{};
 	ss = ss||{};
 	var loader = new createjs.LoadQueue(false);
@@ -174,9 +174,9 @@ function handleComplete(evt) {
             <div class="wrapper-inner">
                 <div class="container" style="position:relative;">
 
-                    <div id="animation_container">
-                        <canvas id="canvas" style="position:absolute; z-index:1;"></canvas>
-                        <div id="dom_overlay_container" style="position:absolute; z-index:2;">
+                    <div id="animation-container">
+                        <canvas id="animation" style="position:absolute; z-index:1;"></canvas>
+                        <div id="animation-overlay-container" style="position:absolute; z-index:2;">
 
                             <h1 class="cta"><span>The small content management system that can handle big ideas</span></h1>
                             <p>
