@@ -7,13 +7,13 @@
                 <h4>Social channels</h4>
                 <meta itemprop="name" content="Textpattern CMS">
                 <ul class="social-channels">
-                    <li><a class="facebook" rel="external" itemprop="url" href="http://textpattern.com/facebook" title="Follow us on Facebook+">Facebook</a></li>
-                    <li><a class="twitter" rel="external" itemprop="url" href="http://textpattern.com/@textpattern" title="Follow us on Twitter">Twitter</a></li>
-                    <li><a class="googleplus" rel="external" itemprop="url" href="http://textpattern.com/+" title="Follow us on Google+">Google+</a></li>
+                    <li><a class="facebook" rel="external" itemprop="url" href="https://textpattern.io/facebook" title="Follow us on Facebook+">Facebook</a></li>
+                    <li><a class="twitter" rel="external" itemprop="url" href="https://textpattern.io/@textpattern" title="Follow us on Twitter">Twitter</a></li>
+                    <li><a class="googleplus" rel="external" itemprop="url" href="https://textpattern.io/+" title="Follow us on Google+">Google+</a></li>
                 </ul>
                 <h4>Donate</h4>
                 <p>Your kind donations help us keep Textpattern CMS development alive!</p>
-                <p><a class="button button-primary" href="http://textpattern.com/patrons">Donate…</a></p>
+                <p><a class="button button-primary" href="https://textpattern.io/patrons">Donate…</a></p>
             </section>
             <section class="layout-2col community-details">
                 <h4>External links</h4>
@@ -44,11 +44,11 @@
 <footer class="site-footer" role="contentinfo">
     <p class="legal">
         Copyright 2004–<txp:php>echo date('Y');</txp:php> The Textpattern Development Team.
-        <a href="http://textpattern.com/contact">Contact us</a>.
-        <a href="http://textpattern.com/privacy">Privacy</a>.
-        <a href="http://textpattern.com/humans.txt">Colophon</a>.
-        Textpattern is both free and open source. <a href="http://textpattern.com/license">GPLv2 license</a>.
+        <a href="https://textpattern.io/contact">Contact us</a>.
+        <a href="https://textpattern.io/privacy">Privacy</a>.
+        <a href="https://textpattern.io/humans.txt">Colophon</a>.
+        Textpattern is both free and open source. <a href="https://textpattern.io/license">GPLv2 license</a>.
     </p>
 </footer>
-<script data-main="http://textpattern.com/assets/js/main.@@timestamp.js" src="http://textpattern.com/assets/js/require.@@timestamp.js"></script>
+<script data-main="https://textpattern.io/assets/js/main.@@timestamp.js" src="https://textpattern.io/assets/js/require.@@timestamp.js"></script>
 <noscript>JavaScript is currently disabled in your browser - activate it for the best experience.</noscript>

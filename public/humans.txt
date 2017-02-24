@@ -5,7 +5,7 @@
 # TEAM
 
   Developer: Team Textpattern
-  Site: http://textpattern.com
+  Site: https://textpattern.io/
   Twitter: https://twitter.com/textpattern
   GitHub: https://github.com/textpattern
   Location: Everywhere
@@ -24,15 +24,15 @@
   Standards: HTML5, CSS3
   Server: Linux, Apache, MySQL, PHP
   Components:
-    Textpattern CMS: http://textpattern.com
-    jQuery: https://jquery.com
-    Require.js: http://requirejs.org
-    Prism: http://prismjs.com
+    Textpattern CMS: https://textpattern.io/
+    jQuery: https://jquery.com/
+    Require.js: http://requirejs.org/
+    Prism: http://prismjs.com/
     Responsive Nav: https://github.com/viljamis/responsive-nav.js
   Software:
-    Node.js: http://nodejs.org
-    Grunt.js: http://gruntjs.com
-    git: http://git-scm.com
+    Node.js: https://nodejs.org/
+    Grunt.js: https://gruntjs.com/
+    git: https://git-scm.com/
   Source: https://github.com/textpattern/textpattern-com-website
 
 

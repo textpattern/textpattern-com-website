@@ -12,29 +12,29 @@
         <txp:variable name="next" value='<txp:older />' />
         <txp:if_variable name="page" value="1">
             <meta name="robots" content="index, follow, noodp, noydir">
-            <link rel="canonical" href="http://textpattern.com/blog/">
+            <link rel="canonical" href="https://textpattern.io/blog/">
             <meta name="twitter:card" content="summary">
             <meta name="twitter:site" content="@textpattern">
             <meta name="twitter:title" content="Blog / Textpattern CMS">
             <meta name="twitter:description" content="Latest blogs from Team Textpattern and guests; Textpattern news and other tidbits of info that we find of interest.">
             <meta name="twitter:image:src" content="https://textpattern.io/apple-touch-icon-180x180.png">
-            <meta name="twitter:url" content="http://textpattern.com/blog/">
+            <meta name="twitter:url" content="https://textpattern.io/blog/">
             <meta property="og:title" content="Blog / Textpattern CMS">
             <meta property="og:description" content="Latest blogs from Team Textpattern and guests; Textpattern news and other tidbits of info that we find of interest.">
             <meta property="og:image" content="https://textpattern.io/assets/img/branding/textpattern/textpattern-og.png">
-            <meta property="og:url" content="http://textpattern.com/blog/">
+            <meta property="og:url" content="https://textpattern.io/blog/">
             <script type="application/ld+json">
                 {
                     "@context": "http://schema.org",
                     "@type": "WebPage",
                     "headline": "Blog / Textpattern CMS",
                     "description": "Latest blogs from Team Textpattern and guests; Textpattern news and other tidbits of info that we find of interest.",
-                    "url": "http://textpattern.com/blog/"
+                    "url": "https://textpattern.io/blog/"
                 }
             </script>
         <txp:else />
             <meta name="robots" content="noindex, follow, noodp, noydir">
-            <link rel="canonical" href="http://textpattern.com/blog/?pg=<txp:page_url type="pg" />">
+            <link rel="canonical" href="https://textpattern.io/blog/?pg=<txp:page_url type="pg" />">
         </txp:if_variable>
         <txp:if_variable name="prev" value="">
         <txp:else />

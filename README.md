@@ -1,10 +1,10 @@
 # Textpattern.com website
 
 [![Build Status](https://img.shields.io/travis/textpattern/textpattern-com-website.svg)](https://travis-ci.org/textpattern/textpattern-com-website)
-[![Dependency Status](http://img.shields.io/david/textpattern/textpattern-com-website.svg)](https://david-dm.org/textpattern/textpattern-com-website)
-[![devDependency Status](http://img.shields.io/david/dev/textpattern/textpattern-com-website.svg)](https://david-dm.org/textpattern/textpattern-com-website?type=dev)
+[![Dependency Status](https://img.shields.io/david/textpattern/textpattern-com-website.svg)](https://david-dm.org/textpattern/textpattern-com-website)
+[![devDependency Status](https://img.shields.io/david/dev/textpattern/textpattern-com-website.svg)](https://david-dm.org/textpattern/textpattern-com-website?type=dev)
 
-Official 2017+ website of the [Textpattern](http://textpattern.com) project. **Currently under development.**
+Official 2017+ website of the [Textpattern](https://textpattern.io/) project. **Currently under development.**
 
 ## Supported web browsers
 
@@ -17,14 +17,14 @@ Older versions of the above and other browsers may work, but these are the ones 
 
 Building this repository requires:
 
-* [Node.js](http://nodejs.org/) >=0.12.0
-* [Grunt](http://gruntjs.com/) >=0.4.0
+* [Node.js](https://nodejs.org/) >=4.0
+* [Grunt](https://gruntjs.com/) >=1.0
 
 ## Setup
 
 ### Installing required tools
 
-The project uses [Grunt](http://gruntjs.com/) to run tasks and [Sass](http://sass-lang.com/) for CSS pre-processing. First make sure you have base dependencies installed: [Node.js](http://nodejs.org/) and [Grunt](http://gruntjs.com/). You can install Node using the [installer](https://nodejs.org) and Grunt with npm:
+The project uses [Grunt](https://gruntjs.com/) to run tasks and [Sass](http://sass-lang.com/) for CSS pre-processing. First make sure you have base dependencies installed: [Node.js](https://nodejs.org/) and [Grunt](https://gruntjs.com/). You can install Node using the [installer](https://nodejs.org/) and Grunt with npm:
 
 ```ShellSession
 $ npm install -g grunt-cli

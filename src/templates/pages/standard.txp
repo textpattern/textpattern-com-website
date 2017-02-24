@@ -34,7 +34,7 @@
             </script>
         <txp:else />
             <meta name="robots" content="noindex, follow, noodp, noydir">
-            <link rel="canonical" href="http://textpattern.com/blog/?pg=<txp:page_url type="pg" />">
+            <link rel="canonical" href="https://textpattern.io/blog/?pg=<txp:page_url type="pg" />">
         </txp:if_variable>
         <txp:if_variable name="prev" value="">
         <txp:else />
