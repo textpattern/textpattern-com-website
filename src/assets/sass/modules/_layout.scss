@@ -193,7 +193,7 @@ section {
  * Example HTML:
  *
  * <div class="wrapper">
- *     <div class="inner-wrapper odd">
+ *     <div class="inner-wrapper zebra">
  *         <div class="container">
  *             Content
  *         </div>
@@ -204,14 +204,10 @@ section {
 .wrapper-inner {
     position: relative;
     padding: 1em 0;
+}
 
-    &.odd {
-        background-color: $color-background-zebra;
-    }
-
-    &.even {
-        background-color: $color-background;
-    }
+.zebra {
+    background-color: $color-background-zebra;
 }
 
 /**
