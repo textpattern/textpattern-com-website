@@ -1,99 +1,99 @@
 (function (lib, img, cjs, ss, an) {
 
 var p; // shortcut to reference prototypes
-lib.webFontTxtInst = {}; 
+lib.webFontTxtInst = {};
 var loadedTypekitCount = 0;
 var loadedGoogleCount = 0;
 var gFontsUpdateCacheList = [];
 var tFontsUpdateCacheList = [];
 lib.ssMetadata = [
-		{name:"txp_canvas_atlas_", frames: [[2302,0,343,312],[2647,0,228,210],[2877,0,210,206],[0,0,2300,144]]}
+		{name:"home-animation-sprite", frames: [[2302,0,343,312],[2647,0,228,210],[2877,0,210,206],[0,0,2300,144]]}
 ];
 
 
 
-lib.updateListCache = function (cacheList) {		
-	for(var i = 0; i < cacheList.length; i++) {		
-		if(cacheList[i].cacheCanvas)		
-			cacheList[i].updateCache();		
-	}		
-};		
+lib.updateListCache = function (cacheList) {
+	for(var i = 0; i < cacheList.length; i++) {
+		if(cacheList[i].cacheCanvas)
+			cacheList[i].updateCache();
+	}
+};
 
-lib.addElementsToCache = function (textInst, cacheList) {		
-	var cur = textInst;		
-	while(cur != exportRoot) {		
-		if(cacheList.indexOf(cur) != -1)		
-			break;		
-		cur = cur.parent;		
-	}		
-	if(cur != exportRoot) {		
-		var cur2 = textInst;		
-		var index = cacheList.indexOf(cur);		
-		while(cur2 != cur) {		
-			cacheList.splice(index, 0, cur2);		
-			cur2 = cur2.parent;		
-			index++;		
-		}		
-	}		
-	else {		
-		cur = textInst;		
-		while(cur != exportRoot) {		
-			cacheList.push(cur);		
-			cur = cur.parent;		
-		}		
-	}		
-};		
+lib.addElementsToCache = function (textInst, cacheList) {
+	var cur = textInst;
+	while(cur != exportRoot) {
+		if(cacheList.indexOf(cur) != -1)
+			break;
+		cur = cur.parent;
+	}
+	if(cur != exportRoot) {
+		var cur2 = textInst;
+		var index = cacheList.indexOf(cur);
+		while(cur2 != cur) {
+			cacheList.splice(index, 0, cur2);
+			cur2 = cur2.parent;
+			index++;
+		}
+	}
+	else {
+		cur = textInst;
+		while(cur != exportRoot) {
+			cacheList.push(cur);
+			cur = cur.parent;
+		}
+	}
+};
 
-lib.gfontAvailable = function(family, totalGoogleCount) {		
-	lib.properties.webfonts[family] = true;		
-	var txtInst = lib.webFontTxtInst && lib.webFontTxtInst[family] || [];		
-	for(var f = 0; f < txtInst.length; ++f)		
-		lib.addElementsToCache(txtInst[f], gFontsUpdateCacheList);		
+lib.gfontAvailable = function(family, totalGoogleCount) {
+	lib.properties.webfonts[family] = true;
+	var txtInst = lib.webFontTxtInst && lib.webFontTxtInst[family] || [];
+	for(var f = 0; f < txtInst.length; ++f)
+		lib.addElementsToCache(txtInst[f], gFontsUpdateCacheList);
 
-	loadedGoogleCount++;		
-	if(loadedGoogleCount == totalGoogleCount) {		
-		lib.updateListCache(gFontsUpdateCacheList);		
-	}		
-};		
+	loadedGoogleCount++;
+	if(loadedGoogleCount == totalGoogleCount) {
+		lib.updateListCache(gFontsUpdateCacheList);
+	}
+};
 
-lib.tfontAvailable = function(family, totalTypekitCount) {		
-	lib.properties.webfonts[family] = true;		
-	var txtInst = lib.webFontTxtInst && lib.webFontTxtInst[family] || [];		
-	for(var f = 0; f < txtInst.length; ++f)		
-		lib.addElementsToCache(txtInst[f], tFontsUpdateCacheList);		
+lib.tfontAvailable = function(family, totalTypekitCount) {
+	lib.properties.webfonts[family] = true;
+	var txtInst = lib.webFontTxtInst && lib.webFontTxtInst[family] || [];
+	for(var f = 0; f < txtInst.length; ++f)
+		lib.addElementsToCache(txtInst[f], tFontsUpdateCacheList);
 
-	loadedTypekitCount++;		
-	if(loadedTypekitCount == totalTypekitCount) {		
-		lib.updateListCache(tFontsUpdateCacheList);		
-	}		
+	loadedTypekitCount++;
+	if(loadedTypekitCount == totalTypekitCount) {
+		lib.updateListCache(tFontsUpdateCacheList);
+	}
 };
 // symbols:
 
 
 
 (lib.flower1 = function() {
-	this.spriteSheet = ss["txp_canvas_atlas_"];
+	this.spriteSheet = ss["home-animation-sprite"];
 	this.gotoAndStop(0);
 }).prototype = p = new cjs.Sprite();
 
 
 
 (lib.flower2 = function() {
-	this.spriteSheet = ss["txp_canvas_atlas_"];
+	this.spriteSheet = ss["home-animation-sprite"];
 	this.gotoAndStop(1);
 }).prototype = p = new cjs.Sprite();
 
 
 
 (lib.flower3 = function() {
-	this.spriteSheet = ss["txp_canvas_atlas_"];
+	this.spriteSheet = ss["home-animation-sprite"];
 	this.gotoAndStop(2);
 }).prototype = p = new cjs.Sprite();
 
 
 
 (lib.ground = function() {
-	this.spriteSheet = ss["txp_canvas_atlas_"];
+	this.spriteSheet = ss["home-animation-sprite"];
 	this.gotoAndStop(3);
 }).prototype = p = new cjs.Sprite();
 // helper functions:
@@ -1124,7 +1124,7 @@ lib.properties = {
 	opacity: 1.00,
 	webfonts: {},
 	manifest: [
-		{src:"images/txp_canvas_atlas_.png", id:"txp_canvas_atlas_"}
+		{src:"../assets/img/com/home-animation-sprite.png", id:"home-animation-sprite"}
 	],
 	preloads: []
 };
