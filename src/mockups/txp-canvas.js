@@ -814,7 +814,15 @@ p.nominalBounds = new cjs.Rectangle(-69.3,-231.3,123.6,231.4);
 
 
 (lib.flower1_1 = function(mode,startPosition,loop) {
-	this.initialize(mode,startPosition,loop,{});
+	this.initialize(mode,startPosition,loop,{"flower1-loop":0});
+
+	// timeline functions:
+	this.frame_120 = function() {
+		this.gotoAndPlay("flower1-loop");
+	}
+
+	// actions tween:
+	this.timeline.addTween(cjs.Tween.get(this).wait(120).call(this.frame_120).wait(1));
 
 	// head
 	this.instance = new lib.flower1head();
