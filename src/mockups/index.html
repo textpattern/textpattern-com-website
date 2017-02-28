@@ -54,11 +54,10 @@
     <script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
     <script src="txp-canvas.js"></script>
 <script>
-var canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;
+var canvas, stage, exportRoot, anim_container, fnStartAnimation;
 function init() {
 	canvas = document.getElementById("animation");
 	anim_container = document.getElementById("animation-container");
-	dom_overlay_container = document.getElementById("animation-overlay-container");
 	images = images||{};
 	ss = ss||{};
 	var loader = new createjs.LoadQueue(false);
@@ -110,8 +109,8 @@ function handleComplete(evt) {
 			}
 			canvas.width = w*pRatio*sRatio;
 			canvas.height = h*pRatio*sRatio;
-			canvas.style.width = dom_overlay_container.style.width = anim_container.style.width =  w*sRatio+'px';
-			canvas.style.height = anim_container.style.height = dom_overlay_container.style.height = h*sRatio+'px';
+			canvas.style.width = anim_container.style.width =  w*sRatio+'px';
+			canvas.style.height = anim_container.style.height = h*sRatio+'px';
 			stage.scaleX = pRatio*sRatio;
 			stage.scaleY = pRatio*sRatio;
 			lastW = iw; lastH = ih; lastS = sRatio;
@@ -173,20 +172,21 @@ function handleComplete(evt) {
 
             <div class="wrapper-inner">
 
-                    <div id="animation-container" style="position:relative;">
-                        <canvas id="animation" style="position:absolute; z-index:1;"></canvas>
-                        <div id="animation-overlay-container" style="position:absolute; z-index:2;">
+                    <div id="animation-container" style="width:1150px; height:480px; margin:0 auto;">
+                        <canvas id="animation" width="1150" height="480" style="position:absolute; top:1em; z-index:1;"></canvas>
+                    </div><!-- /#animation-container -->
+                    <div id="animation-overlay" style="position:absolute; top:1em; width:100%; z-index:2;">
+                    <div class="container">
 
-                            <h1 class="cta"><span>The small content management system that can handle big ideas</span></h1>
-                            <p>
-                                <a class="button button-primary button-large" href="#"><span class="ui-button-icon ui-icon ui-extra-icon-download"></span> Download Textpattern CMS <span class="txp-version">4.6.2</span></a>
-                                <a class="button" href="#">Try a demo</a>
-                            </p>
-                            <iframe src="https://ghbtns.com/github-btn.html?user=textpattern&repo=textpattern&type=star&count=true&size=large" frameborder="0" scrolling="0" width="160px" height="30px"></iframe>
+                        <h1 class="cta"><span>The small content management system that can handle big ideas</span></h1>
+                        <p>
+                            <a class="button button-primary button-large" href="#"><span class="ui-button-icon ui-icon ui-extra-icon-download"></span> Download Textpattern CMS <span class="txp-version">4.6.2</span></a>
+                            <a class="button" href="#">Try a demo</a>
+                        </p>
+                        <iframe src="https://ghbtns.com/github-btn.html?user=textpattern&repo=textpattern&type=star&count=true&size=large" frameborder="0" scrolling="0" width="160px" height="30px"></iframe>
 
-                        </div><!-- /#dom_overlay_container -->
-                    </div><!-- /#animation_container -->
-
+                    </div><!-- /.container -->
+                    </div><!-- /#animation-overlay -->
             </div><!-- /.wrapper-inner -->
 
 
