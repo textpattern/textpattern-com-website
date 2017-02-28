@@ -12,7 +12,7 @@
     <link rel="canonical" href="<txp:permlink />">
     <script type="application/ld+json">
         {
-            "@context": "http://schema.org",
+            "@context": "https://schema.org",
             "@type": "BlogPosting",
             "headline": "<txp:title />",
             "mainEntityOfPage": "<txp:permlink />",

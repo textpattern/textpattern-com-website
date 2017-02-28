@@ -30,7 +30,7 @@
             <meta property="og:url" content="https://textpattern.io/">
             <script type="application/ld+json">
                 {
-                    "@context": "http://schema.org",
+                    "@context": "https://schema.org",
                     "@type": "WebSite",
                     "headline": "Textpattern CMS | Open source content management system",
                     "description": "Textpattern CMS is a free, open source content management system with a browser-based interface in over 40 languages.",
@@ -42,16 +42,16 @@
     </txp:if_search>
 </head>
 <txp:if_variable name="homepage">
-<body itemscope itemtype="http://schema.org/WebPage">
+<body itemscope itemtype="https://schema.org/WebPage">
     <txp:output_form form="body_header" />
 
     ...homepage content placeholder...
 
 <txp:else />
 <txp:if_search>
-    <body itemscope itemtype="http://schema.org/SearchResultsPage">
+    <body itemscope itemtype="https://schema.org/SearchResultsPage">
 <txp:else />
-    <body itemscope itemtype="http://schema.org/CollectionPage">
+    <body itemscope itemtype="https://schema.org/CollectionPage">
 </txp:if_search>
     <txp:output_form form="body_header" />
 

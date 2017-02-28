@@ -1,4 +1,4 @@
-<article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+<article itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
     <header class="article-header">
         <h3 itemprop="headline"><a itemprop="url mainEntityOfPage" href="<txp:permlink />" title="Full article"><txp:title /></a></h3>
         <p>Published on <time datetime="<txp:posted format="iso8601" />" itemprop="datePublished"><txp:posted format="%d %B %Y" /></time>.</p>
@@ -22,10 +22,10 @@
     </txp:if_article_image>
     <footer class="article-footer">
         <span class="ui-icon ui-icon-pencil">By:</span>
-        <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="author" itemscope itemtype="https://schema.org/Person">
             <span itemprop="name"><txp:author /></span>
         </span>
-        <span itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <span itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
             <meta itemprop="name" content="Textpattern CMS">
             <span itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
                 <meta itemprop="url" content="https://textpattern.io/assets/img/branding/textpattern/textpattern.png">
@@ -45,8 +45,8 @@
             <span class="separator" role="separator">|</span>
             <span class="ui-icon ui-icon-comment">Comments:</span>
             <a href="<txp:permlink />#comments-head" title="View article comments" itemprop="discussionUrl">
-                <span itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
-                    <meta itemprop="interactionType" content="http://schema.org/CommentAction">
+                <span itemprop="interactionStatistic" itemscope itemtype="https://schema.org/InteractionCounter">
+                    <meta itemprop="interactionType" content="https://schema.org/CommentAction">
                     <span itemprop="userInteractionCount"><txp:comments_count /></span>
                 </span>
             </a>
@@ -55,8 +55,8 @@
                 <span class="separator" role="separator">|</span>
                 <span class="ui-icon ui-icon-comment">Comments:</span>
                 <a href="<txp:permlink />#comments-head" title="View article comments" itemprop="discussionUrl">
-                    <span itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
-                        <meta itemprop="interactionType" content="http://schema.org/CommentAction">
+                    <span itemprop="interactionStatistic" itemscope itemtype="https://schema.org/InteractionCounter">
+                        <meta itemprop="interactionType" content="https://schema.org/CommentAction">
                         <span itemprop="userInteractionCount">0</span>
                     </span>
                 </a>

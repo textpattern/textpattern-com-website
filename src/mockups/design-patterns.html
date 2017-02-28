@@ -37,7 +37,7 @@
     <meta name="twitter:url" content="http://textpattern.dev/design-patterns.html">
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage">
+<body itemscope itemtype="https://schema.org/WebPage">
     <meta itemprop="accessibilityControl" content="fullKeyboardControl">
     <meta itemprop="accessibilityControl" content="fullMouseControl">
     <meta itemprop="accessibilityHazard" content="noFlashingHazard">
@@ -49,13 +49,13 @@
 
 
 <!-- Header -->
-        <header class="site-header" itemscope itemtype="http://schema.org/Organization">
+        <header class="site-header" itemscope itemtype="https://schema.org/Organization">
             <h1 class="masthead" itemprop="name"><a rel="home" itemprop="url" href="http://textpattern.dev/" title="Go to the Textpattern homepage">Textpattern CMS</a></h1>
             <meta itemprop="logo" content="https://textpattern.io/assets/img/branding/textpattern/textpattern.png">
 
-            <div itemscope itemtype="http://schema.org/WebSite">
+            <div itemscope itemtype="https://schema.org/WebSite">
                 <meta itemprop="url" content="http://textpattern.dev/">
-                <form class="search-form" role="search" itemprop="potentialAction" itemscope itemtype="http://schema.org/SearchAction">
+                <form class="search-form" role="search" itemprop="potentialAction" itemscope itemtype="https://schema.org/SearchAction">
                     <meta itemprop="target" content="http://textpattern.dev/?q={q}">
                     <input class="form-search-input" name="q" type="search" size="32" placeholder="Search Textpattern.com…" itemprop="query-input">
                 </form>
@@ -65,7 +65,7 @@
 
 <!-- Navigation -->
         <div class="nav-container">
-            <nav class="site-navigation" aria-label="Site navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+            <nav class="site-navigation" aria-label="Site navigation" itemscope itemtype="https://schema.org/SiteNavigationElement">
                 <ul>
                     <li><a itemprop="url" href="https://textpattern.io/start">Get started</a></li>
                     <li><a itemprop="url" href="https://docs.textpattern.io/">Documentation</a></li>
@@ -339,11 +339,11 @@
                         <p class="footnote" id="fnanchor1"><sup>1</sup> Here is the footnote.</p>
 
                         <h3>Contact details</h3>
-                        <p>Uses both the <a rel="external" href="http://schema.org/" title="Go to the Schema.org website">Schema.org</a> and <a rel="external" href="http://microformats.org/wiki/hcard" title="Go to the hCard website">hCard</a> mircoformats.</p>
-                        <!-- possible schema types: Organization, Corporation, etc (see http://schema.org/Organization for more info) -->
-                        <div class="vcard" role="group" itemscope itemtype="http://schema.org/Organization">
+                        <p>Uses both the <a rel="external" href="https://schema.org/" title="Go to the Schema.org website">Schema.org</a> and <a rel="external" href="http://microformats.org/wiki/hcard" title="Go to the hCard website">hCard</a> mircoformats.</p>
+                        <!-- possible schema types: Organization, Corporation, etc (see https://schema.org/Organization for more info) -->
+                        <div class="vcard" role="group" itemscope itemtype="https://schema.org/Organization">
                             <p class="org fn" itemprop="name">Organization Name</p>
-                            <address class="adr" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+                            <address class="adr" itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
                                 <span class="street-address" itemprop="streetAddress">13 Mystreet</span>,
                                 <span class="locality" itemprop="addressLocality">Mytown</span>,
                                 <span class="region" itemprop="addressRegion">Myshire</span>,
@@ -447,40 +447,40 @@
 
                         <h3>Images</h3>
                         <p>
-                            <img src="http://placehold.it/160x160/cccccc/666666" alt="Alt text">
+                            <img src="https://placehold.it/160x160/cccccc/666666" alt="Alt text">
                         </p>
 
                         <h3>Images with links</h3>
                         <p>
                             <a class="a--img" href="#" title="Title text">
-                                <img src="http://placehold.it/160x160/cccccc/666666" alt="Alt text">
+                                <img src="https://placehold.it/160x160/cccccc/666666" alt="Alt text">
                             </a>
                         </p>
 
                         <h3>Rounded images</h3>
                         <p>
-                            <img class="img--rounded" src="http://placehold.it/160x160/cccccc/666666" alt="Alt text">
+                            <img class="img--rounded" src="https://placehold.it/160x160/cccccc/666666" alt="Alt text">
                         </p>
 
                         <h3>Circular images</h3>
                         <p>
-                            <img class="img--circular" src="http://placehold.it/160x160/cccccc/666666" alt="Alt text">
+                            <img class="img--circular" src="https://placehold.it/160x160/cccccc/666666" alt="Alt text">
                         </p>
 
                         <h3>Figures</h3>
-                        <figure itemscope itemtype="http://schema.org/ImageObject">
-                            <img itemprop="image" src="http://placehold.it/160x160/cccccc/666666" alt="Alt text">
+                        <figure itemscope itemtype="https://schema.org/ImageObject">
+                            <img itemprop="image" src="https://placehold.it/160x160/cccccc/666666" alt="Alt text">
                             <figcaption itemprop="caption">Figcaption content</figcaption>
                         </figure>
 
                         <h3>Left ranged image</h3>
-                        <p>Aenean vehicula posuere neque. Nam nibh lectus, laoreet non, convallis sed, vulputate consectetuer, enim. Pellentesque arcu. Vestibulum consequat nisi a ipsum vulputate vehicula. Aliquam lacus diam, ultricies vel, interdum eget, posuere non, tellus. Donec vel ligula. Sed felis. <img class="align-left" src="http://placehold.it/160x160/cccccc/666666" alt="Alt text"> Quisque ultrices gravida pede. Mauris accumsan vulputate tellus. Phasellus condimentum bibendum dolor. Mauris sed ipsum. Phasellus in diam. Nam sapien ligula, consectetuer id, hendrerit in, cursus sed, leo. Nam tincidunt rhoncus urna. Aliquam id massa ut nibh bibendum imperdiet. Curabitur neque mauris, porta vel, lacinia quis, placerat ultrices, orci. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In lectus nisl, porttitor eget, fermentum et, viverra a, odio. Sed semper. Praesent vulputate nibh eget nisi. Sed ligula. Aenean vehicula posuere neque. Nam nibh lectus, laoreet non, convallis sed, vulputate consectetuer, enim. Pellentesque arcu. Vestibulum consequat nisi a ipsum vulputate vehicula. Aliquam lacus diam, ultricies vel, interdum eget, posuere non, tellus. Donec vel ligula. Sed felis.</p>
+                        <p>Aenean vehicula posuere neque. Nam nibh lectus, laoreet non, convallis sed, vulputate consectetuer, enim. Pellentesque arcu. Vestibulum consequat nisi a ipsum vulputate vehicula. Aliquam lacus diam, ultricies vel, interdum eget, posuere non, tellus. Donec vel ligula. Sed felis. <img class="align-left" src="https://placehold.it/160x160/cccccc/666666" alt="Alt text"> Quisque ultrices gravida pede. Mauris accumsan vulputate tellus. Phasellus condimentum bibendum dolor. Mauris sed ipsum. Phasellus in diam. Nam sapien ligula, consectetuer id, hendrerit in, cursus sed, leo. Nam tincidunt rhoncus urna. Aliquam id massa ut nibh bibendum imperdiet. Curabitur neque mauris, porta vel, lacinia quis, placerat ultrices, orci. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In lectus nisl, porttitor eget, fermentum et, viverra a, odio. Sed semper. Praesent vulputate nibh eget nisi. Sed ligula. Aenean vehicula posuere neque. Nam nibh lectus, laoreet non, convallis sed, vulputate consectetuer, enim. Pellentesque arcu. Vestibulum consequat nisi a ipsum vulputate vehicula. Aliquam lacus diam, ultricies vel, interdum eget, posuere non, tellus. Donec vel ligula. Sed felis.</p>
 
                         <h3>Right ranged image</h3>
-                        <p>Aenean vehicula posuere neque. Nam nibh lectus, laoreet non, convallis sed, vulputate consectetuer, enim. Pellentesque arcu. Vestibulum consequat nisi a ipsum vulputate vehicula. Aliquam lacus diam, ultricies vel, interdum eget, posuere non, tellus. Donec vel ligula. Sed felis. <img class="align-right" src="http://placehold.it/160x160/cccccc/666666" alt="Alt text"> Quisque ultrices gravida pede. Mauris accumsan vulputate tellus. Phasellus condimentum bibendum dolor. Mauris sed ipsum. Phasellus in diam. Nam sapien ligula, consectetuer id, hendrerit in, cursus sed, leo. Nam tincidunt rhoncus urna. Aliquam id massa ut nibh bibendum imperdiet. Curabitur neque mauris, porta vel, lacinia quis, placerat ultrices, orci. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In lectus nisl, porttitor eget, fermentum et, viverra a, odio. Sed semper. Praesent vulputate nibh eget nisi. Sed ligula. Aenean vehicula posuere neque. Nam nibh lectus, laoreet non, convallis sed, vulputate consectetuer, enim. Pellentesque arcu. Vestibulum consequat nisi a ipsum vulputate vehicula. Aliquam lacus diam, ultricies vel, interdum eget, posuere non, tellus. Donec vel ligula. Sed felis.</p>
+                        <p>Aenean vehicula posuere neque. Nam nibh lectus, laoreet non, convallis sed, vulputate consectetuer, enim. Pellentesque arcu. Vestibulum consequat nisi a ipsum vulputate vehicula. Aliquam lacus diam, ultricies vel, interdum eget, posuere non, tellus. Donec vel ligula. Sed felis. <img class="align-right" src="https://placehold.it/160x160/cccccc/666666" alt="Alt text"> Quisque ultrices gravida pede. Mauris accumsan vulputate tellus. Phasellus condimentum bibendum dolor. Mauris sed ipsum. Phasellus in diam. Nam sapien ligula, consectetuer id, hendrerit in, cursus sed, leo. Nam tincidunt rhoncus urna. Aliquam id massa ut nibh bibendum imperdiet. Curabitur neque mauris, porta vel, lacinia quis, placerat ultrices, orci. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In lectus nisl, porttitor eget, fermentum et, viverra a, odio. Sed semper. Praesent vulputate nibh eget nisi. Sed ligula. Aenean vehicula posuere neque. Nam nibh lectus, laoreet non, convallis sed, vulputate consectetuer, enim. Pellentesque arcu. Vestibulum consequat nisi a ipsum vulputate vehicula. Aliquam lacus diam, ultricies vel, interdum eget, posuere non, tellus. Donec vel ligula. Sed felis.</p>
 
                         <h3>Centred image</h3>
-                        <p>Aenean vehicula posuere neque. Nam nibh lectus, laoreet non, convallis sed, vulputate consectetuer, enim. Pellentesque arcu. Vestibulum consequat nisi a ipsum vulputate vehicula. Aliquam lacus diam, ultricies vel, interdum eget, posuere non, tellus. Donec vel ligula. Sed felis. <img class="align-center" src="http://placehold.it/160x160/cccccc/666666" alt="Alt text"> Quisque ultrices gravida pede. Mauris accumsan vulputate tellus. Phasellus condimentum bibendum dolor. Mauris sed ipsum. Phasellus in diam. Nam sapien ligula, consectetuer id, hendrerit in, cursus sed, leo. Nam tincidunt rhoncus urna. Aliquam id massa ut nibh bibendum imperdiet. Curabitur neque mauris, porta vel, lacinia quis, placerat ultrices, orci. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In lectus nisl, porttitor eget, fermentum et, viverra a, odio. Sed semper. Praesent vulputate nibh eget nisi. Sed ligula. Aenean vehicula posuere neque. Nam nibh lectus, laoreet non, convallis sed, vulputate consectetuer, enim. Pellentesque arcu. Vestibulum consequat nisi a ipsum vulputate vehicula. Aliquam lacus diam, ultricies vel, interdum eget, posuere non, tellus. Donec vel ligula. Sed felis.</p>
+                        <p>Aenean vehicula posuere neque. Nam nibh lectus, laoreet non, convallis sed, vulputate consectetuer, enim. Pellentesque arcu. Vestibulum consequat nisi a ipsum vulputate vehicula. Aliquam lacus diam, ultricies vel, interdum eget, posuere non, tellus. Donec vel ligula. Sed felis. <img class="align-center" src="https://placehold.it/160x160/cccccc/666666" alt="Alt text"> Quisque ultrices gravida pede. Mauris accumsan vulputate tellus. Phasellus condimentum bibendum dolor. Mauris sed ipsum. Phasellus in diam. Nam sapien ligula, consectetuer id, hendrerit in, cursus sed, leo. Nam tincidunt rhoncus urna. Aliquam id massa ut nibh bibendum imperdiet. Curabitur neque mauris, porta vel, lacinia quis, placerat ultrices, orci. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In lectus nisl, porttitor eget, fermentum et, viverra a, odio. Sed semper. Praesent vulputate nibh eget nisi. Sed ligula. Aenean vehicula posuere neque. Nam nibh lectus, laoreet non, convallis sed, vulputate consectetuer, enim. Pellentesque arcu. Vestibulum consequat nisi a ipsum vulputate vehicula. Aliquam lacus diam, ultricies vel, interdum eget, posuere non, tellus. Donec vel ligula. Sed felis.</p>
 
                         <h3><span class="caps">SVG</span></h3>
                         <svg width="160px" height="160px">
@@ -489,8 +489,8 @@
 
                         <h3>Videos</h3>
                         <p>Via <a href="http://flowplayer.org/" rel="external" title="Go to the Flowplayer website">Flowplayer</a> (GPL version).</p>
-                        <div class="videoplayer" itemprop="video" itemscope itemtype="http://schema.org/VideoObject">
-                            <video poster="http://placehold.it/640x360/cccccc/666666">
+                        <div class="videoplayer" itemprop="video" itemscope itemtype="https://schema.org/VideoObject">
+                            <video poster="https://placehold.it/640x360/cccccc/666666">
                                 <source itemprop="contentUrl" type="video/mp4" src="http://clips.vorwaerts-gmbh.de/VfE_html5.mp4">
                                 <source itemprop="contentUrl" type="video/webm" src="http://clips.vorwaerts-gmbh.de/VfE.webm">
                             </video>
@@ -591,26 +591,26 @@
                         <h2>Breadcrumbs</h2>
 
                         <nav aria-label="Breadcrumb navigation">
-                            <ol class="breadcrumbs" itemscope itemtype="http://schema.org/BreadcrumbList">
-                                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                            <ol class="breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList">
+                                <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
                                     <a itemprop="item" href="#">
                                         <span itemprop="name">Home</span>
                                     </a>
                                     <meta itemprop="position" content="1">
                                 </li>
-                                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                                <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
                                     <a itemprop="item" href="#">
                                         <span itemprop="name">Projects</span>
                                     </a>
                                     <meta itemprop="position" content="2">
                                 </li>
-                                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                                <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
                                     <a itemprop="item" href="#">
                                         <span itemprop="name">Gene Splicing</span>
                                     </a>
                                     <meta itemprop="position" content="3">
                                 </li>
-                                <li class="current" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                                <li class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
                                     <b itemprop="item">
                                         <span itemprop="name">Test subject X11</span>
                                     </b>
@@ -1013,7 +1013,7 @@
         <div class="layout-container">
             <div class="layout-3col-2span">
                 <div class="layout-container">
-                    <section class="layout-2col" itemscope itemtype="http://schema.org/Organization">
+                    <section class="layout-2col" itemscope itemtype="https://schema.org/Organization">
                         <h4>Social channels</h4>
                         <meta itemprop="name" content="Textpattern CMS">
                         <ul class="social-channels">

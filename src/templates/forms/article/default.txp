@@ -1,4 +1,4 @@
-<article class="layout-4col-3span article" itemscope itemtype="http://schema.org/Article">
+<article class="layout-4col-3span article" itemscope itemtype="https://schema.org/Article">
     <meta itemprop="mainEntityOfPage" content="<txp:permlink />">
     <h1 itemprop="headline"><txp:title /></h1>
     <txp:if_excerpt>
@@ -10,13 +10,13 @@
         <txp:images>
             <txp:variable name="caption" value='<txp:image_info />' />
             <txp:if_variable name="caption" value="">
-                <p class="photo" itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
+                <p class="photo" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
                     <img itemprop="url" alt="<txp:image_info type='alt' />" src="<txp:smd_thumbnail id='<txp:image_info type="id" />' type='832w' display='url' />" srcset="<txp:image_url link='0' /> 2x, <txp:smd_thumbnail id='<txp:image_info type="id" />' type='832w' display='url' /> 1x">
                     <meta itemprop="width" content="<txp:image_info type="w" />">
                     <meta itemprop="height" content="<txp:image_info type="h" />">
                 </p>
             <txp:else />
-                <figure itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
+                <figure itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
                     <img itemprop="url" alt="<txp:image_info type='alt' />" src="<txp:smd_thumbnail id='<txp:image_info type="id" />' type='832w' display='url' />" srcset="<txp:image_url link='0' /> 2x, <txp:smd_thumbnail id='<txp:image_info type="id" />' type='832w' display='url' /> 1x">
                     <meta itemprop="width" content="<txp:image_info type="w" />">
                     <meta itemprop="height" content="<txp:image_info type="h" />">

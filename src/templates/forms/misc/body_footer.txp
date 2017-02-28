@@ -3,7 +3,7 @@
 <div class="layout-container">
     <div class="layout-3col-2span">
         <div class="layout-container">
-            <section class="layout-2col" itemscope itemtype="http://schema.org/Organization">
+            <section class="layout-2col" itemscope itemtype="https://schema.org/Organization">
                 <h4>Social channels</h4>
                 <meta itemprop="name" content="Textpattern CMS">
                 <ul class="social-channels">

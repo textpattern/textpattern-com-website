@@ -33,7 +33,7 @@
     <meta name="twitter:url" content="http://textpattern.dev/blog-landing.html">
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage">
+<body itemscope itemtype="https://schema.org/WebPage">
     <meta itemprop="accessibilityControl" content="fullKeyboardControl">
     <meta itemprop="accessibilityControl" content="fullMouseControl">
     <meta itemprop="accessibilityHazard" content="noFlashingHazard">
@@ -45,13 +45,13 @@
 
 
 <!-- Header -->
-        <header class="site-header" itemscope itemtype="http://schema.org/Organization">
+        <header class="site-header" itemscope itemtype="https://schema.org/Organization">
             <h1 class="masthead" itemprop="name"><a rel="home" itemprop="url" href="http://textpattern.dev/" title="Go to the Textpattern homepage">Textpattern CMS</a></h1>
             <meta itemprop="logo" content="https://textpattern.io/assets/img/branding/textpattern/textpattern.png">
 
-            <div itemscope itemtype="http://schema.org/WebSite">
+            <div itemscope itemtype="https://schema.org/WebSite">
                 <meta itemprop="url" content="http://textpattern.dev/">
-                <form class="search-form" role="search" itemprop="potentialAction" itemscope itemtype="http://schema.org/SearchAction">
+                <form class="search-form" role="search" itemprop="potentialAction" itemscope itemtype="https://schema.org/SearchAction">
                     <meta itemprop="target" content="http://textpattern.dev/?q={q}">
                     <input class="form-search-input" name="q" type="search" size="32" placeholder="Search Textpattern.com…" itemprop="query-input">
                 </form>
@@ -61,7 +61,7 @@
 
 <!-- Navigation -->
         <div class="nav-container">
-            <nav class="site-navigation" aria-label="Site navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+            <nav class="site-navigation" aria-label="Site navigation" itemscope itemtype="https://schema.org/SiteNavigationElement">
                 <ul>
                     <li><a itemprop="url" href="https://textpattern.io/start">Get started</a></li>
                     <li><a itemprop="url" href="https://docs.textpattern.io/">Documentation</a></li>
@@ -81,16 +81,16 @@
                 <div class="layout-container">
 
                     <nav class="layout-1col" aria-label="Breadcrumb navigation">
-                        <ol class="breadcrumbs" itemscope itemtype="http://schema.org/BreadcrumbList">
-                            <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                        <ol class="breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList">
+                            <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
                                 <a itemprop="item" href="#"><span itemprop="name">Home</span></a>
                                 <meta itemprop="position" content="1">
                             </li>
-                            <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                            <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
                                 <a itemprop="item" href="#"><span itemprop="name">About</span></a>
                                 <meta itemprop="position" content="2">
                             </li>
-                            <li class="current" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                            <li class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
                                 <b itemprop="item"><span itemprop="name">Language translations</span></b>
                                 <meta itemprop="position" content="3">
                             </li>
@@ -154,7 +154,7 @@ $xml = new SimpleXMLElement('https://api.crowdin.com/api/project/textpattern-cms
         <div class="layout-container">
             <div class="layout-3col-2span">
                 <div class="layout-container">
-                    <section class="layout-2col" itemscope itemtype="http://schema.org/Organization">
+                    <section class="layout-2col" itemscope itemtype="https://schema.org/Organization">
                         <h4>Social channels</h4>
                         <meta itemprop="name" content="Textpattern CMS">
                         <ul class="social-channels">

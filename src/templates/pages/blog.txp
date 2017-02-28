@@ -25,7 +25,7 @@
             <meta property="og:url" content="https://textpattern.io/blog/">
             <script type="application/ld+json">
                 {
-                    "@context": "http://schema.org",
+                    "@context": "https://schema.org",
                     "@type": "WebPage",
                     "headline": "Blog / Textpattern CMS",
                     "description": "Latest blogs from Team Textpattern and guests; Textpattern news and other tidbits of info that we find of interest.",
@@ -70,7 +70,7 @@
         </txp:if_article_image>
         <script type="application/ld+json">
             {
-                "@context": "http://schema.org",
+                "@context": "https://schema.org",
                 "@type": "WebPage",
                 "headline": "<txp:title /> / Textpattern CMS",
                 "description": "<txp:meta_description />",
@@ -80,9 +80,9 @@
     </txp:if_article_list>
 </head>
 <txp:if_variable name="homepage">
-<body itemscope itemtype="http://schema.org/WebPage">
+<body itemscope itemtype="https://schema.org/WebPage">
     <txp:output_form form="body_header" />
-    <main aria-label="Main content" itemscope itemtype="http://schema.org/Blog">
+    <main aria-label="Main content" itemscope itemtype="https://schema.org/Blog">
         <div class="container">
             <div class="layout-container">
                 <txp:output_form form="body_crumbs" />
