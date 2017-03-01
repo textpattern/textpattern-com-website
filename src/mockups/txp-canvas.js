@@ -7,7 +7,7 @@ var loadedGoogleCount = 0;
 var gFontsUpdateCacheList = [];
 var tFontsUpdateCacheList = [];
 lib.ssMetadata = [
-		{name:"home-animation-sprite", frames: [[2302,0,343,312],[2647,0,228,210],[2877,0,210,206],[0,0,2300,144]]}
+		{name:"home-animation-sprite", frames: [[2302,0,343,312],[2647,0,228,210],[2877,0,210,206],[0,0,2300,240]]}
 ];
 
 
@@ -1117,7 +1117,7 @@ if (loop == null) { loop = false; }	this.initialize(mode,startPosition,loop,{});
 	// ground
 	this.instance_3 = new lib.ground();
 	this.instance_3.parent = this;
-	this.instance_3.setTransform(0,408,0.5,0.5);
+	this.instance_3.setTransform(0,360,0.5,0.5);
 
 	this.timeline.addTween(cjs.Tween.get(this.instance_3).wait(1));
 
@@ -1132,7 +1132,7 @@ lib.properties = {
 	opacity: 1.00,
 	webfonts: {},
 	manifest: [
-		{src:"../assets/img/com/home-animation-sprite.png", id:"home-animation-sprite"}
+		{src:"images/home-animation-sprite.png", id:"home-animation-sprite"}
 	],
 	preloads: []
 };
