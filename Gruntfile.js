@@ -235,6 +235,7 @@ module.exports = function (grunt)
                 files: [
                     {
                         '<%= paths.dest.js %>main.js': ['<%= paths.dest.js %>main.js'],
+                        '<%= paths.dest.js %>index-canvas.js': ['<%= paths.src.js %>index-canvas.js'],
                         '<%= paths.dest.js %>lunr.js': ['node_modules/lunr/lunr.js'],
                         '<%= paths.dest.js %>prism.js': [
                             'node_modules/prismjs/prism.js',
