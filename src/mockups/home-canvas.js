@@ -73,7 +73,7 @@ lib.addElementsToCache = function (textInst, cacheList) {
 
 // helper functions:
 
-function mc_symbol_clone()
+function mcSymbolClone()
 {
     var clone = this._cloneProps(new this.constructor(this.mode, this.startPosition, this.loop));
     clone.gotoAndStop(this.currentFrame);
@@ -85,7 +85,7 @@ function mc_symbol_clone()
 function getMCSymbolPrototype(symbol, nominalBounds, frameBounds)
 {
     var prototype = cjs.extend(symbol, cjs.MovieClip);
-    prototype.clone = mc_symbol_clone;
+    prototype.clone = mcSymbolClone;
     prototype.nominalBounds = nominalBounds;
     prototype.frameBounds = frameBounds;
     return prototype;
@@ -161,7 +161,10 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds)
 
 
 (lib.flower1head = function(mode,startPosition,loop) {
-if (loop === null) { loop = false; }    this.initialize(mode,startPosition,loop,{});
+    if (loop === null) {
+        loop = false;
+    }
+    this.initialize(mode,startPosition,loop,{});
 
     // Layer 1
     this.instance = new lib.flower1();
@@ -182,12 +185,15 @@ if (loop === null) { loop = false; }    this.initialize(mode,startPosition,loop,
 
 
 (lib.flower3_1 = function(mode,startPosition,loop) {
-if (loop === null) { loop = false; }    this.initialize(mode,startPosition,loop,{'flower3-loop':20});
+    if (loop === null) {
+        loop = false;
+    }
+    this.initialize(mode,startPosition,loop,{'flower3-loop':20});
 
     // timeline functions:
     this.frame_140 = function() {
         this.gotoAndPlay('flower3-loop');
-    }
+    };
 
     // actions tween:
     this.timeline.addTween(cjs.Tween.get(this).wait(140).call(this.frame_140).wait(1));
@@ -489,12 +495,15 @@ p.nominalBounds = new cjs.Rectangle(-86.5,-329.9,119.5,329.9);
 
 
 (lib.flower2_1 = function(mode,startPosition,loop) {
-if (loop === null) { loop = false; }    this.initialize(mode,startPosition,loop,{'flower2-loop':10});
+    if (loop === null) {
+        loop = false;
+    }
+    this.initialize(mode,startPosition,loop,{'flower2-loop':10});
 
     // timeline functions:
     this.frame_130 = function() {
         this.gotoAndPlay('flower2-loop');
-    }
+    };
 
     // actions tween:
     this.timeline.addTween(cjs.Tween.get(this).wait(130).call(this.frame_130).wait(1));
@@ -796,7 +805,7 @@ p.nominalBounds = new cjs.Rectangle(-69.3,-231.3,123.6,231.4);
     // timeline functions:
     this.frame_120 = function() {
         this.gotoAndPlay('flower1-loop');
-    }
+    };
 
     // actions tween:
     this.timeline.addTween(cjs.Tween.get(this).wait(120).call(this.frame_120).wait(1));
