@@ -6,11 +6,7 @@ var p; // shortcut to reference prototypes
 lib.webFontTxtInst = {};
 var loadedTypekitCount = 0;
 var loadedGoogleCount = 0;
-lib.ssMetadata = [
-    {name:'home-animation-sprite', frames: [[2302,0,343,312],[2647,0,228,210],[2877,0,210,206],[0,0,2300,240]]}
-];
-
-
+lib.ssMetadata = [{name:'index-animation', frames: [[2302,0,343,312],[2647,0,228,210],[2877,0,210,206],[0,0,2300,240]]}];
 
 lib.updateListCache = function (cacheList) {
     for(var i = 0; i < cacheList.length; i++) {
@@ -49,25 +45,25 @@ lib.addElementsToCache = function (textInst, cacheList) {
 
 (lib.flower1 = function()
 {
-    this.spriteSheet = ss['home-animation-sprite'];
+    this.spriteSheet = ss['index-animation'];
     this.gotoAndStop(0);
 }).prototype = p = new cjs.Sprite();
 
 (lib.flower2 = function()
 {
-    this.spriteSheet = ss['home-animation-sprite'];
+    this.spriteSheet = ss['index-animation'];
     this.gotoAndStop(1);
 }).prototype = p = new cjs.Sprite();
 
 (lib.flower3 = function()
 {
-    this.spriteSheet = ss['home-animation-sprite'];
+    this.spriteSheet = ss['index-animation'];
     this.gotoAndStop(2);
 }).prototype = p = new cjs.Sprite();
 
 (lib.ground = function()
 {
-    this.spriteSheet = ss['home-animation-sprite'];
+    this.spriteSheet = ss['index-animation'];
     this.gotoAndStop(3);
 }).prototype = p = new cjs.Sprite();
 
@@ -1118,7 +1114,7 @@ lib.properties = {
     color: '#fff',
     opacity: 1,
     manifest: [
-        {src:'../assets/img/com/home-animation-sprite.png', id:'home-animation-sprite'}
+        {src:'../assets/img/com/index-animation.png', id:'index-animation'}
     ]
 };
 
