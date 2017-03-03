@@ -112,7 +112,7 @@ module.exports = function (grunt)
         jshint: {
             options: {
                 bitwise: true,
-                camelcase: true,
+                camelcase: false,
                 curly: true,
                 eqeqeq: true,
                 es3: true,
@@ -126,7 +126,7 @@ module.exports = function (grunt)
                 quotmark: 'single',
                 undef: true,
                 unused: false,
-                strict: true,
+                strict: false,
                 trailing: true,
                 browser: true,
                 globals: {
@@ -138,7 +138,8 @@ module.exports = function (grunt)
                     requirejs: true,
                     ga: true,
                     responsiveNav: true,
-                    Prism: true
+                    Prism: true,
+                    exportRoot: true
                 }
             },
             files: [

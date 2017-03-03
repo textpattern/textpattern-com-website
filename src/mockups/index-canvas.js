@@ -1,6 +1,6 @@
+var lib, images, createjs, ss, AdobeAn;
 (function (lib, img, cjs, ss, an)
 {
-    'use strict';
 
 var p; // shortcut to reference prototypes
 lib.webFontTxtInst = {};
@@ -1120,4 +1120,3 @@ lib.properties = {
 
 
 })(lib = lib||{}, images = images||{}, createjs = createjs||{}, ss = ss||{}, AdobeAn = AdobeAn||{});
-var lib, images, createjs, ss, AdobeAn;
