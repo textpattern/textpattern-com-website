@@ -3,43 +3,7 @@ var lib, images, createjs, ss, AdobeAn;
 {
 
 var p; // shortcut to reference prototypes
-lib.webFontTxtInst = {};
-var loadedTypekitCount = 0;
-var loadedGoogleCount = 0;
 lib.ssMetadata = [{name:'index-animation', frames: [[2302,0,343,312],[2647,0,228,210],[2877,0,210,206],[0,0,2300,240]]}];
-
-lib.updateListCache = function (cacheList) {
-    for(var i = 0; i < cacheList.length; i++) {
-        if(cacheList[i].cacheCanvas) {
-            cacheList[i].updateCache();
-        }
-    }
-};
-
-lib.addElementsToCache = function (textInst, cacheList) {
-    var cur = textInst;
-    while(cur !== exportRoot) {
-        if(cacheList.indexOf(cur) !== -1) {
-            break;
-        }
-        cur = cur.parent;
-    }
-    if(cur !== exportRoot) {
-        var cur2 = textInst;
-        var index = cacheList.indexOf(cur);
-        while(cur2 !== cur) {
-            cacheList.splice(index, 0, cur2);
-            cur2 = cur2.parent;
-            index++;
-        }
-    } else {
-        cur = textInst;
-        while(cur !== exportRoot) {
-            cacheList.push(cur);
-            cur = cur.parent;
-        }
-    }
-};
 
 // symbols
 
