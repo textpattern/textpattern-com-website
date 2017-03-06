@@ -55,30 +55,18 @@
 
 <script>
 var canvas, stage, exportRoot, anim_container, fnStartAnimation;
-function init() {
-    canvas = document.getElementById('animation');
-    anim_container = document.getElementById('animation-container');
-    images = images||{};
-    ss = ss||{};
-    var loader = new createjs.LoadQueue(false);
-    loader.addEventListener('fileload', handleFileLoad);
-    loader.addEventListener('complete', handleComplete);
-    loader.loadManifest(lib.properties.manifest);
-}
 function handleFileLoad(evt) {
     if (evt.item.type === 'image') { images[evt.item.id] = evt.result; }
 }
 function handleComplete(evt) {
-    // This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
     var queue = evt.target;
     var ssMetadata = lib.ssMetadata;
-    for(i=0; i<ssMetadata.length; i++) {
+    for(i = 0; i<ssMetadata.length; i++) {
         ss[ssMetadata[i].name] = new createjs.SpriteSheet( {'images': [queue.getResult(ssMetadata[i].name)], 'frames': ssMetadata[i].frames} );
     }
     exportRoot = new lib.txpcanvas();
     stage = new createjs.Stage(canvas);
     stage.addChild(exportRoot);
-    // Registers the `tick` event listener.
     fnStartAnimation = function() {
         createjs.Ticker.setFPS(lib.properties.fps);
         createjs.Ticker.addEventListener('tick', stage);
@@ -86,8 +74,6 @@ function handleComplete(evt) {
     // Code to support hiDPI screens and responsive scaling.
     function makeResponsive(isResp, respDim, isScale, scaleType) {
         var lastW, lastH, lastS = 1;
-        window.addEventListener('resize', resizeCanvas);
-        resizeCanvas();
         function resizeCanvas() {
             var w = lib.properties.width, h = lib.properties.height;
             var iw = window.innerWidth, ih = window.innerHeight;
@@ -113,9 +99,21 @@ function handleComplete(evt) {
             stage.scaleY = pRatio*sRatio;
             lastW = iw; lastH = ih; lastS = sRatio;
         }
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
     }
     makeResponsive(true, 'both', false, 1);
     fnStartAnimation();
+}
+function init() {
+    canvas = document.getElementById('animation');
+    anim_container = document.getElementById('animation-container');
+    images = images||{};
+    ss = ss||{};
+    var loader = new createjs.LoadQueue(false);
+    loader.addEventListener('fileload', handleFileLoad);
+    loader.addEventListener('complete', handleComplete);
+    loader.loadManifest(lib.properties.manifest);
 }
 </script>
 
