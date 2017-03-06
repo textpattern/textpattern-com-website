@@ -139,7 +139,7 @@ module.exports = function (grunt)
                     ga: true,
                     responsiveNav: true,
                     Prism: true,
-                    exportRoot: true
+                    i: true
                 }
             },
             files: [
