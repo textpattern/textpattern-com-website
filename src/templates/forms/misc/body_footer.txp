@@ -50,5 +50,9 @@
         Textpattern is both free and open source. <a href="https://textpattern.io/license">GPLv2 license</a>.
     </p>
 </footer>
-<script data-main="https://textpattern.io/assets/js/main.@@timestamp.js" src="https://textpattern.io/assets/js/require.@@timestamp.js"></script>
+    <script data-main="https://textpattern.io/assets/js/main.@@timestamp.js" src="https://textpattern.io/assets/js/require.@@timestamp.js"></script>
+<txp:if_variable name="homepage">
+    <script src="../assets/js/indexcanvas.@@timestamp.js"></script>
+    <script>document.addEventListener("DOMContentLoaded",function(){init();},false);</script>
+</txp:if_variable>
 <noscript>JavaScript is currently disabled in your browser - activate it for the best experience.</noscript>

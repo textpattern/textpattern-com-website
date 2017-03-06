@@ -37,6 +37,7 @@
                     "url": "https://textpattern.io/"
                 }
             </script>
+            <script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
             <txp:variable name="homepage" value="1" />
         </txp:if_category>
     </txp:if_search>
