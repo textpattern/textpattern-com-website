@@ -41,7 +41,7 @@ lib.addElementsToCache = function (textInst, cacheList) {
     }
 };
 
-// symbols:
+// symbols
 
 (lib.flower1 = function()
 {
@@ -67,7 +67,7 @@ lib.addElementsToCache = function (textInst, cacheList) {
     this.gotoAndStop(3);
 }).prototype = p = new cjs.Sprite();
 
-// helper functions:
+// helper functions
 
 function mcSymbolClone()
 {
@@ -1070,7 +1070,6 @@ p.nominalBounds = new cjs.Rectangle(-69.3,-231.3,123.6,231.4);
 }).prototype = p = new cjs.MovieClip();
 p.nominalBounds = new cjs.Rectangle(-79.2,-421.3,171.5,421.4);
 
-
 // stage content:
 (lib.txpcanvas = function(mode,startPosition,loop)
 {
@@ -1117,6 +1116,5 @@ lib.properties = {
         {src:'../assets/img/com/index-animation.png', id:'index-animation'}
     ]
 };
-
 
 })(lib = lib||{}, images = images||{}, createjs = createjs||{}, ss = ss||{}, AdobeAn = AdobeAn||{});
