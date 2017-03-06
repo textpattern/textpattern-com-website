@@ -51,7 +51,7 @@
     </script>
 </head>
 
-<body itemscope itemtype="https://schema.org/WebPage" onload="init();">
+<body itemscope itemtype="https://schema.org/WebPage">
     <meta itemprop="accessibilityControl" content="fullKeyboardControl">
     <meta itemprop="accessibilityControl" content="fullMouseControl">
     <meta itemprop="accessibilityHazard" content="noFlashingHazard">
@@ -392,6 +392,7 @@
 <!-- Canvas animation -->
     <script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
     <script src="../assets/js/indexcanvas.@@timestamp.js"></script>
+    <script>document.addEventListener("DOMContentLoaded",function(){init();},false);</script>
     <script data-main="../assets/js/main.@@timestamp.js" src="../assets/js/require.@@timestamp.js"></script>
     <noscript>JavaScript is currently disabled in your browser - activate it for the best experience.</noscript>
 </body>
