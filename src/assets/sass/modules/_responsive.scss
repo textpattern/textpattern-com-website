@@ -37,6 +37,26 @@
 
 }
 
+@media screen and (max-width: $breakpoint-2) {
+
+    /**
+     * Remove canvas animation from smallest breakpoint.
+     */
+
+    #animation-overlay {
+        position: static;
+
+        hr {
+            display: none;
+        }
+    }
+
+    .cta {
+        font-size: 28px;
+    }
+
+}
+
 
 /* ==========================================================================
    Styling and layout for screen media at 2nd breakpoint
@@ -152,7 +172,9 @@
         display: block;
     }
 
-
+    .cta {
+        width: 75%;
+    }
 
 }
 
@@ -235,6 +257,10 @@
 
     .layout-text4col {
         column-count: 4;
+    }
+
+    .cta {
+        width: 50%;
     }
 
 }

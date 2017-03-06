@@ -245,6 +245,33 @@ section {
 }
 
 /**
+ * Homepage animation canvas.
+ */
+
+#animation-container {
+    width: 1150px;
+    height: 480px;
+    margin: 0 auto;
+}
+
+#animation {
+    position: absolute;
+    top: 1em;
+    z-index: 1;
+}
+
+#animation-overlay {
+    position: absolute;
+    top: 1em;
+    width: 100%;
+    z-index: 2;
+
+    hr {
+        background-position: 0 50%;
+    }
+}
+
+/**
  * Documentation site Kramdown footnotes.
  */
 
