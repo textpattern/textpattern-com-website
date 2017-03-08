@@ -19,6 +19,7 @@
 <!-- All the favicons, touch icons, etc. -->
     <meta name="theme-color" content="#ffda44">
     <meta name="application-name" content="Textpattern CMS">
+    <link rel="manifest" href="../manifest.json">
     <link rel="icon" sizes="32x32" href="../favicon-32x32.png">
     <link rel="icon" sizes="16x16" href="../favicon-16x16.png">
 
