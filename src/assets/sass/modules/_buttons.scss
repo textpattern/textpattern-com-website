@@ -150,3 +150,11 @@ button[disabled],
     position: relative !important;
     top: 2px !important;
 }
+
+/**
+ * Call to action buttons on homepage.
+ */
+
+.cta-buttons .button {
+    margin: 0.5em 0;
+}

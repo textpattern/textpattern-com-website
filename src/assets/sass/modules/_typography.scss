@@ -73,16 +73,17 @@ h6 {
  *
  * Example HTML:
  *
- * <h2 class="cta">
+ * <h1 class="cta">
  *     <span>Content</span>
- * </h2>
+ * </h1>
  *
  * Also see _responsive.scss
  */
 
 .cta {
     margin-top: 0.75em;
-    line-height: 1.5; // 42px / 28px
+    font-size: 1.375em; // 22px / 16px
+    line-height: 1.5;
 
     span {
         padding: 0 0.2em;
