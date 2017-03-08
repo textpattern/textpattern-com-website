@@ -260,15 +260,13 @@ section {
     z-index: 1;
 }
 
-#animation-overlay {
-    position: absolute;
-    top: 1em;
-    width: 100%;
-    z-index: 2;
+/**
+ * Hide `hr` in CTA for smaller breakpoints.
+ */
 
-    hr {
-        background-position: 0 50%;
-    }
+#animation-overlay hr {
+    display: none;
+    background-position: 0 50%;
 }
 
 /**
