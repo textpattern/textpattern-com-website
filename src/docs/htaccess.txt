@@ -290,7 +290,6 @@ Redirect permanent /forum https://forum.textpattern.io
 # | Selfish propaganda                                                 |
 # ----------------------------------------------------------------------
 
-Redirect temp /facebook https://www.facebook.com/groups/textpattern/
 Redirect temp /@textpattern https://twitter.com/textpattern
 Redirect temp /+ https://plus.google.com/communities/111366418300163664690
 Redirect temp /github https://github.com/textpattern
