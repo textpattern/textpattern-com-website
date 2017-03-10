@@ -65,19 +65,18 @@
     }
 
     .showcase-1 {
-        bottom: 0;
-        max-width: 450px;
+        max-width: 360px;
         margin: 0 auto;
         z-index: 3;
 
         img {
-            box-shadow: 0 0.5em 0.75em rgba(51, 51, 51, 0.33);
+            box-shadow: 0 0.33em 0.8em rgba(51, 51, 51, 0.4);
         }
      }
 
     .showcase-2 {
         position: absolute;
-        bottom: 1em;
+        bottom: -0.5em;
         left: 0;
         z-index: 2;
     }
@@ -85,7 +84,7 @@
     .showcase-3 {
         position: absolute;
         right: 0;
-        bottom: 1em;
+        bottom: -0.5em;
         z-index: 1;
     }
 
@@ -221,6 +220,15 @@
 
     #animation-overlay hr {
         display: block;
+    }
+
+    .showcase-1 {
+        max-width: 450px;
+     }
+
+    .showcase-2,
+    .showcase-3 {
+        bottom: 0;
     }
 
 }
