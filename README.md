@@ -1,5 +1,7 @@
 # Textpattern.com website
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/textpattern/textpattern-com-website.svg)](https://greenkeeper.io/)
+
 [![Build Status](https://img.shields.io/travis/textpattern/textpattern-com-website.svg)](https://travis-ci.org/textpattern/textpattern-com-website)
 [![Dependency Status](https://img.shields.io/david/textpattern/textpattern-com-website.svg)](https://david-dm.org/textpattern/textpattern-com-website)
 [![devDependency Status](https://img.shields.io/david/dev/textpattern/textpattern-com-website.svg)](https://david-dm.org/textpattern/textpattern-com-website?type=dev)
