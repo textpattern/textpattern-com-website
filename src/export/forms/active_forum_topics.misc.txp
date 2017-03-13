@@ -1,6 +1,6 @@
 <div id="forumTopicsBlock">
-<h3 class="forumtopics">Recent community conversations<span id="forumTopicsMore"><a title="Visit the community forum" rel="external" href="https://forum.textpattern.io/"><img width="10" height="10" alt="Textpattern Forum" src="/style/TXP-10-Y.png" />Visit</a><a title="Subscribe to new forum topics" rel="external" href="https://forum.textpattern.io/extern.php?type=RSS&amp;action=new"><img width="10" height="10" alt="Textpattern forum RSS" src="/style/feedicon-10.png" />Subscribe</a><a title="Follow @txpforum on Twitter" rel="external" href="http://twitter.com/txpforum"><img width="14" height="10" alt="Follow on Twitter" src="/style/twitter_newbird_blue-10.png" />@txpforum</a></span></h3>
-<txp:aks_rss wraptag="ul" break="li" showtitle="0" limit="10" feed="https://forum.textpattern.io/extern.php?type=RSS&action=new">
-<txp:permlink><txp:title /></txp:permlink> <span class="posted"> on <txp:posted format="%d %b %y" /></span>
-</txp:aks_rss>
-</div> <!-- close forumTopicsBlock -->
+    <h3 class="forumtopics">Recent community conversations<span id="forumTopicsMore"><a title="Visit the community forum" rel="external" href="https://forum.textpattern.io/"><img width="10" height="10" alt="Textpattern Forum" src="/style/TXP-10-Y.png" />Visit</a><a title="Subscribe to new forum topics" rel="external" href="https://forum.textpattern.io/extern.php?type=RSS&amp;action=new"><img width="10" height="10" alt="Textpattern forum RSS" src="/style/feedicon-10.png" />Subscribe</a><a title="Follow @txpforum on Twitter" rel="external" href="https://twitter.com/txpforum"><img width="14" height="10" alt="Follow on Twitter" src="/style/twitter_newbird_blue-10.png" />@txpforum</a></span></h3>
+    <txp:aks_rss wraptag="ul" break="li" showtitle="0" limit="10" feed="https://forum.textpattern.io/extern.php?type=RSS&action=new">
+        <txp:permlink><txp:title /></txp:permlink> <span class="posted"> on <txp:posted format="%d %b %y" /></span>
+    </txp:aks_rss>
+</div>
