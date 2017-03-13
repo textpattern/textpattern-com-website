@@ -44,7 +44,6 @@ module.exports = function (grunt)
             dist: [
                 'css',
                 'copy',
-                'devUpdate',
                 'jshint'
             ]
         },
@@ -91,20 +90,6 @@ module.exports = function (grunt)
                         dest: 'public/'
                     }
                 ]
-            }
-        },
-
-        // Report on any available updates for dependencies.
-        devUpdate: {
-            main: {
-                options: {
-                    updateType: 'report',
-                    reportUpdated: false, // Don't report up-to-date packages.
-                    packages: {
-                        dependencies: true,
-                        devDependencies: true
-                    }
-                }
             }
         },
 
