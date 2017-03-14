@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Forum API test</title>
+</head>
+
+<body>
+
+      <div id="forum-api">
+
+      </div>
+
+    <script>
+    var section = document.querySelector('#forum-api');
+
+    var requestURL = 'https://forum.textpattern.io/api/?limit=10';
+    var request = new XMLHttpRequest();
+    request.open('GET', requestURL);
+    request.responseType = 'json';
+    request.send();
+
+    request.onload = function() {
+      var superHeroes = request.response;
+      showHeroes(superHeroes);
+    }
+
+    function showHeroes(jsonObj) {
+      var topics = jsonObj['topic'];
+
+      for(i = 0; i < topics.length; i++) {
+        var myArticle = document.createElement('div');
+        var myH2 = document.createElement('h2');
+        var myPara1 = document.createElement('p');
+        var myPara2 = document.createElement('p');
+        var myPara3 = document.createElement('p');
+
+        myH2.textContent = topics[i].title;
+        myPara1.textContent = 'Author: ' + topics[i].author.name;
+        myPara2.textContent = 'Posted: ' + topics[i].posted;
+        myPara3.textContent = 'Link: ' + topics[i].link;
+
+
+        myArticle.appendChild(myH2);
+        myArticle.appendChild(myPara1);
+        myArticle.appendChild(myPara2);
+        myArticle.appendChild(myPara3);
+
+        section.appendChild(myArticle);
+      }
+    }
+
+    </script>
+</body>
+</html>
