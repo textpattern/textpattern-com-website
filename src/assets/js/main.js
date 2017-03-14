@@ -12,6 +12,7 @@
         paths:
         {
             'jquery': 'https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min',
+            // TODO: Use jQuery 3 Slim version? https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.slim.min.js
             'flowplayer': 'https://releases.flowplayer.org/7.0.2/flowplayer.min'
         }
     });
