@@ -7,28 +7,33 @@
 
 <body>
 
-      <div id="forum-api">
+    <div id="forum-api"></div>
 
-      </div>
+<script>
+var section = document.querySelector('#forum-api');
 
-    <script>
-    var section = document.querySelector('#forum-api');
-
-    var requestURL = 'https://forum.textpattern.io/api/?limit=10';
-    var request = new XMLHttpRequest();
-    request.open('GET', requestURL);
-    request.responseType = 'json';
-    request.send();
-
-    request.onload = function() {
-      var superHeroes = request.response;
-      showHeroes(superHeroes);
+var request = new XMLHttpRequest();
+request.open('GET', 'https://forum.textpattern.io/api/?limit=10&sort=posted', true);
+request.responseType = 'json';
+request.onload = function (e) {
+    if (request.readyState === 4) {
+        if (request.status === 200) {
+            var topicList = request.response;
+            showTopics(topicList);
+        } else {
+            console.error(request.statusText);
+        }
     }
+};
+request.onerror = function (e) {
+    console.error(request.statusText);
+};
+request.send();
 
-    function showHeroes(jsonObj) {
-      var topics = jsonObj['topic'];
+function showTopics(jsonObj) {
+    var topics = jsonObj['topic'];
 
-      for(i = 0; i < topics.length; i++) {
+    for(i = 0; i < topics.length; i++) {
         var myArticle = document.createElement('div');
         var myH2 = document.createElement('h2');
         var myPara1 = document.createElement('p');
@@ -40,16 +45,14 @@
         myPara2.textContent = 'Posted: ' + topics[i].posted;
         myPara3.textContent = 'Link: ' + topics[i].link;
 
-
         myArticle.appendChild(myH2);
         myArticle.appendChild(myPara1);
         myArticle.appendChild(myPara2);
         myArticle.appendChild(myPara3);
 
         section.appendChild(myArticle);
-      }
     }
-
-    </script>
+}
+</script>
 </body>
 </html>
