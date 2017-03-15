@@ -7,10 +7,10 @@
 
 <body>
 
-    <div id="forum-api"></div>
+    <ol id="forum-topics"></ol>
 
 <script>
-var section = document.querySelector('#forum-api');
+var topicList = document.querySelector('#forum-topics');
 
 var request = new XMLHttpRequest();
 request.open('GET', 'https://forum.textpattern.io/api/?limit=10&sort=posted', true);
@@ -18,8 +18,8 @@ request.responseType = 'json';
 request.onload = function (e) {
     if (request.readyState === 4) {
         if (request.status === 200) {
-            var topicList = request.response;
-            showTopics(topicList);
+            var topicListing = request.response;
+            showTopics(topicListing);
         } else {
             console.error(request.statusText);
         }
@@ -33,25 +33,29 @@ request.send();
 function showTopics(jsonObj) {
     var topics = jsonObj['topic'];
 
-    for(i = 0; i < topics.length; i++) {
-        var myArticle = document.createElement('div');
-        var myH2 = document.createElement('h2');
-        var myPara1 = document.createElement('p');
-        var myPara2 = document.createElement('p');
-        var myPara3 = document.createElement('p');
+    topics.forEach(function(v,i) {
+        var listItem = document.createElement('li');
 
-        myH2.textContent = topics[i].title;
-        myPara1.textContent = 'Author: ' + topics[i].author.name;
-        myPara2.textContent = 'Posted: ' + topics[i].posted;
-        myPara3.textContent = 'Link: ' + topics[i].link;
+        var itemTitle = document.createElement('h2');
+        var itemAuthor = document.createElement('p');
+        var itemPosted = document.createElement('p');
+        var itemPostedUtc = document.createElement('p');
+        var itemLink = document.createElement('p');
 
-        myArticle.appendChild(myH2);
-        myArticle.appendChild(myPara1);
-        myArticle.appendChild(myPara2);
-        myArticle.appendChild(myPara3);
+        itemTitle.textContent = topics[i].title;
+        itemAuthor.textContent = 'Author: ' + topics[i].author.name;
+        itemPosted.textContent = 'Posted: ' + topics[i].posted;
+        itemPostedUtc.textContent = 'Posted (UTC format): ' + topics[i].postedutc;
+        itemLink.textContent = 'Link: ' + topics[i].link;
 
-        section.appendChild(myArticle);
-    }
+        listItem.appendChild(itemTitle);
+        listItem.appendChild(itemAuthor);
+        listItem.appendChild(itemPosted);
+        listItem.appendChild(itemPostedUtc);
+        listItem.appendChild(itemLink);
+
+        topicList.appendChild(listItem);
+    });
 }
 </script>
 </body>
