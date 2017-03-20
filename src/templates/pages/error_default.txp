@@ -9,9 +9,31 @@
 </head>
 <body itemscope itemtype="https://schema.org/WebPage">
     <txp:output_form form="body_header" />
-
-    ...error content placeholder...
-
+    <main aria-label="Main content">
+        <div class="container">
+            <div class="layout-container">
+                <div class="layout-2col">
+                    <txp:if_status status="404">
+                        <h1>
+                            <span class="http-status-code">404</span>
+                            <span class="http-status-description">Not Found</span>
+                        </h1>
+                        <p>This page may have moved or is no longer available.</p>
+                    <txp:else />
+                        <h1>
+                            <span class="http-status-code"><txp:error_status /></span>
+                            <span class="http-status-description"><txp:error_message /></span>
+                        </h1>
+                        <p>Check your URL, and if you think there is a problem with our site please <a href="https://textpattern.io/contact">contact us</a>.</p>
+                    </txp:if_status>
+                    <p>Please <a href="https://textpattern.io/">return to the Textpattern homepage</a>.</p>
+                </div>
+                <div class="layout-2col">
+                    <p><img alt="Page error" src="/assets/img/com/error.jpg" srcset="/assets/img/com/error@2x.jpg 2x, /assets/img/com/error.jpg 1x"></p>
+                </div>
+            </div>
+        </div>
+    </main>
     <txp:output_form form="body_footer" />
 </body>
 </html>
