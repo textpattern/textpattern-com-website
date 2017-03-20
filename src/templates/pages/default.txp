@@ -45,9 +45,27 @@
 <txp:if_variable name="homepage">
 <body itemscope itemtype="https://schema.org/WebPage">
     <txp:output_form form="body_header" />
+    <main aria-label="Main content">
+        <div class="wrapper-inner">
+                <div id="animation-container">
+                    <canvas id="animation" width="1150" height="480"></canvas>
+                </div>
+                <div id="animation-overlay">
+                <div class="container">
+                    <h1 class="cta"><span>The small content management system that can handle big ideas</span></h1>
+                    <hr>
+                    <p class="cta-buttons">
+                        <a class="button button-primary button-large" href="#"><span class="ui-button-icon ui-icon ui-extra-icon-download"></span> Download Textpattern <span class="txp-version">4.6.2</span></a>
+                        <a class="button" href="#">Try a demo</a>
+                    </p>
+                    <iframe src="https://ghbtns.com/github-btn.html?user=textpattern&repo=textpattern&type=star&count=true&size=large" frameborder="0" scrolling="0" width="160px" height="30px"></iframe>
+                </div>
+            </div>
+        </div>
 
-    ...homepage content placeholder...
+        ...homepage content placeholder...
 
+    </main>
 <txp:else />
 <txp:if_search>
     <body itemscope itemtype="https://schema.org/SearchResultsPage">
