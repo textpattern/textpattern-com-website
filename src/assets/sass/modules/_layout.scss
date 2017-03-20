@@ -2,26 +2,25 @@
    ========================================================================== */
 
 /**
- * 1. Always force scrollbar padding so we don't get 'jumping'.
- * 2. Prevent adjustments of font size after orientation changes in
+ * 1. Prevent adjustments of font size after orientation changes in
  *    IE on Windows Phone and in iOS.
  */
 
 html {
-    overflow-y: scroll; /* 1 */
-    text-size-adjust: 100%; /* 2 */
+    text-size-adjust: 100%; /* 1 */
 }
 
 /**
- * 1. Set `body` to `relative` to allow positioning of absolute elements.
- * 2. Remove default margin.
+ * 1. Remove default margin.
  */
 
 body {
-    position: relative; /* 1 */
-    margin: 0; /* 2 */
-    background-color: $color-text;
-    color: $color-text-inverse;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0; /* 1 */
+    background: $color-background;
+    color: $color-text;
 }
 
 /**
@@ -40,13 +39,28 @@ body {
 
 .wrapper {
     position: relative;
+    flex: 1;
     padding: 1px 0;
-    background: $color-background;
-    color: $color-text;
 }
 
 /**
- * Wrapper for layouts, and for header/footer.
+ * Outer wrapper for footer.
+ *
+ * Example HTML:
+ *
+ * <div class="wrapper-footer">
+ *     <aside class="container complementary-content"></aside>
+ *     <footer class="site-footer">
+ * </div>
+ */
+
+.wrapper-footer {
+    background-color: $color-text;
+    color: $color-text-inverse;
+}
+
+/**
+ * Containers for layouts, and for header/footer.
  *
  * Example HTML:
  *
