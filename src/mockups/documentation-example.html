@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="../assets/css/style.@@timestamp.css">
 
 <!-- Prefetch DNS for external JavaScript assets -->
-    <link rel="dns-prefetch" href="https://ajax.googleapis.com">
+    <link rel="dns-prefetch" href="https://code.jquery.com">
     <link rel="dns-prefetch" href="https://www.google-analytics.com">
 
     <meta name="robots" content="index, follow, noodp, noydir">

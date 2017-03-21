@@ -11,7 +11,7 @@
     requirejs.config({
         paths:
         {
-            'jquery': 'https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min',
+            'jquery': 'https://code.jquery.com/jquery-3.2.1.min',
             'flowplayer': 'https://releases.flowplayer.org/7.0.2/flowplayer.min'
         }
     });
