@@ -73,7 +73,7 @@
                 "@context": "https://schema.org",
                 "@type": "WebPage",
                 "headline": "<txp:title /> / Textpattern CMS",
-                "description": "<txp:meta_description />",
+                "description": "<txp:meta_description escape="" />",
                 "url": "<txp:permlink />"
             }
         </script>
