@@ -39,7 +39,6 @@ body {
 
 .wrapper {
     position: relative;
-    flex: 1;
     padding: 1px 0;
 }
 
@@ -55,6 +54,7 @@ body {
  */
 
 .wrapper-footer {
+    flex: 1;
     background-color: $color-text;
     color: $color-text-inverse;
 }
