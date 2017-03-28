@@ -92,15 +92,13 @@
                 <txp:else />
                     <txp:article />
                 </txp:if_article_list>
-
                 <section class="layout-4col sidebar">
 
                     ...blog sidebar content placeholder...
 
                 </section>
-
-            </div><!-- /.layout-container -->
-        </div><!-- /.container -->
+            </div>
+        </div>
     </main>
     <txp:output_form form="body_footer" />
 </body>

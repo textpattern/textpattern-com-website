@@ -26,7 +26,7 @@
             <script type="application/ld+json">
                 {
                     "@context": "https://schema.org",
-                    "@type": "WebPage",
+                    "@type": "Blog",
                     "headline": "Blog / Textpattern CMS",
                     "description": "Latest blogs from Team Textpattern and guests; Textpattern news and other tidbits of info that we find of interest.",
                     "url": "https://textpattern.io/blog/"
@@ -71,10 +71,13 @@
         <script type="application/ld+json">
             {
                 "@context": "https://schema.org",
-                "@type": "WebPage",
-                "headline": "<txp:title escape="json" /> / Textpattern CMS",
-                "description": "<txp:meta_description format="" escape="json" />",
-                "url": "<txp:permlink />"
+                "@type": "Blog",
+                "blogPost": [{
+                    "@type": "BlogPosting",
+                    "headline": "<txp:title escape="json" /> / Textpattern CMS",
+                    "description": "<txp:meta_description format="" escape="json" />",
+                    "url": "<txp:permlink />"
+                }]
             }
         </script>
     </txp:if_article_list>
@@ -92,15 +95,13 @@
                 <txp:else />
                     <txp:article form="blog" />
                 </txp:if_article_list>
-
                 <section class="layout-4col sidebar">
 
                     ...blog sidebar content placeholder...
 
                 </section>
-
-            </div><!-- /.layout-container -->
-        </div><!-- /.container -->
+            </div>
+        </div>
     </main>
     <txp:output_form form="body_footer" />
 </body>
