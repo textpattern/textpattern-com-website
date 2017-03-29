@@ -2,7 +2,7 @@
    ========================================================================== */
 
 /**
- * Paginator (prev/next) navigation links on articles/article lists.
+ * Paginator (prev/next) navigation links on article lists.
  *
  * Example HTML:
  *
@@ -14,26 +14,11 @@
 .paginator {
     margin: 2em 0 0;
     padding-top: 1em;
-    text-align: center;
 
-    .prev {
-        margin: 0 1em 0 -0.1875em;
+    a,
+    b {
+        display: inline-block;
         padding: 0 0.1875em; // 3px / 16px
-        float: left;
-
-        &::before {
-            content: "\2190" "\00A0";
-        }
-    }
-
-    .next {
-        margin: 0 -0.1875em 0 1em;
-        padding: 0 0.1875em; // 3px / 16px
-        float: right;
-
-        &::after {
-            content: "\00A0" "\2192";
-        }
     }
 }
 
@@ -59,9 +44,10 @@
     margin: 0;
     padding: 0;
     list-style: none;
+    text-align: center;
 
     li {
-        float: left;
+        display: inline-block;
 
         &.current {
             background: $color-text;
@@ -71,9 +57,7 @@
 
     a,
     b {
-        display: block;
         min-width: 1.25em;
-        padding: 0 0.1875em; // 3px / 16px
     }
 
     b {

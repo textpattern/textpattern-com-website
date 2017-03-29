@@ -53,8 +53,7 @@ header,
 footer,
 nav ul,
 nav ol,
-.clearfix,
-.paginator {
+.clearfix {
     &::after {
         display: table;
         clear: both;
