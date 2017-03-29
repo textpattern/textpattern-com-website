@@ -35,10 +35,10 @@
             <link rel="canonical" href="https://textpattern.io/blog/?pg=<txp:page_url type="pg" />">
         </txp:if_variable>
         <txp:evaluate test="newer">
-            <link rel="prev" href="<txp:variable name="prev" />">
+            <link rel="prev" href="<txp:newer />">
         </txp:evaluate>
         <txp:evaluate test="older">
-            <link rel="next" href="<txp:variable name="next" />">
+            <link rel="next" href="<txp:older />">
         </txp:evaluate>
     <txp:else />
         <title><txp:title /> / Textpattern CMS</title>
