@@ -4,12 +4,10 @@
     <meta charset="utf-8">
     <txp:output_form form="head" />
     <txp:if_article_list>
-        <txp:article limit="3" pgonly="1" />
+        <txp:article limit="5" pgonly="1" />
         <title><txp:section title="1" /> / Textpattern CMS</title>
         <txp:meta_description />
         <txp:variable name="page" value='<txp:page_url type="pg" />' />
-        <txp:variable name="prev" value='<txp:newer />' />
-        <txp:variable name="next" value='<txp:older />' />
         <txp:if_variable name="page" value="1">
             <meta name="robots" content="index, follow, noodp, noydir">
             <link rel="canonical" href="<txp:section url='1' />">
@@ -36,14 +34,12 @@
             <meta name="robots" content="noindex, follow, noodp, noydir">
             <link rel="canonical" href="https://textpattern.io/blog/?pg=<txp:page_url type="pg" />">
         </txp:if_variable>
-        <txp:if_variable name="prev" value="">
-        <txp:else />
+        <txp:evaluate test="newer">
             <link rel="prev" href="<txp:variable name="prev" />">
-        </txp:if_variable>
-        <txp:if_variable name="next" value="">
-        <txp:else />
+        </txp:evaluate>
+        <txp:evaluate test="older">
             <link rel="next" href="<txp:variable name="next" />">
-        </txp:if_variable>
+        </txp:evaluate>
     <txp:else />
         <title><txp:title /> / Textpattern CMS</title>
         <txp:meta_description />
