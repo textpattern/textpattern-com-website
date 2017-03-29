@@ -8,8 +8,6 @@
         <title>Blog / Textpattern CMS</title>
         <meta name="description" content="Latest blogs from Team Textpattern and guests; Textpattern news and other tidbits of info that we find of interest.">
         <txp:variable name="page" value='<txp:page_url type="pg" />' />
-        <txp:variable name="prev" value='<txp:newer />' />
-        <txp:variable name="next" value='<txp:older />' />
         <txp:if_variable name="page" value="1">
             <meta name="robots" content="index, follow, noodp, noydir">
             <link rel="canonical" href="https://textpattern.io/blog/">
@@ -36,14 +34,12 @@
             <meta name="robots" content="noindex, follow, noodp, noydir">
             <link rel="canonical" href="https://textpattern.io/blog/?pg=<txp:page_url type="pg" />">
         </txp:if_variable>
-        <txp:if_variable name="prev" value="">
-        <txp:else />
+        <txp:evaluate test="newer">
             <link rel="prev" href="<txp:variable name="prev" />">
-        </txp:if_variable>
-        <txp:if_variable name="next" value="">
-        <txp:else />
+        </txp:evaluate>
+        <txp:evaluate test="older">
             <link rel="next" href="<txp:variable name="next" />">
-        </txp:if_variable>
+        </txp:evaluate>
     <txp:else />
         <title><txp:title /> / Textpattern CMS</title>
         <txp:meta_description />
