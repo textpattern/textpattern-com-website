@@ -1,4 +1,4 @@
-<article class="layout-4col-3span article" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+<article class="layout-4col-3span" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
     <meta itemprop="mainEntityOfPage" content="<txp:permlink />">
     <h1 itemprop="headline"><txp:title /></h1>
     <p class="article-date">

@@ -234,6 +234,19 @@ section {
 }
 
 /**
+ * General articles and article teasers.
+ */
+
+main .layout-4col-3span {
+    margin-bottom: 1.5em;
+}
+
+.teaser {
+    margin-bottom: 1.5em;
+    border-bottom: 2px dashed $color-border;
+}
+
+/**
  * Advertising links.
  */
 

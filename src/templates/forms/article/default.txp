@@ -1,4 +1,4 @@
-<article class="layout-4col-3span article" itemscope itemtype="https://schema.org/Article">
+<article class="layout-4col-3span" itemscope itemtype="https://schema.org/Article">
     <meta itemprop="mainEntityOfPage" content="<txp:permlink />">
     <h1 itemprop="headline"><txp:title /></h1>
     <txp:if_excerpt>

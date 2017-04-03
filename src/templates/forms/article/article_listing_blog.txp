@@ -1,9 +1,9 @@
-<article itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-    <header class="article-header">
-        <h3 itemprop="headline"><a itemprop="url mainEntityOfPage" href="<txp:permlink />" title="Full article"><txp:title /></a></h3>
-        <p>Published on <time datetime="<txp:posted format="iso8601" />" itemprop="datePublished"><txp:posted format="%d %B %Y" /></time>.</p>
+<article class="teaser" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <h1 itemprop="headline"><a itemprop="url mainEntityOfPage" href="<txp:permlink />" title="Full article">Blog example 1 title</a></h1>
+    <p class="article-date">
+        <time datetime="<txp:posted format="iso8601" />" itemprop="datePublished"><txp:posted format="%d %B %Y" /></time>
         <meta itemprop="dateModified" content="<txp:modified format="iso8601" />">
-    </header>
+    </p>
     <txp:if_excerpt>
         <div class="article-description" itemprop="description">
             <txp:excerpt />
