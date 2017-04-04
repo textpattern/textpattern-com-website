@@ -78,7 +78,6 @@
         </script>
     </txp:if_article_list>
 </head>
-<txp:if_variable name="homepage">
 <body itemscope itemtype="https://schema.org/WebPage">
     <txp:output_form form="body_header" />
     <main aria-label="Main content" itemscope itemtype="https://schema.org/Blog">
