@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html amp lang="en">
+<head>
+    <meta charset="utf-8">
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
+    <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+    <script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"></script>
+    <title><txp:title /></title>
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,700,400italic,700italic">
+    <link rel="canonical" href="https://textpattern.io/mockups/blog-article.html">
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "BlogPosting",
+            "headline": "<txp:title escape="json" />",
+            "mainEntityOfPage": "TODO",
+            "datePublished": "<txp:posted format="iso8601" />",
+            "dateModified": "<txp:modified format="iso8601" />",
+            "description": "<txp:meta_description format="" escape="json" />",
+            "author": {
+                "@type": "Person",
+                "name": "<txp:author escape="json" />"
+            },
+            "publisher": {
+                "@type": "Organization",
+                "name": "Textpattern CMS",
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://textpattern.io/assets/img/branding/textpattern/textpattern.png",
+                    "width": "320",
+                    "height": "60"
+                }
+            },
+            "image": [
+                {
+                    "@type": "ImageObject",
+                    "url": "https://textpattern.io/assets/img/branding/textpattern/textpattern-amp.png",
+                    "width": "696",
+                    "height": "390"
+                }
+            ]
+        }
+    </script>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <style amp-custom>@@ampcss</style>
+</head>
+<body>
+    <div class="site-header">
+        <div class="container">
+            <a href="https://textpattern.io/"><amp-img class="masthead" alt="Textpattern CMS" src="https://textpattern.io/assets/img/branding/textpattern/textpattern-mobile.svg" width="208" height="34"></amp-img></a>
+            <amp-img class="open-sidebar" alt="Open sidebar" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cg fill='%23333'%3E%3Crect x='4' y='6' width='24' height='4'/%3E%3Crect x='4' y='14' width='24' height='4'/%3E%3Crect x='4' y='22' width='24' height='4'/%3E%3C/g%3E%3C/svg%3E" width="32" height="32" on="tap:sidebar.open" role="button" tabindex="0"></amp-img>
+        </div>
+    </div>
+    <div class="container">
+        <header>
+            <h1><txp:title /></h1>
+            <p class="article-details">
+                By <txp:author /> <span role="separator">|</span> <time datetime="<txp:posted format="iso8601" />"><txp:posted format="%d %B %Y" /></time>
+            </p>
+        </header>
+        <txp:if_excerpt>
+            <div class="article-description">
+                <txp:excerpt />
+            </div>
+        </txp:if_excerpt>
+
+
+        <amp-img layout="responsive" alt="Welcome" src="https://placehold.it/832x554" width="832" height="554"></amp-img>
+
+
+        <div class="article-body">
+            <txp:body />
+        </div>
+        <footer class="article-share">
+            <amp-social-share width="40" height="32" type="facebook" data-param-app_id=""></amp-social-share>
+            <amp-social-share width="40" height="32" type="twitter"></amp-social-share>
+            <amp-social-share width="40" height="32" type="gplus"></amp-social-share>
+            <amp-social-share width="40" height="32" type="linkedin"></amp-social-share>
+        </footer>
+        <hr>
+
+
+        <aside class="ads-area">
+            <h4>Advertisements</h4>
+
+            <amp-ad width="300" height="250"
+                type="adsense"
+                data-ad-client="ca-pub-9207713713454725"
+                data-ad-slot="">
+                <amp-img placeholder src="https://textpattern.io/assets/img/com/ad-300x250-placeholder.png"></amp-img>
+                <amp-img fallback src="https://textpattern.io/assets/img/com/ad-300x250-fallback.png"></amp-img>
+            </amp-ad>
+
+            <a rel="external" href="#">
+                <amp-img alt="Ad Example 2" src="https://placehold.it/300x250" width="300" height="250"></amp-img>
+            </a>
+            <a rel="external" href="#">
+                <amp-img alt="Ad Example 3" src="https://placehold.it/300x250" width="300" height="250"></amp-img>
+            </a>
+        </aside>
+
+    </div>
+    <amp-sidebar id="sidebar" layout="nodisplay" side="right">
+        <amp-img class="close-sidebar" alt="Close sidebar" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cg fill='%23333'%3E%3Cpath d='M6.1 23.07L23.07 6.1l2.83 2.83L8.93 25.9z'/%3E%3Cpath d='M6.1 8.93L8.93 6.1 25.9 23.07l-2.83 2.83z'/%3E%3C/g%3E%3C/svg%3E" width="32" height="32" on="tap:sidebar.close" role="button" tabindex="0"></amp-img>
+        <txp:article_custom class="list--no-bullets" labeltag="h3" label="Recent blog articles" wraptag="ul" break="li" section="blog" limit="5">
+            <a href="#">TODO</a>
+        </txp:article_custom>
+    </amp-sidebar>
+</body>
+</html>
