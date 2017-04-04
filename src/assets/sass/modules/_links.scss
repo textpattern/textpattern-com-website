@@ -6,25 +6,41 @@
  * 2. Remove default underline style from non-hover state links.
  * 3. Interrupt the decoration line to let the shape of the text show through
  *    in supported browsers.
- * 4. Expanded CSS level 3 `text-decoration` property in supported browsers,
- *    older browsers will fallback to legacy `text-decoration` property.
+ * 4. Expanded CSS level 3 `text-decoration-color` property in supported
+ *    browsers, older browsers ignore this addition.
  */
 
 a {
     color: $color-link; /* 1 */
     text-decoration: none; /* 2 */
-    text-decoration-skip: ink edges; /* 3 */
+    text-decoration-skip: ink; /* 3 */
 
     &:hover,
     &:active {
         outline: 0;
         color: $color-link-hover;
         text-decoration: underline;
-        text-decoration: $color-link solid underline; /* 4 */
     }
 
     &:focus {
         outline: thin solid $color-link-focus;
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    a {
+        color: $color-text;
+
+        &:hover,
+        &:active {
+            color: $color-text;
+            text-decoration-color: rgba($color-text, 0.5);  /* 4 */
+        }
     }
 }
 
