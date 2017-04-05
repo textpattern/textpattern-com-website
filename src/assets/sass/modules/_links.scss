@@ -6,8 +6,6 @@
  * 2. Remove default underline style from non-hover state links.
  * 3. Interrupt the decoration line to let the shape of the text show through
  *    in supported browsers.
- * 4. Expanded CSS level 3 `text-decoration-color` property in supported
- *    browsers, older browsers ignore this addition.
  */
 
 a {
@@ -27,6 +25,13 @@ a {
     }
 }
 
+/**
+ * Additional styling for heading links.
+ *
+ * 1. Expanded CSS level 3 `text-decoration-color` property in supported
+ *    browsers, older browsers ignore this addition.
+ */
+
 h1,
 h2,
 h3,
@@ -39,7 +44,7 @@ h6 {
         &:hover,
         &:active {
             color: $color-text;
-            text-decoration-color: rgba($color-text, 0.5);  /* 4 */
+            text-decoration-color: rgba($color-text, 0.5);  /* 1 */
         }
     }
 }
