@@ -24,6 +24,17 @@ body {
 }
 
 /**
+ * Polite `noscript` notice after footer.
+ */
+
+noscript {
+    padding: 0.25em 1em;
+    background-color: $color-highlight;
+    font-size: $small-font-size;
+    text-align: center;
+}
+
+/**
  * Outer wrapper for main layouts.
  *
  * Example HTML:
