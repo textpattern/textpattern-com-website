@@ -12,7 +12,8 @@
         paths:
         {
             'jquery': 'https://code.jquery.com/jquery-3.2.1.min',
-            'flowplayer': 'https://releases.flowplayer.org/7.0.2/flowplayer.min'
+            'flowplayer': 'https://releases.flowplayer.org/7.0.2/flowplayer.min',
+            'ghbuttons': 'https://buttons.github.io/buttons'
         }
     });
 
@@ -30,6 +31,7 @@
         // Load objects as variables.
 
         var code = $('pre code'),
+            ghbutton = $('.github-button'),
             smoothscroll = $('a[href*="#"]:not([href="#"])'),
             vidplayer = $('.videoplayer');
 
@@ -46,6 +48,13 @@
             {
                 Prism.highlightAll();
             });
+        }
+
+        // Unofficial GitHub buttons.
+        // More info - https://buttons.github.io.
+
+        if (ghbutton.length) {
+            require(['ghbuttons']);
         }
 
         // Smooth scroll to anchors within same page.
