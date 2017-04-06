@@ -58,7 +58,7 @@
                         <a class="button button-primary button-large" href="#"><span class="ui-button-icon ui-icon ui-extra-icon-download"></span> Download Textpattern <span class="txp-version">4.6.2</span></a>
                         <a class="button" href="#">Try a demo</a>
                     </p>
-                    <a class="github-button" href="https://github.com/textpattern/textpattern" data-style="mega" data-count-href="/textpattern/textpattern/stargazers" data-count-api="/repos/textpattern/textpattern#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star Textpattern CMS on GitHub">Star on GitHub</a>
+                    <a class="github-button" rel="external" href="https://github.com/textpattern/textpattern" data-style="mega" data-count-href="/textpattern/textpattern/stargazers" data-count-api="/repos/textpattern/textpattern#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star Textpattern CMS on GitHub">Star on GitHub</a>
                 </div>
             </div>
         </div>
