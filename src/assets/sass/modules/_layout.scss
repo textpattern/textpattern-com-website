@@ -254,7 +254,11 @@ main .layout-4col-3span {
 
 .teaser {
     margin-bottom: 1.5em;
-    border-bottom: 2px dashed $color-border;
+    border-top: 2px dashed $color-border;
+
+    &:first-child {
+        border-top: 0;
+    }
 }
 
 /**

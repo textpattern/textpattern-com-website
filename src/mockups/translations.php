@@ -69,7 +69,7 @@
                     <li><a itemprop="url" href="https://textpattern.io/themes">Themes</a></li>
                     <li><a itemprop="url" href="http://textpattern.org/">Plugins</a></li>
                     <li><a itemprop="url" href="https://forum.textpattern.io/">Forum</a></li>
-                    <li><a itemprop="url" href="https://textpattern.io/weblog">Blog</a></li>
+                    <li><a itemprop="url" href="blog-landing.html">Blog</a></li>
                     <li class="active"><a itemprop="url" href="https://textpattern.io/about">About</a></li>
                 </ul>
             </nav>

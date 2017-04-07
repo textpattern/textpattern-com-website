@@ -90,7 +90,7 @@
                     <li><a itemprop="url" href="https://textpattern.io/themes">Themes</a></li>
                     <li><a itemprop="url" href="http://textpattern.org/">Plugins</a></li>
                     <li><a itemprop="url" href="https://forum.textpattern.io/">Forum</a></li>
-                    <li><a itemprop="url" href="https://textpattern.io/weblog">Blog</a></li>
+                    <li><a itemprop="url" href="blog-landing.html">Blog</a></li>
                     <li><a itemprop="url" href="https://textpattern.io/about">About</a></li>
                 </ul>
             </nav>
@@ -201,8 +201,8 @@
 
 
             <div class="wrapper-inner">
-                <div class="container showcase-container">
-                    <h2><a href="#">Site showcase</a></h2>
+                <section class="container showcase-container">
+                    <h1><a href="#">Site showcase</a></h1>
                     <h3>110% Awesome Websites</h3>
                     <div>
                         <p>Our users continue to amaze us with their wonderful creations! Feast your eyes on some of the awesome websites powered by Textpattern CMS in our <a href="#">site showcase section</a>.</p>
@@ -220,7 +220,7 @@
                         <img class="img--showcase" alt="Showcase site 3" src="../img/showcase3.jpg" srcset="../img/showcase3@2x.jpg 2x, ../img/showcase3.jpg 1x">
                     </div>
 
-                </div><!-- /.container -->
+                </section><!-- /.container -->
             </div><!-- /.wrapper-inner -->
 
 
@@ -249,15 +249,90 @@
                 <div class="container">
                     <div class="layout-container">
 
-                        <div class="layout-3col">
-                            <img alt="Core tags" src="https://placehold.it/200x200" srcset="https://placehold.it/400x400 2x, https://placehold.it/200x200 1x">
-                            <h3>Latest from the blog</h3>
-                            <p>PLACHOLDER TEXT - SECTION 5</p>
+                        <div class="layout-3col-2span">
+                            <h3>Latest from <a href="#">the blog</a>…</h3>
+
+                            <article class="teaser" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+                                <h1 itemprop="headline"><a itemprop="url mainEntityOfPage" title="Full article" href="blog-article.html">Blog example 1 title</a></h1>
+                                <p class="article-date">
+                                    <time datetime="2016-01-21T10:43:39Z" itemprop="datePublished">21 January 2016</time>
+                                    <meta itemprop="dateModified" content="2016-01-22T14:32:01Z">
+                                </p>
+                                <div class="article-description" itemprop="description">
+                                    <p>This is where a blog article extract/description would be, if available. Ne sea soluta voluptatum. Ut nec augue disputationi, unum utamur vis in. Ea menandri persecuti dissentiunt usu, causae equidem.</p>
+                                </div>
+                                <footer class="article-footer">
+                                    <span class="ui-icon ui-icon-pencil">By:</span>
+                                    <span itemprop="author" itemscope itemtype="https://schema.org/Person">
+                                        <span class="article-author" itemprop="name">Phil Wareham</span>
+                                    </span>
+                                    <span itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+                                        <meta itemprop="name" content="Textpattern CMS">
+                                        <span itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+                                            <meta itemprop="url" content="https://textpattern.io/assets/img/branding/textpattern/textpattern.png">
+                                            <meta itemprop="width" content="320">
+                                            <meta itemprop="height" content="60">
+                                        </span>
+                                    </span>
+                                    <span class="separator" role="separator">|</span>
+                                    <span class="ui-icon ui-icon-tag">Tags:</span>
+                                    <span itemprop="keywords">
+                                        <a rel="category tag" href="#" title="View articles in this category">Releases</a>
+                                        <a rel="category tag" href="#" title="View articles in this category">Hope for the future</a>
+                                    </span>
+                                    <span class="separator" role="separator">|</span>
+                                    <span class="ui-icon ui-icon-comment">Comments:</span>
+                                    <a href="#comments-head" title="View article comments" itemprop="discussionUrl">
+                                        <span itemprop="interactionStatistic" itemscope itemtype="https://schema.org/InteractionCounter">
+                                            <meta itemprop="interactionType" content="https://schema.org/CommentAction">
+                                            <span itemprop="userInteractionCount">3</span>
+                                        </span>
+                                    </a>
+                                </footer>
+                            </article>
+
+                            <article class="teaser" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+                                <h1 itemprop="headline"><a itemprop="url mainEntityOfPage" title="Full article" href="blog-article2.html">Blog example 2 title</a></h1>
+                                <p class="article-date">
+                                    <time datetime="2016-01-07T12:01:34Z" itemprop="datePublished">07 January 2016</time>
+                                    <meta itemprop="dateModified" content="2016-01-07T12:01:34Z">
+                                </p>
+                                <div class="article-description" itemprop="description">
+                                    <p>This is where a blog article extract/description would be, if available. Ne sea soluta voluptatum. Ut nec augue disputationi, unum utamur vis in. Ea menandri persecuti dissentiunt usu, causae equidem.</p>
+                                </div>
+                                <footer class="article-footer">
+                                    <span class="ui-icon ui-icon-pencil">By:</span>
+                                    <span itemprop="author" itemscope itemtype="https://schema.org/Person">
+                                        <span class="article-author" itemprop="name">Phil Wareham</span>
+                                    </span>
+                                    <span itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+                                        <meta itemprop="name" content="Textpattern CMS">
+                                        <span itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+                                            <meta itemprop="url" content="https://textpattern.io/assets/img/branding/textpattern/textpattern.png">
+                                            <meta itemprop="width" content="320">
+                                            <meta itemprop="height" content="60">
+                                        </span>
+                                    </span>
+                                    <span class="separator" role="separator">|</span>
+                                    <span class="ui-icon ui-icon-tag">Tags:</span>
+                                    <span itemprop="keywords">
+                                        <a rel="category tag" href="#" title="View articles in this category">Hope for the future</a>
+                                        <a rel="category tag" href="#" title="View articles in this category">Reciprocal affection</a>
+                                    </span>
+                                    <span class="separator" role="separator">|</span>
+                                    <span class="ui-icon ui-icon-comment">Comments:</span>
+                                    <a href="#comments-head" title="View article comments" itemprop="discussionUrl">
+                                        <span itemprop="interactionStatistic" itemscope itemtype="https://schema.org/InteractionCounter">
+                                            <meta itemprop="interactionType" content="https://schema.org/CommentAction">
+                                            <span itemprop="userInteractionCount">26</span>
+                                        </span>
+                                    </a>
+                                </footer>
+                            </article>
                         </div>
 
                         <div class="layout-3col">
-                            <img alt="Core tags" src="https://placehold.it/200x200" srcset="https://placehold.it/400x400 2x, https://placehold.it/200x200 1x">
-                            <h3>Latest from the forum</h3>
+                            <h3>Latest from <a href="#">the forum</a>…</h3>
                             <ul class="list--no-bullets">
                                 <li>
                                     <a href="#">How is it that the "authors" tag is being parsed as a tag?</a>
@@ -280,10 +355,6 @@
                                     by makss on <time datetime="2017-03-13T14:20:16Z">13 March 2017 14:20</time>
                                 </li>
                                 <li>
-                                    <a href="#">screwed up 4.5.7 installation, starting over, need MLP plugin</a>
-                                    by sgw on <time datetime="2017-03-13T11:41:25Z">13 March 2017 11:41</time>
-                                </li>
-                                <li>
                                     <a rel="external" href="#">Travel Service for ESTA application.</a>
                                     <span>(Ad)</span>
                                 </li>
@@ -300,18 +371,46 @@
                                     <span>(Ad)</span>
                                 </li>
                                 <li>
-                                    <a rel="external" href="#">Plusvouchercode</a>
-                                    <span>(Ad)</span>
-                                </li>
-                                <li>
                                     <a rel="external" href="#">Städning Stockholm</a>
                                     <span>(Ad)</span>
                                 </li>
                             </ul>
-                        </div>
 
-                        <div class="layout-3col">
-                            <p>PLACHOLDER TEXT - SECTION 5</p>
+                            <h3>Featured at…</h3>
+                            <ul class="list--no-bullets">
+                                <li>
+                                    <a rel="external" href="http://website.informer.com/cokemachineglow.com#20694_215647">cokemachineglow.com</a>
+                                </li>
+                                <li>
+                                    <a rel="external" href="http://website.informer.com/brainstormsandraves.com#20694_230195">brainstormsandraves.com</a>
+                                </li>
+                                <li>
+                                    <a rel="external" href="http://website.informer.com/jquery.info#20694_232679">jquery.info</a>
+                                </li>
+                                <li>
+                                    <a rel="external" href="http://website.informer.com/laogui.com#20694_239357">laogui.com</a>
+                                </li>
+                                <li>
+                                    <a rel="external" href="http://website.informer.com/profimagazin.cz#20694_241184">profimagazin.cz</a>
+                                </li>
+                                <li>
+                                    <a rel="external" href="http://website.informer.com/sprawsm.com#20694_245943">sprawsm.com</a>
+                                </li>
+                                <li>
+                                    <a rel="external" href="http://website.informer.com/thresholdstate.com#20694_263497">thresholdstate.com</a>
+                                </li>
+                                <li>
+                                    <a rel="external" href="http://website.informer.com/bmannconsulting.com#20694_267991">bmannconsulting.com</a>
+                                </li>
+                                <li>
+                                    <a rel="external" href="http://website.informer.com/txptips.com#20694_278719">txptips.com</a>
+                                </li>
+                                <li>
+                                    <a rel="external" href="http://website.informer.com/yatil.de#20694_291949">yatil.de</a>
+                                </li>
+        	                </ul>
+                            <small>Powered by <a rel="external" href="http://website.informer.com/">website.informer.com</a></small>
+
                         </div>
 
 
