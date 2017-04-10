@@ -50,22 +50,30 @@
     .article-author {
         display: inline-block;
         margin-top: 1em;
-        padding: 0.25em 0.75em; // 3px / 12px + 9px / 12px
+        padding: 0.1666667em 0.6666667em; // 2px / 12px + 8px / 12px
+        border: 1px solid $color-text;
         border-radius: 1em;
         background: $color-text;
         color: $color-text-inverse;
     }
 
-    a:hover,
-    a:focus {
-        outline: 0;
+    a:hover {
+        border-color: darken($color-button-primary-border, 13%);
         background-color: $color-highlight;
         color: $color-text;
         text-decoration: none;
     }
 
+    a:focus {
+        border: 1px solid $color-link-focus;
+        outline: 0;
+        background-color: $color-highlight;
+        color: $color-text;
+    }
+
     a:active {
-        background-color: darken($color-highlight, 6%);
+        border-color: darken($color-button-primary-border, 13%);
+        background-color: darken($color-highlight, 7%);
         color: $color-text;
         text-decoration: none;
     }
