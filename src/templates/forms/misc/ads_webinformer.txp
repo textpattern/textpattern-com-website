@@ -1,6 +1,6 @@
 <!-- paid widget wet TODO -->
 <div id="sidebarInformer">
-<txp:aks_cache id="form.misc.webinformer_widget" hour="0" min="1">
+<txp:aks_cache id="form.misc.webinformer_widget" hour="0" min="5">
 <txp:php>
 if(!gps('txpreview')) {
 $microstart = getmicrotime();
