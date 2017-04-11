@@ -25,7 +25,13 @@ body {
 a {
     color: $color-link;
     text-decoration: none;
-    text-decoration-skip: ink edges;
+    text-decoration-skip: ink;
+
+    &:hover,
+    &:active {
+        color: $color-link-hover;
+        text-decoration: underline;
+    }
 }
 
 h1,
@@ -90,6 +96,43 @@ hr {
 .list--no-bullets {
     padding: 0;
     list-style: none;
+}
+
+.button {
+    @include gradient-linear($color-button-primary-gradient-from, $color-button-primary-gradient-to);
+
+    display: inline-block;
+    height: 2.5em; // 40px / 16px
+    margin: 0;
+    padding: 0.5em 1em; // 8px / 16px
+    border: 1px solid $color-button-primary-border;
+    border-radius: 1.25em;
+    background-clip: padding-box;
+    color: $color-text-button;
+    font-weight: bolder;
+    line-height: 1.375; // 22px / 16px
+    box-shadow: 0 2px 0 $color-button-primary-shadow;
+    cursor: pointer; /* 1 */
+    vertical-align: baseline;
+    appearance: none; /* 2 */
+    box-sizing: border-box;
+
+    &:hover {
+        @include gradient-linear(lighten($color-button-primary-gradient-from, 6%), lighten($color-button-primary-gradient-to, 6%));
+
+        border-color: darken($color-button-primary-border, 13%);
+        color: $color-text-button-hover;
+        text-decoration: none;
+    }
+
+    &:active {
+        position: relative;
+        top: 2px;
+        border-color: darken($color-button-primary-border, 13%);
+        color: $color-text-button-active;
+        text-decoration: none;
+        box-shadow: none;
+    }
 }
 
 amp-sidebar {
