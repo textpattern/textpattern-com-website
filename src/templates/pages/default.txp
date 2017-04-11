@@ -125,6 +125,7 @@
 
             </section>
         </div>
+        <txp:output_form form="ads_homepage" />
 
         ...homepage content placeholder...
 

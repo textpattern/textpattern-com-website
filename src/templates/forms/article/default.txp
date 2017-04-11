@@ -36,4 +36,5 @@
     <div itemprop="articleBody">
         <txp:body />
     </div>
+    <txp:output_form form="ads_article" />
 </article>

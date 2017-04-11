@@ -81,5 +81,6 @@
             </txp:if_comments_allowed>
         </txp:if_comments>
     </footer>
+    <txp:output_form form="ads_article" />
     <txp:output_form form="comments_display" />
 </article>
