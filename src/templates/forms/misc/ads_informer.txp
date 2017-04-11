@@ -1,0 +1,41 @@
+<!-- paid widget wet TODO -->
+<div id="sidebarInformer">
+<txp:aks_cache id="form.misc.webinformer_widget" hour="0" min="1">
+<txp:php>
+if(!gps('txpreview')) {
+$microstart = getmicrotime();
+
+global $here, $prefs;
+
+require_once $here.'/lib/htmlpurifier/HTMLPurifier.standalone.php';
+
+// do not let them slow us down
+$opts = array('http' => array('timeout' => 0.8));
+$url ='http://website.informer.com/w/textpatternwidget.php';
+
+$context = stream_context_create($opts);
+$widget = file_get_contents($url, false, $context);
+
+if(($widget)) {
+
+// don't let them inject unwanted HTML
+$config = HTMLPurifier_Config::createDefault();
+$config->set('Cache.SerializerPath', $prefs['tempdir']);
+$config->set('HTML.Allowed', 'div[class|id], a[class|href]');
+$config->set('Attr.EnableID', true);
+$config->set('Attr.IDPrefix', 'informer-');
+$config->set('URI.AllowedSchemes', array('http', 'https'));
+$purifier = new HTMLPurifier($config);
+
+$widget = $purifier->purify($widget);
+
+echo n,comment(date('c'));
+// echo n,comment (htmlspecialchars($widget));
+echo $widget;
+// $microdiff = (getmicrotime() - $microstart);
+// echo n,comment('Runtime:    '.substr($microdiff,0,6));
+}
+} // txpreview
+</txp:php>
+</txp:aks_cache>
+</div>

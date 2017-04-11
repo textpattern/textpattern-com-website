@@ -1,3 +1,0 @@
-<txp:linklist category="paid-links-content" wraptag="ul" break="li" class="ftw">
-<a rel="external" href="<txp:link_url />"><txp:link_name /></a>
-</txp:linklist>
