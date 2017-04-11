@@ -362,10 +362,18 @@ main .layout-4col-3span {
 }
 
 /**
- * Inline blocks.
+ * Force blocks.
  */
 
 .block {
+    display: block;
+}
+
+/**
+ * Force inline blocks.
+ */
+
+.inline-block {
     display: inline-block;
 }
 
