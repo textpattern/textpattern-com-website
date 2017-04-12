@@ -18,12 +18,13 @@ Building this repository requires:
 
 * [Node.js](https://nodejs.org/) >=4.0
 * [Grunt](https://gruntjs.com/) >=1.0
+* [Composer](https://getcomposer.org/)
 
 ## Setup
 
 ### Installing required tools
 
-The project uses [Grunt](https://gruntjs.com/) to run tasks and [Sass](http://sass-lang.com/) for CSS pre-processing. First make sure you have base dependencies installed: [Node.js](https://nodejs.org/) and [Grunt](https://gruntjs.com/). You can install Node using the [installer](https://nodejs.org/) and Grunt with npm:
+The project uses [Grunt](https://gruntjs.com/) to run tasks and [Sass](http://sass-lang.com/) for CSS pre-processing. First make sure you have base dependencies installed: [Node.js](https://nodejs.org/) and [Grunt](https://gruntjs.com/). You can install Node using the [installer](https://nodejs.org/), Composer using the [installer](https://getcomposer.org/), and Grunt with npm:
 
 ```ShellSession
 $ npm install -g grunt-cli
@@ -38,9 +39,10 @@ After you have the base dependencies taken care of, you can install the project'
 ```ShellSession
 $ cd textpattern-com-website
 $ npm install
+$ composer install
 ```
 
-**npm** installs Node modules for Grunt. You might need to use `sudo npm install` instead when installing on certain Unix-based systems.
+**npm** installs Node modules for Grunt and **composer** installs PHP libraries. You might need to use `sudo` instead when installing on certain Unix-based systems.
 
 ## Building
 
