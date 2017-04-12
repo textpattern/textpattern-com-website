@@ -1,10 +1,9 @@
 <txp:aks_cache id="form.misc.webinformer_widget" hour="0" min="5">
 <txp:php>
 if (!gps('txpreview')) {
-    $microstart = getmicrotime();
-    global $here, $prefs;
+    global $prefs;
 
-    require_once $here.'/lib/htmlpurifier/HTMLPurifier.standalone.php';
+    require_once __DIR__ .'/../../../vendor/autoload.php';
 
     // Do not let them slow us down.
     $opts = array('http' => array('timeout' => 0.8));
