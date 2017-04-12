@@ -31,9 +31,7 @@
 
 // ellipsis overflow text
 
-@mixin ellipsis($width: 100%, $display: block) {
-    display: $display;
-    max-width: $width;
+@mixin ellipsis {
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
