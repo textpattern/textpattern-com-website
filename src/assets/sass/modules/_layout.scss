@@ -35,6 +35,22 @@ noscript {
 }
 
 /**
+ * Force blocks.
+ */
+
+.block {
+    display: block;
+}
+
+/**
+ * Force inline blocks.
+ */
+
+.inline-block {
+    display: inline-block;
+}
+
+/**
  * Outer wrapper for main layouts.
  *
  * Example HTML:
@@ -359,22 +375,6 @@ main .layout-4col-3span {
 #animation-overlay hr {
     display: none;
     background-position: 0 50%;
-}
-
-/**
- * Force blocks.
- */
-
-.block {
-    display: block;
-}
-
-/**
- * Force inline blocks.
- */
-
-.inline-block {
-    display: inline-block;
 }
 
 /**

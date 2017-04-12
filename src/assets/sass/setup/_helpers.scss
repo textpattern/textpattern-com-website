@@ -28,3 +28,14 @@
     white-space: nowrap;
     overflow: hidden;
 }
+
+// ellipsis overflow text
+
+@mixin ellipsis($width: 100%, $display: block) {
+    display: $display;
+    max-width: $width;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    word-wrap: normal;
+}

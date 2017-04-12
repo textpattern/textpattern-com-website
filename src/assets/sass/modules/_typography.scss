@@ -267,3 +267,15 @@ hr {
     margin: 0 0.25em;
     color: lighten($color-text, 30%);
 }
+
+/**
+ * Overflow text with ellipsis.
+ *
+ * Example HTML:
+ *
+ * <ul class="ellipsis">
+ */
+
+.ellipsis {
+    @include ellipsis;
+}
