@@ -138,7 +138,7 @@
 
                     <div class="layout-3col">
                         <h3>Latest from <a href="https://forum.textpattern.io/">the forum</a>…</h3>
-                        <ul class="list--no-bullets">
+                        <ul class="list--no-bullets ellipsis">
                             <txp:php>
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL, 'http://forum.textpattern.io/api/?limit=10&sort=posted');
