@@ -1,0 +1,22 @@
+<txp:if_variable name="amppage">
+
+    ...amp-img placeholder...
+
+<txp:else />
+    <txp:evaluate test="image_info">
+        <figure itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
+            <img itemprop="url" alt="<txp:image_info type='alt' />" src="<txp:smd_thumbnail id='<txp:image_info type="id" />' type='1x' display='url' />" srcset="<txp:image_url link='0' /> 2x, <txp:smd_thumbnail id='<txp:image_info type="id" />' type='1x' display='url' /> 1x">
+            <meta itemprop="width" content="<txp:image_info type="w" />">
+            <meta itemprop="height" content="<txp:image_info type="h" />">
+            <figcaption itemprop="caption">
+                <txp:image_info />
+            </figcaption>
+        </figure>
+    <txp:else />
+        <p itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
+            <img itemprop="url" alt="<txp:image_info type='alt' />" src="<txp:smd_thumbnail id='<txp:image_info type="id" />' type='1x' display='url' />" srcset="<txp:image_url link='0' /> 2x, <txp:smd_thumbnail id='<txp:image_info type="id" />' type='1x' display='url' /> 1x">
+            <meta itemprop="width" content="<txp:image_info type="w" />">
+            <meta itemprop="height" content="<txp:image_info type="h" />">
+        </p>
+    </txp:evaluate>
+</txp:if_variable>
