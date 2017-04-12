@@ -1,7 +1,12 @@
 <txp:if_variable name="amppage">
-
-    ...amp-img placeholder...
-
+    <txp:evaluate test="image_info">
+        <figure>
+            <amp-img layout="responsive" alt="<txp:image_info type='alt' />" src="https://placehold.it/832x554" width="<txp:image_info type="w" />" height="<txp:image_info type="h" />"></amp-img>
+            <figcaption>This is a figcaption example. Lorem ipsum dolor sit amet, quo epicuri volutpat no.</figcaption>
+        </figure>
+    <txp:else />
+        <p><amp-img layout="responsive" alt="<txp:image_info type='alt' />" src="https://placehold.it/832x240" width="<txp:image_info type="w" />" height="<txp:image_info type="h" />"></amp-img></p>
+    </txp:evaluate>
 <txp:else />
     <txp:evaluate test="image_info">
         <figure itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
