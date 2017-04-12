@@ -273,9 +273,21 @@ hr {
  *
  * Example HTML:
  *
- * <li class="ellipsis">
+ * <p class="ellipsis">
+ *
+ * <ul class="ellipsis">
+ *     <li></li>
  */
 
 .ellipsis {
-    @include ellipsis;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+ul,
+ol {
+    &.ellipsis li {
+        text-overflow: inherit;
+        overflow: inherit;
+    }
 }
