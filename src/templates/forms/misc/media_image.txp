@@ -1,3 +1,8 @@
+<txp:hide><!--
+Call this with the following code:
+<txp:images form="media_images" id="" />
+Where `id` is the ID (or comma separated IDs) of the image(s) you want to display.
+--></txp:hide>
 <txp:if_variable name="amppage">
     <txp:evaluate test="image_info">
         <figure>
