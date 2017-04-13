@@ -18,7 +18,6 @@
 
 <!-- All the favicons, touch icons, etc. -->
     <meta name="theme-color" content="#ffda44">
-    <meta name="application-name" content="Textpattern CMS">
     <link rel="manifest" href="../manifest.json">
     <link rel="icon" sizes="32x32" href="../favicon-32x32.png">
     <link rel="icon" sizes="16x16" href="../favicon-16x16.png">
@@ -90,281 +89,245 @@
 <!-- Primary Content -->
         <main aria-label="Main content">
             <div class="container">
-                <div class="layout-container">
 
-                    <nav class="layout-1col" aria-label="Breadcrumb navigation">
-                        <ol class="breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList">
-                            <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                                <a itemprop="item" href="#"><span itemprop="name">Documentation</span></a>
-                                <meta itemprop="position" content="1">
-                            </li>
-                            <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                                <a itemprop="item" href="#"><span itemprop="name">Tags</span></a>
-                                <meta itemprop="position" content="2">
-                            </li>
-                            <li class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                                <b itemprop="item"><span itemprop="name">Article custom</span></b>
-                                <meta itemprop="position" content="3">
-                            </li>
-                        </ol>
-                    </nav>
+                <nav aria-label="Breadcrumb navigation">
+                    <ol class="breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList">
+                        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                            <a itemprop="item" href="#"><span itemprop="name">Documentation</span></a>
+                            <meta itemprop="position" content="1">
+                        </li>
+                        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                            <a itemprop="item" href="#"><span itemprop="name">Tags</span></a>
+                            <meta itemprop="position" content="2">
+                        </li>
+                        <li class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                            <b itemprop="item"><span itemprop="name">Article custom</span></b>
+                            <meta itemprop="position" content="3">
+                        </li>
+                    </ol>
+                </nav>
 
-                    <article class="layout-4col-3span">
-                        <h1 id="article-custom">Article custom</h1>
-
-                        <p>On this page:</p>
-                        <ul>
-                            <li><a href="#syntax">Syntax</a></li>
-                            <li><a href="#attributes">Attributes</a></li>
-                            <li><a href="#examples">Examples</a></li>
-                            <li><a href="#genealogy">Genealogy</a></li>
-                        </ul>
-                        <h2 id="syntax">Syntax</h2>
-                        <div class="language-html highlighter-rouge">
-                            <pre class="highlight"><code><span class="nt">&lt;txp:article</span><span class="na">_custom</span> <span class="nt">/&gt;</span></code></pre>
-                        </div>
-                        <p>The <strong>article_custom</strong> tag is a <em>single</em> or a <em>container</em> tag that provides a variety of custom options for sorting, selecting, and displaying articles (the tag will be replaced with one or more articles).</p>
-                        <p>If used as a container, it must be specified as an opening and closing pair of tags, like this:</p>
-                        <div class="language-html highlighter-rouge">
-                            <pre class="highlight"><code><span class="nt">&lt;txp:article</span><span class="na">_custom</span><span class="nt">&gt;</span>
+                <article>
+                    <h1 id="article-custom">Article custom</h1>
+                    <p>On this page:</p>
+                    <ul>
+                        <li><a href="#syntax">Syntax</a></li>
+                        <li><a href="#attributes">Attributes</a></li>
+                        <li><a href="#examples">Examples</a></li>
+                        <li><a href="#genealogy">Genealogy</a></li>
+                    </ul>
+                    <h2 id="syntax">Syntax</h2>
+                    <pre class="language-markup"><code>&lt;txp:article_custom /&gt;</code></pre>
+                    <p>The <strong>article_custom</strong> tag is a <em>single</em> or a <em>container</em> tag that provides a variety of custom options for sorting, selecting, and displaying articles (the tag will be replaced with one or more articles).</p>
+                    <p>If used as a container, it must be specified as an opening and closing pair of tags, like this:</p>
+                    <pre class="language-markup"><code>&lt;txp:article_custom&gt;
     ...contained statements...
-<span class="err">&lt;</span>/txp:article_custom&gt;</code></pre>
-                        </div>
-                        <p>This is equivalent to putting the contained statements into a form named ‘my_form’ and using <code class="highlighter-rouge">&lt;txp:article_custom form="my_form" /&gt;</code>.</p>
-                        <p>Unlike the <a href="article">article</a> tag, <code class="highlighter-rouge">&lt;txp:article_custom&gt;</code> will always return an article list and <strong>is not context-sensitive</strong>. This means while the <a href="article">article</a> tag can only see posts within the currently viewed section/category/author and so forth, <code class="highlighter-rouge">&lt;txp:article_custom /&gt;</code> can see all posts from all sections, categories and authors unless you restrict it via attributes (see below), thus context-sensitive navigation tags, such as <a href="older">older</a> and <a href="newer">newer</a>, will not work.</p>
-                        <p><code class="highlighter-rouge">&lt;txp:article_custom /&gt;</code> offers many additional attributes that <code class="highlighter-rouge">&lt;txp:article /&gt;</code> does not.. but only <code class="highlighter-rouge">&lt;txp:article /&gt;</code> will produce the full single article page. If you have only <code class="highlighter-rouge">&lt;txp:article_custom /&gt;</code> on a page, rather than <code class="highlighter-rouge">&lt;txp:article /&gt;</code>, then you will never reach the permalinked article page - you’ll always get an article list page.</p>
-                        <p>However, you can have the added features and functionality of <code class="highlighter-rouge">&lt;txp:article_custom /&gt;</code>, while keeping the necessary <code class="highlighter-rouge">&lt;txp:article /&gt;</code> in full force by using conditionals: <code class="highlighter-rouge">&lt;txp:if_individual_article&gt;</code> and <code class="highlighter-rouge">&lt;txp:if_article_list&gt;</code>, e.g.:</p>
-                        <div class="language-html highlighter-rouge">
-                            <pre class="highlight"><code><span class="nt">&lt;txp:if</span><span class="na">_article_list</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;txp:article</span><span class="na">_custom</span> <span class="na">form=</span><span class="s">"myform"</span> <span class="na">limit=</span><span class="s">"10"</span> <span class="na">category=</span><span class="s">"ideas"</span> <span class="na">section=</span><span class="s">"article"</span> <span class="na">sortby=</span><span class="s">"Posted"</span> <span class="na">sortdir=</span><span class="s">"desc"</span> <span class="nt">/&gt;</span>
-<span class="err">&lt;</span>/txp:if_article_list&gt;
+&lt;/txp:article_custom&gt;</code></pre>
+                    <p>This is equivalent to putting the contained statements into a form named ‘my_form’ and using <code>&lt;txp:article_custom form="my_form" /&gt;</code>.</p>
+                    <p>Unlike the <a href="#">article</a> tag, <code>&lt;txp:article_custom&gt;</code> will always return an article list and <strong>is not context-sensitive</strong>. This means while the <a href="#">article</a> tag can only see posts within the currently viewed section/category/author and so forth, <code>&lt;txp:article_custom /&gt;</code> can see all posts from all sections, categories and authors unless you restrict it via attributes (see below), thus context-sensitive navigation tags, such as <a href="#">older</a> and <a href="#">newer</a>, will not work.</p>
+                    <p><code>&lt;txp:article_custom /&gt;</code> offers many additional attributes that <code>&lt;txp:article /&gt;</code> does not.. but only <code>&lt;txp:article /&gt;</code> will produce the full single article page. If you have only <code>&lt;txp:article_custom /&gt;</code> on a page, rather than <code>&lt;txp:article /&gt;</code>, then you will never reach the permalinked article page - you’ll always get an article list page.</p>
+                    <p>However, you can have the added features and functionality of <code>&lt;txp:article_custom /&gt;</code>, while keeping the necessary <code>&lt;txp:article /&gt;</code> in full force by using conditionals: <code>&lt;txp:if_individual_article&gt;</code> and <code>&lt;txp:if_article_list&gt;</code>, e.g.:</p>
+                    <pre class="language-markup"><code>&lt;txp:if_article_list&gt;
+    &lt;txp:article_custom form="myform" limit="10" category="ideas" section="article" sort="Posted desc" /&gt;
+&lt;/txp:if_article_list&gt;
 
-<span class="nt">&lt;txp:if</span><span class="na">_individual_article</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;txp:article</span> <span class="nt">/&gt;</span>
-<span class="err">&lt;</span>/txp:if_individual_article&gt;</code></pre>
-                        </div>
-                        <h2 id="attributes">Attributes</h2>
-                        <p>Tag will accept the following attributes (<strong>case-sensitive</strong>):</p>
-                        <dl>
-                            <dt><code class="highlighter-rouge">allowoverride="boolean"</code></dt>
-                            <dd>Whether to use override forms for the generated article list.</dd>
-                            <dd><strong>Values:</strong> <code class="highlighter-rouge">0</code> (no) or <code class="highlighter-rouge">1</code> (yes).</dd>
-                            <dd><strong>Default:</strong> <code class="highlighter-rouge">0</code>.</dd>
-                            <dt><code class="highlighter-rouge">author="author name"</code></dt>
-                            <dd>Restrict to articles by specified author(s) <strong>login name</strong>.</dd>
-                            <dd><strong>Values:</strong> (comma separated list of) author login name(s).</dd>
-                            <dd><strong>Default:</strong> unset, retrieves from all authors.</dd>
-                            <dt><code class="highlighter-rouge">category="category name"</code></dt>
-                            <dd>Restrict to articles from specified category/categories. Note: the category names may be different to the title you typed when you created the category, as the names are sanitized for URL use. Check the <a href="../administration/categories-panel">Categories administration panel</a> to ensure you are using the correct names.</dd>
-                            <dd><strong>Values:</strong> (comma separated list of) category name(s).</dd>
-                            <dd><strong>Default:</strong> unset, retrieves from all categories.</dd>
-                            <dt><code class="highlighter-rouge">customfieldname="value"</code></dt>
-                            <dd>Restrict to articles with specified value for specified custom field name. Replace <em>customfieldname</em> with the actual name of the custom field.</dd>
-                            <dd>Important: Using dashes <code class="highlighter-rouge">-</code> or spaces may cause errors or render this feature ineffectual. Underscores in both custom field names and values are confirmed to work.</dd>
-                            <dd><strong>Default:</strong> unset.</dd>
-                            <dt><code class="highlighter-rouge">excerpted="boolean"</code></dt>
-                            <dd>Restrict to articles with/without an excerpt.</dd>
-                            <dd><strong>Values:</strong> <code class="highlighter-rouge">0</code> (no, return all) or <code class="highlighter-rouge">1</code> (yes, return only those containing an excerpt).</dd>
-                            <dd><strong>Default:</strong> <code class="highlighter-rouge">0</code>.</dd>
-                            <dt><code class="highlighter-rouge">exclude="article id(s)"</code></dt>
-                            <dd>Exclude a specific article or list of articles (each ID separated by a comma).</dd>
-                            <dd><strong>Default:</strong> unset.</dd>
-                            <dt><code class="highlighter-rouge">expired="boolean"</code></dt>
-                            <dd>Whether to include articles that have expired or not.</dd>
-                            <dd><strong>Values:</strong> <code class="highlighter-rouge">0</code> (no, don’t include expired articles) or <code class="highlighter-rouge">1</code> (yes, include expired articles).</dd>
-                            <dd><strong>Default:</strong> Setting of preference ‘Publish expired articles’.</dd>
-                            <dt><code class="highlighter-rouge">form="form name"</code></dt>
-                            <dd>Use specified form template to process each article.</dd>
-                            <dd><strong>Default:</strong> <code class="highlighter-rouge">default</code>.</dd>
-                            <dt><code class="highlighter-rouge">id="article ID"</code></dt>
-                            <dd>Display the specific article or list of articles (each ID separated by a comma).</dd>
-                            <dd>Important: When a list is supplied, this does <strong>not</strong> imply a sort order (see <strong>Example 6</strong> below).</dd>
-                            <dd><strong>Default:</strong> unset.</dd>
-                            <dt><code class="highlighter-rouge">keywords="keyword(s)"</code></dt>
-                            <dd>Restrict to articles with specified keyword(s).</dd>
-                            <dd><strong>Default:</strong> unset.</dd>
-                            <dt><code class="highlighter-rouge">limit="integer"</code></dt>
-                            <dd>The number of articles to display.</dd>
-                            <dd><strong>Default:</strong> <code class="highlighter-rouge">10</code>.</dd>
-                            <dt><code class="highlighter-rouge">month="yyyy"/"yyyy-mm"/"yyyy-mm-dd"</code></dt>
-                            <dd>Restrict to articles posted within the specified year/month/day.</dd>
-                            <dd><strong>Default:</strong> unset.</dd>
-                            <dt><code class="highlighter-rouge">offset="integer"</code></dt>
-                            <dd>The number of articles to skip.</dd>
-                            <dd><strong>Default:</strong> <code class="highlighter-rouge">0</code>.</dd>
-                            <dt><code class="highlighter-rouge">section="section name"</code></dt>
-                            <dd>Restrict to articles from specified section(s).</dd>
-                            <dd><strong>Values:</strong> (comma separated list of) section name(s).</dd>
-                            <dd><strong>Default:</strong> unset, retrieves from all sections.</dd>
-                            <dt><code class="highlighter-rouge">sort="sort value(s)"</code></dt>
-                            <dd>How to sort resulting list.</dd>
-                            <dd><strong>Values:</strong> <br />
-                            <code class="highlighter-rouge">authorid</code> (author name). <br />
-                            <code class="highlighter-rouge">category1</code>. <br />
-                            <code class="highlighter-rouge">category2</code>. <br />
-                            <code class="highlighter-rouge">comments_count</code>. <br />
-                            <code class="highlighter-rouge">custom_n</code> where <code class="highlighter-rouge">n</code> is the number of your custom field - for numeric values use <code class="highlighter-rouge">(custom_n+0)</code>. <br />
-                            <code class="highlighter-rouge">expires</code> (expiry date). <br />
-                            <code class="highlighter-rouge">id</code> (article id#). <br />
-                            <code class="highlighter-rouge">image</code> (article image id#). <br />
-                            <code class="highlighter-rouge">keywords</code>. <br />
-                            <code class="highlighter-rouge">lastmod</code> (date last modified). <br />
-                            <code class="highlighter-rouge">lastmodid</code> (author name of last modification). <br />
-                            <code class="highlighter-rouge">posted</code> (date posted). <br />
-                            <code class="highlighter-rouge">rand()</code> (<a href="http://dev.mysql.com/doc/refman/5.0/en/mathematical-functions.html#function_rand">random</a>). <br />
-                            <code class="highlighter-rouge">section</code>. <br />
-                            <code class="highlighter-rouge">status</code>. <br />
-                            <code class="highlighter-rouge">title</code>. <br />
-                            <code class="highlighter-rouge">url_title</code>. \</dd>
-                            <dd>Each field in the <code class="highlighter-rouge">textpattern</code> database table can be used as a sort key.</dd>
-                            <dd><strong>Default:</strong> <code class="highlighter-rouge">posted desc</code>.</dd>
-                            <dt><code class="highlighter-rouge">status="status"</code></dt>
-                            <dd>Restrict to articles with the specified <code class="highlighter-rouge">status</code>.</dd>
-                            <dd><strong>Values:</strong> <code class="highlighter-rouge">live</code> or <code class="highlighter-rouge">sticky</code>.</dd>
-                            <dd><strong>Default:</strong> <code class="highlighter-rouge">live</code>.</dd>
-                            <dt><code class="highlighter-rouge">time="time"</code></dt>
-                            <dd>Restrict to articles posted within specified timeframe.</dd>
-                            <dd><strong>Values:</strong> <code class="highlighter-rouge">past</code>, <code class="highlighter-rouge">future</code> or <code class="highlighter-rouge">any</code> (both <code class="highlighter-rouge">past</code> and <code class="highlighter-rouge">future</code>).</dd>
-                            <dd><strong>Default:</strong> <code class="highlighter-rouge">past</code>.</dd>
-                        </dl>
-                        <h3 id="common-presentational-attributes">Common presentational attributes</h3>
-                        <p>These attributes, which affect presentation, are shared by many tags. Note that default values can vary among tags.</p>
-                        <dl>
-                            <dt><code class="highlighter-rouge">break="value"</code></dt>
-                            <dd>Where value is an HTML element, specified without brackets (e.g. <code class="highlighter-rouge">break="li"</code>) or some string to separate list items.</dd>
-                            <dd><strong>Default:</strong> <code class="highlighter-rouge">br</code> (but see @@break cross-reference@@ for exceptions).</dd>
-                            <dt><code class="highlighter-rouge">class="class name"</code></dt>
-                            <dd>HTML <code class="highlighter-rouge">class</code> to apply to the <code class="highlighter-rouge">wraptag</code> attribute value.</dd>
-                            <dd><strong>Default:</strong> tag name or unset (see @@class cross-reference@@).</dd>
-                            <dt><code class="highlighter-rouge">label="text"</code></dt>
-                            <dd>Label prepended to item.</dd>
-                            <dd><strong>Default:</strong> unset (but see @@label cross-reference@@ for exceptions).</dd>
-                            <dt><code class="highlighter-rouge">labeltag="element"</code></dt>
-                            <dd>HTML element to wrap (markup) label, specified without brackets (e.g. <code class="highlighter-rouge">labeltag="h3"</code>).</dd>
-                            <dd><strong>Default:</strong> unset.</dd>
-                            <dt><code class="highlighter-rouge">wraptag="element"</code></dt>
-                            <dd>HTML element to wrap (markup) list block, specified without brackets (e.g. <code class="highlighter-rouge">wraptag="ul"</code>).</dd>
-                        <dd><strong>Default:</strong> unset (but see @@wraptag cross-reference@@ for exceptions).</dd>
-                        </dl>
-                        <h2 id="examples">Examples</h2>
-                        <h3 id="example-1-display-5-articles-from-a-specific-section-on-the-homepage">Example 1: Display 5 articles from a specific section on the homepage</h3>
-                        <p>To show 5 articles from a ‘news’ section within the homepage <code class="highlighter-rouge">default</code> page template (or the template you use for displaying your homepage), add:</p>
-                        <div class="language-html highlighter-rouge">
-                            <pre class="highlight"><code><span class="nt">&lt;txp:article</span><span class="na">_custom</span> <span class="na">section=</span><span class="s">"news"</span> <span class="na">limit=</span><span class="s">"5"</span> <span class="na">form=</span><span class="s">"homepage_articles"</span> <span class="nt">/&gt;</span></code></pre>
-                        </div>
-                        <p>Then create an ‘article’ type form template called <code class="highlighter-rouge">homepage_articles</code>, containing:</p>
-                        <div class="language-html highlighter-rouge">
-                            <pre class="highlight"><code><span class="nt">&lt;article&gt;</span>
-    <span class="nt">&lt;h1&gt;</span>
-        <span class="nt">&lt;txp:title</span> <span class="nt">/&gt;</span>
-    <span class="nt">&lt;/h1&gt;</span>
-    <span class="nt">&lt;txp:if</span><span class="na">_article_image</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;p&gt;</span>
-            <span class="nt">&lt;txp:article</span><span class="na">_image</span> <span class="nt">/&gt;</span>
-        <span class="nt">&lt;/p&gt;</span>
-    <span class="err">&lt;</span>/txp:if_article_image&gt;
-    <span class="nt">&lt;txp:body</span> <span class="nt">/&gt;</span>
-<span class="nt">&lt;/article&gt;</span></code></pre>
-                        </div>
-                        <p>Other tags used: <a href="article_image">article_image</a>, <a href="body">body</a>, <a href="if_article_image">if_article_image</a>, <a href="title">title</a>.</p>
-                        <h3 id="example-2-list-articles-published-in-specified-month">Example 2: List articles published in specified month</h3>
-                        <div class="language-html highlighter-rouge">
-                            <pre class="highlight"><code><span class="nt">&lt;txp:article</span><span class="na">_custom</span> <span class="na">form=</span><span class="s">"month_list"</span> <span class="na">sort=</span><span class="s">"Section asc"</span> <span class="na">month=</span><span class="s">"2004-14"</span> <span class="nt">/&gt;</span></code></pre>
-                        </div>
-                        <p>This code will display a monthly list articles by section and in ascending order, between the years of 2004 and 2014. See <strong>Example 5</strong> below for more information on article sorting.</p>
-                        <h3 id="example-3-select-by-keyword">Example 3: Select by keyword</h3>
-                        <div class="language-html highlighter-rouge">
-                            <pre class="highlight"><code><span class="nt">&lt;txp:article</span><span class="na">_custom</span> <span class="na">sort=</span><span class="s">"Posted desc"</span> <span class="na">keywords=</span><span class="s">"One"</span> <span class="nt">/&gt;</span></code></pre>
-                        </div>
-                        <p>This code will display articles that have a keyword with a value <code class="highlighter-rouge">One</code>.</p>
-                        <h3 id="example-4a-select-by-author-using-single-tag">Example 4a: Select by author (using single tag)</h3>
-                        <div class="language-html highlighter-rouge">
-                            <pre class="highlight"><code><span class="nt">&lt;txp:article</span><span class="na">_custom</span> <span class="na">form=</span><span class="s">"author_list"</span> <span class="na">author=</span><span class="s">"Parkling"</span> <span class="nt">/&gt;</span></code></pre>
-                        </div>
-                        <p>This code will display articles that have a authored by author with login name of <code class="highlighter-rouge">Parkling</code>. The referenced <code class="highlighter-rouge">author_list</code> article form might go thus:</p>
-                        <div class="language-html highlighter-rouge">
-                            <pre class="highlight"><code><span class="nt">&lt;p&gt;</span>
-    <span class="nt">&lt;txp:permlink&gt;</span>
-        <span class="nt">&lt;txp:title</span> <span class="nt">/&gt;</span>
-    <span class="nt">&lt;/txp:permlink&gt;</span>
-<span class="nt">&lt;/p&gt;</span></code></pre>
-                        </div>
-                        <p>Other tags used: <a href="permlink">permlink</a>, <a href="title">title</a>.</p>
-                        <h3 id="example-4b-select-by-author-using-container-tag">Example 4b: Select by author (using container tag)</h3>
-                        <div class="language-html highlighter-rouge">
-                            <pre class="highlight"><code><span class="nt">&lt;txp:article</span><span class="na">_custom</span> <span class="na">author=</span><span class="s">"Parkling"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;p&gt;</span>
-        <span class="nt">&lt;txp:permlink&gt;</span>
-            <span class="nt">&lt;txp:title</span> <span class="nt">/&gt;</span>
-        <span class="nt">&lt;/txp:permlink&gt;</span>
-    <span class="nt">&lt;/p&gt;</span>
-<span class="err">&lt;</span>/txp:article_custom&gt;</code></pre>
-                        </div>
-                        <p>This is exactly equivalent to <strong>Example 3a</strong>, just using a container tag instead of a single tag with referenced form.</p>
-                        <p>Other tags used: <a href="permlink">permlink</a>, <a href="title">title</a>.</p>
-                        <h3 id="example-5-combined-with-custom-fields">Example 5: Combined with custom fields</h3>
-                        <div class="language-html highlighter-rouge">
-                            <pre class="highlight"><code><span class="nt">&lt;txp:article</span><span class="na">_custom</span> <span class="na">colour=</span><span class="s">"red"</span> <span class="nt">/&gt;</span></code></pre>
-                        </div>
-                        <p>This code will display articles that have a custom field named <code class="highlighter-rouge">colour</code> with a value <code class="highlighter-rouge">red</code>.</p>
-                        <h3 id="example-6-article-sorting">Example 6: Article sorting</h3>
-                        <div class="language-html highlighter-rouge">
-                            <pre class="highlight"><code><span class="nt">&lt;txp:article</span><span class="na">_custom</span> <span class="na">sort=</span><span class="s">"AuthorID asc, Posted asc"</span> <span class="nt">/&gt;</span></code></pre>
-                        </div>
-                        <p>Uses the <code class="highlighter-rouge">sort</code> attribute to define values by which to order article output. In this case two values are declared. <code class="highlighter-rouge">AuthorID asc</code> first orders articles alphabetically by author names, then <code class="highlighter-rouge">Posted desc</code> orders them by date published (<code class="highlighter-rouge">desc</code> meaning newest to oldest).</p>
-                        <p>Why might you do it? Sorting is a powerful way to group articles (e.g. by author), and/or give priority to articles most recently published (typically better for your website visitors).</p>
-                        <h3 id="example-7-select-by-article-ids">Example 7: Select by article ID(s)</h3>
-                        <div class="language-html highlighter-rouge">
-                            <pre class="highlight"><code><span class="nt">&lt;txp:article</span><span class="na">_custom</span> <span class="na">id=</span><span class="s">"81,73"</span> <span class="nt">/&gt;</span></code></pre>
-                        </div>
-                        <p>Outputs articles specified by list of IDs, in this example that would be articles <code class="highlighter-rouge">81</code> and <code class="highlighter-rouge">73</code>. Order of articles may not match the order of the IDs in the list, that depends on what <code class="highlighter-rouge">sort</code> ordering you have specified, for example:</p>
-                        <div class="language-html highlighter-rouge">
-                            <pre class="highlight"><code><span class="nt">&lt;txp:article</span><span class="na">_custom</span> <span class="na">id=</span><span class="s">"81,73"</span> <span class="na">sort=</span><span class="s">"field(id,81,73)"</span> <span class="nt">/&gt;</span></code></pre>
-                        </div>
-                        <p>Outputs articles specified by list of IDs, in the order given in the <code class="highlighter-rouge">sort</code> field.</p>
-                        <h2 id="genealogy">Genealogy</h2>
-                        <h3 id="version-460">Version 4.6.0</h3>
-                        <p><code class="highlighter-rouge">exclude</code> attribute added.</p>
-                        <h3 id="version-450">Version 4.5.0</h3>
-                        <p><code class="highlighter-rouge">expired</code> attribute added.</p>
-                        <h3 id="version-407">Version 4.0.7</h3>
-                        <p>Can be used as a container tag. <br />
-                        <code class="highlighter-rouge">id</code> attribute can take a comma-separated list of IDs. <br />
-                        <code class="highlighter-rouge">wraptag</code> and <code class="highlighter-rouge">break</code> attributes added.</p>
-                        <h3 id="version-406">Version 4.0.6</h3>
-                        <p>Support added for comma separated lists for <code class="highlighter-rouge">section</code>, <code class="highlighter-rouge">category</code> and <code class="highlighter-rouge">author</code> attributes.</p>
-                        <h3 id="version-404">Version 4.0.4</h3>
-                        <p><code class="highlighter-rouge">listform</code> attribute deprecated (it never made a difference to <code class="highlighter-rouge">article_custom</code> anyway). <br />
-                        <code class="highlighter-rouge">sort</code> attribute added (replaces <code class="highlighter-rouge">sortby</code> and <code class="highlighter-rouge">sortdir</code> attributes). <br />
-                        <code class="highlighter-rouge">sortby</code> and <code class="highlighter-rouge">sortdir</code> attributes deprecated.</p>
+&lt;txp:if_individual_article&gt;
+    &lt;txp:article /&gt;
+&lt;/txp:if_individual_article&gt;</code></pre>
+                    <h2 id="attributes">Attributes</h2>
+                    <p>Tag will accept the following attributes (<strong>case-sensitive</strong>):</p>
+                    <dl>
+                        <dt><code>allowoverride="boolean"</code></dt>
+                        <dd>Whether to use override forms for the generated article list.</dd>
+                        <dd><strong>Values:</strong> <code>0</code> (no) or <code>1</code> (yes).</dd>
+                        <dd><strong>Default:</strong> <code>0</code>.</dd>
+                        <dt><code>author="author name"</code></dt>
+                        <dd>Restrict to articles by specified author(s) <strong>login name</strong>.</dd>
+                        <dd><strong>Values:</strong> (comma separated list of) author login name(s).</dd>
+                        <dd><strong>Default:</strong> unset, retrieves from all authors.</dd>
+                        <dt><code>category="category name"</code></dt>
+                        <dd>Restrict to articles from specified category/categories. Note: the category names may be different to the title you typed when you created the category, as the names are sanitized for URL use. Check the <a href="#">Categories administration panel</a> to ensure you are using the correct names.</dd>
+                        <dd><strong>Values:</strong> (comma separated list of) category name(s).</dd>
+                        <dd><strong>Default:</strong> unset, retrieves from all categories.</dd>
+                        <dt><code>customfieldname="value"</code></dt>
+                        <dd>Restrict to articles with specified value for specified custom field name. Replace <em>customfieldname</em> with the actual name of the custom field.</dd>
+                        <dd>Important: Using dashes <code>-</code> or spaces may cause errors or render this feature ineffectual. Underscores in both custom field names and values are confirmed to work.</dd>
+                        <dd><strong>Default:</strong> unset.</dd>
+                        <dt><code>excerpted="boolean"</code></dt>
+                        <dd>Restrict to articles with/without an excerpt.</dd>
+                        <dd><strong>Values:</strong> <code>0</code> (no, return all) or <code>1</code> (yes, return only those containing an excerpt).</dd>
+                        <dd><strong>Default:</strong> <code>0</code>.</dd>
+                        <dt><code>exclude="article id(s)"</code></dt>
+                        <dd>Exclude a specific article or list of articles (each ID separated by a comma).</dd>
+                        <dd><strong>Default:</strong> unset.</dd>
+                        <dt><code>expired="boolean"</code></dt>
+                        <dd>Whether to include articles that have expired or not.</dd>
+                        <dd><strong>Values:</strong> <code>0</code> (no, don’t include expired articles) or <code>1</code> (yes, include expired articles).</dd>
+                        <dd><strong>Default:</strong> Setting of preference ‘Publish expired articles’.</dd>
+                        <dt><code>form="form name"</code></dt>
+                        <dd>Use specified form template to process each article.</dd>
+                        <dd><strong>Default:</strong> <code>default</code>.</dd>
+                        <dt><code>id="article ID"</code></dt>
+                        <dd>Display the specific article or list of articles (each ID separated by a comma).</dd>
+                        <dd>Important: When a list is supplied, this does <strong>not</strong> imply a sort order (see <strong>Example 6</strong> below).</dd>
+                        <dd><strong>Default:</strong> unset.</dd>
+                        <dt><code>keywords="keyword(s)"</code></dt>
+                        <dd>Restrict to articles with specified keyword(s).</dd>
+                        <dd><strong>Default:</strong> unset.</dd>
+                        <dt><code>limit="integer"</code></dt>
+                        <dd>The number of articles to display.</dd>
+                        <dd><strong>Default:</strong> <code>10</code>.</dd>
+                        <dt><code>month="yyyy"/"yyyy-mm"/"yyyy-mm-dd"</code></dt>
+                        <dd>Restrict to articles posted within the specified year/month/day.</dd>
+                        <dd><strong>Default:</strong> unset.</dd>
+                        <dt><code>offset="integer"</code></dt>
+                        <dd>The number of articles to skip.</dd>
+                        <dd><strong>Default:</strong> <code>0</code>.</dd>
+                        <dt><code>section="section name"</code></dt>
+                        <dd>Restrict to articles from specified section(s).</dd>
+                        <dd><strong>Values:</strong> (comma separated list of) section name(s).</dd>
+                        <dd><strong>Default:</strong> unset, retrieves from all sections.</dd>
+                        <dt><code>sort="sort value(s)"</code></dt>
+                        <dd>How to sort resulting list.</dd>
+                        <dd><strong>Values:</strong><br>
+                            <code>authorid</code> (author name).<br>
+                            <code>category1</code>.<br>
+                            <code>category2</code>.<br>
+                            <code>comments_count</code>.<br>
+                            <code>custom_n</code> where <code>n</code> is the number of your custom field - for numeric values use <code>(custom_n+0)</code>.<br>
+                            <code>expires</code> (expiry date).<br>
+                            <code>id</code> (article id#).<br>
+                            <code>image</code> (article image id#).<br>
+                            <code>keywords</code>.<br>
+                            <code>lastmod</code> (date last modified).<br>
+                            <code>lastmodid</code> (author name of last modification).<br>
+                            <code>posted</code> (date posted).<br>
+                            <code>rand()</code> (<a href="#">random</a>).<br>
+                            <code>section</code>.<br>
+                            <code>status</code>.<br>
+                            <code>title</code>.<br>
+                            <code>url_title</code>.<br>
+                            Each field in the <code>textpattern</code> database table can be used as a sort key.</dd>
+                        <dd><strong>Default:</strong> <code>posted desc</code>.</dd>
+                        <dt><code>status="status"</code></dt>
+                        <dd>Restrict to articles with the specified <code>status</code>.</dd>
+                        <dd><strong>Values:</strong> <code>live</code> or <code>sticky</code>.</dd>
+                        <dd><strong>Default:</strong> <code>live</code>.</dd>
+                        <dt><code>time="time"</code></dt>
+                        <dd>Restrict to articles posted within specified timeframe.</dd>
+                        <dd><strong>Values:</strong> <code>past</code>, <code>future</code> or <code>any</code> (both <code>past</code> and <code>future</code>).</dd>
+                        <dd><strong>Default:</strong> <code>past</code>.</dd>
+                    </dl>
+                    <h3 id="common-presentational-attributes">Common presentational attributes</h3>
+                    <p>These attributes, which affect presentation, are shared by many tags. Note that default values can vary among tags.</p>
+                    <dl>
+                        <dt><code>break="value"</code></dt>
+                        <dd>Where value is an HTML element, specified without brackets (e.g. <code>break="li"</code>) or some string to separate list items.</dd>
+                        <dd><strong>Default:</strong> <code>br</code> (but see <a href="#">break cross-reference</a> for exceptions).</dd>
+                        <dt><code>class="class name"</code></dt>
+                        <dd>HTML <code>class</code> to apply to the <code>wraptag</code> attribute value.</dd>
+                        <dd><strong>Default:</strong> tag name or unset (see <a href="#">class cross-reference</a>).</dd>
+                        <dt><code>label="text"</code></dt>
+                        <dd>Label prepended to item.</dd>
+                        <dd><strong>Default:</strong> unset (but see <a href="#">label cross-reference</a> for exceptions).</dd>
+                        <dt><code>labeltag="element"</code></dt>
+                        <dd>HTML element to wrap (markup) label, specified without brackets (e.g. <code>labeltag="h3"</code>).</dd>
+                        <dd><strong>Default:</strong> unset.</dd>
+                        <dt><code>wraptag="element"</code></dt>
+                        <dd>HTML element to wrap (markup) list block, specified without brackets (e.g. <code>wraptag="ul"</code>).</dd>
+                        <dd><strong>Default:</strong> unset (but see <a href="#">wraptag cross-reference</a> for exceptions).</dd>
+                    </dl>
+                    <h2 id="examples">Examples</h2>
+                    <h3 id="example-1-display-5-articles-from-a-specific-section-on-the-homepage">Example 1: Display 5 articles from a specific section on the homepage</h3>
+                    <p>To show 5 articles from a ‘news’ section within the homepage <code>default</code> page template (or the template you use for displaying your homepage), add:</p>
+                    <pre class="language-markup"><code>&lt;txp:article_custom section="news" limit="5" form="homepage_articles" /&gt;</code></pre>
+                    <p>Then create an ‘article’ type form template called <code>homepage_articles</code>, containing:</p>
+                    <pre class="language-markup"><code>&lt;article&gt;
+    &lt;h1&gt;
+        &lt;txp:title /&gt;
+    &lt;/h1&gt;
+    &lt;txp:if_article_image&gt;
+        &lt;p&gt;
+            &lt;txp:article_image /&gt;
+        &lt;/p&gt;
+    &lt;/txp:if_article_image&gt;
+    &lt;txp:body /&gt;
+&lt;/article&gt;</code></pre>
+                    <p>Other tags used: <a href="#">article_image</a>, <a href="#">body</a>, <a href="#">if_article_image</a>, <a href="#">title</a>.</p>
+                    <h3 id="example-2-list-articles-published-in-specified-month">Example 2: List articles published in specified month</h3>
+                    <pre class="language-markup"><code>&lt;txp:article_custom form="month_list" sort="Section asc" month="2004-14" /&gt;</code></pre>
+                    <p>This code will display a monthly list articles by section and in ascending order, between the years of 2004 and 2014. See <strong>Example 5</strong> below for more information on article sorting.</p>
+                    <h3 id="example-3-select-by-keyword">Example 3: Select by keyword</h3>
+                    <pre class="language-markup"><code>&lt;txp:article_custom sort="Posted desc" keywords="One" /&gt;</code></pre>
+                    <p>This code will display articles that have a keyword with a value <code>One</code>.</p>
+                    <h3 id="example-4a-select-by-author-using-single-tag">Example 4a: Select by author (using single tag)</h3>
+                    <pre class="language-markup"><code>&lt;txp:article_custom form="author_list" author="Parkling" /&gt;</code></pre>
+                    <p>This code will display articles that have a authored by author with login name of <code>Parkling</code>. The referenced <code>author_list</code> article form might go thus:</p>
+                    <pre class="language-markup"><code>&lt;p&gt;
+    &lt;txp:permlink&gt;
+        &lt;txp:title /&gt;
+    &lt;/txp:permlink&gt;
+&lt;/p&gt;</code></pre>
+                    <p>Other tags used: <a href="#">permlink</a>, <a href="#">title</a>.</p>
+                    <h3 id="example-4b-select-by-author-using-container-tag">Example 4b: Select by author (using container tag)</h3>
+                    <pre class="language-markup"><code>&lt;txp:article_custom author="Parkling"&gt;
+    &lt;p&gt;
+        &lt;txp:permlink&gt;
+            &lt;txp:title /&gt;
+        &lt;/txp:permlink&gt;
+    &lt;/p&gt;
+&lt;/txp:article_custom&gt;</code></pre>
+                    <p>This is exactly equivalent to <strong>Example 3a</strong>, just using a container tag instead of a single tag with referenced form.</p>
+                    <p>Other tags used: <a href="#">permlink</a>, <a href="#">title</a>.</p>
+                    <h3 id="example-5-combined-with-custom-fields">Example 5: Combined with custom fields</h3>
+                    <pre class="language-markup"><code>&lt;txp:article_custom colour="red" /&gt;</code></pre>
+                    <p>This code will display articles that have a custom field named <code>colour</code> with a value <code>red</code>.</p>
+                    <h3 id="example-6-article-sorting">Example 6: Article sorting</h3>
+                    <pre class="language-markup"><code>&lt;txp:article_custom sort="AuthorID asc, Posted asc" /&gt;</code></pre>
+                    <p>Uses the <code>sort</code> attribute to define values by which to order article output. In this case two values are declared. <code>AuthorID asc</code> first orders articles alphabetically by author names, then <code>Posted desc</code> orders them by date published (<code>desc</code> meaning newest to oldest).</p>
+                    <p>Why might you do it? Sorting is a powerful way to group articles (e.g. by author), and/or give priority to articles most recently published (typically better for your website visitors).</p>
+                    <h3 id="example-7-select-by-article-ids">Example 7: Select by article ID(s)</h3>
+                    <pre class="language-markup"><code>&lt;txp:article_custom id="81,73" /&gt;</code></pre>
+                    <p>Outputs articles specified by list of IDs, in this example that would be articles <code>81</code> and <code>73</code>. Order of articles may not match the order of the IDs in the list, that depends on what <code>sort</code> ordering you have specified, for example:</p>
+                    <pre class="language-markup"><code>&lt;txp:article_custom id="81,73" sort="field(id,81,73)" /&gt;</code></pre>
+                    <p>Outputs articles specified by list of IDs, in the order given in the <code>sort</code> field.</p>
+                    <h2 id="genealogy">Genealogy</h2>
+                    <h3 id="version-460">Version 4.6.0</h3>
+                    <p><code>exclude</code> attribute added.</p>
+                    <h3 id="version-450">Version 4.5.0</h3>
+                    <p><code>expired</code> attribute added.</p>
+                    <h3 id="version-407">Version 4.0.7</h3>
+                    <p>Can be used as a container tag.<br>
+                    <code>id</code> attribute can take a comma-separated list of IDs.<br>
+                    <code>wraptag</code> and <code>break</code> attributes added.</p>
+                    <h3 id="version-406">Version 4.0.6</h3>
+                    <p>Support added for comma separated lists for <code>section</code>, <code>category</code> and <code>author</code> attributes.</p>
+                    <h3 id="version-404">Version 4.0.4</h3>
+                    <p><code>listform</code> attribute deprecated (it never made a difference to <code>article_custom</code> anyway).<br>
+                    <code>sort</code> attribute added (replaces <code>sortby</code> and <code>sortdir</code> attributes).<br>
+                    <code>sortby</code> and <code>sortdir</code> attributes deprecated.</p>
+                    <footer class="article-footer">
+                        <span class="ui-icon ui-icon-tag">Tags:</span>
+                        <a rel="category tag" href="#" title="View documentation in this category">Article tags</a>
+                    </footer>
+                </article>
 
-                        <footer class="article-footer">
-                            <span class="ui-icon ui-icon-tag">Tags:</span>
-                            <a rel="category tag" href="/tags#Article tags" title="View documentation in this category">Article tags</a>
-                        </footer>
+                <aside class="ads-area" itemscope itemtype="https://schema.org/WPAdBlock">
+                    <h6>Advertisements</h6>
+                    <div class="ads">
+                        <a rel="external" href="#" itemprop="url">
+                            <img itemprop="image" alt="Ad Example 1" src="../assets/img/com/ad-300x250-placeholder.png" width="300" height="250">
+                        </a>
+                    </div>
+                    <div class="ads">
+                        <a rel="external" href="#" itemprop="url">
+                            <img itemprop="image" alt="Ad Example 2" src="../assets/img/com/ad-300x250-placeholder.png" width="300" height="250">
+                        </a>
+                    </div>
+                </aside>
 
-                        <aside class="ads-area" itemscope itemtype="https://schema.org/WPAdBlock">
-                            <h6>Advertisements</h6>
-                            <div class="ads">
-                                <a rel="external" href="#" itemprop="url">
-                                    <img itemprop="image" alt="Ad Example 1" src="../assets/img/com/ad-300x250-placeholder.png" width="300" height="250">
-                                </a>
-                            </div>
-                            <div class="ads">
-                                <a rel="external" href="#" itemprop="url">
-                                    <img itemprop="image" alt="Ad Example 2" src="../assets/img/com/ad-300x250-placeholder.png" width="300" height="250">
-                                </a>
-                            </div>
-                        </aside>
+                <p class="alert-block information footnote report-issues">See something wrong on this document? Outdated info, a broken link, faulty code example, or whatever? Please <a rel="external" href="#">write an issue</a> and we’ll fix it.</p>
 
-                        <p class="alert-block information footnote report-issues">See something wrong on this document? Outdated info, a broken link, faulty code example, or whatever? Please <a rel="external" href="#">write an issue</a> and we’ll fix it.</p>
-                    </article>
-
-                    <section class="layout-4col sidebar">
-                        <h3>Sidebar placeholder</h3>
-                    </section>
-
-                </div><!-- /.layout-container -->
             </div><!-- /.container -->
         </main>
 
