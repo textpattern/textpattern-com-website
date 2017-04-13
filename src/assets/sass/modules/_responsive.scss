@@ -4,6 +4,14 @@
 
 @media screen and (min-width: $breakpoint-1) {
 
+    .screen-small {
+        display: none;
+    }
+
+    .screen-large {
+        display: initial;
+    }
+
     /**
      * Cells for 4 column layouts are generated, but as 2 columns at this width.
      */
