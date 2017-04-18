@@ -1,0 +1,10 @@
+{
+  "name": "legal",
+  "title": "Legal",
+  "page": "standard",
+  "css": "default",
+  "is_default": false,
+  "in_rss": false,
+  "on_frontpage": false,
+  "searchable": true
+}
