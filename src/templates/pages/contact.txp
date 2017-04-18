@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en-GB-oxendict">
+<head>
+    <meta charset="utf-8">
+    <txp:output_form form="head" />
+    <txp:if_article_list>
+        <title>Contact / Textpattern CMS</title>
+        <meta name="description" content="Please use this online enquiry form to contact the Textpattern Development Team.">
+        <meta name="robots" content="index, follow, noodp, noydir">
+        <link rel="canonical" href="https://textpattern.io/contact">
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:site" content="@textpattern">
+        <meta name="twitter:title" content="Contact / Textpattern CMS">
+        <meta name="twitter:description" content="Please use this online enquiry form to contact the Textpattern Development Team.">
+        <meta name="twitter:image:src" content="https://textpattern.io/apple-touch-icon-180x180.png">
+        <meta name="twitter:url" content="https://textpattern.io/contact">
+        <meta property="og:title" content="Contact / Textpattern CMS">
+        <meta property="og:description" content="Please use this online enquiry form to contact the Textpattern Development Team.">
+        <meta property="og:image" content="https://textpattern.io/assets/img/branding/textpattern/textpattern-og.png">
+        <meta property="og:url" content="https://textpattern.io/contact">
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "WebPage",
+                "headline": "Contact / Textpattern CMS",
+                "description": "Please use this online enquiry form to contact the Textpattern Development Team.",
+                "url": "https://textpattern.io/contact"
+            }
+        </script>
+    <txp:else />
+        <title><txp:title /> / Textpattern CMS</title>
+        <meta name="robots" content="none">
+    </txp:if_article_list>
+</head>
+<body itemscope itemtype="http://schema.org/ContactPage">
+    <txp:output_form form="body_header" />
+    <main aria-label="Main content">
+        <div class="container">
+            <div class="layout-container">
+                <txp:output_form form="body_crumbs" />
+                <txp:if_article_list>
+
+
+                    <txp:zem_contact class="" to="TODO" subject="Textpattern website enquiry" label="" body_form="email_body" redirect="contact/enquiry-sent">
+                        <div class="layout-container">
+                            <div class="field layout-2col at-break2">
+                                <txp:zem_contact_text class="" name="name" size="32" label="Name" />
+                            </div>
+                            <div class="field layout-2col at-break2">
+                                <txp:zem_contact_email class="" name="email" size="32" />
+                            </div>
+                            <div class="field layout-2col at-break2">
+                                <txp:zem_contact_text class="" name="company" size="32" label="Company" required="0" />
+                            </div>
+                            <div class="field layout-2col at-break2">
+                                <txp:zem_contact_text class="" name="tel" size="32" label="Telephone" type="tel" pattern="^\s*\(?(020[7,8]{1}\)?[ ]?[1-9]{1}[0-9{2}[ ]?[0-9]{4})|(0[1-8]{1}[0-9]{3}\)?[ ]?[1-9]{1}[0-9]{2}[ ]?[0-9]{3})\s*$" />
+                            </div>
+                            <div class="field layout-1col">
+                                <txp:zem_contact_textarea class="" name="enquiry" label="Enquiry" cols="64" rows="4" />
+                            </div>
+                            <div class="field layout-1col">
+                                <txp:zem_contact_submit class="" label="Send enquiry" />
+                            </div>
+                        </div>
+                    </txp:zem_contact>
+
+
+                <txp:else />
+                    <txp:article />
+                </txp:if_article_list>
+
+
+                <section class="layout-4col sidebar">
+
+                    ...article sidebar content placeholder...
+
+                </section>
+            </div>
+        </div>
+    </main>
+    <txp:output_form form="body_footer" />
+</body>
+</html>

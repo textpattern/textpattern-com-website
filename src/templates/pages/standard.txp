@@ -70,7 +70,6 @@
                 <txp:output_form form="body_crumbs" />
                 <txp:if_article_list>
                     <txp:article limit="999" />
-                    </txp:article>
                 <txp:else />
                     <txp:article />
                 </txp:if_article_list>
