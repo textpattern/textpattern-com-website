@@ -132,10 +132,10 @@
                     <div class="layout-3col-2span">
                         <h3>Latest from <a href="https://textpattern.io/weblog">the blog</a>…</h3>
 
-                        ...homepage blog teasers placeholder...
+                        ...blog image placeholder...
 
+                        <txp:article form="article_listing_blog" limit="2" />
                     </div>
-
                     <div class="layout-3col">
                         <h3>Latest from <a href="https://forum.textpattern.io/">the forum</a>…</h3>
                         <ul class="list--no-bullets ellipsis">
