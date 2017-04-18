@@ -6,4 +6,4 @@ Name: <txp:zem_contact_value name="name" />
 
 Message:
 
-<txp:zem_contact_value name="enquiry" />
+<txp:zem_contact_value name="message" />

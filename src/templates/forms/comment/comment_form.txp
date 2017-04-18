@@ -3,15 +3,15 @@
     <txp:comments_error class="zemError" wraptag="ul" break="li" />
 </txp:if_comments_error>
 <div class="layout-container">
-    <div class="field layout-2col at-break2">
+    <div class="field layout-2col">
         <label for="name">Name <span class="required" title="Required" aria-label="Required">●</span></label><br>
         <txp:comment_name_input size="32" />
     </div>
-    <div class="field layout-2col at-break2">
+    <div class="field layout-2col">
         <label for="email">Email <span class="required" title="Required" aria-label="Required">●</span></label><br>
         <txp:comment_email_input size="32" />
     </div>
-    <div class="field layout-2col at-break2">
+    <div class="field layout-2col">
         <label for="web">Website</label><br>
         <txp:comment_web_input size="32" />
     </div>
