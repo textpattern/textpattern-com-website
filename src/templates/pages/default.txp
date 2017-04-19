@@ -129,13 +129,13 @@
         <div class="wrapper-inner">
             <div class="container">
                 <div class="layout-container">
-                    <div class="layout-3col-2span">
+                    <section class="layout-3col-2span" itemscope itemtype="https://schema.org/Blog">
                         <h3>Latest from <a href="https://textpattern.io/weblog">the blog</a>…</h3>
 
                         ...blog image placeholder...
 
                         <txp:article form="article_listing_blog" limit="2" />
-                    </div>
+                    </section>
                     <div class="layout-3col">
                         <h3>Latest from <a href="https://forum.textpattern.io/">the forum</a>…</h3>
                         <ul class="list--no-bullets ellipsis">
