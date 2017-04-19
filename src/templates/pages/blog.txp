@@ -13,11 +13,11 @@
             <link rel="canonical" href="https://textpattern.io/blog/">
             <meta name="twitter:card" content="summary">
             <meta name="twitter:site" content="@textpattern">
-            <meta name="twitter:title" content="Blog / Textpattern CMS">
+            <meta name="twitter:title" content="Textpattern CMS Blog">
             <meta name="twitter:description" content="Latest blogs from Team Textpattern and guests; Textpattern news and other tidbits of info that we find of interest.">
             <meta name="twitter:image:src" content="https://textpattern.io/apple-touch-icon-180x180.png">
             <meta name="twitter:url" content="https://textpattern.io/blog/">
-            <meta property="og:title" content="Blog / Textpattern CMS">
+            <meta property="og:title" content="Textpattern CMS Blog">
             <meta property="og:description" content="Latest blogs from Team Textpattern and guests; Textpattern news and other tidbits of info that we find of interest.">
             <meta property="og:image" content="https://textpattern.io/assets/img/branding/textpattern/textpattern-og.png">
             <meta property="og:url" content="https://textpattern.io/blog/">
@@ -25,7 +25,7 @@
                 {
                     "@context": "https://schema.org",
                     "@type": "Blog",
-                    "headline": "Blog / Textpattern CMS",
+                    "headline": "Textpattern CMS Blog",
                     "description": "Latest blogs from Team Textpattern and guests; Textpattern news and other tidbits of info that we find of interest.",
                     "url": "https://textpattern.io/blog/"
                 }
@@ -49,10 +49,10 @@
         <link rel="amphtml" href="<txp:permlink />/amp">
         <meta name="twitter:card" content="summary">
         <meta name="twitter:site" content="@textpattern">
-        <meta name="twitter:title" content="<txp:title /> / Textpattern CMS">
+        <meta name="twitter:title" content="<txp:title />">
         <meta name="twitter:description" content="<txp:meta_description format="" />">
         <meta name="twitter:url" content="<txp:permlink />">
-        <meta property="og:title" content="<txp:title /> / Textpattern CMS">
+        <meta property="og:title" content="<txp:title />">
         <meta property="og:description" content="<txp:meta_description format="" />">
         <meta property="og:url" content="<txp:permlink />">
         <txp:if_article_image>
@@ -70,7 +70,7 @@
                 "@type": "Blog",
                 "blogPost": [{
                     "@type": "BlogPosting",
-                    "headline": "<txp:title escape="json" /> / Textpattern CMS",
+                    "headline": "<txp:title escape="json" />",
                     "description": "<txp:meta_description format="" escape="json" />",
                     "url": "<txp:permlink />"
                 }]

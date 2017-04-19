@@ -203,7 +203,7 @@ $xml = new SimpleXMLElement('https://api.crowdin.com/api/project/textpattern-cms
         <footer class="site-footer" role="contentinfo">
             <p class="legal">
                 Copyright 2004–2017 The Textpattern Development Team.
-                <a href="https://textpattern.io/contact">Contact us</a>.
+                <a href="contact.html">Contact us</a>.
                 <a href="https://textpattern.io/privacy">Privacy</a>.
                 <a href="https://textpattern.io/humans.txt">Colophon</a>.
                 Textpattern is both free and open source. <a href="https://textpattern.io/license">GPLv2 license</a>.

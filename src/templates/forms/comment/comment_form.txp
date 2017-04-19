@@ -17,7 +17,7 @@
     </div>
     <div class="field layout-1col">
         <label for="message">Message <span class="required" title="Required" aria-label="Required">●</span></label><br>
-        <txp:comment_message_input cols="64" rows="4" />
+        <txp:comment_message_input cols="64" rows="8" />
     </div>
     <div class="field layout-1col">
         <txp:comment_preview />
