@@ -23,8 +23,7 @@
     <link rel="icon" sizes="32x32" href="../favicon-32x32.png">
     <link rel="icon" sizes="16x16" href="../favicon-16x16.png">
 
-    <link rel="canonical" href="https://textpattern.io/mockups/blog-article.html">
-    <link rel="amphtml" href="https://textpattern.io/mockups/amp.html">
+    <link rel="canonical" href="https://textpattern.io/mockups/contact.html">
 
 <!-- Twitter card -->
     <meta name="twitter:card" content="summary">
@@ -32,13 +31,13 @@
     <meta name="twitter:title" content="Contact us">
     <meta name="twitter:description" content="Use this online enquiry form to contact the Textpattern Development Team.">
     <meta name="twitter:image:src" content="https://textpattern.io/apple-touch-icon-180x180.png">
-    <meta name="twitter:url" content="https://textpattern.io/mockups/blog-article.html">
+    <meta name="twitter:url" content="https://textpattern.io/mockups/contact.html">
 
 <!-- Open Graph -->
     <meta property="og:title" content="Contact us">
     <meta property="og:description" content="Use this online enquiry form to contact the Textpattern Development Team.">
     <meta property="og:image" content="https://textpattern.io/assets/img/branding/textpattern/textpattern-og.png">
-    <meta property="og:url" content="https://textpattern.io/mockups/blog-article.html">
+    <meta property="og:url" content="https://textpattern.io/mockups/contact.html">
 
 <!-- JSON-LD -->
     <script type="application/ld+json">
@@ -47,7 +46,7 @@
             "@type": "ContactPage",
             "headline": "Contact us",
             "description": "Use this online enquiry form to contact the Textpattern Development Team.",
-            "url": "https://docs.textpattern.io/tags/article_custom"
+            "url": "https://textpattern.io/mockups/contact.html"
         }
     </script>
 </head>
@@ -112,60 +111,55 @@
                         </ol>
                     </nav>
 
-                    <article class="layout-4col-3span" itemscope itemtype="https://schema.org/Article">
-                        <h1 itemprop="headline">Contact us</h1>
-                        <div class="article-description" itemprop="description">
+                    <article class="layout-4col-3span">
+                        <h1>Contact us</h1>
+                        <div class="article-description">
                             <p>Use this online enquiry form to contact the Textpattern Development Team. If your message is security-related, please adhere to the <a href="#security">security report rules</a>.</p>
                         </div>
-                        <div itemprop="articleBody">
-                            <p>Refrain from using this form to ask general questions about Textpattern or to ask for support – rather, please make use of the extensive <a href="https://docs.textpattern.io/">documentation</a> and the <a href="https://forum.textpattern.io/">support forum</a>. General “How do I…?” questions and support enquiries will be politely ignored. Thank you for your co-operation and interest in Textpattern!</p>
-                            <hr>
-                            <form method="post" action="#">
-                                <p>Fields marked <span class="required" title="Required" aria-label="Required">●</span> are required.</p>
-                                <ul class="zemError">
-                                    <li>Required field <strong>‘Name’</strong> is missing.</li>
-                                    <li>Required field <strong>‘Email’</strong> is missing.</li>
-                                    <li>Required field <strong>‘Telephone’</strong> is missing.</li>
-                                    <li>Required field <strong>‘Enquiry’</strong> is missing.</li>
-                                </ul>
-                                <div class="layout-container">
-                                    <div class="field layout-2col">
-                                        <label for="name" class="zemRequirederrorElement">Name</label><br>
-                                        <input class="zemRequirederrorElement" id="name" name="name" type="text" size="32" maxlength="100" required>
-                                    </div>
-                                    <div class="field layout-2col">
-                                        <label for="email" class="zemRequired">Email</label><br>
-                                        <input class="zemRequired" id="email" name="email" type="email" size="32" maxlength="100" required>
-                                    </div>
-                                    <div class="field layout-2col">
-                                        <label for="company">Website</label><br>
-                                        <input id="website" name="website" type="text" size="32" maxlength="100">
-                                    </div>
-                                    <div class="field layout-1col">
-                                        <label for="enquiry" class="zemRequired">Message</label><br>
-                                        <textarea class="zemRequired" id="message" name="message" cols="64" rows="8" maxlength="10000" required></textarea>
-                                    </div>
-                                    <div class="field layout-1col">
-                                        <input type="submit" name="zem_contact_submit" value="Send message">
-                                    </div>
+                        <p>Refrain from using this form to ask general questions about Textpattern or to ask for support – rather, please make use of the extensive <a href="https://docs.textpattern.io/">documentation</a> and the <a href="https://forum.textpattern.io/">support forum</a>. General “How do I…?” questions and support enquiries will be politely ignored. Thank you for your co-operation and interest in Textpattern!</p>
+                        <hr>
+                        <form method="post" action="#">
+                            <p>Fields marked <span class="required" title="Required" aria-label="Required">●</span> are required.</p>
+                            <ul class="zemError">
+                                <li>Required field <strong>‘Name’</strong> is missing.</li>
+                                <li>Required field <strong>‘Email’</strong> is missing.</li>
+                                <li>Required field <strong>‘Telephone’</strong> is missing.</li>
+                                <li>Required field <strong>‘Enquiry’</strong> is missing.</li>
+                            </ul>
+                            <div class="layout-container">
+                                <div class="field layout-2col">
+                                    <label for="name" class="zemRequirederrorElement">Name</label><br>
+                                    <input class="zemRequirederrorElement" id="name" name="name" type="text" size="32" maxlength="100" required>
                                 </div>
-                            </form>
-                            <section>
-                                <h3 id="security">Security report rules</h3>
-                                <p><strong>We take security very seriously!</strong> If you wish to report a Textpattern security issue please ensure that you’ve taken care of the following security precautions:</p>
-                                <ol>
-                                    <li>Take steps to ensure any vulnerability or issue is not due to a third party script, malfunctioning server, or insufficient security precautions taken by you or your server admin (such as weak passwords, for example).</li>
-                                    <li>Report any and all security vulnerabilities to us <em>first</em>. <strong>Do not</strong> publicly disclose information about potential security bugs. It’s unhelpful, and can be damaging. We follow the <a rel="external" href="https://dl.packetstormsecurity.net/papers/general/rfpolicy-2.0.txt">RFPolicy 2.0</a>, and expect you to in return.</li>
-                                    <li>Allow us a reasonable amount of time to assess and correct the issue <strong>before</strong> sharing details with others or otherwise making details public.</li>
-                                    <li>Provide details as to the nature of the vulnerability, and examples of the steps to replicate it.</li>
-                                </ol>
-                                <p class="alert-block information footnote">Alternatively you can report vulnerabilities directly to <b>security at textpattern dot com</b>.</p>
-                            </section>
-                        </div>
+                                <div class="field layout-2col">
+                                    <label for="email" class="zemRequired">Email</label><br>
+                                    <input class="zemRequired" id="email" name="email" type="email" size="32" maxlength="100" required>
+                                </div>
+                                <div class="field layout-2col">
+                                    <label for="company">Website</label><br>
+                                    <input id="website" name="website" type="text" size="32" maxlength="100">
+                                </div>
+                                <div class="field layout-1col">
+                                    <label for="enquiry" class="zemRequired">Message</label><br>
+                                    <textarea class="zemRequired" id="message" name="message" cols="64" rows="8" maxlength="10000" required></textarea>
+                                </div>
+                                <div class="field layout-1col">
+                                    <input type="submit" name="zem_contact_submit" value="Send message">
+                                </div>
+                            </div>
+                        </form>
+                        <section>
+                            <h3 id="security">Security report rules</h3>
+                            <p><strong>We take security very seriously!</strong> If you wish to report a Textpattern security issue please ensure that you’ve taken care of the following security precautions:</p>
+                            <ol>
+                                <li>Take steps to ensure any vulnerability or issue is not due to a third party script, malfunctioning server, or insufficient security precautions taken by you or your server admin (such as weak passwords, for example).</li>
+                                <li>Report any and all security vulnerabilities to us <em>first</em>. <strong>Do not</strong> publicly disclose information about potential security bugs. It’s unhelpful, and can be damaging. We follow the <a rel="external" href="https://dl.packetstormsecurity.net/papers/general/rfpolicy-2.0.txt">RFPolicy 2.0</a>, and expect you to in return.</li>
+                                <li>Allow us a reasonable amount of time to assess and correct the issue <strong>before</strong> sharing details with others or otherwise making details public.</li>
+                                <li>Provide details as to the nature of the vulnerability, and examples of the steps to replicate it.</li>
+                            </ol>
+                            <p class="alert-block information footnote">Alternatively you can report vulnerabilities directly to <b>security at textpattern dot com</b>.</p>
+                        </section>
                     </article>
-
-
-
 
                     <section class="layout-4col sidebar">
                         <h3>Get Textpattern</h3>
