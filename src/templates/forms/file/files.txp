@@ -1,15 +1,15 @@
 <section itemscope itemtype="https://schema.org/DataDownload">
     <h6 class="accessibility">File download</h6>
     <p>
-        <a href="<txp:file_download_link />" itemprop="url">
+        <a class="button button-primary" href="<txp:file_download_link />" itemprop="url">
             <span class="ui-icon ui-extra-icon-download"></span>
-            <strong itemprop="name">
+            <span itemprop="name">
                 <txp:evaluate test='<txp:file_download_name title="1" />'>
                     <txp:file_download_name title="1" />
                 <txp:else />
                     <txp:file_download_name />
                 </txp:evaluate>
-            </strong>
+            </span>
         </a>
     </p>
     <footer class="footnote">
