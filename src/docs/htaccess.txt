@@ -255,7 +255,7 @@ FileETag None
 # | Cool URIs don't change                                             |
 # ----------------------------------------------------------------------
 
-Redirect permanent /plugins/txp_plugin_template.txt http://svn.textpattern.com/development/4.0-plugin-template/
+Redirect permanent /plugins/txp_plugin_template.txt https://github.com/textpattern/textpattern-plugin-template
 Redirect permanent /forum https://forum.textpattern.io
 
 # ----------------------------------------------------------------------
@@ -270,6 +270,7 @@ Redirect temp /github https://github.com/textpattern
 # | Redirect hardcoded URIs to external resources                      |
 # ----------------------------------------------------------------------
 
+Redirect temp /demo https://textpattern.co/demo
 Redirect temp /textpattern-first-steps https://docs.textpattern.io/administration/hello-world
 Redirect temp /textpattern-semantic-model https://docs.textpattern.io/administration/textoattern-semantic-model
 Redirect temp /textpattern-tag-reference https://docs.textpattern.io/tags/

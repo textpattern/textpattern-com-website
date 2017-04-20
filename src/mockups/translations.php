@@ -138,7 +138,48 @@ $xml = new SimpleXMLElement('https://api.crowdin.com/api/project/textpattern-cms
                     </article>
 
                     <section class="layout-4col sidebar">
+                        <h3>Get Textpattern</h3>
+                        <p class="cta-buttons">
+                            <a class="button button-primary button-large" href="#"><span class="ui-button-icon ui-icon ui-extra-icon-download"></span> Download <span class="txp-version">4.6.2</span></a>
+                            <a class="button" href="https://textpattern.io/demo">Try a demo</a>
+                        </p>
+                        <h3>Featured at:</h3>
+                        <ul class="list--no-bullets ellipsis">
+                            <li>
+                                <a rel="external" href="#">cokemachineglow.com</a>
+                            </li>
+                            <li>
+                                <a rel="external" href="#">examplelongurlwhichcouldbreaklayout.com</a>
+                            </li>
+                            <li>
+                                <a rel="external" href="#">jquery.info</a>
+                            </li>
+                            <li>
+                                <a rel="external" href="#">laogui.com</a>
+                            </li>
+                            <li>
+                                <a rel="external" href="#">profimagazin.cz</a>
+                            </li>
+                            <li>
+                                <a rel="external" href="#">sprawsm.com</a>
+                            </li>
+                            <li>
+                                <a rel="external" href="#">thresholdstate.com</a>
+                            </li>
+                            <li>
+                                <a rel="external" href="#">bmannconsulting.com</a>
+                            </li>
+                            <li>
+                                <a rel="external" href="#">txptips.com</a>
+                            </li>
+                            <li>
+                                <a rel="external" href="#">yatil.de</a>
+                            </li>
+    	                </ul>
+                        <small>Powered by <a rel="external" href="http://website.informer.com/">website.informer.com</a></small>
+
                         <h3>Sidebar placeholder</h3>
+
                     </section>
 
                 </div><!-- /.layout-container -->

@@ -64,7 +64,7 @@
                                 <meta itemprop="dateModified" content="<txp:file_download_modified format="iso8601" />">
                             </span>
                         </txp:file_download_list>
-                        <a class="button" href="#">Try a demo</a>
+                        <a class="button" href="https://textpattern.io/demo">Try a demo</a>
                     </p>
                     <a class="github-button" rel="external" href="https://github.com/textpattern/textpattern" data-style="mega" data-count-href="/textpattern/textpattern/stargazers" data-count-api="/repos/textpattern/textpattern#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star Textpattern CMS on GitHub">Star on GitHub</a>
                 </div>
