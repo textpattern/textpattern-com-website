@@ -1,25 +1,23 @@
-<txp:variable name="file_download_title" value='<txp:file_download_name title="1" />' />
-<txp:variable name="file_download_description" value='<txp:file_download_description />' />
 <section itemscope itemtype="https://schema.org/DataDownload">
     <h6 class="accessibility">File download</h6>
     <p>
         <a href="<txp:file_download_link />" itemprop="url">
+            <span class="ui-icon ui-extra-icon-download"></span>
             <strong itemprop="name">
-                <txp:if_variable name="file_download_title" value="">
-                    <txp:file_download_name />
-                <txp:else />
+                <txp:evaluate test='<txp:file_download_name title="1" />'>
                     <txp:file_download_name title="1" />
-                </txp:if_variable>
+                <txp:else />
+                    <txp:file_download_name />
+                </txp:evaluate>
             </strong>
         </a>
     </p>
     <footer class="footnote">
-        <txp:if_variable name="file_download_description" value="">
-        <txp:else />
+        <txp:evaluate test>
             <div itemprop="description">
                 <txp:file_download_description />
             </div>
-        </txp:if_variable>
+        </txp:evaluate>
         File size:
         <span itemprop="contentSize"><txp:file_download_size /></span>
         <span class="separator" role="separator">|</span>
