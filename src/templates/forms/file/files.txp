@@ -1,25 +1,12 @@
 <section itemscope itemtype="https://schema.org/DataDownload">
     <h6 class="accessibility">File download</h6>
-    <p>
-        <a class="button button-primary" href="<txp:file_download_link />" itemprop="url">
-            <span class="ui-icon ui-extra-icon-download"></span>
-            <span itemprop="name">
-                <txp:evaluate test='<txp:file_download_name title="1" />'>
-                    <txp:file_download_name title="1" />
-                <txp:else />
-                    <txp:file_download_name />
-                </txp:evaluate>
-            </span>
-        </a>
-    </p>
+    <p><a class="button button-primary" href="<txp:file_download_link />" itemprop="url"><span class="ui-icon ui-extra-icon-download"></span> <span itemprop="name"><txp:file_download_name /></span></a></p>
     <footer class="footnote">
         <txp:evaluate test>
-            <div itemprop="description">
-                <txp:file_download_description />
-            </div>
+            <div itemprop="description"><txp:file_download_description /></div>
         </txp:evaluate>
         File size:
-        <span itemprop="contentSize"><txp:file_download_size /></span>
+        <span itemprop="contentSize"><txp:file_download_size format="k" decimals="0" /></span>
         <span class="separator" role="separator">|</span>
         Last modified:
         <time datetime="<txp:file_download_modified format="iso8601" />" itemprop="dateModified"><txp:file_download_modified format="%d %b %Y" /></time>
