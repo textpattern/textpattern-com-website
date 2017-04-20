@@ -13,11 +13,9 @@
 # THANKS
 
   Names (& URL):
-    Destry Wion (http://wion.com)
+    Phil Wareham (http://www.designhive.com)
+    Destry Wion (https://wion.com)
     Philipp Schilling (http://www.psgd.de)
-    Stuart Butcher (http://thebombsite.com)
-    Patrick Woods (http://www.hakjoon.com)
-    Peter Moulding (http://01010.org)
 
 # TECHNOLOGY COLOPHON
 
