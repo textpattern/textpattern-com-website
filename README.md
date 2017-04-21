@@ -61,7 +61,7 @@ Where the `@task@` is either `build` or `watch`.
 
 Textpattern 4.7 introduced support for user-definable `<txp:output_form />` attributes, allowing for our own version of 'shortcodes' within articles. This site uses the following tags:
 
-### video
+### Video
 
 To create a HTML5 video snippet:
 
@@ -71,7 +71,7 @@ To create a HTML5 video snippet:
 
 For example:
 
-    <txp:media_video width="640" height="480" ratio="0.5625" mp4-url="/video/video.mp4" webm-url="/video/video.webm" poster-url="/img/poster.png" duration-seconds="20" />
+    <txp:media_video width="640" height="480" ratio="0.5625" mp4-url="/video/video1.mp4" webm-url="/video/video1.webm" poster-url="/video/video1-poster.png" duration-seconds="20" />
 
 TODO: more tags.
 
