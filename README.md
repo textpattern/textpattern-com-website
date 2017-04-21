@@ -3,7 +3,7 @@
 [![Greenkeeper badge](https://badges.greenkeeper.io/textpattern/textpattern-com-website.svg)](https://greenkeeper.io/)
 [![Build Status](https://img.shields.io/travis/textpattern/textpattern-com-website.svg)](https://travis-ci.org/textpattern/textpattern-com-website)
 
-Official 2017+ website of the [Textpattern](https://textpattern.io/) project. **Currently under development.**
+Official 2017+ website of the [Textpattern](https://textpattern.io/) project. **Currently under development. Requires Textpattern 4.7dev.**
 
 ## Supported web browsers
 
@@ -56,6 +56,24 @@ Where the `@task@` is either `build` or `watch`.
 
 * The `build` task builds the project.
 * The `watch` task will launch a task that watches for file changes; the project is then automatically built if a source file is modified.
+
+## Shortcodes
+
+Textpattern 4.7 introduced support for user-definable `<txp:output_form />` attributes, allowing for our own version of 'shortcodes' within articles. This site uses the following tags:
+
+### video
+
+To create a HTML5 video snippet:
+
+    <txp::media_video width="" height="" ratio="" mp4-url="" webm-url="" poster-url="" duration-seconds="" />
+
+`ratio`, `poster-url` and `duration-seconds` are optional, but should be provided if possible. If not used, remove those attributes from your tag.
+
+For example:
+
+    <txp:media_video width="640" height="480" ratio="0.5625" mp4-url="/video/video.mp4" webm-url="/video/video.webm" poster-url="/img/poster.png" duration-seconds="20" />
+
+TODO: more tags.
 
 ## Plugins used
 

@@ -1,10 +1,3 @@
-<txp:hide><!--
-Call this with the following rah_beacon code:
-<txp:media_video width="" height="" ratio="" mp4-url="" webm-url="" poster-url="" duration-seconds="" />
-For example:
-<txp:media_video width="640" height="480" ratio="0.5625" mp4-url="/video/video.mp4" webm-url="/video/video.webm" poster-url="/img/poster.png" duration-seconds="20" />
-`ratio`, `poster-url` and `duration-seconds` are optional, but should be provided if possible. If not used, remove those attributes from your tag.
---></txp:hide>
 <txp:if_variable name="amppage">
     <amp-video controls width="<txp:variable name="width" />" height="<txp:variable name="height" />" <txp:if_variable name="poster-url"> poster="<txp:variable name="poster-url" />"</txp:if_variable>>
         <source type="video/mp4" src="<txp:variable name="mp4-url" />">
