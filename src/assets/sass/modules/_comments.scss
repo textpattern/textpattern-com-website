@@ -10,8 +10,8 @@
  */
 
 .comments {
-    margin-bottom: 1em;
-    padding: 1em 1em 1px;
+    margin-bottom: 0.5em;
+    padding: 1px 1em;
     border-radius: $border-radius;
     background: $color-background-box;
     word-wrap: break-word;
@@ -46,6 +46,7 @@
  * Comment heading area.
  *
  * Example HTML:
+ *
  * <h4 class="comment-author">
  *     <span>Donald Swain</span>
  * </h4>
@@ -55,11 +56,13 @@
  */
 
 .comment-author {
-    margin: 0;
+    display: inline-block;
+    margin-bottom: 0;
 }
 
 .comment-date {
-    margin-top: 0;
+    display: inline-block;
+    margin: 0 0 0 0.34em;
 }
 
 /**
