@@ -1,0 +1,24 @@
+<section class="layout-4col sidebar">
+    <h3>Get Textpattern</h3>
+    <p class="cta-buttons">
+        <a class="button button-primary button-large" href="https://textpattern.io/get-started"><span class="ui-button-icon ui-icon ui-extra-icon-download"></span> Download <span class="txp-version"><txp:file_download_list category="current-release-zip" limit="1" sort="created desc"><txp:file_download_name title="1" /></txp:file_download_list> </span></a>
+        <a class="button" href="https://textpattern.io/demo">Try a demo</a>
+    </p>
+    <txp:if_variable name="bloglandingpage">
+    <txp:else />
+        <h3>Recent blog articles</h3>
+        <ul class="list--no-bullets">
+            <li><a href="#">Nav item 1</a></li>
+            <li><a href="#">Nav item 2 with longer name</a></li>
+            <li><a href="#">Nav item 3 with very much much longer text</a></li>
+            <li><a href="#">Nav item 4</a></li>
+            <li><a href="#">Nav item 5</a></li>
+        </ul>
+    </txp:if_variable>
+    <h3>Featured at:</h3>
+
+     ...informer ads list placeholder...
+
+    <h3>Sidebar placeholder</h3>
+
+</section>

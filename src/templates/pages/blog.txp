@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <txp:output_form form="head" />
     <txp:if_article_list>
-        <txp:article limit="5" pgonly="1" />
+        <txp:article limit="6" pgonly="1" />
         <title>Blog / Textpattern CMS</title>
         <meta name="description" content="Latest blogs from Team Textpattern and guests; Textpattern news and other tidbits of info that we find of interest.">
         <txp:variable name="page" value='<txp:page_url type="pg" />' />
@@ -34,12 +34,13 @@
             <meta name="robots" content="noindex, follow, noodp, noydir">
             <link rel="canonical" href="https://textpattern.io/blog/?pg=<txp:page_url type="pg" />">
         </txp:if_variable>
-        <txp:evaluate test="newer">
+        <txp:evaluate test>
             <link rel="prev" href="<txp:newer />">
         </txp:evaluate>
-        <txp:evaluate test="older">
+        <txp:evaluate test>
             <link rel="next" href="<txp:older />">
         </txp:evaluate>
+        <txp:variable name="bloglandingpage" value="1" />
     <txp:else />
         <title><txp:title /> / Textpattern CMS</title>
         <txp:meta_description />
@@ -83,32 +84,30 @@
     <main aria-label="Main content" itemscope itemtype="https://schema.org/Blog">
         <div class="container">
             <div class="layout-container">
-                <txp:output_form form="body_crumbs" />
+            <txp:output_form form="body_crumbs" />
                 <txp:if_article_list>
-                    <txp:article form="article_listing_blog" limit="5" />
-                    <txp:evaluate test>
-                        <nav class="paginator" aria-label="Blog navigation">
-                            Pages:
-                            <txp:evaluate test="newer">
-                                <a rel="prev" href="<txp:newer />" title="Go to previous page" aria-label="Go to previous page">Previous</a>
-                            </txp:evaluate>
-                            <txp:etc_pagination wraptag="ul" class="pagination" range="3"
-                                link='<li><a href="https://textpattern.io{href}" title="Go to page {*}" aria-label="Go to page {*}">{*}</a></li>,<li class="current"><b title="Current page" aria-label="Current page">{*}</b></li>'
-                                gap='<li>…</li>'
-                                mask="{first}{<+}{links}{+>}{last}"/>
-                            <txp:evaluate test="older">
-                                <a rel="next" href="<txp:older />" title="Go to next page" aria-label="Go to next page">Next</a>
-                            </txp:evaluate>
-                        </nav>
-                    </txp:evaluate>
+                    <div class="layout-4col-3span">
+                        <txp:article form="article_listing_blog" limit="6" />
+                        <txp:evaluate test>
+                            <nav class="paginator" aria-label="Blog navigatiZon">
+                                Pages:
+                                <txp:evaluate test>
+                                    <a rel="prev" href="<txp:newer />" title="Go to previous page" aria-label="Go to previous page">Previous</a>
+                                </txp:evaluate>
+                                <txp:etc_pagination wraptag="ul" class="pagination" range="3"
+                                    link='<li><a href="https://textpattern.io{href}" title="Go to page {*}" aria-label="Go to page {*}">{*}</a></li>,<li class="current"><b title="Current page" aria-label="Current page">{*}</b></li>'
+                                    gap='<li>…</li>'
+                                    mask="{first}{<+}{links}{+>}{last}"/>
+                                <txp:evaluate test>
+                                    <a rel="next" href="<txp:older />" title="Go to next page" aria-label="Go to next page">Next</a>
+                                </txp:evaluate>
+                            </nav>
+                        </txp:evaluate>
+                    </div>
                 <txp:else />
                     <txp:article form="blog" />
                 </txp:if_article_list>
-                <section class="layout-4col sidebar">
-
-                    ...blog sidebar content placeholder...
-
-                </section>
+                <txp:output_form form="sidebar" />
             </div>
         </div>
     </main>

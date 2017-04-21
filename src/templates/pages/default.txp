@@ -149,7 +149,7 @@
                         <ul class="list--no-bullets ellipsis">
                             <txp:php>
 $ch = curl_init();
-curl_setopt($ch, CURLOPT_URL, 'http://forum.textpattern.io/api/?limit=10&sort=posted');
+curl_setopt($ch, CURLOPT_URL, 'http://forum.textpattern.io/api/?limit=5&sort=posted');
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 $xml = curl_exec($ch);
 if(curl_error($ch)) {
@@ -173,7 +173,7 @@ EOHTML;
                             </txp:linklist>
                         </ul>
 
-                        <h3>Featured at…</h3>
+                        <h3>Featured at:</h3>
 
                         ...informer ads list placeholder...
 

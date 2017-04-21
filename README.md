@@ -56,3 +56,14 @@ Where the `@task@` is either `build` or `watch`.
 
 * The `build` task builds the project.
 * The `watch` task will launch a task that watches for file changes; the project is then automatically built if a source file is modified.
+
+## Plugins used
+
+TODO: use Composer to install plugins? If so need to create PRs on each of the listed plugins below where Composer support is not currently provided.
+
+Plugins required for this website to function:
+
+* `rah_flat` or `oui_flat` TBC
+* `etc_pagination` (v0.4.7b)
+* `zem_contact_reborn` (v4.5.0.0)
+* TODO

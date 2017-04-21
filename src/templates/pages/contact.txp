@@ -87,12 +87,7 @@
                         </txp:article>
                     </txp:if_article_list>
                 </article>
-
-                <section class="layout-4col sidebar">
-
-                    ...article sidebar content placeholder...
-
-                </section>
+                <txp:output_form form="sidebar" />
             </div>
         </div>
     </main>
