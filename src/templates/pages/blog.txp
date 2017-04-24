@@ -1,3 +1,6 @@
+<txp:mkp_if_amp>
+<txp:output_form form="amp" />
+<txp:else />
 <!DOCTYPE html>
 <html lang="en-GB-oxendict">
 <head>
@@ -114,3 +117,4 @@
     <txp:output_form form="body_footer" />
 </body>
 </html>
+<txp:mkp_if_amp>

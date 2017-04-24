@@ -3,7 +3,7 @@ Call this with the following code:
 <txp:images form="media_images" id="" />
 Where `id` is the ID (or comma separated IDs) of the image(s) you want to display.
 --></txp:hide>
-<txp:if_variable name="amppage">
+<txp:if_variable name="mkp_amp" value="1">
     <txp:evaluate test="image_info">
         <figure>
             <amp-img layout="responsive" alt="<txp:image_info type='alt' />" src="<txp:image_url link='0' />" width="<txp:image_info type="w" />" height="<txp:image_info type="h" />"></amp-img>
