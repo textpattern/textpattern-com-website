@@ -92,7 +92,7 @@
                     <div class="layout-4col-3span">
                         <txp:article form="article_listing_blog" limit="6" />
                         <txp:evaluate test>
-                            <nav class="paginator" aria-label="Blog navigatiZon">
+                            <nav class="paginator" aria-label="Blog navigation">
                                 Pages:
                                 <txp:evaluate test>
                                     <a rel="prev" href="<txp:newer />" title="Go to previous page" aria-label="Go to previous page">Previous</a>
