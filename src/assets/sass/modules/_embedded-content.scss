@@ -92,20 +92,3 @@ figure {
 svg:not(:root) {
     overflow: hidden;
 }
-
-/**
- * Reset fonts and sets background colour for Flowplayer video player.
- *
- * Example HTML:
- *
- * <div class="videoplayer">
- *     <video>
- *         <source>
- *     </video>
- * </div>
- */
-
-.videoplayer {
-    background-color: $color-text;
-    font-family: sans-serif;
-}

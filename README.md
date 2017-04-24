@@ -65,9 +65,9 @@ Textpattern 4.7 introduced support for user-definable `<txp:output_form />` attr
 
 To create a HTML5 video snippet:
 
-    <txp::media_video width="" height="" ratio="" mp4-url="" webm-url="" poster-url="" duration-seconds="" />
+    <txp::media_video width="" height="" mp4-url="" webm-url="" poster-url="" duration-seconds="" />
 
-`ratio`, `poster-url` and `duration-seconds` are optional, but should be provided if possible. If not used, remove those attributes from your tag.
+`poster-url` and `duration-seconds` are optional, but should be provided if possible. If not used, remove those attributes from your tag.
 
 For example:
 
@@ -82,6 +82,7 @@ TODO: use Composer to install plugins? If so need to create PRs on each of the l
 Plugins required for this website to function:
 
 * `rah_flat` or `oui_flat` TBC
-* `etc_pagination` (v0.4.7b)
-* `zem_contact_reborn` (v4.5.0.0)
+* [`etc_pagination`](https://github.com/bloatware/etc-pagination) (v0.4.7b)
+* [`zem_contact_reborn`](https://github.com/Bloke/zem_contact_reborn) (v4.5.0.0)
+* [`mkp_if_amp`](https://github.com/cara-tm/mkp_if_amp) (v3.5)
 * TODO

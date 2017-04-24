@@ -12,7 +12,6 @@
         paths:
         {
             'jquery': 'https://code.jquery.com/jquery-3.2.1.min',
-            'flowplayer': 'https://releases.flowplayer.org/7.0.2/flowplayer.min',
             'ghbuttons': 'https://buttons.github.io/buttons'
         }
     });
@@ -32,8 +31,7 @@
 
         var code = $('pre code'),
             ghbutton = $('.github-button'),
-            smoothscroll = $('a[href*="#"]:not([href="#"])'),
-            vidplayer = $('.videoplayer');
+            smoothscroll = $('a[href*="#"]:not([href="#"])');
 
         // Syntax highlighting, via 'Prism'.
         // Applies syntax highlighting to `code` HTML elements.
@@ -73,19 +71,6 @@
                 }
             }
         });
-
-        // HTML5 videos (with Flash fallback), via 'Flowplayer'.
-        // More info - https://github.com/flowplayer/flowplayer.
-
-        if (vidplayer.length) {
-            require(['flowplayer'], function ()
-            {
-                vidplayer.flowplayer({
-                    splash: true,
-                    ratio: 0.417
-                });
-            });
-        }
     });
 
     // Responsive navigation menu, via 'Responsive Nav'.
