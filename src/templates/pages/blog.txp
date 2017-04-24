@@ -106,6 +106,7 @@
                                 </txp:evaluate>
                             </nav>
                         </txp:evaluate>
+                        <txp:output_form form="ads_adsense_article" />
                     </div>
                 <txp:else />
                     <txp:article form="blog" />
