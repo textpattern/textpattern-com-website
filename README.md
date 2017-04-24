@@ -67,11 +67,11 @@ To create a HTML5 image snippet:
 
     <txp::media_image id="" id2x="" />
 
+For blog/articles, the ideal image width is `832` pixels for the standard resolution version and `1664` pixels for the double resolution version (`id2x`). `id2x` is optional, but should be provided if possible. If not used, remove that attribute from your tag.
+
 For example:
 
     <txp::media_image id="41" id2x="42" />
-
-For blog/articles, the ideal image width is `832` pixels for the standard resolution version and `1664` pixels for the double resolution version (`id2x`). `id2x` is optional, but should be provided if possible. If not used, remove that attribute from your tag.
 
 ### Video
 
