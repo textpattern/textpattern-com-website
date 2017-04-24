@@ -61,6 +61,18 @@ Where the `@task@` is either `build` or `watch`.
 
 Textpattern 4.7 introduced support for user-definable `<txp:output_form />` attributes, allowing for our own version of 'shortcodes' within articles. This site uses the following tags:
 
+### Image
+
+To create a HTML5 image snippet:
+
+    <txp::media_image id="" id2x="" />
+
+For example:
+
+    <txp::media_image id="41" id2x="42" />
+
+For blog/articles, the ideal image width is `832` pixels for the standard resolution version and `1664` pixels for the double resolution version (`id2x`). `id2x` is optional, but should be provided if possible. If not used, remove that attribute from your tag.
+
 ### Video
 
 To create a HTML5 video snippet:
@@ -71,7 +83,7 @@ To create a HTML5 video snippet:
 
 For example:
 
-    <txp:media_video width="640" height="480" ratio="0.5625" mp4-url="/video/video1.mp4" webm-url="/video/video1.webm" poster-url="/video/video1-poster.png" duration-seconds="20" />
+    <txp:media_video width="640" height="480" mp4-url="/video/video1.mp4" webm-url="/video/video1.webm" poster-url="/video/video1-poster.png" duration-seconds="20" />
 
 TODO: more tags.
 

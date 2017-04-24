@@ -1,32 +1,27 @@
-<txp:hide><!--
-Call this with the following code:
-<txp:images form="media_images" id="" />
-Where `id` is the ID (or comma separated IDs) of the image(s) you want to display.
---></txp:hide>
 <txp:if_variable name="mkp_amp" value="1">
     <txp:evaluate test="image_info">
         <figure>
-            <amp-img layout="responsive" alt="<txp:image_info type='alt' />" src="<txp:image_url link='0' />" width="<txp:image_info type="w" />" height="<txp:image_info type="h" />"></amp-img>
+            <amp-img layout="responsive" alt="<txp:image_info id="<txp:yield name="id" />" type="alt" />" src="<txp:image_url id="<txp:yield name="id" />" link="0" />" width="<txp:image_info id="<txp:yield name="id" />" type="w" />" height="<txp:image_info id="<txp:yield name="id" />" type="h" />"></amp-img>
             <figcaption><txp:image_info /></figcaption>
         </figure>
     <txp:else />
-        <p><amp-img layout="responsive" alt="<txp:image_info type='alt' />" src="<txp:image_url link='0' />" width="<txp:image_info type="w" />" height="<txp:image_info type="h" />"></amp-img></p>
+        <p><amp-img layout="responsive" alt="<txp:image_info id="<txp:yield name="id" />" type="alt" />" src="<txp:image_url id="<txp:yield name="id" />" link="0" />" width="<txp:image_info id="<txp:yield name="id" />" type="w" />" height="<txp:image_info id="<txp:yield name="id" />" type="h" />"></amp-img></p>
     </txp:evaluate>
 <txp:else />
     <txp:evaluate test="image_info">
         <figure itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
-            <img itemprop="url" alt="<txp:image_info type='alt' />" src="<txp:image_url link='0' />" srcset="<txp:smd_thumbnail id='<txp:image_info type="id" />' type='2x' display='url' /> 2x, <txp:image_url link='0' /> 1x">
-            <meta itemprop="width" content="<txp:image_info type="w" />">
-            <meta itemprop="height" content="<txp:image_info type="h" />">
+            <img itemprop="url" alt="<txp:image_info id="<txp:yield name="id" />" type="alt" />" src="<txp:image_url id="<txp:yield name="id" />" link="0" />"<txp:if_yield name="id2x"> srcset="<txp:image id="<txp:yield name="id2x" />" format="url" /> 2x, <txp:image_url id="<txp:yield name="id" />" link="0" /> 1x"</txp:if_yield>>
+            <meta itemprop="width" content="<txp:image_info id="<txp:yield name="id" />" type="w" />">
+            <meta itemprop="height" content="<txp:image_info id="<txp:yield name="id" />" type="h" />">
             <figcaption itemprop="caption">
                 <txp:image_info />
             </figcaption>
         </figure>
     <txp:else />
         <p itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
-            <img itemprop="url" alt="<txp:image_info type='alt' />" src="<txp:image_url link='0' />" srcset="<txp:smd_thumbnail id='<txp:image_info type="id" />' type='2x' display='url' /> 2x, <txp:image_url link='0' /> 1x">
-            <meta itemprop="width" content="<txp:image_info type="w" />">
-            <meta itemprop="height" content="<txp:image_info type="h" />">
+            <img itemprop="url" alt="<txp:image_info id="<txp:yield name="id" />" type="alt" />" src="<txp:image_url id="<txp:yield name="id" />" link="0" />"<txp:if_yield name="id2x"> srcset="<txp:image id="<txp:yield name="id2x" />" format="url" /> 2x, <txp:image_url id="<txp:yield name="id" />" link="0" /> 1x"</txp:if_yield>>
+            <meta itemprop="width" content="<txp:image_info id="<txp:yield name="id" />" type="w" />">
+            <meta itemprop="height" content="<txp:image_info id="<txp:yield name="id" />" type="h" />">
         </p>
     </txp:evaluate>
 </txp:if_variable>

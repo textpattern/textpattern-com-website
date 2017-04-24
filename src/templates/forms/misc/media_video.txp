@@ -1,14 +1,14 @@
 <txp:if_variable name="mkp_amp" value="1">
-    <amp-video controls width="<txp:variable name="width" />" height="<txp:variable name="height" />"<txp:if_variable name="poster-url"> poster="<txp:variable name="poster-url" />"</txp:if_variable>>
-        <source type="video/mp4" src="<txp:variable name="mp4-url" />">
-        <source type="video/webm" src="<txp:variable name="webm-url" />">
+    <amp-video controls width="<txp:yield name="width" />" height="<txp:yield name="height" />"<txp:if_yield name="poster-url"> poster="<txp:yield name="poster-url" />"</txp:if_yield>>
+        <source type="video/mp4" src="<txp:yield name="mp4-url" />">
+        <source type="video/webm" src="<txp:yield name="webm-url" />">
     </amp-video>
 <txp:else />
     <div itemprop="video" itemscope itemtype="https://schema.org/VideoObject">
-        <video width="<txp:variable name="width" />" height="<txp:variable name="height" />"<txp:if_variable name="poster-url"> poster="<txp:variable name="poster-url" />"</txp:if_variable>>
-            <source itemprop="contentUrl" type="video/mp4" src="<txp:variable name="mp4-url" />">
-            <source itemprop="contentUrl" type="video/webm" src="<txp:variable name="webm-url" />">
+        <video width="<txp:yield name="width" />" height="<txp:yield name="height" />"<txp:if_yield name="poster-url"> poster="<txp:yield name="poster-url" />"</txp:if_yield>>
+            <source itemprop="contentUrl" type="video/mp4" src="<txp:yield name="mp4-url" />">
+            <source itemprop="contentUrl" type="video/webm" src="<txp:yield name="webm-url" />">
         </video>
-        <txp:if_variable name="duration-seconds"><meta itemprop="duration" content="T<txp:variable name="duration-seconds" />S">
+        <txp:if_yield name="duration-seconds"><meta itemprop="duration" content="T<txp:yield name="duration-seconds" />S"></txp:if_yield>
     </div>
 </txp:if_variable>
