@@ -104,7 +104,7 @@
     </div>
     <amp-sidebar id="sidebar" layout="nodisplay" side="right">
         <amp-img class="close-sidebar" alt="Close sidebar" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cg fill='%23333'%3E%3Cpath d='M6.1 23.07L23.07 6.1l2.83 2.83L8.93 25.9z'/%3E%3Cpath d='M6.1 8.93L8.93 6.1 25.9 23.07l-2.83 2.83z'/%3E%3C/g%3E%3C/svg%3E" width="32" height="32" on="tap:sidebar.close" role="button" tabindex="0"></amp-img>
-        <txp:article_custom class="list--no-bullets" labeltag="h3" label="Recent blog articles" wraptag="ul" break="li" section="weblog" limit="6">
+        <txp:article_custom class="list--no-bullets" labeltag="h3" label="Latest blog articles" wraptag="ol" break="li" section="weblog" limit="6">
             <a href="<txp:permlink />"><txp:title /></a>
         </txp:article_custom>
         <a class="button" href="https://textpattern.io/">Get Textpattern</a>

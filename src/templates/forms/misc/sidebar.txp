@@ -6,14 +6,9 @@
     </p>
     <txp:if_variable name="bloglandingpage">
     <txp:else />
-        <h3>Recent blog articles</h3>
-        <ul class="list--no-bullets">
-            <li><a href="#">Nav item 1</a></li>
-            <li><a href="#">Nav item 2 with longer name</a></li>
-            <li><a href="#">Nav item 3 with very much much longer text</a></li>
-            <li><a href="#">Nav item 4</a></li>
-            <li><a href="#">Nav item 5</a></li>
-        </ul>
+        <txp:article_custom labeltag="h3" label="Latest blog articles" wraptag="ol" break="li" section="weblog" limit="6">
+            <a href="<txp:permlink />"><txp:title /></a>
+        </txp:article_custom>
     </txp:if_variable>
     <h3>Featured at:</h3>
 
