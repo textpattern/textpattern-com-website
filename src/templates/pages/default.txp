@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <txp:output_form form="head" />
     <txp:if_search>
-        <title>Search results: <txp:search_term /> / Textpattern CMS</title>
+        <title>Search results / Textpattern CMS</title>
         <meta name="description" content="Search results.">
         <meta name="robots" content="none">
     <txp:else />
@@ -194,27 +194,26 @@ EOHTML;
             <div class="layout-container">
             <txp:output_form form="body_crumbs" />
                 <div class="layout-4col-3span">
-
-
-
                     <txp:if_search>
                         <h1 itemprop="name">Search results</h1>
-                        <txp:if_search_results>
-                            <txp:if_search_results max="100">
-                                <h6 itemprop="description"><txp:search_result_count text="blog articles found" /> matching your search request <q><txp:search_term /></q>…</h6>
+                        <div class="article-description" itemprop="description">
+                            <txp:if_search_results>
+                                <txp:if_search_results max="100">
+                                    <p><txp:search_result_count text="blog articles found" /> matching your search request <q><txp:search_term /></q>.</p>
+                                <txp:else />
+                                    <p>It seems like you are looking for a very common search term, maybe try a more specific phrase than <q><txp:search_term /></q>.</p>
+                                </txp:if_search_results>
                             <txp:else />
-                                <h6 itemprop="description">It seems like you are looking for a very common search term, maybe try a more specific phrase than <q><txp:search_term /></q></h6>
+                                <p>Sorry, no results were found matching your search request <q><txp:search_term /></q>.</p>
                             </txp:if_search_results>
-                        <txp:else />
-                            <h6 itemprop="description">Sorry, no results were found matching your search request <q><txp:search_term /></q></h6>
-                        </txp:if_search_results>
+                        </div>
                     <txp:else />
                         <h1 itemprop="name">Category results</h1>
-                        <h6 itemprop="description">Blog articles in the <q><txp:category title="1" /></q> category…</h6>
+                        <div class="article-description" itemprop="description">
+                            <p>Blog articles in the <q><txp:category title="1" /></q> category.</p>
+                        </div>
                     </txp:if_search>
-
                     <txp:article form="article_listing_blog" limit="6" />
-
                     <txp:evaluate test>
                         <nav class="paginator" aria-label="Page navigation">
                             Pages:
@@ -230,7 +229,6 @@ EOHTML;
                             </txp:evaluate>
                         </nav>
                     </txp:evaluate>
-
                 </div>
                 <txp:output_form form="sidebar" />
             </div>

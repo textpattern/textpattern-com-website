@@ -4,20 +4,38 @@
             <a itemprop="item" href="https://textpattern.io/"><span itemprop="name">Home</span></a>
             <meta itemprop="position" content="1">
         </li>
-        <txp:if_article_list>
+        <txp:if_search>
             <li class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                <b itemprop="item"><span itemprop="name"><txp:section title="1" /></span></b>
+                <b itemprop="item"><span itemprop="name">Search results</span></b>
                 <meta itemprop="position" content="2">
             </li>
         <txp:else />
-            <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                <a itemprop="item" href="<txp:section url='1' />"><span itemprop="name"><txp:section title="1" /></span></a>
-                <meta itemprop="position" content="2">
-            </li>
-            <li class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                <b itemprop="item"><span itemprop="name"><txp:title /></span></b>
-                <meta itemprop="position" content="3">
-            </li>
-        </txp:if_article_list>
+            <txp:if_category>
+                <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <a itemprop="item" href="https://textpattern.io/weblog"><span itemprop="name">Blog</span></a>
+                    <meta itemprop="position" content="2">
+                </li>
+                <li class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <b itemprop="item"><span itemprop="name">Category: <txp:category title="1" /></span></b>
+                    <meta itemprop="position" content="3">
+                </li>
+            <txp:else />
+                <txp:if_article_list>
+                    <li class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                        <b itemprop="item"><span itemprop="name"><txp:section title="1" /></span></b>
+                        <meta itemprop="position" content="2">
+                    </li>
+                <txp:else />
+                    <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                        <a itemprop="item" href="<txp:section url='1' />"><span itemprop="name"><txp:section title="1" /></span></a>
+                        <meta itemprop="position" content="2">
+                    </li>
+                    <li class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                        <b itemprop="item"><span itemprop="name"><txp:title /></span></b>
+                        <meta itemprop="position" content="3">
+                    </li>
+                </txp:if_article_list>
+            </txp:if_category>
+        </txp:if_search>
     </ol>
 </nav>
