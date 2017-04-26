@@ -260,12 +260,11 @@ section {
 }
 
 /**
- * Sidebar layout.
+ * Sidebar layout. Overrode in third breakpoint.
  */
 
 .sidebar {
-    padding-top: 1em;
-    background-color: $color-background-box;
+    border-top: 2px dashed $color-text;
 }
 
 /**

@@ -16,7 +16,7 @@
      * Cells for 4 column layouts are generated, but as 2 columns at this width.
      */
 
-    .layout-4col {
+    .layout-4col:not(.sidebar) {
         width: 50%;
     }
 
@@ -361,6 +361,16 @@
     .cta {
         width: 60%;
         font-size: 2.375em; // 38px / 16px
+    }
+
+    /**
+     * Sidebar layout.
+     */
+
+    .sidebar {
+        padding-top: 1em;
+        border-top: 0;
+        background-color: $color-background-box;
     }
 
 }
