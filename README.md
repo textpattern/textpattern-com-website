@@ -59,7 +59,7 @@ Where the `@task@` is either `build` or `watch`.
 
 ## Shortcodes
 
-Textpattern 4.7 introduced support for user-definable `<txp:output_form />` attributes, allowing for our own version of 'shortcodes' within articles. This site uses the following tags:
+Textpattern 4.7 introduced support for user-definable `<txp:output_form />` attributes, allowing for our own version of 'shortcodes' within articles (*note:* remember to also use `notextile.` when within Textile content). This site uses the following tags:
 
 ### Image
 
