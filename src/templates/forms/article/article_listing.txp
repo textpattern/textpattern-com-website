@@ -1,5 +1,5 @@
 <article class="teaser" itemscope itemtype="https://schema.org/Article">
-    <h1 itemprop="headline"><a itemprop="url mainEntityOfPage" href="<txp:permlink />" title="Full article"><txp:title /></a></h1>
+    <h2 itemprop="headline"><a itemprop="url mainEntityOfPage" href="<txp:permlink />" title="Full article"><txp:title /></a></h2>
     <meta itemprop="datePublished" content="<txp:posted format="iso8601" />">
     <meta itemprop="dateModified" content="<txp:modified format="iso8601" />">
     <txp:if_excerpt>
