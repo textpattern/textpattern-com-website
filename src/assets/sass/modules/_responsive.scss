@@ -334,7 +334,8 @@
      * <div class="layout-4col"></div>
      */
 
-    .layout-4col {
+    .layout-4col,
+    .layout-4col:not(.sidebar) {
         width: 25%;
     }
 
