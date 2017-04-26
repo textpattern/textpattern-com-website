@@ -10,7 +10,7 @@
     <title><txp:title /></title>
     <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,700,400italic,700italic">
-    <link rel="canonical" href="https://textpattern.io/mockups/blog-article.html">
+    <link rel="canonical" href="<txp:permlink />">
     <link rel="manifest" href="/manifest.json">
     <script type="application/ld+json">
         {
@@ -51,7 +51,7 @@
 <body>
     <div class="site-header">
         <div class="container">
-            <a href="https://textpattern.io/"><amp-img class="masthead" alt="Textpattern CMS" src="https://textpattern.io/assets/img/branding/textpattern/textpattern-mobile.svg" width="208" height="34"></amp-img></a>
+            <a href="<txp:site_url />"><amp-img class="masthead" alt="Textpattern CMS" src="<txp:site_url />assets/img/branding/textpattern/textpattern-mobile.svg" width="208" height="34"></amp-img></a>
             <amp-img class="open-sidebar" alt="Open sidebar" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cg fill='%23333'%3E%3Crect x='4' y='6' width='24' height='4'/%3E%3Crect x='4' y='14' width='24' height='4'/%3E%3Crect x='4' y='22' width='24' height='4'/%3E%3C/g%3E%3C/svg%3E" width="32" height="32" on="tap:sidebar.open" role="button" tabindex="0"></amp-img>
         </div>
     </div>
@@ -107,7 +107,7 @@
         <txp:article_custom class="list--no-bullets" labeltag="h3" label="Latest blog articles" wraptag="ol" break="li" section="weblog" limit="6">
             <a href="<txp:permlink />"><txp:title /></a>
         </txp:article_custom>
-        <a class="button" href="https://textpattern.io/">Get Textpattern</a>
+        <a class="button" href="<txp:site_url />start">Get Textpattern</a>
     </amp-sidebar>
 </body>
 </html>

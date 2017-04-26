@@ -7,24 +7,24 @@
         <title>Contact us / Textpattern CMS</title>
         <meta name="description" content="Use this online enquiry form to contact the Textpattern Development Team.">
         <meta name="robots" content="index, follow, noodp, noydir">
-        <link rel="canonical" href="https://textpattern.io/contact">
+        <link rel="canonical" href="<txp:site_url />contact">
         <meta name="twitter:card" content="summary">
         <meta name="twitter:site" content="@textpattern">
         <meta name="twitter:title" content="Contact us">
         <meta name="twitter:description" content="Use this online enquiry form to contact the Textpattern Development Team.">
         <meta name="twitter:image:src" content="https://textpattern.io/apple-touch-icon-180x180.png">
-        <meta name="twitter:url" content="https://textpattern.io/contact">
+        <meta name="twitter:url" content="<txp:site_url />contact">
         <meta property="og:title" content="Contact us">
         <meta property="og:description" content="Use this online enquiry form to contact the Textpattern Development Team.">
         <meta property="og:image" content="https://textpattern.io/assets/img/branding/textpattern/textpattern-og.png">
-        <meta property="og:url" content="https://textpattern.io/contact">
+        <meta property="og:url" content="<txp:site_url />contact">
         <script type="application/ld+json">
             {
                 "@context": "https://schema.org",
                 "@type": "WebPage",
                 "headline": "Contact us",
                 "description": "Use this online enquiry form to contact the Textpattern Development Team.",
-                "url": "https://textpattern.io/contact"
+                "url": "<txp:site_url />contact"
             }
         </script>
     <txp:else />

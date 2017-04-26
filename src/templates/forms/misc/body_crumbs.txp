@@ -1,7 +1,7 @@
 <nav class="layout-1col" aria-label="Breadcrumb navigation">
     <ol class="breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList">
         <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-            <a itemprop="item" href="https://textpattern.io/"><span itemprop="name">Home</span></a>
+            <a itemprop="item" href="<txp:site_url />"><span itemprop="name">Home</span></a>
             <meta itemprop="position" content="1">
         </li>
         <txp:if_search>
@@ -12,7 +12,7 @@
         <txp:else />
             <txp:if_category>
                 <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                    <a itemprop="item" href="https://textpattern.io/weblog"><span itemprop="name">Blog</span></a>
+                    <a itemprop="item" href="<txp:site_url />weblog"><span itemprop="name">Blog</span></a>
                     <meta itemprop="position" content="2">
                 </li>
                 <li class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">

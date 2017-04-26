@@ -14,7 +14,7 @@
                         </ul>
                         <h4>Donate</h4>
                         <p>Your kind donations help us keep Textpattern CMS development alive!</p>
-                        <p><a class="button button-primary" href="https://textpattern.io/patrons">Donate…</a></p>
+                        <p><a class="button button-primary" href="<txp:site_url />patrons">Donate…</a></p>
                     </section>
                     <section class="layout-2col community-details">
                         <h4>External links</h4>
@@ -45,16 +45,16 @@
     <footer class="site-footer" role="contentinfo">
         <p class="legal">
             Copyright 2004–<txp:php>echo date('Y');</txp:php> The Textpattern Development Team.
-            <a href="https://textpattern.io/contact">Contact us</a>.
-            <a href="https://textpattern.io/privacy">Privacy</a>.
-            <a href="https://textpattern.io/humans.txt">Colophon</a>.
-            Textpattern is both free and open source. <a href="https://textpattern.io/license">GPLv2 license</a>.
+            <a href="<txp:site_url />contact">Contact us</a>.
+            <a href="<txp:site_url />privacy">Privacy</a>.
+            <a href="<txp:site_url />humans.txt">Colophon</a>.
+            Textpattern is both free and open source. <a href="<txp:site_url />license">GPLv2 license</a>.
         </p>
     </footer>
 </div>
     <script data-main="https://textpattern.io/assets/js/main.@@timestamp.js" src="https://textpattern.io/assets/js/require.@@timestamp.js"></script>
 <txp:if_variable name="homepage">
-    <script src="../assets/js/indexcanvas.@@timestamp.js"></script>
+    <script src="https://textpattern.io/assets/js/indexcanvas.@@timestamp.js"></script>
     <script>document.addEventListener("DOMContentLoaded",function(){init();},false);</script>
 </txp:if_variable>
 <noscript>JavaScript is currently disabled in your browser - activate it for the best experience.</noscript>

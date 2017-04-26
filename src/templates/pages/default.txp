@@ -17,24 +17,24 @@
             <meta name="description" content="Textpattern CMS is a free, open source content management system with a browser-based interface in over 40 languages.">
             <meta name="keywords" content="cms, content management systems, open source, blogs, blogging, free, wordpress alternatives, fast, lightweight, web design, web site design, web development, web site development, php">
             <meta name="robots" content="index, follow, noodp, noydir">
-            <link rel="canonical" href="https://textpattern.io/">
+            <link rel="canonical" href="<txp:site_url />">
             <meta name="twitter:card" content="summary">
             <meta name="twitter:site" content="@textpattern">
             <meta name="twitter:title" content="Textpattern CMS | Open source content management system">
             <meta name="twitter:description" content="Textpattern CMS is a free, open source content management system with a browser-based interface in over 40 languages.">
             <meta name="twitter:image:src" content="https://textpattern.io/apple-touch-icon-180x180.png">
-            <meta name="twitter:url" content="https://textpattern.io/">
+            <meta name="twitter:url" content="<txp:site_url />">
             <meta property="og:title" content="Textpattern CMS | Open source content management system">
             <meta property="og:description" content="Textpattern CMS is a free, open source content management system with a browser-based interface in over 40 languages.">
             <meta property="og:image" content="https://textpattern.io/assets/img/branding/textpattern/textpattern-og.png">
-            <meta property="og:url" content="https://textpattern.io/">
+            <meta property="og:url" content="<txp:site_url />">
             <script type="application/ld+json">
                 {
                     "@context": "https://schema.org",
                     "@type": "WebSite",
                     "headline": "Textpattern CMS | Open source content management system",
                     "description": "Textpattern CMS is a free, open source content management system with a browser-based interface in over 40 languages.",
-                    "url": "https://textpattern.io/"
+                    "url": "<txp:site_url />"
                 }
             </script>
             <script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
@@ -64,7 +64,7 @@
                                 <meta itemprop="dateModified" content="<txp:file_download_modified format="iso8601" />">
                             </span>
                         </txp:file_download_list>
-                        <a class="button" href="https://textpattern.io/demo">Try a demo</a>
+                        <a class="button" href="<txp:site_url />demo">Try a demo</a>
                     </p>
                     <a class="github-button" rel="external" href="https://github.com/textpattern/textpattern" data-style="mega" data-count-href="/textpattern/textpattern/stargazers" data-count-api="/repos/textpattern/textpattern#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star Textpattern CMS on GitHub">Star on GitHub</a>
                 </div>
@@ -111,7 +111,7 @@
                     <div class="layout-4col">
                         <p><img alt="Everyone can contribute to Textpattern" src="/assets/img/com/index-feature-contribute.jpg" srcset="/assets/img/com/index-feature-contribute@2x.jpg 2x, /assets/img/com/index-feature-contribute.jpg 1x"></p>
                         <h3>Contributors are welcomed</h3>
-                        <p>Textpattern is open source under the <a href="https://textpattern.io/license">GNU General Public License v2.0</a>, and all development takes place on <a rel="external" href="https://github.com/textpattern/textpattern">GitHub</a>. User contributions are welcome (and indeed, are enthusiastically encouraged).</p>
+                        <p>Textpattern is open source under the <a href="<txp:site_url />license">GNU General Public License v2.0</a>, and all development takes place on <a rel="external" href="https://github.com/textpattern/textpattern">GitHub</a>. User contributions are welcome (and indeed, are enthusiastically encouraged).</p>
                     </div>
                 </div>
             </div>
@@ -138,7 +138,7 @@
             <div class="container">
                 <div class="layout-container">
                     <section class="layout-3col-2span" itemscope itemtype="https://schema.org/Blog">
-                        <h3>Latest from <a href="https://textpattern.io/weblog">the blog</a>…</h3>
+                        <h3>Latest from <a href="<txp:site_url />weblog">the blog</a>…</h3>
 
                         ...blog image placeholder...
 
