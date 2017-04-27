@@ -1,0 +1,10 @@
+{
+  "name": "start",
+  "title": "Get started with Textpattern",
+  "page": "sticky_only",
+  "css": "default",
+  "is_default": false,
+  "in_rss": false,
+  "on_frontpage": false,
+  "searchable": false
+}
