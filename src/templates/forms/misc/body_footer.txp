@@ -46,9 +46,9 @@
         <p class="legal">
             Copyright 2004–<txp:php>echo date('Y');</txp:php> The Textpattern Development Team.
             <a href="<txp:site_url />contact">Contact us</a>.
-            <a href="<txp:permlink id="378" />">Privacy</a>.
+            <a href="<txp:site_url />privacy">Privacy</a>.
             <a href="<txp:site_url />humans.txt">Colophon</a>.
-            Textpattern is both free and open source. <a href="<txp:permlink id="51" />">GPLv2 license</a>.
+            Textpattern is both free and open source. <a href="<txp:site_url />license">GPLv2 license</a>.
         </p>
     </footer>
 </div>
