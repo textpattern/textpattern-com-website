@@ -1,0 +1,52 @@
+<txp:article status="sticky">
+<!DOCTYPE html>
+<html lang="en-GB-oxendict">
+<head>
+    <meta charset="utf-8">
+    <txp:output_form form="head" />
+    <title><txp:section title="1" /> / Textpattern CMS</title>
+    <txp:meta_description />
+    <meta name="robots" content="index, follow, noodp, noydir">
+    <link rel="canonical" href="<txp:section url='1' />">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@textpattern">
+    <meta name="twitter:title" content="<txp:section title="1" />">
+    <meta name="twitter:description" content="<txp:meta_description format="" />">
+    <meta name="twitter:url" content="<txp:section url='1' />">
+    <meta property="og:title" content="<txp:section title="1" />">
+    <meta property="og:description" content="<txp:meta_description format="" />">
+    <meta property="og:url" content="<txp:section url='1' />">
+    <txp:if_article_image>
+        <txp:images limit="1">
+            <meta name="twitter:image:src" content="<txp:image_url link="0" />">
+            <meta property="og:image" content="<txp:image_url link="0" />">
+        </txp:images>
+    <txp:else />
+        <meta name="twitter:image:src" content="https://textpattern.io/apple-touch-icon-180x180.png">
+        <meta property="og:image" content="https://textpattern.io/assets/img/branding/textpattern/textpattern-og.png">
+    </txp:if_article_image>
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "headline": "<txp:section title="1" escape="json" />",
+            "description": "<txp:meta_description format="" escape="json" />",
+            "url": "<txp:section url='1' />"
+        }
+    </script>
+</head>
+<body itemscope itemtype="https://schema.org/WebPage">
+    <txp:output_form form="body_header" />
+    <main aria-label="Main content">
+        <div class="container">
+            <div class="layout-container">
+                <txp:output_form form="body_crumbs" />
+                <txp:output_form form="default" />
+                <txp:output_form form="sidebar" />
+            </div>
+        </div>
+    </main>
+    <txp:output_form form="body_footer" />
+</body>
+</html>
+</txp:article>
