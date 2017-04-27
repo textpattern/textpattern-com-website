@@ -193,7 +193,7 @@ EOHTML;
             <txp:output_form form="body_crumbs" />
                 <div class="layout-4col-3span">
                     <h1 itemprop="name">Search results</h1>
-                    <txp:if_search_results max="100">
+                    <txp:if_search_results max="96">
                         <div class="article-description" itemprop="description">
                             <p><txp:search_result_count /> matching your search request <q><txp:search_term /></q>.</p>
                         </div>
@@ -237,7 +237,7 @@ EOHTML;
                     <div class="article-description" itemprop="description">
                         <p>Blog articles in the <q><txp:category title="1" /></q> category.</p>
                     </div>
-                    <txp:article form="article_listing_blog" limit="6" />
+                    <txp:article form="article_listing_blog" limit="12" />
                     <txp:evaluate test>
                         <nav class="paginator" aria-label="Blog navigation">
                             Pages:
