@@ -41,7 +41,9 @@
         <div class="container">
             <div class="layout-container">
                 <txp:output_form form="body_crumbs" />
-                <txp:output_form form="default" />
+                <article class="layout-4col-3span" itemscope itemtype="https://schema.org/Article">
+                    <txp:output_form form="default" />
+                </article>
                 <txp:output_form form="sidebar" />
             </div>
         </div>

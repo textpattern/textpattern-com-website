@@ -68,17 +68,14 @@
         <div class="container">
             <div class="layout-container">
                 <txp:output_form form="body_crumbs" />
-                <txp:if_article_list>
-                    <div class="layout-4col-3span">
-                        <h1 itemprop="name"><txp:section title="1" /></h1>
-                        <div class="article-description" itemprop="description">
-                            <txp:meta_description format="" />
-                        </div>
+                <article class="layout-4col-3span" itemscope itemtype="https://schema.org/Article">
+                    <txp:if_article_list>
+                        <txp:article status="sticky" />
                         <txp:article form="article_listing" limit="999" sort="custom_1 asc" />
-                    </div>
-                <txp:else />
-                    <txp:article />
-                </txp:if_article_list>
+                    <txp:else />
+                        <txp:article />
+                    </txp:if_article_list>
+                </article>
                 <txp:output_form form="sidebar" />
             </div>
         </div>
