@@ -46,7 +46,7 @@
                         </div>
                         <p>Refrain from using this form to ask general questions about Textpattern or to ask for support – rather, please make use of the extensive <a href="https://docs.textpattern.io/">documentation</a> and the <a href="https://forum.textpattern.io/">support forum</a>. General “How do I…?” questions and support enquiries will be politely ignored. Thank you for your co-operation and interest in Textpattern!</p>
                         <hr>
-                        <txp:zem_contact class="" to="contact@textpattern.com" subject="Textpattern website enquiry" label="" body_form="email_body" redirect="contact/thanks">
+                        <txp:zem_contact class="" to="contact@textpattern.com" subject="Textpattern website enquiry" label="" body_form="email_body" redirect="contact/264/thanks">
                             <p>Fields marked <span class="required" title="Required" aria-label="Required">●</span> are required.</p>
                             <div class="layout-container">
                                 <div class="field layout-2col">
