@@ -273,14 +273,15 @@ Redirect temp /github https://github.com/textpattern
 Redirect temp /demo https://textpattern.co/demo
 Redirect temp /textpattern-first-steps https://docs.textpattern.io/administration/hello-world
 Redirect temp /textpattern-semantic-model https://docs.textpattern.io/administration/textoattern-semantic-model
-Redirect temp /textpattern-tag-reference https://docs.textpattern.io/tags/
+Redirect temp /textpattern-tag-reference https://docs.textpattern.io/tags
 Redirect temp /default-theme https://github.com/textpattern/textpattern-default-theme
 Redirect temp /textile-changelog https://github.com/textile/php-textile/blob/master/CHANGELOG.textile
-Redirect temp /hidden-files-osx http://osxdaily.com/2009/02/25/show-hidden-files-in-os-x/
-Redirect temp /system-requirements http://textpattern.com/about/119/system-requirements
+Redirect temp /system-requirements https://textpattern.com/about/119/system-requirements
+Redirect temp /patrons https://textpattern.com/about/302/patrons
+Redirect temp /donate https://textpattern.com/about/302/patrons
 
-Redirect temp /textile-sandbox http://txstyle.org/
-Redirect temp /textile-reference-manual http://txstyle.org/
+Redirect temp /textile-sandbox http://txstyle.org
+Redirect temp /textile-reference-manual http://txstyle.org
 Redirect temp /textile-abbr http://txstyle.org/doc/32/acronyms
 Redirect temp /textile-blockquote http://txstyle.org/doc/3/block-quotations
 Redirect temp /textile-cite http://txstyle.org/doc/20/citation
@@ -298,12 +299,6 @@ Redirect temp /textile-sub-and-sup http://txstyle.org/doc/18/subscript-and-super
 Redirect temp /textile-table http://txstyle.org/doc/15/tables
 Redirect temp /textile-ul-list http://txstyle.org/doc/8/bullet-list
 
-# ------------------------------------------------------------------------------
-# | Eternal links to the latest release. Amend for new releases.               |
-# ------------------------------------------------------------------------------
-Redirect temp /latest.zip http://textpattern.com/file_download/111/textpattern-4.6.2.zip
-Redirect temp /latest.tar.gz http://textpattern.com/file_download/110/textpattern-4.6.2.tar.gz
-
 
 # ----------------------------------------------------------------------
 # | Temporarily redirect old FAQ categories to new docs site           |
@@ -319,6 +314,4 @@ Redirect temp /latest.tar.gz http://textpattern.com/file_download/110/textpatter
 
 
 # TODO: To be removed when new site created.
-Redirect temp /start https://docs.textpattern.io/administration/hello-world
-Redirect temp /donate http://textpattern.com/patrons
 Redirect temp /themes https://docs.textpattern.io/themes/
