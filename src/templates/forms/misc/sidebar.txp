@@ -14,6 +14,5 @@
 
      ...informer ads list placeholder...
 
-    <h3>Sidebar placeholder</h3>
-
+    <p><img alt="The Carver" src="https://textpattern.io/assets/img/com/carver.png" srcset="https://textpattern.io/assets/img/com/carver@2x.png 2x, https://textpattern.io/assets/img/com/carver.png 1x"></p>
 </section>
