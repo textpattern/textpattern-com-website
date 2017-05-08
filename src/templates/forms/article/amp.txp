@@ -59,7 +59,7 @@
         <header>
             <h1><txp:title /></h1>
             <p class="article-details">
-                By <txp:author /> <span role="separator">|</span> <time datetime="<txp:posted format="iso8601" />"><txp:posted format="%d %B %Y" /></time>
+                By <txp:if_custom_field name="external-author"><txp:custom_field name="external-author" /><txp:else /><txp:author /></txp:if_custom_field> <span role="separator">|</span> <time datetime="<txp:posted format="iso8601" />"><txp:posted format="%d %B %Y" /></time>
             </p>
         </header>
         <txp:if_excerpt>
