@@ -17,7 +17,7 @@
             "@context": "https://schema.org",
             "@type": "BlogPosting",
             "headline": "<txp:title escape="json" />",
-            "mainEntityOfPage": "TODO",
+            "mainEntityOfPage": "<txp:permlink />",
             "datePublished": "<txp:posted format="iso8601" />",
             "dateModified": "<txp:modified format="iso8601" />",
             "description": "<txp:meta_description format="" escape="json" />",
