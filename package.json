@@ -37,6 +37,10 @@
     "responsive-nav": "1.0.39",
     "textpattern-branding": "0.2.8"
   },
+  "browserslist": [
+    "last 3 versions",
+    "not ie <= 11"
+  ],
   "scripts": {
     "test": "grunt travis --verbose"
   },
