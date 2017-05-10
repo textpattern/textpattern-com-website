@@ -11,8 +11,7 @@
     requirejs.config({
         paths:
         {
-            'jquery': 'https://code.jquery.com/jquery-3.2.1.min',
-            'ghbuttons': 'https://buttons.github.io/buttons'
+            'jquery': 'https://code.jquery.com/jquery-3.2.1.min'
         }
     });
 
@@ -30,7 +29,6 @@
         // Load objects as variables.
 
         var code = $('pre code'),
-            ghbutton = $('.github-button'),
             smoothscroll = $('a[href*="#"]:not([href="#"])');
 
         // Syntax highlighting, via 'Prism'.
@@ -46,13 +44,6 @@
             {
                 Prism.highlightAll();
             });
-        }
-
-        // Unofficial GitHub buttons.
-        // More info - https://buttons.github.io.
-
-        if (ghbutton.length) {
-            require(['ghbuttons']);
         }
 
         // Smooth scroll to anchors within same page.
