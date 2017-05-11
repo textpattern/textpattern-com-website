@@ -276,9 +276,6 @@ Redirect temp /textpattern-semantic-model https://docs.textpattern.io/administra
 Redirect temp /textpattern-tag-reference https://docs.textpattern.io/tags
 Redirect temp /default-theme https://github.com/textpattern/textpattern-default-theme
 Redirect temp /textile-changelog https://github.com/textile/php-textile/blob/master/CHANGELOG.textile
-Redirect temp /system-requirements https://textpattern.com/about/119/system-requirements
-Redirect temp /patrons https://textpattern.com/about/302/patrons
-Redirect temp /donate https://textpattern.com/about/302/patrons
 
 Redirect temp /textile-sandbox http://txstyle.org
 Redirect temp /textile-reference-manual http://txstyle.org
@@ -299,19 +296,16 @@ Redirect temp /textile-sub-and-sup http://txstyle.org/doc/18/subscript-and-super
 Redirect temp /textile-table http://txstyle.org/doc/15/tables
 Redirect temp /textile-ul-list http://txstyle.org/doc/8/bullet-list
 
-
 # ----------------------------------------------------------------------
-# | Temporarily redirect old FAQ categories to new docs site           |
+# | Redirect old 2008 site pages to current site pages                 |
 # ----------------------------------------------------------------------
 
-<IfModule mod_rewrite.c>
-    RewriteCond %{QUERY_STRING}  ^c=diagnostics$
-    RewriteRule (.*)  https://docs.textpattern.io/administration/diagnostics-panel?  [R=301,L]
-
-    RewriteCond %{QUERY_STRING}  ^c=forum$
-    RewriteRule (.*)  https://forum.textpattern.io/help.php?  [R=301,L]
-</IfModule>
+Redirect temp /donate https://textpattern.com/about/302/patrons
+Redirect 301 /patrons https://textpattern.com/about/302/patrons
+Redirect 301 /system-requirements https://textpattern.com/about/119/system-requirements
+Redirect 301 /features/301/languages https://textpattern.com/about/301/languages
 
 
-# TODO: To be removed when new site created.
+
+# TODO: To be removed when a proper themes site is created.
 Redirect temp /themes https://docs.textpattern.io/themes/
