@@ -64,7 +64,7 @@
         </header>
         <txp:if_excerpt>
             <div class="article-description">
-                <txp:mkp_amp_sanitize content="excerpt" />
+                <txp:pat_amp_sanitize content="excerpt" />
             </div>
         </txp:if_excerpt>
         <txp:if_article_image>
@@ -80,7 +80,7 @@
             </txp:images>
         </txp:if_article_image>
         <div class="article-body">
-            <txp:mkp_amp_sanitize content="body" />
+            <txp:pat_amp_sanitize content="body" />
         </div>
         <footer class="article-share">
             <amp-social-share width="40" height="32" type="twitter"></amp-social-share>
