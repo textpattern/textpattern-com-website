@@ -5,7 +5,7 @@
     </amp-video>
 <txp:else />
     <div itemprop="video" itemscope itemtype="https://schema.org/VideoObject">
-        <video width="<txp:yield name="width" />" height="<txp:yield name="height" />"<txp:if_yield name="poster-url"> poster="<txp:yield name="poster-url" />"</txp:if_yield>>
+        <video controls width="<txp:yield name="width" />" height="<txp:yield name="height" />"<txp:if_yield name="poster-url"> poster="<txp:yield name="poster-url" />"</txp:if_yield>>
             <source itemprop="contentUrl" type="video/mp4" src="<txp:yield name="mp4-url" />">
             <source itemprop="contentUrl" type="video/webm" src="<txp:yield name="webm-url" />">
         </video>
