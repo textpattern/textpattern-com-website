@@ -63,7 +63,7 @@
     }
 
     /**
-     * Homepage showcase images.
+     * Showcase section.
      */
 
     .showcase-container {
@@ -87,7 +87,11 @@
         }
     }
 
-    .showcase-1 {
+    /**
+     * Showcase images.
+     */
+
+    .showcase-hero {
         max-width: 360px;
         margin: 0 auto;
         z-index: 3;
@@ -101,19 +105,19 @@
         }
      }
 
-    .showcase-2,
-    .showcase-3 {
+    .showcase-1,
+    .showcase-2 {
         position: absolute;
         bottom: 0.75em;
         margin: 0;
     }
 
-    .showcase-2 {
+    .showcase-1 {
         left: 0;
         z-index: 2;
     }
 
-    .showcase-3 {
+    .showcase-2 {
         right: 0;
         z-index: 1;
     }
@@ -262,12 +266,12 @@
         margin-bottom: 2em;
     }
 
-    .showcase-1 {
+    .showcase-hero {
         max-width: 450px;
      }
 
-    .showcase-2,
-    .showcase-3 {
+    .showcase-1,
+    .showcase-2 {
         bottom: 1.5em;
     }
 
