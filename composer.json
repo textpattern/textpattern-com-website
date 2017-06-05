@@ -1,6 +1,6 @@
 {
   "require": {
-    "ezyang/htmlpurifier": "4.9.2",
+    "ezyang/htmlpurifier": "4.9.3",
     "textpattern/lock": "4.6.2"
   }
 }
