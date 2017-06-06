@@ -6,7 +6,7 @@
     <txp:if_article_list>
         <title>Contact us / Textpattern CMS</title>
         <meta name="description" content="Use this online enquiry form to contact the Textpattern Development Team.">
-        <meta name="robots" content="index, follow, noodp, noydir">
+        <meta name="robots" content="index, follow">
         <link rel="canonical" href="<txp:site_url />contact">
         <meta name="twitter:card" content="summary">
         <meta name="twitter:site" content="@textpattern">

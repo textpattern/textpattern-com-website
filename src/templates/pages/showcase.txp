@@ -6,7 +6,7 @@
     <txp:if_article_list>
         <title><txp:section title="1" /> / Textpattern CMS</title>
         <txp:meta_description />
-        <meta name="robots" content="index, follow, noodp, noydir">
+        <meta name="robots" content="index, follow">
         <link rel="canonical" href="<txp:section url='1' />">
         <meta name="twitter:card" content="summary">
         <meta name="twitter:site" content="@textpattern">
@@ -31,7 +31,7 @@
         <title><txp:title /> / Textpattern CMS</title>
         <txp:meta_description />
         <txp:meta_author title="1" />
-        <meta name="robots" content="index, follow, noodp, noydir">
+        <meta name="robots" content="index, follow">
         <link rel="canonical" href="<txp:permlink />">
         <meta name="twitter:card" content="summary">
         <meta name="twitter:site" content="@textpattern">

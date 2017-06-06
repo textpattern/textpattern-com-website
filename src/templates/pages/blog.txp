@@ -11,7 +11,7 @@
         <meta name="description" content="Latest blogs from Team Textpattern and guests; Textpattern news and other tidbits of info that we find of interest.">
         <txp:variable name="page" value='<txp:page_url type="pg" />' />
         <txp:if_variable name="page" value="1">
-            <meta name="robots" content="index, follow, noodp, noydir">
+            <meta name="robots" content="index, follow">
             <link rel="canonical" href="<txp:site_url />blog/">
             <meta name="twitter:card" content="summary">
             <meta name="twitter:site" content="@textpattern">
@@ -33,7 +33,7 @@
                 }
             </script>
         <txp:else />
-            <meta name="robots" content="noindex, follow, noodp, noydir">
+            <meta name="robots" content="noindex, follow">
             <link rel="canonical" href="<txp:site_url />blog/?pg=<txp:page_url type="pg" />">
         </txp:if_variable>
         <txp:evaluate test>
@@ -47,7 +47,7 @@
         <title><txp:title /> / Textpattern CMS</title>
         <txp:meta_description />
         <txp:meta_author title="1" />
-        <meta name="robots" content="index, follow, noodp, noydir">
+        <meta name="robots" content="index, follow">
         <link rel="canonical" href="<txp:permlink />">
         <link rel="amphtml" href="<txp:permlink />/amp">
         <meta name="twitter:card" content="summary">

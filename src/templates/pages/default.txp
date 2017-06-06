@@ -11,12 +11,12 @@
         <txp:if_category>
             <title>Category: <txp:category title="1" /> / Textpattern CMS</title>
             <meta name="description" content="Blog article ‘<txp:category title="1" />’ category archive.">
-            <meta name="robots" content="noindex, follow, noodp, noydir">
+            <meta name="robots" content="noindex, follow">
         <txp:else />
             <title>Textpattern CMS | Open source content management system</title>
             <meta name="description" content="Textpattern CMS is a free, open source content management system with a browser-based interface in over 40 languages.">
             <meta name="keywords" content="cms, content management systems, open source, blogs, blogging, free, wordpress alternatives, fast, lightweight, web design, web site design, web development, web site development, php">
-            <meta name="robots" content="index, follow, noodp, noydir">
+            <meta name="robots" content="index, follow">
             <link rel="canonical" href="<txp:site_url />">
             <meta name="twitter:card" content="summary">
             <meta name="twitter:site" content="@textpattern">
