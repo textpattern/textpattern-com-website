@@ -1,0 +1,5 @@
+<txp:if_yield name="category">
+    <txp:file_download_list category='<txp:yield name="category" />' limit="1" break="" sort="created desc" />
+<txp:else />
+    <txp:file_download filename='<txp:yield name="filename" />' />
+</txp:if_yield>

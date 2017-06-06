@@ -10,5 +10,10 @@
         <span class="separator" role="separator">|</span>
         Last modified:
         <time datetime="<txp:file_download_modified format="iso8601" />" itemprop="dateModified"><txp:file_download_modified format="%d %b %Y" /></time>
+        <txp:if_yield name="sha256">
+            <span class="separator" role="separator">|</span>
+            SHA256 checksum:
+            <code><txp:yield name="sha256" /></code>
+        </txp:if_yield>
     </footer>
 </section>
