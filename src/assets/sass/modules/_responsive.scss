@@ -87,6 +87,10 @@
         }
     }
 
+    .showcase-landing h3 {
+        top: -35px;
+    }
+
     /**
      * Showcase images.
      */
@@ -259,7 +263,7 @@
     }
 
     /**
-     * Homepage showcase images.
+     * Showcase images.
      */
 
     .showcase-container {
@@ -273,6 +277,19 @@
     .showcase-1,
     .showcase-2 {
         bottom: 1.5em;
+    }
+
+    /**
+     * Showcase section.
+     */
+
+    .showcase-landing section {
+        margin: 0 -0.75em;
+    }
+
+    .showcase-nth1,
+    .showcase-nth2 {
+        margin: 1em;
     }
 
 }
@@ -376,6 +393,19 @@
         padding-top: 1em;
         border-top: 0;
         background-color: $color-background-box;
+    }
+
+    /**
+     * Showcase images.
+     */
+
+    .showcase-landing section {
+        margin: 0 -1em;
+    }
+
+    .showcase-nth1,
+    .showcase-nth2 {
+        margin: 1.25em;
     }
 
 }

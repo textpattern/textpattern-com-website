@@ -110,13 +110,29 @@
 
 <!-- Primary Content -->
         <main aria-label="Main content">
+            <div class="container showcase-container showcase-landing">
 
-                <div class="container showcase-container">
-                    <h1>Site showcase</h1>
-                    <h3>110% Awesome Websites</h3>
-                    <div>
-                        <p>Our users continue to amaze us with their wonderful creations! Feast your eyes on some of the awesome websites powered by Textpattern CMS in our site showcase section. To suggest a website for consideration in our showcase please announce it within <a href="">the forum ‘Showcase your Textpattern site’ section</a> first—we then pick new showcase examples on an ad hoc basis.</p>
-                    </div>
+                <nav class="layout-1col" aria-label="Breadcrumb navigation">
+                    <ol class="breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList">
+                        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                            <a itemprop="item" href="index.html"><span itemprop="name">Home</span></a>
+                            <meta itemprop="position" content="1">
+                        </li>
+                        <li class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                            <b itemprop="item"><span itemprop="name">Site showcase</span></b>
+                            <meta itemprop="position" content="2">
+                        </li>
+                    </ol>
+                </nav>
+
+                <h1>Site showcase</h1>
+                <h3>110% Awesome Websites</h3>
+                <div>
+                    <p>Our users continue to amaze us with their wonderful creations! To suggest a website for consideration in our showcase please announce it within the forum <a href="https://forum.textpattern.io/viewforum.php?id=6">‘Showcase your Textpattern site’</a> section first—we then pick new showcase examples on an ad hoc basis.</p>
+                </div>
+
+                <section>
+                    <h4 class="accessibility">List of site showcases</h4>
 
                     <div class="showcases showcase-nth1">
                         <a href="#"><img class="img--showcase" alt="Showcase site 1" src="../img/showcase1.jpg" srcset="../img/showcase1@2x.jpg 2x, ../img/showcase1.jpg 1x"></a>
@@ -142,8 +158,9 @@
                         <a href="#"><img class="img--showcase" alt="Showcase site 6" src="../img/showcase3.jpg" srcset="../img/showcase3@2x.jpg 2x, ../img/showcase3.jpg 1x"></a>
                     </div>
 
-                </div><!-- /.container -->
+                </section>
 
+            </div><!-- /.container -->
         </main>
 
 

@@ -344,6 +344,10 @@ main .layout-4col-3span {
     display: none;
 }
 
+.showcase-landing section {
+    margin: 0 -0.5em;
+}
+
 /**
  * Showcase images.
  */
@@ -369,7 +373,7 @@ main .layout-4col-3span {
 .showcase-nth1,
 .showcase-nth2 {
     display: inline-block;
-    margin: 1.5em;
+    margin: 0.5em 1em 1em;
 }
 
 .showcase-hero::before,
