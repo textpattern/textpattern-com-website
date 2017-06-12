@@ -168,15 +168,10 @@ EOHTML;
     }
 }
                             </txp:php>
-                            <txp:linklist category="paid-links-content" break="li">
-                                <a rel="external" href="<txp:link_url />"><txp:link_name /></a> <small>(Ad)</small>
-                            </txp:linklist>
+                            <txp:linklist category="paid-links-content" break="li"><a rel="external" href="<txp:link_url />"><txp:link_name /></a> <small>(Ad)</small></txp:linklist>
                         </ul>
-
                         <h3>Featured at:</h3>
-
-                        ...informer ads list placeholder...
-
+                        <txp:output_form form="ads_webinformer" />
                     </div>
                 </div>
             </div>
