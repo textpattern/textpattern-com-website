@@ -1,4 +1,4 @@
-<txp:aks_cache id="form.misc.ads_webinformer" min="5">
+<txp:etc_cache id="webinformer" time="-300">
 <txp:php>
 if (!gps('txpreview')) {
     global $prefs;
@@ -67,4 +67,4 @@ EOHTML;
     }
 }
 </txp:php>
-</txp:aks_cache>
+</txp:etc_cache>
