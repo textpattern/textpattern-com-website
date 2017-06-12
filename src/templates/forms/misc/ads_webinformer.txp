@@ -3,7 +3,7 @@
 if (!gps('txpreview')) {
     global $prefs;
 
-    require_once __DIR__ .'/../../../vendor/autoload.php';
+    require_once __DIR__ .'/../../vendor/autoload.php';
 
     // Do not let them slow us down.
     $opts = array('http' => array('timeout' => 0.8));

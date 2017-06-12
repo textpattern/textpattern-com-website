@@ -5,6 +5,7 @@
 /templates/*/
 /templates/LICENSE
 /textpattern
+/vendor
 /video
 /.htaccess
 /*.png
