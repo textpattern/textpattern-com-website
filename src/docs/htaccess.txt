@@ -244,6 +244,8 @@ FileETag None
 
     RewriteCond %{HTTP:Authorization}  !^$
     RewriteRule .* - [E=REMOTE_USER:%{HTTP:Authorization}]
+
+    RewriteRule ^feed.json$ ./?kuo_json_feed
 </IfModule>
 
 
