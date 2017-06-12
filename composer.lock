@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "ff0f9a2cbd95863a0e21e8500a2d9ec5",
+    "content-hash": "3df0022c7c6d849adb903250d672a018",
     "packages": [
         {
             "name": "ezyang/htmlpurifier",
@@ -52,6 +52,105 @@
                 "html"
             ],
             "time": "2017-06-03T02:28:16+00:00"
+        },
+        {
+            "name": "rah/rah_comment_spam",
+            "version": "0.8.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/gocom/rah_comment_spam.git",
+                "reference": "cab8d8bca34881050a1c3ffa044c8e97fd9f3f26"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/gocom/rah_comment_spam/zipball/cab8d8bca34881050a1c3ffa044c8e97fd9f3f26",
+                "reference": "cab8d8bca34881050a1c3ffa044c8e97fd9f3f26",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.2.0",
+                "textpattern/installer": "*",
+                "textpattern/lock": ">=4.5.0"
+            },
+            "require-dev": {
+                "squizlabs/php_codesniffer": "1.5.*"
+            },
+            "type": "textpattern-plugin",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Jukka Svahn",
+                    "homepage": "http://rahforum.biz",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Anti-spam tools for Textpattern CMS",
+            "homepage": "https://github.com/gocom/rah_comment_spam",
+            "keywords": [
+                "plugin",
+                "textpattern"
+            ],
+            "time": "2015-03-06T03:10:49+00:00"
+        },
+        {
+            "name": "textpattern/installer",
+            "version": "1.0.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/gocom/textpattern-installer.git",
+                "reference": "18ae9744af18a632d0a1ed5784dc2cc05d092450"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/gocom/textpattern-installer/zipball/18ae9744af18a632d0a1ed5784dc2cc05d092450",
+                "reference": "18ae9744af18a632d0a1ed5784dc2cc05d092450",
+                "shasum": ""
+            },
+            "require": {
+                "textpattern/lock": ">=4.4.1"
+            },
+            "require-dev": {
+                "squizlabs/php_codesniffer": "1.5.*"
+            },
+            "type": "composer-installer",
+            "extra": {
+                "class": [
+                    "Textpattern\\Composer\\Installer\\Installer\\Manifest",
+                    "Textpattern\\Composer\\Installer\\Installer\\Package",
+                    "Textpattern\\Composer\\Installer\\Installer\\AdminTheme",
+                    "Textpattern\\Composer\\Installer\\Installer\\PublicTheme",
+                    "Textpattern\\Composer\\Installer\\Installer\\Textpack"
+                ]
+            },
+            "autoload": {
+                "psr-0": {
+                    "Textpattern\\Composer\\Installer\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Jukka Svahn",
+                    "homepage": "http://rahforum.biz",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Textpattern plugin and theme installer",
+            "homepage": "https://github.com/gocom/textpattern-installer",
+            "keywords": [
+                "installer",
+                "plugin",
+                "textpattern",
+                "theme",
+                "txp"
+            ],
+            "time": "2017-03-15T18:46:57+00:00"
         },
         {
             "name": "textpattern/lock",

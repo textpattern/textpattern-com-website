@@ -1,6 +1,8 @@
 {
   "require": {
     "ezyang/htmlpurifier": "4.9.3",
-    "textpattern/lock": "4.6.2"
+    "textpattern/lock": "4.6.2",
+    "textpattern/installer": "^1.0",
+    "rah/rah_comment_spam": "0.8.0"
   }
 }
