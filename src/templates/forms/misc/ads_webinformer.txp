@@ -1,4 +1,4 @@
-<txp:aks_cache id="form.misc.webinformer_widget" hour="0" min="5">
+<txp:aks_cache id="form.misc.ads_webinformer" min="5">
 <txp:php>
 if (!gps('txpreview')) {
     global $prefs;
@@ -24,8 +24,46 @@ if (!gps('txpreview')) {
 
         $widget = $purifier->purify($widget);
 
+        // Wrangle the output to simplify the returned markup.
+        $doc = new \DOMDocument();
+        $doc->loadHTML(mb_convert_encoding($widget, 'HTML-ENTITIES', 'UTF-8'));
+        $finder = new \DomXPath($doc);
+
+        // Extract the header string.
+        $classname = "b-webi-header";
+        $heading = $finder->query("//*[contains(concat(' ', normalize-space(@class), ' '), ' $classname ')]");
+        $headStr = trim($heading->item(0)->nodeValue);
+
+        // Extract all the anchors and their attributes.
+        $classname = "b-webi-link";
+        $links = $finder->query("//*[contains(concat(' ', normalize-space(@class), ' '), ' $classname ')]");
+
+        $linkInfo = array();
+
+        for ($idx = 0; $idx < $links->length; $idx++) {
+            $me = $links->item($idx);
+            $linkInfo[$idx]['href'] = $me->getAttribute('href');
+            $linkInfo[$idx]['content'] = trim($me->nodeValue);
+        }
+
+        // Create the simpler HTML.
+        $out = <<<EOHTML
+<ul class="list--no-bullets ellipsis">
+
+EOHTML;
+
+        foreach ($linkInfo as $row) {
+            $out .= '<li><a rel="external" href="'.$row['href'].'">'.$row['content'].'</a></li>'.n;
+        }
+
+        // Hard-code the footer, since it's easier than trying to get innerHTML from DOMDocument.
+        $out .= <<<EOHTML
+</ul>
+<small>Powered by <a rel="external" href="http://website.informer.com/">website.informer.com</a></small>
+EOHTML;
+
         echo n,comment(date('c'));
-        echo $widget;
+        echo $out;
     }
 }
 </txp:php>
