@@ -183,42 +183,48 @@ EOHTML;
     <body itemscope itemtype="https://schema.org/SearchResultsPage">
     <txp:output_form form="body_header" />
     <main aria-label="Main content">
-        <div class="container">
-            <div class="layout-container">
-            <txp:output_form form="body_crumbs" />
-                <div class="layout-4col-3span">
-                    <h1 itemprop="name">Search results</h1>
-                    <txp:if_search_results max="96">
-                        <div class="article-description" itemprop="description">
-                            <p><txp:search_result_count text="article(s) found" /> matching your search request <q><txp:search_term /></q>.</p>
-                        </div>
-                        <div class="teaser-container">
-                            <txp:article searchform="article_listing" limit="12" />
-                        </div>
-                        <txp:evaluate test>
-                            <nav class="paginator" aria-label="Page navigation">
-                                Pages:
-                                <txp:etc_pagination range="3"
-                                    prev='<a rel="prev" href="{href}" title="Go to previous page" aria-label="Go to previous page">Previous</a>'
-                                    next='<a rel="next" href="{href}" title="Go to next page" aria-label="Go to next page">Next</a>'
-                                    link='<li><a href="{href}" title="Go to page {*}" aria-label="Go to page {*}">{*}</a></li>,<li class="current"><b title="Current page" aria-label="Current page">{*}</b></li>'
-                                    gap='<li role="separator" title="More pages" aria-label="More pages">…</li>'
-                                    mask='{prev}<ul class="pagination">{first}{<+}{links}{+>}{last}</ul>{next}' />
-                            </nav>
-                        </txp:evaluate>
-                    <txp:else />
-                        <div class="article-description" itemprop="description">
-                            <txp:if_search_results>
-                                <p>It seems like you are looking for a very common search term, maybe try a more specific phrase than <q><txp:search_term /></q>.</p>
-                            <txp:else />
-                                <p>Sorry, no results were found matching your search request <q><txp:search_term /></q>.</p>
-                            </txp:if_search_results>
-                        </div>
-                        <p>Please try another search term or <a href="<txp:site_url />">return to the Textpattern homepage</a>.</p>
-                        <p><img alt="Page error" src="https://textpattern.io/assets/img/com/error.jpg" srcset="https://textpattern.io/assets/img/com/error@2x.jpg 2x, https://textpattern.io/assets/img/com/error.jpg 1x"></p>
-                    </txp:if_search_results>
-                </div>
-                <txp:output_form form="sidebar" />
+        <div class="wrapper-inner zebra">
+            <div class="container" itemscope itemtype="https://schema.org/WebSite">
+                <meta itemprop="url" content="<txp:site_url />">
+                <form class="search-hero" role="search" method="get" action="<txp:site_url />" itemprop="potentialAction" itemscope itemtype="https://schema.org/SearchAction">
+                    <meta itemprop="target" content="<txp:site_url />?q={q}">
+                    <input name="q" type="search" size="28" itemprop="query-input"<txp:if_search> value="<txp:search_term />"</txp:if_search>>
+                    <input class="button-primary" type="submit" value="Search">
+                </form>
+            </div>
+        </div>
+        <div class="wrapper-inner">
+            <div class="container">
+                <h1 itemprop="name">Search results</h1>
+                <txp:if_search_results max="96">
+                    <div class="article-description" itemprop="description">
+                        <p><txp:search_result_count text="article(s) found" /> matching your search request <q><txp:search_term /></q>.</p>
+                    </div>
+                    <div class="teaser-container">
+                        <txp:article searchform="article_listing" limit="12" />
+                    </div>
+                    <txp:evaluate test>
+                        <nav class="paginator" aria-label="Page navigation">
+                            Pages:
+                            <txp:etc_pagination range="3"
+                                prev='<a rel="prev" href="{href}" title="Go to previous page" aria-label="Go to previous page">Previous</a>'
+                                next='<a rel="next" href="{href}" title="Go to next page" aria-label="Go to next page">Next</a>'
+                                link='<li><a href="{href}" title="Go to page {*}" aria-label="Go to page {*}">{*}</a></li>,<li class="current"><b title="Current page" aria-label="Current page">{*}</b></li>'
+                                gap='<li role="separator" title="More pages" aria-label="More pages">…</li>'
+                                mask='{prev}<ul class="pagination">{first}{<+}{links}{+>}{last}</ul>{next}' />
+                        </nav>
+                    </txp:evaluate>
+                <txp:else />
+                    <div class="article-description" itemprop="description">
+                        <txp:if_search_results>
+                            <p>It seems like you are looking for a very common search term, maybe try a more specific phrase than <q><txp:search_term /></q>.</p>
+                        <txp:else />
+                            <p>Sorry, no results were found matching your search request <q><txp:search_term /></q>.</p>
+                        </txp:if_search_results>
+                    </div>
+                    <p>Please try another search term or <a href="<txp:site_url />">return to the Textpattern homepage</a>.</p>
+                    <p><img alt="Page error" src="https://textpattern.io/assets/img/com/error.jpg" srcset="https://textpattern.io/assets/img/com/error@2x.jpg 2x, https://textpattern.io/assets/img/com/error.jpg 1x"></p>
+                </txp:if_search_results>
             </div>
         </div>
     </main>
