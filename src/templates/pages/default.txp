@@ -190,7 +190,7 @@ EOHTML;
                     <h1 itemprop="name">Search results</h1>
                     <txp:if_search_results max="96">
                         <div class="article-description" itemprop="description">
-                            <p><txp:search_result_count /> matching your search request <q><txp:search_term /></q>.</p>
+                            <p><txp:search_result_count text="article(s) found" /> matching your search request <q><txp:search_term /></q>.</p>
                         </div>
                         <txp:article searchform="article_listing" limit="12" />
                         <txp:evaluate test>
