@@ -217,6 +217,9 @@ FileETag None
 <IfModule mod_rewrite.c>
     RewriteEngine On
 
+    # Redirect JSON feed
+    RewriteRule ^feed.json$ ./index.php?kuo_json_feed [L]
+
     # Redirect team subdomain
     RewriteCond %{HTTP_HOST} ^team\.textpattern\.com$ [NC]
     RewriteRule ^(.*)$ http://textpattern.com/contributors [R=301,L]
@@ -244,8 +247,6 @@ FileETag None
 
     RewriteCond %{HTTP:Authorization}  !^$
     RewriteRule .* - [E=REMOTE_USER:%{HTTP:Authorization}]
-
-    RewriteRule ^feed.json$ ./?kuo_json_feed
 </IfModule>
 
 
