@@ -65,37 +65,37 @@ Textpattern 4.7 introduced support for user-definable `<txp:output_form />` attr
 
 To create a HTML5 image snippet:
 
-    <txp::media_image id="" id2x="" />
+    <txp:output_form form="media_image" id="" id2x="" />
 
 For blog/articles, the ideal image width is `832` pixels for the standard resolution version and `1664` pixels for the double resolution version (`id2x`). `id2x` is optional, but should be provided if possible. If not used, remove that attribute from your tag.
 
 For example:
 
-    <txp::media_image id="41" id2x="42" />
+    <txp:output_form form="media_image" id="41" id2x="42" />
 
 ### Video
 
 To create a HTML5 video snippet:
 
-    <txp::media_video width="" height="" mp4-url="" webm-url="" poster-url="" duration-seconds="" />
+    <txp:output_form form="media_video" width="" height="" mp4-url="" webm-url="" poster-url="" duration-seconds="" />
 
 `poster-url` and `duration-seconds` are optional, but should be provided if possible. If not used, remove those attributes from your tag.
 
 For example:
 
-    <txp::media_video width="640" height="480" mp4-url="/video/video1.mp4" webm-url="/video/video1.webm" poster-url="/video/video1-poster.png" duration-seconds="20" />
+    <txp:output_form form="media_video" width="640" height="480" mp4-url="/video/video1.mp4" webm-url="/video/video1.webm" poster-url="/video/video1-poster.png" duration-seconds="20" />
 
 ### File
 
 To create a file download snippet:
 
-    <txp::media_file category="" filename="" sha256="" />
+    <txp:output_form form="media_file" category="" filename="" sha256="" />
 
 `category` and `filename` are interchangeable (use one or the other, where appropriate) - if both are provided then `category` is used in preference and `filename` is ignored. `sha256` (SHA256 checksum hash) is optional, but should be provided if possible. If not used, remove this attribute from your tag.
 
 For example:
 
-    <txp::media_file category="current-release-zip" sha256="a868c05fc37108f2bb5e878cfbcdc61a82ce2646c4676cccb8105a6c6277be7a" />
+    <txp:output_form form="media_file" category="current-release-zip" sha256="a868c05fc37108f2bb5e878cfbcdc61a82ce2646c4676cccb8105a6c6277be7a" />
 
 ## Plugins used
 
