@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "3df0022c7c6d849adb903250d672a018",
+    "content-hash": "eec5e72e386d1e5d9a0c238392a8a42b",
     "packages": [
         {
             "name": "ezyang/htmlpurifier",
@@ -94,6 +94,47 @@
                 "textpattern"
             ],
             "time": "2015-03-06T03:10:49+00:00"
+        },
+        {
+            "name": "rah/rah_sitemap",
+            "version": "1.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/gocom/rah_sitemap.git",
+                "reference": "7e071c1bc600c810b538b4ba75b0d65f931ebc0e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/gocom/rah_sitemap/zipball/7e071c1bc600c810b538b4ba75b0d65f931ebc0e",
+                "reference": "7e071c1bc600c810b538b4ba75b0d65f931ebc0e",
+                "shasum": ""
+            },
+            "require": {
+                "textpattern/installer": "*",
+                "textpattern/lock": ">=4.5.0"
+            },
+            "require-dev": {
+                "squizlabs/php_codesniffer": "1.5.*"
+            },
+            "type": "textpattern-plugin",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Jukka Svahn",
+                    "homepage": "http://rahforum.biz",
+                    "role": "Developer"
+                }
+            ],
+            "description": "XML sitemap plugin for Textpattern CMS",
+            "homepage": "https://github.com/gocom/rah_sitemap",
+            "keywords": [
+                "plugin",
+                "textpattern"
+            ],
+            "time": "2014-03-28T19:47:25+00:00"
         },
         {
             "name": "textpattern/installer",
