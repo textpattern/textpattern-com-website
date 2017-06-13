@@ -69,7 +69,9 @@
                 <article class="layout-4col-3span" itemscope itemtype="https://schema.org/Article">
                     <txp:if_article_list>
                         <txp:article status="sticky" />
-                        <txp:article form="article_listing" limit="999" sort="custom_1 asc" />
+                        <div>
+                            <txp:article form="article_listing" limit="999" sort="custom_1 asc" />
+                        </div>
                     <txp:else />
                         <txp:article />
                     </txp:if_article_list>
