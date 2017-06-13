@@ -59,6 +59,8 @@ Where the `@task@` is either `build` or `watch`.
 
 ## Shortcodes
 
+TODO: use short tag syntax for `output_form` when the feature becomes available in Textpattern dev, i.e. `<txp::media_image ...`.
+
 Textpattern 4.7 introduced support for user-definable `<txp:output_form />` attributes, allowing for our own version of 'shortcodes' within articles (*note:* remember to also use `notextile.` when within Textile content). This site uses the following tags:
 
 ### Image
