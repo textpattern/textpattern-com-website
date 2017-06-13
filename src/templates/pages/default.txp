@@ -142,9 +142,7 @@
 
                         ...blog image placeholder...
 
-                        <div>
-                            <txp:article form="article_listing_blog" limit="2" />
-                        </div>
+                        <txp:article form="article_listing_blog" limit="2" />
                     </section>
                     <div class="layout-3col">
                         <h3>Latest from <a href="https://forum.textpattern.io/">the forum</a>…</h3>
@@ -194,7 +192,7 @@ EOHTML;
                         <div class="article-description" itemprop="description">
                             <p><txp:search_result_count text="article(s) found" /> matching your search request <q><txp:search_term /></q>.</p>
                         </div>
-                        <div>
+                        <div class="teaser-container">
                             <txp:article searchform="article_listing" limit="12" />
                         </div>
                         <txp:evaluate test>
@@ -236,7 +234,7 @@ EOHTML;
                     <div class="article-description" itemprop="description">
                         <p>Blog articles in the <q><txp:category title="1" /></q> category.</p>
                     </div>
-                    <div>
+                    <div class="teaser-container">
                         <txp:article form="article_listing_blog" limit="12" />
                     </div>
                     <txp:evaluate test>

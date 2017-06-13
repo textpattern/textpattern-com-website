@@ -89,9 +89,7 @@
             <txp:output_form form="body_crumbs" />
                 <txp:if_article_list>
                     <div class="layout-4col-3span">
-                        <div>
-                            <txp:article form="article_listing_blog" limit="12" />
-                        </div>
+                        <txp:article form="article_listing_blog" limit="12" />
                         <txp:evaluate test>
                             <nav class="paginator" aria-label="Blog navigation">
                                 Pages:
