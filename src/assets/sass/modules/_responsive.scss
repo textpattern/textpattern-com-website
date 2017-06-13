@@ -283,13 +283,14 @@
      * Showcase section.
      */
 
-    .showcase-landing section {
-        margin: 0 -0.75em;
-    }
+    .showcase-landing {
+        section {
+            margin: 0 -0.75em;
+        }
 
-    .showcase-nth1,
-    .showcase-nth2 {
-        margin: 1em;
+        .showcases {
+            margin: 1em;
+        }
     }
 
 }
@@ -399,13 +400,14 @@
      * Showcase images.
      */
 
-    .showcase-landing section {
-        margin: 0 -1em;
-    }
+    .showcase-landing {
+        section {
+            margin: 0 -1em;
+        }
 
-    .showcase-nth1,
-    .showcase-nth2 {
-        margin: 1.25em;
+        .showcases {
+            margin: 1.25em;
+        }
     }
 
 }

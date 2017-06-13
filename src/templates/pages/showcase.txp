@@ -63,23 +63,44 @@
 <body itemscope itemtype="https://schema.org/WebPage">
     <txp:output_form form="body_header" />
     <main aria-label="Main content">
-        <div class="container">
-            <div class="layout-container">
+        <txp:if_article_list>
+
+
+            <div class="container showcase-container showcase-landing">
                 <txp:output_form form="body_crumbs" />
-                <txp:if_article_list>
-                    <div class="layout-4col-3span">
-                        <h1 itemprop="name"><txp:section title="1" /></h1>
-                        <div class="article-description" itemprop="description">
-                            <txp:meta_description format="" />
+                <h1>Site showcase</h1>
+                <h3>110% Awesome Websites</h3>
+                <div>
+                    <p>Our users continue to amaze us with their wonderful creations! To suggest a website for consideration in our showcase please announce it within the forum <a href="https://forum.textpattern.io/viewforum.php?id=6">‘Showcase your Textpattern site’</a> section first—we then pick new showcase examples on an ad hoc basis.</p>
+                </div>
+
+                <section>
+                    <h4 class="accessibility">List of site showcases</h4>
+
+                    <txp:article>
+                        <div class="showcases">
+                            <a href="<txp:permlink />"><img class="img--showcase" alt="Showcase site 1" src="../img/showcase1.jpg" srcset="../img/showcase1@2x.jpg 2x, ../img/showcase1.jpg 1x"></a>
                         </div>
-                        <txp:article form="article_listing" limit="999" sort="custom_1 asc" />
-                    </div>
-                <txp:else />
+                    </txp:article>
+
+                </section>
+
+            </div><!-- /.container -->
+
+
+        <txp:else />
+
+
+            <div class="container">
+                <div class="layout-container">
+                    <txp:output_form form="body_crumbs" />
                     <txp:article />
-                </txp:if_article_list>
-                <txp:output_form form="sidebar" />
+                    <txp:output_form form="sidebar" />
+                </div>
             </div>
-        </div>
+
+
+        </txp:if_article_list>
     </main>
     <txp:output_form form="body_footer" />
 </body>
