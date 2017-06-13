@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: /file_download/
 Disallow: /textpattern/
-Sitemap: https://textpattern.io/sitemap.xml
+Sitemap: /sitemap.xml
