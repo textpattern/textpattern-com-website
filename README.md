@@ -99,12 +99,13 @@ For example:
 
 ## Plugins used
 
-TODO: use Composer to install plugins? If so need to create PRs on each of the listed plugins below where Composer support is not currently provided.
+TODO: use Composer to install all plugins? If so need to create PRs on each of the plugins below where Composer support is not currently provided.
 
-Plugins required for this website to function:
-
+* [`etc_cache`](https://forum.textpattern.io/viewtopic.php?id=47702)
+* [`etc_pagination`](https://github.com/bloatware/etc-pagination)
+* [`kuo_json_feed`](https://forum.textpattern.io/viewtopic.php?id=47842)
+* [`pat_if_amp`](https://github.com/cara-tm/pat_if_amp)
+* [`rah_comment_spam`](https://github.com/gocom/rah_comment_spam) ✓ Composer
+* [`rah_sitemap`](https://github.com/gocom/rah_sitemap) ✓ Composer
+* [`zem_contact_reborn`](https://github.com/Bloke/zem_contact_reborn)
 * `rah_flat` or `oui_flat` TBC
-* [`etc_pagination`](https://github.com/bloatware/etc-pagination) (v0.4.7b)
-* [`zem_contact_reborn`](https://github.com/Bloke/zem_contact_reborn) (v4.5.0.0)
-* [`mkp_if_amp`](https://github.com/cara-tm/mkp_if_amp) (v3.5)
-* TODO
