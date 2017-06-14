@@ -79,7 +79,7 @@
 
                     <txp:article>
                         <div class="showcases">
-                            <a href="<txp:permlink />"><img class="img--showcase" alt="Showcase site 1" src="../img/showcase1.jpg" srcset="../img/showcase1@2x.jpg 2x, ../img/showcase1.jpg 1x"></a>
+                            <a href="<txp:permlink />"><img class="img--showcase" alt="Showcase site 1" src="https://placehold.it/318x212" srcset="https://placehold.it/636x424 2x, https://placehold.it/318x212 1x"></a>
                         </div>
                     </txp:article>
 
