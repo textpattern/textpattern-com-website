@@ -1,5 +1,13 @@
 <meta itemprop="mainEntityOfPage" content="<txp:permlink />">
 <meta itemprop="author" content="The Textpattern Development Team">
+<span itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+    <meta itemprop="name" content="Textpattern CMS">
+    <span itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+        <meta itemprop="url" content="https://textpattern.io/assets/img/branding/textpattern/textpattern.png">
+        <meta itemprop="width" content="320">
+        <meta itemprop="height" content="60">
+    </span>
+</span>
 <h1 itemprop="headline"><txp:title /></h1>
 <meta itemprop="datePublished" content="<txp:posted format="iso8601" />">
 <meta itemprop="dateModified" content="<txp:modified format="iso8601" />">
