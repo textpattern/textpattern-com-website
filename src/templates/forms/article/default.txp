@@ -1,4 +1,5 @@
 <meta itemprop="mainEntityOfPage" content="<txp:permlink />">
+<meta itemprop="author" content="The Textpattern Development Team">
 <h1 itemprop="headline"><txp:title /></h1>
 <meta itemprop="datePublished" content="<txp:posted format="iso8601" />">
 <meta itemprop="dateModified" content="<txp:modified format="iso8601" />">
