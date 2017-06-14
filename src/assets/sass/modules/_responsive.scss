@@ -95,7 +95,7 @@
      * Showcase images.
      */
 
-    .showcase-hero {
+    .showcase-home-c {
         max-width: 360px;
         margin: 0 auto;
         z-index: 3;
@@ -109,19 +109,19 @@
         }
      }
 
-    .showcase-1,
-    .showcase-2 {
+    .showcase-home-l,
+    .showcase-home-r {
         position: absolute;
         bottom: 0.75em;
         margin: 0;
     }
 
-    .showcase-1 {
+    .showcase-home-l {
         left: 0;
         z-index: 2;
     }
 
-    .showcase-2 {
+    .showcase-home-r {
         right: 0;
         z-index: 1;
     }
@@ -270,12 +270,12 @@
         margin-bottom: 2em;
     }
 
-    .showcase-hero {
+    .showcase-home-c {
         max-width: 450px;
      }
 
-    .showcase-1,
-    .showcase-2 {
+    .showcase-home-l,
+    .showcase-home-r {
         bottom: 1.5em;
     }
 
