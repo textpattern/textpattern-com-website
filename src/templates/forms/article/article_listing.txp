@@ -1,10 +1,10 @@
 <article class="teaser" itemscope itemtype="https://schema.org/Article">
     <h2 itemprop="headline"><a itemprop="url mainEntityOfPage" href="<txp:permlink />" title="Full article"><txp:title /></a></h2>
-    <txp:if_section name="weblog">
+    <txp:if_article_section name="weblog">
         <meta itemprop="author" content="<txp:if_custom_field name="external-author"><txp:custom_field name="external-author" /><txp:else /><txp:author /></txp:if_custom_field>">
     <txp:else />
         <meta itemprop="author" content="The Textpattern Development Team">
-    </txp:if_section>
+    </txp:if_article_section>
     <span itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
         <meta itemprop="name" content="Textpattern CMS">
         <span itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
