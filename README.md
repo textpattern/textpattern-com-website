@@ -69,7 +69,7 @@ To create a HTML5 image snippet:
 
     <txp:output_form form="media_image" id="" id2x="" />
 
-For blog/articles, the ideal image width is `832` pixels for the standard resolution version and `1664` pixels for the double resolution version (`id2x`). `id2x` is optional, but should be provided if possible. If not used, remove that attribute from your tag.
+For blog/articles, the ideal image width is `832` pixels for the standard resolution version and `1664` pixels for the double resolution version (`id2x`). `id2x` is optional, but should be provided if possible. If not used, remove that attribute from your shortcode.
 
 For example:
 
@@ -79,13 +79,13 @@ For example:
 
 To create a HTML5 video snippet:
 
-    <txp:output_form form="media_video" width="" height="" mp4-url="" webm-url="" poster-url="" duration-seconds="" />
+    <txp:output_form form="media_video" width="" height="" mp4-url="" webm-url="" poster-url="" name="" description="" duration-seconds=""/>
 
-`poster-url` and `duration-seconds` are optional, but should be provided if possible. If not used, remove those attributes from your tag.
+`poster-url`, `name`, `description` and `duration-seconds` are optional, but should be provided if possible to provide valid Schema.org microdata. If not used, remove those attributes from your shortcode.
 
 For example:
 
-    <txp:output_form form="media_video" width="640" height="480" mp4-url="/video/video1.mp4" webm-url="/video/video1.webm" poster-url="/video/video1-poster.png" duration-seconds="20" />
+    <txp:output_form form="media_video" width="640" height="480" mp4-url="/video/video1.mp4" webm-url="/video/video1.webm" poster-url="/video/video1-poster.png" name="Cat video" description="My great video of cats." duration-seconds="20" />
 
 ### File
 
@@ -93,7 +93,7 @@ To create a file download snippet:
 
     <txp:output_form form="media_file" category="" filename="" sha256="" />
 
-`category` and `filename` are interchangeable (use one or the other, where appropriate) - if both are provided then `category` is used in preference and `filename` is ignored. `sha256` (SHA256 checksum hash) is optional, but should be provided if possible. If not used, remove this attribute from your tag.
+`category` and `filename` are interchangeable (use one or the other, where appropriate) - if both are provided then `category` is used in preference and `filename` is ignored. `sha256` (SHA256 checksum hash) is optional, but should be provided if possible. If not used, remove this attribute from your shortcode.
 
 For example:
 

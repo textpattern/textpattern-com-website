@@ -9,6 +9,10 @@
             <source itemprop="contentUrl" type="video/mp4" src="<txp:yield name="mp4-url" />">
             <source itemprop="contentUrl" type="video/webm" src="<txp:yield name="webm-url" />">
         </video>
+        <txp:if_yield name="name"><meta itemprop="name" content="<txp:yield name="name" />"></txp:if_yield>
+        <txp:if_yield name="description"><meta itemprop="description" content="<txp:yield name="description" />"></txp:if_yield>
+        <txp:if_yield name="poster-url"><meta itemprop="thumbnailUrl" content="<txp:yield name="poster-url" />"></txp:if_yield>
+        <meta itemprop="uploadDate" content="<txp:posted format="iso8601" />">
         <txp:if_yield name="duration-seconds"><meta itemprop="duration" content="T<txp:yield name="duration-seconds" />S"></txp:if_yield>
     </div>
 </txp:if_variable>
