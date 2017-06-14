@@ -89,17 +89,15 @@
 
 
         <txp:else />
-
-
             <div class="container">
                 <div class="layout-container">
                     <txp:output_form form="body_crumbs" />
-                    <txp:article />
+                    <article class="layout-4col-3span" itemscope itemtype="https://schema.org/Article">
+                        <txp:article />
+                    </article>
                     <txp:output_form form="sidebar" />
                 </div>
             </div>
-
-
         </txp:if_article_list>
     </main>
     <txp:output_form form="body_footer" />
