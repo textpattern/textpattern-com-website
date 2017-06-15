@@ -64,8 +64,6 @@
     <txp:output_form form="body_header" />
     <main aria-label="Main content">
         <txp:if_article_list>
-
-
             <div class="container showcase-container showcase-landing">
                 <txp:output_form form="body_crumbs" />
                 <h1>Site showcase</h1>
@@ -73,21 +71,17 @@
                 <div>
                     <p>Our users continue to amaze us with their wonderful creations! To suggest a website for consideration in our showcase please announce it within the forum <a href="https://forum.textpattern.io/viewforum.php?id=6">‘Showcase your Textpattern site’</a> section first—we then pick new showcase examples on an ad hoc basis.</p>
                 </div>
-
                 <section>
                     <h4 class="accessibility">List of site showcases</h4>
-
                     <txp:article>
                         <div class="showcases">
                             <a href="<txp:permlink />"><txp:images form="showcase_image" limit="1" /></a>
+                            <h4><a href="<txp:permlink />"><txp:title /></a></h4>
                         </div>
                     </txp:article>
-
                 </section>
-
-            </div><!-- /.container -->
-
-
+                <p class="footnote alert-block information">Disclaimer text to go in here.</p>
+            </div>
         <txp:else />
             <div class="container">
                 <div class="layout-container">

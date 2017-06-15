@@ -386,7 +386,12 @@ main .layout-4col-3span {
 
     .showcase-landing & {
         display: inline-block;
-        margin: 0.5em 1em 1em;
+        margin: 0.5em 1em;
+        vertical-align: top;
+
+        h4 {
+            margin-bottom: 0.5em;
+        }
     }
 }
 
