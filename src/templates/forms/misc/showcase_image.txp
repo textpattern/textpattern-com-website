@@ -1,0 +1,1 @@
+<img class="img--showcase" alt="<txp:image_info type="alt" />" src="<txp:image_url thumbnail="1" />" srcset="<txp:image_url /> 2x, <txp:image_url thumbnail="1" /> 1x">

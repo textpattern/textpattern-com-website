@@ -129,19 +129,13 @@
                     <p>Our users continue to amaze us with their wonderful creations! Feast your eyes on some of the awesome websites powered by Textpattern CMS in our <a href="<txp:site_url />showcase">site showcase section</a>.</p>
                 </div>
                 <div class="showcases showcase-home-c">
-                    <txp:images form="showcase_image" category="showcase-home-c" limit="1" sort="date desc">
-                        <img class="img--showcase" alt="<txp:image_info type="alt" />" src="<txp:image_url thumbnail="1" />" srcset="<txp:image_url /> 2x, <txp:image_url thumbnail="1" /> 1x">
-                    </txp:images>
+                    <txp:images form="showcase_image" category="showcase-home-c" limit="1" sort="date desc" />
                 </div>
                 <div class="showcases showcase-home-l">
-                    <txp:images form="showcase_image" category="showcase-home-l" limit="1" sort="date desc">
-                        <img class="img--showcase" alt="<txp:image_info type="alt" />" src="<txp:image_url thumbnail="1" />" srcset="<txp:image_url /> 2x, <txp:image_url thumbnail="1" /> 1x">
-                    </txp:images>
+                    <txp:images form="showcase_image" category="showcase-home-l" limit="1" sort="date desc" />
                 </div>
                 <div class="showcases showcase-home-r">
-                    <txp:images form="showcase_image" category="showcase-home-r" limit="1" sort="date desc">
-                        <img class="img--showcase" alt="<txp:image_info type="alt" />" src="<txp:image_url thumbnail="1" />" srcset="<txp:image_url /> 2x, <txp:image_url thumbnail="1" /> 1x">
-                    </txp:images>
+                    <txp:images form="showcase_image" category="showcase-home-r" limit="1" sort="date desc" />
                 </div>
             </section>
         </div>
