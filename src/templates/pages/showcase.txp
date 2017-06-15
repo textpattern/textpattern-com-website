@@ -75,7 +75,11 @@
                     <h4 class="accessibility">List of site showcases</h4>
                     <txp:article>
                         <div class="showcases">
-                            <a href="<txp:permlink />"><txp:images form="showcase_image" limit="1" /></a>
+                            <a href="<txp:permlink />">
+                                <txp:images limit="1">
+                                    <img class="img--showcase" width="318" height="212" alt="<txp:image_info type="alt" />" src="<txp:image_url thumbnail="1" />" srcset="<txp:image_url /> 2x, <txp:image_url thumbnail="1" /> 1x">
+                                </txp:images>
+                            </a>
                             <h4><a href="<txp:permlink />"><txp:title /></a></h4>
                         </div>
                     </txp:article>
