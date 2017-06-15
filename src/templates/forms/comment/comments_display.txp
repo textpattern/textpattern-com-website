@@ -35,7 +35,7 @@
     </section>
 <txp:else />
     <txp:if_comments>
-        <p class="alert-block information"><strong>Commenting has expired for this article.</strong></p>
+        <p class="alert-block information footnote">Commenting has expired for this article.</p>
     </txp:if_comments>
 </txp:if_comments_allowed>
 <txp:if_comments>
