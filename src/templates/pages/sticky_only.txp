@@ -18,8 +18,8 @@
     <meta property="og:url" content="<txp:section url='1' />">
     <txp:if_article_image>
         <txp:images limit="1">
-            <meta name="twitter:image:src" content="<txp:image_url link="0" />">
-            <meta property="og:image" content="<txp:image_url link="0" />">
+            <meta name="twitter:image:src" content="<txp:image_url />">
+            <meta property="og:image" content="<txp:image_url />">
         </txp:images>
     <txp:else />
         <meta name="twitter:image:src" content="https://textpattern.io/apple-touch-icon-180x180.png">
