@@ -81,6 +81,7 @@
                                 </txp:images>
                             </a>
                             <h4><a href="<txp:permlink />"><txp:title /></a></h4>
+                            <txp:article_image />
                         </div>
                     </txp:article>
                 </section>
