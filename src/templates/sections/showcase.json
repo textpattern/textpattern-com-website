@@ -4,7 +4,7 @@
   "page": "showcase",
   "css": "default",
   "is_default": false,
-  "in_rss": false,
+  "in_rss": true,
   "on_frontpage": false,
   "searchable": true
 }
