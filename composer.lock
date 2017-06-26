@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "eec5e72e386d1e5d9a0c238392a8a42b",
+    "content-hash": "2446dbb26565817e50cb76419dbbbf44",
     "packages": [
         {
             "name": "ezyang/htmlpurifier",
@@ -52,6 +52,50 @@
                 "html"
             ],
             "time": "2017-06-03T02:28:16+00:00"
+        },
+        {
+            "name": "oui/oui_flat",
+            "version": "0.7.0-beta",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/NicolasGraph/oui_flat.git",
+                "reference": "f2e915b8436561fd3d9bd2b24a948b0cc43d14a6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/NicolasGraph/oui_flat/zipball/f2e915b8436561fd3d9bd2b24a948b0cc43d14a6",
+                "reference": "f2e915b8436561fd3d9bd2b24a948b0cc43d14a6",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.6",
+                "textpattern/installer": "*",
+                "textpattern/lock": ">=4.6.0"
+            },
+            "require-dev": {
+                "squizlabs/php_codesniffer": "1.5.*"
+            },
+            "type": "textpattern-plugin",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Morand, Jukka Svahn",
+                    "homepage": "http://rahforum.biz",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Textpattern CMS templates as flat files (rah_flat fork)",
+            "homepage": "https://github.com/nicolasgraph/oui_flat",
+            "keywords": [
+                "flat",
+                "plugin",
+                "template",
+                "textpattern"
+            ],
+            "time": "2017-06-23T16:40:46+00:00"
         },
         {
             "name": "rah/rah_comment_spam",
@@ -230,7 +274,9 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "oui/oui_flat": 10
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],
