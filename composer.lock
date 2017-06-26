@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "2446dbb26565817e50cb76419dbbbf44",
+    "content-hash": "2b340dd21086618d02b1e14a869cb9ed",
     "packages": [
         {
             "name": "ezyang/htmlpurifier",
@@ -55,16 +55,16 @@
         },
         {
             "name": "oui/oui_flat",
-            "version": "0.7.0-beta",
+            "version": "0.7.0-beta2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/NicolasGraph/oui_flat.git",
-                "reference": "f2e915b8436561fd3d9bd2b24a948b0cc43d14a6"
+                "reference": "0a73a70f0818e96fd307af1c8f904cb2a94d867c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/NicolasGraph/oui_flat/zipball/f2e915b8436561fd3d9bd2b24a948b0cc43d14a6",
-                "reference": "f2e915b8436561fd3d9bd2b24a948b0cc43d14a6",
+                "url": "https://api.github.com/repos/NicolasGraph/oui_flat/zipball/0a73a70f0818e96fd307af1c8f904cb2a94d867c",
+                "reference": "0a73a70f0818e96fd307af1c8f904cb2a94d867c",
                 "shasum": ""
             },
             "require": {
@@ -95,7 +95,7 @@
                 "template",
                 "textpattern"
             ],
-            "time": "2017-06-23T16:40:46+00:00"
+            "time": "2017-06-26T12:46:31+00:00"
         },
         {
             "name": "rah/rah_comment_spam",
