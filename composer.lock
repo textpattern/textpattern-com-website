@@ -4,8 +4,42 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "2b340dd21086618d02b1e14a869cb9ed",
+    "content-hash": "03c9ebb001a40863ad0c6d47e636667a",
     "packages": [
+        {
+            "name": "etc-plugins/etc_pagination",
+            "version": "0.5.0-beta",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/etc-plugins/etc_pagination.git",
+                "reference": "9548811b1719b720d943c66420ca0c0b464ace93"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/etc-plugins/etc_pagination/zipball/9548811b1719b720d943c66420ca0c0b464ace93",
+                "reference": "9548811b1719b720d943c66420ca0c0b464ace93",
+                "shasum": ""
+            },
+            "require": {
+                "textpattern/installer": "*",
+                "textpattern/lock": ">=4.5.0"
+            },
+            "type": "textpattern-plugin",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0"
+            ],
+            "description": "Pagination plugin for Textpattern CMS",
+            "homepage": "https://github.com/etc-plugins/etc_pagination",
+            "keywords": [
+                "paginate",
+                "pagination",
+                "paginator",
+                "plugin",
+                "textpattern"
+            ],
+            "time": "2017-06-27T09:23:49+00:00"
+        },
         {
             "name": "ezyang/htmlpurifier",
             "version": "v4.9.3",
@@ -275,6 +309,7 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
+        "etc-plugins/etc_pagination": 10,
         "oui/oui_flat": 10
     },
     "prefer-stable": false,
