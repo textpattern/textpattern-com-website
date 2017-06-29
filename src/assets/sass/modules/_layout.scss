@@ -24,6 +24,14 @@ body {
 }
 
 /**
+ * Remove default styling from iframes.
+ */
+
+iframe {
+    border: 0;
+}
+
+/**
  * Polite `noscript` notice after footer.
  */
 

@@ -66,7 +66,7 @@
                         </txp:file_download_list>
                         <a class="button" href="<txp:site_url />demo">Try a demo</a>
                     </p>
-                    <iframe src="https://ghbtns.com/github-btn.html?user=textpattern&repo=textpattern&type=star&count=true&size=large" frameborder="0" scrolling="0" width="160" height="30"></iframe>
+                    <iframe src="https://ghbtns.com/github-btn.html?user=textpattern&repo=textpattern&type=star&count=true&size=large" width="180" height="32"></iframe>
                 </div>
             </div>
         </div>
