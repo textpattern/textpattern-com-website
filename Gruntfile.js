@@ -35,6 +35,7 @@ module.exports = function (grunt)
         // Clean distribution and temporary directories to start afresh.
         clean: [
             '<%= paths.dest.css %>',
+            '<%= paths.dest.fonts %>',
             '<%= paths.dest.img %>',
             '<%= paths.dest.js %>',
             '<%= paths.dest.mockups %>*/',
