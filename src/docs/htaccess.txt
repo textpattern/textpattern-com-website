@@ -3,6 +3,12 @@
 
     SetEnvIf Origin "http(s)?://(www\.)?(googleads.g.doubleclick.net|pagead2.googlesyndication.com)$" AccessControlAllowOrigin=$0
     Header add Access-Control-Allow-Origin %{AccessControlAllowOrigin}e env=AccessControlAllowOrigin
+
+    # Allow cross-origin access to web fonts.
+
+    <FilesMatch "\.(woff2?)$">
+        Header set Access-Control-Allow-Origin "*"
+    </FilesMatch>
 </ifModule>
 
 
@@ -12,17 +18,11 @@
 
 # Serve all resources labeled as `text/html` or `text/plain`
 # with the media type `charset` parameter set to `UTF-8`.
-#
-# https://httpd.apache.org/docs/current/mod/core.html#adddefaultcharset
 
 AddDefaultCharset utf-8
 
-# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
 # Serve the following file types with the media type `charset`
 # parameter set to `UTF-8`.
-#
-# https://httpd.apache.org/docs/current/mod/mod_mime.html#addcharset
 
 <IfModule mod_mime.c>
     AddCharset utf-8 .atom \
@@ -45,6 +45,30 @@ AddDefaultCharset utf-8
 
 
 # ######################################################################
+# ADDTIONAL MIME TYPES                                                 #
+# ######################################################################
+
+<IfModule mod_mime.c>
+
+  # Data interchange
+
+    AddType application/ld+json                         jsonld
+
+  # Media files
+
+    AddType image/webp                                  webp
+    AddType video/mp4                                   f4v f4p m4v mp4
+    AddType video/webm                                  webm
+
+  # Web fonts
+
+    AddType application/font-woff                       woff
+    AddType application/font-woff2                      woff2
+
+</IfModule>
+
+
+# ######################################################################
 # # SECURITY                                                           #
 # ######################################################################
 
@@ -53,31 +77,13 @@ AddDefaultCharset utf-8
 # ----------------------------------------------------------------------
 
 # Block access to directories without a default document.
-#
-# You should leave the following uncommented, as you shouldn't allow
-# anyone to surf through every directory on your server (which may
-# includes rather private places such as the CMS's directories).
 
 <IfModule mod_autoindex.c>
     Options -Indexes
 </IfModule>
 
-# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
 # Block access to all hidden files and directories with the exception of
 # the visible content from within the `/.well-known/` hidden directory.
-#
-# These types of files usually contain user preferences or the preserved
-# state of an utility, and can include rather private places like, for
-# example, the `.git` or `.svn` directories.
-#
-# The `/.well-known/` directory represents the standard (RFC 5785) path
-# prefix for "well-known locations" (e.g.: `/.well-known/manifest.json`,
-# `/.well-known/keybase.txt`), and therefore, access to its visible
-# content should not be blocked.
-#
-# https://www.mnot.net/blog/2010/04/07/well-known
-# https://tools.ietf.org/html/rfc5785
 
 <IfModule mod_rewrite.c>
     RewriteEngine On
@@ -97,11 +103,7 @@ AddDefaultCharset utf-8
 # ----------------------------------------------------------------------
 
 # Remove `ETags` as resources are sent with far-future expires headers.
-#
-# https://developer.yahoo.com/performance/rules.html#etags
-# https://tools.ietf.org/html/rfc7232#section-2.3
 
-# `FileETag None` doesn't work in all cases.
 <IfModule mod_headers.c>
     Header unset ETag
 </IfModule>
@@ -113,12 +115,6 @@ FileETag None
 # ----------------------------------------------------------------------
 
 # Serve resources with far-future expires headers.
-#
-# (!) If you don't control versioning with filename-based
-# cache busting, you should consider lowering the cache times
-# to something like one week.
-#
-# https://httpd.apache.org/docs/current/mod/mod_expires.html
 
 <IfModule mod_expires.c>
 
@@ -129,7 +125,6 @@ FileETag None
 
     ExpiresByType text/css                              "access plus 1 month"
 
-
   # Data interchange
 
     ExpiresByType application/atom+xml                  "access plus 1 hour"
@@ -139,10 +134,8 @@ FileETag None
     ExpiresByType application/json                      "access plus 0 seconds"
     ExpiresByType application/ld+json                   "access plus 0 seconds"
     ExpiresByType application/schema+json               "access plus 0 seconds"
-    ExpiresByType application/vnd.geo+json              "access plus 0 seconds"
     ExpiresByType application/xml                       "access plus 0 seconds"
     ExpiresByType text/xml                              "access plus 0 seconds"
-
 
   # Favicon (cannot be renamed!) and cursor images
 
@@ -153,13 +146,11 @@ FileETag None
 
     ExpiresByType text/html                             "access plus 0 seconds"
 
-
   # JavaScript
 
     ExpiresByType application/javascript                "access plus 1 month"
     ExpiresByType application/x-javascript              "access plus 1 month"
     ExpiresByType text/javascript                       "access plus 1 month"
-
 
   # Manifest files
 
@@ -167,32 +158,17 @@ FileETag None
     ExpiresByType application/x-web-app-manifest+json   "access plus 0 seconds"
     ExpiresByType text/cache-manifest                   "access plus 0 seconds"
 
-
   # Media files
 
-    ExpiresByType audio/ogg                             "access plus 1 month"
-    ExpiresByType image/bmp                             "access plus 1 month"
     ExpiresByType image/gif                             "access plus 1 month"
     ExpiresByType image/jpeg                            "access plus 1 month"
     ExpiresByType image/png                             "access plus 1 month"
     ExpiresByType image/svg+xml                         "access plus 1 month"
     ExpiresByType image/webp                            "access plus 1 month"
     ExpiresByType video/mp4                             "access plus 1 month"
-    ExpiresByType video/ogg                             "access plus 1 month"
     ExpiresByType video/webm                            "access plus 1 month"
 
-
   # Web fonts
-
-    # Embedded OpenType (EOT)
-    ExpiresByType application/vnd.ms-fontobject         "access plus 1 month"
-    ExpiresByType font/eot                              "access plus 1 month"
-
-    # OpenType
-    ExpiresByType font/opentype                         "access plus 1 month"
-
-    # TrueType
-    ExpiresByType application/x-font-ttf                "access plus 1 month"
 
     # Web Open Font Format (WOFF) 1.0
     ExpiresByType application/font-woff                 "access plus 1 month"
@@ -201,7 +177,6 @@ FileETag None
 
     # Web Open Font Format (WOFF) 2.0
     ExpiresByType application/font-woff2                "access plus 1 month"
-
 
   # Other
 
