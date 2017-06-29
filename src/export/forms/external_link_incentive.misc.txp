@@ -1,6 +1,0 @@
-<script type="text/javascript">
-$(document).ready(function() {
-$('.externalise a').each(function() {
-var t = $(this);t.attr('href', /window\.location\.href='(.*)'/.exec(t.attr('onClick'))[1]);t.removeAttr('onClick');
-});});
-</script>
