@@ -11,6 +11,7 @@ module.exports = function (grunt)
         // Set up paths.
         paths: {
             src: {
+                fonts: 'src/assets/fonts/',
                 sass: 'src/assets/sass/',
                 js: 'src/assets/js/',
                 mockups: 'src/mockups/',
@@ -18,6 +19,7 @@ module.exports = function (grunt)
             },
             dest: {
                 css: 'public/assets/css/',
+                fonts: 'public/assets/fonts/',
                 img: 'public/assets/img/',
                 js: 'public/assets/js/',
                 mockups: 'public/mockups/',
@@ -50,6 +52,16 @@ module.exports = function (grunt)
 
         // Copy files.
         copy: {
+            fonts: {
+                files: [
+                    {
+                        expand: true,
+                        cwd: '<%= paths.src.fonts %>',
+                        src: ['**'],
+                        dest: '<%= paths.dest.fonts %>'
+                    }
+                ]
+            },
             // Copy Textpattern branding assets.
             img: {
                 files: [

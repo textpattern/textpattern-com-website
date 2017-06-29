@@ -9,7 +9,6 @@
     <script async custom-element="amp-video" src="https://cdn.ampproject.org/v0/amp-video-0.1.js"></script>
     <title><txp:title /></title>
     <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,700,400italic,700italic">
     <link rel="canonical" href="<txp:permlink />">
     <link rel="manifest" href="/manifest.json">
     <script type="application/ld+json">
