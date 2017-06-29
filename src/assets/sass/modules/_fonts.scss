@@ -11,7 +11,7 @@
     font-family: "PT Serif";
     font-style: normal;
     font-weight: normal;
-    src: url("/assets/fonts/pt-serif-v8-latin-ext-regular.woff2") format("woff2"), url("/assets/fonts/pt-serif-v8-latin-ext-regular.woff") format("woff");
+    src: url("../fonts/pt-serif-v8-latin-ext-regular.woff2") format("woff2"), url("../fonts/pt-serif-v8-latin-ext-regular.woff") format("woff");
 }
 
 // Regular Italic
@@ -19,7 +19,7 @@
     font-family: "PT Serif";
     font-style: italic;
     font-weight: normal;
-    src: url("/assets/fonts/pt-serif-v8-latin-ext-italic.woff2") format("woff2"), url("/assets/fonts/pt-serif-v8-latin-ext-italic.woff") format("woff");
+    src: url("../fonts/pt-serif-v8-latin-ext-italic.woff2") format("woff2"), url("../fonts/pt-serif-v8-latin-ext-italic.woff") format("woff");
 }
 
 // Bold
@@ -27,7 +27,7 @@
     font-family: "PT Serif";
     font-style: normal;
     font-weight: bold;
-    src: url("/assets/fonts/pt-serif-v8-latin-ext-700.woff2") format("woff2"), url("/assets/fonts/pt-serif-v8-latin-ext-700.woff") format("woff");
+    src: url("../fonts/pt-serif-v8-latin-ext-700.woff2") format("woff2"), url("../fonts/pt-serif-v8-latin-ext-700.woff") format("woff");
 }
 
 // Bold Italic
@@ -35,5 +35,5 @@
     font-family: "PT Serif";
     font-style: italic;
     font-weight: bold;
-    src: url("/assets/fonts/pt-serif-v8-latin-ext-700italic.woff2") format("woff2"), url("/assets/fonts/pt-serif-v8-latin-ext-700italic.woff") format("woff");
+    src: url("../fonts/pt-serif-v8-latin-ext-700italic.woff2") format("woff2"), url("../fonts/pt-serif-v8-latin-ext-700italic.woff") format("woff");
 }
