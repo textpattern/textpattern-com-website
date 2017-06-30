@@ -3,7 +3,7 @@ var lib, images, createjs, ss, AdobeAn;
 {
 
 var p; // shortcut to reference prototypes
-lib.ssMetadata = [{name:'index-animation', frames: [[2302,0,343,312],[2647,0,228,210],[2877,0,210,206],[0,0,2300,240]]}];
+lib.ssMetadata = [{name: 'index-animation', frames: [[2302,0,343,312],[2647,0,228,210],[2877,0,210,206],[0,0,2300,240]]}];
 
 // symbols
 

@@ -53,6 +53,7 @@ module.exports = function (grunt)
 
         // Copy files.
         copy: {
+            // Copy fonts.
             fonts: {
                 files: [
                     {
@@ -103,6 +104,14 @@ module.exports = function (grunt)
                         dest: 'public/'
                     }
                 ]
+            },
+            // Copy JavaScript from from `src/js/` when already minified (i.e. don't Uglify these).
+            js: {
+                files: [
+                    {
+                        '<%= paths.dest.js %>createjs.js': ['<%= paths.src.js %>createjs-2015.11.26.min.js']
+                    }
+                ]
             }
         },
 
@@ -140,10 +149,13 @@ module.exports = function (grunt)
                     i: true
                 }
             },
-            files: [
-                'Gruntfile.js',
-                '<%= paths.src.js %>*.js'
-            ]
+            files: {
+                src: [
+                    'Gruntfile.js',
+                    '<%= paths.src.js %>*.js',
+                    '!<%= paths.src.js %>*.min.js'
+                ]
+            }
         },
 
         // Add vendor prefixed styles and other post-processing transformations.
@@ -165,12 +177,12 @@ module.exports = function (grunt)
                 options: {
                     patterns: [
                         {
-                                match: 'timestamp',
-                                replacement: '<%= opt.timestamp %>'
+                            match: 'timestamp',
+                            replacement: '<%= opt.timestamp %>'
                         },
                         {
-                                match: 'ampcss',
-                                replacement: '<%= grunt.file.read("public/assets/css/amp.css") %>'
+                            match: 'ampcss',
+                            replacement: '<%= grunt.file.read("public/assets/css/amp.css") %>'
                         }
                     ]
                 },
@@ -218,7 +230,7 @@ module.exports = function (grunt)
             target: ['<%= paths.src.sass %>**/*.scss']
         },
 
-        // Uglify and copy JavaScript files from `bower-components`, and also `main.js`, to `public/assets/js/`.
+        // Uglify and copy JavaScript files from `node_modules` and from `src/js/` to `public/assets/js/`.
         uglify: {
             dist: {
                 // Preserve all comments that start with a bang (!) or include a closure compiler style.
