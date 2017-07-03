@@ -15,15 +15,6 @@
         }
     });
 
-    // Detect whether user enabled 'Do No Track' in their browser, and honour it.
-
-    define('track', function ()
-    {
-        return {
-            allow : navigator.doNotTrack !== 'yes' && navigator.doNotTrack !== '1' && window.doNotTrack !== 'yes' && window.doNotTrack !== '1'
-        };
-    });
-
     require(['jquery'], function ($)
     {
         // Load objects as variables.
@@ -76,27 +67,20 @@
         });
     });
 
-    // Google Analytics
+    // Google Analytics, via 'ga-lite'.
+    // More info - https://github.com/jehna/ga-lite.
 
-    require(['track'], function(track)
+    require(['galite.@@timestamp'], function()
     {
-        if (track.allow) {
-            /* jshint ignore:start */
-            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-            /* jshint ignore:end */
+        var galite = galite || {};
 
-            if (whatDomain === 'docs.textpattern.io') {
-                ga('create', 'UA-89386022-1', 'auto');
-            } else {
-                ga('create', 'UA-XXXXX-Y', 'auto'); // TODO: Remember to amend the GA account ID number!
-            }
-
-            ga('set', 'anonymizeIp', true);
-            ga('send', 'pageview');
+        if (whatDomain === 'docs.textpattern.io') {
+            galite.UA = 'UA-89386022-1';
+        } else {
+            galite.UA = 'UA-XXXXXXXX-X'; // TODO: Remember to amend the GA account ID number!
         }
+
+        galite.anonymizeIp = true;
     });
 
 })();
