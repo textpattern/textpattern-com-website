@@ -4,8 +4,42 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "03c9ebb001a40863ad0c6d47e636667a",
+    "content-hash": "9101cec875038a1d0a20a319d7fbb573",
     "packages": [
+        {
+            "name": "cara-tm/pat_if_amp",
+            "version": "0.3.6-beta",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/cara-tm/pat_if_amp.git",
+                "reference": "606ae2d9164e5c2d5c2b3796602c220638bb2214"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/cara-tm/pat_if_amp/zipball/606ae2d9164e5c2d5c2b3796602c220638bb2214",
+                "reference": "606ae2d9164e5c2d5c2b3796602c220638bb2214",
+                "shasum": ""
+            },
+            "require": {
+                "textpattern/installer": "*",
+                "textpattern/lock": ">=4.6.0"
+            },
+            "type": "textpattern-plugin",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0"
+            ],
+            "description": "Create, publish and edit plugins from within Textpattern CMS",
+            "homepage": "https://github.com/cara-tm/pat_if_amp",
+            "keywords": [
+                "amp",
+                "amp-html",
+                "google-amp",
+                "plugin",
+                "textpattern"
+            ],
+            "time": "2017-07-04T10:37:39+00:00"
+        },
         {
             "name": "etc-plugins/etc_pagination",
             "version": "0.5.0-beta",
@@ -309,6 +343,7 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
+        "cara-tm/pat_if_amp": 10,
         "etc-plugins/etc_pagination": 10,
         "oui/oui_flat": 10
     },
