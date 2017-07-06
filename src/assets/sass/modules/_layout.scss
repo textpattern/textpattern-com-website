@@ -439,3 +439,64 @@ main .layout-4col-3span {
 .report-issues {
     margin: 2em 0;
 }
+
+/**
+ * Value bubbles (e.g. on GitHub Stars counter).
+ */
+
+.count-bubble {
+    position: relative;
+    padding: 0.375em; // 6px / 16px
+    border: 1px solid $color-button-border;
+    border-radius: 0.25em; // 4px / 16px
+    background: $color-background;
+    color: $color-text-button;
+    font-weight: bolder;
+
+    &:hover {
+        border-color: darken($color-button-border, 13%);
+        color: $color-text-button-hover;
+        text-decoration: none;
+
+        &::before {
+            border-color: transparent darken($color-button-border, 13%);
+        }
+    }
+
+    &:focus {
+        border-color: $color-link-focus;
+        outline: 1px solid transparent; // Allows for repainting in high contrast modes.
+
+        &::before {
+            border-color: transparent $color-link-focus;;
+        }
+    }
+}
+
+.count-bubble::after {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: -8px;
+    width: 0;
+    margin-top: -8px;
+    border-width: 8px 8px 8px 0;
+    border-style: solid;
+    border-color: transparent $color-background;
+    content: "";
+    z-index: 1;
+}
+
+.count-bubble::before {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: -9px;
+    width: 0;
+    margin-top: -8px;
+    border-width: 8px 8px 8px 0;
+    border-style: solid;
+    border-color: transparent $color-button-border;
+    content: "";
+    z-index: 0;
+}

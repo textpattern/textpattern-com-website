@@ -66,7 +66,9 @@
                         </txp:file_download_list>
                         <a class="button" href="<txp:site_url />demo">Try a demo</a>
                     </p>
-                    <txp:php>
+                    <p>
+                        <a class="button" rel="external" href="https://github.com/textpattern/textpattern/" title="Stars on GitHub"><span class="ui-icon ui-extra-icon-github">GitHub</span> <b>Stars</b></a>
+                        <txp:php>
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
@@ -81,11 +83,12 @@ if (curl_error($curl)) {
     // Do nothing.
 } else {
     $json = json_decode($response);
-    echo $json->stargazers_count;
+    echo '<a class="count-bubble" rel="external" href="https://github.com/textpattern/textpattern/stargazers" title="Stargazers on GitHub">'.$json->stargazers_count.'</a>';
 }
 
 curl_close($curl);
-                    </txp:php>
+                        </txp:php>
+                    </p>
                 </div>
             </div>
         </div>
