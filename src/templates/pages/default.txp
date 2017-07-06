@@ -68,7 +68,8 @@
                     </p>
                     <p>
                         <a class="button" rel="external" href="https://github.com/textpattern/textpattern/" title="Stars on GitHub"><span class="ui-icon ui-extra-icon-github">GitHub</span> <b>Stars</b></a>
-                        <txp:php>
+                        <txp:etc_cache id="github-stars" time="-3600">
+                            <txp:php>
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
@@ -87,7 +88,8 @@ if (curl_error($curl)) {
 }
 
 curl_close($curl);
-                        </txp:php>
+                            </txp:php>
+                        </txp:etc_cache>
                     </p>
                 </div>
             </div>
