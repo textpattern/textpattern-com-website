@@ -66,7 +66,26 @@
                         </txp:file_download_list>
                         <a class="button" href="<txp:site_url />demo">Try a demo</a>
                     </p>
-                    <iframe src="https://ghbtns.com/github-btn.html?user=textpattern&repo=textpattern&type=star&count=true&size=large" width="180" height="32"></iframe>
+                    <txp:php>
+$curl = curl_init();
+
+curl_setopt_array($curl, array(
+    CURLOPT_RETURNTRANSFER => 1,
+    CURLOPT_URL => 'https://api.github.com/repos/textpattern/textpattern',
+    CURLOPT_USERAGENT => 'Textpattern CMS',
+));
+
+$response = curl_exec($curl);
+
+if (curl_error($curl)) {
+    // Do nothing.
+} else {
+    $json = json_decode($response);
+    echo $json->stargazers_count;
+}
+
+curl_close($curl);
+                    </txp:php>
                 </div>
             </div>
         </div>
@@ -164,12 +183,16 @@ $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL, 'http://forum.textpattern.io/api/?limit=5&sort=posted');
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 $xml = curl_exec($ch);
-if(curl_error($ch)) {
+
+if (curl_error($ch)) {
     echo curl_error($ch);
 }
+
 curl_close($ch);
+
 if ($xml) {
     $xml = json_decode($xml);
+
     foreach ($xml->topic as $topicElement) {
         echo <<<EOHTML
         <li>
@@ -191,7 +214,6 @@ EOHTML;
     </main>
 <txp:else />
 <txp:if_search>
-    <txp:article pgonly="1" />
     <body itemscope itemtype="https://schema.org/SearchResultsPage">
     <txp:output_form form="body_header" />
     <main aria-label="Main content">
