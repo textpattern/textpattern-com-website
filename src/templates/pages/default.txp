@@ -183,7 +183,8 @@ curl_close($curl);
                     <div class="layout-3col">
                         <h3>Latest from <a href="https://forum.textpattern.io/">the forum</a>…</h3>
                         <ul class="list--no-bullets ellipsis">
-                            <txp:php>
+                            <txp:etc_cache id="forum-feed" time="-900">
+                                <txp:php>
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL, 'http://forum.textpattern.io/api/?limit=5&sort=posted');
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
@@ -207,8 +208,9 @@ if ($xml) {
 EOHTML;
     }
 }
-                            </txp:php>
-                            <txp:linklist category="paid-links-content" break="li"><a rel="external" href="<txp:link_url />"><txp:link_name /></a> <small>(Ad)</small></txp:linklist>
+                                </txp:php>
+                                <txp:linklist category="paid-links-content" break="li"><a rel="external" href="<txp:link_url />"><txp:link_name /></a> <small>(Ad)</small></txp:linklist>
+                            </txp:etc_cache>
                         </ul>
                         <h3>Featured at:</h3>
                         <txp:output_form form="ads_webinformer" />
