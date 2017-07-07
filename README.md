@@ -103,7 +103,6 @@ TODO: use Composer to install all plugins? If so need to create PRs on each of t
 
 * [`etc_cache`](https://forum.textpattern.io/viewtopic.php?id=47702)
 * [`etc_pagination`](https://github.com/bloatware/etc-pagination) ✓ Composer
-* [`kuo_json_feed`](https://forum.textpattern.io/viewtopic.php?id=47842)
 * [`oui_flat`](https://github.com/nicolasgraph/oui_flat) ✓ Composer
 * [`pat_if_amp`](https://github.com/cara-tm/pat_if_amp) ✓ Composer
 * [`rah_comment_spam`](https://github.com/gocom/rah_comment_spam) ✓ Composer
