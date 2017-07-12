@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "9101cec875038a1d0a20a319d7fbb573",
+    "content-hash": "77575b6eea7730e6b879d53cb09f6373",
     "packages": [
         {
             "name": "cara-tm/pat_if_amp",
@@ -39,6 +39,40 @@
                 "textpattern"
             ],
             "time": "2017-07-04T10:37:39+00:00"
+        },
+        {
+            "name": "etc-plugins/etc_cache",
+            "version": "0.2.6-beta",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/etc-plugins/etc_cache.git",
+                "reference": "2610fac89148c1c8cf89617c754a3deeae502f7e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/etc-plugins/etc_cache/zipball/2610fac89148c1c8cf89617c754a3deeae502f7e",
+                "reference": "2610fac89148c1c8cf89617c754a3deeae502f7e",
+                "shasum": ""
+            },
+            "require": {
+                "textpattern/installer": "*",
+                "textpattern/lock": ">=4.6.0"
+            },
+            "type": "textpattern-plugin",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0"
+            ],
+            "description": "Events-driven cache solution for Textoattern CMS.",
+            "homepage": "https://github.com/etc-plugins/etc_cache",
+            "keywords": [
+                "cache",
+                "caching",
+                "performance",
+                "plugin",
+                "textpattern"
+            ],
+            "time": "2017-07-10T08:24:23+00:00"
         },
         {
             "name": "etc-plugins/etc_pagination",
@@ -344,6 +378,7 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "cara-tm/pat_if_amp": 10,
+        "etc-plugins/etc_cache": 10,
         "etc-plugins/etc_pagination": 10,
         "oui/oui_flat": 10
     },

@@ -7,6 +7,7 @@
     "textpattern/lock": "4.6.2",
     "textpattern/installer": "^1.0",
     "cara-tm/pat_if_amp": "0.3.6-beta",
+    "etc-plugins/etc_cache": "0.2.6-beta",
     "etc-plugins/etc_pagination": "0.5.0-beta",
     "oui/oui_flat": "0.7.0-beta2",
     "rah/rah_comment_spam": "0.8.0",
