@@ -101,8 +101,8 @@ For example:
 
 TODO: use Composer to install all plugins? If so need to create PRs on each of the plugins below where Composer support is not currently provided.
 
-* [`etc_cache`](https://forum.textpattern.io/viewtopic.php?id=47702) ✓ Composer
-* [`etc_pagination`](https://github.com/bloatware/etc-pagination) ✓ Composer
+* [`etc_cache`](https://github.com/etc-plugins/etc_cache) ✓ Composer
+* [`etc_pagination`](https://github.com/etc-plugins/etc_pagination) ✓ Composer
 * [`oui_flat`](https://github.com/nicolasgraph/oui_flat) ✓ Composer
 * [`pat_if_amp`](https://github.com/cara-tm/pat_if_amp) ✓ Composer
 * [`rah_comment_spam`](https://github.com/gocom/rah_comment_spam) ✓ Composer
