@@ -10,7 +10,6 @@
             <a href="<txp:permlink />"><txp:title /></a>
         </txp:article_custom>
     </txp:if_variable>
-    <h3>Featured at:</h3>
     <txp:output_form form="ads_webinformer" />
     <p><img width="200" height="200" alt="The Carver" src="https://textpattern.io/assets/img/com/carver.png" srcset="https://textpattern.io/assets/img/com/carver@2x.png 2x, https://textpattern.io/assets/img/com/carver.png 1x"></p>
 </section>
