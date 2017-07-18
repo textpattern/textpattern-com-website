@@ -59,7 +59,7 @@ Where the `@task@` is either `build` or `watch`.
 
 ## Shortcodes
 
-Textpattern 4.7 introduced support for user-definable `<txp:output_form />` attributes (and also the short tags syntax `<txp::...>`), allowing for our own version of 'shortcodes' within articles (*note:* remember to also use `notextile.` when within Textile content). This site uses the following tags:
+Textpattern 4.7 introduced support for user-definable `<txp:output_form />` attributes (and also the short tags syntax `<txp::...>`), allowing for our own version of 'shortcodes' within articles (**note:** remember to also use `notextile.` when within Textile content). This site uses the following tags:
 
 ### Image
 
@@ -99,7 +99,7 @@ For example:
 
 ## Plugins used
 
-TODO: use Composer to install all plugins? If so need to create PRs on each of the plugins below where Composer support is not currently provided.
+All plugins used are installed via Composer.
 
 * [`etc_cache`](https://github.com/etc-plugins/etc_cache) ✓ Composer
 * [`etc_pagination`](https://github.com/etc-plugins/etc_pagination) ✓ Composer
@@ -107,4 +107,5 @@ TODO: use Composer to install all plugins? If so need to create PRs on each of t
 * [`pat_if_amp`](https://github.com/cara-tm/pat_if_amp) ✓ Composer
 * [`rah_comment_spam`](https://github.com/gocom/rah_comment_spam) ✓ Composer
 * [`rah_sitemap`](https://github.com/gocom/rah_sitemap) ✓ Composer
-* [`zem_contact_reborn`](https://github.com/bloke/zem_contact_reborn)
+* [`smd_thumbnail`](https://github.com/bloke/smd_thumbnail) ✓ Composer
+* [`zem_contact_reborn`](https://github.com/bloke/zem_contact_reborn) AWAITING NAME CHANGE AND COMPOSER SUPPORT
