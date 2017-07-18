@@ -4,8 +4,41 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "77575b6eea7730e6b879d53cb09f6373",
+    "content-hash": "9769e3ff7537fb0b743c434fccf857de",
     "packages": [
+        {
+            "name": "bloke/smd_thumbnail",
+            "version": "0.4.0-beta",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Bloke/smd_thumbnail.git",
+                "reference": "167995728784bb411277d8f47ee67b555e1bfc69"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Bloke/smd_thumbnail/zipball/167995728784bb411277d8f47ee67b555e1bfc69",
+                "reference": "167995728784bb411277d8f47ee67b555e1bfc69",
+                "shasum": ""
+            },
+            "require": {
+                "textpattern/installer": "*",
+                "textpattern/lock": ">=4.6.0"
+            },
+            "type": "textpattern-plugin",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0"
+            ],
+            "description": "Multiple image thumbnails of arbitrary dimensions within Textpattern CMS",
+            "homepage": "https://github.com/bloke/smd_thumbnail",
+            "keywords": [
+                "images",
+                "plugin",
+                "src-set",
+                "textpattern"
+            ],
+            "time": "2017-07-18T15:48:00+00:00"
+        },
         {
             "name": "cara-tm/pat_if_amp",
             "version": "0.3.6-beta",
@@ -377,6 +410,7 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
+        "bloke/smd_thumbnail": 10,
         "cara-tm/pat_if_amp": 10,
         "etc-plugins/etc_cache": 10,
         "etc-plugins/etc_pagination": 10,

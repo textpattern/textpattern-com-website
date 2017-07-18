@@ -99,7 +99,7 @@ For example:
 
 ## Plugins used
 
-All plugins used are installed via Composer.
+All plugins we use are installed via Composer:
 
 * [`etc_cache`](https://github.com/etc-plugins/etc_cache) ✓ Composer
 * [`etc_pagination`](https://github.com/etc-plugins/etc_pagination) ✓ Composer
