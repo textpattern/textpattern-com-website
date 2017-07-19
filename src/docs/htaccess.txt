@@ -247,7 +247,7 @@ Redirect temp /github https://github.com/textpattern
 
 Redirect temp /demo https://textpattern.co/demo
 Redirect temp /textpattern-first-steps https://docs.textpattern.io/administration/hello-world
-Redirect temp /textpattern-semantic-model https://docs.textpattern.io/administration/textoattern-semantic-model
+Redirect temp /textpattern-semantic-model https://docs.textpattern.io/administration/textpattern-semantic-model
 Redirect temp /textpattern-tag-reference https://docs.textpattern.io/tags
 Redirect temp /default-theme https://github.com/textpattern/textpattern-default-theme
 Redirect temp /textile-changelog https://github.com/textile/php-textile/blob/master/CHANGELOG.textile
