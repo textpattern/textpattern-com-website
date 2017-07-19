@@ -6,6 +6,7 @@
     "ezyang/htmlpurifier": "4.9.3",
     "textpattern/lock": "4.6.2",
     "textpattern/installer": "^1.0",
+    "textpattern/com_connect": "4.6.0-beta",
     "bloke/smd_thumbnail": "0.4.0-beta",
     "cara-tm/pat_if_amp": "0.3.6-beta",
     "etc-plugins/etc_cache": "0.2.6-beta",

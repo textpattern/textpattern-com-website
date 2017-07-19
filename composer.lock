@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "9769e3ff7537fb0b743c434fccf857de",
+    "content-hash": "1d0d652bd4886e0d0e1276135152ba1b",
     "packages": [
         {
             "name": "bloke/smd_thumbnail",
@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Bloke/smd_thumbnail.git",
-                "reference": "167995728784bb411277d8f47ee67b555e1bfc69"
+                "reference": "9765cb5e4770918853a16026a3ef05ee76b8b3ae"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Bloke/smd_thumbnail/zipball/167995728784bb411277d8f47ee67b555e1bfc69",
-                "reference": "167995728784bb411277d8f47ee67b555e1bfc69",
+                "url": "https://api.github.com/repos/Bloke/smd_thumbnail/zipball/9765cb5e4770918853a16026a3ef05ee76b8b3ae",
+                "reference": "9765cb5e4770918853a16026a3ef05ee76b8b3ae",
                 "shasum": ""
             },
             "require": {
@@ -37,7 +37,7 @@
                 "src-set",
                 "textpattern"
             ],
-            "time": "2017-07-18T15:48:00+00:00"
+            "time": "2017-07-18T16:40:25+00:00"
         },
         {
             "name": "cara-tm/pat_if_amp",
@@ -316,6 +316,38 @@
             "time": "2014-03-28T19:47:25+00:00"
         },
         {
+            "name": "textpattern/com_connect",
+            "version": "4.6.0-beta",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/textpattern/com_connect.git",
+                "reference": "f3be23452da93b6b20aa523b8cc17ac05a4619ff"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/textpattern/com_connect/zipball/f3be23452da93b6b20aa523b8cc17ac05a4619ff",
+                "reference": "f3be23452da93b6b20aa523b8cc17ac05a4619ff",
+                "shasum": ""
+            },
+            "require": {
+                "textpattern/installer": "*",
+                "textpattern/lock": ">=4.5.0"
+            },
+            "type": "textpattern-plugin",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0"
+            ],
+            "description": "Form mailer plugin for Textpattern CMS.",
+            "homepage": "https://github.com/textpattern/com_connect",
+            "keywords": [
+                "Forms",
+                "plugin",
+                "textpattern"
+            ],
+            "time": "2017-07-18T23:25:06+00:00"
+        },
+        {
             "name": "textpattern/installer",
             "version": "1.0.7",
             "source": {
@@ -410,6 +442,7 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
+        "textpattern/com_connect": 10,
         "bloke/smd_thumbnail": 10,
         "cara-tm/pat_if_amp": 10,
         "etc-plugins/etc_cache": 10,
