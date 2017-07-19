@@ -16,8 +16,8 @@ Older versions of the above and other browsers may work, but these are the ones 
 
 Building this repository requires:
 
-* [Node.js](https://nodejs.org/) >=4.0
-* [Grunt](https://gruntjs.com/) >=1.0
+* [Node.js](https://nodejs.org/)
+* [Grunt](https://gruntjs.com/)
 * [Composer](https://getcomposer.org/)
 
 ## Setup
@@ -101,6 +101,7 @@ For example:
 
 All plugins we use are installed via Composer:
 
+* [`com_connect`](https://github.com/textpattern/com_connect) ✓ Composer
 * [`etc_cache`](https://github.com/etc-plugins/etc_cache) ✓ Composer
 * [`etc_pagination`](https://github.com/etc-plugins/etc_pagination) ✓ Composer
 * [`oui_flat`](https://github.com/nicolasgraph/oui_flat) ✓ Composer
@@ -108,4 +109,3 @@ All plugins we use are installed via Composer:
 * [`rah_comment_spam`](https://github.com/gocom/rah_comment_spam) ✓ Composer
 * [`rah_sitemap`](https://github.com/gocom/rah_sitemap) ✓ Composer
 * [`smd_thumbnail`](https://github.com/bloke/smd_thumbnail) ✓ Composer
-* [`zem_contact_reborn`](https://github.com/bloke/zem_contact_reborn) AWAITING NAME CHANGE AND COMPOSER SUPPORT
