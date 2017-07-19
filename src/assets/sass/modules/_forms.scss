@@ -300,8 +300,8 @@ input {
     color: $color-warning-text;
 }
 
-label.zemRequired,
-label.zemRequirederrorElement {
+label.comRequired,
+label.comRequirederrorElement {
     &::after {
         color: $color-warning-text;
         content: "\00A0" "\25CF";
@@ -317,7 +317,7 @@ select,
 textarea {
     &:focus:invalid,
     &.errorElement,
-    &.zemRequirederrorElement,
+    &.comRequirederrorElement,
     &.comments_error {
         border-color: $color-error-text;
         box-shadow: none; // Normalize Firefox styling

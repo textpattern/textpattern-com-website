@@ -40,9 +40,9 @@ rules:
         'comments_error',
         'error_message',
         'errorElement',
-        'zemError',
-        'zemRequired',
-        'zemRequirederrorElement'
+        'comError',
+        'comRequired',
+        'comRequirederrorElement'
       ]
 
   # Enforce whether or not `@import` paths should have leading underscores and/or filename extensions.

@@ -46,26 +46,26 @@
                         </div>
                         <p>Refrain from using this form to ask general questions about Textpattern or to ask for support—rather, please make use of the extensive <a href="https://docs.textpattern.io/">documentation</a> and the <a href="https://forum.textpattern.io/">support forum</a>. General “How do I…?” questions and support enquiries will be politely ignored. Thank you for your co-operation and interest in Textpattern!</p>
                         <hr>
-                        <txp:zem_contact class="" to="contact@textpattern.com" subject="Textpattern website enquiry" label="" body_form="email_body" redirect="contact/264/thanks">
+                        <txp:com_connect class="" to="contact@textpattern.com" subject="Textpattern website enquiry" label="" body_form="email_body" redirect="contact/264/thanks">
                             <p>Fields marked <span class="required" title="Required" aria-label="Required">●</span> are required.</p>
                             <div class="layout-container">
                                 <div class="field layout-2col">
-                                    <txp:zem_contact_text class="" name="name" size="32" label="Name" />
+                                    <txp:com_connect_text class="" name="name" size="32" label="Name" />
                                 </div>
                                 <div class="field layout-2col">
-                                    <txp:zem_contact_email class="" name="email" size="32" />
+                                    <txp:com_connect_email class="" name="email" size="32" />
                                 </div>
                                 <div class="field layout-2col">
-                                    <txp:zem_contact_text class="" name="website" size="32" label="Website" required="0" />
+                                    <txp:com_connect_text class="" name="website" size="32" label="Website" required="0" />
                                 </div>
                                 <div class="field layout-1col">
-                                    <txp:zem_contact_textarea class="" name="message" label="Message" cols="64" rows="8" />
+                                    <txp:com_connect_textarea class="" name="message" label="Message" cols="64" rows="8" />
                                 </div>
                                 <div class="field layout-1col">
-                                    <txp:zem_contact_submit class="" label="Send message" />
+                                    <txp:com_connect_submit class="" label="Send message" />
                                 </div>
                             </div>
-                        </txp:zem_contact>
+                        </txp:com_connect>
                         <section>
                             <h3 id="security">Security report rules</h3>
                             <p><strong>We take security very seriously!</strong> If you wish to report a Textpattern security issue please ensure that you’ve taken care of the following security precautions:</p>
