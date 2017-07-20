@@ -14,7 +14,7 @@
         <txp:images>
             <txp:evaluate test="image_info">
                 <figure itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
-                    <img itemprop="url" alt="<txp:image_info type='alt' />" src="<txp:image_url link='0' />" srcset="<txp:smd_thumbnail id='<txp:image_info type="id" />' type='2x' display='url' /> 2x, <txp:image_url link='0' /> 1x">
+                    <img itemprop="url" alt="<txp:image_info type='alt' />" src="<txp:image_url link='0' />" srcset="<txp:image_url link='0' /> 2x, <txp:smd_thumbnail id='<txp:image_info type="id" />' type='article-832w' display='url' /> 1x">
                     <meta itemprop="width" content="<txp:image_info type="w" />">
                     <meta itemprop="height" content="<txp:image_info type="h" />">
                     <figcaption itemprop="caption">
@@ -23,7 +23,7 @@
                 </figure>
             <txp:else />
                 <p itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
-                    <img itemprop="url" alt="<txp:image_info type='alt' />" src="<txp:image_url link='0' />" srcset="<txp:smd_thumbnail id='<txp:image_info type="id" />' type='2x' display='url' /> 2x, <txp:image_url link='0' /> 1x">
+                    <img itemprop="url" alt="<txp:image_info type='alt' />" src="<txp:image_url link='0' />" srcset="<txp:image_url link='0' /> 2x, <txp:smd_thumbnail id='<txp:image_info type="id" />' type='article-832w' display='url' /> 1x">
                     <meta itemprop="width" content="<txp:image_info type="w" />">
                     <meta itemprop="height" content="<txp:image_info type="h" />">
                 </p>
