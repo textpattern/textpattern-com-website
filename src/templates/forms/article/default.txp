@@ -18,31 +18,34 @@
 </txp:if_excerpt>
 <txp:if_article_image>
     <txp:images>
-        <txp:variable name="caption" value='<txp:image_info />' />
-        <txp:if_variable name="caption" value="">
-            <p class="photo" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+        <txp:evaluate test="image_info">
+            <figure itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
                 <txp:smd_if_thumbnail type="article-832w">
-                    <img itemprop="url" alt="<txp:image_info type='alt' />" src="<txp:smd_thumbnail id='<txp:image_info type="id" />' type='article-832w' display='url' />" srcset="<txp:image_url link='0' /> 2x, <txp:smd_thumbnail id='<txp:image_info type="id" />' type='article-832w' display='url' /> 1x">
+                    <img itemprop="url" alt="<txp:image_info type='alt' />" src="<txp:smd_thumbnail_info type="url" />" srcset="<txp:image_url link="0" /> 2x, <txp:smd_thumbnail_info type="url" /> 1x">
+                    <meta itemprop="width" content="<txp:smd_thumbnail_info type="w" />">
+                    <meta itemprop="height" content="<txp:smd_thumbnail_info type="h" />">
                 <txp:else />
-                    <img itemprop="url" alt="<txp:image_info type='alt' />" src="<txp:image_url link='0' />">
+                    <img itemprop="url" alt="<txp:image_info type="alt" />" src="<txp:image_url link="0" />">
+                    <meta itemprop="width" content="<txp:image_info type="w" />">
+                    <meta itemprop="height" content="<txp:image_info type="h" />">
                 </txp:smd_if_thumbnail>
-                <meta itemprop="width" content="<txp:image_info type="w" />">
-                <meta itemprop="height" content="<txp:image_info type="h" />">
-            </p>
-        <txp:else />
-            <figure itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
-                <txp:smd_if_thumbnail type="article-832w">
-                    <img itemprop="url" alt="<txp:image_info type='alt' />" src="<txp:smd_thumbnail id='<txp:image_info type="id" />' type='article-832w' display='url' />" srcset="<txp:image_url link='0' /> 2x, <txp:smd_thumbnail id='<txp:image_info type="id" />' type='article-832w' display='url' /> 1x">
-                <txp:else />
-                    <img itemprop="url" alt="<txp:image_info type='alt' />" src="<txp:image_url link='0' />">
-                </txp:smd_if_thumbnail>
-                <meta itemprop="width" content="<txp:image_info type="w" />">
-                <meta itemprop="height" content="<txp:image_info type="h" />">
                 <figcaption itemprop="caption">
                     <txp:image_info />
                 </figcaption>
             </figure>
-        </txp:if_variable>
+        <txp:else />
+            <p itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
+                <txp:smd_if_thumbnail type="article-832w">
+                    <img itemprop="url" alt="<txp:image_info type='alt' />" src="<txp:smd_thumbnail_info type="url" />" srcset="<txp:image_url link="0" /> 2x, <txp:smd_thumbnail_info type="url" /> 1x">
+                    <meta itemprop="width" content="<txp:smd_thumbnail_info type="w" />">
+                    <meta itemprop="height" content="<txp:smd_thumbnail_info type="h" />">
+                <txp:else />
+                    <img itemprop="url" alt="<txp:image_info type="alt" />" src="<txp:image_url link="0" />">
+                    <meta itemprop="width" content="<txp:image_info type="w" />">
+                    <meta itemprop="height" content="<txp:image_info type="h" />">
+                </txp:smd_if_thumbnail>
+            </p>
+        </txp:evaluate>
     </txp:images>
 <txp:else />
     <meta itemprop="image" content="https://textpattern.io/assets/img/branding/textpattern/textpattern-og.png">
