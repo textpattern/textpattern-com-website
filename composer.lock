@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "62e8879f560205568cd78438c78e3b85",
+    "content-hash": "73a01e59ad0ae641ea888c75f649e084",
     "packages": [
         {
             "name": "bloke/smd_thumbnail",
@@ -75,16 +75,16 @@
         },
         {
             "name": "etc-plugins/etc_cache",
-            "version": "0.2.6-beta2",
+            "version": "0.2.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/etc-plugins/etc_cache.git",
-                "reference": "4a4105c5496cf2febf23cf8b912d31793feb5173"
+                "reference": "0c86069956d323af701430e3b5c9fb1ad3d147df"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/etc-plugins/etc_cache/zipball/4a4105c5496cf2febf23cf8b912d31793feb5173",
-                "reference": "4a4105c5496cf2febf23cf8b912d31793feb5173",
+                "url": "https://api.github.com/repos/etc-plugins/etc_cache/zipball/0c86069956d323af701430e3b5c9fb1ad3d147df",
+                "reference": "0c86069956d323af701430e3b5c9fb1ad3d147df",
                 "shasum": ""
             },
             "require": {
@@ -105,7 +105,7 @@
                 "plugin",
                 "textpattern"
             ],
-            "time": "2017-07-20T13:54:51+00:00"
+            "time": "2017-07-21T13:37:23+00:00"
         },
         {
             "name": "etc-plugins/etc_pagination",
@@ -445,7 +445,6 @@
         "textpattern/com_connect": 10,
         "bloke/smd_thumbnail": 10,
         "cara-tm/pat_if_amp": 10,
-        "etc-plugins/etc_cache": 10,
         "etc-plugins/etc_pagination": 10,
         "oui/oui_flat": 10
     },
