@@ -154,17 +154,17 @@ curl_close($curl1);
                 </div>
                 <div class="showcases showcase-home-c">
                     <txp:images category="showcase-home-c" limit="1" sort="date desc">
-                        <img class="img--showcase" width="450" height="300" alt="<txp:image_info type="alt" />" src="<txp:image_url thumbnail="1" />" srcset="<txp:image_url /> 2x, <txp:image_url thumbnail="1" /> 1x">
+                        <img class="img--showcase" width="450" height="300" alt="<txp:image_info type="alt" />" src="<txp:smd_thumbnail type="showcase-teaser-450w300h" display="url" />" srcset="<txp:image_url /> 2x, <txp:smd_thumbnail type="showcase-teaser-450w300h" display="url" /> 1x">
                     </txp:images>
                 </div>
                 <div class="showcases showcase-home-l">
                     <txp:images category="showcase-home-l" limit="1" sort="date desc">
-                        <img class="img--showcase" width="318" height="212" alt="<txp:image_info type="alt" />" src="<txp:image_url thumbnail="1" />" srcset="<txp:image_url /> 2x, <txp:image_url thumbnail="1" /> 1x">
+                        <img class="img--showcase" width="318" height="212" alt="<txp:image_info type="alt" />" src="<txp:smd_thumbnail type="showcase-teaser-318w212h" display="url" />" srcset="<txp:image_url /> 2x, <txp:smd_thumbnail type="showcase-teaser-318w212h" display="url" /> 1x">
                     </txp:images>
                 </div>
                 <div class="showcases showcase-home-r">
                     <txp:images category="showcase-home-r" limit="1" sort="date desc">
-                        <img class="img--showcase" width="318" height="212" alt="<txp:image_info type="alt" />" src="<txp:image_url thumbnail="1" />" srcset="<txp:image_url /> 2x, <txp:image_url thumbnail="1" /> 1x">
+                        <img class="img--showcase" width="318" height="212" alt="<txp:image_info type="alt" />" src="<txp:smd_thumbnail type="showcase-teaser-318w212h" display="url" />" srcset="<txp:image_url /> 2x, <txp:smd_thumbnail type="showcase-teaser-318w212h" display="url" /> 1x">
                     </txp:images>
                 </div>
             </section>

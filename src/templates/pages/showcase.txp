@@ -77,7 +77,7 @@
                         <div class="showcases">
                             <a href="<txp:permlink />">
                                 <txp:images limit="1">
-                                    <img class="img--showcase" width="318" height="212" alt="<txp:image_info type="alt" />" src="<txp:image_url thumbnail="1" />" srcset="<txp:image_url /> 2x, <txp:image_url thumbnail="1" /> 1x">
+                                    <img class="img--showcase" width="318" height="212" alt="<txp:image_info type="alt" />" src="<txp:smd_thumbnail type="showcase-teaser-318w212h" display="url" />" srcset="<txp:image_url /> 2x, <txp:smd_thumbnail type="showcase-teaser-318w212h" display="url" /> 1x">
                                 </txp:images>
                             </a>
                             <h4><a href="<txp:permlink />"><txp:title /></a></h4>
