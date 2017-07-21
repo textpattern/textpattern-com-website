@@ -34,7 +34,7 @@
     "jquery": "3.2.1",
     "lunr": "2.1.2",
     "prismjs": "1.6.0",
-    "requirejs": "2.3.3",
+    "requirejs": "2.3.4",
     "responsive-nav": "1.0.39",
     "textpattern-branding": "0.2.8"
   },
