@@ -21,11 +21,11 @@
         <txp:evaluate test="image_info">
             <figure itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
                 <txp:smd_if_thumbnail type="article-832w">
-                    <img itemprop="url" alt="<txp:image_info type='alt' />" src="<txp:smd_thumbnail_info type="url" />" srcset="<txp:image_url link="0" /> 2x, <txp:smd_thumbnail_info type="url" /> 1x">
+                    <img itemprop="url" alt="<txp:image_info type="alt" />" src="<txp:smd_thumbnail type="article-832w" display="url" />" srcset="<txp:image_url /> 2x, <txp:smd_thumbnail type="article-832w" display="url" /> 1x">
                     <meta itemprop="width" content="<txp:smd_thumbnail_info type="w" />">
                     <meta itemprop="height" content="<txp:smd_thumbnail_info type="h" />">
                 <txp:else />
-                    <img itemprop="url" alt="<txp:image_info type="alt" />" src="<txp:image_url link="0" />">
+                    <img itemprop="url" alt="<txp:image_info type="alt" />" src="<txp:image_url />">
                     <meta itemprop="width" content="<txp:image_info type="w" />">
                     <meta itemprop="height" content="<txp:image_info type="h" />">
                 </txp:smd_if_thumbnail>
@@ -36,11 +36,11 @@
         <txp:else />
             <p itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
                 <txp:smd_if_thumbnail type="article-832w">
-                    <img itemprop="url" alt="<txp:image_info type='alt' />" src="<txp:smd_thumbnail_info type="url" />" srcset="<txp:image_url link="0" /> 2x, <txp:smd_thumbnail_info type="url" /> 1x">
+                    <img itemprop="url" alt="<txp:image_info type="alt" />" src="<txp:smd_thumbnail type="article-832w" display="url" />" srcset="<txp:image_url /> 2x, <txp:smd_thumbnail type="article-832w" display="url" /> 1x">
                     <meta itemprop="width" content="<txp:smd_thumbnail_info type="w" />">
                     <meta itemprop="height" content="<txp:smd_thumbnail_info type="h" />">
                 <txp:else />
-                    <img itemprop="url" alt="<txp:image_info type="alt" />" src="<txp:image_url link="0" />">
+                    <img itemprop="url" alt="<txp:image_info type="alt" />" src="<txp:image_url />">
                     <meta itemprop="width" content="<txp:image_info type="w" />">
                     <meta itemprop="height" content="<txp:image_info type="h" />">
                 </txp:smd_if_thumbnail>
