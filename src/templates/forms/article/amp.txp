@@ -38,7 +38,7 @@
                 {
                     "@type": "ImageObject",
                     <txp:smd_if_thumbnail type="amp-696w390h">
-                        "url": "<txp:smd_thumbnail id='<txp:image_info type="id" />' type='amp-696w390h' display='url' />",
+                        "url": "<txp:smd_thumbnail id="<txp:image_info type="id" />" type="amp-696w390h" display="url" />",
                     <txp:else />
                         "url": "https://textpattern.io/assets/img/branding/textpattern/textpattern-amp.png",
                     </txp:smd_if_thumbnail>

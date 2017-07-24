@@ -27,7 +27,7 @@
                     </li>
                 <txp:else />
                     <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                        <a itemprop="item" href="<txp:section url='1' />"><span itemprop="name"><txp:section title="1" /></span></a>
+                        <a itemprop="item" href="<txp:section url="1" />"><span itemprop="name"><txp:section title="1" /></span></a>
                         <meta itemprop="position" content="2">
                     </li>
                     <li class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">

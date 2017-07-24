@@ -7,24 +7,24 @@
         <title><txp:section title="1" /> / Textpattern CMS</title>
         <txp:meta_description />
         <meta name="robots" content="index, follow">
-        <link rel="canonical" href="<txp:section url='1' />">
+        <link rel="canonical" href="<txp:section url="1" />">
         <meta name="twitter:card" content="summary">
         <meta name="twitter:site" content="@textpattern">
         <meta name="twitter:title" content="<txp:section title="1" />">
         <meta name="twitter:description" content="<txp:meta_description format="" />">
         <meta name="twitter:image:src" content="https://textpattern.io/apple-touch-icon-180x180.png">
-        <meta name="twitter:url" content="<txp:section url='1' />">
+        <meta name="twitter:url" content="<txp:section url="1" />">
         <meta property="og:title" content="<txp:section title="1" />">
         <meta property="og:description" content="<txp:meta_description format="" />">
         <meta property="og:image" content="https://textpattern.io/assets/img/branding/textpattern/textpattern-og.png">
-        <meta property="og:url" content="<txp:section url='1' />">
+        <meta property="og:url" content="<txp:section url="1" />">
         <script type="application/ld+json">
             {
                 "@context": "https://schema.org",
                 "@type": "WebPage",
                 "headline": "<txp:section title="1" escape="json" />",
                 "description": "<txp:meta_description format="" escape="json" />",
-                "url": "<txp:section url='1' />"
+                "url": "<txp:section url="1" />"
             }
         </script>
     <txp:else />
