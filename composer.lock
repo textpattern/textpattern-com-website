@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "73a01e59ad0ae641ea888c75f649e084",
+    "content-hash": "1eb09a970df63bd6d1900b3ec7dc34b1",
     "packages": [
         {
             "name": "bloke/smd_thumbnail",
@@ -273,6 +273,48 @@
                 "textpattern"
             ],
             "time": "2015-03-06T03:10:49+00:00"
+        },
+        {
+            "name": "rah/rah_external_output",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/gocom/rah_external_output.git",
+                "reference": "4c9e6cea5a084c97d0b50ebb58dee431b3aef16e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/gocom/rah_external_output/zipball/4c9e6cea5a084c97d0b50ebb58dee431b3aef16e",
+                "reference": "4c9e6cea5a084c97d0b50ebb58dee431b3aef16e",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.2.0",
+                "textpattern/installer": "*",
+                "textpattern/lock": ">=4.4.1"
+            },
+            "type": "textpattern-plugin",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Jukka Svahn",
+                    "homepage": "http://rahforum.biz",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Content-type snippets plugin for Textpattern",
+            "homepage": "http://rahforum.biz/plugins/rah_external_output",
+            "keywords": [
+                "content",
+                "partials",
+                "plugin",
+                "snippets",
+                "textpattern"
+            ],
+            "time": "2014-03-18T10:12:21+00:00"
         },
         {
             "name": "rah/rah_sitemap",

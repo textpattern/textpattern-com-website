@@ -13,6 +13,7 @@
     "etc-plugins/etc_pagination": "0.5.0-beta",
     "oui/oui_flat": "0.7.0-beta2",
     "rah/rah_comment_spam": "0.8.0",
+    "rah/rah_external_output": "1.1.0",
     "rah/rah_sitemap": "1.3.0"
   }
 }
