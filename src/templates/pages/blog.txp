@@ -7,6 +7,7 @@
     <meta charset="utf-8">
     <txp:output_form form="head" />
     <txp:if_article_list>
+        <txp:article pgonly="1" limit="12" />
         <title>Blog / Textpattern CMS</title>
         <meta name="description" content="Latest blogs from Team Textpattern and guests; Textpattern news and other tidbits of info that we find of interest.">
         <txp:variable name="page" value='<txp:page_url type="pg" />' />
