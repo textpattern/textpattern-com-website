@@ -71,24 +71,7 @@
             </div>
         </txp:if_excerpt>
         <txp:if_article_image>
-            <txp:images>
-                <txp:evaluate test="image_info">
-                    <figure>
-                        <txp:smd_if_thumbnail type="article-832w">
-                            <amp-img layout="responsive" alt="<txp:image_info type="alt" />" src="<txp:smd_thumbnail type="article-832w" display="url" />" width="<txp:smd_thumbnail_info type="w" />" height="<txp:smd_thumbnail_info type="h" />"></amp-img>
-                        <txp:else />
-                            <amp-img layout="responsive" alt="<txp:image_info type="alt" />" src="<txp:image_url />" width="<txp:image_info type="w" />" height="<txp:image_info type="h" />"></amp-img>
-                        </txp:smd_if_thumbnail>
-                        <figcaption><txp:image_info /></figcaption>
-                    </figure>
-                <txp:else />
-                    <txp:smd_if_thumbnail type="article-832w">
-                        <p><amp-img layout="responsive" alt="<txp:image_info type="alt" />" src="<txp:smd_thumbnail type="article-832w" display="url" />" width="<txp:smd_thumbnail_info type="w" />" height="<txp:smd_thumbnail_info type="h" />"></amp-img></p>
-                    <txp:else />
-                        <p><amp-img layout="responsive" alt="<txp:image_info type="alt" />" src="<txp:image_url />" width="<txp:image_info type="w" />" height="<txp:image_info type="h" />"></amp-img></p>
-                    </txp:smd_if_thumbnail>
-                </txp:evaluate>
-            </txp:images>
+            <txp:images form="images_amp" break="" />
         </txp:if_article_image>
         <div class="article-body">
             <txp:pat_amp_sanitize content="body" />
