@@ -3,8 +3,8 @@
         <txp:smd_if_thumbnail type="article-832w">
             <txp:smd_thumbnail type="article-832w">
                 <img itemprop="url" alt="<txp:image_info type="alt" />" src="<txp:smd_thumbnail_info item="url" />" srcset="<txp:image_url /> 2x, <txp:smd_thumbnail_info item="url" /> 1x">
-                <meta itemprop="width" content="<txp:evaluate query='<txp:image_info type="w" />div2' />">
-                <meta itemprop="height" content="<txp:evaluate query='<txp:image_info type="h" />div2' />">
+                <meta itemprop="width" content="<txp:evaluate query='ceiling(<txp:image_info type="w" />div2)' />">
+                <meta itemprop="height" content="<txp:evaluate query='ceiling(<txp:image_info type="h" />div2)' />">
             </txp:smd_thumbnail>
         <txp:else />
             <img itemprop="url" alt="<txp:image_info type="alt" />" src="<txp:image_url />">
@@ -20,8 +20,8 @@
         <txp:smd_if_thumbnail type="article-832w">
             <txp:smd_thumbnail type="article-832w">
                 <img itemprop="url" alt="<txp:image_info type="alt" />" src="<txp:smd_thumbnail_info item="url" />" srcset="<txp:image_url /> 2x, <txp:smd_thumbnail_info item="url" /> 1x">
-                <meta itemprop="width" content="<txp:evaluate query='<txp:image_info type="w" />div2' />">
-                <meta itemprop="height" content="<txp:evaluate query='<txp:image_info type="h" />div2' />">
+                <meta itemprop="width" content="<txp:evaluate query='ceiling(<txp:image_info type="w" />div2)' />">
+                <meta itemprop="height" content="<txp:evaluate query='ceiling(<txp:image_info type="h" />div2)' />">
             </txp:smd_thumbnail>
         <txp:else />
             <img itemprop="url" alt="<txp:image_info type="alt" />" src="<txp:image_url />">

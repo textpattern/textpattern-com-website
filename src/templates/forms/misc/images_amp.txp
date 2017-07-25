@@ -2,7 +2,7 @@
     <figure>
         <txp:smd_if_thumbnail type="article-832w">
             <txp:smd_thumbnail type="article-832w">
-                <amp-img layout="responsive" alt="<txp:image_info type="alt" />" src="<txp:smd_thumbnail_info item="url" />" width="<txp:evaluate query='<txp:image_info type="w" />div2' />" height="<txp:evaluate query='<txp:image_info type="h" />div2' />"></amp-img>
+                <amp-img layout="responsive" alt="<txp:image_info type="alt" />" src="<txp:smd_thumbnail_info item="url" />" width="<txp:evaluate query='ceiling(<txp:image_info type="w" />div2)' />" height="<txp:evaluate query='ceiling(<txp:image_info type="h" />div2)' />"></amp-img>
             </txp:smd_thumbnail>
         <txp:else />
             <amp-img layout="responsive" alt="<txp:image_info type="alt" />" src="<txp:image_url />" width="<txp:image_info type="w" />" height="<txp:image_info type="h" />"></amp-img>
@@ -12,7 +12,7 @@
 <txp:else />
     <txp:smd_if_thumbnail type="article-832w">
         <txp:smd_thumbnail type="article-832w">
-            <p><amp-img layout="responsive" alt="<txp:image_info type="alt" />" src="<txp:smd_thumbnail_info item="url" />" width="<txp:evaluate query='<txp:image_info type="w" />div2' />" height="<txp:evaluate query='<txp:image_info type="h" />div2' />"></amp-img></p>
+            <p><amp-img layout="responsive" alt="<txp:image_info type="alt" />" src="<txp:smd_thumbnail_info item="url" />" width="<txp:evaluate query='ceiling(<txp:image_info type="w" />div2)' />" height="<txp:evaluate query='ceiling(<txp:image_info type="h" />div2)' />"></amp-img></p>
         </txp:smd_thumbnail>
     <txp:else />
         <p><amp-img layout="responsive" alt="<txp:image_info type="alt" />" src="<txp:image_url />" width="<txp:image_info type="w" />" height="<txp:image_info type="h" />"></amp-img></p>
