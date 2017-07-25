@@ -65,13 +65,13 @@ Textpattern 4.7 introduced support for user-definable `<txp:output_form />` attr
 
 To create a HTML5 image snippet:
 
-    <txp::media_image id="" id2x="" />
+    <txp::media_image id="" />
 
-For blog/articles, the ideal image width is `832` pixels for the standard resolution version and `1664` pixels for the double resolution version (`id2x`). `id2x` is optional, but should be provided if possible. If not used, remove that attribute from your shortcode.
+`id` accepts either a single image ID, or comma separated image IDs if you want multiple images. For blogs/articles the ideal image width is `832` pixels for the standard resolution version and `1664` pixels for the double resolution version (which is optional, but should be provided if possible).
 
 For example:
 
-    <txp::media_image id="41" id2x="42" />
+    <txp::media_image id="41, 42, 50" />
 
 ### Video
 
