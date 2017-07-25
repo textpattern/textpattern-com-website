@@ -69,8 +69,13 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+.article-description {
     font-family: $font-serif;
+}
+
+.article-description {
+    font-size: 1.125em;
 }
 
 small,
