@@ -17,7 +17,7 @@
     </div>
 </txp:if_excerpt>
 <txp:if_article_image>
-    <txp:images form="images" />
+    <txp:images form="images" break="" />
 <txp:else />
     <meta itemprop="image" content="https://textpattern.io/assets/img/branding/textpattern/textpattern-og.png">
     <meta itemprop="width" content="1200">
