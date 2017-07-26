@@ -73,18 +73,20 @@
                 </div>
                 <section>
                     <h4 class="accessibility">List of site showcases</h4>
-                    <txp:article>
-                        <div class="showcases">
-                            <a href="<txp:permlink />">
-                                <txp:images limit="1">
-                                    <txp:smd_thumbnail type="showcase-teaser-318w212h">
-                                        <img class="img--showcase" width="318" height="212" alt="<txp:image_info type="alt" />" src="<txp:smd_thumbnail_info item="url" />" srcset="<txp:image_url /> 2x, <txp:smd_thumbnail_info item="url" /> 1x">
-                                    </txp:smd_thumbnail>
-                                </txp:images>
-                            </a>
-                            <h4><a href="<txp:permlink />"><txp:title /></a></h4>
-                        </div>
-                    </txp:article>
+                    <txp:etc_cache id="landing-showcases">
+                        <txp:article>
+                            <div class="showcases">
+                                <a href="<txp:permlink />">
+                                    <txp:images limit="1">
+                                        <txp:smd_thumbnail type="showcase-teaser-318w212h">
+                                            <img class="img--showcase" width="318" height="212" alt="<txp:image_info type="alt" />" src="<txp:smd_thumbnail_info item="url" />" srcset="<txp:image_url /> 2x, <txp:smd_thumbnail_info item="url" /> 1x">
+                                        </txp:smd_thumbnail>
+                                    </txp:images>
+                                </a>
+                                <h4><a href="<txp:permlink />"><txp:title /></a></h4>
+                            </div>
+                        </txp:article>
+                    </txp:etc_cache>
                 </section>
                 <p class="alert-block information footnote"><strong>Disclaimer:</strong> Inclusion in this showcase is at the sole discretion of the The Textpattern Development Team. Any site may be removed at any time for any reason. The The Textpattern Development Team is not directly responsible for any content or views expressed within third-party sites. See something wrong in this showcase? Please <a href="contact.html">contact us</a> and we’ll look into it.</p>
             </div>
