@@ -48,7 +48,7 @@
     <main aria-label="Main content">
         <div class="wrapper-inner">
                 <div id="animation-container">
-                    <canvas id="animation" width="1150" height="480"><img alt="Powering big ideas from a small CMS" src="/assets/img/com/index-animation-fallback.png"></canvas>
+                    <canvas id="animation" width="1150" height="480"><img width="1150" height="480" alt="Powering big ideas from a small CMS" src="/assets/img/com/index-animation-fallback.png"></canvas>
                 </div>
                 <div id="animation-overlay">
                 <div class="container">
@@ -185,9 +185,7 @@ curl_close($curl1);
                 <div class="layout-container">
                     <section class="layout-3col-2span" itemscope itemtype="https://schema.org/Blog">
                         <h3>Latest from <a href="<txp:site_url />weblog">the blog</a>…</h3>
-
-                        ...blog image placeholder...
-
+                        <p><img width="756" height="160" alt="The Textpattern blog" src="https://placehold.it/756x160" srcset="https://placehold.it/1512x320 2x, https://placehold.it/756x160 1x"></p>
                         <txp:etc_cache id="homepage-blogs">
                             <txp:article form="article_listing_blog" limit="2" />
                         </txp:etc_cache>

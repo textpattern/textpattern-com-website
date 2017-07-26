@@ -29,7 +29,7 @@
                     <p>Please <a href="<txp:site_url />">return to the Textpattern homepage</a>.</p>
                 </div>
                 <div class="layout-2col">
-                    <p><img alt="Page error" src="https://textpattern.io/assets/img/com/error.jpg" srcset="https://textpattern.io/assets/img/com/error@2x.jpg 2x, https://textpattern.io/assets/img/com/error.jpg 1x"></p>
+                    <p><img width="556" height="406" alt="Page error" src="https://textpattern.io/assets/img/com/error.jpg" srcset="https://textpattern.io/assets/img/com/error@2x.jpg 2x, https://textpattern.io/assets/img/com/error.jpg 1x"></p>
                 </div>
             </div>
         </div>
