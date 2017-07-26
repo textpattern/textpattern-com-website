@@ -1,6 +1,8 @@
+/.htaccess
 /css.php
 /files
 /images
+/img
 /index.php
 /mockups
 /templates/*/
@@ -8,6 +10,5 @@
 /textpattern
 /vendor
 /video
-/.htaccess
 /*.png
 /*.ico
