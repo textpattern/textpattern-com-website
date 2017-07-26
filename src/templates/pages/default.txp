@@ -55,15 +55,17 @@
                     <h1 class="cta"><span>The small content management system that can handle big ideas</span></h1>
                     <hr>
                     <p class="cta-buttons">
-                        <txp:file_download_list category="current-release-zip" limit="1" sort="created desc">
-                            <span itemscope itemtype="https://schema.org/DataDownload">
-                                <meta itemprop="name" content="Textpattern CMS">
-                                <a class="button button-primary button-large" href="<txp:file_download_link />" itemprop="url"><span class="ui-button-icon ui-icon ui-extra-icon-download"></span> Download Textpattern <span class="txp-version" itemprop="version"><txp:file_download_name title="1" /></span></a>
-                                <meta itemprop="fileFormat" content="application/zip">
-                                <meta itemprop="contentSize" content="<txp:file_download_size format="k" decimals="0" />">
-                                <meta itemprop="dateModified" content="<txp:file_download_modified format="iso8601" />">
-                            </span>
-                        </txp:file_download_list>
+                        <txp:etc_cache id="homepage-downloads">
+                            <txp:file_download_list category="current-release-zip" limit="1" sort="created desc">
+                                <span itemscope itemtype="https://schema.org/DataDownload">
+                                    <meta itemprop="name" content="Textpattern CMS">
+                                    <a class="button button-primary button-large" href="<txp:file_download_link />" itemprop="url"><span class="ui-button-icon ui-icon ui-extra-icon-download"></span> Download Textpattern <span class="txp-version" itemprop="version"><txp:file_download_name title="1" /></span></a>
+                                    <meta itemprop="fileFormat" content="application/zip">
+                                    <meta itemprop="contentSize" content="<txp:file_download_size format="k" decimals="0" />">
+                                    <meta itemprop="dateModified" content="<txp:file_download_modified format="iso8601" />">
+                                </span>
+                            </txp:file_download_list>
+                        </txp:etc_cache>
                         <a class="button" href="<txp:site_url />demo">Try a demo</a>
                     </p>
                     <p>
@@ -152,27 +154,29 @@ curl_close($curl1);
                 <div>
                     <p>Our users continue to amaze us with their wonderful creations! Feast your eyes on some of the awesome websites powered by Textpattern CMS in our <a href="<txp:site_url />showcase">site showcase section</a>.</p>
                 </div>
-                <div class="showcases showcase-home-c">
-                    <txp:images category="showcase-home-c" limit="1" sort="date desc">
-                        <txp:smd_thumbnail type="showcase-teaser-450w300h">
-                            <img class="img--showcase" width="450" height="300" alt="<txp:image_info type="alt" />" src="<txp:smd_thumbnail_info item="url" />" srcset="<txp:image_url /> 2x, <txp:smd_thumbnail_info item="url" /> 1x">
-                        </txp:smd_thumbnail>
-                    </txp:images>
-                </div>
-                <div class="showcases showcase-home-l">
-                    <txp:images category="showcase-home-l" limit="1" sort="date desc">
-                        <txp:smd_thumbnail type="showcase-teaser-318w212h">
-                            <img class="img--showcase" width="318" height="212" alt="<txp:image_info type="alt" />" src="<txp:smd_thumbnail_info item="url" />" srcset="<txp:image_url /> 2x, <txp:smd_thumbnail_info item="url" /> 1x">
-                        </txp:smd_thumbnail>
-                    </txp:images>
-                </div>
-                <div class="showcases showcase-home-r">
-                    <txp:images category="showcase-home-r" limit="1" sort="date desc">
-                        <txp:smd_thumbnail type="showcase-teaser-318w212h">
-                            <img class="img--showcase" width="318" height="212" alt="<txp:image_info type="alt" />" src="<txp:smd_thumbnail_info item="url" />" srcset="<txp:image_url /> 2x, <txp:smd_thumbnail_info item="url" /> 1x">
-                        </txp:smd_thumbnail>
-                    </txp:images>
-                </div>
+                <txp:etc_cache id="homepage-showcases">
+                    <div class="showcases showcase-home-c">
+                        <txp:images category="showcase-home-c" limit="1" sort="date desc">
+                            <txp:smd_thumbnail type="showcase-teaser-450w300h">
+                                <img class="img--showcase" width="450" height="300" alt="<txp:image_info type="alt" />" src="<txp:smd_thumbnail_info item="url" />" srcset="<txp:image_url /> 2x, <txp:smd_thumbnail_info item="url" /> 1x">
+                            </txp:smd_thumbnail>
+                        </txp:images>
+                    </div>
+                    <div class="showcases showcase-home-l">
+                        <txp:images category="showcase-home-l" limit="1" sort="date desc">
+                            <txp:smd_thumbnail type="showcase-teaser-318w212h">
+                                <img class="img--showcase" width="318" height="212" alt="<txp:image_info type="alt" />" src="<txp:smd_thumbnail_info item="url" />" srcset="<txp:image_url /> 2x, <txp:smd_thumbnail_info item="url" /> 1x">
+                            </txp:smd_thumbnail>
+                        </txp:images>
+                    </div>
+                    <div class="showcases showcase-home-r">
+                        <txp:images category="showcase-home-r" limit="1" sort="date desc">
+                            <txp:smd_thumbnail type="showcase-teaser-318w212h">
+                                <img class="img--showcase" width="318" height="212" alt="<txp:image_info type="alt" />" src="<txp:smd_thumbnail_info item="url" />" srcset="<txp:image_url /> 2x, <txp:smd_thumbnail_info item="url" /> 1x">
+                            </txp:smd_thumbnail>
+                        </txp:images>
+                    </div>
+                </txp:etc_cache>
             </section>
         </div>
         <txp:output_form form="ads_adsense_homepage" />
@@ -184,7 +188,9 @@ curl_close($curl1);
 
                         ...blog image placeholder...
 
-                        <txp:article form="article_listing_blog" limit="2" />
+                        <txp:etc_cache id="homepage-blogs">
+                            <txp:article form="article_listing_blog" limit="2" />
+                        </txp:etc_cache>
                     </section>
                     <div class="layout-3col">
                         <h3>Latest from <a href="https://forum.textpattern.io/">the forum</a>…</h3>
