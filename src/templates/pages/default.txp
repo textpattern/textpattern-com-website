@@ -276,7 +276,7 @@ curl_close($curl2);
                         </txp:if_search_results>
                     </div>
                     <p>Please try another search term or <a href="<txp:site_url />">return to the Textpattern homepage</a>.</p>
-                    <p><img alt="Page error" src="https://textpattern.io/assets/img/com/error.jpg" srcset="https://textpattern.io/assets/img/com/error@2x.jpg 2x, https://textpattern.io/assets/img/com/error.jpg 1x"></p>
+                    <p><img width="556" height="406" alt="Page error" src="https://textpattern.io/assets/img/com/error.jpg" srcset="https://textpattern.io/assets/img/com/error@2x.jpg 2x, https://textpattern.io/assets/img/com/error.jpg 1x"></p>
                 </txp:if_search_results>
             </div>
         </div>
