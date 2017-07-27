@@ -16,13 +16,16 @@
         <txp:excerpt />
     </div>
 </txp:if_excerpt>
-<txp:if_article_image>
-    <txp:images form="images" break="" />
+<txp:if_section name="showcase">
 <txp:else />
-    <meta itemprop="image" content="https://textpattern.io/assets/img/branding/textpattern/textpattern-og.png">
-    <meta itemprop="width" content="1200">
-    <meta itemprop="height" content="1200">
-</txp:if_article_image>
+    <txp:if_article_image>
+        <txp:images form="images" break="" />
+    <txp:else />
+        <meta itemprop="image" content="https://textpattern.io/assets/img/branding/textpattern/textpattern-og.png">
+        <meta itemprop="width" content="1200">
+        <meta itemprop="height" content="1200">
+    </txp:if_article_image>
+</txp:if_section>
 <div itemprop="articleBody">
     <txp:body />
 </div>
