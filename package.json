@@ -30,7 +30,7 @@
     "uglify-save-license": "0.4.1"
   },
   "dependencies": {
-    "ga-lite": "1.1.1",
+    "ga-lite": "1.1.2",
     "jquery": "3.2.1",
     "lunr": "2.1.2",
     "prismjs": "1.6.0",
