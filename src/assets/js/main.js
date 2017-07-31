@@ -94,6 +94,7 @@
                 ga('create', 'UA-XXXXX-Y', 'auto'); // TODO: Remember to amend the GA account ID number!
             }
 
+            ga('set', 'transport', 'beacon');
             ga('set', 'anonymizeIp', true);
             ga('send', 'pageview');
         }
