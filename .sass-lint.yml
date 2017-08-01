@@ -175,7 +175,7 @@ rules:
   no-misspelled-properties:
     - 1
     - extra-properties:
-        - text-decoration-skip
+        - font-display
         - touch-callout
 
   # Enforce that selectors are not allowed to have qualifying elements.
