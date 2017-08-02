@@ -51,7 +51,7 @@
         </p>
     </footer>
 </div>
-    <script data-main="https://textpattern.io/assets/js/main.@@timestamp.js" src="https://textpattern.io/assets/js/require.@@timestamp.js"></script>
+    <script async data-main="https://textpattern.io/assets/js/main.@@timestamp.js" src="https://textpattern.io/assets/js/require.@@timestamp.js"></script>
 <txp:if_variable name="homepage">
     <script src="https://textpattern.io/assets/js/indexcanvas.@@timestamp.js"></script>
     <script>document.addEventListener("DOMContentLoaded",function(){init();},false);</script>
