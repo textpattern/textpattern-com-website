@@ -11,10 +11,6 @@
         <label for="email">Email <span class="required" title="Required" aria-label="Required">●</span></label><br>
         <txp:comment_email_input size="32" />
     </div>
-    <div class="field layout-2col">
-        <label for="web">Website</label><br>
-        <txp:comment_web_input size="32" />
-    </div>
     <div class="field layout-1col">
         <label for="message">Message <span class="required" title="Required" aria-label="Required">●</span></label><br>
         <txp:comment_message_input cols="64" rows="8" />
