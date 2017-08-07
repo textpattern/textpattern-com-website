@@ -210,12 +210,7 @@ if (curl_error($curl2)) {
     $xml = json_decode($response2);
 
     foreach ($xml->topic as $topicElement) {
-        echo <<<EOHTML
-        <li>
-            <a href="{$topicElement->link}">{$topicElement->title}</a>
-            <small class="block">by {$topicElement->author->name} on <time datetime="{$topicElement->postedutc}">{$topicElement->posted}</time></small>
-        </li>
-EOHTML;
+        echo '<li><a href="'.$topicElement->link.'">'.htmlspecialchars($topicElement->title).'</a> <small class="block">by '.htmlspecialchars($topicElement->author->name).' on <time datetime="'.$topicElement->postedutc.'">'.$topicElement->posted.'</time></small></li>';
     }
 }
 
