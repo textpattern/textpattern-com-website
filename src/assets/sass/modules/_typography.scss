@@ -118,6 +118,7 @@ blockquote {
     margin: 1em 0;
     padding: 1px 1em 1px 1.5em;
     border-left: 0.25em solid $color-highlight;
+    border-radius: 0 $border-radius $border-radius 0;
     background-color: $color-highlight-box;
 }
 
