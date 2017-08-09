@@ -97,7 +97,40 @@ pre,
 code,
 kbd,
 samp {
+    border: 1px solid lighten($color-border, 9%);
+    border-radius: 0.2857143em; // 4px / 14px
+    background-color: $color-background-box;
+    color: $color-text;
     font-family: $font-code;
+    font-size: $code-font-size;
+    line-height: $line-height-mobile;
+}
+
+code,
+kbd,
+samp {
+    padding: 1px 0.2142857em; // 3px / 14px
+}
+
+pre {
+    padding: 0.5714286em 1.1428571em; // 8px / 14px + 16px / 14px
+    word-wrap: normal;
+    overflow-x: auto;
+    tab-size: 4;
+
+    code {
+        padding: 0;
+        border: 0;
+        background-color: transparent;
+        font-size: 1em; // 14px
+        text-align: left;
+        white-space: pre;
+        word-spacing: normal;
+        word-break: normal;
+        word-wrap: normal;
+        direction: ltr;
+        hyphens: none;
+    }
 }
 
 hr {
