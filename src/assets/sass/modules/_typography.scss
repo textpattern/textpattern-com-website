@@ -116,8 +116,9 @@ address {
 
 blockquote {
     margin: 1em 0;
-    padding: 0 0 0 1.5em;
+    padding: 1px 1em 1px 1.5em;
     border-left: 0.25em solid $color-highlight;
+    background-color: $color-highlight-box;
 }
 
 /**
