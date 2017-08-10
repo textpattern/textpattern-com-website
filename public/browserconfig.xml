@@ -9,7 +9,7 @@
             <TileColor>#ffffff</TileColor>
         </tile>
         <notification>
-            <polling-uri src="https://textpattern.io/rss/"/>
+            <polling-uri src="https://textpattern.com/rss/"/>
             <frequency>60</frequency>
             <cycle>1</cycle>
         </notification>
