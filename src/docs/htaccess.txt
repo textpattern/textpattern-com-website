@@ -277,6 +277,10 @@ Redirect temp /textile-ul-list http://txstyle.org/doc/8/bullet-list
 
 Redirect temp /donate https://textpattern.com/about/302/patrons
 Redirect 301 /patrons https://textpattern.com/about/302/patrons
+Redirect 301 /featured https://textpattern.com/showcase
+Redirect 301 /features https://textpattern.com/start
+Redirect 301 /documentation https://docs.textpattern.io
+Redirect 301 /support https://textpattern.com/about/345/community-support
 Redirect 301 /system-requirements https://textpattern.com/about/119/system-requirements
 Redirect 301 /features/301/languages https://textpattern.com/about/301/languages
 
