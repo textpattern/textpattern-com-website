@@ -192,21 +192,6 @@ FileETag None
 <IfModule mod_rewrite.c>
     RewriteEngine On
 
-    # Redirect team subdomain
-    RewriteCond %{HTTP_HOST} ^team\.textpattern\.com$ [NC]
-    RewriteRule ^(.*)$ http://textpattern.com/contributors [R=301,L]
-
-    # Redirect svn subdomain
-    RewriteCond %{HTTP_HOST} ^svn\.textpattern\.com$ [NC]
-    RewriteRule ^(.*)$ http://textpattern.googlecode.com/svn/$1 [R=301,L]
-
-    # Redirect dev subdomain
-    RewriteCond %{HTTP_HOST} ^dev\.textpattern\.com$ [NC]
-    RewriteRule ^.*$ http://code.google.com/p/textpattern/ [R=302,L]
-
-    # Old help URLs
-    RewriteRule ^help/(.*)$ http://rpc.textpattern.com/help/$1 [R=301,L]
-
     # No 'www'
     RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
     RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
