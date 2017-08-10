@@ -263,12 +263,17 @@ Redirect temp /textile-ul-list http://txstyle.org/doc/8/bullet-list
 Redirect temp /donate https://textpattern.com/about/302/patrons
 Redirect 301 /patrons https://textpattern.com/about/302/patrons
 Redirect 301 /featured https://textpattern.com/showcase
-Redirect 301 /features https://textpattern.com/start
 Redirect 301 /documentation https://docs.textpattern.io
-Redirect 301 /support https://textpattern.com/about/345/community-support
+Redirect 301 /faq https://docs.textpattern.io
+Redirect 301 /features https://textpattern.com/about/338/textpattern-features
 Redirect 301 /system-requirements https://textpattern.com/about/119/system-requirements
+Redirect 301 /support https://textpattern.com/about/345/community-support
 Redirect 301 /features/301/languages https://textpattern.com/about/301/languages
-
+Redirect 301 /contributors https://textpattern.com/about/219/contributors
+Redirect 301 /patrons https://textpattern.com/about/302/patrons
+Redirect 301 /hosting https://textpattern.com/about/363/web-hosting
+Redirect 301 /security https://textpattern.com/contact#security
+Redirect 301 /releases https://textpattern.com/category/releases
 
 
 # TODO: To be removed when a proper themes site is created.
