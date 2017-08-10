@@ -22,7 +22,7 @@ FileETag None
 <IfModule mod_rewrite.c>
     RewriteEngine On
 
-    # No 'www'
+    # No 'www'.
 
     RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
     RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
@@ -31,6 +31,8 @@ FileETag None
 
     RewriteCond %{HTTPS} !=on
     RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+
+    # Textpattern.
 
     RewriteCond %{REQUEST_FILENAME} -f [OR]
     RewriteCond %{REQUEST_FILENAME} -d
@@ -59,17 +61,17 @@ AddDefaultCharset utf-8
 </IfModule>
 
 <IfModule mod_mime.c>
-    # Data interchange
+    # Data interchange.
 
     AddType application/ld+json    jsonld
 
-    # Media files
+    # Media files.
 
     AddType image/webp             webp
     AddType video/mp4              f4v f4p m4v mp4
     AddType video/webm             webm
 
-    # Web fonts
+    # Web fonts.
 
     AddType application/font-woff  woff
     AddType application/font-woff2 woff2
@@ -79,11 +81,11 @@ AddDefaultCharset utf-8
     ExpiresActive on
     ExpiresDefault                                    "access plus 1 month"
 
-    # CSS
+    # CSS.
 
     ExpiresByType text/css                            "access plus 1 month"
 
-    # Data interchange
+    # Data interchange.
 
     ExpiresByType application/atom+xml                "access plus 1 hour"
     ExpiresByType application/rdf+xml                 "access plus 1 hour"
@@ -94,27 +96,27 @@ AddDefaultCharset utf-8
     ExpiresByType application/xml                     "access plus 0 seconds"
     ExpiresByType text/xml                            "access plus 0 seconds"
 
-    # Favicon and cursor images
+    # Favicon and cursor images.
 
     ExpiresByType image/vnd.microsoft.icon            "access plus 1 week"
     ExpiresByType image/x-icon                        "access plus 1 week"
 
-    # HTML
+    # HTML.
 
     ExpiresByType text/html                           "access plus 0 seconds"
 
-    # JavaScript
+    # JavaScript.
 
     ExpiresByType application/javascript              "access plus 1 month"
     ExpiresByType application/x-javascript            "access plus 1 month"
     ExpiresByType text/javascript                     "access plus 1 month"
 
-    # Manifest files
+    # Manifest files.
 
     ExpiresByType application/manifest+json           "access plus 1 week"
     ExpiresByType text/cache-manifest                 "access plus 0 seconds"
 
-    # Media files
+    # Media files.
 
     ExpiresByType image/gif                           "access plus 1 month"
     ExpiresByType image/jpeg                          "access plus 1 month"
@@ -124,7 +126,7 @@ AddDefaultCharset utf-8
     ExpiresByType video/mp4                           "access plus 1 month"
     ExpiresByType video/webm                          "access plus 1 month"
 
-    # Web fonts
+    # Web fonts.
 
     # Web Open Font Format (WOFF) 1.0
     ExpiresByType application/font-woff               "access plus 1 month"
@@ -132,26 +134,23 @@ AddDefaultCharset utf-8
     ExpiresByType font/woff                           "access plus 1 month"
     ExpiresByType application/font-woff2              "access plus 1 month"
 
-    # Other
+    # Other.
 
     ExpiresByType text/x-cross-domain-policy          "access plus 1 week"
 </IfModule>
 
-
-# REDIRECTS
-
-# Cool URIs don't change
+# Cool URIs don't change.
 
 Redirect permanent /plugins/txp_plugin_template.txt https://github.com/textpattern/textpattern-plugin-template
 Redirect permanent /forum https://forum.textpattern.io
 
-# Selfish propaganda
+# Selfish propaganda.
 
 Redirect temp /@textpattern https://twitter.com/textpattern
 Redirect temp /+ https://plus.google.com/communities/111366418300163664690
 Redirect temp /github https://github.com/textpattern
 
-# Redirect hardcoded URIs to external resources
+# Redirect hardcoded URIs to external resources.
 
 Redirect temp /demo https://textpattern.co/demo
 Redirect temp /textpattern-first-steps https://docs.textpattern.io/administration/hello-world
@@ -179,7 +178,7 @@ Redirect temp /textile-sub-and-sup http://txstyle.org/doc/18/subscript-and-super
 Redirect temp /textile-table http://txstyle.org/doc/15/tables
 Redirect temp /textile-ul-list http://txstyle.org/doc/8/bullet-list
 
-# Redirect old 2008 site pages to current site pages
+# Redirect old 2008 site pages to current site pages.
 
 Redirect temp /donate https://textpattern.com/about/302/patrons
 Redirect 301 /patrons https://textpattern.com/about/302/patrons
@@ -195,7 +194,6 @@ Redirect 301 /patrons https://textpattern.com/about/302/patrons
 Redirect 301 /hosting https://textpattern.com/about/363/web-hosting
 Redirect 301 /security https://textpattern.com/contact#security
 Redirect 301 /releases https://textpattern.com/category/releases
-
 
 # TODO: To be removed when a proper themes site is created.
 Redirect temp /themes https://docs.textpattern.io/themes/
