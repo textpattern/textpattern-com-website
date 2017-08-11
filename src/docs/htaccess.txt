@@ -181,7 +181,7 @@ Redirect temp /textile-ul-list http://txstyle.org/doc/8/bullet-list
 # Redirect old 2008 site pages to current site pages.
 
 Redirect temp /donate https://textpattern.com/about/302/patrons
-Redirect 301 /patrons https://textpattern.com/about/302/patrons
+Redirect 301 /download https://textpattern.com/start
 Redirect 301 /featured https://textpattern.com/showcase
 Redirect 301 /documentation https://docs.textpattern.io
 Redirect 301 /faq https://docs.textpattern.io
