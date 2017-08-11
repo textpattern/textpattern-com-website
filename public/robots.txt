@@ -2,5 +2,5 @@ User-agent: *
 Disallow: /file_download/
 Disallow: /mockups/
 Disallow: /textpattern/
-Sitemap: /sitemap.xml
+Sitemap: https://textpattern.com/sitemap.xml
 Host: textpattern.com
