@@ -91,7 +91,7 @@
             if (whatDomain === 'docs.textpattern.io') {
                 ga('create', 'UA-89386022-1', 'auto');
             } else {
-                ga('create', 'UA-XXXXX-Y', 'auto'); // TODO: Remember to amend the GA account ID number!
+                ga('create', 'UA-191562-10', 'auto');
             }
 
             ga('set', 'transport', 'beacon');
