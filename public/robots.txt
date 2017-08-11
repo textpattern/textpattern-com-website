@@ -3,3 +3,4 @@ Disallow: /file_download/
 Disallow: /mockups/
 Disallow: /textpattern/
 Sitemap: /sitemap.xml
+Host: textpattern.com
