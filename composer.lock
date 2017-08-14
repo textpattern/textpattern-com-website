@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "e990285be71357cba71f9c15af15f37a",
+    "content-hash": "fc5afada4fcf3dab887ca243b90c32ed",
     "packages": [
         {
             "name": "bloke/smd_thumbnail",
@@ -41,16 +41,16 @@
         },
         {
             "name": "cara-tm/pat_if_amp",
-            "version": "0.3.6-beta",
+            "version": "0.3.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cara-tm/pat_if_amp.git",
-                "reference": "606ae2d9164e5c2d5c2b3796602c220638bb2214"
+                "reference": "9d13d0df32a40dc3be72e173cece3e31eec5bc5e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cara-tm/pat_if_amp/zipball/606ae2d9164e5c2d5c2b3796602c220638bb2214",
-                "reference": "606ae2d9164e5c2d5c2b3796602c220638bb2214",
+                "url": "https://api.github.com/repos/cara-tm/pat_if_amp/zipball/9d13d0df32a40dc3be72e173cece3e31eec5bc5e",
+                "reference": "9d13d0df32a40dc3be72e173cece3e31eec5bc5e",
                 "shasum": ""
             },
             "require": {
@@ -62,7 +62,7 @@
             "license": [
                 "GPL-2.0"
             ],
-            "description": "Create, publish and edit plugins from within Textpattern CMS",
+            "description": "Google AMP for Textpattern CMS.",
             "homepage": "https://github.com/cara-tm/pat_if_amp",
             "keywords": [
                 "amp",
@@ -71,7 +71,7 @@
                 "plugin",
                 "textpattern"
             ],
-            "time": "2017-07-04T10:37:39+00:00"
+            "time": "2017-08-11T07:47:19+00:00"
         },
         {
             "name": "etc-plugins/etc_cache",
@@ -486,7 +486,6 @@
     "stability-flags": {
         "textpattern/com_connect": 10,
         "bloke/smd_thumbnail": 10,
-        "cara-tm/pat_if_amp": 10,
         "etc-plugins/etc_pagination": 10,
         "oui/oui_flat": 10
     },
