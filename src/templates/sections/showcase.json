@@ -1,6 +1,7 @@
 {
   "name": "showcase",
   "title": "Site showcase",
+  "description": "Feast your eyes on some of the awesome websites powered by Textpattern CMS in our site showcase section.",
   "page": "showcase",
   "css": "default",
   "is_default": false,

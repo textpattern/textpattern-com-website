@@ -1,6 +1,7 @@
 {
   "name": "start",
   "title": "Get started",
+  "description": "Getting started with Textpattern CMS. How to install, upgrade and get involved with the content management system.",
   "page": "sticky_only",
   "css": "default",
   "is_default": false,
