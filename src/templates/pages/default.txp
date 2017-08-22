@@ -69,7 +69,7 @@
                         <a class="button" href="<txp:site_url />demo">Try a demo</a>
                     </p>
                     <p>
-                        <a class="button" rel="external" href="https://github.com/textpattern/textpattern/" title="Stars on GitHub"><span class="ui-icon ui-extra-icon-github">GitHub</span> <b>Stars</b></a>
+                        <a class="button" rel="external" href="https://github.com/textpattern/textpattern/" title="Stars on GitHub"><span class="ui-icon ui-extra-icon-github">GitHub</span> <strong>Stars</strong></a>
                         <txp:etc_cache id="github-stars" time="-3600">
                             <txp:php>
 $curl1 = curl_init();
