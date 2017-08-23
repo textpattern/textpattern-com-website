@@ -40,6 +40,10 @@
 
 .comments.article-author {
     background: $color-highlight-box;
+
+    blockquote {
+        background: $color-background;
+    }
 }
 
 /**
