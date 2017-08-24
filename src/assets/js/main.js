@@ -29,6 +29,7 @@
         // Load objects as variables.
 
         var code = $('pre code'),
+            sitenavigation = $('.site-navigation'),
             smoothscroll = $('a[href*="#"]:not([href="#"])');
 
         // Syntax highlighting, via 'Prism'.
@@ -43,6 +44,20 @@
             require(['prism.@@timestamp'], function ()
             {
                 Prism.highlightAll();
+            });
+        }
+
+        // Responsive navigation menu, via 'Responsive Nav'.
+        // More info - https://github.com/viljamis/responsive-nav.js.
+
+        if (sitenavigation.length) {
+            require(['responsivenav.@@timestamp'], function ()
+            {
+                responsiveNav('.site-navigation', {
+                    transition: 400,
+                    insert: 'before',
+                    navClass: 'site-navigation'
+                });
             });
         }
 
@@ -61,18 +76,6 @@
                     return false;
                 }
             }
-        });
-    });
-
-    // Responsive navigation menu, via 'Responsive Nav'.
-    // More info - https://github.com/viljamis/responsive-nav.js.
-
-    require(['responsivenav.@@timestamp'], function ()
-    {
-        responsiveNav('.site-navigation', {
-            transition: 400,
-            insert: 'before',
-            navClass: 'site-navigation'
         });
     });
 

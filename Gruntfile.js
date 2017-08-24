@@ -227,7 +227,7 @@ module.exports = function (grunt)
                 files: [
                     {'<%= paths.dest.css %>style.css': '<%= paths.src.sass %>style.scss'},
                     {'<%= paths.dest.css %>amp.css': '<%= paths.src.sass %>amp.scss'},
-                    {'<%= paths.dest.css %>design-patterns.css': '<%= paths.src.sass %>design-patterns.scss'}
+                    {'<%= paths.dest.css %>designpatterns.css': '<%= paths.src.sass %>designpatterns.scss'}
                 ]
             }
         },
