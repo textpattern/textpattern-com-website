@@ -1,16 +1,6 @@
 /* Animation `keyframes` need to appear outside of `screen` rules.
    ========================================================================== */
 
-@keyframes spinning {
-    from {
-        transform: rotate(0deg);
-    }
-
-    to {
-        transform: rotate(360deg);
-    }
-}
-
 @keyframes progressbar-stripes {
     from {
         background-position: 0 0;
