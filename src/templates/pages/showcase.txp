@@ -7,24 +7,24 @@
         <title>Site showcase / Textpattern CMS</title>
         <meta name="description" content="Feast your eyes on some of the awesome websites powered by Textpattern CMS in our site showcase section.">
         <meta name="robots" content="index, follow">
-        <link rel="canonical" href="<txp:site_url />showcase/">
+        <link rel="canonical" href="<txp:site_url />showcase">
         <meta name="twitter:card" content="summary">
         <meta name="twitter:site" content="@textpattern">
         <meta name="twitter:title" content="Textpattern CMS site showcase">
         <meta name="twitter:description" content="Feast your eyes on some of the awesome websites powered by Textpattern CMS in our site showcase section.">
         <meta name="twitter:image:src" content="https://textpattern.io/apple-touch-icon-180x180.png">
-        <meta name="twitter:url" content="<txp:site_url />showcase/">
+        <meta name="twitter:url" content="<txp:site_url />showcase">
         <meta property="og:title" content="Textpattern CMS site showcase">
         <meta property="og:description" content="Feast your eyes on some of the awesome websites powered by Textpattern CMS in our site showcase section.">
         <meta property="og:image" content="https://textpattern.io/assets/img/branding/textpattern/textpattern-og.png">
-        <meta property="og:url" content="<txp:site_url />showcase/">
+        <meta property="og:url" content="<txp:site_url />showcase">
         <script type="application/ld+json">
             {
                 "@context": "https://schema.org",
                 "@type": "WebPage",
                 "headline": "Textpattern CMS site showcase",
                 "description": "Feast your eyes on some of the awesome websites powered by Textpattern CMS in our site showcase section.",
-                "url": "<txp:site_url />showcase/"
+                "url": "<txp:site_url />showcase"
             }
         </script>
     <txp:else />
@@ -88,7 +88,7 @@
                         </txp:article>
                     </txp:etc_cache>
                 </section>
-                <p class="alert-block information footnote"><strong>Disclaimer:</strong> Inclusion in this showcase is at the sole discretion of the The Textpattern Development Team. Any site may be removed at any time for any reason. The The Textpattern Development Team is not directly responsible for any content or views expressed within third-party sites. See something wrong in this showcase? Please <a href="contact.html">contact us</a> and we’ll look into it.</p>
+                <p class="alert-block information footnote"><strong>Disclaimer:</strong> Inclusion in this showcase is at the sole discretion of the The Textpattern Development Team. Any site may be removed at any time for any reason. The The Textpattern Development Team is not directly responsible for any content or views expressed within third-party sites. See something wrong in this showcase? Please <a href="<txp:site_url />contact">contact us</a> and we’ll look into it.</p>
             </div>
         <txp:else />
             <div class="container">
@@ -96,7 +96,7 @@
                     <txp:output_form form="body_crumbs" />
                     <article class="layout-4col-3span" itemscope itemtype="https://schema.org/Article">
                         <txp:article />
-                        <p class="alert-block information footnote"><strong>Disclaimer:</strong> Inclusion in this showcase is at the sole discretion of the The Textpattern Development Team. Any site may be removed at any time for any reason. The The Textpattern Development Team is not directly responsible for any content or views expressed within third-party sites. See something wrong in this showcase? Please <a href="contact.html">contact us</a> and we’ll look into it.</p>
+                        <p class="alert-block information footnote"><strong>Disclaimer:</strong> Inclusion in this showcase is at the sole discretion of the The Textpattern Development Team. Any site may be removed at any time for any reason. The The Textpattern Development Team is not directly responsible for any content or views expressed within third-party sites. See something wrong in this showcase? Please <a href="<txp:site_url />contact">contact us</a> and we’ll look into it.</p>
                     </article>
                     <txp:output_form form="sidebar" />
                 </div>

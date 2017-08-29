@@ -5,7 +5,7 @@
 # TEAM
 
   Developer: Team Textpattern
-  Site: https://textpattern.io/
+  Site: https://textpattern.com/
   Twitter: https://twitter.com/textpattern
   GitHub: https://github.com/textpattern
   Location: Everywhere
@@ -22,7 +22,7 @@
   Standards: HTML5, CSS3
   Server: Linux, Apache, MySQL, PHP
   Components:
-    Textpattern CMS: https://textpattern.io/
+    Textpattern CMS: https://textpattern.com/
     jQuery: https://jquery.com/
     Require.js: http://requirejs.org/
     Prism: http://prismjs.com/

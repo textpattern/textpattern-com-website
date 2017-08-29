@@ -3,7 +3,7 @@
 [![Greenkeeper badge](https://badges.greenkeeper.io/textpattern/textpattern-com-website.svg)](https://greenkeeper.io/)
 [![Build Status](https://img.shields.io/travis/textpattern/textpattern-com-website.svg)](https://travis-ci.org/textpattern/textpattern-com-website)
 
-Official 2017+ website of the [Textpattern](https://textpattern.io/) project. **Currently under development. Requires Textpattern 4.7dev.**
+Official 2017+ website of the [Textpattern](https://textpattern.com/) project. **Requires Textpattern 4.7dev.**
 
 ## Supported web browsers
 

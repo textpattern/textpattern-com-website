@@ -7,10 +7,11 @@
                     <section class="layout-2col" itemscope itemtype="https://schema.org/Organization">
                         <h4>Social channels</h4>
                         <meta itemprop="name" content="Textpattern CMS">
+                        <meta itemprop="sameAs" content="https://en.wikipedia.org/wiki/Textpattern">
                         <ul class="social-channels">
-                            <li><a class="twitter" rel="external" itemprop="url" href="https://twitter.com/textpattern" title="Follow us on Twitter">Twitter</a></li>
-                            <li><a class="googleplus" rel="external" itemprop="url" href="https://plus.google.com/communities/111366418300163664690" title="Follow us on Google+">Google+</a></li>
-                            <li><a class="github" rel="external" itemprop="url" href="https://github.com/textpattern" title="Follow us on GitHub">GitHub</a></li>
+                            <li><a class="twitter" rel="external" itemprop="sameAs" href="https://twitter.com/textpattern" title="Follow us on Twitter">Twitter</a></li>
+                            <li><a class="googleplus" rel="external" itemprop="sameAs" href="https://plus.google.com/+textpattern" title="Follow us on Google+">Google+</a></li>
+                            <li><a class="github" rel="external" itemprop="sameAs" href="https://github.com/textpattern" title="Follow us on GitHub">GitHub</a></li>
                         </ul>
                         <h4>Donate</h4>
                         <p>Your kind donations help us keep Textpattern CMS development alive!</p>
@@ -31,7 +32,7 @@
             </div>
             <section class="layout-3col host-details">
                 <h4 class="accessibility">Host details</h4>
-                <p><b class="host-network">Textpattern Network</b></p>
+                <p><span class="host-network">Textpattern Network</span></p>
                 <p>
                     <small>
                         Kindly hosted by<br>

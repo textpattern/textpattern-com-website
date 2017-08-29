@@ -1,4 +1,4 @@
-<txp:if_variable name="mkp_amp" value="1">
+<txp:if_variable name="pat_amp" value="1">
     <amp-video controls width="<txp:yield name="width" />" height="<txp:yield name="height" />"<txp:if_yield name="poster-url"> poster="<txp:yield name="poster-url" />"</txp:if_yield>>
         <source type="video/mp4" src="<txp:yield name="mp4-url" />">
         <source type="video/webm" src="<txp:yield name="webm-url" />">

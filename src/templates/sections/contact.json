@@ -1,6 +1,7 @@
 {
   "name": "contact",
   "title": "Contact",
+  "description": "Use this online enquiry form to contact the Textpattern Development Team.",
   "page": "contact",
   "css": "default",
   "is_default": false,

@@ -29,6 +29,7 @@
         // Load objects as variables.
 
         var code = $('pre code'),
+            sitenavigation = $('.site-navigation'),
             smoothscroll = $('a[href*="#"]:not([href="#"])');
 
         // Syntax highlighting, via 'Prism'.
@@ -43,6 +44,20 @@
             require(['prism.@@timestamp'], function ()
             {
                 Prism.highlightAll();
+            });
+        }
+
+        // Responsive navigation menu, via 'Responsive Nav'.
+        // More info - https://github.com/viljamis/responsive-nav.js.
+
+        if (sitenavigation.length) {
+            require(['responsivenav.@@timestamp'], function ()
+            {
+                responsiveNav('.site-navigation', {
+                    transition: 400,
+                    insert: 'before',
+                    navClass: 'site-navigation'
+                });
             });
         }
 
@@ -64,18 +79,6 @@
         });
     });
 
-    // Responsive navigation menu, via 'Responsive Nav'.
-    // More info - https://github.com/viljamis/responsive-nav.js.
-
-    require(['responsivenav.@@timestamp'], function ()
-    {
-        responsiveNav('.site-navigation', {
-            transition: 400,
-            insert: 'before',
-            navClass: 'site-navigation'
-        });
-    });
-
     // Google Analytics
 
     require(['track'], function(track)
@@ -91,7 +94,7 @@
             if (whatDomain === 'docs.textpattern.io') {
                 ga('create', 'UA-89386022-1', 'auto');
             } else {
-                ga('create', 'UA-XXXXX-Y', 'auto'); // TODO: Remember to amend the GA account ID number!
+                ga('create', 'UA-191562-10', 'auto');
             }
 
             ga('set', 'transport', 'beacon');

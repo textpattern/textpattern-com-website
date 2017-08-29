@@ -1,6 +1,7 @@
 {
   "name": "default",
   "title": "Default",
+  "description": "Textpattern CMS is a free, open source content management system with a browser-based interface in over 40 languages.",
   "page": "default",
   "css": "default",
   "is_default": false,

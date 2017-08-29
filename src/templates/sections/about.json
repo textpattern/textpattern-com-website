@@ -1,6 +1,7 @@
 {
   "name": "about",
   "title": "About",
+  "description": "Designers, developers and bloggers love Textpattern for its flexibility. It's powerful engine can be tuned to suit whatever type of site you can imagine.",
   "page": "standard",
   "css": "default",
   "is_default": false,

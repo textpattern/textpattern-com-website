@@ -1,6 +1,7 @@
 {
   "name": "license",
   "title": "Software license",
+  "description": "Textpattern CMS is free, open source software, distributed under the GNU General Public License Version 2 (GPLv2).",
   "page": "sticky_only",
   "css": "default",
   "is_default": false,

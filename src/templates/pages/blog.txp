@@ -13,24 +13,24 @@
         <txp:variable name="page" value='<txp:page_url type="pg" />' />
         <txp:if_variable name="page" value="1">
             <meta name="robots" content="index, follow">
-            <link rel="canonical" href="<txp:site_url />weblog/">
+            <link rel="canonical" href="<txp:site_url />weblog">
             <meta name="twitter:card" content="summary">
             <meta name="twitter:site" content="@textpattern">
             <meta name="twitter:title" content="Textpattern CMS blog">
             <meta name="twitter:description" content="Latest blogs from Team Textpattern and guests; Textpattern news and other tidbits of info that we find of interest.">
             <meta name="twitter:image:src" content="https://textpattern.io/apple-touch-icon-180x180.png">
-            <meta name="twitter:url" content="<txp:site_url />weblog/">
+            <meta name="twitter:url" content="<txp:site_url />weblog">
             <meta property="og:title" content="Textpattern CMS blog">
             <meta property="og:description" content="Latest blogs from Team Textpattern and guests; Textpattern news and other tidbits of info that we find of interest.">
             <meta property="og:image" content="https://textpattern.io/assets/img/branding/textpattern/textpattern-og.png">
-            <meta property="og:url" content="<txp:site_url />weblog/">
+            <meta property="og:url" content="<txp:site_url />weblog">
             <script type="application/ld+json">
                 {
                     "@context": "https://schema.org",
                     "@type": "Blog",
                     "headline": "Textpattern CMS blog",
                     "description": "Latest blogs from Team Textpattern and guests; Textpattern news and other tidbits of info that we find of interest.",
-                    "url": "<txp:site_url />weblog/"
+                    "url": "<txp:site_url />weblog"
                 }
             </script>
         <txp:else />
@@ -113,4 +113,4 @@
     <txp:output_form form="body_footer" />
 </body>
 </html>
-<txp:pat_if_amp>
+</txp:pat_if_amp>

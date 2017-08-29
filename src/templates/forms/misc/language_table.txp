@@ -1,3 +1,4 @@
+<txp:etc_cache id="crowdin" time="-3600">
 <txp:php>
 $key = parse('<txp:yield name="api-key" />');
 $xml = new SimpleXMLElement('https://api.crowdin.com/api/project/textpattern-cms-textpacks/status?key='.$key.'&xml', 0, TRUE);
@@ -37,3 +38,4 @@ echo <<<EOHTML
 </div>
 EOHTML;
 </txp:php>
+</txp:etc_cache>

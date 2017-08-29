@@ -1,6 +1,7 @@
 {
   "name": "weblog",
   "title": "Blog",
+  "description": "Latest blogs from Team Textpattern and guests; Textpattern news and other tidbits of info that we find of interest.",
   "page": "blog",
   "css": "default",
   "is_default": true,

@@ -32,14 +32,15 @@ module.exports = function (grunt)
             timestamp: '<%= new Date().getTime() %>'
         },
 
-        // Clean distribution and temporary directories to start afresh.
+        // Clean distribution directories/files to start afresh.
         clean: [
             '<%= paths.dest.css %>',
             '<%= paths.dest.fonts %>',
             '<%= paths.dest.img %>',
             '<%= paths.dest.js %>',
             '<%= paths.dest.mockups %>*/',
-            '<%= paths.dest.templates %>*/'
+            '<%= paths.dest.templates %>*/',
+            'public/design-patterns.html'
         ],
 
         // Run some tasks in parallel to speed up the build process.
@@ -187,11 +188,20 @@ module.exports = function (grunt)
                     ]
                 },
                 files: [
+                    // Copy mockups (apart from design patterns doc) to mockups directory.
                     {
                         expand: true,
                         cwd: '<%= paths.src.mockups %>',
-                        src: '**',
+                        src: [
+                            '**',
+                            '!design-patterns.html'
+                        ],
                         dest: '<%= paths.dest.mockups %>'
+                    },
+                    // Copy design patterns doc to public (root) directory.
+                    {
+                        src: 'src/docs/design-patterns.html',
+                        dest: 'public/design-patterns.html'
                     },
                     {
                         expand: true,
@@ -217,7 +227,7 @@ module.exports = function (grunt)
                 files: [
                     {'<%= paths.dest.css %>style.css': '<%= paths.src.sass %>style.scss'},
                     {'<%= paths.dest.css %>amp.css': '<%= paths.src.sass %>amp.scss'},
-                    {'<%= paths.dest.css %>design-patterns.css': '<%= paths.src.sass %>design-patterns.scss'}
+                    {'<%= paths.dest.css %>designpatterns.css': '<%= paths.src.sass %>designpatterns.scss'}
                 ]
             }
         },
@@ -268,11 +278,18 @@ module.exports = function (grunt)
                 tasks: 'css'
             },
             js: {
-                files: 'src/assets/js/*.js',
-                tasks: ['jshint', 'uglify']
+                files: '<%= paths.src.js %>*.js',
+                tasks: [
+                    'jshint',
+                    'uglify'
+                ]
             },
             html: {
-                files: ['<%= paths.src.mockups %>**', '<%= paths.src.templates %>**'],
+                files: [
+                    '<%= paths.src.mockups %>**',
+                    '<%= paths.src.templates %>**',
+                    'src/docs/design-patterns.html'
+                ],
                 tasks: 'replace'
             }
         }

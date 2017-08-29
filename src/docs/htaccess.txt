@@ -9,207 +9,30 @@
     <FilesMatch "\.(woff2?)$">
         Header set Access-Control-Allow-Origin "*"
     </FilesMatch>
-</ifModule>
 
+    # HSTS.
 
-# ######################################################################
-# CHARACTER ENCODINGS                                                  #
-# ######################################################################
+    Header set Strict-Transport-Security "max-age=16070400"
 
-# Serve all resources labeled as `text/html` or `text/plain`
-# with the media type `charset` parameter set to `UTF-8`.
-
-AddDefaultCharset utf-8
-
-# Serve the following file types with the media type `charset`
-# parameter set to `UTF-8`.
-
-<IfModule mod_mime.c>
-    AddCharset utf-8 .atom \
-                     .bbaw \
-                     .css \
-                     .geojson \
-                     .js \
-                     .json \
-                     .jsonld \
-                     .manifest \
-                     .rdf \
-                     .rss \
-                     .topojson \
-                     .vtt \
-                     .webapp \
-                     .webmanifest \
-                     .xloc \
-                     .xml
-</IfModule>
-
-
-# ######################################################################
-# ADDTIONAL MIME TYPES                                                 #
-# ######################################################################
-
-<IfModule mod_mime.c>
-
-  # Data interchange
-
-    AddType application/ld+json                         jsonld
-
-  # Media files
-
-    AddType image/webp                                  webp
-    AddType video/mp4                                   f4v f4p m4v mp4
-    AddType video/webm                                  webm
-
-  # Web fonts
-
-    AddType application/font-woff                       woff
-    AddType application/font-woff2                      woff2
-
-</IfModule>
-
-
-# ######################################################################
-# # SECURITY                                                           #
-# ######################################################################
-
-# ----------------------------------------------------------------------
-# | File access                                                        |
-# ----------------------------------------------------------------------
-
-# Block access to directories without a default document.
-
-<IfModule mod_autoindex.c>
-    Options -Indexes
-</IfModule>
-
-# Block access to all hidden files and directories with the exception of
-# the visible content from within the `/.well-known/` hidden directory.
-
-<IfModule mod_rewrite.c>
-    RewriteEngine On
-    RewriteCond %{REQUEST_URI} "!(^|/)\.well-known/([^./]+./?)+$" [NC]
-    RewriteCond %{SCRIPT_FILENAME} -d [OR]
-    RewriteCond %{SCRIPT_FILENAME} -f
-    RewriteRule "(^|/)\." - [F]
-</IfModule>
-
-
-# ######################################################################
-# # WEB PERFORMANCE                                                    #
-# ######################################################################
-
-# ----------------------------------------------------------------------
-# | ETags                                                              |
-# ----------------------------------------------------------------------
-
-# Remove `ETags` as resources are sent with far-future expires headers.
-
-<IfModule mod_headers.c>
     Header unset ETag
-</IfModule>
+</ifModule>
 
 FileETag None
 
-# ----------------------------------------------------------------------
-# | Expires headers                                                    |
-# ----------------------------------------------------------------------
-
-# Serve resources with far-future expires headers.
-
-<IfModule mod_expires.c>
-
-    ExpiresActive on
-    ExpiresDefault                                      "access plus 1 month"
-
-  # CSS
-
-    ExpiresByType text/css                              "access plus 1 month"
-
-  # Data interchange
-
-    ExpiresByType application/atom+xml                  "access plus 1 hour"
-    ExpiresByType application/rdf+xml                   "access plus 1 hour"
-    ExpiresByType application/rss+xml                   "access plus 1 hour"
-
-    ExpiresByType application/json                      "access plus 0 seconds"
-    ExpiresByType application/ld+json                   "access plus 0 seconds"
-    ExpiresByType application/schema+json               "access plus 0 seconds"
-    ExpiresByType application/xml                       "access plus 0 seconds"
-    ExpiresByType text/xml                              "access plus 0 seconds"
-
-  # Favicon (cannot be renamed!) and cursor images
-
-    ExpiresByType image/vnd.microsoft.icon              "access plus 1 week"
-    ExpiresByType image/x-icon                          "access plus 1 week"
-
-  # HTML
-
-    ExpiresByType text/html                             "access plus 0 seconds"
-
-  # JavaScript
-
-    ExpiresByType application/javascript                "access plus 1 month"
-    ExpiresByType application/x-javascript              "access plus 1 month"
-    ExpiresByType text/javascript                       "access plus 1 month"
-
-  # Manifest files
-
-    ExpiresByType application/manifest+json             "access plus 1 week"
-    ExpiresByType application/x-web-app-manifest+json   "access plus 0 seconds"
-    ExpiresByType text/cache-manifest                   "access plus 0 seconds"
-
-  # Media files
-
-    ExpiresByType image/gif                             "access plus 1 month"
-    ExpiresByType image/jpeg                            "access plus 1 month"
-    ExpiresByType image/png                             "access plus 1 month"
-    ExpiresByType image/svg+xml                         "access plus 1 month"
-    ExpiresByType image/webp                            "access plus 1 month"
-    ExpiresByType video/mp4                             "access plus 1 month"
-    ExpiresByType video/webm                            "access plus 1 month"
-
-  # Web fonts
-
-    # Web Open Font Format (WOFF) 1.0
-    ExpiresByType application/font-woff                 "access plus 1 month"
-    ExpiresByType application/x-font-woff               "access plus 1 month"
-    ExpiresByType font/woff                             "access plus 1 month"
-
-    # Web Open Font Format (WOFF) 2.0
-    ExpiresByType application/font-woff2                "access plus 1 month"
-
-  # Other
-
-    ExpiresByType text/x-cross-domain-policy            "access plus 1 week"
-
-</IfModule>
-
-
-# ######################################################################
-# # TEXTPATTERN                                                        #
-# ######################################################################
-
 <IfModule mod_rewrite.c>
     RewriteEngine On
 
-    # Redirect team subdomain
-    RewriteCond %{HTTP_HOST} ^team\.textpattern\.com$ [NC]
-    RewriteRule ^(.*)$ http://textpattern.com/contributors [R=301,L]
+    # No 'www'.
 
-    # Redirect svn subdomain
-    RewriteCond %{HTTP_HOST} ^svn\.textpattern\.com$ [NC]
-    RewriteRule ^(.*)$ http://textpattern.googlecode.com/svn/$1 [R=301,L]
-
-    # Redirect dev subdomain
-    RewriteCond %{HTTP_HOST} ^dev\.textpattern\.com$ [NC]
-    RewriteRule ^.*$ http://code.google.com/p/textpattern/ [R=302,L]
-
-    # Old help URLs
-    RewriteRule ^help/(.*)$ http://rpc.textpattern.com/help/$1 [R=301,L]
-
-    # No 'www'
     RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
     RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
+
+    # Redirect from `http://` to `https://` protocol.
+
+    RewriteCond %{HTTPS} !=on
+    RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+
+    # Textpattern.
 
     RewriteCond %{REQUEST_FILENAME} -f [OR]
     RewriteCond %{REQUEST_FILENAME} -d
@@ -221,29 +44,113 @@ FileETag None
     RewriteRule .* - [E=REMOTE_USER:%{HTTP:Authorization}]
 </IfModule>
 
+Options -Indexes
 
-# ######################################################################
-# # REDIRECTS                                                          #
-# ######################################################################
+AddDefaultCharset utf-8
 
-# ----------------------------------------------------------------------
-# | Cool URIs don't change                                             |
-# ----------------------------------------------------------------------
+<IfModule mod_mime.c>
+    AddCharset utf-8 .atom \
+                     .css \
+                     .js \
+                     .json \
+                     .jsonld \
+                     .manifest \
+                     .rdf \
+                     .rss \
+                     .xml
+</IfModule>
+
+<IfModule mod_mime.c>
+    # Data interchange.
+
+    AddType application/ld+json    jsonld
+
+    # Media files.
+
+    AddType image/webp             webp
+    AddType video/mp4              f4v f4p m4v mp4
+    AddType video/webm             webm
+
+    # Web fonts.
+
+    AddType application/font-woff  woff
+    AddType application/font-woff2 woff2
+</IfModule>
+
+<IfModule mod_expires.c>
+    ExpiresActive on
+    ExpiresDefault                                    "access plus 1 month"
+
+    # CSS.
+
+    ExpiresByType text/css                            "access plus 1 month"
+
+    # Data interchange.
+
+    ExpiresByType application/atom+xml                "access plus 1 hour"
+    ExpiresByType application/rdf+xml                 "access plus 1 hour"
+    ExpiresByType application/rss+xml                 "access plus 1 hour"
+    ExpiresByType application/json                    "access plus 0 seconds"
+    ExpiresByType application/ld+json                 "access plus 0 seconds"
+    ExpiresByType application/schema+json             "access plus 0 seconds"
+    ExpiresByType application/xml                     "access plus 0 seconds"
+    ExpiresByType text/xml                            "access plus 0 seconds"
+
+    # Favicon and cursor images.
+
+    ExpiresByType image/vnd.microsoft.icon            "access plus 1 month"
+    ExpiresByType image/x-icon                        "access plus 1 month"
+
+    # HTML.
+
+    ExpiresByType text/html                           "access plus 0 seconds"
+
+    # JavaScript.
+
+    ExpiresByType application/javascript              "access plus 1 month"
+    ExpiresByType application/x-javascript            "access plus 1 month"
+    ExpiresByType text/javascript                     "access plus 1 month"
+
+    # Manifest files.
+
+    ExpiresByType application/manifest+json           "access plus 1 week"
+    ExpiresByType text/cache-manifest                 "access plus 0 seconds"
+
+    # Media files.
+
+    ExpiresByType image/gif                           "access plus 1 month"
+    ExpiresByType image/jpeg                          "access plus 1 month"
+    ExpiresByType image/png                           "access plus 1 month"
+    ExpiresByType image/svg+xml                       "access plus 1 month"
+    ExpiresByType image/webp                          "access plus 1 month"
+    ExpiresByType video/mp4                           "access plus 1 month"
+    ExpiresByType video/webm                          "access plus 1 month"
+
+    # Web fonts.
+
+    # Web Open Font Format (WOFF) 1.0
+    ExpiresByType application/font-woff               "access plus 1 month"
+    ExpiresByType application/x-font-woff             "access plus 1 month"
+    ExpiresByType font/woff                           "access plus 1 month"
+    ExpiresByType application/font-woff2              "access plus 1 month"
+
+    # Other.
+
+    ExpiresByType text/x-cross-domain-policy          "access plus 1 week"
+</IfModule>
+
+# Cool URIs don't change.
 
 Redirect permanent /plugins/txp_plugin_template.txt https://github.com/textpattern/textpattern-plugin-template
 Redirect permanent /forum https://forum.textpattern.io
 
-# ----------------------------------------------------------------------
-# | Selfish propaganda                                                 |
-# ----------------------------------------------------------------------
+# Selfish propaganda.
 
 Redirect temp /@textpattern https://twitter.com/textpattern
-Redirect temp /+ https://plus.google.com/communities/111366418300163664690
+Redirect temp /+ https://plus.google.com/+textpattern
 Redirect temp /github https://github.com/textpattern
 
-# ----------------------------------------------------------------------
-# | Redirect hardcoded URIs to external resources                      |
-# ----------------------------------------------------------------------
+# Redirect hardcoded URIs to external resources.
 
 Redirect temp /demo https://textpattern.co/demo
 Redirect temp /textpattern-first-steps https://docs.textpattern.io/administration/hello-world
@@ -271,16 +178,21 @@ Redirect temp /textile-sub-and-sup http://txstyle.org/doc/18/subscript-and-super
 Redirect temp /textile-table http://txstyle.org/doc/15/tables
 Redirect temp /textile-ul-list http://txstyle.org/doc/8/bullet-list
 
-# ----------------------------------------------------------------------
-# | Redirect old 2008 site pages to current site pages                 |
-# ----------------------------------------------------------------------
+# Redirect old 2008 site pages to current site pages.
 
-Redirect temp /donate https://textpattern.com/about/302/patrons
-Redirect 301 /patrons https://textpattern.com/about/302/patrons
+Redirect 301 /donate https://textpattern.com/about/302/patrons
+Redirect 301 /download https://textpattern.com/start
+Redirect 301 /featured https://textpattern.com/showcase
+Redirect 301 /documentation https://docs.textpattern.io
+Redirect 301 /features https://textpattern.com/about/338/textpattern-features
 Redirect 301 /system-requirements https://textpattern.com/about/119/system-requirements
+Redirect 301 /support https://textpattern.com/about/345/community-support
 Redirect 301 /features/301/languages https://textpattern.com/about/301/languages
-
-
+Redirect 301 /contributors https://textpattern.com/about/219/contributors
+Redirect 301 /patrons https://textpattern.com/about/302/patrons
+Redirect 301 /hosting https://textpattern.com/about/363/web-hosting
+Redirect 301 /security https://textpattern.com/contact#security
+Redirect 301 /releases https://textpattern.com/category/releases
 
 # TODO: To be removed when a proper themes site is created.
 Redirect temp /themes https://docs.textpattern.io/themes/
