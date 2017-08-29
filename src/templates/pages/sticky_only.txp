@@ -13,6 +13,7 @@
     <meta name="twitter:title" content="<txp:section title="1" />">
     <meta name="twitter:description" content="<txp:meta_description format="" />">
     <meta name="twitter:url" content="<txp:section url="1" />">
+    <meta property="og:site_name" content="Textpattern CMS">
     <meta property="og:type" content="article">
     <meta property="og:title" content="<txp:section title="1" />">
     <meta property="og:description" content="<txp:meta_description format="" />">

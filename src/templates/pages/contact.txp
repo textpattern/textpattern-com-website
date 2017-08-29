@@ -14,6 +14,7 @@
         <meta name="twitter:description" content="Use this online enquiry form to contact the Textpattern Development Team.">
         <meta name="twitter:image:src" content="https://textpattern.io/apple-touch-icon-180x180.png">
         <meta name="twitter:url" content="<txp:site_url />contact">
+        <meta property="og:site_name" content="Textpattern CMS">
         <meta property="og:type" content="website">
         <meta property="og:title" content="Contact us">
         <meta property="og:description" content="Use this online enquiry form to contact the Textpattern Development Team.">

@@ -14,6 +14,7 @@
         <meta name="twitter:description" content="Feast your eyes on some of the awesome websites powered by Textpattern CMS in our site showcase section.">
         <meta name="twitter:image:src" content="https://textpattern.io/apple-touch-icon-180x180.png">
         <meta name="twitter:url" content="<txp:site_url />showcase">
+        <meta property="og:site_name" content="Textpattern CMS">
         <meta property="og:type" content="website">
         <meta property="og:title" content="Textpattern CMS site showcase">
         <meta property="og:description" content="Feast your eyes on some of the awesome websites powered by Textpattern CMS in our site showcase section.">
@@ -41,6 +42,7 @@
         <meta name="twitter:title" content="<txp:title />">
         <meta name="twitter:description" content="<txp:meta_description format="" />">
         <meta name="twitter:url" content="<txp:permlink />">
+        <meta property="og:site_name" content="Textpattern CMS">
         <meta property="og:type" content="article">
         <meta property="og:title" content="<txp:title />">
         <meta property="og:description" content="<txp:meta_description format="" />">

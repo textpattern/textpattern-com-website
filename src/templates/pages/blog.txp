@@ -20,6 +20,7 @@
             <meta name="twitter:description" content="Latest blogs from Team Textpattern and guests; Textpattern news and other tidbits of info that we find of interest.">
             <meta name="twitter:image:src" content="https://textpattern.io/apple-touch-icon-180x180.png">
             <meta name="twitter:url" content="<txp:site_url />weblog">
+            <meta property="og:site_name" content="Textpattern CMS">
             <meta property="og:type" content="website">
             <meta property="og:title" content="Textpattern CMS blog">
             <meta property="og:description" content="Latest blogs from Team Textpattern and guests; Textpattern news and other tidbits of info that we find of interest.">
@@ -60,6 +61,7 @@
         <meta name="twitter:title" content="<txp:title />">
         <meta name="twitter:description" content="<txp:meta_description format="" />">
         <meta name="twitter:url" content="<txp:permlink />">
+        <meta property="og:site_name" content="Textpattern CMS">
         <meta property="og:type" content="article">
         <meta property="og:title" content="<txp:title />">
         <meta property="og:description" content="<txp:meta_description format="" />">
