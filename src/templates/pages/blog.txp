@@ -20,9 +20,13 @@
             <meta name="twitter:description" content="Latest blogs from Team Textpattern and guests; Textpattern news and other tidbits of info that we find of interest.">
             <meta name="twitter:image:src" content="https://textpattern.io/apple-touch-icon-180x180.png">
             <meta name="twitter:url" content="<txp:site_url />weblog">
+            <meta property="og:type" content="website">
             <meta property="og:title" content="Textpattern CMS blog">
             <meta property="og:description" content="Latest blogs from Team Textpattern and guests; Textpattern news and other tidbits of info that we find of interest.">
             <meta property="og:image" content="https://textpattern.io/assets/img/branding/textpattern/textpattern-og.png">
+            <meta property="og:image:width" content="1200">
+            <meta property="og:image:height" content="1200">
+            <meta property="og:image:alt" content="Textpattern logo">
             <meta property="og:url" content="<txp:site_url />weblog">
             <script type="application/ld+json">
                 {
@@ -56,6 +60,7 @@
         <meta name="twitter:title" content="<txp:title />">
         <meta name="twitter:description" content="<txp:meta_description format="" />">
         <meta name="twitter:url" content="<txp:permlink />">
+        <meta property="og:type" content="article">
         <meta property="og:title" content="<txp:title />">
         <meta property="og:description" content="<txp:meta_description format="" />">
         <meta property="og:url" content="<txp:permlink />">
@@ -63,10 +68,16 @@
             <txp:images limit="1">
                 <meta name="twitter:image:src" content="<txp:image_url />">
                 <meta property="og:image" content="<txp:image_url />">
+                <meta property="og:image:width" content="<txp:image_info type="w" />">
+                <meta property="og:image:height" content="<txp:image_info type="h" />">
+                <meta property="og:image:alt" content="<txp:image_info type="alt" />">
             </txp:images>
         <txp:else />
             <meta name="twitter:image:src" content="https://textpattern.io/apple-touch-icon-180x180.png">
             <meta property="og:image" content="https://textpattern.io/assets/img/branding/textpattern/textpattern-og.png">
+            <meta property="og:image:width" content="1200">
+            <meta property="og:image:height" content="1200">
+            <meta property="og:image:alt" content="Textpattern logo">
         </txp:if_article_image>
         <script type="application/ld+json">
             {
