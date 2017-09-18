@@ -30,7 +30,7 @@
     "uglify-save-license": "0.4.1"
   },
   "dependencies": {
-    "createjs": "1.0.0",
+    "createjs": "1.0.1",
     "ga-lite": "1.1.4",
     "jquery": "3.2.1",
     "lunr": "2.1.3",
