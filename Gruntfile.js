@@ -252,6 +252,7 @@ module.exports = function (grunt)
                 files: [
                     {
                         '<%= paths.dest.js %>main.js': ['<%= paths.dest.js %>main.js'],
+                        '<%= paths.dest.js %>createjs.js': ['node_modules/createjs/builds/createjs.js'],
                         '<%= paths.dest.js %>galite.js': ['node_modules/ga-lite/src/ga-lite.js'],
                         '<%= paths.dest.js %>indexcanvas.js': ['<%= paths.src.js %>indexcanvas.js'],
                         '<%= paths.dest.js %>lunr.js': ['node_modules/lunr/lunr.js'],
