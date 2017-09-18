@@ -103,4 +103,20 @@
         }
     });
 
+    // Google Analytics, via 'ga-lite'.
+    // More info - https://github.com/jehna/ga-lite.
+
+    //require(['galite.@@timestamp'], function()
+    //{
+    //    var galite = galite || {};
+    //
+    //    if (whatDomain === 'docs.textpattern.io') {
+    //        galite.UA ='UA-89386022-1';
+    //    } else {
+    //        galite.UA ='UA-191562-10';
+    //    }
+    //
+    //    galite.anonymizeIp = true;
+    //});
+
 })();
