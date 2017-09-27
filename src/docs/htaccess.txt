@@ -18,6 +18,13 @@
 
     Header always set Referrer-Policy "no-referrer-when-downgrade"
 
+    # Content Security Policy.
+
+    Header unset P3P
+    Header append X-XSS-Protection "1; mode=block"
+    Header append X-Frame-Options "DENY"
+    Header append X-Content-Type-Options "nosniff"
+
     Header unset ETag
 </ifModule>
 
