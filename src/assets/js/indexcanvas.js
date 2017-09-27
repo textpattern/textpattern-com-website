@@ -1099,7 +1099,7 @@ function handleComplete(evt) {
     stage = new createjs.Stage(canvas);
     stage.addChild(exportRoot);
     fnStartAnimation = function() {
-        createjs.Ticker.setFPS(lib.properties.fps);
+        createjs.Ticker.framerate = 20;
         createjs.Ticker.addEventListener('tick', stage);
     };
     // Code to support hiDPI screens and responsive scaling.
