@@ -14,10 +14,6 @@
 
     Header set Strict-Transport-Security "max-age=16070400"
 
-    # Referrer Policy.
-
-    Header always set Referrer-Policy "no-referrer-when-downgrade"
-
     # Content Security Policy.
 
     Header unset P3P
