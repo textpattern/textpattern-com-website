@@ -150,13 +150,11 @@ module.exports = function (grunt)
                     i: true
                 }
             },
-            files: {
-                src: [
+            files: [
                     'Gruntfile.js',
                     '<%= paths.src.js %>*.js',
                     '!<%= paths.src.js %>*.min.js'
-                ]
-            }
+            ]
         },
 
         // Add vendor prefixed styles and other post-processing transformations.
