@@ -13,7 +13,7 @@
 # THANKS
 
   Names (& URL):
-    Phil Wareham (http://www.designhive.com)
+    Phil Wareham (https://www.designhive.com)
     Destry Wion (https://wion.com)
     Philipp Schilling (http://www.psgd.de)
 
@@ -30,6 +30,7 @@
   Software:
     Node.js: https://nodejs.org/
     Grunt.js: https://gruntjs.com/
+    Composer: https://getcomposer.org/
     git: https://git-scm.com/
   Source: https://github.com/textpattern/textpattern-com-website
 
