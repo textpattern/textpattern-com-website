@@ -151,9 +151,9 @@ module.exports = function (grunt)
                 }
             },
             files: [
-                    'Gruntfile.js',
-                    '<%= paths.src.js %>*.js',
-                    '!<%= paths.src.js %>*.min.js'
+                'Gruntfile.js',
+                '<%= paths.src.js %>*.js',
+                '!<%= paths.src.js %>*.min.js'
             ]
         },
 
