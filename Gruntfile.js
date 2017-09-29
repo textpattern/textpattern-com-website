@@ -170,7 +170,7 @@ module.exports = function (grunt)
             }
         },
 
-        // Generate filename timestamps within templates files and main.js.
+        // Generate filename timestamps within templates/mockup files and main.js.
         replace: {
             theme: {
                 options: {
@@ -186,14 +186,11 @@ module.exports = function (grunt)
                     ]
                 },
                 files: [
-                    // Copy mockups (apart from design patterns doc) to mockups directory.
+                    // Copy mockups to mockups directory.
                     {
                         expand: true,
                         cwd: '<%= paths.src.mockups %>',
-                        src: [
-                            '**',
-                            '!design-patterns.html'
-                        ],
+                        src: '**',
                         dest: '<%= paths.dest.mockups %>'
                     },
                     // Copy design patterns doc to public (root) directory.
@@ -201,12 +198,14 @@ module.exports = function (grunt)
                         src: 'src/docs/design-patterns.html',
                         dest: 'public/design-patterns.html'
                     },
+                    // Copy Textpattern templates to templates directory.
                     {
                         expand: true,
                         cwd: '<%= paths.src.templates %>',
                         src: '**',
                         dest: '<%= paths.dest.templates %>'
                     },
+                    // Copy site-specific JavaScript to assets/js directory.
                     {
                         src: '<%= paths.src.js %>main.js',
                         dest: '<%= paths.dest.js %>main.js'
