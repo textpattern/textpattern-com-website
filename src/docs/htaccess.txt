@@ -190,6 +190,7 @@ Redirect temp /textile-ul-list http://txstyle.org/doc/8/bullet-list
 
 Redirect 301 /donate https://textpattern.com/about/302/patrons
 Redirect 301 /download https://textpattern.com/start
+Redirect 301 /download-beta https://textpattern.com/start
 Redirect 301 /featured https://textpattern.com/showcase
 Redirect 301 /documentation https://docs.textpattern.io
 Redirect 301 /features https://textpattern.com/about/338/textpattern-features
