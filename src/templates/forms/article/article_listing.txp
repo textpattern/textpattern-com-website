@@ -33,4 +33,5 @@
             <meta itemprop="height" content="1200">
         </txp:if_article_image>
     </span>
+    <p><a href="<txp:permlink />">Read more…</a></p>
 </article>
