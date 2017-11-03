@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "33bb1b04a3c02dd7158fa049823ce730",
+    "content-hash": "fc5afada4fcf3dab887ca243b90c32ed",
     "packages": [
         {
             "name": "bloke/smd_thumbnail",
@@ -106,38 +106,6 @@
                 "textpattern"
             ],
             "time": "2017-07-26T12:18:45+00:00"
-        },
-        {
-            "name": "etc-plugins/etc_datepicker",
-            "version": "0.3.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/etc-plugins/etc_datepicker.git",
-                "reference": "286b15e41e4be6571f5a32f5b33a41d0eb1228a4"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/etc-plugins/etc_datepicker/zipball/286b15e41e4be6571f5a32f5b33a41d0eb1228a4",
-                "reference": "286b15e41e4be6571f5a32f5b33a41d0eb1228a4",
-                "shasum": ""
-            },
-            "require": {
-                "textpattern/installer": "*",
-                "textpattern/lock": ">=4.6.0"
-            },
-            "type": "textpattern-plugin",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPL-2.0"
-            ],
-            "description": "Datepicker UI widget for Textpattern CMS administration panels.",
-            "homepage": "https://github.com/etc-plugins/etc_datepicker",
-            "keywords": [
-                "datepicker",
-                "plugin",
-                "textpattern"
-            ],
-            "time": "2017-09-28T14:04:19+00:00"
         },
         {
             "name": "etc-plugins/etc_pagination",
