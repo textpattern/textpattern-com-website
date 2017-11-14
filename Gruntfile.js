@@ -253,7 +253,6 @@ module.exports = function (grunt)
                     {
                         '<%= paths.dest.js %>main.js': ['<%= paths.dest.js %>main.js'],
                         '<%= paths.dest.js %>createjs.js': ['node_modules/createjs/builds/1.0.0/createjs.js'],
-                        '<%= paths.dest.js %>galite.js': ['node_modules/ga-lite/dist/ga-lite.js'],
                         '<%= paths.dest.js %>indexcanvas.js': ['<%= paths.src.js %>indexcanvas.js'],
                         '<%= paths.dest.js %>lunr.js': ['node_modules/lunr/lunr.js'],
                         '<%= paths.dest.js %>prism.js': [

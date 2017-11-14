@@ -31,7 +31,6 @@
   },
   "dependencies": {
     "createjs": "1.0.1",
-    "ga-lite": "2.0.1",
     "jquery": "3.2.1",
     "lunr": "2.1.4",
     "prismjs": "1.8.4",
