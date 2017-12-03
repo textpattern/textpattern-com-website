@@ -32,7 +32,7 @@
   "dependencies": {
     "createjs": "1.0.1",
     "jquery": "3.2.1",
-    "lunr": "2.1.4",
+    "lunr": "2.1.5",
     "prismjs": "1.8.4",
     "requirejs": "2.3.5",
     "responsive-nav": "1.0.39",
