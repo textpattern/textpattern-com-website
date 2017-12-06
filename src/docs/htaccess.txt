@@ -168,24 +168,24 @@ Redirect temp /default-theme https://github.com/textpattern/textpattern-default-
 Redirect temp /textpacks-download https://github.com/textpattern/textpacks/releases/download/4.7.0-beta.2/textpacks.zip
 Redirect temp /textile-changelog https://github.com/textile/php-textile/blob/master/CHANGELOG.textile
 
-Redirect temp /textile-sandbox http://txstyle.org
-Redirect temp /textile-reference-manual http://txstyle.org
-Redirect temp /textile-abbr http://txstyle.org/doc/32/acronyms
-Redirect temp /textile-blockquote http://txstyle.org/doc/3/block-quotations
-Redirect temp /textile-cite http://txstyle.org/doc/20/citation
-Redirect temp /textile-dl-list http://txstyle.org/doc/10/definition-lists
-Redirect temp /textile-em-and-i http://txstyle.org/doc/17/emphasized-and-italic-text
-Redirect temp /textile-footnote http://txstyle.org/doc/11/footnotes
-Redirect temp /textile-heading http://txstyle.org/doc/7/headings
-Redirect temp /textile-image http://txstyle.org/doc/14/images
-Redirect temp /textile-ins-and-del http://txstyle.org/doc/19/insertions-and-deletions
-Redirect temp /textile-link http://txstyle.org/doc/12/links
-Redirect temp /textile-ol-list http://txstyle.org/doc/9/numbered-lists
-Redirect temp /textile-span http://txstyle.org/doc/33/span
-Redirect temp /textile-strong-and-b http://txstyle.org/doc/16/strong-and-bold-text
-Redirect temp /textile-sub-and-sup http://txstyle.org/doc/18/subscript-and-superscript-text
-Redirect temp /textile-table http://txstyle.org/doc/15/tables
-Redirect temp /textile-ul-list http://txstyle.org/doc/8/bullet-list
+Redirect temp /textile-sandbox https://txstyle.org/article/43/a-short-introduction
+Redirect temp /textile-reference-manual https://txstyle.org
+Redirect temp /textile-abbr https://txstyle.org/doc/32/acronyms
+Redirect temp /textile-blockquote https://txstyle.org/doc/3/block-quotations
+Redirect temp /textile-cite https://txstyle.org/doc/20/citation
+Redirect temp /textile-dl-list https://txstyle.org/doc/10/definition-lists
+Redirect temp /textile-em-and-i https://txstyle.org/doc/17/emphasized-and-italic-text
+Redirect temp /textile-footnote https://txstyle.org/doc/11/footnotes
+Redirect temp /textile-heading https://txstyle.org/doc/7/headings
+Redirect temp /textile-image https://txstyle.org/doc/14/images
+Redirect temp /textile-ins-and-del https://txstyle.org/doc/19/insertions-and-deletions
+Redirect temp /textile-link https://txstyle.org/doc/12/links
+Redirect temp /textile-ol-list https://txstyle.org/doc/9/numbered-lists
+Redirect temp /textile-span https://txstyle.org/doc/33/span
+Redirect temp /textile-strong-and-b https://txstyle.org/doc/16/strong-and-bold-text
+Redirect temp /textile-sub-and-sup https://txstyle.org/doc/18/subscript-and-superscript-text
+Redirect temp /textile-table https://txstyle.org/doc/15/tables
+Redirect temp /textile-ul-list https://txstyle.org/doc/8/bullet-list
 
 # Redirect old 2008 site pages to current site pages.
 
