@@ -160,8 +160,8 @@ Redirect temp /github https://github.com/textpattern
 # Redirect hardcoded URIs to external resources.
 
 Redirect temp /demo https://textpattern.co/demo
-Redirect temp /textpattern-first-steps https://docs.textpattern.io/administration/hello-world
-Redirect temp /textpattern-semantic-model https://docs.textpattern.io/administration/textpattern-semantic-model
+Redirect temp /textpattern-first-steps https://docs.textpattern.io/faqs/textpattern-basic-tutorial
+Redirect temp /textpattern-semantic-model https://docs.textpattern.io/faqs/textpattern-semantic-model
 Redirect temp /textpattern-tag-reference https://docs.textpattern.io/tags
 Redirect temp /hidden-files-osx https://www.lifewire.com/view-hidden-mac-folders-using-terminal-2260776
 Redirect temp /default-theme https://github.com/textpattern/textpattern-default-theme
