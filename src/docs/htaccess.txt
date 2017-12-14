@@ -205,5 +205,6 @@ Redirect 301 /security https://textpattern.com/contact#security
 Redirect 301 /releases https://textpattern.com/category/releases
 RedirectMatch 301 ^/faq.*$  https://docs.textpattern.io
 
-# TODO: To be removed when a proper themes site is created.
+# TODO: To be removed when a proper themes/plugin sites created.
 Redirect temp /themes https://docs.textpattern.io/themes/
+Redirect temp /plugins http://textpattern.org/
