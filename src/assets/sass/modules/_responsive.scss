@@ -33,6 +33,14 @@
         :first-child {
             margin-top: 0;
         }
+
+        li {
+            break-inside: avoid;
+        }
+
+        .footnote {
+            display: inline-block;
+        }
     }
 
     /**
