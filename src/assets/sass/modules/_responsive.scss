@@ -35,6 +35,7 @@
         }
 
         li {
+            page-break-inside: avoid; // Fix Firefox bug.
             break-inside: avoid;
         }
 
