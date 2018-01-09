@@ -242,9 +242,6 @@ module.exports = function (grunt)
             dist: {
                 // Preserve all comments that start with a bang (!) or include a closure compiler style.
                 options: {
-                    mangle: {
-                        reserved: ['galite']
-                    },
                     output: {
                         comments: require('uglify-save-license')
                     }
