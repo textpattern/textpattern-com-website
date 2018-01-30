@@ -8,50 +8,34 @@
 
     var whatDomain = window.location.hostname;
 
-    requirejs.config({
-        paths:
+    // Load objects as variables.
+
+    var code = document.querySelectorAll('pre code'),
+        sitenavigation = document.getElementsByClassName('site-navigation');
+
+    // Syntax highlighting, via 'Prism'.
+    // Applies syntax highlighting to `code` HTML elements.
+    // More info - http://prismjs.com.
+
+    if (code.length) {
+        require(['prism.@@timestamp'], function ()
         {
-            'jquery': 'https://code.jquery.com/jquery-3.3.1.slim.min'
-        }
-    });
+            Prism.highlightAll();
+        });
+    }
 
-    require(['jquery'], function ($)
-    {
-        // Load objects as variables.
+    // Responsive navigation menu, via 'Responsive Nav'.
+    // More info - https://github.com/viljamis/responsive-nav.js.
 
-        var code = $('pre code'),
-            sitenavigation = $('.site-navigation'),
-            smoothscroll = $('a[href*="#"]:not([href="#"])');
-
-        // Syntax highlighting, via 'Prism'.
-        // Applies syntax highlighting to `code` HTML elements.
-        // More info - http://prismjs.com.
-
-        if (code.length) {
-            // Workaround for Textile limitation (you can't specify a class for inner `code` tags with Textile).
-            var language = code.parent().attr('class').split(' ')[0];
-            code.addClass(language);
-
-            require(['prism.@@timestamp'], function ()
-            {
-                Prism.highlightAll();
+    if (sitenavigation.length) {
+        require(['responsivenav.@@timestamp'], function ()
+        {
+            responsiveNav('.site-navigation', {
+                transition: 400,
+                insert: 'before',
+                navClass: 'site-navigation'
             });
-        }
-
-        // Responsive navigation menu, via 'Responsive Nav'.
-        // More info - https://github.com/viljamis/responsive-nav.js.
-
-        if (sitenavigation.length) {
-            require(['responsivenav.@@timestamp'], function ()
-            {
-                responsiveNav('.site-navigation', {
-                    transition: 400,
-                    insert: 'before',
-                    navClass: 'site-navigation'
-                });
-            });
-        }
-
-    });
+        });
+    }
 
 })();
