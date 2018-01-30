@@ -21,6 +21,7 @@ body {
     margin: 0; /* 1 */
     background: $color-background;
     color: $color-text;
+    scroll-behavior: smooth; // https://caniuse.com/#search=scroll-behavior
 }
 
 /**

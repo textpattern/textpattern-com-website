@@ -11,7 +11,7 @@
     requirejs.config({
         paths:
         {
-            'jquery': 'https://code.jquery.com/jquery-3.3.1.min'
+            'jquery': 'https://code.jquery.com/jquery-3.3.1.slim.min'
         }
     });
 
@@ -52,22 +52,6 @@
             });
         }
 
-        // Smooth scroll to anchors within same page.
-
-        smoothscroll.click(function() {
-            if (location.pathname.replace(/^\//,'') === this.pathname.replace(/^\//,'') && location.hostname === this.hostname) {
-                var target = $(this.hash);
-                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-
-                if (target.length) {
-                    $('html,body').animate({
-                        scrollTop: target.offset().top
-                    }, 500);
-
-                    return false;
-                }
-            }
-        });
     });
 
 })();
