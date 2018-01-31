@@ -34,7 +34,6 @@
     "lunr": "2.1.5",
     "prismjs": "1.10.0",
     "requirejs": "2.3.5",
-    "responsive-nav": "1.0.39",
     "textpattern-branding": "0.2.8"
   },
   "browserslist": [

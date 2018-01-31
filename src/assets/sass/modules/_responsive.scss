@@ -210,7 +210,8 @@
      * Changes in styling for navigation.
      */
 
-    .site-navigation {
+    #site-navigation {
+        transition: none;
         font-family: $font-serif;
 
         .js & {
@@ -241,7 +242,7 @@
         }
     }
 
-    .nav-toggle {
+    #site-navigation-toggle {
         display: none;
     }
 

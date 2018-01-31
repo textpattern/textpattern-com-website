@@ -261,8 +261,7 @@ module.exports = function (grunt)
                             'node_modules/prismjs/components/prism-scss.js',
                             'node_modules/prismjs/components/prism-textile.js'
                         ],
-                        '<%= paths.dest.js %>require.js': ['node_modules/requirejs/require.js'],
-                        '<%= paths.dest.js %>responsivenav.js': ['node_modules/responsive-nav/responsive-nav.js']
+                        '<%= paths.dest.js %>require.js': ['node_modules/requirejs/require.js']
                     }
                 ]
             }

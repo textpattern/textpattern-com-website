@@ -5,12 +5,13 @@
     border-bottom: 2px solid $color-text;
 }
 
-.site-navigation {
+#site-navigation {
     font-family: $font-serif;
 
     .js & {
         display: block;
         max-height: 0;
+        transition: max-height 0.33s ease-in-out;
         overflow: hidden;
         clip: rect(0 0 0 0);
     }
@@ -71,8 +72,9 @@
         }
     }
 
-    &.opened {
-        max-height: 9999px;
+    &.site-navigation-open {
+        max-height: 16em;
+        transition: max-height 0.33s ease-in-out;
     }
 }
 
@@ -88,7 +90,7 @@
  * <a class="nav-toggle">
  */
 
-.nav-toggle {
+#site-navigation-toggle {
     @include hide-text;
 
     position: absolute;
@@ -108,7 +110,7 @@
         background-color: $color-selected;
     }
 
-    &.active {
+    &.site-navigation-toggle-active {
         background-color: $color-strong-highlight-box;
     }
 
