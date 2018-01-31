@@ -32,18 +32,6 @@ module.exports = function (grunt)
             timestamp: '<%= new Date().getTime() %>'
         },
 
-        // TODO: Use Babel to transpile JavaScript (and remove RequireJS).
-        babel: {
-            options: {
-                sourceMap: true
-            },
-            dist: {
-                files: {
-                    "dist/app.js": "src/app.js"
-                }
-            }
-        },
-
         // Clean distribution directories/files to start afresh.
         clean: [
             '<%= paths.dest.css %>',
@@ -132,31 +120,25 @@ module.exports = function (grunt)
         jshint: {
             options: {
                 bitwise: true,
-                camelcase: false,
                 curly: true,
                 eqeqeq: true,
-                es3: true,
+                esversion: 5,
                 forin: true,
-                immed: true,
-                indent: 4,
+                globals: {
+                    define: true,
+                    module: true,
+                    require: true,
+                    Prism: true,
+                    i: true
+                },
                 latedef: true,
                 noarg: true,
-                noempty: true,
                 nonew: true,
                 quotmark: 'single',
                 undef: true,
                 unused: false,
                 strict: false,
-                trailing: true,
-                browser: true,
-                globals: {
-                    define: true,
-                    module: true,
-                    require: true,
-                    requirejs: true,
-                    Prism: true,
-                    i: true
-                }
+                browser: true
             },
             files: [
                 'Gruntfile.js',
@@ -178,7 +160,7 @@ module.exports = function (grunt)
             }
         },
 
-        // Generate filename timestamps within templates/mockup files and main.js.
+        // Generate filename timestamps within templates/mockup files.
         replace: {
             theme: {
                 options: {
@@ -212,11 +194,6 @@ module.exports = function (grunt)
                         cwd: '<%= paths.src.templates %>',
                         src: '**',
                         dest: '<%= paths.dest.templates %>'
-                    },
-                    // Copy site-specific JavaScript to assets/js directory.
-                    {
-                        src: '<%= paths.src.js %>main.js',
-                        dest: '<%= paths.dest.js %>main.js'
                     }
                 ]
             }
@@ -248,28 +225,23 @@ module.exports = function (grunt)
         // Uglify and copy JavaScript files from `node_modules` and from `src/js/` to `public/assets/js/`.
         uglify: {
             dist: {
-                // Preserve all comments that start with a bang (!) or include a closure compiler style.
-                options: {
-                    output: {
-                        comments: require('uglify-save-license')
-                    }
-                },
                 files: [
                     {
-                        '<%= paths.dest.js %>main.js': ['<%= paths.dest.js %>main.js'],
-                        '<%= paths.dest.js %>createjs.js': ['node_modules/createjs/builds/1.0.0/createjs.js'],
-                        '<%= paths.dest.js %>indexcanvas.js': ['<%= paths.src.js %>indexcanvas.js'],
-                        '<%= paths.dest.js %>lunr.js': ['node_modules/lunr/lunr.js'],
-                        '<%= paths.dest.js %>prism.js': [
+                        '<%= paths.dest.js %>app.js': [
+                            // Prism: Core.
                             'node_modules/prismjs/prism.js',
-                            // Add any plugins
+                            // Prism: Plugins.
                             'node_modules/prismjs/plugins/line-numbers/prism-line-numbers.js',
-                            // Add any additional languages
+                            // Prism: Additional languages.
                             'node_modules/prismjs/components/prism-php.js',
                             'node_modules/prismjs/components/prism-scss.js',
-                            'node_modules/prismjs/components/prism-textile.js'
+                            'node_modules/prismjs/components/prism-textile.js',
+                            // Site-specific JavaScript.
+                            '<%= paths.src.js %>main.js'
                         ],
-                        '<%= paths.dest.js %>require.js': ['node_modules/requirejs/require.js']
+                        '<%= paths.dest.js %>createjs.js': ['node_modules/createjs/builds/1.0.0/createjs.js'],
+                        '<%= paths.dest.js %>indexcanvas.js': ['<%= paths.src.js %>indexcanvas.js'],
+                        '<%= paths.dest.js %>lunr.js': ['node_modules/lunr/lunr.js']
                     }
                 ]
             }
@@ -301,7 +273,7 @@ module.exports = function (grunt)
     });
 
     // Register tasks.
-    grunt.registerTask('build', ['clean', 'concurrent', 'replace', 'uglify']); // TODO: 'babel'
+    grunt.registerTask('build', ['clean', 'concurrent', 'replace', 'uglify']);
     grunt.registerTask('css', ['sasslint', 'sass', 'postcss']);
     grunt.registerTask('default', ['watch']);
     grunt.registerTask('travis', ['jshint', 'build']);

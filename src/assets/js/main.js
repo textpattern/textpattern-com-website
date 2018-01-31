@@ -16,10 +16,7 @@
     // More info - http://prismjs.com.
 
     if (code.length) {
-        require(['prism.@@timestamp'], function ()
-        {
-            Prism.highlightAll();
-        });
+        Prism.highlightAll();
     }
 
     // Responsive navigation menu.
@@ -27,7 +24,8 @@
     if (navmenu) {
         var navtoggle = document.getElementById('site-navigation-toggle');
 
-        navtoggle.addEventListener('click', function(e) {
+        navtoggle.addEventListener('click', function(e)
+        {
             e.preventDefault();
             navtoggle.classList.toggle('site-navigation-toggle-active');
             navmenu.classList.toggle('site-navigation-open');

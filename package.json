@@ -11,11 +11,8 @@
   },
   "devDependencies": {
     "autoprefixer": "7.2.5",
-    "babel-core": "6.26.0",
-    "babel-preset-env": "1.6.1",
     "cssnano": "4.0.0-rc.2",
     "grunt": "~1.0",
-    "grunt-babel": "7.0.0",
     "grunt-cli": "~1",
     "grunt-concurrent": "2.3.1",
     "grunt-contrib-clean": "1.1.0",
@@ -29,14 +26,12 @@
     "grunt-sass-lint": "0.2.4",
     "load-grunt-tasks": "~3.5",
     "node-sass": "4.7.2",
-    "sass-lint": "1.12.1",
-    "uglify-save-license": "0.4.1"
+    "sass-lint": "1.12.1"
   },
   "dependencies": {
     "createjs": "1.0.1",
     "lunr": "2.1.5",
     "prismjs": "1.10.0",
-    "requirejs": "2.3.5",
     "textpattern-branding": "0.2.8"
   },
   "browserslist": [

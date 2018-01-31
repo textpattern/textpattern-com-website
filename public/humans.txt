@@ -23,7 +23,6 @@
   Server: Linux, Apache, MySQL, PHP
   Components:
     Textpattern CMS: https://textpattern.com/
-    Require.js: http://requirejs.org/
     Prism: http://prismjs.com/
     Responsive Nav: https://github.com/viljamis/responsive-nav.js
   Software:
