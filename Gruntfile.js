@@ -138,14 +138,10 @@ module.exports = function (grunt)
                 trailing: true,
                 browser: true,
                 globals: {
-                    jQuery: true,
-                    Zepto: true,
                     define: true,
                     module: true,
                     require: true,
                     requirejs: true,
-                    ga: true,
-                    responsiveNav: true,
                     Prism: true,
                     i: true
                 }
