@@ -23,6 +23,7 @@
     }
 
     // Responsive navigation menu.
+
     if (navmenu) {
         var navtoggle = document.getElementById('site-navigation-toggle');
 
