@@ -32,6 +32,18 @@ module.exports = function (grunt)
             timestamp: '<%= new Date().getTime() %>'
         },
 
+        // TODO: Use Babel to transpile JavaScript (and remove RequireJS).
+        babel: {
+            options: {
+                sourceMap: true
+            },
+            dist: {
+                files: {
+                    "dist/app.js": "src/app.js"
+                }
+            }
+        },
+
         // Clean distribution directories/files to start afresh.
         clean: [
             '<%= paths.dest.css %>',
@@ -289,7 +301,7 @@ module.exports = function (grunt)
     });
 
     // Register tasks.
-    grunt.registerTask('build', ['clean', 'concurrent', 'replace', 'uglify']);
+    grunt.registerTask('build', ['clean', 'concurrent', 'replace', 'uglify']); // TODO: 'babel'
     grunt.registerTask('css', ['sasslint', 'sass', 'postcss']);
     grunt.registerTask('default', ['watch']);
     grunt.registerTask('travis', ['jshint', 'build']);

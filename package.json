@@ -11,6 +11,8 @@
   },
   "devDependencies": {
     "autoprefixer": "7.2.5",
+    "babel-core": "6.26.0",
+    "babel-preset-env": "1.6.1",
     "cssnano": "4.0.0-rc.2",
     "grunt": "~1.0",
     "grunt-babel": "7.0.0",
