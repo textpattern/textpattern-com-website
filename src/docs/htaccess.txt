@@ -21,6 +21,10 @@
     Header append X-Frame-Options "DENY"
     Header append X-Content-Type-Options "nosniff"
 
+    # Expect-CT (TODO: currently in testing).
+
+    Header set Expect-CT "max-age=0; report-uri=https://textpattern.io/expect-ct-report"
+
     Header unset ETag
 </ifModule>
 
