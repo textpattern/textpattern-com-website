@@ -184,7 +184,6 @@ curl_close($curl1);
                 </txp:etc_cache>
             </section>
         </div>
-        <txp:output_form form="ads_adsense_homepage" />
         <div class="wrapper-inner">
             <div class="container">
                 <div class="layout-container">
