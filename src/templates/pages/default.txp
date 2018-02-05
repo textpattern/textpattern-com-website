@@ -42,7 +42,7 @@
                     "url": "<txp:site_url />"
                 }
             </script>
-            <script src="https://textpattern.io/assets/js/createjs.@@timestamp.js"></script>
+            <script defer src="https://textpattern.io/assets/js/createjs.@@timestamp.js"></script>
             <txp:variable name="homepage" value="1" />
         </txp:if_category>
     </txp:if_search>
