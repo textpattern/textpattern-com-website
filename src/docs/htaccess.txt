@@ -20,7 +20,7 @@
     Header append X-XSS-Protection "1; mode=block"
     Header append X-Frame-Options "DENY"
     Header append X-Content-Type-Options "nosniff"
-    Header append Content-Security-Policy "default-src 'self'; font-src textpattern.io https://textpattern.io; img-src 'self' data: * https://*; media-src 'self' * https://*; style-src 'self' 'unsafe-inline' textpattern.io https://textpattern.io; script-src 'self' 'unsafe-inline' textpattern.io https://textpattern.io"
+    Header append Content-Security-Policy "default-src 'self'; font-src textpattern.io https://textpattern.io; img-src 'self' data: * https://*; media-src 'self' * https://*; style-src 'self' 'unsafe-inline' textpattern.io https://textpattern.io; script-src 'self' 'sha256-YYScNyq3RC/7G7GRTG1R3s34wQFeFysoFR64eLJ0lsQ=' textpattern.io https://textpattern.io"
 
     # Expect-CT (TODO: currently in testing).
 
