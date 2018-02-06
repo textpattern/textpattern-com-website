@@ -1,9 +1,4 @@
 <IfModule mod_headers.c>
-    # Allow Google AdSense domains to access the site.
-
-    SetEnvIf Origin "http(s)?://(www\.)?(googleads.g.doubleclick.net|pagead2.googlesyndication.com)$" AccessControlAllowOrigin=$0
-    Header add Access-Control-Allow-Origin %{AccessControlAllowOrigin}e env=AccessControlAllowOrigin
-
     # Allow cross-origin access to web fonts.
 
     <FilesMatch "\.(woff2?)$">
@@ -140,7 +135,7 @@ AddDefaultCharset utf-8
 
     # Web fonts.
 
-    # Web Open Font Format (WOFF) 1.0
+    # Web Open Font Format (WOFF)
     ExpiresByType application/font-woff               "access plus 1 month"
     ExpiresByType application/x-font-woff             "access plus 1 month"
     ExpiresByType font/woff                           "access plus 1 month"
