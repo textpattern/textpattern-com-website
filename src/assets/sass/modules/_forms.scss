@@ -85,9 +85,7 @@ button::-moz-focus-inner,
 }
 
 /**
- * Remove inner padding in Safari and Chrome on OS X. Safari (but not Chrome)
- * clips the cancel button when the search input has padding (and `textfield`
- * appearance).
+ * Remove the inner padding in Chrome and Safari on macOS.
  */
 
 [type="search"]::-webkit-search-decoration {
@@ -338,17 +336,15 @@ textarea {
 }
 
 /**
- * 1. Add the correct display in IE 11.
- * 2. Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ * 1. Add the correct vertical alignment in Chrome, Firefox, and Opera.
  */
 
 progress {
-    display: inline-block; /* 1 */
     width: 10em;
     height: 0.75em;
     margin-right: 0.33em;
     border: 1px solid $color-border-light;
-    vertical-align: baseline; /* 2 */
+    vertical-align: baseline; /* 1 */
     appearance: none;
 }
 

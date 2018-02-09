@@ -78,17 +78,9 @@ img {
 }
 
 /**
- * Address margin not present in Safari.
+ * Add margins to `figure`.
  */
 
 figure {
     margin: 1em 0;
-}
-
-/**
- * Correct overflow not hidden in IE 11.
- */
-
-svg:not(:root) {
-    overflow: hidden;
 }
