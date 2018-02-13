@@ -18,6 +18,6 @@
     border: 0;
     white-space: nowrap;
     overflow: hidden;
-    clip: rect(0 0 0 0);
-    clip-path: inset(50%);
+    clip: rect(0 0 0 0); // TODO: Deprecated - use `clip-path` when browser support is better.
+    //clip-path: inset(50%); // TODO: Currently causes severe performance issues in Chrome.
 }
