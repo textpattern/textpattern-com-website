@@ -1,1 +1,0 @@
-<li><p><strong><txp:link_name /></strong> <txp:link_description /><br><a class="button button-primary button-small" rel="external nofollow" href="<txp:link_url />">Donate using PayPal</a></p></li>
