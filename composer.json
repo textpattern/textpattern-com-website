@@ -3,7 +3,7 @@
      "vendor-dir": "public/vendor"
   },
   "require": {
-    "ezyang/htmlpurifier": "4.9.3",
+    "ezyang/htmlpurifier": "4.10.0",
     "textpattern/lock": "4.6.2",
     "textpattern/installer": "^1.0",
     "textpattern/com_connect": "4.6.0-beta",
@@ -11,7 +11,6 @@
     "cara-tm/pat_if_amp": "0.3.6",
     "etc-plugins/etc_cache": "0.2.7",
     "etc-plugins/etc_pagination": "0.5.0-beta",
-    "oui/oui_flat": "0.7.0-beta2",
     "rah/rah_comment_spam": "0.8.0",
     "rah/rah_external_output": "1.1.0",
     "rah/rah_sitemap": "1.3.0"

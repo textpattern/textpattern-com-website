@@ -23,7 +23,7 @@ module.exports = function (grunt)
                 img: 'public/assets/img/',
                 js: 'public/assets/js/',
                 mockups: 'public/mockups/',
-                templates: 'public/templates/'
+                templates: 'public/themes/textpattern-com/'
             }
         },
 
@@ -39,7 +39,7 @@ module.exports = function (grunt)
             '<%= paths.dest.img %>',
             '<%= paths.dest.js %>',
             '<%= paths.dest.mockups %>*/',
-            '<%= paths.dest.templates %>*/',
+            '<%= paths.dest.templates %>',
             'public/design-patterns.html'
         ],
 

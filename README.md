@@ -104,7 +104,6 @@ All plugins we use are installed via Composer:
 * [`com_connect`](https://github.com/textpattern/com_connect) ✓ Composer
 * [`etc_cache`](https://github.com/etc-plugins/etc_cache) ✓ Composer
 * [`etc_pagination`](https://github.com/etc-plugins/etc_pagination) ✓ Composer
-* [`oui_flat`](https://github.com/nicolasgraph/oui_flat) ✓ Composer
 * [`pat_if_amp`](https://github.com/cara-tm/pat_if_amp) ✓ Composer
 * [`rah_comment_spam`](https://github.com/gocom/rah_comment_spam) ✓ Composer
 * [`rah_external_output`](https://github.com/gocom/rah_external_output) ✓ Composer

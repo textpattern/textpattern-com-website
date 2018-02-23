@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "fc5afada4fcf3dab887ca243b90c32ed",
+    "content-hash": "7324f59b87edf8f4cf38c1c1777ed430",
     "packages": [
         {
             "name": "bloke/smd_thumbnail",
@@ -143,16 +143,16 @@
         },
         {
             "name": "ezyang/htmlpurifier",
-            "version": "v4.9.3",
+            "version": "v4.10.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ezyang/htmlpurifier.git",
-                "reference": "95e1bae3182efc0f3422896a3236e991049dac69"
+                "reference": "d85d39da4576a6934b72480be6978fb10c860021"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ezyang/htmlpurifier/zipball/95e1bae3182efc0f3422896a3236e991049dac69",
-                "reference": "95e1bae3182efc0f3422896a3236e991049dac69",
+                "url": "https://api.github.com/repos/ezyang/htmlpurifier/zipball/d85d39da4576a6934b72480be6978fb10c860021",
+                "reference": "d85d39da4576a6934b72480be6978fb10c860021",
                 "shasum": ""
             },
             "require": {
@@ -186,51 +186,7 @@
             "keywords": [
                 "html"
             ],
-            "time": "2017-06-03T02:28:16+00:00"
-        },
-        {
-            "name": "oui/oui_flat",
-            "version": "0.7.0-beta2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/NicolasGraph/oui_flat.git",
-                "reference": "0a73a70f0818e96fd307af1c8f904cb2a94d867c"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/NicolasGraph/oui_flat/zipball/0a73a70f0818e96fd307af1c8f904cb2a94d867c",
-                "reference": "0a73a70f0818e96fd307af1c8f904cb2a94d867c",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.6",
-                "textpattern/installer": "*",
-                "textpattern/lock": ">=4.6.0"
-            },
-            "require-dev": {
-                "squizlabs/php_codesniffer": "1.5.*"
-            },
-            "type": "textpattern-plugin",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPL-2.0"
-            ],
-            "authors": [
-                {
-                    "name": "Nicolas Morand, Jukka Svahn",
-                    "homepage": "http://rahforum.biz",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Textpattern CMS templates as flat files (rah_flat fork)",
-            "homepage": "https://github.com/nicolasgraph/oui_flat",
-            "keywords": [
-                "flat",
-                "plugin",
-                "template",
-                "textpattern"
-            ],
-            "time": "2017-06-26T12:46:31+00:00"
+            "time": "2018-02-23T01:58:20+00:00"
         },
         {
             "name": "rah/rah_comment_spam",
@@ -486,8 +442,7 @@
     "stability-flags": {
         "textpattern/com_connect": 10,
         "bloke/smd_thumbnail": 10,
-        "etc-plugins/etc_pagination": 10,
-        "oui/oui_flat": 10
+        "etc-plugins/etc_pagination": 10
     },
     "prefer-stable": false,
     "prefer-lowest": false,
