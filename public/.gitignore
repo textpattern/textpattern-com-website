@@ -1,4 +1,5 @@
 /.htaccess
+/assets/*/
 /css.php
 /design-patterns.html
 /files
