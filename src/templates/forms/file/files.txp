@@ -5,14 +5,14 @@
         <txp:evaluate test>
             <div itemprop="description"><txp:file_download_description /></div>
         </txp:evaluate>
-        File size:
+        File size
         <span itemprop="contentSize"><txp:file_download_size format="k" decimals="0" /></span>
         <span class="separator" role="separator">|</span>
-        Last modified:
+        Last modified
         <time datetime="<txp:file_download_modified format="iso8601" />" itemprop="dateModified"><txp:file_download_modified format="%d %b %Y" /></time>
         <txp:if_yield name="sha256">
             <span class="separator" role="separator">|</span>
-            SHA256 checksum:
+            SHA256 checksum
             <code><txp:yield name="sha256" /></code>
         </txp:if_yield>
     </footer>
