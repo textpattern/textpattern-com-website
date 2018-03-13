@@ -234,6 +234,7 @@ module.exports = function (grunt)
                             'node_modules/prismjs/plugins/line-numbers/prism-line-numbers.js',
                             // Prism: Additional languages.
                             'node_modules/prismjs/components/prism-apacheconf.js',
+                            'node_modules/prismjs/components/prism-bash.js',
                             'node_modules/prismjs/components/prism-nginx.js',
                             'node_modules/prismjs/components/prism-php.js',
                             'node_modules/prismjs/components/prism-scss.js',
