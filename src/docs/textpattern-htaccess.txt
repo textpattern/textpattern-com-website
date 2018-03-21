@@ -1,3 +1,3 @@
 <IfModule mod_headers.c>
-    Header set Content-Security-Policy "default-src 'self'; font-src https://textpattern.io; img-src 'self' data: * https://*; media-src 'self' * https://*; style-src 'self' 'unsafe-inline' https://textpattern.io; script-src 'self' 'unsafe-inline' d https://textpattern.io"
+    Header set Content-Security-Policy "default-src 'self'; font-src https://textpattern.io; img-src 'self' data: * https://*; media-src 'self' * https://*; style-src 'self' 'unsafe-inline' https://textpattern.io; script-src 'self' 'unsafe-inline' https://textpattern.io"
 </ifModule>
