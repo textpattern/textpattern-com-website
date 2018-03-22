@@ -8,8 +8,8 @@
         File size
         <span itemprop="contentSize"><txp:file_download_size format="k" decimals="0" /></span>
         <span class="separator" role="separator">|</span>
-        Last modified
-        <time datetime="<txp:file_download_modified format="iso8601" />" itemprop="dateModified"><txp:file_download_modified format="%d %b %Y" /></time>
+        Created
+        <time datetime="<txp:file_download_created format="iso8601" />" itemprop="dateCreated"><txp:file_download_created format="%d %b %Y" /></time>
         <txp:if_yield name="sha256">
             <span class="separator" role="separator">|</span>
             SHA256 checksum
