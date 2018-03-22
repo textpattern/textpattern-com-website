@@ -61,15 +61,7 @@
                     <hr>
                     <p class="cta-buttons">
                         <txp:etc_cache id="homepage-downloads">
-                            <txp:file_download_list category="current-release-zip" limit="1" sort="created desc">
-                                <span itemscope itemtype="https://schema.org/DataDownload">
-                                    <meta itemprop="name" content="Textpattern CMS">
-                                    <a class="button button-primary button-large" href="<txp:file_download_link />" itemprop="url"><span class="ui-button-icon ui-icon ui-extra-icon-download"></span> Download Textpattern <span class="txp-version" itemprop="version"><txp:file_download_name title="1" /></span></a>
-                                    <meta itemprop="fileFormat" content="application/zip">
-                                    <meta itemprop="contentSize" content="<txp:file_download_size format="k" decimals="0" />">
-                                    <meta itemprop="dateModified" content="<txp:file_download_modified format="iso8601" />">
-                                </span>
-                            </txp:file_download_list>
+                            <a class="button button-primary button-large" href="<txp:site_url />start"><span class="ui-button-icon ui-icon ui-extra-icon-download"></span> Download Textpattern <span class="txp-version"><txp:file_download_list category="current-release-zip" limit="1" sort="created desc"><txp:file_download_name title="1" /></txp:file_download_list></span></a>
                         </txp:etc_cache>
                         <a class="button" href="<txp:site_url />demo">Try a demo</a>
                     </p>
