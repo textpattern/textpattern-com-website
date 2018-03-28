@@ -26,6 +26,6 @@
         <meta itemprop="height" content="1200">
     </txp:if_article_image>
 </txp:if_section>
-<div itemprop="articleBody">
+<div class="article-body" itemprop="articleBody">
     <txp:body />
 </div>

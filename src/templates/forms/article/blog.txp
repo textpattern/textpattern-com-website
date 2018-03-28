@@ -17,7 +17,7 @@
         <meta itemprop="width" content="1200">
         <meta itemprop="height" content="1200">
     </txp:if_article_image>
-    <div itemprop="articleBody">
+    <div class="article-body" itemprop="articleBody">
         <txp:body />
     </div>
     <footer class="article-footer">
