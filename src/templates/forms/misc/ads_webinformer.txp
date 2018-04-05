@@ -7,7 +7,7 @@ if (!gps('txpreview')) {
     require_once __DIR__ .'/../../vendor/autoload.php';
 
     // Do not let them slow us down.
-    $opts = array('http' => array('timeout' => 0.8));
+    $opts = array('http' => array('timeout' => 1.6));
     $url = 'http://website.informer.com/w/textpatternwidget.php';
 
     $context = stream_context_create($opts);
