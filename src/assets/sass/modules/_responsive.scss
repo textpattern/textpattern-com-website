@@ -154,14 +154,17 @@
      */
 
     .layout-2col {
+        //grid-column: span 6;
         width: 50%;
     }
 
     .layout-3col {
+        //grid-column: span 4;
         width: 33.333%;
     }
 
     .layout-3col-2span {
+        //grid-column: span 8;
         width: 66.666%;
     }
 
@@ -368,14 +371,17 @@
 
     .layout-4col,
     .layout-4col:not(.sidebar) {
+        //grid-column: span 3;
         width: 25%;
     }
 
     .layout-4col-2span {
+        //grid-column: span 6;
         width: 50%;
     }
 
     .layout-4col-3span {
+        //grid-column: span 9;
         width: 73%;
     }
 

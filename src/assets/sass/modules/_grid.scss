@@ -3,7 +3,9 @@
    ========================================================================== */
 
 /**
- * Flex container.
+ * Flexbox container.
+ *
+ * TODO: remove this when we drop IE11 and browser CSS Grid support is widespread.
  */
 
 .layout-container {
@@ -20,10 +22,24 @@
 }
 
 /**
+ * Grid container.
+ *
+ * TODO: use this when we drop IE11 and browser CSS Grid support is widespread.
+ */
+
+//.layout-container {
+//    display: grid;
+//    grid-template-columns: repeat(12, 1fr);
+//    grid-gap: 2em;
+//}
+
+/**
  * Generate sizes all for grid column cells.
  *
  * Because this is mobile first, cells are all initially a 1 column span
  * (full width, 12 cell span). We will then adjust them at various breakpoints.
+ *
+ * TODO: remove `width` and use `grid-column` for `.layout-x` when we move to CSS Grid.
  *
  * Example HTML:
  *
@@ -43,5 +59,6 @@
 .layout-4col,
 .layout-4col-2span,
 .layout-4col-3span {
+    //grid-column: span 12;
     width: 100%;
 }
