@@ -211,7 +211,8 @@ curl_close($curl2);
                 <meta itemprop="url" content="<txp:site_url />">
                 <form class="search-hero" role="search" method="get" action="<txp:site_url />" itemprop="potentialAction" itemscope itemtype="https://schema.org/SearchAction">
                     <meta itemprop="target" content="<txp:site_url />?q={q}">
-                    <input name="q" type="search" size="28" itemprop="query-input" value="<txp:search_term />">
+                    <label class="accessibility" for="q">Search</label>
+                    <input id="q" name="q" type="search" size="28" itemprop="query-input" value="<txp:search_term />">
                     <input class="button-primary" type="submit" value="Search">
                 </form>
             </div>
