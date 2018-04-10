@@ -269,7 +269,7 @@ hr {
 
 .separator {
     margin: 0 0.25em;
-    color: lighten($color-text, 30%);
+    color: $color-text-footnote;
 }
 
 /**
