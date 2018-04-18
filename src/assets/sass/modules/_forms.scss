@@ -66,30 +66,10 @@ textarea,
     margin: 0; /* 2 */
     color: $color-text-form;
     font-family: $font-form;
-    font-size: $base-font-size; /* 3 */
+    font-size: 1rem; /* 3 */
     line-height: 1.375; // 22px / 16px
     vertical-align: baseline;
     box-sizing: border-box;
-}
-
-/**
- * Remove the inner border and padding in Firefox.
- */
-
-button::-moz-focus-inner,
-[type="button"]::-moz-focus-inner,
-[type="reset"]::-moz-focus-inner,
-[type="submit"]::-moz-focus-inner {
-    padding: 0;
-    border-style: none;
-}
-
-/**
- * Remove the inner padding in Chrome and Safari on macOS.
- */
-
-[type="search"]::-webkit-search-decoration {
-    -webkit-appearance: none;
 }
 
 /**
@@ -128,17 +108,106 @@ textarea {
 }
 
 /**
- * Fix vertical alignment of `color` fields with their label.
+ * 1. Remove any excess padding.
+ * 2. Correct margins for inline checkbox/radio labels.
  */
 
-[type="color"] {
-    vertical-align: middle;
+[type="checkbox"]:not(.ui-checkboxradio),
+[type="radio"]:not(.ui-checkboxradio) {
+    position: relative;
+    bottom: -2px; // 2px / 13px
+    width: 16px;
+    height: 16px;
+    padding: 0; /* 1 */
+    border: 1px solid darken($color-border, 13%);
+    background: $color-background-form;
+    appearance: none;
+    box-sizing: border-box;
+
+    + label:not(.ui-controlgroup-item) {
+        margin: 0 0.5em 0 0; /* 2 */
+
+        &:last-of-type {
+            /* 2 */
+            margin: 0;
+        }
+    }
+
+    &:hover {
+        border-color: darken($color-border, 26%);
+        cursor: pointer;
+    }
+
+    &:focus {
+        border-color: $color-link-focus;
+        outline: 1px solid transparent; // Allows for repainting in high contrast modes.
+    }
+
+    &:not([disabled]) + label:hover {
+        cursor: pointer;
+    }
+}
+
+[type="checkbox"]:not(.ui-checkboxradio) {
+    border-radius: 0.2em;
+
+    &:checked {
+        border: 0;
+        background: $color-text-footnote url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='%23fff' d='M13 2.5l-7 7-2-2-2 2 4 4L15 4.5z'/%3E%3C/svg%3E");
+
+        &:hover,
+        &:active {
+            background-color: $color-text;
+        }
+
+        &:focus {
+            background-color: $color-link-focus;
+        }
+    }
+
+    &[disabled]:checked {
+        background: $color-border-light url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='%23fff' d='M13 2.5l-7 7-2-2-2 2 4 4L15 4.5z'/%3E%3C/svg%3E") !important;
+    }
+}
+
+[type="radio"]:not(.ui-checkboxradio) {
+    border-radius: 100%;
+
+    &:checked {
+        border: 5px solid $color-text-footnote;
+
+        &:hover,
+        &:active {
+            border-color: $color-text;
+        }
+
+        &:focus {
+            border-color: $color-link-focus;
+        }
+    }
 }
 
 /**
- * Fix the cursor style for Chrome's increment/decrement buttons. For certain
- * `font-size` values of the `input`, it causes the cursor style of the
- * decrement button to change from `default` to `text`.
+ * Reset to OS-native UI for Firefox <54.
+ *
+ * TODO: Remove when Firefox ESR 54 available.
+ */
+
+@supports (unicode-bidi: -moz-isolate) {
+    [type="checkbox"]:not(.ui-checkboxradio) {
+        bottom: -0.1em;
+        -moz-appearance: checkbox;
+
+    }
+
+    [type="radio"]:not(.ui-checkboxradio) {
+        bottom: -0.1em;
+        -moz-appearance: radio;
+    }
+}
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Safari.
  */
 
 [type="number"]::-webkit-inner-spin-button,
@@ -147,21 +216,153 @@ textarea {
 }
 
 /**
- * 1. Remove any excess padding.
- * 2. Correct margins for inline checkbox/radio labels.
+ * Styling of range sliders.
  */
 
-[type="checkbox"],
-[type="radio"] {
-    padding: 0; /* 1 */
+[type="range"] {
+    width: 100%;
+    max-width: 16em; // 256px / 16px
+    vertical-align: baseline;
+    appearance: none;
 
-    + label {
-        margin: 0 0.5em 0 0; /* 2 */
-
-        &:last-of-type {
-            margin: 0; /* 2 */
-        }
+    &:focus {
+        outline: 0;
     }
+}
+
+// WebKit/Blink.
+
+[type="range"]::-webkit-slider-thumb {
+    width: 1.25em; // 20px / 16px
+    height: 1.25em; // 20px / 16px
+    margin-top: -0.3125em; // 5px / 16px
+    border: 1px solid $color-border;
+    border-radius: 50%;
+    background-color: $color-background;
+    box-shadow: $standard-shadow;
+    cursor: pointer;
+    appearance: none;
+}
+
+[type="range"]:hover::-webkit-slider-thumb {
+    border-color: darken($color-border, 13%);
+}
+
+[type="range"]:active::-webkit-slider-thumb,
+[type="range"]:focus::-webkit-slider-thumb {
+    border-color: $color-link-focus;
+}
+
+[type="range"]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 0.75em; // 12px / 16px
+    border: 1px solid $color-border;
+    border-radius: 0.375em;
+    background-color: #e7e7e7;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+[type="range"]:hover::-webkit-slider-runnable-track {
+    border-color: darken($color-border, 13%);
+}
+
+[type="range"]:active::-webkit-slider-runnable-track,
+[type="range"]:focus::-webkit-slider-runnable-track {
+    border-color: $color-link-focus;
+}
+
+// Gecko/Quantum.
+
+[type="range"]::-moz-range-thumb {
+    width: 1.25em; // 20px / 16px
+    height: 1.25em; // 20px / 16px
+    border: 1px solid $color-border;
+    border-radius: 50%;
+    background-color: $color-background;
+    box-shadow: $standard-shadow;
+    cursor: pointer;
+    /* autoprefixer: off */
+    appearance: none;
+}
+
+[type="range"]:hover::-moz-range-thumb {
+    border-color: darken($color-border, 13%);
+}
+
+[type="range"]:focus::-moz-range-thumb {
+    border-color: $color-link-focus;
+}
+
+[type="range"]::-moz-range-track {
+    width: 100%;
+    height: 0.75em; // 12px / 16px
+    border: 1px solid $color-border;
+    border-radius: 0.375em;
+    background-color: #e7e7e7;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+[type="range"]:hover::-moz-range-track {
+    border-color: darken($color-border, 13%);
+}
+
+[type="range"]:focus::-moz-range-track {
+    border-color: $color-link-focus;
+}
+
+[type="range"]::-moz-focus-outer {
+    border-style: none;
+}
+
+// Trident/EdgeHTML.
+
+[type="range"]::-ms-thumb {
+    width: 1.25em; // 20px / 16px
+    height: 1.25em; // 20px / 16px
+    margin-bottom: -0.3125em; // 5px / 16px
+    border: 1px solid $color-border;
+    border-radius: 50%;
+    background-color: $color-background;
+    box-shadow: $standard-shadow;
+    cursor: pointer;
+    /* autoprefixer: off */
+    appearance: none;
+}
+
+[type="range"]:hover::-ms-thumb {
+    border-color: darken($color-border, 13%);
+}
+
+[type="range"]:focus::-ms-thumb {
+    border-color: $color-link-focus;
+}
+
+[type="range"]::-ms-track {
+    width: 100%;
+    height: 0.75em; // 12px / 16px
+    border: 1px solid $color-border;
+    border-radius: 0.375em;
+    background-color: #e7e7e7;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+[type="range"]:hover::-ms-track {
+    border-color: darken($color-border, 13%);
+}
+
+[type="range"]:focus::-ms-track {
+    border-color: $color-link-focus;
+}
+
+/**
+ * Remove the inner padding in Chrome and Safari on macOS.
+ */
+
+[type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none;
 }
 
 /**
@@ -333,65 +534,4 @@ textarea {
         border-color: $color-error-text;
         box-shadow: none;
     }
-}
-
-/**
- * 1. Add the correct vertical alignment in Chrome, Firefox, and Opera.
- */
-
-progress {
-    width: 10em;
-    height: 0.75em;
-    margin-right: 0.33em;
-    border: 1px solid $color-border-light;
-    vertical-align: baseline; /* 1 */
-    appearance: none;
-}
-
-progress::-webkit-progress-value {
-    background-color: $color-highlight;
-    background-image: linear-gradient(
-        135deg,
-        rgba(255, 255, 255, 0.25) 25%,
-        transparent 25%,
-        transparent 50%,
-        rgba(255, 255, 255, 0.25) 50%,
-        rgba(255, 255, 255, 0.25) 75%,
-        transparent 75%,
-        transparent
-    );
-    background-size: 24px 24px;
-    animation: progressbar-stripes linear 4s infinite;
-}
-
-progress::-webkit-progress-bar {
-    background-color: #e7e7e7;
-}
-
-progress::-moz-progress-bar {
-    background-color: $color-highlight;
-    background-image: linear-gradient(
-        135deg,
-        rgba(255, 255, 255, 0.25) 25%,
-        transparent 25%,
-        transparent 50%,
-        rgba(255, 255, 255, 0.25) 50%,
-        rgba(255, 255, 255, 0.25) 75%,
-        transparent 75%,
-        transparent
-    );
-    background-size: 24px 24px;
-    animation: progressbar-stripes linear 4s infinite;
-}
-
-.data-progress {
-    display: inline-block;
-    min-width: 2.75em;
-    margin-right: 0.5em;
-    font-size: $small-font-size;
-}
-
-.data-progress[data-progress="100"] {
-    background: $color-success-background;
-    color: $color-success-text;
 }
