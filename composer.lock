@@ -1,10 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7324f59b87edf8f4cf38c1c1777ed430",
+    "content-hash": "287d93d6196b72fd84fbb61289a34f2d",
     "packages": [
         {
             "name": "bloke/smd_thumbnail",
@@ -41,16 +41,16 @@
         },
         {
             "name": "cara-tm/pat_if_amp",
-            "version": "0.3.6",
+            "version": "v0.3.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cara-tm/pat_if_amp.git",
-                "reference": "9d13d0df32a40dc3be72e173cece3e31eec5bc5e"
+                "reference": "f856ba096514d4daeffe7426904ddf6c3dd6b19d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cara-tm/pat_if_amp/zipball/9d13d0df32a40dc3be72e173cece3e31eec5bc5e",
-                "reference": "9d13d0df32a40dc3be72e173cece3e31eec5bc5e",
+                "url": "https://api.github.com/repos/cara-tm/pat_if_amp/zipball/f856ba096514d4daeffe7426904ddf6c3dd6b19d",
+                "reference": "f856ba096514d4daeffe7426904ddf6c3dd6b19d",
                 "shasum": ""
             },
             "require": {
@@ -71,7 +71,7 @@
                 "plugin",
                 "textpattern"
             ],
-            "time": "2017-08-11T07:47:19+00:00"
+            "time": "2018-04-21T18:28:19+00:00"
         },
         {
             "name": "etc-plugins/etc_cache",
