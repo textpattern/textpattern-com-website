@@ -40,7 +40,6 @@
             </script>
         <txp:else />
             <meta name="robots" content="noindex, follow">
-            <link rel="canonical" href="<txp:site_url />weblog/?pg=<txp:page_url type="pg" />">
         </txp:if_variable>
         <txp:evaluate test>
             <link rel="prev" href="<txp:newer />">
