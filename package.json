@@ -24,7 +24,7 @@
     "grunt-replace": "1.0.1",
     "grunt-sass": "2.1.0",
     "grunt-sass-lint": "0.2.4",
-    "load-grunt-tasks": "~3.5",
+    "load-grunt-tasks": "~4.0.0",
     "node-sass": "4.9.0",
     "sass-lint": "1.12.1"
   },
