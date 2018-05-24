@@ -9,8 +9,8 @@
         <meta name="robots" content="none">
     <txp:else />
         <txp:if_category>
-            <title>Category: <txp:category title="1" /> / Textpattern CMS</title>
-            <meta name="description" content="Blog article ‘<txp:category title="1" />’ category archive.">
+            <title>Category: <txp:category title /> / Textpattern CMS</title>
+            <meta name="description" content="Blog article ‘<txp:category title />’ category archive.">
             <meta name="robots" content="noindex, follow">
         <txp:else />
             <title>Textpattern CMS | Open source content management system</title>
@@ -202,7 +202,6 @@ curl_close($curl2);
     </main>
 <txp:else />
 <txp:if_search>
-    <txp:article pgonly="1" />
     <body itemscope itemtype="https://schema.org/SearchResultsPage">
     <txp:output_form form="body_header" />
     <main aria-label="Main content">

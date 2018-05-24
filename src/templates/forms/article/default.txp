@@ -16,8 +16,7 @@
         <txp:excerpt />
     </div>
 </txp:if_excerpt>
-<txp:if_section name="showcase">
-<txp:else />
+<txp:if_section not name="showcase">
     <txp:if_article_image>
         <txp:images form="images" break="" />
     <txp:else />

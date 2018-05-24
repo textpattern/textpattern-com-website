@@ -1,11 +1,10 @@
 <section class="layout-4col sidebar">
     <h3>Get Textpattern</h3>
     <p class="cta-buttons">
-        <a class="button button-primary button-large" href="<txp:site_url />start"><span class="ui-button-icon ui-icon ui-extra-icon-download"></span> Download <span class="txp-version"><txp:file_download_list category="current-release-zip" limit="1" sort="created desc"><txp:file_download_name title="1" /></txp:file_download_list></span></a>
+        <a class="button button-primary button-large" href="<txp:site_url />start"><span class="ui-button-icon ui-icon ui-extra-icon-download"></span> Download <span class="txp-version"><txp:file_download_list category="current-release-zip" limit="1" sort="created desc"><txp:file_download_name title /></txp:file_download_list></span></a>
         <a class="button" href="<txp:site_url />demo">Try a demo</a>
     </p>
-    <txp:if_variable name="bloglandingpage">
-    <txp:else />
+    <txp:if_variable not name="bloglandingpage">
         <txp:article_custom labeltag="h3" label="Latest blog articles" wraptag="ol" break="li" section="weblog" limit="6">
             <a href="<txp:permlink />"><txp:title /></a>
         </txp:article_custom>

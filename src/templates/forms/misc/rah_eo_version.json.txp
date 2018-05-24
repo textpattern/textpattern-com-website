@@ -1,6 +1,6 @@
 <txp:etc_cache id="version-json">{
   "textpattern-version": {
-    "release": "<txp:file_download_list category="current-release-zip" limit="1" break="" sort="created desc"><txp:file_download_name title="1" /></txp:file_download_list>",
-    "prerelease": <txp:evaluate test="file_download_list">"<txp:file_download_list category="current-beta-release-zip" limit="1" break="" sort="created desc"><txp:file_download_name title="1" /></txp:file_download_list>"<txp:else />null</txp:evaluate>
+    "release": "<txp:file_download_list category="current-release-zip" limit="1" break="" sort="created desc"><txp:file_download_name title /></txp:file_download_list>",
+    "prerelease": <txp:evaluate test="file_download_list">"<txp:file_download_list category="current-beta-release-zip" limit="1" break="" sort="created desc"><txp:file_download_name title /></txp:file_download_list>"<txp:else />null</txp:evaluate>
   }
 }</txp:etc_cache>

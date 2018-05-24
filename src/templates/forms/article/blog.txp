@@ -37,8 +37,8 @@
             <span class="separator" role="separator">|</span>
             <span class="ui-icon ui-icon-tag">Tags:</span>
             <span itemprop="keywords">
-                <txp:if_article_category number="1"><txp:category1 title="1" link="1" /></txp:if_article_category>
-                <txp:if_article_category number="2"><txp:category2 title="1" link="1" /></txp:if_article_category>
+                <txp:if_article_category number="1"><txp:category1 title link /></txp:if_article_category>
+                <txp:if_article_category number="2"><txp:category2 title link /></txp:if_article_category>
             </span>
         </txp:if_article_category>
         <txp:if_comments>
