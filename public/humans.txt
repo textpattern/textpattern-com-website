@@ -20,7 +20,7 @@
 # TECHNOLOGY COLOPHON
 
   Standards: HTML5, CSS3
-  Server: Linux, Apache, MySQL, PHP
+  Server: Nginx, Percona Server for MySQL, PHP
   Components:
     Textpattern CMS: https://textpattern.com/
     Prism: http://prismjs.com/
