@@ -12,13 +12,13 @@
         <meta name="twitter:site" content="@textpattern">
         <meta name="twitter:title" content="<txp:section title />">
         <meta name="twitter:description" content="<txp:meta_description format="" />">
-        <meta name="twitter:image:src" content="https://textpattern.io/apple-touch-icon-180x180.png">
+        <meta name="twitter:image:src" content="https://textpattern.com/apple-touch-icon-180x180.png">
         <meta name="twitter:url" content="<txp:section url />">
         <meta property="og:site_name" content="Textpattern CMS">
         <meta property="og:type" content="website">
         <meta property="og:title" content="<txp:section title />">
         <meta property="og:description" content="<txp:meta_description format="" />">
-        <meta property="og:image" content="https://textpattern.io/assets/img/branding/textpattern/textpattern-og.png">
+        <meta property="og:image" content="https://textpattern.com/assets/img/branding/textpattern/textpattern-og.png">
         <meta property="og:image:width" content="1200">
         <meta property="og:image:height" content="1200">
         <meta property="og:image:alt" content="Textpattern logo">
@@ -56,8 +56,8 @@
                 <meta property="og:image:alt" content="<txp:image_info type="alt" />">
             </txp:images>
         <txp:else />
-            <meta name="twitter:image:src" content="https://textpattern.io/apple-touch-icon-180x180.png">
-            <meta property="og:image" content="https://textpattern.io/assets/img/branding/textpattern/textpattern-og.png">
+            <meta name="twitter:image:src" content="https://textpattern.com/apple-touch-icon-180x180.png">
+            <meta property="og:image" content="https://textpattern.com/assets/img/branding/textpattern/textpattern-og.png">
             <meta property="og:image:width" content="1200">
             <meta property="og:image:height" content="1200">
             <meta property="og:image:alt" content="Textpattern logo">

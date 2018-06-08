@@ -30,14 +30,14 @@
                 "name": "Textpattern CMS",
                 "logo": {
                     "@type": "ImageObject",
-                    "url": "https://textpattern.io/assets/img/branding/textpattern/textpattern.png",
+                    "url": "https://textpattern.com/assets/img/branding/textpattern/textpattern.png",
                     "width": "320",
                     "height": "60"
                 }
             },
             "image": {
                 "@type": "ImageObject",
-                <txp:if_article_image><txp:images limit="1"><txp:smd_if_thumbnail type="amp-696w390h">"url": "<txp:smd_thumbnail type="amp-696w390h" display="url" />",<txp:else />"url": "https://textpattern.io/assets/img/branding/textpattern/textpattern-amp.png",</txp:smd_if_thumbnail></txp:images><txp:else />"url": "https://textpattern.io/assets/img/branding/textpattern/textpattern-amp.png",</txp:if_article_image>
+                <txp:if_article_image><txp:images limit="1"><txp:smd_if_thumbnail type="amp-696w390h">"url": "<txp:smd_thumbnail type="amp-696w390h" display="url" />",<txp:else />"url": "https://textpattern.com/assets/img/branding/textpattern/textpattern-amp.png",</txp:smd_if_thumbnail></txp:images><txp:else />"url": "https://textpattern.com/assets/img/branding/textpattern/textpattern-amp.png",</txp:if_article_image>
                 "width": "696",
                 "height": "390"
             }

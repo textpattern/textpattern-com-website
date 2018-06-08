@@ -12,13 +12,13 @@
         <meta name="twitter:site" content="@textpattern">
         <meta name="twitter:title" content="Textpattern CMS site showcase">
         <meta name="twitter:description" content="Feast your eyes on some of the awesome websites powered by Textpattern CMS in our site showcase section.">
-        <meta name="twitter:image:src" content="https://textpattern.io/apple-touch-icon-180x180.png">
+        <meta name="twitter:image:src" content="https://textpattern.com/apple-touch-icon-180x180.png">
         <meta name="twitter:url" content="<txp:site_url />showcase">
         <meta property="og:site_name" content="Textpattern CMS">
         <meta property="og:type" content="website">
         <meta property="og:title" content="Textpattern CMS site showcase">
         <meta property="og:description" content="Feast your eyes on some of the awesome websites powered by Textpattern CMS in our site showcase section.">
-        <meta property="og:image" content="https://textpattern.io/assets/img/branding/textpattern/textpattern-og.png">
+        <meta property="og:image" content="https://textpattern.com/assets/img/branding/textpattern/textpattern-og.png">
         <meta property="og:image:width" content="1200">
         <meta property="og:image:height" content="1200">
         <meta property="og:image:alt" content="Textpattern logo">
@@ -56,8 +56,8 @@
                 <meta property="og:image:alt" content="<txp:image_info type="alt" />">
             </txp:images>
         <txp:else />
-            <meta name="twitter:image:src" content="https://textpattern.io/apple-touch-icon-180x180.png">
-            <meta property="og:image" content="https://textpattern.io/assets/img/branding/textpattern/textpattern-og.png">
+            <meta name="twitter:image:src" content="https://textpattern.com/apple-touch-icon-180x180.png">
+            <meta property="og:image" content="https://textpattern.com/assets/img/branding/textpattern/textpattern-og.png">
             <meta property="og:image:width" content="1200">
             <meta property="og:image:height" content="1200">
             <meta property="og:image:alt" content="Textpattern logo">

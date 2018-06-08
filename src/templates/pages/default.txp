@@ -22,13 +22,13 @@
             <meta name="twitter:site" content="@textpattern">
             <meta name="twitter:title" content="Textpattern CMS | Open source content management system">
             <meta name="twitter:description" content="Textpattern CMS is a free, open source content management system with a browser-based interface in over 40 languages.">
-            <meta name="twitter:image:src" content="https://textpattern.io/apple-touch-icon-180x180.png">
+            <meta name="twitter:image:src" content="https://textpattern.com/apple-touch-icon-180x180.png">
             <meta name="twitter:url" content="<txp:site_url />">
             <meta property="og:site_name" content="Textpattern CMS">
             <meta property="og:type" content="website">
             <meta property="og:title" content="Textpattern CMS | Open source content management system">
             <meta property="og:description" content="Textpattern CMS is a free, open source content management system with a browser-based interface in over 40 languages.">
-            <meta property="og:image" content="https://textpattern.io/assets/img/branding/textpattern/textpattern-og.png">
+            <meta property="og:image" content="https://textpattern.com/assets/img/branding/textpattern/textpattern-og.png">
             <meta property="og:image:width" content="1200">
             <meta property="og:image:height" content="1200">
             <meta property="og:image:alt" content="Textpattern logo">
@@ -42,7 +42,7 @@
                     "url": "<txp:site_url />"
                 }
             </script>
-            <script defer src="https://textpattern.io/assets/js/createjs.@@timestamp.js"></script>
+            <script defer src="https://textpattern.com/assets/js/createjs.@@timestamp.js"></script>
             <txp:variable name="homepage" value="1" />
         </txp:if_category>
     </txp:if_search>
@@ -246,7 +246,7 @@ curl_close($curl2);
                         </txp:if_search_results>
                     </div>
                     <p>Please try another search term or <a href="<txp:site_url />">return to the Textpattern homepage</a>.</p>
-                    <p><img width="556" height="406" alt="Page error" src="https://textpattern.io/assets/img/com/error.jpg" srcset="https://textpattern.io/assets/img/com/error@2x.jpg 2x, https://textpattern.io/assets/img/com/error.jpg 1x"></p>
+                    <p><img width="556" height="406" alt="Page error" src="https://textpattern.com/assets/img/com/error.jpg" srcset="https://textpattern.com/assets/img/com/error@2x.jpg 2x, https://textpattern.com/assets/img/com/error.jpg 1x"></p>
                 </txp:if_search_results>
             </div>
         </div>
