@@ -15,11 +15,11 @@
     Header always set X-XSS-Protection "1; mode=block"
     Header always set X-Frame-Options "DENY"
     Header always set X-Content-Type-Options "nosniff"
-    Header set Content-Security-Policy "default-src 'self'; font-src 'self'; img-src 'self' data: * https://*; media-src 'self' * https://*; style-src 'self' 'unsafe-inline' https://textpattern.io; script-src 'self' 'sha256-YYScNyq3RC/7G7GRTG1R3s34wQFeFysoFR64eLJ0lsQ=' https://textpattern.io https://cdn.ampproject.org; connect-src 'self' https://api.github.com"
+    Header set Content-Security-Policy "default-src 'self'; font-src 'self'; img-src 'self' data: * https://*; media-src 'self' * https://*; style-src 'self' 'unsafe-inline'; script-src 'self' 'sha256-YYScNyq3RC/7G7GRTG1R3s34wQFeFysoFR64eLJ0lsQ=' https://cdn.ampproject.org; connect-src 'self' https://api.github.com"
 
     # Expect-CT (TODO: currently in testing).
 
-    Header set Expect-CT "max-age=0; report-uri=https://textpattern.io/expect-ct-report"
+    Header set Expect-CT "max-age=0; report-uri=https://textpattern.com/expect-ct-report"
 
     Header unset ETag
 </ifModule>
