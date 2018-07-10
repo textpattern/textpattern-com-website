@@ -166,7 +166,7 @@ Redirect temp /textpattern-tag-reference https://docs.textpattern.io/tags
 Redirect temp /hidden-files-osx https://www.lifewire.com/view-hidden-mac-folders-using-terminal-2260776
 Redirect temp /default-theme https://github.com/textpattern/textpattern-default-theme
 Redirect temp /languages https://textpattern.com/about/301/languages
-Redirect temp /textpacks-download https://github.com/textpattern/textpacks/releases/download/4.7.0/textpacks.zip
+Redirect temp /textpacks-download https://github.com/textpattern/textpacks/releases/download/4.7.1/textpacks.zip
 Redirect temp /textile-changelog https://github.com/textile/php-textile/blob/master/CHANGELOG.textile
 
 Redirect temp /textile-sandbox https://txstyle.org/article/43/a-short-introduction
