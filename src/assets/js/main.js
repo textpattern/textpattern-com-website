@@ -17,6 +17,13 @@
     // More info - http://prismjs.com.
 
     if (code.length) {
+        var elems = document.querySelectorAll('.language-txp');
+
+        [].forEach.call(elems, function(el) {
+            el.classList.add('language-html');
+            el.classList.remove('language-txp');
+        });
+
         Prism.highlightAll();
     }
 
