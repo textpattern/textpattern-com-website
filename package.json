@@ -10,7 +10,7 @@
     "url": "https://github.com/textpattern/textpattern-com-website/issues"
   },
   "devDependencies": {
-    "autoprefixer": "9.1.1",
+    "autoprefixer": "9.1.2",
     "cssnano": "4.0.5",
     "dart-sass": "1.13.0",
     "fibers": "3.0.0",
