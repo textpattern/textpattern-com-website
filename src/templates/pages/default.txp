@@ -155,6 +155,23 @@
                 </txp:etc_cache>
             </section>
         </div>
+        <div class="wrapper-inner zebra">
+            <div class="container">
+                <aside class="ads-area" itemscope itemtype="https://schema.org/WPAdBlock">
+                    <h6>Advertisements</h6>
+                    <div class="ads">
+                        <a rel="external" href="https://www.digitalocean.com/?utm_source=opensource&amp;utm_campaign=textpattern" itemprop="url">
+                            <img width="300" height="250" itemprop="image" alt="DigitalOcean" src="/assets/img/com/digitalocean-300x250.png" srcset="/assets/img/com/digitalocean-300x250@2x.png 2x, /assets/img/com/digitalocean-300x250.png 1x">
+                        </a>
+                    </div>
+                    <div class="ads">
+                        <a rel="external" href="#" itemprop="url">
+                            <img width="300" height="250" itemprop="image" alt="Ad Example 2" src="/assets/img/com/ad-300x250-placeholder.png">
+                        </a>
+                    </div>
+                </aside>
+            </div>
+        </div>
         <div class="wrapper-inner">
             <div class="container">
                 <div class="layout-container">
