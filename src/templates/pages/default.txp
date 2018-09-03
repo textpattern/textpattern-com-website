@@ -219,6 +219,7 @@ curl_close($curl2);
     </main>
 <txp:else />
 <txp:if_search>
+    <txp:article pgonly limit="12" />
     <body itemscope itemtype="https://schema.org/SearchResultsPage">
     <txp:output_form form="body_header" />
     <main aria-label="Main content">
