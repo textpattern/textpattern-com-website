@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html amp lang="en">
 <head>
+    <txp:article pgonly limit="1" />
     <meta charset="utf-8">
     <script async src="https://cdn.ampproject.org/v0.js"></script>
     <script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
