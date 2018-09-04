@@ -160,10 +160,10 @@ Redirect temp /github https://github.com/textpattern
 # Redirect hardcoded URIs to external resources.
 
 Redirect temp /demo https://textpattern.co/demo
-Redirect temp /textpattern-first-steps https://docs.textpattern.io/faqs/textpattern-basic-tutorial
-Redirect temp /textpattern-semantic-model https://docs.textpattern.io/faqs/textpattern-semantic-model
-Redirect temp /textpattern-tag-reference https://docs.textpattern.io/tags
-Redirect temp /hidden-files-osx https://docs.textpattern.io/installation/view-hidden-files-on-macos
+Redirect temp /textpattern-first-steps https://docs.textpattern.com/faqs/textpattern-basic-tutorial
+Redirect temp /textpattern-semantic-model https://docs.textpattern.com/faqs/textpattern-semantic-model
+Redirect temp /textpattern-tag-reference https://docs.textpattern.com/tags
+Redirect temp /hidden-files-osx https://docs.textpattern.com/installation/view-hidden-files-on-macos
 Redirect temp /default-theme https://github.com/textpattern/textpattern-default-theme
 Redirect temp /languages https://textpattern.com/about/301/languages
 Redirect temp /textpacks-download https://github.com/textpattern/textpacks/releases/download/4.7.1/textpacks.zip
@@ -194,7 +194,7 @@ Redirect 301 /donate https://textpattern.com/about/302/patrons
 Redirect 301 /download https://textpattern.com/start
 Redirect 301 /download-beta https://textpattern.com/start
 Redirect 301 /featured https://textpattern.com/showcase
-Redirect 301 /documentation https://docs.textpattern.io
+Redirect 301 /documentation https://docs.textpattern.com
 Redirect 301 /features https://textpattern.com/about/338/textpattern-features
 Redirect 301 /system-requirements https://textpattern.com/about/119/system-requirements
 Redirect 301 /support https://textpattern.com/about/345/community-support
@@ -204,8 +204,8 @@ Redirect 301 /patrons https://textpattern.com/about/302/patrons
 Redirect 301 /hosting https://textpattern.com/about/363/web-hosting
 Redirect 301 /security https://textpattern.com/contact#security
 Redirect 301 /releases https://textpattern.com/category/releases
-RedirectMatch 301 ^/faq.*$  https://docs.textpattern.io
+RedirectMatch 301 ^/faq.*$  https://docs.textpattern.com
 
 # TODO: To be removed when a proper themes/plugin sites created.
-Redirect temp /themes https://docs.textpattern.io/themes/
+Redirect temp /themes https://docs.textpattern.com/themes/
 Redirect temp /plugins http://textpattern.org/
