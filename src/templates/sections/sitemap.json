@@ -1,0 +1,10 @@
+{
+  "name": "sitemap",
+  "title": "Sitemap",
+  "page": "sitemap",
+  "css": "default",
+  "is_default": false,
+  "in_rss": false,
+  "on_frontpage": false,
+  "searchable": false
+}

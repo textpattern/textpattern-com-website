@@ -7,6 +7,5 @@
   "is_default": false,
   "in_rss": false,
   "on_frontpage": false,
-  "searchable": true,
-  "rah_sitemap_include_in": true
+  "searchable": true
 }
