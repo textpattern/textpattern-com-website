@@ -1,0 +1,18 @@
+<txp:header value="application/xml; charset=utf-8" /><?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<txp:section_list break="" exclude="sections,to,exclude">
+<url>
+    <loc><txp:section url="1" /></loc>
+</url>
+</txp:section_list>
+<txp:article_custom section="sections,with,articles" limit="9999">
+<url>
+    <loc><txp:permlink /></loc>
+</url>
+</txp:article_custom>
+<txp:category_list exclude="categories, to,exclude" break="">
+<url>
+    <loc><txp:category url="1" /></loc>
+</url>
+</txp:category_list>
+</urlset>
