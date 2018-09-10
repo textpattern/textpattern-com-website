@@ -29,9 +29,10 @@ FileETag None
 <IfModule mod_rewrite.c>
     RewriteEngine On
 
-    # Sitemap alias.
+    # Aliases for sitemap.xml and version.json.
 
     RewriteRule ^sitemap.xml$  index.php?s=sitemap [L]
+    RewriteRule ^version.json$  index.php?s=version [L]
 
     # No 'www'.
 

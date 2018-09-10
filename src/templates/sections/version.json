@@ -1,0 +1,10 @@
+{
+  "name": "version",
+  "title": "Version",
+  "page": "version",
+  "css": "default",
+  "is_default": false,
+  "in_rss": false,
+  "on_frontpage": false,
+  "searchable": false
+}
