@@ -188,25 +188,6 @@ textarea {
 }
 
 /**
- * Reset to OS-native UI for Firefox <54.
- *
- * TODO: Remove when Firefox ESR 54 available.
- */
-
-@supports (unicode-bidi: -moz-isolate) {
-    [type="checkbox"]:not(.ui-checkboxradio) {
-        bottom: -0.1em;
-        -moz-appearance: checkbox;
-
-    }
-
-    [type="radio"]:not(.ui-checkboxradio) {
-        bottom: -0.1em;
-        -moz-appearance: radio;
-    }
-}
-
-/**
  * Correct the cursor style of increment and decrement buttons in Safari.
  */
 
