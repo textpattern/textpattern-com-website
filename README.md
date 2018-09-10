@@ -107,5 +107,4 @@ All plugins we use are installed via Composer:
 * [`pat_if_amp`](https://github.com/cara-tm/pat_if_amp) ✓ Composer
 * [`rah_comment_spam`](https://github.com/gocom/rah_comment_spam) ✓ Composer
 * [`rah_external_output`](https://github.com/gocom/rah_external_output) ✓ Composer
-* [`rah_sitemap`](https://github.com/gocom/rah_sitemap) ✓ Composer
 * [`smd_thumbnail`](https://github.com/bloke/smd_thumbnail) ✓ Composer

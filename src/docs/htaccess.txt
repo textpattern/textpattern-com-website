@@ -29,6 +29,10 @@ FileETag None
 <IfModule mod_rewrite.c>
     RewriteEngine On
 
+    # Sitemap alias.
+
+    RewriteRule ^sitemap.xml$  index.php?s=sitemap [L]
+
     # No 'www'.
 
     RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
