@@ -154,7 +154,7 @@ AddDefaultCharset utf-8
 # Cool URIs don't change.
 
 Redirect permanent /plugins/txp_plugin_template.txt https://github.com/textpattern/textpattern-plugin-template
-Redirect permanent /forum https://forum.textpattern.io
+Redirect permanent /forum https://forum.textpattern.com
 
 # Selfish propaganda.
 

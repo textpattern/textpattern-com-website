@@ -124,7 +124,7 @@
                     <div class="layout-4col">
                         <p><img width="200" height="200" alt="CMS with community-driven development" src="/assets/img/com/index-feature-community.jpg" srcset="/assets/img/com/index-feature-community@2x.jpg 2x, /assets/img/com/index-feature-community.jpg 1x"></p>
                         <h3>Community-driven development</h3>
-                        <p>Well over a decade of development has been lovingly poured into our CMS. The active, friendly and helpful <a href="https://forum.textpattern.io/">community</a> surrounding the platform ensures its continued success and guides its future.</p>
+                        <p>Well over a decade of development has been lovingly poured into our CMS. The active, friendly and helpful <a href="https://forum.textpattern.com/">community</a> surrounding the platform ensures its continued success and guides its future.</p>
                     </div>
                     <div class="layout-4col">
                         <p><img width="200" height="200" alt="Content management system text writing options" src="/assets/img/com/index-feature-writing.jpg" srcset="/assets/img/com/index-feature-writing@2x.jpg 2x, /assets/img/com/index-feature-writing.jpg 1x"></p>
@@ -204,7 +204,7 @@
                         </txp:etc_cache>
                     </section>
                     <div class="layout-3col">
-                        <h3>Latest from <a href="https://forum.textpattern.io/">the forum</a>…</h3>
+                        <h3>Latest from <a href="https://forum.textpattern.com/">the forum</a>…</h3>
                         <ul class="list--no-bullets ellipsis">
                             <txp:etc_cache id="forum-feed" time="-900">
                                 <txp:php>
@@ -212,7 +212,7 @@ $curl2 = curl_init();
 
 curl_setopt_array($curl2, array(
     CURLOPT_RETURNTRANSFER => 1,
-    CURLOPT_URL => 'http://forum.textpattern.io/api/?limit=5&sort=posted',
+    CURLOPT_URL => 'http://forum.textpattern.com/api/?limit=5&sort=posted',
 ));
 
 $response2 = curl_exec($curl2);
