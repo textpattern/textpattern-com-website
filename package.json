@@ -33,7 +33,7 @@
     "createjs": "1.0.1",
     "lunr": "2.3.3",
     "prismjs": "1.15.0",
-    "textpattern-branding": "0.2.8"
+    "textpattern-branding": "0.2.9"
   },
   "browserslist": [
     "> 0.5%",
