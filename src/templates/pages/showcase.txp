@@ -29,7 +29,7 @@
                 "@type": "WebPage",
                 "headline": "Textpattern CMS site showcase",
                 "description": "Feast your eyes on some of the awesome websites powered by Textpattern CMS in our site showcase section.",
-                "url": "<txp:site_url />showcase"
+                "url": "<txp:site_url escape="json" />showcase"
             }
         </script>
     <txp:else />
@@ -68,7 +68,7 @@
                 "@type": "WebPage",
                 "headline": "<txp:title escape="json" />",
                 "description": "<txp:meta_description format="" escape="json" />",
-                "url": "<txp:permlink />"
+                "url": "<txp:permlink escape="json" />"
             }
         </script>
     </txp:if_article_list>

@@ -39,7 +39,7 @@
             "@type": "WebPage",
             "headline": "<txp:section title escape="json" />",
             "description": "<txp:meta_description format="" escape="json" />",
-            "url": "<txp:section url />"
+            "url": "<txp:section url escape="json" />"
         }
     </script>
 </head>

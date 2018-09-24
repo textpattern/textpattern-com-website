@@ -35,7 +35,7 @@
                     "@type": "Blog",
                     "headline": "Textpattern CMS blog",
                     "description": "Latest blogs from Team Textpattern and guests; Textpattern news and other tidbits of info that we find of interest.",
-                    "url": "<txp:site_url />weblog"
+                    "url": "<txp:site_url escape="json" />weblog"
                 }
             </script>
         <txp:else />
@@ -88,7 +88,7 @@
                     "@type": "BlogPosting",
                     "headline": "<txp:title escape="json" />",
                     "description": "<txp:meta_description format="" escape="json" />",
-                    "url": "<txp:permlink />"
+                    "url": "<txp:permlink escape="json" />"
                 }]
             }
         </script>

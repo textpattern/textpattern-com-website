@@ -39,7 +39,7 @@
                     "@type": "WebSite",
                     "headline": "Textpattern CMS | Open source content management system",
                     "description": "Textpattern CMS is a free, open source content management system with a browser-based interface in over 40 languages.",
-                    "url": "<txp:site_url />"
+                    "url": "<txp:site_url escape="json" />"
                 }
             </script>
             <script defer src="https://textpattern.com/assets/js/createjs.@@timestamp.js"></script>

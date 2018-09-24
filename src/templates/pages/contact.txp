@@ -29,7 +29,7 @@
                 "@type": "WebPage",
                 "headline": "Contact us",
                 "description": "Use this online enquiry form to contact the Textpattern Development Team.",
-                "url": "<txp:site_url />contact"
+                "url": "<txp:site_url escape="json" />contact"
             }
         </script>
     <txp:else />
