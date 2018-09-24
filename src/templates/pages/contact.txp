@@ -3,39 +3,34 @@
 <head>
     <meta charset="utf-8">
     <txp:output_form form="head" />
-    <txp:if_article_list>
-        <title>Contact us / Textpattern CMS</title>
-        <meta name="description" content="Use this online enquiry form to contact the Textpattern Development Team.">
-        <meta name="robots" content="index, follow">
-        <link rel="canonical" href="<txp:site_url />contact">
-        <meta name="twitter:card" content="summary">
-        <meta name="twitter:site" content="@textpattern">
-        <meta name="twitter:title" content="Contact us">
-        <meta name="twitter:description" content="Use this online enquiry form to contact the Textpattern Development Team.">
-        <meta name="twitter:image:src" content="https://textpattern.com/apple-touch-icon-180x180.png">
-        <meta name="twitter:url" content="<txp:site_url />contact">
-        <meta property="og:site_name" content="Textpattern CMS">
-        <meta property="og:type" content="website">
-        <meta property="og:title" content="Contact us">
-        <meta property="og:description" content="Use this online enquiry form to contact the Textpattern Development Team.">
-        <meta property="og:image" content="https://textpattern.com/assets/img/branding/textpattern/textpattern-og.png">
-        <meta property="og:image:width" content="1200">
-        <meta property="og:image:height" content="1200">
-        <meta property="og:image:alt" content="Textpattern logo">
-        <meta property="og:url" content="<txp:site_url />contact">
-        <script type="application/ld+json">
-            {
-                "@context": "https://schema.org",
-                "@type": "WebPage",
-                "headline": "Contact us",
-                "description": "Use this online enquiry form to contact the Textpattern Development Team.",
-                "url": "<txp:site_url escape="json" />contact"
-            }
-        </script>
-    <txp:else />
-        <title><txp:title /> / Textpattern CMS</title>
-        <meta name="robots" content="none">
-    </txp:if_article_list>
+    <title>Contact us / Textpattern CMS</title>
+    <meta name="description" content="How to contact the Textpattern Development Team via email.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="<txp:site_url />contact">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@textpattern">
+    <meta name="twitter:title" content="Contact us">
+    <meta name="twitter:description" content="How to contact the Textpattern Development Team via email.">
+    <meta name="twitter:image:src" content="https://textpattern.com/apple-touch-icon-180x180.png">
+    <meta name="twitter:url" content="<txp:site_url />contact">
+    <meta property="og:site_name" content="Textpattern CMS">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Contact us">
+    <meta property="og:description" content="How to contact the Textpattern Development Team via email.">
+    <meta property="og:image" content="https://textpattern.com/assets/img/branding/textpattern/textpattern-og.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="1200">
+    <meta property="og:image:alt" content="Textpattern logo">
+    <meta property="og:url" content="<txp:site_url />contact">
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "headline": "Contact us",
+            "description": "How to contact the Textpattern Development Team via email.",
+            "url": "<txp:site_url escape="json" />contact"
+        }
+    </script>
 </head>
 <body itemscope itemtype="http://schema.org/ContactPage">
     <txp:output_form form="body_header" />
@@ -44,53 +39,20 @@
             <div class="layout-container">
                 <txp:output_form form="body_crumbs" />
                 <article class="layout-4col-3span">
-                    <txp:if_article_list>
-                        <h1>Contact us</h1>
-                        <div class="article-description">
-                            <p>Use this online enquiry form to contact the Textpattern Development Team. If your message is security-related, please adhere to the <a href="#security">security report rules</a>.</p>
-                        </div>
-                        <p>Refrain from using this form to ask general questions about Textpattern or to ask for support—rather, please make use of the extensive <a href="https://docs.textpattern.com/">documentation</a> and the <a href="https://forum.textpattern.com/">support forum</a>. General “How do I…?” questions and support enquiries will be politely ignored. Thank you for your co-operation and interest in Textpattern!</p>
-                        <hr>
-                        <txp:com_connect class="" to="contact@textpattern.com" subject="Textpattern website enquiry" label="" body_form="email_body" redirect="contact/264/thanks">
-                            <p>Fields marked <span class="required" title="Required" aria-label="Required">●</span> are required.</p>
-                            <div class="layout-container">
-                                <div class="field layout-2col">
-                                    <txp:com_connect_text class="" name="name" size="32" label="Name" />
-                                </div>
-                                <div class="field layout-2col">
-                                    <txp:com_connect_email class="" name="email" size="32" />
-                                </div>
-                                <div class="field layout-2col">
-                                    <txp:com_connect_text class="" name="website" size="32" label="Website" required="0" />
-                                </div>
-                                <div class="field layout-1col">
-                                    <txp:com_connect_textarea class="" name="message" label="Message" cols="64" rows="8" />
-                                </div>
-                                <div class="field layout-1col">
-                                    <txp:com_connect_submit class="" label="Send message" />
-                                </div>
-                            </div>
-                        </txp:com_connect>
-                        <section>
-                            <h3 id="security">Security report rules</h3>
-                            <p><strong>We take security very seriously!</strong> If you wish to report a Textpattern security issue please ensure that you’ve taken care of the following security precautions:</p>
-                            <ol>
-                                <li>Take steps to ensure any vulnerability or issue is not due to a third party script, malfunctioning server, or insufficient security precautions taken by you or your server admin (such as weak passwords, for example).</li>
-                                <li>Report any and all security vulnerabilities to us <em>first</em>. <strong>Do not</strong> publicly disclose information about potential security bugs. It’s unhelpful, and can be damaging. We follow the <a rel="external" href="https://dl.packetstormsecurity.net/papers/general/rfpolicy-2.0.txt">RFPolicy 2.0</a>, and expect you to in return.</li>
-                                <li>Allow us a reasonable amount of time to assess and correct the issue <strong>before</strong> sharing details with others or otherwise making details public.</li>
-                                <li>Provide details as to the nature of the vulnerability, and examples of the steps to replicate it.</li>
-                            </ol>
-                            <p class="alert-block information footnote">Alternatively you can report vulnerabilities directly to <b>security at textpattern dot com</b>.</p>
-                        </section>
-                    <txp:else />
-                        <txp:article>
-                            <h1><txp:title /></h1>
-                            <div class="article-description">
-                                <txp:excerpt />
-                            </div>
-                            <txp:body />
-                        </txp:article>
-                    </txp:if_article_list>
+                    <h1>Contact us</h1>
+                    <p>The Textpattern Development Team can be contacted directly via <a href="mailto:contact@textpattern.com"><b>contact@textpattern.com</b></a>, whereby a member of our team will respond in due course. However, if your message is security-related, please adhere to the <a href="#security">security reports</a> information detailed below.</p>
+                    <h3 id="rules">General email rules</h3>
+                    <p>Please refrain from using our email addresses to ask general questions about Textpattern CMS or to ask for support—rather, please make use of the extensive <a href="https://docs.textpattern.com/">documentation</a> and the <a href="https://forum.textpattern.com/">support forum</a>. General “How do I…?” questions and support enquiries will be politely ignored when sent to our contact or security email addresses. Thank you for your co-operation and interest in Textpattern!</p>
+                    <h3 id="security">Security reports</h3>
+                    <p><strong>We take security very seriously!</strong> If you wish to report a Textpattern security issue please ensure that you’ve taken care of the following security precautions:</p>
+                    <ol>
+                        <li>Take steps to ensure any vulnerability or issue is not due to a third party script, malfunctioning server, or insufficient security precautions taken by you or your server admin (such as weak passwords, for example).</li>
+                        <li>Report any and all security vulnerabilities to us <em>first</em>. <strong>Do not</strong> publicly disclose information about potential security bugs. It’s unhelpful, and can be damaging. We follow the <a rel="external" href="https://dl.packetstormsecurity.net/papers/general/rfpolicy-2.0.txt">RFPolicy 2.0</a>, and expect you to in return.</li>
+                        <li>Allow us a reasonable amount of time to assess and correct the issue <strong>before</strong> sharing details with others or otherwise making details public.</li>
+                        <li>Provide details as to the nature of the vulnerability, and examples of the steps to replicate it.</li>
+                        <li>As we are a free, open-source project run by volunteers, we do not offer monetary rewards or provide ‘bug bounties’ for discovering and/or reporting security issues. All security reports should be considered free of charge and voluntary on your part. Thank you for your understanding.</li>
+                    </ol>
+                    <p>Please report vulnerabilities directly to <a href="mailto:security@textpattern.com"><b>security@textpattern.com</b></a>, where they will be dealt with in a suitable urgency by the development team.</p>
                 </article>
                 <txp:output_form form="sidebar" />
             </div>
