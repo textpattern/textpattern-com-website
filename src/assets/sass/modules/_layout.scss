@@ -350,6 +350,51 @@ main .layout-4col-3span {
     z-index: 1;
 }
 
+/* Homepage feature images.
+   ========================================================================== */
+
+.index-feature h3::before {
+    @include hires-graphic(com/index-features, png, 1600px, 200px);
+
+    display: block;
+    width: 200px;
+    height: 200px;
+    margin-bottom: 1em;
+    content: "";
+}
+
+.index-feature-foundations::before {
+    background-position: 0 0;
+}
+
+.index-feature-tags::before {
+    background-position: -200px 0;
+}
+
+.index-feature-speed::before {
+    background-position: -400px 0;
+}
+
+.index-feature-interface::before {
+    background-position: -600px 0;
+}
+
+.index-feature-languages::before {
+    background-position: -800px 0;
+}
+
+.index-feature-community::before {
+    background-position: -1000px 0;
+}
+
+.index-feature-writing::before {
+    background-position: -1200px 0;
+}
+
+.index-feature-contribute::before {
+    background-position: -1400px 0;
+}
+
 /**
  * Showcase section.
  */
