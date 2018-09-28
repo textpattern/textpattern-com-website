@@ -353,14 +353,17 @@ main .layout-4col-3span {
 /* Homepage feature images.
    ========================================================================== */
 
-.index-feature h3::before {
-    @include hires-graphic(com/index-features, png, 1600px, 200px);
-
+.index-feature h3::before,
+.index-docs h3::before {
     display: block;
     width: 200px;
     height: 200px;
     margin-bottom: 1em;
     content: "";
+}
+
+.index-feature h3::before {
+    @include hires-graphic(com/index-features, png, 1600px, 200px);
 }
 
 .index-feature-foundations::before {
@@ -393,6 +396,34 @@ main .layout-4col-3span {
 
 .index-feature-contribute::before {
     background-position: -1400px 0;
+}
+
+.index-docs h3::before {
+    @include hires-graphic(com/index-docs, png, 1200px, 200px);
+}
+
+.index-docs-start::before {
+    background-position: 0 0;
+}
+
+.index-docs-admin::before {
+    background-position: -200px 0;
+}
+
+.index-docs-tags::before {
+    background-position: -400px 0;
+}
+
+.index-docs-theme::before {
+    background-position: -600px 0;
+}
+
+.index-docs-dev::before {
+    background-position: -800px 0;
+}
+
+.index-docs-faqs::before {
+    background-position: -1000px 0;
 }
 
 /**
