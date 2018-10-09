@@ -74,7 +74,6 @@
         </div>
         <footer class="article-share">
             <amp-social-share width="40" height="32" type="twitter"></amp-social-share>
-            <amp-social-share width="40" height="32" type="gplus"></amp-social-share>
             <amp-social-share width="40" height="32" type="linkedin"></amp-social-share>
         </footer>
     </div>
