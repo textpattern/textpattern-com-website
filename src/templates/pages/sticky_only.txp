@@ -2,7 +2,6 @@
 <!DOCTYPE html>
 <html lang="en-GB-oxendict">
 <head>
-    <meta charset="utf-8">
     <txp:output_form form="head" />
     <title><txp:section title /> / Textpattern CMS</title>
     <txp:meta_description />

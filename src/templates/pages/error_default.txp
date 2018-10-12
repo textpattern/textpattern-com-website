@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-GB-oxendict">
 <head>
-    <meta charset="utf-8">
     <txp:output_form form="head" />
     <title><txp:error_status /> / Textpattern CMS</title>
     <meta name="description" content="<txp:error_message/>">

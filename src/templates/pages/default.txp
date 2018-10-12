@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-GB-oxendict">
 <head>
-    <meta charset="utf-8">
     <txp:output_form form="head" />
     <txp:if_search>
         <title>Search results / Textpattern CMS</title>

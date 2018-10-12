@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-GB-oxendict">
 <head>
-    <meta charset="utf-8">
     <txp:output_form form="head" />
     <title>Contact us / Textpattern CMS</title>
     <meta name="description" content="How to contact the Textpattern Development Team via email.">
