@@ -191,7 +191,7 @@ module.exports = function (grunt)
                         src: 'src/docs/design-patterns.html',
                         dest: 'public/design-patterns.html'
                     },
-                    // Copy Textpattern templates to templates directory.
+                    // Copy Textpattern templates to themes directory.
                     {
                         expand: true,
                         cwd: '<%= paths.src.templates %>',
