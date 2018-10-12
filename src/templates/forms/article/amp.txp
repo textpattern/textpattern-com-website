@@ -12,7 +12,7 @@
     <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1">
     <txp:meta_description />
     <link rel="canonical" href="<txp:permlink />">
-    <link rel="manifest" href="/manifest.json">
+    <link rel="manifest" href="/site.webmanifest">
     <script type="application/ld+json">
         {
             "@context": "https://schema.org",
