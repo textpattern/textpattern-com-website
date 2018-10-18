@@ -1,7 +1,7 @@
 # Textpattern.com website
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/textpattern/textpattern-com-website.svg)](https://greenkeeper.io/)
-[![Build Status](https://img.shields.io/travis/textpattern/textpattern-com-website.svg)](https://travis-ci.org/textpattern/textpattern-com-website)
+[![Greenkeeper](https://badges.greenkeeper.io/textpattern/textpattern-com-website.svg)](https://greenkeeper.io/)
+[![Build Status](https://travis-ci.org/textpattern/textpattern-com-website.svg)](https://travis-ci.org/textpattern/textpattern-com-website)
 
 Official 2017+ website of the [Textpattern](https://textpattern.com/) project. **Requires Textpattern 4.7.2 or later.**
 
