@@ -11,7 +11,7 @@
   },
   "devDependencies": {
     "autoprefixer": "9.2.1",
-    "cssnano": "4.1.5",
+    "cssnano": "4.1.7",
     "dart-sass": "1.14.3",
     "fibers": "3.0.0",
     "grunt": "~1",
