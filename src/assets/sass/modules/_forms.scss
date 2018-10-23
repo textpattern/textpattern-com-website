@@ -480,14 +480,6 @@ input {
     color: $color-warning-text;
 }
 
-label.comRequired,
-label.comRequirederrorElement {
-    &::after {
-        color: $color-warning-text;
-        content: "\00A0" "\25CF";
-    }
-}
-
 /**
  * Styling for form field validation.
  */
@@ -495,10 +487,7 @@ label.comRequirederrorElement {
 input,
 select,
 textarea {
-    &:focus:invalid,
-    &.errorElement,
-    &.comRequirederrorElement,
-    &.comments_error {
+    &:focus:invalid {
         border-color: $color-error-text;
         box-shadow: none; // Normalize Firefox styling
     }

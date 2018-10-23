@@ -405,7 +405,8 @@
      */
 
     .sidebar {
-        padding-top: 1em;
+        margin: 0 -1em;
+        padding: 1em;
         border-top: 0;
         background-color: $color-background-box;
     }
