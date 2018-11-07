@@ -172,6 +172,7 @@ Redirect temp /hidden-files-osx https://docs.textpattern.com/installation/view-h
 Redirect temp /default-theme https://github.com/textpattern/textpattern-default-theme
 Redirect temp /languages https://textpattern.com/about/301/languages
 Redirect temp /textpacks-download https://github.com/textpattern/textpacks/releases/download/4.7.1/textpacks.zip
+Redirect temp /pophelp-download https://github.com/textpattern/pophelp/releases/download/4.7.1/help.zip
 Redirect temp /textile-changelog https://github.com/textile/php-textile/blob/master/CHANGELOG.textile
 
 Redirect temp /textile-sandbox https://txstyle.org/article/43/a-short-introduction

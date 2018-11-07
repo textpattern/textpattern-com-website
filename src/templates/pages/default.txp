@@ -68,24 +68,24 @@
                         <a class="button" rel="external" href="https://github.com/textpattern/textpattern/" title="Stars on GitHub"><span class="ui-icon ui-extra-icon-github">GitHub</span> <strong>Stars</strong></a>
                         <txp:etc_cache id="github-stars" time="-3600">
                              <txp:php>
- $curl1 = curl_init();
+$curl1 = curl_init();
 
- curl_setopt_array($curl1, array(
-     CURLOPT_RETURNTRANSFER => 1,
-     CURLOPT_URL => 'https://api.github.com/repos/textpattern/textpattern',
-     CURLOPT_USERAGENT => 'Textpattern CMS',
- ));
+curl_setopt_array($curl1, array(
+    CURLOPT_RETURNTRANSFER => 1,
+    CURLOPT_URL => 'https://api.github.com/repos/textpattern/textpattern',
+    CURLOPT_USERAGENT => 'Textpattern CMS',
+));
 
- $response1 = curl_exec($curl1);
+$response1 = curl_exec($curl1);
 
- if (curl_error($curl1)) {
-     // Do nothing.
- } else {
-     $json = json_decode($response1);
-     echo '<a class="count-bubble" rel="external" href="https://github.com/textpattern/textpattern/stargazers" title="Stargazers on GitHub">'.$json->stargazers_count.'</a>';
- }
+if (curl_error($curl1)) {
+     / Do nothing.
+} else {
+    $json = json_decode($response1);
+    echo '<a class="count-bubble" rel="external" href="https://github.com/textpattern/textpattern/stargazers" title="Stargazers on GitHub">'.$json->stargazers_count.'</a>';
+}
 
- curl_close($curl1);
+curl_close($curl1);
                              </txp:php>
                          </txp:etc_cache>
                     </p>
