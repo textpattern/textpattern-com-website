@@ -10,7 +10,6 @@
     "cara-tm/pat_if_amp": "0.3.7",
     "etc-plugins/etc_cache": "0.2.8",
     "etc-plugins/etc_pagination": "0.5.0",
-    "rah/rah_comment_spam": "0.8.0",
-    "textpattern/com_connect": "4.6.0-beta.3"
+    "rah/rah_comment_spam": "0.8.0"
   }
 }
