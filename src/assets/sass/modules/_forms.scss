@@ -16,16 +16,14 @@ fieldset {
 /**
  * Normalize styling of `legend`.
  *
- * 1. Correct wrapping not present in IE 11 and Edge 12/13.
+ * 1. Correct wrapping not present in Edge 12/13.
  * 2. Remove padding so people aren't caught out if they zero out fieldsets.
- * 3. Correct `color` not being inherited from fieldset in IE 11.
  */
 
 legend {
     display: table; /* 1 */
     max-width: 100%; /* 1 */
     padding: 0; /* 2 */
-    color: inherit; /* 3 */
     white-space: normal; /* 1 */
     box-sizing: border-box; /* 1 */
 }
@@ -358,14 +356,6 @@ select {
 }
 
 /**
- * Remove browser-specific `select` UI in IE 11.
- */
-
-select::-ms-expand {
-    opacity: 0;
-}
-
-/**
  * Remove browser-specific `select` UI in Firefox 4+.
  */
 
@@ -405,18 +395,16 @@ optgroup {
 }
 
 /**
- * 1. Remove default vertical scrollbar in IE 11.
- * 2. Remove unwanted space below `textarea` in Safari, Chrome, Opera.
- * 3. Restrict to vertical resizing to prevent layout breakage.
+ * 1. Remove unwanted space below `textarea` in Safari, Chrome, Opera.
+ * 2. Restrict to vertical resizing to prevent layout breakage.
  */
 
 textarea {
     width: 100%;
     height: auto;
     min-height: 3em;
-    overflow: auto; /* 1 */
-    vertical-align: top; /* 2 */
-    resize: vertical; /* 3 */
+    vertical-align: top; /* 1 */
+    resize: vertical; /* 2 */
 }
 
 /**

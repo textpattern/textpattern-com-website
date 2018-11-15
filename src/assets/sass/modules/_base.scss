@@ -2,7 +2,7 @@
    ========================================================================== */
 
 /**
- * Add the correct display in Edge, IE 11, and Firefox.
+ * Add the correct display in Edge and Firefox.
  */
 
 details,
@@ -16,18 +16,6 @@ main {
 
 summary {
     display: list-item;
-}
-
-/**
- * Add the correct display in IE 11.
- */
-
-canvas {
-    display: inline-block;
-}
-
-template {
-    display: none;
 }
 
 /**
