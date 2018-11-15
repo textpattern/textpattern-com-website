@@ -3,12 +3,10 @@
 
 /**
  * 1. Correct `button` style inheritance in Firefox, IE 11 and Opera.
- * 2. Address `overflow` set to `hidden` in IE 11.
  */
 
 button {
     text-transform: none; /* 1 */
-    overflow: visible; /* 2 */
 }
 
 /**
