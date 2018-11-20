@@ -214,4 +214,4 @@ RedirectMatch 301 ^/faq.*$  https://docs.textpattern.com
 
 # TODO: To be removed when a proper themes/plugin sites created.
 Redirect temp /themes https://docs.textpattern.com/themes/
-Redirect temp /plugins http://textpattern.org/
+Redirect temp /plugins https://textpattern.org/
