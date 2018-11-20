@@ -6,13 +6,13 @@
         <title>Site showcase / Textpattern CMS</title>
         <meta name="description" content="Feast your eyes on some of the awesome websites powered by Textpattern CMS in our site showcase section.">
         <meta name="robots" content="index, follow">
-        <link rel="canonical" href="<txp:site_url />showcase">
+        <link rel="canonical" href="<txp:site_url />showcase/">
         <meta name="twitter:card" content="summary">
         <meta name="twitter:site" content="@textpattern">
         <meta name="twitter:title" content="Textpattern CMS site showcase">
         <meta name="twitter:description" content="Feast your eyes on some of the awesome websites powered by Textpattern CMS in our site showcase section.">
         <meta name="twitter:image:src" content="https://textpattern.com/apple-touch-icon-180x180.png">
-        <meta name="twitter:url" content="<txp:site_url />showcase">
+        <meta name="twitter:url" content="<txp:site_url />showcase/">
         <meta property="og:site_name" content="Textpattern CMS">
         <meta property="og:type" content="website">
         <meta property="og:title" content="Textpattern CMS site showcase">
@@ -21,14 +21,14 @@
         <meta property="og:image:width" content="1200">
         <meta property="og:image:height" content="1200">
         <meta property="og:image:alt" content="Textpattern logo">
-        <meta property="og:url" content="<txp:site_url />showcase">
+        <meta property="og:url" content="<txp:site_url />showcase/">
         <script type="application/ld+json">
             {
                 "@context": "https://schema.org",
                 "@type": "WebPage",
                 "headline": "Textpattern CMS site showcase",
                 "description": "Feast your eyes on some of the awesome websites powered by Textpattern CMS in our site showcase section.",
-                "url": "<txp:site_url escape="json" />showcase"
+                "url": "<txp:site_url escape="json" />showcase/"
             }
         </script>
     <txp:else />

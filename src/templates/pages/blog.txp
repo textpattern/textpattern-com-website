@@ -12,13 +12,13 @@
         <txp:variable name="page" value='<txp:page_url type="pg" />' />
         <txp:if_variable name="page" value="1">
             <meta name="robots" content="index, follow">
-            <link rel="canonical" href="<txp:site_url />weblog">
+            <link rel="canonical" href="<txp:site_url />weblog/">
             <meta name="twitter:card" content="summary">
             <meta name="twitter:site" content="@textpattern">
             <meta name="twitter:title" content="Textpattern CMS blog">
             <meta name="twitter:description" content="Latest blogs from Team Textpattern and guests; Textpattern news and other tidbits of info that we find of interest.">
             <meta name="twitter:image:src" content="https://textpattern.com/apple-touch-icon-180x180.png">
-            <meta name="twitter:url" content="<txp:site_url />weblog">
+            <meta name="twitter:url" content="<txp:site_url />weblog/">
             <meta property="og:site_name" content="Textpattern CMS">
             <meta property="og:type" content="website">
             <meta property="og:title" content="Textpattern CMS blog">
@@ -27,14 +27,14 @@
             <meta property="og:image:width" content="1200">
             <meta property="og:image:height" content="1200">
             <meta property="og:image:alt" content="Textpattern logo">
-            <meta property="og:url" content="<txp:site_url />weblog">
+            <meta property="og:url" content="<txp:site_url />weblog/">
             <script type="application/ld+json">
                 {
                     "@context": "https://schema.org",
                     "@type": "Blog",
                     "headline": "Textpattern CMS blog",
                     "description": "Latest blogs from Team Textpattern and guests; Textpattern news and other tidbits of info that we find of interest.",
-                    "url": "<txp:site_url escape="json" />weblog"
+                    "url": "<txp:site_url escape="json" />weblog/"
                 }
             </script>
         <txp:else />
