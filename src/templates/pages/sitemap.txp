@@ -3,7 +3,7 @@
 <url>
     <loc><txp:site_url /></loc>
 </url>
-<txp:section_list break="" exclude="sitemap">
+<txp:section_list break="" exclude="sitemap,version">
 <url>
     <loc><txp:section url="1" /></loc>
 </url>
