@@ -79,7 +79,7 @@ curl_setopt_array($curl1, array(
 $response1 = curl_exec($curl1);
 
 if (curl_error($curl1)) {
-     / Do nothing.
+    // Do nothing.
 } else {
     $json = json_decode($response1);
     echo '<a class="count-bubble" rel="external" href="https://github.com/textpattern/textpattern/stargazers" title="Stargazers on GitHub">'.$json->stargazers_count.'</a>';
