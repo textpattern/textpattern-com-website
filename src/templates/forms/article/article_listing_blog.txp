@@ -12,7 +12,7 @@
     <span itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
         <txp:if_article_image>
             <txp:images limit="1">
-                <meta itemprop="contentUrl" content="<txp:image_url />">
+                <meta itemprop="url contentUrl" content="<txp:image_url />">
                 <meta itemprop="width" content="<txp:image_info type="w" />">
                 <meta itemprop="height" content="<txp:image_info type="h" />">
             </txp:images>
@@ -30,9 +30,7 @@
         <span itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
             <meta itemprop="name" content="Textpattern CMS">
             <span itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
-                <meta itemprop="contentUrl" content="https://textpattern.com/assets/img/branding/textpattern/textpattern.png">
-                <meta itemprop="width" content="320">
-                <meta itemprop="height" content="60">
+                <meta itemprop="url contentUrl" content="https://textpattern.com/assets/img/branding/textpattern/textpattern.png">
             </span>
         </span>
         <txp:if_article_category>
