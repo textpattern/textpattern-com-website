@@ -8,7 +8,7 @@
     <span itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
         <meta itemprop="name" content="Textpattern CMS">
         <span itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
-            <meta itemprop="url" content="https://textpattern.com/assets/img/branding/textpattern/textpattern.png">
+            <meta itemprop="contentUrl" content="https://textpattern.com/assets/img/branding/textpattern/textpattern.png">
             <meta itemprop="width" content="320">
             <meta itemprop="height" content="60">
         </span>
@@ -23,12 +23,12 @@
     <span itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
         <txp:if_article_image>
             <txp:images limit="1">
-                <meta itemprop="url" content="<txp:image_url />">
+                <meta itemprop="contentUrl" content="<txp:image_url />">
                 <meta itemprop="width" content="<txp:image_info type="w" />">
                 <meta itemprop="height" content="<txp:image_info type="h" />">
             </txp:images>
         <txp:else />
-            <meta itemprop="url" content="https://textpattern.com/assets/img/branding/textpattern/textpattern-og.png">
+            <meta itemprop="contentUrl" content="https://textpattern.com/assets/img/branding/textpattern/textpattern-og.png">
             <meta itemprop="width" content="1200">
             <meta itemprop="height" content="1200">
         </txp:if_article_image>
