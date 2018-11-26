@@ -8,6 +8,7 @@
 
 .layout-container {
     display: grid;
+    overflow: auto; // Avoid content spillage.
     grid-template-columns: repeat(12, 1fr);
     grid-gap: 0 2em;
 }
