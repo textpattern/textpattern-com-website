@@ -87,7 +87,19 @@
                     "@type": "BlogPosting",
                     "headline": "<txp:title escape="json" />",
                     "description": "<txp:meta_description format="" escape="json" />",
-                    "url": "<txp:permlink escape="json" />"
+                    "url": "<txp:permlink escape="json" />",
+                    "author": {
+                        "@type": "Person",
+                        "name": "<txp:if_custom_field name="external-author"><txp:custom_field name="external-author" escape="json" /><txp:else /><txp:author escape="json" /></txp:if_custom_field>"
+                    },
+                    "publisher": {
+                        "@type": "Organization",
+                        "name": "Textpattern CMS",
+                        "logo": {
+                            "@type": "ImageObject",
+                            "url": "https://textpattern.com/assets/img/branding/textpattern/textpattern.png"
+                        }
+                    }
                 }]
             }
         </script>
