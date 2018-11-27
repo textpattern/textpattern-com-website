@@ -5,24 +5,27 @@
             <meta itemprop="position" content="1">
         </li>
         <txp:if_search>
-            <li class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                <b itemprop="item"><span itemprop="name">Search results</span></b>
+            <li class="current">
+                <b itemprop="name">Search results</b>
+                <meta itemprop="item" content="<txp:site_url />?q=">
                 <meta itemprop="position" content="2">
             </li>
         <txp:else />
             <txp:if_category>
                 <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                    <a itemprop="item" href="<txp:site_url />weblog"><span itemprop="name">Blog</span></a>
+                    <a itemprop="item" href="<txp:site_url />weblog/"><span itemprop="name">Blog</span></a>
                     <meta itemprop="position" content="2">
                 </li>
                 <li class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                    <b itemprop="item"><span itemprop="name">Category: <txp:category title /></span></b>
+                    <b itemprop="name">Category: <txp:category title /></b>
+                    <meta itemprop="item" content="<txp:site_url />category/<txp:category />/">
                     <meta itemprop="position" content="3">
                 </li>
             <txp:else />
                 <txp:if_article_list>
                     <li class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                        <b itemprop="item"><span itemprop="name"><txp:section title /></span></b>
+                        <b itemprop="name"><txp:section title /></b>
+                        <meta itemprop="item" content="<txp:section url />">
                         <meta itemprop="position" content="2">
                     </li>
                 <txp:else />
@@ -31,7 +34,8 @@
                         <meta itemprop="position" content="2">
                     </li>
                     <li class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                        <b itemprop="item"><span itemprop="name"><txp:title /></span></b>
+                        <b itemprop="name"><txp:title /></b>
+                        <meta itemprop="item" content="<txp:permlink />">
                         <meta itemprop="position" content="3">
                     </li>
                 </txp:if_article_list>
