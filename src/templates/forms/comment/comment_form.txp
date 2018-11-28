@@ -1,6 +1,6 @@
 <p>You must preview your comment before submitting it. Email addresses are used for verification only and are not displayed with your comment. Fields marked <span class="required" title="Required" aria-label="Required">●</span> are required.</p>
 <txp:if_comments_error>
-    <txp:comments_error class="comError" wraptag="ul" break="li" />
+    <txp:comments_error class="error" wraptag="ul" break="li" />
 </txp:if_comments_error>
 <div class="layout-container">
     <div class="field layout-2col">
