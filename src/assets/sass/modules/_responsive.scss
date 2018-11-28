@@ -5,6 +5,47 @@
 @media screen and (min-width: $breakpoint-1) {
 
     /**
+     * Grid container.
+     */
+
+    .layout-container {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-gap: 0 2em;
+
+        > * {
+            overflow: auto; // Avoid content spillage.
+        }
+    }
+
+    /**
+     * Generate sizes all for grid column cells.
+     *
+     * Because this is mobile first, cells are all initially a 1 column span
+     * (full width, 12 cell span). We will then adjust them at various breakpoints.
+     *
+     * Example HTML:
+     *
+     * <div class="layout-1col"></div>
+     *
+     * <div class="layout-2col"></div>
+     * <div class="layout-2col"></div>
+     *
+     * <div class="layout-3col-2span"></div>
+     * <div class="layout-3col"></div>
+     */
+
+    .layout-1col,
+    .layout-2col,
+    .layout-3col,
+    .layout-3col-2span,
+    .layout-4col,
+    .layout-4col-2span,
+    .layout-4col-3span {
+        grid-column: span 12;
+    }
+
+    /**
      * Screen size-specific elements.
      */
 
