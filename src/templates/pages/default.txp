@@ -13,20 +13,20 @@
             <meta name="robots" content="noindex, follow">
         <txp:else />
             <title>Textpattern CMS | Open source content management system</title>
-            <meta name="description" content="Textpattern CMS is a free, open source content management system with a browser-based interface in over 40 languages.">
-            <meta name="keywords" content="cms, content management systems, open source, blogs, blogging, free, wordpress alternatives, fast, lightweight, web design, web site design, web development, web site development, php">
+            <meta name="description" content="Textpattern CMS is a free, PHP open source CMS (content management system) with a browser-based interface in over 40 languages.">
+            <meta name="keywords" content="cms, content management systems, open source, blogs, blogging, free, wordpress alternatives, fast, lightweight, web design, web site design, web development, web site development, php, foss">
             <meta name="robots" content="index, follow">
             <link rel="canonical" href="<txp:site_url />">
             <meta name="twitter:card" content="summary">
             <meta name="twitter:site" content="@textpattern">
             <meta name="twitter:title" content="Textpattern CMS | Open source content management system">
-            <meta name="twitter:description" content="Textpattern CMS is a free, open source content management system with a browser-based interface in over 40 languages.">
+            <meta name="twitter:description" content="Textpattern CMS is a free, PHP open source CMS (content management system) with a browser-based interface in over 40 languages.">
             <meta name="twitter:image:src" content="https://textpattern.com/apple-touch-icon-180x180.png">
             <meta name="twitter:url" content="<txp:site_url />">
             <meta property="og:site_name" content="Textpattern CMS">
             <meta property="og:type" content="website">
             <meta property="og:title" content="Textpattern CMS | Open source content management system">
-            <meta property="og:description" content="Textpattern CMS is a free, open source content management system with a browser-based interface in over 40 languages.">
+            <meta property="og:description" content="Textpattern CMS is a free, PHP open source CMS (content management system) with a browser-based interface in over 40 languages.">
             <meta property="og:image" content="https://textpattern.com/assets/img/branding/textpattern/textpattern-og.png">
             <meta property="og:image:width" content="1200">
             <meta property="og:image:height" content="1200">
@@ -37,7 +37,7 @@
                     "@context": "https://schema.org",
                     "@type": "WebSite",
                     "headline": "Textpattern CMS | Open source content management system",
-                    "description": "Textpattern CMS is a free, open source content management system with a browser-based interface in over 40 languages.",
+                    "description": "Textpattern CMS is a free, PHP open source CMS (content management system) with a browser-based interface in over 40 languages.",
                     "url": "<txp:site_url escape="json" />"
                 }
             </script>
@@ -52,7 +52,7 @@
     <main aria-label="Main content">
         <div class="wrapper-inner">
                 <div id="animation-container">
-                    <canvas id="animation" width="1150" height="480"><img width="1150" height="480" alt="Powering big ideas from a small CMS" src="/assets/img/com/index-animation-fallback.png"></canvas>
+                    <canvas id="animation" width="1150" height="480"><img width="1150" height="480" alt="Powering big ideas from a small open source CMS" src="/assets/img/com/index-animation-fallback.png"></canvas>
                 </div>
                 <div id="animation-overlay">
                 <div class="container">
