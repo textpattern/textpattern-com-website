@@ -14,7 +14,7 @@
         grid-gap: 0 2em;
 
         > * {
-            overflow: auto; // Avoid content spillage.
+            min-width: 0; // Fix Firefox `pre` overflow issues.
         }
     }
 
