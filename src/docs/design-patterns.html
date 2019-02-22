@@ -569,52 +569,56 @@
                     <section class="section" id="section-media">
                         <h2>Embedded content</h2>
 
-                        <h3>Images</h3>
-                        <p>
-                            <img width="160" height="160" alt="Alt text" src="https://placehold.it/160x160/cccccc/666666">
-                        </p>
+                        <div class="layout-container">
 
-                        <h3>Images with links</h3>
-                        <p>
-                            <a class="a--img" href="#" title="Title text">
-                                <img width="160" height="160" alt="Alt text" src="https://placehold.it/160x160/cccccc/666666">
-                            </a>
-                        </p>
+                            <div class="layout-4col">
+                                <h3>Images</h3>
+                                <p>
+                                    <img src="assets/img/com/160x160.png" alt="Alt text" itemprop="image">
+                                </p>
+                            </div>
 
-                        <h3>Rounded images</h3>
-                        <p>
-                            <img class="img--rounded" width="160" height="160" alt="Alt text" src="https://placehold.it/160x160/cccccc/666666">
-                        </p>
+                            <div class="layout-4col">
+                                <h3>Images with links</h3>
+                                <p>
+                                    <a class="a--img" href="#" title="Title text">
+                                        <img src="assets/img/com/160x160.png" alt="Alt text" itemprop="image">
+                                    </a>
+                                </p>
+                            </div>
 
-                        <h3>Circular images</h3>
-                        <p>
-                            <img class="img--circular" width="160" height="160" alt="Alt text" src="https://placehold.it/160x160/cccccc/666666">
-                        </p>
+                            <div class="layout-4col">
+                                <h3>Rounded images</h3>
+                                <p>
+                                    <img class="img--rounded" src="assets/img/com/160x160.png" alt="Alt text" itemprop="image">
+                                </p>
+                            </div>
+
+                            <div class="layout-4col">
+                                <h3>Circular images</h3>
+                                <p>
+                                    <img class="img--circular" src="assets/img/com/160x160.png" alt="Alt text" itemprop="image">
+                                </p>
+                            </div>
+
+                        </div>
 
                         <h3>Figures</h3>
-                        <figure itemscope itemtype="https://schema.org/ImageObject">
-                            <img width="160" height="160" itemprop="image" alt="Alt text" src="https://placehold.it/160x160/cccccc/666666">
+                        <figure itemscope itemtype="https://schema.org/ImageObject" itemprop="image">
+                            <img src="assets/img/com/480x240.png" alt="Alt text" itemprop="url">
+                            <meta itemprop="width" content="480">
+                            <meta itemprop="height" content="240">
                             <figcaption itemprop="caption">Figcaption content</figcaption>
                         </figure>
 
                         <h3>Left ranged image</h3>
-                        <p>Aenean vehicula posuere neque. Nam nibh lectus, laoreet non, convallis sed, vulputate consectetuer, enim. Pellentesque arcu. Vestibulum consequat nisi a ipsum vulputate vehicula. Aliquam lacus diam, ultricies vel, interdum eget, posuere non, tellus. Donec vel ligula. Sed felis. <img class="align-left" width="160" height="160" alt="Alt text" src="https://placehold.it/160x160/cccccc/666666"> Quisque ultrices gravida pede. Mauris accumsan vulputate tellus. Phasellus condimentum bibendum dolor. Mauris sed ipsum. Phasellus in diam. Nam sapien ligula, consectetuer id, hendrerit in, cursus sed, leo. Nam tincidunt rhoncus urna. Aliquam id massa ut nibh bibendum imperdiet. Curabitur neque mauris, porta vel, lacinia quis, placerat ultrices, orci. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In lectus nisl, porttitor eget, fermentum et, viverra a, odio. Sed semper. Praesent vulputate nibh eget nisi. Sed ligula. Aenean vehicula posuere neque. Nam nibh lectus, laoreet non, convallis sed, vulputate consectetuer, enim. Pellentesque arcu. Vestibulum consequat nisi a ipsum vulputate vehicula. Aliquam lacus diam, ultricies vel, interdum eget, posuere non, tellus. Donec vel ligula. Sed felis.</p>
+                        <p>Aenean vehicula posuere neque. Nam nibh lectus, laoreet non, convallis sed, vulputate consectetuer, enim. Pellentesque arcu. Vestibulum consequat nisi a ipsum vulputate vehicula. Aliquam lacus diam, ultricies vel, interdum eget, posuere non, tellus. Donec vel ligula. Sed felis. <img src="assets/img/com/160x160.png" class="align-left" alt="160x160px placeholder" itemprop="image"> Quisque ultrices gravida pede. Mauris accumsan vulputate tellus. Phasellus condimentum bibendum dolor. Mauris sed ipsum. Phasellus in diam. Nam sapien ligula, consectetuer id, hendrerit in, cursus sed, leo. Nam tincidunt rhoncus urna. Aliquam id massa ut nibh bibendum imperdiet. Curabitur neque mauris, porta vel, lacinia quis, placerat ultrices, orci. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In lectus nisl, porttitor eget, fermentum et, viverra a, odio. Sed semper. Praesent vulputate nibh eget nisi. Sed ligula. Aenean vehicula posuere neque. Nam nibh lectus, laoreet non, convallis sed, vulputate consectetuer, enim. Pellentesque arcu. Vestibulum consequat nisi a ipsum vulputate vehicula. Aliquam lacus diam, ultricies vel, interdum eget, posuere non, tellus. Donec vel ligula. Sed felis.</p>
 
                         <h3>Right ranged image</h3>
-                        <p>Aenean vehicula posuere neque. Nam nibh lectus, laoreet non, convallis sed, vulputate consectetuer, enim. Pellentesque arcu. Vestibulum consequat nisi a ipsum vulputate vehicula. Aliquam lacus diam, ultricies vel, interdum eget, posuere non, tellus. Donec vel ligula. Sed felis. <img class="align-right" width="160" height="160" alt="Alt text" src="https://placehold.it/160x160/cccccc/666666"> Quisque ultrices gravida pede. Mauris accumsan vulputate tellus. Phasellus condimentum bibendum dolor. Mauris sed ipsum. Phasellus in diam. Nam sapien ligula, consectetuer id, hendrerit in, cursus sed, leo. Nam tincidunt rhoncus urna. Aliquam id massa ut nibh bibendum imperdiet. Curabitur neque mauris, porta vel, lacinia quis, placerat ultrices, orci. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In lectus nisl, porttitor eget, fermentum et, viverra a, odio. Sed semper. Praesent vulputate nibh eget nisi. Sed ligula. Aenean vehicula posuere neque. Nam nibh lectus, laoreet non, convallis sed, vulputate consectetuer, enim. Pellentesque arcu. Vestibulum consequat nisi a ipsum vulputate vehicula. Aliquam lacus diam, ultricies vel, interdum eget, posuere non, tellus. Donec vel ligula. Sed felis.</p>
+                        <p>Aenean vehicula posuere neque. Nam nibh lectus, laoreet non, convallis sed, vulputate consectetuer, enim. Pellentesque arcu. Vestibulum consequat nisi a ipsum vulputate vehicula. Aliquam lacus diam, ultricies vel, interdum eget, posuere non, tellus. Donec vel ligula. Sed felis. <img src="assets/img/com/160x160.png" class="align-right" alt="160x160px placeholder" itemprop="image"> Quisque ultrices gravida pede. Mauris accumsan vulputate tellus. Phasellus condimentum bibendum dolor. Mauris sed ipsum. Phasellus in diam. Nam sapien ligula, consectetuer id, hendrerit in, cursus sed, leo. Nam tincidunt rhoncus urna. Aliquam id massa ut nibh bibendum imperdiet. Curabitur neque mauris, porta vel, lacinia quis, placerat ultrices, orci. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In lectus nisl, porttitor eget, fermentum et, viverra a, odio. Sed semper. Praesent vulputate nibh eget nisi. Sed ligula. Aenean vehicula posuere neque. Nam nibh lectus, laoreet non, convallis sed, vulputate consectetuer, enim. Pellentesque arcu. Vestibulum consequat nisi a ipsum vulputate vehicula. Aliquam lacus diam, ultricies vel, interdum eget, posuere non, tellus. Donec vel ligula. Sed felis.</p>
 
                         <h3>Centred image</h3>
-                        <p>Aenean vehicula posuere neque. Nam nibh lectus, laoreet non, convallis sed, vulputate consectetuer, enim. Pellentesque arcu. Vestibulum consequat nisi a ipsum vulputate vehicula. Aliquam lacus diam, ultricies vel, interdum eget, posuere non, tellus. Donec vel ligula. Sed felis. <img class="align-center" width="160" height="160" alt="Alt text" src="https://placehold.it/160x160/cccccc/666666"> Quisque ultrices gravida pede. Mauris accumsan vulputate tellus. Phasellus condimentum bibendum dolor. Mauris sed ipsum. Phasellus in diam. Nam sapien ligula, consectetuer id, hendrerit in, cursus sed, leo. Nam tincidunt rhoncus urna. Aliquam id massa ut nibh bibendum imperdiet. Curabitur neque mauris, porta vel, lacinia quis, placerat ultrices, orci. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In lectus nisl, porttitor eget, fermentum et, viverra a, odio. Sed semper. Praesent vulputate nibh eget nisi. Sed ligula. Aenean vehicula posuere neque. Nam nibh lectus, laoreet non, convallis sed, vulputate consectetuer, enim. Pellentesque arcu. Vestibulum consequat nisi a ipsum vulputate vehicula. Aliquam lacus diam, ultricies vel, interdum eget, posuere non, tellus. Donec vel ligula. Sed felis.</p>
-
-                        <h3>Videos</h3>
-                        <div itemprop="video" itemscope itemtype="https://schema.org/VideoObject">
-                            <video poster="https://placehold.it/640x360/cccccc/666666" controls>
-                                <source itemprop="contentUrl" type="video/mp4" src="https://clips.vorwaerts-gmbh.de/VfE_html5.mp4">
-                                <source itemprop="contentUrl" type="video/webm" src="https://clips.vorwaerts-gmbh.de/VfE.webm">
-                                I’m sorry; your browser doesn’t support HTML5 video.
-                            </video>
-                            <meta itemprop="duration" content="T60S">
-                        </div>
+                        <p>Aenean vehicula posuere neque. Nam nibh lectus, laoreet non, convallis sed, vulputate consectetuer, enim. Pellentesque arcu. Vestibulum consequat nisi a ipsum vulputate vehicula. Aliquam lacus diam, ultricies vel, interdum eget, posuere non, tellus. Donec vel ligula. Sed felis. <img src="assets/img/com/160x160.png" class="align-center" alt="160x160px placeholder" itemprop="image"> Quisque ultrices gravida pede. Mauris accumsan vulputate tellus. Phasellus condimentum bibendum dolor. Mauris sed ipsum. Phasellus in diam. Nam sapien ligula, consectetuer id, hendrerit in, cursus sed, leo. Nam tincidunt rhoncus urna. Aliquam id massa ut nibh bibendum imperdiet. Curabitur neque mauris, porta vel, lacinia quis, placerat ultrices, orci. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In lectus nisl, porttitor eget, fermentum et, viverra a, odio. Sed semper. Praesent vulputate nibh eget nisi. Sed ligula. Aenean vehicula posuere neque. Nam nibh lectus, laoreet non, convallis sed, vulputate consectetuer, enim. Pellentesque arcu. Vestibulum consequat nisi a ipsum vulputate vehicula. Aliquam lacus diam, ultricies vel, interdum eget, posuere non, tellus. Donec vel ligula. Sed felis.</p>
 
                     </section>
 
