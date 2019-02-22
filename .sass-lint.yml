@@ -175,7 +175,8 @@ rules:
   no-misspelled-properties:
     - 1
     - extra-properties:
-        - font-display
+        - overscroll-behavior
+        - text-decoration-skip-ink
         - touch-callout
 
   # Enforce that selectors are not allowed to have qualifying elements.
@@ -210,7 +211,7 @@ rules:
   one-declaration-per-line: 1
 
   # Enforce whether extends should only include placeholder selectors.
-  placeholder-in-extend: 0
+  placeholder-in-extend: 1
 
   # Enforce a convention for placeholder names.
   placeholder-name-format:

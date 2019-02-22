@@ -56,7 +56,7 @@ body {
 a {
     color: $color-link;
     text-decoration: none;
-    text-decoration-skip: ink;
+    text-decoration-skip-ink: auto;
 
     &:active {
         color: $color-link-hover;
