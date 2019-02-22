@@ -13,7 +13,7 @@
     }
 
     .screen-large {
-        display: initial; // TODO: use `display: revert` when browser support is widespread.
+        display: block; // TODO: use `display: revert` when browser support is widespread.
     }
 
     /**
