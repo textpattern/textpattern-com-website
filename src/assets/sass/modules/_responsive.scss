@@ -5,16 +5,34 @@
 @media screen and (min-width: $breakpoint-1) {
 
     /**
+     * Screen size-specific elements.
+     */
+
+    .screen-small {
+        display: none;
+    }
+
+    .screen-large {
+        display: initial; // TODO: use `display: revert` when browser support is widespread.
+    }
+
+    /**
      * Grid container.
      */
 
     .layout-container {
+        display: flex; // Flexbox fallback for browsers without CSS Grid support.
         display: grid;
+        flex-wrap: wrap; // Flexbox fallback for browsers without CSS Grid support.
+        margin: 0 -1em; // Flexbox fallback for browsers without CSS Grid support.
         grid-template-columns: repeat(12, 1fr);
         grid-gap: 0 2em;
 
         > * {
+            flex: 1; // Flexbox fallback.
             min-width: 0; // Fix Firefox `pre` overflow issues.
+            padding: 0 1em; // Flexbox fallback.
+            box-sizing: border-box; // Flexbox fallback.
         }
     }
 
@@ -42,19 +60,8 @@
     .layout-4col,
     .layout-4col-2span,
     .layout-4col-3span {
+        width: 100%; // Flexbox fallback.
         grid-column: span 12;
-    }
-
-    /**
-     * Screen size-specific elements.
-     */
-
-    .screen-small {
-        display: none;
-    }
-
-    .screen-large {
-        display: initial; // TODO: use `display: revert` when browser support is widespread.
     }
 
     /**
@@ -62,7 +69,20 @@
      */
 
     .layout-4col:not(.sidebar) {
+        width: 50%; // Flexbox fallback.
         grid-column: span 6;
+    }
+
+    // Override Flexbox fallback for browsers with CSS Grid support.
+    @supports (display: grid) {
+        .layout-container {
+            margin: 0;
+        }
+
+        .layout-container > * {
+            width: auto;
+            padding: 0;
+        }
     }
 
     /**
@@ -199,15 +219,25 @@
      */
 
     .layout-2col {
+        width: 50%; // Flexbox fallback.
         grid-column: span 6;
     }
 
     .layout-3col {
+        width: 33.333%; // Flexbox fallback.
         grid-column: span 4;
     }
 
     .layout-3col-2span {
+        width: 66.666%; // Flexbox fallback.
         grid-column: span 8;
+    }
+
+    // Override Flexbox fallback for browsers with CSS Grid support.
+    @supports (display: grid) {
+        .layout-container > * {
+            width: auto;
+        }
     }
 
     /**
@@ -413,15 +443,25 @@
 
     .layout-4col,
     .layout-4col:not(.sidebar) {
+        width: 25%; // Flexbox fallback.
         grid-column: span 3;
     }
 
     .layout-4col-2span {
+        width: 50%; // Flexbox fallback.
         grid-column: span 6;
     }
 
     .layout-4col-3span {
+        width: 75%; // Flexbox fallback.
         grid-column: span 9;
+    }
+
+    // Override Flexbox fallback for browsers with CSS Grid support.
+    @supports (display: grid) {
+        .layout-container > * {
+            width: auto;
+        }
     }
 
     /**

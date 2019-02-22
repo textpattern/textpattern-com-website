@@ -2,6 +2,22 @@
    ========================================================================== */
 
 /**
+ * Render the `main` element consistently in IE 11.
+ */
+
+main {
+    display: block;
+}
+
+/**
+ * Add the correct display in IE 11.
+ */
+
+template {
+    display: none;
+}
+
+/**
  * Remove tap delay in modern browsers.
  */
 
