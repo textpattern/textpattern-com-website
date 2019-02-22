@@ -86,3 +86,19 @@
     border-radius: $border-radius;
     background-color: $color-highlight-box;
 }
+
+/**
+ * Highlight text colour for comment errors.
+ */
+
+.error_message li {
+    color: $color-error-text;
+}
+
+/**
+ * Highlighting for comment form errors.
+ */
+
+.comments_error {
+    border-color: $color-error-text;
+}

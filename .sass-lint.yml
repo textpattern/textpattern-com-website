@@ -37,12 +37,8 @@ rules:
     - allow-leading-underscore: false
       convention: hyphenatedlowercase
       ignore: [
-        'comments_error',
         'error_message',
-        'errorElement',
-        'comError',
-        'comRequired',
-        'comRequirederrorElement'
+        'comments_error'
       ]
 
   # Enforce whether or not `@import` paths should have leading underscores and/or filename extensions.
