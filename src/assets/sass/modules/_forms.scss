@@ -49,6 +49,15 @@ legend {
 }
 
 /**
+ * Show the overflow in Edge.
+ */
+
+button,
+input {
+    overflow: visible;
+}
+
+/**
  * 1. Prevent elements from spilling out of their parent.
  * 2. Address margins set differently in Firefox 4+, Safari, and Chrome.
  * 3. Correct font properties not being inherited.
@@ -99,6 +108,10 @@ textarea {
     background: $color-background-form;
     appearance: none; /* 1 */
 
+    &:hover {
+        border-color: shade($color-border, 15%);
+    }
+
     &:focus {
         border-color: $color-link-focus;
         outline: 1px solid transparent; // Allows for repainting in high contrast modes.
@@ -113,11 +126,11 @@ textarea {
 [type="checkbox"]:not(.ui-checkboxradio),
 [type="radio"]:not(.ui-checkboxradio) {
     position: relative;
-    bottom: -2px; // 2px / 13px
+    bottom: -2px;
     width: 16px;
     height: 16px;
     padding: 0; /* 1 */
-    border: 1px solid darken($color-border, 13%);
+    border: 1px solid shade($color-border, 15%);
     background: $color-background-form;
     appearance: none;
     box-sizing: border-box;
@@ -126,13 +139,12 @@ textarea {
         margin: 0 0.5em 0 0; /* 2 */
 
         &:last-of-type {
-            /* 2 */
-            margin: 0;
+            margin: 0; /* 2 */
         }
     }
 
     &:hover {
-        border-color: darken($color-border, 26%);
+        border-color: shade($color-border, 30%);
         cursor: pointer;
     }
 
@@ -164,7 +176,7 @@ textarea {
     }
 
     &[disabled]:checked {
-        background: $color-border-light url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='%23fff' d='M13 2.5l-7 7-2-2-2 2 4 4L15 4.5z'/%3E%3C/svg%3E") !important;
+        background: $color-text-footnote url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='%23fff' d='M13 2.5l-7 7-2-2-2 2 4 4L15 4.5z'/%3E%3C/svg%3E") !important;
     }
 }
 
@@ -224,7 +236,7 @@ textarea {
 }
 
 [type="range"]:hover::-webkit-slider-thumb {
-    border-color: darken($color-border, 13%);
+    border-color: shade($color-border, 15%);
 }
 
 [type="range"]:active::-webkit-slider-thumb,
@@ -236,14 +248,13 @@ textarea {
     width: 100%;
     height: 0.75em; // 12px / 16px
     border: 1px solid $color-border;
-    border-radius: 0.375em;
-    background-color: #e7e7e7;
+    background-color: $color-gradient-to;
     cursor: pointer;
     box-sizing: border-box;
 }
 
 [type="range"]:hover::-webkit-slider-runnable-track {
-    border-color: darken($color-border, 13%);
+    border-color: shade($color-border, 15%);
 }
 
 [type="range"]:active::-webkit-slider-runnable-track,
@@ -266,7 +277,7 @@ textarea {
 }
 
 [type="range"]:hover::-moz-range-thumb {
-    border-color: darken($color-border, 13%);
+    border-color: shade($color-border, 15%);
 }
 
 [type="range"]:focus::-moz-range-thumb {
@@ -278,13 +289,13 @@ textarea {
     height: 0.75em; // 12px / 16px
     border: 1px solid $color-border;
     border-radius: 0.375em;
-    background-color: #e7e7e7;
+    background-color: $color-gradient-to;
     cursor: pointer;
     box-sizing: border-box;
 }
 
 [type="range"]:hover::-moz-range-track {
-    border-color: darken($color-border, 13%);
+    border-color: shade($color-border, 15%);
 }
 
 [type="range"]:focus::-moz-range-track {
@@ -295,7 +306,7 @@ textarea {
     border-style: none;
 }
 
-// Trident/EdgeHTML.
+// EdgeHTML.
 
 [type="range"]::-ms-thumb {
     width: 1.25em; // 20px / 16px
@@ -311,7 +322,7 @@ textarea {
 }
 
 [type="range"]:hover::-ms-thumb {
-    border-color: darken($color-border, 13%);
+    border-color: shade($color-border, 15%);
 }
 
 [type="range"]:focus::-ms-thumb {
@@ -323,13 +334,13 @@ textarea {
     height: 0.75em; // 12px / 16px
     border: 1px solid $color-border;
     border-radius: 0.375em;
-    background-color: #e7e7e7;
+    background-color: $color-gradient-to;
     cursor: pointer;
     box-sizing: border-box;
 }
 
 [type="range"]:hover::-ms-track {
-    border-color: darken($color-border, 13%);
+    border-color: shade($color-border, 15%);
 }
 
 [type="range"]:focus::-ms-track {
@@ -341,7 +352,8 @@ textarea {
  */
 
 [type="search"]::-webkit-search-decoration {
-    -webkit-appearance: none;
+    /* autoprefixer: off */
+    appearance: none;
 }
 
 /**
@@ -350,7 +362,7 @@ textarea {
 
 select {
     padding-right: 1.5em; // 24px / 16px
-    background: $color-background-form url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 17 5'%3E%3Cpolygon fill='%23333' points='0,0 5,5 10,0'/%3E%3C/svg%3E") right center no-repeat;
+    background: $color-background-form url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='17' height='5' viewBox='0 0 17 5'%3E%3Cpolygon fill='%23333' points='0,0 5,5 10,0'/%3E%3C/svg%3E") right center no-repeat;
     background-size: 1.0625em 0.3125em; // 17px / 16px, 5px / 16px
     text-transform: none;
 }
@@ -361,7 +373,7 @@ select {
 
 select:-moz-focusring {
     color: transparent;
-    text-shadow: 0 0 0 $color-text-form;
+    text-shadow: none;
 }
 
 /**
@@ -411,20 +423,17 @@ textarea {
  * Make sure disabled elements really are disabled and styled appropriately.
  *
  * 1. Re-set default cursor for disabled elements.
- * 2. Override default iOS opacity setting.
  */
 
 [disabled],
 [disabled] option,
 [disabled] optgroup,
 span.disabled {
-    border-color: $color-border-light !important;
-    background: $color-background-form-disabled !important;
-    color: $color-text-form-disabled !important;
-    text-shadow: none !important;
+    border: 1px solid $color-border !important;
+    background-color: $color-background-form-disabled !important;
     box-shadow: none !important;
     cursor: default !important; /* 1 */
-    opacity: 1; /* 2 */
+    opacity: 0.33 !important;
 }
 
 /**
@@ -457,18 +466,6 @@ input {
 }
 
 /**
- * Styling for required field indicators.
- *
- * Example HTML:
- *
- * <span class="required" title="Required" aria-label="Required">●</span>
- */
-
-.required {
-    color: $color-warning-text;
-}
-
-/**
  * Styling for form field validation.
  */
 
@@ -492,4 +489,29 @@ textarea {
         border-color: $color-error-text;
         box-shadow: none;
     }
+}
+
+/**
+ * Normalize form placeholder style across browsers.
+ *
+ * 1. Fix placeholder font properties inheritance.
+ */
+
+::placeholder {
+    color: $color-text-form-placeholder;
+    font: inherit; /* 1 */
+    opacity: 1;
+}
+
+/**
+ * Styling for required field indicators.
+ *
+ * Example HTML:
+ *
+ * <abbr class="required" title="Required" aria-label="Required">●</abbr>
+ */
+
+abbr.required {
+    color: $color-warning-text;
+    text-decoration: none;
 }

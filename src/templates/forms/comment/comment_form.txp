@@ -1,18 +1,18 @@
-<p>You must preview your comment before submitting it. Email addresses are used for verification only and are not displayed with your comment. Fields marked <span class="required" title="Required" aria-label="Required">●</span> are required.</p>
+<p>You must preview your comment before submitting it. Email addresses are used for verification only and are not displayed with your comment. Fields marked <abbr class="required" title="Required" aria-label="Required">●</abbr> are required.</p>
 <txp:if_comments_error>
     <txp:comments_error class="error" wraptag="ul" break="li" />
 </txp:if_comments_error>
 <div class="layout-container">
     <div class="field layout-2col">
-        <label for="name">Name <span class="required" title="Required" aria-label="Required">●</span></label><br>
+        <label for="name">Name <abbr class="required" title="Required" aria-label="Required">●</abbr></label><br>
         <txp:comment_name_input size="32" />
     </div>
     <div class="field layout-2col">
-        <label for="email">Email <span class="required" title="Required" aria-label="Required">●</span></label><br>
+        <label for="email">Email <abbr class="required" title="Required" aria-label="Required">●</abbr></label><br>
         <txp:comment_email_input size="32" />
     </div>
     <div class="field layout-1col">
-        <label for="message">Message <span class="required" title="Required" aria-label="Required">●</span></label><br>
+        <label for="message">Message <abbr class="required" title="Required" aria-label="Required">●</abbr></label><br>
         <txp:comment_message_input cols="64" rows="8" />
     </div>
     <div class="field layout-1col">
