@@ -29,7 +29,6 @@
         grid-gap: 0 2em;
 
         > * {
-            flex: 1; // Flexbox fallback.
             min-width: 0; // Fix Firefox `pre` overflow issues.
             padding: 0 1em; // Flexbox fallback.
             box-sizing: border-box; // Flexbox fallback.
@@ -79,7 +78,14 @@
             margin: 0;
         }
 
-        .layout-container > * {
+        .layout-1col,
+        .layout-2col,
+        .layout-3col,
+        .layout-3col-2span,
+        .layout-4col,
+        .layout-4col-2span,
+        .layout-4col-3span,
+        .layout-4col:not(.sidebar) {
             width: auto;
             padding: 0;
         }
@@ -235,7 +241,9 @@
 
     // Override Flexbox fallback for browsers with CSS Grid support.
     @supports (display: grid) {
-        .layout-container > * {
+        .layout-2col,
+        .layout-3col,
+        .layout-3col-2span {
             width: auto;
         }
     }
@@ -453,13 +461,16 @@
     }
 
     .layout-4col-3span {
-        width: 75%; // Flexbox fallback.
+        width: 73%; // Flexbox fallback.
         grid-column: span 9;
     }
 
     // Override Flexbox fallback for browsers with CSS Grid support.
     @supports (display: grid) {
-        .layout-container > * {
+        .layout-4col,
+        .layout-4col-2span,
+        .layout-4col-3span,
+        .layout-4col:not(.sidebar) {
             width: auto;
         }
     }
