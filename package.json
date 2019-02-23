@@ -12,7 +12,7 @@
   "devDependencies": {
     "autoprefixer": "9.4.8",
     "cssnano": "4.1.10",
-    "dart-sass": "1.17.1",
+    "dart-sass": "1.17.2",
     "fibers": "3.1.1",
     "grunt": "~1",
     "grunt-cli": "~1",
