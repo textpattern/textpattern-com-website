@@ -69,6 +69,18 @@ img {
 }
 
 /**
+ * Bordered images.
+ *
+ * Example HTML:
+ *
+ * <img class="img--bordered">
+ */
+
+.img--bordered {
+    border: 1px solid $color-border-light;
+}
+
+/**
  * Consistent margins on `figure`.
  */
 
