@@ -1,7 +1,13 @@
 <txp:etc_cache id="crowdin" time="-3600">
 <txp:php>
 $key = parse('<txp:yield name="api-key" />');
-$xml = new SimpleXMLElement('https://api.crowdin.com/api/project/textpattern-cms-textpacks/status?key='.$key.'&xml', 0, TRUE);
+
+try {
+    $xml = new SimpleXMLElement('https://api.crowdin.com/api/project/textpattern-cms-textpacks/status?key='.$key.'&xml', 0, TRUE);
+} catch (Exception $e) {
+    return;
+}
+
 echo <<<EOHTML
 <div class="tabular-data">
     <table>
@@ -22,11 +28,15 @@ echo <<<EOHTML
 EOHTML;
 
 foreach ($xml->language as $languageElement) {
+    $name = htmlspecialchars($languageElement->name);
+    $code = htmlspecialchars($languageElement->code);
+    $progress = htmlspecialchars($languageElement->translated_progress);
+
     echo <<<EOHTML
-<tr id="{$languageElement->code}">
-    <th scope="row">{$languageElement->name}</th>
-    <td><code>{$languageElement->code}</code></td>
-    <td><progress value="{$languageElement->translated_progress}" max="100"></progress> <b class="data-progress" data-progress="{$languageElement->translated_progress}">{$languageElement->translated_progress}%</b> <a class="button button-small button-list" rel="external" href="https://crowdin.com/project/textpattern-cms-textpacks/{$languageElement->code}">Translate</a></td>
+<tr>
+    <th scope="row">{$name}</th>
+    <td><code>{$code}</code></td>
+    <td><progress value="{$progress}" max="100"></progress> <b class="data-progress" data-progress="{$progress}">{$progress}%</b> <a class="button button-small button-list" rel="external" href="https://crowdin.com/project/textpattern-cms-textpacks/{$code}">Translate</a></td>
 </tr>
 
 EOHTML;
