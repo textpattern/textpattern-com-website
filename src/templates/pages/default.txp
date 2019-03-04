@@ -67,27 +67,31 @@
                     <p>
                         <a class="button" rel="external" href="https://github.com/textpattern/textpattern/" title="Stars on GitHub"><span class="ui-icon ui-extra-icon-github">GitHub</span> <strong>Stars</strong></a>
                         <txp:etc_cache id="github-stars" time="-3600">
-                             <txp:php>
-$curl1 = curl_init();
+                            <txp:php>
+$curl = curl_init();
 
-curl_setopt_array($curl1, array(
-    CURLOPT_RETURNTRANSFER => 1,
+curl_setopt_array($curl, [
+    CURLOPT_RETURNTRANSFER => true,
     CURLOPT_URL => 'https://api.github.com/repos/textpattern/textpattern',
     CURLOPT_USERAGENT => 'Textpattern CMS',
-));
+    CURLOPT_FAILONERROR => true,
+]);
 
-$response1 = curl_exec($curl1);
+$response = curl_exec($curl);
 
-if (curl_error($curl1)) {
-    // Do nothing.
-} else {
-    $json = json_decode($response1);
-    echo '<a class="count-bubble" rel="external" href="https://github.com/textpattern/textpattern/stargazers" title="Stargazers on GitHub">'.$json->stargazers_count.'</a>';
+curl_close($curl);
+
+if ($response === false) {
+    return;
 }
 
-curl_close($curl1);
-                             </txp:php>
-                         </txp:etc_cache>
+if (!($json = json_decode($response))) {
+    return;
+}
+
+echo '<a class="count-bubble" rel="external" href="https://github.com/textpattern/textpattern/stargazers" title="Stargazers on GitHub">'.intval($json->stargazers_count).'</a>';
+                            </txp:php>
+                        </txp:etc_cache>
                     </p>
                 </div>
             </div>
@@ -199,26 +203,29 @@ curl_close($curl1);
                         <ul class="list--no-bullets ellipsis">
                             <txp:etc_cache id="forum-feed" time="-900">
                                 <txp:php>
-$curl2 = curl_init();
+$curl = curl_init();
 
-curl_setopt_array($curl2, array(
-    CURLOPT_RETURNTRANSFER => 1,
-    CURLOPT_URL => 'http://forum.textpattern.com/api/?limit=5&sort=posted',
-));
+curl_setopt_array($curl, [
+    CURLOPT_RETURNTRANSFER => true,
+    CURLOPT_URL => 'https://forum.textpattern.io/api/?limit=5&sort=posted',
+    CURLOPT_FAILONERROR => true,
+]);
 
-$response2 = curl_exec($curl2);
+$response = curl_exec($curl);
 
-if (curl_error($curl2)) {
-    // Do nothing.
-} else {
-    $xml = json_decode($response2);
+curl_close($curl);
 
-    foreach ($xml->topic as $topicElement) {
-        echo '<li><a href="'.str_replace('http://', 'https://', $topicElement->link).'">'.htmlspecialchars($topicElement->title).'</a> <small class="block">by '.htmlspecialchars($topicElement->author->name).' on <time datetime="'.$topicElement->postedutc.'">'.$topicElement->posted.'</time></small></li>';
-    }
+if ($response === false) {
+    return;
 }
 
-curl_close($curl2);
+if (!($json = json_decode($response))) {
+    return;
+}
+
+foreach ($json->topic as $topic) {
+    echo '<li><a href="'.htmlspecialchars($topic->link).'">'.htmlspecialchars($topic->title).'</a> <small class="block">by '.htmlspecialchars($topic->author->name).' on <time datetime="'.htmlspecialchars($topic->postedutc).'">'.htmlspecialchars($topic->posted).'</time></small></li>';
+}
                                 </txp:php>
                                 <txp:linklist category="paid-links-content" break="li"><a rel="external" href="<txp:link_url />"><txp:link_name /></a> <small>(Ad)</small></txp:linklist>
                             </txp:etc_cache>
