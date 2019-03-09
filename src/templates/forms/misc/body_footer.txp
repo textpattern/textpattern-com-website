@@ -55,6 +55,5 @@
     <script async src="https://textpattern.com/assets/js/app.@@timestamp.js"></script>
 <txp:if_variable name="homepage">
     <script defer src="https://textpattern.com/assets/js/indexcanvas.@@timestamp.js"></script>
-    <script>document.addEventListener("DOMContentLoaded",function(){init();},false);</script>
 </txp:if_variable>
 <noscript>JavaScript is currently disabled in your browser - activate it for the best experience.</noscript>
