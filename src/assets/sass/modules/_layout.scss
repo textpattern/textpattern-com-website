@@ -339,15 +339,20 @@ main .layout-4col-3span {
  */
 
 #animation-container {
-    width: 1150px;
-    height: 480px;
     margin: 0 auto;
 }
 
 #animation {
-    position: absolute;
-    top: 1em;
-    z-index: 1;
+    display: block;
+    width: 100%;
+    max-width: 1150px;
+    margin: 0 auto;
+    background: #ffffff;
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
 }
 
 /* Homepage feature images.

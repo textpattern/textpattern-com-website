@@ -130,6 +130,7 @@ module.exports = function (grunt)
                 esversion: 6,
                 forin: true,
                 globals: {
+                    createjs: true,
                     define: true,
                     module: true,
                     require: true,
