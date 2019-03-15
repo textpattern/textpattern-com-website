@@ -167,6 +167,16 @@
         }
     }
 
+    @media (prefers-color-scheme: dark) {
+        .showcase-container h3 {
+            background-image: url("../img/com/dark-index-showcase.png");
+
+            @media (min-resolution: 1.25dppx), (min-resolution: 120dpi) {
+                background-image: url("../img/com/dark-index-showcase@2x.png");
+            }
+        }
+    }
+
     .showcase-landing h3 {
         top: -35px;
     }
