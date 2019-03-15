@@ -28,6 +28,24 @@
     color: $color-info-text;
 }
 
+@media (prefers-color-scheme: dark) {
+    .success {
+        color: $dark-color-success-text;
+    }
+
+    .warning {
+        color: $dark-color-warning-text;
+    }
+
+    .error {
+        color: $dark-color-error-text;
+    }
+
+    .information {
+        color: $dark-color-info-text;
+    }
+}
+
 /**
  * Highlighted background.
  *
@@ -43,6 +61,12 @@
 
 .highlighted {
     background: $color-highlight-box;
+}
+
+@media (prefers-color-scheme: dark) {
+    .highlighted {
+        background: $dark-color-highlight-box;
+    }
 }
 
 /**
@@ -80,5 +104,29 @@
     &.information {
         border-color: $color-info-border;
         background: $color-info-background;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    .alert-block {
+        &.success {
+            border-color: $dark-color-success-border;
+            background: $dark-color-success-background;
+        }
+
+        &.warning {
+            border-color: $dark-color-warning-border;
+            background: $dark-color-warning-background;
+        }
+
+        &.error {
+            border-color: $dark-color-error-border;
+            background: $dark-color-error-background;
+        }
+
+        &.information {
+            border-color: $dark-color-info-border;
+            background: $dark-color-info-background;
+        }
     }
 }

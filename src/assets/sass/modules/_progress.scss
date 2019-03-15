@@ -11,7 +11,7 @@ progress {
     height: 0.75em;
     margin-right: 0.33em;
     border: 1px solid $color-border;
-    border-radius: 0.375em;
+    background-color: $color-gradient-to;
     vertical-align: baseline; /* 1 */
     appearance: none;
     box-sizing: border-box;
@@ -20,11 +20,27 @@ progress {
 // WebKit/Blink.
 
 progress::-webkit-progress-bar {
-    background-color: #e7e7e7;
+    background-color: $color-gradient-to;
 }
 
 progress::-webkit-progress-value {
     background-color: $color-highlight;
+    background-image: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.33) 25%,
+        transparent 25%,
+        transparent 50%,
+        rgba(255, 255, 255, 0.33) 50%,
+        rgba(255, 255, 255, 0.33) 75%,
+        transparent 75%,
+        transparent
+    );
+    background-size: 24px 24px;
+    animation: progressbar-stripes linear 4s infinite;
+}
+
+progress:indeterminate::-webkit-progress-bar {
+    background-color: $color-border;
     background-image: linear-gradient(
         135deg,
         rgba(255, 255, 255, 0.25) 25%,
@@ -50,6 +66,22 @@ progress::-moz-progress-bar {
     background-color: $color-highlight;
     background-image: linear-gradient(
         135deg,
+        rgba(255, 255, 255, 0.33) 25%,
+        transparent 25%,
+        transparent 50%,
+        rgba(255, 255, 255, 0.33) 50%,
+        rgba(255, 255, 255, 0.33) 75%,
+        transparent 75%,
+        transparent
+    );
+    background-size: 24px 24px;
+    animation: progressbar-stripes linear 4s infinite;
+}
+
+progress:indeterminate::-moz-progress-bar {
+    background-color: $color-border;
+    background-image: linear-gradient(
+        135deg,
         rgba(255, 255, 255, 0.25) 25%,
         transparent 25%,
         transparent 50%,
@@ -59,6 +91,7 @@ progress::-moz-progress-bar {
         transparent
     );
     background-size: 24px 24px;
+    /* autoprefixer: off */
     animation: progressbar-stripes linear 4s infinite;
 }
 
@@ -67,18 +100,18 @@ progress[value="1"]::-moz-progress-bar {
     background-image: none;
 }
 
-// Trident/EdgeHTML.
+// EdgeHTML.
 
 progress::-ms-fill {
     border: 0;
     background-color: $color-highlight;
     background-image: linear-gradient(
         135deg,
-        rgba(255, 255, 255, 0.25) 25%,
+        rgba(255, 255, 255, 0.33) 25%,
         transparent 25%,
         transparent 50%,
-        rgba(255, 255, 255, 0.25) 50%,
-        rgba(255, 255, 255, 0.25) 75%,
+        rgba(255, 255, 255, 0.33) 50%,
+        rgba(255, 255, 255, 0.33) 75%,
         transparent 75%,
         transparent
     );
@@ -106,4 +139,32 @@ progress[value="1"]::-ms-fill {
 .data-progress[data-progress="100"] {
     background: $color-success-background;
     color: $color-success-text;
+}
+
+@media (prefers-color-scheme: dark) {
+    progress {
+        border-color: $dark-color-border;
+        background-color: $dark-color-background-box;
+    }
+
+    // WebKit/Blink.
+
+    progress::-webkit-progress-bar {
+        background-color: $dark-color-background-box;
+    }
+
+    progress:indeterminate::-webkit-progress-bar {
+        background-color: $dark-color-border;
+    }
+
+    // Gecko/Quantum.
+
+    progress:indeterminate::-moz-progress-bar {
+        background-color: $dark-color-border;
+    }
+
+    .data-progress[data-progress="100"] {
+        background: $dark-color-success-background;
+        color: $dark-color-success-text;
+    }
 }

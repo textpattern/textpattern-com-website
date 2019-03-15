@@ -24,6 +24,21 @@ a {
     }
 }
 
+@media (prefers-color-scheme: dark) {
+    a {
+        color: $dark-color-link;
+
+        &:hover,
+        &:active {
+            color: $dark-color-link-hover;
+        }
+
+        &:focus {
+            outline: thin solid $dark-color-link-focus;
+        }
+    }
+}
+
 /**
  * Additional styling for heading links.
  *
@@ -44,6 +59,25 @@ h6 {
         &:active {
             color: $color-text;
             text-decoration-color: rgba($color-text, 0.5);  /* 1 */
+        }
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        a {
+            color: $dark-color-text-heading;
+
+            &:hover,
+            &:active {
+                color: $dark-color-text-heading;
+                text-decoration-color: rgba($dark-color-text-heading, 0.5);  /* 1 */
+            }
         }
     }
 }
