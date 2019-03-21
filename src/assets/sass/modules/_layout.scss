@@ -307,6 +307,10 @@ section {
     background-color: $color-background-zebra;
 }
 
+.animation-wrapper {
+    background-color: $color-background;
+}
+
 /**
  * Sidebar layout. Overrode in third breakpoint.
  */
@@ -409,11 +413,6 @@ main .layout-4col-3span {
     @include hires-graphic(com/index-features, png, 1600px, 200px);
 }
 
-@media (prefers-color-scheme: dark) {
-    .index-feature h3::before {
-        @include hires-graphic(com/dark-index-features, png, 1600px, 200px);
-    }
-}
 
 .index-feature-foundations::before {
     background-position: 0 0;
@@ -451,12 +450,6 @@ main .layout-4col-3span {
     @include hires-graphic(com/index-docs, png, 1200px, 200px);
 }
 
-@media (prefers-color-scheme: dark) {
-    .index-docs h3::before {
-        @include hires-graphic(com/dark-index-docs, png, 1200px, 200px);
-    }
-}
-
 .index-docs-start::before {
     background-position: 0 0;
 }
@@ -479,6 +472,13 @@ main .layout-4col-3span {
 
 .index-docs-faqs::before {
     background-position: -1000px 0;
+}
+
+@media (prefers-color-scheme: dark) {
+    .index-feature h3::before,
+    .index-docs h3::before {
+        filter: contrast(150%);
+    }
 }
 
 /**
