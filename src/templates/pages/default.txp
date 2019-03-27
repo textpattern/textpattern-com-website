@@ -283,7 +283,7 @@ foreach ($json->topic as $topic) {
                         </txp:if_search_results>
                     </div>
                     <p>Please try another search term or <a href="<txp:site_url />">return to the Textpattern homepage</a>.</p>
-                    <p><img width="556" height="406" alt="Page error" src="https://textpattern.com/assets/img/com/error.png" srcset="https://textpattern.com/assets/img/com/error@2x.png 2x"></p>
+                    <p><img width="556" height="406" alt="Page error" src="https://textpattern.com/assets/img/com/error.png" data-src-dark="https://textpattern.com/assets/img/com/dark-error.png" srcset="https://textpattern.com/assets/img/com/error@2x.png 2x" data-srcset-dark="https://textpattern.com/assets/img/com/dark-error@2x.png 2x"></p>
                 </txp:if_search_results>
             </div>
         </div>
