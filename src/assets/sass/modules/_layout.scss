@@ -319,6 +319,12 @@ section {
     border-top: 2px dashed $color-text;
 }
 
+@media (prefers-color-scheme: dark) {
+    .sidebar {
+        border-top-color: $dark-color-text;
+    }
+}
+
 /**
  * General articles and article teasers.
  */
@@ -475,6 +481,7 @@ main .layout-4col-3span {
 }
 
 @media (prefers-color-scheme: dark) {
+    .the-carver,
     .index-feature h3::before,
     .index-docs h3::before {
         filter: contrast(150%);

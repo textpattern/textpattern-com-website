@@ -547,6 +547,12 @@
         background-color: $color-background-box;
     }
 
+    @media (prefers-color-scheme: dark) {
+        .sidebar {
+            background-color: $dark-color-background-box;
+        }
+    }
+
     /**
      * Showcase images.
      */
