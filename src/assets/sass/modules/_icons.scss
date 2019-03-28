@@ -20,6 +20,16 @@
     vertical-align: baseline;
 }
 
+@media (prefers-color-scheme: dark) {
+    .ui-icon {
+        filter: brightness(3) sepia(1) hue-rotate(168deg) saturate(33%);
+    }
+
+    .button .ui-icon {
+        filter: none;
+    }
+}
+
 /**
  * Red heart.
  */
