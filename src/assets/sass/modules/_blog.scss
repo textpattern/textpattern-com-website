@@ -65,8 +65,8 @@
     }
 
     a:focus {
-        border: 1px solid $color-link-focus;
-        outline: 1px solid transparent; // Allows for repainting in high contrast modes.
+        border-color: $color-link-focus;
+        outline: 2px solid transparent; // Allows for repainting in high contrast modes.
         background-color: $color-highlight;
         color: $color-text;
     }
@@ -81,6 +81,31 @@
     // Put a bit more margin on 2nd category link, if it exists (for better touch accessibility).
     a + a {
         margin-left: 0.25em;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    .article-footer {
+        a,
+        .article-author {
+            border-color: $dark-color-background-form;
+            background: $dark-color-background-form;
+        }
+
+        a:hover {
+            border-color: darken($color-button-primary-border, 13%);
+            background-color: $color-highlight;
+        }
+
+        a:focus {
+            border-color: $dark-color-link-focus;
+            background-color: $color-highlight;
+        }
+
+        a:active {
+            border-color: darken($color-button-primary-border, 13%);
+            background-color: darken($color-highlight, 7%);
+        }
     }
 }
 

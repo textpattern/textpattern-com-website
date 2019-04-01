@@ -80,6 +80,12 @@ img {
     border: 1px solid $color-border-light;
 }
 
+@media (prefers-color-scheme: dark) {
+    .img--bordered {
+        border-color: $dark-color-border-light;
+    }
+}
+
 /**
  * Consistent margins on `figure`.
  */
