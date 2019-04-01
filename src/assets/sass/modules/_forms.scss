@@ -13,6 +13,12 @@ fieldset {
     border: 1px solid $color-border; /* 2 */
 }
 
+@include dark-mode {
+    fieldset {
+        border-color: $dark-color-border;
+    }
+}
+
 /**
  * Normalize styling of `legend`.
  *
@@ -79,6 +85,15 @@ textarea,
     box-sizing: border-box;
 }
 
+@include dark-mode {
+    input,
+    select,
+    optgroup,
+    textarea {
+        color: $dark-color-text-form;
+    }
+}
+
 /**
  * Styling of form input fields.
  *
@@ -109,7 +124,7 @@ textarea {
     appearance: none; /* 1 */
 
     &:hover {
-        border-color: shade($color-border, 15%);
+        border-color: $color-border-extra-dark;
     }
 
     &:focus {
@@ -118,19 +133,49 @@ textarea {
     }
 }
 
+@include dark-mode {
+    [type="color"],
+    [type="date"],
+    [type="datetime"],
+    [type="datetime-local"],
+    [type="email"],
+    [type="month"],
+    [type="number"],
+    [type="password"],
+    [type="search"],
+    [type="tel"],
+    [type="text"],
+    [type="time"],
+    [type="url"],
+    [type="week"],
+    select,
+    textarea {
+        border-color: $dark-color-border-extra-dark;
+        background-color: $dark-color-background-form;
+
+        &:hover {
+            border-color: $dark-color-border-extra-light;
+        }
+
+        &:focus {
+            border-color: $dark-color-link-focus;
+        }
+    }
+}
+
 /**
  * 1. Remove any excess padding.
  * 2. Correct margins for inline checkbox/radio labels.
  */
 
-[type="checkbox"]:not(.ui-checkboxradio),
-[type="radio"]:not(.ui-checkboxradio) {
+[type="checkbox"],
+[type="radio"] {
     position: relative;
     bottom: -2px;
     width: 16px;
     height: 16px;
     padding: 0; /* 1 */
-    border: 1px solid shade($color-border, 15%);
+    border: 1px solid $color-border-extra-dark;
     background: $color-background-form;
     appearance: none;
     box-sizing: border-box;
@@ -144,7 +189,7 @@ textarea {
     }
 
     &:hover {
-        border-color: shade($color-border, 30%);
+        border-color: shade($color-border-extra-dark, 15%);
         cursor: pointer;
     }
 
@@ -158,9 +203,23 @@ textarea {
     }
 }
 
-[type="checkbox"]:not(.ui-checkboxradio) {
-    border-radius: 0.2em;
+@include dark-mode {
+    [type="checkbox"],
+    [type="radio"] {
+        border-color: $dark-color-border-extra-dark;
+        background-color: $dark-color-background-form;
 
+        &:hover {
+            border-color: $dark-color-border-extra-light;
+        }
+
+        &:focus {
+            border-color: $dark-color-link-focus;
+        }
+    }
+}
+
+[type="checkbox"] {
     &:checked {
         border: 0;
         background: $color-text-footnote url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='%23fff' d='M13 2.5l-7 7-2-2-2 2 4 4L15 4.5z'/%3E%3C/svg%3E");
@@ -180,7 +239,28 @@ textarea {
     }
 }
 
-[type="radio"]:not(.ui-checkboxradio) {
+@include dark-mode {
+    [type="checkbox"] {
+        &:checked {
+            background: $dark-color-text url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='%23282d32' d='M13 2.5l-7 7-2-2-2 2 4 4L15 4.5z'/%3E%3C/svg%3E");
+
+            &:hover,
+            &:active {
+                background-color: $dark-color-text-heading;
+            }
+
+            &:focus {
+                background-color: $dark-color-link-focus;
+            }
+        }
+
+        &[disabled]:checked {
+            background: $dark-color-text url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='%23282d32' d='M13 2.5l-7 7-2-2-2 2 4 4L15 4.5z'/%3E%3C/svg%3E") !important;
+        }
+    }
+}
+
+[type="radio"] {
     border-radius: 100%;
 
     &:checked {
@@ -197,6 +277,21 @@ textarea {
     }
 }
 
+@include dark-mode {
+    [type="radio"]:checked {
+        border-color: $dark-color-text;
+
+        &:hover,
+        &:active {
+            border-color: $dark-color-text-heading;
+        }
+
+        &:focus {
+            border-color: $dark-color-link-focus;
+        }
+    }
+}
+
 /**
  * Correct the cursor style of increment and decrement buttons in Safari.
  */
@@ -208,11 +303,14 @@ textarea {
 
 /**
  * Styling of range sliders.
+ *
+ * 1. Correct background colour in Firefox.
  */
 
 [type="range"] {
     width: 100%;
     max-width: 16em; // 256px / 16px
+    background-color: transparent; /* 1 */
     vertical-align: baseline;
     appearance: none;
 
@@ -236,7 +334,7 @@ textarea {
 }
 
 [type="range"]:hover::-webkit-slider-thumb {
-    border-color: shade($color-border, 15%);
+    border-color: $color-border-extra-dark;
 }
 
 [type="range"]:active::-webkit-slider-thumb,
@@ -254,12 +352,46 @@ textarea {
 }
 
 [type="range"]:hover::-webkit-slider-runnable-track {
-    border-color: shade($color-border, 15%);
+    border-color: $color-border-extra-dark;
 }
 
 [type="range"]:active::-webkit-slider-runnable-track,
 [type="range"]:focus::-webkit-slider-runnable-track {
     border-color: $color-link-focus;
+}
+
+@include dark-mode {
+    [type="range"]::-webkit-slider-thumb {
+        @include gradient-linear($color-button-gradient-from, $color-button-gradient-to);
+
+        border-color: $dark-color-border;
+        box-shadow: $dark-standard-shadow;
+    }
+
+    [type="range"]:hover::-webkit-slider-thumb {
+        @include gradient-linear(lighten($color-button-gradient-from, 4%), lighten($color-button-gradient-to, 4%));
+
+        border-color: $dark-color-border-extra-light;
+    }
+
+    [type="range"]:active::-webkit-slider-thumb,
+    [type="range"]:focus::-webkit-slider-thumb {
+        border-color: $dark-color-link-focus;
+    }
+
+    [type="range"]::-webkit-slider-runnable-track {
+        border-color: $dark-color-border-extra-dark;
+        background-color: $dark-color-background-form;
+    }
+
+    [type="range"]:hover::-webkit-slider-runnable-track {
+        border-color: $dark-color-border-extra-light;
+    }
+
+    [type="range"]:active::-webkit-slider-runnable-track,
+    [type="range"]:focus::-webkit-slider-runnable-track {
+        border-color: $dark-color-link-focus;
+    }
 }
 
 // Gecko/Quantum.
@@ -277,7 +409,7 @@ textarea {
 }
 
 [type="range"]:hover::-moz-range-thumb {
-    border-color: shade($color-border, 15%);
+    border-color: $color-border-extra-dark;
 }
 
 [type="range"]:focus::-moz-range-thumb {
@@ -288,14 +420,13 @@ textarea {
     width: 100%;
     height: 0.75em; // 12px / 16px
     border: 1px solid $color-border;
-    border-radius: 0.375em;
     background-color: $color-gradient-to;
     cursor: pointer;
     box-sizing: border-box;
 }
 
 [type="range"]:hover::-moz-range-track {
-    border-color: shade($color-border, 15%);
+    border-color: $color-border-extra-dark;
 }
 
 [type="range"]:focus::-moz-range-track {
@@ -304,6 +435,38 @@ textarea {
 
 [type="range"]::-moz-focus-outer {
     border-style: none;
+}
+
+@include dark-mode {
+    [type="range"]::-moz-range-thumb {
+        @include gradient-linear($color-button-gradient-from, $color-button-gradient-to);
+
+        border-color: $dark-color-border;
+        box-shadow: $dark-standard-shadow;
+    }
+
+    [type="range"]:hover::-moz-range-thumb {
+        @include gradient-linear(lighten($color-button-gradient-from, 4%), lighten($color-button-gradient-to, 4%));
+
+        border-color: $dark-color-border-extra-light;
+    }
+
+    [type="range"]:focus::-moz-range-thumb {
+        border-color: $dark-color-link-focus;
+    }
+
+    [type="range"]::-moz-range-track {
+        border-color: $dark-color-border-extra-dark;
+        background-color: $dark-color-background-form;
+    }
+
+    [type="range"]:hover::-moz-range-track {
+        border-color: $dark-color-border-extra-light;
+    }
+
+    [type="range"]:focus::-moz-range-track {
+        border-color: $dark-color-link-focus;
+    }
 }
 
 // EdgeHTML.
@@ -322,7 +485,7 @@ textarea {
 }
 
 [type="range"]:hover::-ms-thumb {
-    border-color: shade($color-border, 15%);
+    border-color: $color-border-extra-dark;
 }
 
 [type="range"]:focus::-ms-thumb {
@@ -333,18 +496,49 @@ textarea {
     width: 100%;
     height: 0.75em; // 12px / 16px
     border: 1px solid $color-border;
-    border-radius: 0.375em;
     background-color: $color-gradient-to;
     cursor: pointer;
     box-sizing: border-box;
 }
 
 [type="range"]:hover::-ms-track {
-    border-color: shade($color-border, 15%);
+    border-color: $color-border-extra-dark;
 }
 
 [type="range"]:focus::-ms-track {
     border-color: $color-link-focus;
+}
+
+@include dark-mode {
+    [type="range"]::-ms-thumb {
+        @include gradient-linear($color-button-gradient-from, $color-button-gradient-to);
+
+        border-color: $dark-color-border;
+        box-shadow: $dark-standard-shadow;
+    }
+
+    [type="range"]:hover::-ms-thumb {
+        @include gradient-linear(lighten($color-button-gradient-from, 4%), lighten($color-button-gradient-to, 4%));
+
+        border-color: $dark-color-border-extra-light;
+    }
+
+    [type="range"]:focus::-ms-thumb {
+        border-color: $dark-color-link-focus;
+    }
+
+    [type="range"]::-ms-track {
+        border-color: $dark-color-border-extra-dark;
+        background-color: $dark-color-background-form;
+    }
+
+    [type="range"]:hover::-ms-track {
+        border-color: $dark-color-border-extra-light;
+    }
+
+    [type="range"]:focus::-ms-track {
+        border-color: $dark-color-link-focus;
+    }
 }
 
 /**
@@ -365,6 +559,13 @@ select {
     background: $color-background-form url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='17' height='5' viewBox='0 0 17 5'%3E%3Cpolygon fill='%23333' points='0,0 5,5 10,0'/%3E%3C/svg%3E") right center no-repeat;
     background-size: 1.0625em 0.3125em; // 17px / 16px, 5px / 16px
     text-transform: none;
+}
+
+@include dark-mode {
+    select {
+        background-color: $dark-color-background-form;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='17' height='5' viewBox='0 0 17 5'%3E%3Cpolygon fill='%23788591' points='0,0 5,5 10,0'/%3E%3C/svg%3E");
+    }
 }
 
 /**
@@ -400,7 +601,6 @@ select::-ms-expand {
  */
 
 optgroup {
-    color: $color-text-form;
     font-style: normal;
     font-weight: bold;
 }
@@ -435,6 +635,18 @@ span.disabled {
     box-shadow: none !important;
     cursor: default !important; /* 1 */
     opacity: 0.33 !important;
+}
+
+@include dark-mode {
+    [disabled],
+    [disabled] option,
+    [disabled] optgroup,
+    span.disabled,
+    .ui-checkboxradio-disabled {
+        border: 1px solid $dark-color-border !important;
+        background-color: $dark-color-background-form-disabled !important;
+        opacity: 0.25 !important;
+    }
 }
 
 /**
@@ -479,6 +691,16 @@ textarea {
     }
 }
 
+@include dark-mode {
+    input,
+    select,
+    textarea {
+        &:focus:invalid {
+            border-color: $dark-color-error-text;
+        }
+    }
+}
+
 /**
  * Styling for Firefox-specfic form field validation.
  */
@@ -489,6 +711,16 @@ textarea {
     &:-moz-ui-invalid {
         border-color: $color-error-text;
         box-shadow: none;
+    }
+}
+
+@include dark-mode {
+    input,
+    select,
+    textarea {
+        &:-moz-ui-invalid {
+            border-color: $dark-color-error-text;
+        }
     }
 }
 
@@ -504,6 +736,12 @@ textarea {
     opacity: 1;
 }
 
+@include dark-mode {
+    ::placeholder {
+        color: $dark-color-text-form-placeholder;
+    }
+}
+
 /**
  * Styling for required field indicators.
  *
@@ -515,4 +753,10 @@ textarea {
 abbr.required {
     color: $color-warning-text;
     text-decoration: none;
+}
+
+@include dark-mode {
+    abbr.required {
+        color: $dark-color-warning-text;
+    }
 }

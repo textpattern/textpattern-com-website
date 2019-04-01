@@ -103,6 +103,18 @@ button,
     }
 }
 
+@include dark-mode {
+    button,
+    [type="button"],
+    [type="reset"],
+    [type="submit"],
+    .button {
+        &:focus {
+            border-color: $dark-color-link-focus;
+        }
+    }
+}
+
 /**
  * Larger buttons.
  *
