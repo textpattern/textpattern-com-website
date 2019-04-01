@@ -135,7 +135,7 @@ pre.line-numbers > code {
     content: counter(linenumber);
 }
 
-@media (prefers-color-scheme: dark) {
+@include dark-mode {
     .token.punctuation {
         color: #ffffff;
     }

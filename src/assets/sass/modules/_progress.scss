@@ -141,7 +141,7 @@ progress[value="1"]::-ms-fill {
     color: $color-success-text;
 }
 
-@media (prefers-color-scheme: dark) {
+@include dark-mode {
     progress {
         border-color: $dark-color-border;
         background-color: $dark-color-background-box;

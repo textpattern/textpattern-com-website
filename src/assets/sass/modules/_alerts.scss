@@ -28,7 +28,7 @@
     color: $color-info-text;
 }
 
-@media (prefers-color-scheme: dark) {
+@include dark-mode {
     .success {
         color: $dark-color-success-text;
     }
@@ -63,7 +63,7 @@
     background: $color-highlight-box;
 }
 
-@media (prefers-color-scheme: dark) {
+@include dark-mode {
     .highlighted {
         background: $dark-color-highlight-box;
     }
@@ -107,7 +107,7 @@
     }
 }
 
-@media (prefers-color-scheme: dark) {
+@include dark-mode {
     .alert-block {
         &.success {
             border-color: $dark-color-success-border;

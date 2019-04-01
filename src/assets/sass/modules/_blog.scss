@@ -84,7 +84,7 @@
     }
 }
 
-@media (prefers-color-scheme: dark) {
+@include dark-mode {
     .article-footer {
         a,
         .article-author {

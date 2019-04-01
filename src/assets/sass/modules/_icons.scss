@@ -20,7 +20,7 @@
     vertical-align: baseline;
 }
 
-@media (prefers-color-scheme: dark) {
+@include dark-mode {
     .ui-icon {
         filter: brightness(3) sepia(1) hue-rotate(168deg) saturate(33%);
     }

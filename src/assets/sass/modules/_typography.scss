@@ -71,7 +71,7 @@ h6 {
     line-height: $line-height-mobile;
 }
 
-@media (prefers-color-scheme: dark) {
+@include dark-mode {
     h1,
     h2,
     h3,
@@ -136,7 +136,7 @@ blockquote {
     background-color: $color-highlight-box;
 }
 
-@media (prefers-color-scheme: dark) {
+@include dark-mode {
     blockquote {
         border-left-color: $dark-color-highlight;
         background-color: $dark-color-highlight-box;
@@ -165,7 +165,7 @@ var {
     color: $color-text;
 }
 
-@media (prefers-color-scheme: dark) {
+@include dark-mode {
     mark,
     var {
         background-color: $dark-color-selected;
@@ -193,7 +193,7 @@ samp {
     font-feature-settings: normal; /* 1 */
 }
 
-@media (prefers-color-scheme: dark) {
+@include dark-mode {
     pre,
     code,
     kbd,
@@ -293,7 +293,7 @@ hr {
     box-sizing: content-box; /* 2 */
 }
 
-@media (prefers-color-scheme: dark) {
+@include dark-mode {
     hr {
         background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 24'%3E%3Cpath fill='%23ced4da' d='M0,0c1.742,13.61,54.74,20.912,119.995,15.279C184.922,9.679,238.594,13.024,240,24c-1.744-13.613-54.742-20.913-120.005-15.284C55.078,14.32,1.405,10.973,0,0z'/%3E%3C/svg%3E") 50% 50% no-repeat;
     }
@@ -314,7 +314,7 @@ hr {
     color: $color-text-footnote;
 }
 
-@media (prefers-color-scheme: dark) {
+@include dark-mode {
     .separator {
         color: $dark-color-text-footnote;
     }

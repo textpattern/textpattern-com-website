@@ -80,7 +80,7 @@ img {
     border: 1px solid $color-border-light;
 }
 
-@media (prefers-color-scheme: dark) {
+@include dark-mode {
     .img--bordered {
         border-color: $dark-color-border-light;
     }

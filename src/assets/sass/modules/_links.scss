@@ -24,7 +24,7 @@ a {
     }
 }
 
-@media (prefers-color-scheme: dark) {
+@include dark-mode {
     a {
         color: $dark-color-link;
 
@@ -63,7 +63,7 @@ h6 {
     }
 }
 
-@media (prefers-color-scheme: dark) {
+@include dark-mode {
     h1,
     h2,
     h3,
