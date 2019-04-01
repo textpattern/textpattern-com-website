@@ -167,12 +167,6 @@
         }
     }
 
-    @include dark-mode {
-        .showcase-container h3 {
-            filter: contrast(150%);
-        }
-    }
-
     .showcase-landing h3 {
         top: -35px;
     }

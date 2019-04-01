@@ -394,7 +394,6 @@ main .layout-4col-3span {
     width: 100%;
     max-width: 1150px;
     margin: 0 auto;
-    background: $color-background;
 
     img {
         max-width: 100%;
@@ -479,14 +478,6 @@ main .layout-4col-3span {
     background-position: -1000px 0;
 }
 
-@include dark-mode {
-    .the-carver,
-    .index-feature h3::before,
-    .index-docs h3::before {
-        filter: contrast(150%);
-    }
-}
-
 /**
  * Showcase section.
  */
@@ -554,6 +545,10 @@ main .layout-4col-3span {
 }
 
 @include dark-mode {
+    .the-carver,
+    .index-feature h3::before,
+    .index-docs h3::before,
+    .showcase-container h3,
     .showcase-home-c::before,
     .showcase-home-l::before,
     .showcase-home-r::before,
