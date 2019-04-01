@@ -346,6 +346,13 @@ main .layout-4col-3span {
     border-top: 2px dashed $color-border;
 }
 
+@include dark-mode {
+    .teaser,
+    .teaser-container {
+        border-top-color: $dark-color-border;
+    }
+}
+
 /**
  * Advertising links.
  */
@@ -375,14 +382,6 @@ main .layout-4col-3span {
 }
 
 /**
- * Error page subheadings.
- */
-
-.http-status-description {
-    display: inline-block;
-}
-
-/**
  * Homepage animation canvas.
  */
 
@@ -395,7 +394,7 @@ main .layout-4col-3span {
     width: 100%;
     max-width: 1150px;
     margin: 0 auto;
-    background: #ffffff;
+    background: $color-background;
 
     img {
         max-width: 100%;
