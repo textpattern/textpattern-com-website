@@ -24,6 +24,19 @@
     }
 }
 
+@include dark-mode {
+    .comments {
+        background: $dark-color-background-box;
+
+        code,
+        kbd,
+        pre,
+        samp {
+            background: $dark-color-background-form;
+        }
+    }
+}
+
 /**
  * Remove numerical styling of comments list.
  *
@@ -50,6 +63,16 @@
 
     blockquote {
         background: $color-background;
+    }
+}
+
+@include dark-mode {
+    .comments.article-author {
+        background: $dark-color-highlight-box;
+
+        blockquote {
+            background: $dark-color-background;
+        }
     }
 }
 
@@ -87,6 +110,12 @@
     background-color: $color-highlight-box;
 }
 
+@include dark-mode {
+    #cpreview {
+        background-color: $dark-color-highlight-box;
+    }
+}
+
 /**
  * Highlight text colour for comment errors.
  */
@@ -95,10 +124,22 @@
     color: $color-error-text;
 }
 
+@include dark-mode {
+    .error_message li {
+        color: $dark-color-error-text;
+    }
+}
+
 /**
  * Highlighting for comment form errors.
  */
 
 .comments_error {
     border-color: $color-error-text;
+}
+
+@include dark-mode {
+    .comments_error {
+        border-color: $dark-color-error-text;
+    }
 }
