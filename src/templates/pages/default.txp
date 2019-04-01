@@ -193,7 +193,7 @@ echo '<a class="count-bubble" rel="external" href="https://github.com/textpatter
                 <div class="layout-container">
                     <section class="layout-3col-2span" itemscope itemtype="https://schema.org/Blog">
                         <h3>Latest from <a href="<txp:site_url />weblog">the blog</a>…</h3>
-                        <p><img width="756" height="160" alt="The Textpattern blog" src="/assets/img/com/index-blog-header.png" srcset="/assets/img/com/index-blog-header@2x.png 2x"></p>
+                        <p><img width="756" height="160" alt="The Textpattern blog" src="/assets/img/com/index-blog-header.png" data-src-light="/assets/img/com/index-blog-header.png" data-src-dark="/assets/img/com/dark-index-blog-header.png" srcset="/assets/img/com/index-blog-header@2x.png 2x" data-srcset-light="/assets/img/com/index-blog-header@2x.png 2x" data-srcset-dark="/assets/img/com/dark-index-blog-header@2x.png 2x"></p>
                         <txp:etc_cache id="homepage-blogs">
                             <txp:article form="article_listing_blog" limit="2" />
                         </txp:etc_cache>
@@ -283,7 +283,7 @@ foreach ($json->topic as $topic) {
                         </txp:if_search_results>
                     </div>
                     <p>Please try another search term or <a href="<txp:site_url />">return to the Textpattern homepage</a>.</p>
-                    <p><img width="556" height="406" alt="Page error" src="https://textpattern.com/assets/img/com/error.png" data-src-dark="https://textpattern.com/assets/img/com/dark-error.png" srcset="https://textpattern.com/assets/img/com/error@2x.png 2x" data-srcset-dark="https://textpattern.com/assets/img/com/dark-error@2x.png 2x"></p>
+                    <p><img width="556" height="406" alt="Page error" src="https://textpattern.com/assets/img/com/error.png" data-src-light="https://textpattern.com/assets/img/com/error.png" data-src-dark="https://textpattern.com/assets/img/com/dark-error.png" srcset="https://textpattern.com/assets/img/com/error@2x.png 2x" data-srcset-light="https://textpattern.com/assets/img/com/error@2x.png 2x" data-srcset-dark="https://textpattern.com/assets/img/com/dark-error@2x.png 2x"></p>
                 </txp:if_search_results>
             </div>
         </div>
