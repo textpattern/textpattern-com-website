@@ -575,6 +575,12 @@ main .layout-4col-3span {
     border-top: 1px dashed $color-border;
 }
 
+@include dark-mode {
+    .footnotes {
+        border-top-color: $dark-color-border;
+    }
+}
+
 /**
  * Documentation site issue report statement.
  */

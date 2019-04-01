@@ -23,12 +23,32 @@ li {
 }
 
 /**
+ * CSS Lists and Counters Module Level 3 list marker styling.
+ */
+
+li::marker {
+    color: $color-text-form;
+}
+
+@include dark-mode {
+    li::marker {
+        color: $dark-color-text-heading;
+    }
+}
+
+/**
  * Style for definition lists.
  */
 
 dl {
     padding-bottom: 1em;
     border-bottom: 1px solid $color-border-light;
+}
+
+@include dark-mode {
+    dl {
+        border-bottom-color: $dark-color-border-light;
+    }
 }
 
 dt {
@@ -41,6 +61,17 @@ dt {
     code {
         border-color: $color-info-border;
         background-color: $color-info-background;
+    }
+}
+
+@include dark-mode {
+    dt {
+        border-top-color: $dark-color-border-light;
+
+        code {
+            border-color: $dark-color-info-border;
+            background-color: $dark-color-info-background;
+        }
     }
 }
 

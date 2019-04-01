@@ -49,6 +49,13 @@ td {
     vertical-align: top;
 }
 
+@include dark-mode {
+    th,
+    td {
+        border-color: $dark-color-border-light;
+    }
+}
+
 /**
  * Emphasize table header.
  */
@@ -61,6 +68,24 @@ thead {
     th,
     td {
         border: 1px solid $color-border;
+    }
+}
+
+@include dark-mode {
+    thead {
+        tr {
+            background-color: $dark-color-gradient-from;
+        }
+
+        th,
+        td {
+            border-color: $dark-color-border;
+        }
+
+        th,
+        td {
+            color: $dark-color-text-heading;
+        }
     }
 }
 
@@ -81,6 +106,20 @@ tbody {
 
     th {
         font-weight: normal;
+    }
+}
+
+@include dark-mode {
+    tbody {
+        tr {
+            &:nth-child(even) {
+                background-color: $dark-color-background-box;
+            }
+
+            &.selected {
+                background-color: $dark-color-selected;
+            }
+        }
     }
 }
 

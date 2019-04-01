@@ -52,7 +52,6 @@ $color-gradient-from:                 #eeeeee !default;
 $color-gradient-to:                   darken($color-gradient-from, 6.5%) !default;
 
 $dark-color-background:               #373e45 !default;
-$dark-color-background-zebra:         #f0f0f0 !default; // TODO
 $dark-color-background-box:           shade($dark-color-background, 14%) !default;
 $dark-color-background-form:          shade($dark-color-background, 28%) !default;
 $dark-color-background-form-disabled: shade($dark-color-background, 28%) !default;

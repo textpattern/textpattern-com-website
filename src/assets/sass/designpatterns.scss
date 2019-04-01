@@ -18,6 +18,13 @@ body {
     color: $color-text;
 }
 
+@include dark-mode {
+    body {
+        background-color: $dark-color-background;
+        color: $dark-color-text;
+    }
+}
+
 main {
     padding: 0 5% 1em;
 
@@ -38,6 +45,12 @@ main {
     color: $color-text;
 }
 
+@include dark-mode {
+    .information code {
+        color: $dark-color-text;
+    }
+}
+
 
 /* Colour palette.
    ========================================================================== */
@@ -53,8 +66,11 @@ $colors: (
     "text-footnote":        $color-text-footnote,
     "gradient-from":        $color-gradient-from,
     "gradient-to":          $color-gradient-to,
+    "border-extra-dark":    $color-border-extra-dark,
+    "border-dark":          $color-border-dark,
     "border":               $color-border,
     "border-light":         $color-border-light,
+    "border-extra-light":   $color-border-extra-light,
     "link":                 $color-link,
     "link-hover":           $color-link-hover,
     "link-focus":           $color-link-focus,
@@ -75,6 +91,36 @@ $colors: (
     "info-background":      $color-info-background
 );
 
+$dark-colors: (
+    "text":                 $dark-color-text,
+    "text-footnote":        $dark-color-text-footnote,
+    "gradient-from":        $dark-color-gradient-from,
+    "gradient-to":          $dark-color-gradient-to,
+    "border-extra-dark":    $dark-color-border-extra-dark,
+    "border-dark":          $dark-color-border-dark,
+    "border":               $dark-color-border,
+    "border-light":         $dark-color-border-light,
+    "border-extra-light":   $dark-color-border-extra-light,
+    "link":                 $dark-color-link,
+    "link-hover":           $dark-color-link-hover,
+    "link-focus":           $dark-color-link-focus,
+    "link-selecting":       $dark-color-selecting,
+    "link-selected":        $dark-color-selected,
+    "background":           $dark-color-background,
+    "background-box":       $dark-color-background-box,
+    "highlight":            $dark-color-highlight,
+    "strong-highlight-box": $dark-color-strong-highlight-box,
+    "highlight-box":        $dark-color-highlight-box,
+    "success-text":         $dark-color-success-text,
+    "success-background":   $dark-color-success-background,
+    "warning-text":         $dark-color-warning-text,
+    "warning-background":   $dark-color-warning-background,
+    "error-text":           $dark-color-error-text,
+    "error-background":     $dark-color-error-background,
+    "info-text":            $dark-color-info-text,
+    "info-background":      $dark-color-info-background
+);
+
 .design-patterns--color {
     display: block;
     position: relative;
@@ -92,12 +138,34 @@ $colors: (
     }
 }
 
+@include dark-mode {
+    .design-patterns--color {
+        border-color: $dark-color-border;
+
+        &::after {
+            background-color: rgba(0, 0, 0, 0.66);
+        }
+    }
+}
+
 @each $name, $color in $colors {
     .design-patterns--color-#{$name} {
         background: $color;
 
         &::after {
             content: "#{$color}";
+        }
+    }
+}
+
+@include dark-mode {
+    @each $name, $color in $dark-colors {
+        .design-patterns--color-#{$name} {
+            background: $color;
+
+            &::after {
+                content: "#{$color}";
+            }
         }
     }
 }
@@ -217,5 +285,12 @@ $colors: (
     .docs-content-container {
         max-width: $container-max-width;
         margin: 0 auto;
+    }
+}
+
+@media (prefers-color-scheme: dark) and (min-width: $breakpoint-3) {
+    .docs-menu {
+        border-right-color: $dark-color-border-extra-dark;
+        background-color: $dark-color-background-box;
     }
 }
