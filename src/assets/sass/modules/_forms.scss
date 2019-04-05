@@ -339,6 +339,13 @@ select[multiple] {
     background-image: none;
 }
 
+@include dark-mode {
+    select[size],
+    select[multiple] {
+        background-image: none;
+    }
+}
+
 /**
  * Override height set in rule above and restrict to one line field.
  */
