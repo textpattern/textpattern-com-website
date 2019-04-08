@@ -193,7 +193,7 @@ echo '<a class="count-bubble" rel="external" href="https://github.com/textpatter
                 <div class="layout-container">
                     <section class="layout-3col-2span" itemscope itemtype="https://schema.org/Blog">
                         <h3>Latest from <a href="<txp:site_url />weblog">the blog</a>…</h3>
-                        <p><img width="756" height="160" alt="The Textpattern blog" src="/assets/img/com/index-blog-header.png" data-src-light="/assets/img/com/index-blog-header.png" data-src-dark="/assets/img/com/dark-index-blog-header.png" srcset="/assets/img/com/index-blog-header@2x.png 2x" data-srcset-light="/assets/img/com/index-blog-header@2x.png 2x" data-srcset-dark="/assets/img/com/dark-index-blog-header@2x.png 2x"></p>
+                        <p><img class="prefers-color-scheme" width="756" height="160" alt="The Textpattern blog" src="/assets/img/com/index-blog-header.png" data-src-light="/assets/img/com/index-blog-header.png" data-src-dark="/assets/img/com/dark-index-blog-header.png" srcset="/assets/img/com/index-blog-header@2x.png 2x" data-srcset-light="/assets/img/com/index-blog-header@2x.png 2x" data-srcset-dark="/assets/img/com/dark-index-blog-header@2x.png 2x"></p>
                         <txp:etc_cache id="homepage-blogs">
                             <txp:article form="article_listing_blog" limit="2" />
                         </txp:etc_cache>
