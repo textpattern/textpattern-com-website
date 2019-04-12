@@ -307,6 +307,12 @@ section {
     background-color: $color-background-zebra;
 }
 
+@include dark-mode {
+    .zebra {
+        background-color: $dark-color-background-zebra;
+    }
+}
+
 .animation-wrapper {
     background-color: $color-background;
 }
@@ -366,6 +372,12 @@ main .layout-4col-3span {
         color: rgba($color-text, 0.33);
         font-weight: normal;
         text-transform: uppercase;
+    }
+}
+
+@include dark-mode {
+    .ads-area h6 {
+        color: rgba($dark-color-text, 0.5);
     }
 }
 
