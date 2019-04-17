@@ -64,7 +64,7 @@ module.exports = function (grunt)
                     {
                         expand: true,
                         cwd: '<%= paths.src.fonts %>',
-                        src: ['**'],
+                        src: '**',
                         dest: '<%= paths.dest.fonts %>'
                     }
                 ]
@@ -75,31 +75,31 @@ module.exports = function (grunt)
                     {
                         expand: true,
                         cwd: 'src/assets/img/',
-                        src: ['**'],
+                        src: '**',
                         dest: '<%= paths.dest.img %>com/'
                     },
                     {
                         expand: true,
                         cwd: 'node_modules/textpattern-branding/assets/img/',
-                        src: ['**'],
+                        src: '**',
                         dest: '<%= paths.dest.img %>branding/'
                     },
                     {
                         expand: true,
                         cwd: 'node_modules/textpattern-branding/assets/img/apple-touch-icon/textpattern/',
-                        src: ['**'],
+                        src: '**',
                         dest: 'public/'
                     },
                     {
                         expand: true,
                         cwd: 'node_modules/textpattern-branding/assets/img/favicon/textpattern/',
-                        src: ['**'],
+                        src: '**',
                         dest: 'public/'
                     },
                     {
                         expand: true,
                         cwd: 'node_modules/textpattern-branding/assets/img/windows-site-tile/textpattern/',
-                        src: ['**'],
+                        src: '**',
                         dest: 'public/'
                     },
                     {
