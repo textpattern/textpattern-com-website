@@ -5,7 +5,7 @@
             <meta itemprop="position" content="1">
         </li>
         <txp:if_search>
-            <li class="current">
+            <li class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
                 <b itemprop="name">Search results</b>
                 <meta itemprop="item" content="<txp:site_url />?q=">
                 <meta itemprop="position" content="2">
