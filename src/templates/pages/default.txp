@@ -60,7 +60,7 @@
                     <hr>
                     <p class="cta-buttons">
                         <txp:etc_cache id="homepage-downloads">
-                            <a class="button button-primary button-large" href="<txp:site_url />start"><span class="ui-button-icon ui-icon ui-extra-icon-download"></span> Download Textpattern <span class="txp-version"><txp:file_download_list category="current-release-zip" limit="1" sort="created desc"><txp:file_download_name title="1" /></txp:file_download_list></span></a>
+                            <a class="button button-primary button-large" href="<txp:site_url />start"><span class="ui-button-icon ui-icon ui-extra-icon-download"></span> Download Textpattern <span class="txp-version"><txp:file_download_list category="current-release-zip" limit="1" sort="created desc"><txp:file_download_name title /></txp:file_download_list></span></a>
                         </txp:etc_cache>
                         <a class="button" href="<txp:site_url />demo">Try a demo</a>
                     </p>
@@ -298,7 +298,7 @@ foreach ($json->topic as $topic) {
                 <div class="layout-4col-3span">
                     <h1 itemprop="name">Category results</h1>
                     <div class="article-description" itemprop="description">
-                        <p>Blog articles in the <q><txp:category title="1" /></q> category.</p>
+                        <p>Blog articles in the <q><txp:category title /></q> category.</p>
                     </div>
                     <div class="teaser-container">
                         <txp:article form="article_listing_blog" limit="12" />

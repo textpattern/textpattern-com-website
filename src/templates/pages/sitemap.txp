@@ -5,7 +5,7 @@
 </url>
 <txp:section_list break="" exclude="sitemap,version">
 <url>
-    <loc><txp:section url="1" /></loc>
+    <loc><txp:section url /></loc>
 </url>
 </txp:section_list>
 <txp:category_list section="weblog" break="">
