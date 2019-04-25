@@ -107,12 +107,25 @@ dd {
 }
 
 /**
- * Have a list with no bullets/numerals.
+ * Have a compact definition list.
  *
  * Example HTML:
  *
- * <ul class="list--no-bullets">
- * <ol class="list--no-bullets">
+ * <dl class="definitionlist--compact">
+ */
+
+.definitionlist--compact {
+    dt {
+        margin-bottom: 0;
+    }
+
+    dd {
+        margin: 0;
+    }
+}
+
+/**
+ * Floated right buttons on list items.
  */
 
 .button-list {

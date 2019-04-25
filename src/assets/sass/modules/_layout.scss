@@ -662,3 +662,37 @@ main .layout-4col-3span {
     content: "";
     z-index: 0;
 }
+
+@include dark-mode {
+    .count-bubble {
+        border-color: $dark-color-border;
+        background: $dark-color-background;
+        color: $dark-color-text;
+
+        &:hover {
+            border-color: tint($dark-color-border, 20%);
+            color: tint($dark-color-text, 20%);
+
+            &::before {
+                border-color: transparent tint($dark-color-border, 20%);
+            }
+        }
+
+        &:focus {
+            border-color: $dark-color-link-focus;
+            outline: 2px solid transparent; // Allows for repainting in high contrast modes.
+
+            &::before {
+                border-color: transparent $dark-color-link-focus;
+            }
+        }
+    }
+
+    .count-bubble::after {
+        border-color: transparent $dark-color-background;
+    }
+
+    .count-bubble::before {
+        border-color: transparent $dark-color-border;
+    }
+}
