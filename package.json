@@ -28,7 +28,7 @@
     "grunt-sass": "3.0.2",
     "grunt-sass-lint": "0.2.4",
     "load-grunt-tasks": "4.0.0",
-    "sass-lint": "1.12.1"
+    "sass-lint": "1.13.0"
   },
   "dependencies": {
     "createjs": "1.0.1",
