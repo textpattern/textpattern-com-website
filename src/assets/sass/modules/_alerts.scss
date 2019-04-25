@@ -130,3 +130,17 @@
         }
     }
 }
+
+/**
+ * Alert pills.
+ *
+ * Example HTML:
+ *
+ * <p class="alert-block alert-pill warning">
+ */
+
+.alert-pill {
+    display: inline-block;
+    padding: 0.125em 0.5em;
+    font-weight: normal;
+}
