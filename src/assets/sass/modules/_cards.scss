@@ -1,0 +1,54 @@
+/* Cards/article tiles
+   ========================================================================== */
+
+/**
+ * Card container.
+ *
+ * Example HTML:
+ *
+ * <article class="card">
+ *     ...
+ * </article>
+ */
+
+.card {
+    display: flex;
+    position: relative;
+    flex: 1 0 0%;
+    flex-direction: column;
+    border: 1px solid $color-border-light;
+    word-wrap: break-word;
+}
+
+@include dark-mode {
+    .card {
+        border-color: $dark-color-border-light;
+    }
+}
+
+.card-body {
+    flex: 1 1 auto;
+    padding: 0 1rem;
+}
+
+.card-header,
+.card-footer {
+    padding: 0 1rem;
+    background: $color-background-box;
+}
+
+.card-header {
+    border-bottom: 1px solid $color-border-light;
+}
+
+.card-footer {
+    border-top: 1px solid $color-border-light;
+}
+
+@include dark-mode {
+    .card-header,
+    .card-footer {
+        border-color: $dark-color-border-light;
+        background: $dark-color-background-box;
+    }
+}
