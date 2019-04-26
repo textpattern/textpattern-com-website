@@ -44,6 +44,10 @@
 
 .article-footer {
     margin: 1.5em 0 2.5em;
+}
+
+.article-footer,
+.card-prefooter {
     font-size: $small-font-size;
 
     a,
@@ -85,7 +89,8 @@
 }
 
 @include dark-mode {
-    .article-footer {
+    .article-footer,
+    .card-prefooter {
         a,
         .article-author {
             border-color: $dark-color-background-form;
