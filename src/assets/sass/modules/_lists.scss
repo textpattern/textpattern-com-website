@@ -67,6 +67,7 @@ dt {
 @include dark-mode {
     dt {
         border-top-color: $dark-color-border-light;
+        color: $dark-color-text-heading;
 
         code {
             border-color: $dark-color-info-border;
