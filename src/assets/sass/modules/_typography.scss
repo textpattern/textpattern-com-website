@@ -329,7 +329,9 @@ figcaption,
 tfoot,
 blockquote footer,
 .footnote,
-.footnotes {
+.footnotes,
+.card-header,
+.card-footer {
     font-size: $small-font-size;
     line-height: $line-height-mobile;
 }

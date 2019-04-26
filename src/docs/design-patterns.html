@@ -1142,47 +1142,83 @@
                     <section class="section" id="section-cards">
                         <h2>Cards</h2>
 
-                        <h3>Text-only cards</h3>
+                        <h3>Text-only cards/article tiles</h3>
                         <div class="layout-container">
                             <article class="layout-3col card">
-                                <img class="card-img" src="assets/img/com/480x240.png" alt="Alt text" itemprop="image">
                                 <div class="card-body">
-                                    <h3 class="card-title">Card with default text</h3>
-                                    <p class="card-text">No card header or footer. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                    <p>
-                                        <a href="#" class="card-link">Card link</a>
-                                        <a href="#" class="card-link">Another link</a>
-                                    </p>
+                                    <h3><a href="#">Card with default text</a></h3>
+                                    <p>No card header or footer. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                    <p><a href="#">Card link</a></p>
                                 </div>
 
                             </article>
 
                             <article class="layout-3col card align-center">
-                                <header class="card-header">Header</header>
-                                <img class="card-img" src="assets/img/com/480x240.png" alt="Alt text" itemprop="image">
+                                <header class="card-header">
+                                    <p>Header content</p>
+                                </header>
                                 <div class="card-body">
-                                    <h3 class="card-title">Card with centred text</h3>
-                                    <p class="card-text">Also has a card header and footer. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                                    <p><a href="#" class="btn btn-primary">Go somewhere</a></p>
+                                    <h3><a href="#">Card with centred text</a></h3>
+                                    <p>Also has a card header and footer. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                                    <p><a href="#" class="button">Go somewhere</a></p>
                                 </div>
-                                <footer class="card-footer">Footer</footer>
+                                <footer class="card-footer">
+                                    <p>Footer content</p>
+                                </footer>
                             </article>
 
                             <article class="layout-3col card align-right">
+                                <small class="alert-block alert-pill error">NEW</small>
                                 <div class="card-body">
-                                    <h3 class="card-title">Card with aligned right text</h3>
-                                    <p class="card-text">Also has a card footer. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                    <h3>Card with aligned right text</h3>
+                                    <p>Also has a card footer and alert pill. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                                 </div>
-                                <img class="card-img" src="assets/img/com/480x240.png" alt="Alt text" itemprop="image">
-                                <footer class="card-footer">Footer</footer>
+                                <footer class="card-footer">
+                                    <p>Footer content</p>
+                                </footer>
                             </article>
                         </div>
 
-                        <h3>Text and image cards</h3>
-                        <p>TODO</p>
+                        <h3>Text and image cards/article tiles</h3>
+                        <div class="layout-container">
+                            <article class="layout-3col card">
+                                <small class="alert-block alert-pill success">FEATURED</small>
+                                <img class="card-img" src="https://placehold.it/832x554" alt="Alt text" itemprop="image">
+                                <div class="card-body">
+                                    <h3>Card with default text</h3>
+                                    <p>No card header or footer, also has alert pill. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                </div>
 
-                        <h3>Text and image cards</h3>
-                        <p>TODO</p>
+                            </article>
+
+                            <article class="layout-3col card align-center">
+                                <small class="alert-block alert-pill success">FEATURED</small>
+                                <header class="card-header">
+                                    <p>Header content</p>
+                                </header>
+                                <a href="#" title="Card link" aria-label="Card link"><img class="card-img" src="https://placehold.it/832x554" alt="Alt text" itemprop="image"></a>
+                                <div class="card-body">
+                                    <h3><a href="#">Card with centred text</a></h3>
+                                    <p>Also has a card header, footer and alert pill. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                                    <p><a href="#" class="button button-small">Go somewhere small</a></p>
+                                </div>
+                                <footer class="card-footer">
+                                    <p>Footer content</p>
+                                </footer>
+                            </article>
+
+                            <article class="layout-3col card">
+                                <div class="card-body">
+                                    <h3><a href="#">Card with default text</a></h3>
+                                    <p>Also has a card footer. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                    <p><a href="#">Card link</a></p>
+                                </div>
+                                <a href="#" title="Card link" aria-label="Card link"><img class="card-img" src="https://placehold.it/832x554" alt="Alt text" itemprop="image"></a>
+                                <footer class="card-footer">
+                                    <p>Footer content</p>
+                                </footer>
+                            </article>
+                        </div>
 
                     </section>
 

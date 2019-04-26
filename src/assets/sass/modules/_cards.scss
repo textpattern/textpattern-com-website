@@ -6,8 +6,18 @@
  *
  * Example HTML:
  *
- * <article class="card">
- *     ...
+ * <article class="card align-center">
+ *     <small class="alert-block alert-pill success">FEATURED</small>
+ *     <header class="card-header">
+ *         ... Header content ...
+ *     </header>
+ *     <a><img class="card-img"></a>
+ *     <div class="card-body">
+ *         ... Body content ...
+ *     </div>
+ *     <footer class="card-footer">
+ *         ... Header content ...
+ *     </footer>
  * </article>
  */
 
@@ -16,8 +26,29 @@
     position: relative;
     flex: 1 0 0%;
     flex-direction: column;
+    margin: 1em 0;
     border: 1px solid $color-border-light;
     word-wrap: break-word;
+
+    .alert-pill {
+        position: absolute;
+        top: 0;
+        left: -1px;
+        transform: translateY(-50%);
+        border-radius: ($border-radius / 2) ($border-radius / 2) ($border-radius / 2) 0;
+    }
+}
+
+.card.align-right .alert-pill {
+    right: -1px;
+    left: auto;
+    border-radius: ($border-radius / 2) ($border-radius / 2) 0;
+}
+
+.card.align-center .alert-pill {
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: ($border-radius / 2);
 }
 
 @include dark-mode {
@@ -33,7 +64,7 @@
 
 .card-header,
 .card-footer {
-    padding: 0 1rem;
+    padding: 0.33rem 1rem;
     background: $color-background-box;
 }
 
