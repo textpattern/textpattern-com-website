@@ -494,7 +494,9 @@ main .layout-4col-3span {
  * Showcase section.
  */
 
-.showcase-container h3 {
+.showcase-container h3,
+.showcase-plugins-container > h3,
+.showcase-themes-container > h3 {
     display: none;
 }
 
@@ -562,6 +564,8 @@ main .layout-4col-3span {
     .index-feature h3::before,
     .index-docs h3::before,
     .showcase-container h3,
+    .showcase-plugins-container > h3,
+    .showcase-themes-container > h3,
     .showcase-home-c::before,
     .showcase-home-l::before,
     .showcase-home-r::before,

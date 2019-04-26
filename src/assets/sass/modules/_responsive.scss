@@ -153,18 +153,28 @@
         div:not([class]) {
             width: 66.666%;
         }
+    }
 
+    .showcase-container,
+    .showcase-plugins-container >,
+    .showcase-themes-container > {
         h3 {
             @include hide-text;
             @include hires-graphic(com/index-showcase, png, 132px, 200px);
 
-            display: block;
             position: absolute;
-            top: -76px;
-            right: 2%;
             width: 132px;
             height: 200px;
+            z-index: 2;
         }
+    }
+
+    .showcase-container h3 {
+        @include hires-graphic(com/index-showcase, png, 132px, 200px);
+
+        display: block;
+        top: -76px;
+        right: 2%;
     }
 
     .showcase-landing h3 {
@@ -381,6 +391,21 @@
     /**
      * Showcase images.
      */
+
+    .showcase-plugins-container > h3,
+    .showcase-themes-container > h3 {
+        display: block;
+        top: -142px;
+        right: 2%;
+    }
+
+    .showcase-plugins-container > h3 {
+        @include hires-graphic(com/index-plugins-showcase, png, 132px, 200px);
+    }
+
+    .showcase-themes-container > h3 {
+        @include hires-graphic(com/index-themes-showcase, png, 132px, 200px);
+    }
 
     .showcase-container {
         margin-bottom: 2em;
