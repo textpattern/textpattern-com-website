@@ -88,12 +88,13 @@
                     "headline": "<txp:title escape="json" />",
                     "description": "<txp:meta_description format="" escape="json" />",
                     "url": "<txp:permlink escape="json" />",
+                    "mainEntityOfPage": "<txp:permlink escape="json" />",
+                    "datePublished": "<txp:posted format="iso8601" />",
+                    "dateModified": "<txp:modified format="iso8601" />",
                     "author": {
                         "@type": "Person",
                         "name": "<txp:if_custom_field name="external-author"><txp:custom_field name="external-author" escape="json" /><txp:else /><txp:author escape="json" /></txp:if_custom_field>"
                     },
-                    "datePublished": "<txp:posted format="iso8601" />",
-                    "dateModified": "<txp:modified format="iso8601" />",
                     "publisher": {
                         "@type": "Organization",
                         "name": "Textpattern CMS",
@@ -101,6 +102,10 @@
                             "@type": "ImageObject",
                             "url": "https://textpattern.com/assets/img/branding/textpattern/textpattern.png"
                         }
+                    },
+                    "image": {
+                        "@type": "ImageObject",
+                        "url": "<txp:if_article_image><txp:images limit="1"><txp:image_url escape="json" /></txp:images><txp:else />https://textpattern.com/assets/img/branding/textpattern/textpattern-og.png</txp:if_article_image>"
                     }
                 }]
             }
