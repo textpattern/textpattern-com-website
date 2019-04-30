@@ -9,6 +9,8 @@
         <meta itemprop="name" content="Textpattern CMS">
         <span itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
             <meta itemprop="url contentUrl" content="https://textpattern.com/assets/img/branding/textpattern/textpattern.png">
+            <meta itemprop="width" content="320">
+            <meta itemprop="height" content="60">
         </span>
     </span>
     <meta itemprop="datePublished" content="<txp:posted format="iso8601" />">
