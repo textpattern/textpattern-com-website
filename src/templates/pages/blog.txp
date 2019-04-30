@@ -92,6 +92,8 @@
                         "@type": "Person",
                         "name": "<txp:if_custom_field name="external-author"><txp:custom_field name="external-author" escape="json" /><txp:else /><txp:author escape="json" /></txp:if_custom_field>"
                     },
+                    "datePublished": "<txp:posted format="iso8601" />",
+                    "dateModified": "<txp:modified format="iso8601" />",
                     "publisher": {
                         "@type": "Organization",
                         "name": "Textpattern CMS",
