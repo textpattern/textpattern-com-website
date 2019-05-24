@@ -26,7 +26,7 @@
     "grunt-replace-regex": "1.0.3",
     "grunt-sass": "3.0.2",
     "grunt-sass-lint": "0.2.4",
-    "load-grunt-tasks": "4.0.0",
+    "load-grunt-tasks": "5.0.0",
     "sass-lint": "1.13.1"
   },
   "dependencies": {
