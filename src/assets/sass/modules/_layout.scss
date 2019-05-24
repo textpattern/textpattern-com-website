@@ -369,7 +369,7 @@ main .layout-4col-3span {
 
     h6 {
         margin: 0 0 0.25em;
-        color: rgba($color-text, 0.33);
+        color: $color-text;
         font-weight: normal;
         text-transform: uppercase;
     }
@@ -377,7 +377,7 @@ main .layout-4col-3span {
 
 @include dark-mode {
     .ads-area h6 {
-        color: rgba($dark-color-text, 0.5);
+        color: $dark-color-text;
     }
 }
 
