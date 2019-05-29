@@ -8,11 +8,6 @@
     <loc><txp:section url /></loc>
 </url>
 </txp:section_list>
-<txp:category_list section="weblog" break="">
-<url>
-    <loc><txp:site_url />category/<txp:category />/</loc>
-</url>
-</txp:category_list>
 <txp:article_custom section="weblog" limit="9999">
 <url>
     <loc><txp:permlink /></loc>
