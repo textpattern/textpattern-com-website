@@ -225,7 +225,7 @@ $curl = curl_init();
 
 curl_setopt_array($curl, [
     CURLOPT_RETURNTRANSFER => true,
-    CURLOPT_URL => 'https://forum.textpattern.io/api/?limit=5&sort=posted',
+    CURLOPT_URL => 'https://forum.textpattern.com/api/?limit=5&sort=posted',
     CURLOPT_FAILONERROR => true,
 ]);
 
