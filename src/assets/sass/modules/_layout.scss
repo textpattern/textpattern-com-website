@@ -559,8 +559,7 @@ main .layout-4col-3span {
 }
 
 @include dark-mode {
-    .the-carver,
-    .page-error,
+    .dark-contrast,
     .index-feature h3::before,
     .index-docs h3::before,
     .showcase-container h3,
