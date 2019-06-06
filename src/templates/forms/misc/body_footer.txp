@@ -17,15 +17,18 @@
                         <p><a class="button button-primary" href="https://textpattern.com/about/302/patrons"><span class="ui-icon ui-icon-heart"></span> Donate…</a></p>
                     </section>
                     <section class="layout-2col community-details">
+                        <h4>GitHub repositories</h4>
+                        <ul class="community-links">
+                            <li><a rel="external" href="https://github.com/textpattern">Textpattern on GitHub</a></li>
+                            <li><a rel="external" href="https://github.com/textile">Textile on GitHub</a></li>
+                            <li><a rel="external" href="https://github.com/drmonkeyninja/awesome-textpattern">Textpattern Awesome List</a></li>
+                        </ul>
                         <h4>Community links</h4>
                         <ul class="community-links">
                             <li><a href="https://textpattern.com/showcase/">Textpattern Site Showcase</a></li>
-                            <li><a rel="external" href="https://github.com/textpattern">Textpattern on GitHub</a></li>
-                            <li><a rel="external" href="https://github.com/textile">Textile on GitHub</a></li>
                             <li><a rel="external" href="https://textpattern.tips/">Textpattern Tips</a></li>
-                            <li><a rel="external" href="https://github.com/drmonkeyninja/awesome-textpattern">Awesome Textpattern</a></li>
                             <li><a rel="external" href="https://txpmag.com/">TXP Magazine</a></li>
-                            <li><a rel="external" href="http://textpattern.ru/">Textpattern.ru</a></li>
+                            <li><a rel="external" href="https://textile-lang.com/">Textile Markup Language Documentation</a></li>
                         </ul>
                     </section>
                 </div>
