@@ -5,7 +5,7 @@
   "require": {
     "ezyang/htmlpurifier": "4.10.0",
     "textpattern/lock": "4.7.3",
-    "textpattern/installer": "1.0.8",
+    "textpattern/installer": "1.0.10",
     "bloke/smd_thumbnail": "0.4.0-beta",
     "cara-tm/pat_if_amp": "0.3.7",
     "etc-plugins/etc_cache": "0.2.8",
