@@ -93,6 +93,11 @@ h6,
 .article-description {
     clear: both;
     font-family: $font-serif;
+
+    small {
+        font-family: $font-sans-serif;
+        font-size: 0.75em;
+    }
 }
 
 h1 {
