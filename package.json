@@ -10,7 +10,7 @@
     "url": "https://github.com/textpattern/textpattern-com-website/issues"
   },
   "devDependencies": {
-    "autoprefixer": "9.6.1",
+    "autoprefixer": "9.6.4",
     "css-mqpacker": "7.0.0",
     "cssnano": "4.1.10",
     "grunt": "1.0.4",
