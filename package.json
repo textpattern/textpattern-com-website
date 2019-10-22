@@ -31,7 +31,7 @@
   },
   "dependencies": {
     "createjs": "1.0.1",
-    "lunr": "2.3.7",
+    "lunr": "2.3.8",
     "prismjs": "1.17.1",
     "textpattern-branding": "0.2.11"
   },
