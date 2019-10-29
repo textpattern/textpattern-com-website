@@ -245,7 +245,7 @@ foreach ($json->topic as $topic) {
     echo '<li><a href="'.htmlspecialchars($topic->link).'">'.htmlspecialchars($topic->title).'</a> <small class="block">by '.htmlspecialchars($topic->author->name).' on <time datetime="'.htmlspecialchars($topic->postedutc).'">'.htmlspecialchars($topic->posted).'</time></small></li>';
 }
                                 </txp:php>
-                                <txp:linklist category="paid-links-content" break="li"><a rel="external" href="<txp:link_url />"><txp:link_name /></a> <small>(Ad)</small></txp:linklist>
+                                <txp:linklist category="paid-links-content" break="li"><a rel="external" referrerpolicy="origin" href="<txp:link_url />"><txp:link_name /></a> <small>(Ad)</small></txp:linklist>
                             </txp:etc_cache>
                         </ul>
                         <txp:output_form form="ads_webinformer" />
