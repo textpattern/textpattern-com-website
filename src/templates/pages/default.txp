@@ -72,7 +72,7 @@ global $variable;
 
 $query = <<<'GRAPHQL'
 query {
-  repository(owner:textpattern, name:textpattern) {
+  repository(owner:"textpattern", name:"textpattern") {
     stargazers {
       totalCount
     }
