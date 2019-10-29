@@ -1,5 +1,5 @@
 <txp:evaluate test="image_info">
-    <figure itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
+    <figure itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
         <txp:smd_if_thumbnail type="article-832w">
             <txp:smd_thumbnail type="article-832w">
                 <img width="<txp:evaluate query='ceiling(<txp:image_info type="w" />div2)' />" height="<txp:evaluate query='ceiling(<txp:image_info type="h" />div2)' />" itemprop="url contentUrl" alt="<txp:image_info type="alt" />" src="<txp:smd_thumbnail_info item="url" />" srcset="<txp:image_url /> 2x">
@@ -16,7 +16,7 @@
         </figcaption>
     </figure>
 <txp:else />
-    <p itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
+    <p itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
         <txp:smd_if_thumbnail type="article-832w">
             <txp:smd_thumbnail type="article-832w">
                 <img width="<txp:evaluate query='ceiling(<txp:image_info type="w" />div2)' />" height="<txp:evaluate query='ceiling(<txp:image_info type="h" />div2)' />" itemprop="url contentUrl" alt="<txp:image_info type="alt" />" src="<txp:smd_thumbnail_info item="url" />" srcset="<txp:image_url /> 2x">

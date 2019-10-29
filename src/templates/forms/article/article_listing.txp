@@ -20,7 +20,7 @@
             <txp:excerpt />
         </div>
     </txp:if_excerpt>
-    <span itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
+    <span itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
         <txp:if_article_image>
             <txp:images limit="1">
                 <meta itemprop="url contentUrl" content="<txp:image_url />">

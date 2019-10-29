@@ -23,7 +23,7 @@
   Server: Nginx, Percona Server for MySQL, PHP
   Components:
     Textpattern CMS: https://textpattern.com/
-    Prism: http://prismjs.com/
+    Prism: https://prismjs.com/
   Software:
     Node.js: https://nodejs.org/
     Grunt.js: https://gruntjs.com/
