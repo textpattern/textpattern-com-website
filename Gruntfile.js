@@ -238,6 +238,7 @@ module.exports = function (grunt)
                             'node_modules/prismjs/components/prism-markup-templating.js',
                             'node_modules/prismjs/components/prism-apacheconf.js',
                             'node_modules/prismjs/components/prism-bash.js',
+                            'node_modules/prismjs/components/prism-markdown.js',
                             'node_modules/prismjs/components/prism-nginx.js',
                             'node_modules/prismjs/components/prism-php.js',
                             'node_modules/prismjs/components/prism-scss.js',
