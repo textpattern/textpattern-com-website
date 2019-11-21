@@ -23,6 +23,24 @@ li {
 }
 
 /**
+ * Remove margins from first/last lists within table cells.
+ */
+
+th,
+td {
+    ul,
+    ol {
+        &:first-of-type {
+            margin-top: 0;
+        }
+
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+    }
+}
+
+/**
  * CSS Lists and Counters Module Level 3 list marker styling.
  */
 
