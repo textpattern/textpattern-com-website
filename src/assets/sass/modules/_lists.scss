@@ -142,7 +142,7 @@ dd {
     list-style: none;
 }
 
-.list--tree {
+.list--tree:not(.flat) {
     ol,
     ul {
         position: relative;
@@ -175,7 +175,9 @@ dd {
     > li::after {
         display: none;
     }
+}
 
+.list--tree {
     .directory::before,
     .directory--open::before,
     .document::before {
