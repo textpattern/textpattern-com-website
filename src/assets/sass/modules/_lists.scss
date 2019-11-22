@@ -136,6 +136,13 @@ dd {
  * <ol class="list--tree">
  */
 
+.list--tree {
+    font-family: $font-code;
+    font-size: $code-font-size;
+    line-height: $line-height-mobile;
+    font-feature-settings: normal; /* 1 */
+}
+
 .list--tree,
 .list--tree ol,
 .list--tree ul {

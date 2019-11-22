@@ -246,8 +246,7 @@ var {
 pre,
 code,
 kbd,
-samp,
-.list--tree {
+samp {
     border: 1px solid $color-border-extra-light;
     border-radius: 0.2857143em; // 4px / 14px
     background-color: $color-background-box;
@@ -262,8 +261,7 @@ samp,
     pre,
     code,
     kbd,
-    samp,
-    .list--tree {
+    samp {
         border-color: $dark-color-border-extra-light;
         background-color: $dark-color-background-box;
         color: $dark-color-text;
@@ -284,8 +282,7 @@ samp {
  * 3. Set tab size to 4 spaces.
  */
 
-pre,
-.list--tree {
+pre {
     padding: 0.5714286em 1.1428571em; // 8px / 14px + 16px / 14px
     word-wrap: normal; /* 1 */
     overflow-x: auto; /* 2 */
