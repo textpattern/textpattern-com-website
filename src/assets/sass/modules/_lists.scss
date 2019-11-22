@@ -126,6 +126,55 @@ dd {
 }
 
 /**
+ * Have a 'file-tree'-style list (without any semantics implied).
+ *
+ * 1. Don't use ligatures on monospace font.
+ *
+ * Example HTML:
+ *
+ * <ul class="list--tree">
+ * <ol class="list--tree">
+ */
+
+.list--tree,
+.list--tree ol,
+.list--tree ul {
+    list-style: none;
+}
+
+.list--tree {
+    .directory::before,
+    .document::before {
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        margin-bottom: -2px;
+        padding-right: 0.5em;
+        background-repeat: no-repeat;
+        background-size: 16px 16px;
+        text-indent: -9999px;
+        content: "";
+        overflow: hidden;
+        vertical-align: baseline;
+    }
+
+    .directory::before {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cg fill='%23333'%3E%3Cpath d='M14 2h-1V1h-3L9 2H1v12h13V2zM2 3h11v10H2V3z'/%3E%3Cpath d='M2 4h11v1H2z'/%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    .document::before {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cg fill='%23333'%3E%3Cpath d='m10 15h-7v-14h10v11zm2-3v-10h-8v12h6z'/%3E%3Cpath d='m10 12v2h-1v-3h3v1z'/%3E%3C/g%3E%3C/svg%3E");
+    }
+}
+
+@include dark-mode {
+    .list--tree .directory::before,
+    .list--tree .document::before {
+        filter: brightness(3) sepia(1) hue-rotate(168deg) saturate(33%);
+    }
+}
+
+/**
  * Have a compact definition list.
  *
  * Example HTML:
