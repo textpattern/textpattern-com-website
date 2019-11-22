@@ -143,7 +143,41 @@ dd {
 }
 
 .list--tree {
+    ol,
+    ul {
+        position: relative;
+
+        &::after {
+            position: absolute;
+            bottom: 0.75em;
+            left: 0.5em;
+            height: 100%;
+            border-left: 1px solid $color-border-extra-dark;
+            content: "";
+        }
+    }
+
+    li {
+        position: relative;
+
+        &::after {
+            position: absolute;
+            top: 0;
+            left: -1.25em;
+            width: 0.75em;
+            height: 0.75em;
+            border-bottom: 1px solid $color-border-extra-dark;
+            border-left: 1px solid $color-border-extra-dark;
+            content: "";
+        }
+    }
+
+    > li::after {
+        display: none;
+    }
+
     .directory::before,
+    .directory--open::before,
     .document::before {
         display: inline-block;
         width: 16px;
@@ -162,15 +196,31 @@ dd {
         background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cg fill='%23333'%3E%3Cpath d='M14 2h-1V1h-3L9 2H1v12h13V2zM2 3h11v10H2V3z'/%3E%3Cpath d='M2 4h11v1H2z'/%3E%3C/g%3E%3C/svg%3E");
     }
 
+    .directory--open::before {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='%23333' d='M13 5V2h-1V1H9L8 2H0v12h13.5L16 5h-3zM1 3h11v2H3l-2 7V3zm11.5 10H2l2-7h10.5l-2 7z'/%3E%3C/svg%3E");
+    }
+
     .document::before {
         background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cg fill='%23333'%3E%3Cpath d='m10 15h-7v-14h10v11zm2-3v-10h-8v12h6z'/%3E%3Cpath d='m10 12v2h-1v-3h3v1z'/%3E%3C/g%3E%3C/svg%3E");
     }
 }
 
 @include dark-mode {
-    .list--tree .directory::before,
-    .list--tree .document::before {
-        filter: brightness(3) sepia(1) hue-rotate(168deg) saturate(33%);
+    .list--tree {
+        ol::after,
+        ul::after {
+            border-color: $dark-color-border;
+        }
+
+        li::after {
+            border-color:  $dark-color-border;
+        }
+
+        .directory::before,
+        .directory--open::before,
+        .document::before {
+            filter: brightness(3) sepia(1) hue-rotate(168deg) saturate(33%);
+        }
     }
 }
 
