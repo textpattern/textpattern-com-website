@@ -9,6 +9,7 @@
     // Load objects as variables.
 
     var code = document.querySelectorAll('pre code'),
+        endnote = document.querySelector('.footnotes'),
         navmenu = document.getElementById('site-navigation');
 
     // Syntax highlighting, via 'Prism'.
@@ -24,6 +25,12 @@
         });
 
         Prism.highlightAll();
+    }
+
+    // Inject a heading into endnotes regions.
+
+    if (endnote) {
+        endnote.insertAdjacentHTML('afterbegin', '<h4>Endnotes</h4>');
     }
 
     // Responsive navigation menu.
