@@ -570,6 +570,12 @@
                             <p>Here is an example of a block quote. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
                         </blockquote>
 
+                        <h3>Examples (no semantics implied)</h3>
+                        <p><strong>Code:</strong></p>
+                        <p><code class="language-markup">&lt;p class="example"&gt;</code></p>
+                        <p><strong>Example:</strong></p>
+                        <p class="example">An example paragraph for demonstration purposes. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
                         <h3>Thematic break (hr tag)</h3>
                         <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Etiam sit amet elit vitae arcu interdum ullamcorper.</p>
                         <hr>
@@ -818,6 +824,28 @@
                                 </ul>
                             </div>
                             <div class="layout-2col">
+                                <h3>Files</h3>
+                                <p><strong>Code:</strong></p>
+                                <p><code class="language-markup">&lt;ul class="list--files"&gt;</code></p>
+                                <p><strong>Example:</strong></p>
+                                <ul class="list--files">
+                                    <li class="directory--open">parent_directory
+                                        <ul>
+                                            <li class="directory">child_directory1</li>
+                                            <li>...</li>
+                                            <li class="directory--open">child_directory4
+                                                <ul>
+                                                    <li class="document">file1.ext</li>
+                                                    <li class="document">file2.ext</li>
+                                                    <li class="image">image1.png</li>
+                                                </ul>
+                                            </li>
+                                            <li>...</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="layout-2col">
                                 <h3>Description</h3>
                                 <p><strong>Code:</strong></p>
                                 <p><code class="language-markup">&lt;dl&gt;</code></p>
@@ -835,6 +863,7 @@
                                 </dl>
                             </div>
                         </div>
+
                     </section>
 
 
