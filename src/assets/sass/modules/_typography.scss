@@ -211,23 +211,23 @@ blockquote {
  * Additional styling for examples (similar to blockquotes but no applied semantics).
  */
 
-.example,
-.list--example {
+.example {
+    padding: 1px 0 1px 1.5rem;
     border-left: 0.25rem solid $color-info-border;
     color: $color-text-visual-de-emphasis;
 }
 
-.example {
-    padding: 1px 0 1px 1.5rem;
-}
-
-.list--example {
+ol.example,
+ul.example {
     padding: 1px 0 1px 3.25em;
 }
 
+ul.example {
+    list-style: circle;
+}
+
 @include dark-mode {
-    .example,
-    .list--example {
+    .example {
         border-left-color: $dark-color-info-border;
         color: $dark-color-text-visual-de-emphasis;
     }
