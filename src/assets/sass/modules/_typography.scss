@@ -189,6 +189,15 @@ address {
 }
 
 /**
+ * Oxford English quote behaviour (quotes: ‘ ’, quotes within quotes: “ ”).
+ */
+
+q,
+blockquote {
+    quotes: "\2018" "\2019" "\201C" "\201D";
+}
+
+/**
  * Additional styling for blockquotes.
  */
 
