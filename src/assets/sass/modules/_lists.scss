@@ -136,13 +136,13 @@ dd {
  * <ol class="list--tree">
  */
 
-.list--tree,
-.list--tree ol,
-.list--tree ul {
+.list--files,
+.list--files ol,
+.list--files ul {
     list-style: none;
 }
 
-.list--tree {
+.list--files {
     font-family: $font-code;
     font-size: $code-font-size;
     line-height: $line-height-mobile;
@@ -184,7 +184,7 @@ dd {
 
 // Icons - also see icons Sass module.
 
-.list--tree {
+.list--files {
     .directory::before,
     .directory--open::before,
     .document::before,
@@ -204,7 +204,7 @@ dd {
 }
 
 @include dark-mode {
-    .list--tree {
+    .list--files {
         ol::after,
         ul::after {
             border-color: $dark-color-border;

@@ -208,6 +208,32 @@ blockquote {
 }
 
 /**
+ * Additional styling for examples (similar to blockquotes but no applied semantics).
+ */
+
+.example,
+.list--example {
+    border-left: 0.25rem solid $color-info-border;
+    color: $color-text-visual-de-emphasis;
+}
+
+.example {
+    padding: 1px 0 1px 1.5rem;
+}
+
+.list--example {
+    padding: 1px 0 1px 3.25em;
+}
+
+@include dark-mode {
+    .example,
+    .list--example {
+        border-left-color: $dark-color-info-border;
+        color: $dark-color-text-visual-de-emphasis;
+    }
+}
+
+/**
  * 1. Remove the bottom border in Chrome 57+.
  * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
  */
@@ -377,12 +403,12 @@ hr {
 
 .separator {
     margin: 0 0.25em;
-    color: $color-text-footnote;
+    color: $color-text-visual-de-emphasis;
 }
 
 @include dark-mode {
     .separator {
-        color: $dark-color-text-footnote;
+        color: $dark-color-text-visual-de-emphasis;
     }
 }
 

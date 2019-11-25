@@ -174,10 +174,10 @@ pre.line-numbers > code {
     }
 
     .line-numbers .line-numbers-rows {
-        border-right-color: $dark-color-text-footnote;
+        border-right-color: $dark-color-text-visual-de-emphasis;
     }
 
     .line-numbers-rows > span::before {
-        color: $dark-color-text-footnote;
+        color: $dark-color-text-visual-de-emphasis;
     }
 }

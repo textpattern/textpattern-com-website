@@ -126,19 +126,19 @@
 //.ui-icon-transferthick-e-w { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='%23333' d='M0 11l5 5v-3h4V9H5V6zM16 5l-5-5v3H7v4h4v3z'/%3E%3C/svg%3E"); }
 
 .ui-icon-folder-collapsed,
-.list--tree .directory::before {
+.list--files .directory::before {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cg fill='%23333'%3E%3Cpath d='M14 2h-1V1h-3L9 2H1v12h13V2zM2 3h11v10H2V3z'/%3E%3Cpath d='M2 4h11v1H2z'/%3E%3C/g%3E%3C/svg%3E");
 }
 
 .ui-icon-folder-open,
-.list--tree .directory--open::before {
+.list--files .directory--open::before {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='%23333' d='M13 5V2h-1V1H9L8 2H0v12h13.5L16 5h-3zM1 3h11v2H3l-2 7V3zm11.5 10H2l2-7h10.5l-2 7z'/%3E%3C/svg%3E");
 }
 
 //.ui-icon-document { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cg fill='%23333'%3E%3Cpath d='M13 4v11H3V1h7l3 3zm-3-2H4v12h8V4l-2-2z'/%3E%3Cpath d='M10 4V2H9v3h3V4zM5 12h6v1H5zM5 10h6v1H5zM5 8h6v1H5zM5 6h6v1H5z'/%3E%3C/g%3E%3C/svg%3E"); }
 
 .ui-icon-document-b,
-.list--tree .document::before {
+.list--files .document::before {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cg fill='%23333'%3E%3Cpath d='m10 15h-7v-14h10v11zm2-3v-10h-8v12h6z'/%3E%3Cpath d='m10 12v2h-1v-3h3v1z'/%3E%3C/g%3E%3C/svg%3E");
 }
 
@@ -187,7 +187,7 @@
 //.ui-icon-contact { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='%23333' d='M9 12v-.399A3.114 3.114 0 0 1 7.5 12C5.566 12 4 10.209 4 8s1.566-4 3.5-4c.539 0 1.044.15 1.5.399V4h2v7h2.177A5.933 5.933 0 0 0 14 8a6 6 0 1 0-6 6 5.961 5.961 0 0 0 3-.81v1.127A6.962 6.962 0 0 1 8 15a7 7 0 1 1 7-7 6.965 6.965 0 0 1-1.26 4H9zm0-5.723A1.987 1.987 0 0 0 8 6a2 2 0 0 0 0 4c.366 0 .705-.106 1-.277V6.277z'/%3E%3C/svg%3E"); }
 
 .ui-icon-image,
-.list--tree .image::before {
+.list--files .image::before {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cg fill='%23333'%3E%3Cpath d='M0 14V2h16v12H0zM15 3H1v10h14V3z'/%3E%3Cpath d='M2 12l3-3 1 1 4-4 4 4v2z'/%3E%3Ccircle cx='4' cy='6' r='2'/%3E%3C/g%3E%3C/svg%3E");
 }
 

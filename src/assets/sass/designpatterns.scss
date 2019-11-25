@@ -61,7 +61,7 @@ main {
 
 $colors: (
     "text":                 $color-text,
-    "text-footnote":        $color-text-footnote,
+    "text-visual-de-emphasis":        $color-text-visual-de-emphasis,
     "gradient-from":        $color-gradient-from,
     "gradient-to":          $color-gradient-to,
     "border-extra-dark":    $color-border-extra-dark,
@@ -91,7 +91,7 @@ $colors: (
 
 $dark-colors: (
     "text":                 $dark-color-text,
-    "text-footnote":        $dark-color-text-footnote,
+    "text-visual-de-emphasis":        $dark-color-text-visual-de-emphasis,
     "gradient-from":        $dark-color-gradient-from,
     "gradient-to":          $dark-color-gradient-to,
     "border-extra-dark":    $dark-color-border-extra-dark,
