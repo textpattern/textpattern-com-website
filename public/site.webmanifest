@@ -1,7 +1,7 @@
 {
   "short_name": "Textpattern.com",
   "name": "Textpattern CMS Homepage",
-  "start_url": "./?utm_source=web_app_manifest",
+  "start_url": "https://textpattern.com",
   "icons": [
     {
       "src": "/favicon-192x192.png",
