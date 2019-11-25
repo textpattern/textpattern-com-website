@@ -343,8 +343,7 @@ pre {
  */
 
 sub,
-// override Textile class
-sup.footnote,
+sup.footnote, // override Textile class
 sup {
     position: relative;
     font-size: 0.75em; // 12px / 16px
