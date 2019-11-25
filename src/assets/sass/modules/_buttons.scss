@@ -22,9 +22,9 @@ button::-moz-focus-inner,
 }
 
 /**
- * 1. Improve usability and consistency of cursor style between image-type
+ * 1. Remove browser-specific default styling.
+ * 2. Improve usability and consistency of cursor style between image-type
  *    `input` and others.
- * 2. Remove browser-specific default styling.
  */
 
 button,
@@ -42,12 +42,12 @@ button,
     border: 1px solid $color-button-border;
     border-radius: 1em;
     background-clip: padding-box;
+    box-shadow: 0 2px 0 $color-button-shadow;
     color: $color-text-button;
     font-weight: normal;
     text-align: center;
-    box-shadow: 0 2px 0 $color-button-shadow;
-    cursor: pointer; /* 1 */
-    appearance: none; /* 2 */
+    appearance: none; /* 1 */
+    cursor: pointer; /* 2 */
     user-select: none;
 
     &:hover {
@@ -61,9 +61,9 @@ button,
     &:active {
         top: 2px;
         border-color: shade($color-button-border, 15%);
+        box-shadow: none;
         color: $color-text-button-active;
         text-decoration: none;
-        box-shadow: none;
     }
 
     &:focus {
@@ -84,8 +84,8 @@ button,
     @include gradient-linear($color-button-primary-gradient-from, $color-button-primary-gradient-to);
 
     border-color: $color-button-primary-border;
-    font-weight: bolder;
     box-shadow: 0 2px 0 $color-button-primary-shadow;
+    font-weight: bolder;
 
     &:hover {
         @include gradient-linear(lighten($color-button-primary-gradient-from, 6%), lighten($color-button-primary-gradient-to, 6%));

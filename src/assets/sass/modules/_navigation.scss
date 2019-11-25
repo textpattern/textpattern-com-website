@@ -17,10 +17,10 @@
     .js & {
         display: block;
         max-height: 0;
-        transition: max-height 0.33s ease-in-out;
         overflow: hidden;
         clip: rect(0 0 0 0); // TODO: Deprecated - use `clip-path` when browser support is better.
         //clip-path: inset(50%); // TODO: Currently causes severe performance issues in Chrome.
+        transition: max-height 0.33s ease-in-out;
     }
 
     ul {
@@ -62,7 +62,7 @@
         }
     }
 
-    li.active a {
+    .active a {
         background-color: $color-selected;
 
         &:hover,
@@ -113,7 +113,7 @@
             }
         }
 
-        li.active a {
+        .active a {
             background-color: $dark-color-selecting;
 
             &:hover,
@@ -142,6 +142,7 @@
     @include hide-text;
 
     position: absolute;
+    z-index: 2;
     top: 1em;
     right: 5%;
     width: 32px;
@@ -150,7 +151,6 @@
     border: 1px solid $color-background;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath fill='%23333' d='M4 6h24v4H4zm0 8h24v4H4zm0 8h24v4H4z'/%3E%3C/svg%3E");
     background-size: 32px 32px;
-    z-index: 2;
     user-select: none;
     -webkit-touch-callout: none; /* 1 */
 

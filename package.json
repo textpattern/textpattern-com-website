@@ -23,10 +23,12 @@
     "grunt-postcss": "0.9.0",
     "grunt-replace-regex": "1.0.3",
     "grunt-sass": "3.1.0",
-    "grunt-sass-lint": "0.2.4",
+    "grunt-stylelint": "0.11.0",
     "load-grunt-tasks": "5.1.0",
     "sass": "1.23.7",
-    "sass-lint": "1.13.1"
+    "stylelint": "12.0.0",
+    "stylelint-order": "3.1.1",
+    "stylelint-scss": "3.13.0"
   },
   "dependencies": {
     "createjs": "1.0.1",

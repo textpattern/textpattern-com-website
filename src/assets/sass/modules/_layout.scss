@@ -180,11 +180,12 @@ noscript {
 
 .search-form {
     position: absolute;
+    z-index: 3;
     top: 0;
     right: 48px;
-    z-index: 3;
 
     // search input field
+
     input[type="search"] {
         width: 34px;
         height: 34px;
@@ -419,11 +420,11 @@ main .layout-4col-3span {
 .index-feature h3::before,
 .index-docs h3::before,
 .index-plugins h3::before {
+    content: "";
     display: block;
     width: 200px;
     height: 200px;
     margin-bottom: 1em;
-    content: "";
 }
 
 .index-feature h3::before {
@@ -547,10 +548,10 @@ main .layout-4col-3span {
     }
 
     &::before {
+        content: "";
         display: block;
         height: 20px;
         background-size: 100% 20px;
-        content: "";
     }
 
     .showcase-landing & {
@@ -657,8 +658,10 @@ main .layout-4col-3span {
 }
 
 .count-bubble::after {
+    content: "";
     display: block;
     position: absolute;
+    z-index: 1;
     top: 50%;
     left: -8px;
     width: 0;
@@ -666,13 +669,13 @@ main .layout-4col-3span {
     border-width: 8px 8px 8px 0;
     border-style: solid;
     border-color: transparent $color-background;
-    content: "";
-    z-index: 1;
 }
 
 .count-bubble::before {
+    content: "";
     display: block;
     position: absolute;
+    z-index: 0;
     top: 50%;
     left: -9px;
     width: 0;
@@ -680,8 +683,6 @@ main .layout-4col-3span {
     border-width: 8px 8px 8px 0;
     border-style: solid;
     border-color: transparent $color-button-border;
-    content: "";
-    z-index: 0;
 }
 
 @include dark-mode {

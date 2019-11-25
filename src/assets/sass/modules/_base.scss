@@ -37,9 +37,9 @@ nav ul,
 nav ol,
 .clearfix {
     &::after {
+        content: "";
         display: table;
         clear: both;
-        content: "";
     }
 }
 

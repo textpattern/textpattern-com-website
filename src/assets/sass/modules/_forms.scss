@@ -28,10 +28,10 @@ fieldset {
 
 legend {
     display: table; /* 1 */
+    box-sizing: border-box; /* 1 */
     max-width: 100%; /* 1 */
     padding: 0; /* 2 */
     white-space: normal; /* 1 */
-    box-sizing: border-box; /* 1 */
 }
 
 /**
@@ -75,6 +75,7 @@ select,
 optgroup,
 textarea,
 .button {
+    box-sizing: border-box;
     max-width: 100%; /* 1 */
     margin: 0; /* 2 */
     color: $color-text-form;
@@ -82,7 +83,6 @@ textarea,
     font-size: 1rem; /* 3 */
     line-height: 1.375; // 22px / 16px
     vertical-align: baseline;
-    box-sizing: border-box;
 }
 
 @include dark-mode {
@@ -172,13 +172,13 @@ textarea {
 [type="radio"] {
     position: relative;
     bottom: -2px;
+    box-sizing: border-box;
     width: 16px;
     height: 16px;
     padding: 0; /* 1 */
     border: 1px solid $color-border-extra-dark;
     background: $color-background-form;
     appearance: none;
-    box-sizing: border-box;
 
     + label:not(.ui-controlgroup-item) {
         margin: 0 0.5em 0 0; /* 2 */
@@ -398,10 +398,10 @@ textarea {
 [disabled] optgroup,
 span.disabled {
     border: 1px solid $color-border !important;
+    opacity: 0.33 !important;
     background-color: $color-background-form-disabled !important;
     box-shadow: none !important;
     cursor: default !important; /* 1 */
-    opacity: 0.33 !important;
 }
 
 @include dark-mode {
@@ -411,8 +411,8 @@ span.disabled {
     span.disabled,
     .ui-checkboxradio-disabled {
         border: 1px solid $dark-color-border !important;
-        background-color: $dark-color-background-form-disabled !important;
         opacity: 0.25 !important;
+        background-color: $dark-color-background-form-disabled !important;
     }
 }
 
@@ -498,9 +498,9 @@ textarea {
  */
 
 ::placeholder {
+    opacity: 1;
     color: $color-text-form-placeholder;
     font: inherit; /* 1 */
-    opacity: 1;
 }
 
 @include dark-mode {

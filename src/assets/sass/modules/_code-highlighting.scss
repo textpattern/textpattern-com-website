@@ -3,13 +3,13 @@
 
 code[class*="language-"],
 pre[class*="language-"] {
-    text-align: left;
-    white-space: pre;
-    word-spacing: normal;
-    word-break: normal;
-    word-wrap: normal;
     direction: ltr;
     hyphens: none;
+    text-align: left;
+    word-wrap: normal;
+    word-break: normal;
+    word-spacing: normal;
+    white-space: pre;
 }
 
 /**
@@ -123,16 +123,16 @@ pre.line-numbers > code {
 
 .line-numbers-rows > span {
     display: block;
-    pointer-events: none;
     counter-increment: linenumber;
+    pointer-events: none;
 }
 
 .line-numbers-rows > span::before {
+    content: counter(linenumber);
     display: block;
     padding-right: 0.8em;
     color: #999999;
     text-align: right;
-    content: counter(linenumber);
 }
 
 @include dark-mode {

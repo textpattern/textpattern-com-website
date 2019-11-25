@@ -215,12 +215,12 @@ module.exports = function (grunt)
             }
         },
 
-        // Validate Sass files via sass-lint.
-        sasslint: {
+        // Validate CSS files via stylelint.
+        stylelint: {
             options: {
-                configFile: '.sass-lint.yml'
+                configFile: '.stylelintrc.yml'
             },
-            target: ['<%= paths.src.sass %>**/*.scss']
+            src: ['<%= paths.src.sass %>**/*.{css,scss}']
         },
 
         // Uglify and copy JavaScript files from `node_modules` and from `src/js/` to `public/assets/js/`.
@@ -280,7 +280,7 @@ module.exports = function (grunt)
 
     // Register tasks.
     grunt.registerTask('build', ['clean', 'concurrent', 'replace', 'uglify']);
-    grunt.registerTask('css', ['sasslint', 'sass', 'postcss']);
+    grunt.registerTask('css', ['stylelint', 'sass', 'postcss']);
     grunt.registerTask('default', ['watch']);
     grunt.registerTask('travis', ['build']);
 };

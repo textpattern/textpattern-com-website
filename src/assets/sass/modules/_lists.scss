@@ -144,21 +144,21 @@ dd {
 
 .list--files {
     font-family: $font-code;
+    font-feature-settings: normal; /* 1 */
     font-size: $code-font-size;
     line-height: $line-height-mobile;
-    font-feature-settings: normal; /* 1 */
 
     ol,
     ul {
         position: relative;
 
         &::after {
+            content: "";
             position: absolute;
             bottom: 0.75em;
             left: 0.5em;
             height: 100%;
             border-left: 1px solid $color-border-extra-dark;
-            content: "";
         }
     }
 
@@ -166,6 +166,7 @@ dd {
         position: relative;
 
         &::after {
+            content: "";
             position: absolute;
             top: 0;
             left: -1.25em;
@@ -173,7 +174,6 @@ dd {
             height: 0.75em;
             border-bottom: 1px solid $color-border-extra-dark;
             border-left: 1px solid $color-border-extra-dark;
-            content: "";
         }
     }
 
@@ -189,17 +189,17 @@ dd {
     .directory--open::before,
     .document::before,
     .image::before {
+        content: "";
         display: inline-block;
         width: 16px;
         height: 16px;
         margin-bottom: -2px;
         padding-right: 0.5em;
+        overflow: hidden;
         background-repeat: no-repeat;
         background-size: 16px 16px;
-        text-indent: -9999px;
-        content: "";
-        overflow: hidden;
         vertical-align: baseline;
+        text-indent: -9999px;
     }
 }
 
@@ -211,7 +211,7 @@ dd {
         }
 
         li::after {
-            border-color:  $dark-color-border;
+            border-color: $dark-color-border;
         }
 
         .directory::before,
@@ -262,26 +262,26 @@ dd {
     list-style: none;
 
     li:nth-of-type(1)::before {
-        content: "\002a\0020"; // asterisk
+        content: "\002a" "\00A0"; // asterisk
     }
 
     li:nth-of-type(2)::before {
-        content: "\2020\0020"; // dagger
+        content: "\2020" "\00A0"; // dagger
     }
 
     li:nth-of-type(3)::before {
-        content: "\2021\0020"; // double dagger
+        content: "\2021" "\00A0"; // double dagger
     }
 
     li:nth-of-type(4)::before {
-        content: "\00a7\0020"; // section
+        content: "\00a7" "\00A0"; // section
     }
 
     li:nth-of-type(5)::before {
-        content: "\00b6\0020"; // pilcrow
+        content: "\00b6" "\00A0"; // pilcrow
     }
 
     li:nth-of-type(6)::before {
-        content: "\2016\0020"; // parallel bars
+        content: "\2016" "\00A0"; // parallel bars
     }
 }

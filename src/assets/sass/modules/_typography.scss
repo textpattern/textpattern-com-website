@@ -46,7 +46,7 @@ fieldset,
 figcaption,
 figure,
 footer,
-for,
+form,
 h1,
 h2,
 h3,
@@ -278,9 +278,9 @@ samp {
     background-color: $color-background-box;
     color: $color-text;
     font-family: $font-code;
+    font-feature-settings: normal; /* 1 */
     font-size: $code-font-size;
     line-height: $line-height-mobile;
-    font-feature-settings: normal; /* 1 */
 }
 
 @include dark-mode {
@@ -303,29 +303,29 @@ samp {
 /**
  * Additional stylng for preformatted text/code.
  *
- * 1. Don't wrap long words.
- * 2. Contain overflow in all browsers.
+ * 1. Contain overflow in all browsers.
+ * 2. Don't wrap long words.
  * 3. Set tab size to 4 spaces.
  */
 
 pre {
     padding: 0.5714286em 1.1428571em; // 8px / 14px + 16px / 14px
-    word-wrap: normal; /* 1 */
-    overflow-x: auto; /* 2 */
+    overflow-x: auto; /* 1 */
+    word-wrap: normal; /* 2 */
     tab-size: 4; /* 3 */
 
     code {
         padding: 0;
         border: 0;
         background-color: transparent;
-        font-size: 1em; // 14px
-        text-align: left;
-        white-space: pre;
-        word-spacing: normal;
-        word-break: normal;
-        word-wrap: normal;
         direction: ltr;
+        font-size: 1em; // 14px
         hyphens: none;
+        text-align: left;
+        word-wrap: normal;
+        word-break: normal;
+        word-spacing: normal;
+        white-space: pre;
     }
 }
 
@@ -372,17 +372,17 @@ figcaption {
 }
 
 /**
- * 1. Show the overflow in Edge and IE.
- * 2. Add the correct box sizing in Firefox.
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
  */
 
 hr {
+    box-sizing: content-box; /* 1 */
     height: 24px;
+    overflow: visible; /* 2 */
     border: 0; // remove the default `hr` border
     background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 24'%3E%3Cpath fill='%23333' d='M0,0c1.742,13.61,54.74,20.912,119.995,15.279C184.922,9.679,238.594,13.024,240,24c-1.744-13.613-54.742-20.913-120.005-15.284C55.078,14.32,1.405,10.973,0,0z'/%3E%3C/svg%3E") 50% 50% no-repeat;
     background-size: 240px 24px;
-    overflow: visible; /* 1 */
-    box-sizing: content-box; /* 2 */
 }
 
 @include dark-mode {
@@ -424,14 +424,14 @@ hr {
  */
 
 .ellipsis {
-    text-overflow: ellipsis;
     overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 ul,
 ol {
     &.ellipsis li {
-        text-overflow: inherit;
         overflow: inherit;
+        text-overflow: inherit;
     }
 }

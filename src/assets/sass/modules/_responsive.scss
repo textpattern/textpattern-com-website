@@ -23,15 +23,15 @@
     .layout-container {
         display: flex; // Flexbox fallback for browsers without CSS Grid support.
         display: grid;
+        gap: 0 2em;
+        grid-template-columns: repeat(12, 1fr);
         flex-wrap: wrap; // Flexbox fallback for browsers without CSS Grid support.
         margin: 0 -1em; // Flexbox fallback for browsers without CSS Grid support.
-        grid-template-columns: repeat(12, 1fr);
-        grid-gap: 0 2em;
 
         > * {
+            box-sizing: border-box; // Flexbox fallback.
             min-width: 0; // Fix Firefox `pre` overflow issues.
             padding: 0 1em; // Flexbox fallback.
-            box-sizing: border-box; // Flexbox fallback.
         }
     }
 
@@ -59,8 +59,8 @@
     .layout-4col,
     .layout-4col-2span,
     .layout-4col-3span {
-        width: 100%; // Flexbox fallback.
         grid-column: span 12;
+        width: 100%; // Flexbox fallback.
     }
 
     /**
@@ -68,8 +68,8 @@
      */
 
     .layout-4col:not(.sidebar) {
-        width: 50%; // Flexbox fallback.
         grid-column: span 6;
+        width: 50%; // Flexbox fallback.
     }
 
     // Override Flexbox fallback for browsers with CSS Grid support.
@@ -98,8 +98,8 @@
     .layout-text2col,
     .layout-text3col,
     .layout-text4col {
-        column-gap: 2em;
         column-count: 2;
+        column-gap: 2em;
 
         :first-child {
             margin-top: 0;
@@ -129,9 +129,9 @@
 
     #animation-overlay {
         position: absolute;
+        z-index: 2;
         top: 1em;
         width: 100%;
-        z-index: 2;
     }
 
     /**
@@ -163,9 +163,9 @@
             @include hires-graphic(com/index-showcase, png, 132px, 200px);
 
             position: absolute;
+            z-index: 2;
             width: 132px;
             height: 200px;
-            z-index: 2;
         }
     }
 
@@ -186,9 +186,9 @@
      */
 
     .showcase-home-c {
+        z-index: 3;
         max-width: 360px;
         margin: 0 auto;
-        z-index: 3;
 
         &::before {
             background-image: url("data:image/png;base64,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");
@@ -197,7 +197,7 @@
         img {
             box-shadow: 0 0.33em 0.8em rgba(0, 0, 0, 0.33);
         }
-     }
+    }
 
     .showcase-home-l,
     .showcase-home-r {
@@ -207,15 +207,14 @@
     }
 
     .showcase-home-l {
-        left: 0;
         z-index: 2;
+        left: 0;
     }
 
     .showcase-home-r {
-        right: 0;
         z-index: 1;
+        right: 0;
     }
-
 }
 
 
@@ -235,18 +234,18 @@
      */
 
     .layout-2col {
-        width: 50%; // Flexbox fallback.
         grid-column: span 6;
+        width: 50%; // Flexbox fallback.
     }
 
     .layout-3col {
-        width: 33.333%; // Flexbox fallback.
         grid-column: span 4;
+        width: 33.333%; // Flexbox fallback.
     }
 
     .layout-3col-2span {
-        width: 66.666%; // Flexbox fallback.
         grid-column: span 8;
+        width: 66.666%; // Flexbox fallback.
     }
 
     // Override Flexbox fallback for browsers with CSS Grid support.
@@ -413,7 +412,7 @@
 
     .showcase-home-c {
         max-width: 450px;
-     }
+    }
 
     .showcase-home-l,
     .showcase-home-r {
@@ -433,7 +432,6 @@
             margin: 0.5em 1em;
         }
     }
-
 }
 
 @media screen and (max-width: $breakpoint-2) {
@@ -474,7 +472,6 @@
             }
         }
     }
-
 }
 
 
@@ -515,18 +512,18 @@
 
     .layout-4col,
     .layout-4col:not(.sidebar) {
-        width: 25%; // Flexbox fallback.
         grid-column: span 3;
+        width: 25%; // Flexbox fallback.
     }
 
     .layout-4col-2span {
-        width: 50%; // Flexbox fallback.
         grid-column: span 6;
+        width: 50%; // Flexbox fallback.
     }
 
     .layout-4col-3span {
-        width: 73%; // Flexbox fallback.
         grid-column: span 9;
+        width: 73%; // Flexbox fallback.
     }
 
     // Override Flexbox fallback for browsers with CSS Grid support.
@@ -586,7 +583,6 @@
             margin: 0.5em 1.25em;
         }
     }
-
 }
 
 @media screen and (max-width: $breakpoint-3) {
@@ -596,13 +592,12 @@
      */
 
     .separator {
-        margin: 0;
         visibility: hidden;
+        margin: 0;
 
         &::after {
-            white-space: pre;
             content: "\a";
+            white-space: pre;
         }
     }
-
 }

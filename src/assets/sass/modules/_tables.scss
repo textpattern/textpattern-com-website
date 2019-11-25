@@ -22,8 +22,8 @@
 
 table {
     width: 100%;
-    border-collapse: collapse;
     border-spacing: 0;
+    border-collapse: collapse;
 }
 
 /**
@@ -45,8 +45,8 @@ td {
     min-width: 6em; // 96px / 16px
     padding: 0.5em; // 8px / 16px
     border: 1px solid $color-border-light;
-    text-align: left;
     vertical-align: top;
+    text-align: left;
 }
 
 @include dark-mode {
@@ -174,7 +174,7 @@ tfoot {
  *     </colgroup>
  */
 
-.t5  { width: 5%; }
+.t5 { width: 5%; }
 .t10 { width: 10%; }
 .t12 { width: 12.5%; }       // 1/8
 .t15 { width: 15%; }
