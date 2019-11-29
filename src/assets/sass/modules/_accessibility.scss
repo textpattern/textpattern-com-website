@@ -1,0 +1,32 @@
+@media screen and (prefers-reduced-motion: reduce), (update: slow) {
+    .js #site-navigation,
+    #site-navigation.site-navigation-open,
+    .search-form  input[type="search"] {
+        transition-duration: 0;
+    }
+
+    progress::-webkit-progress-value {
+        animation: none;
+        background-image: none;
+    }
+
+    progress:indeterminate::-webkit-progress-bar {
+        animation: none;
+        background-image: none;
+    }
+
+    progress::-moz-progress-bar {
+        animation: none;
+        background-image: none;
+    }
+
+    progress:indeterminate::-moz-progress-bar {
+        animation: none;
+        background-image: none;
+    }
+
+    progress::-ms-fill {
+        animation: none;
+        background-image: none;
+    }
+}
