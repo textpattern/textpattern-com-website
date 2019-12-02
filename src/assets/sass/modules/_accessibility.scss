@@ -1,4 +1,8 @@
 @media screen and (prefers-reduced-motion: reduce), (update: slow) {
+    body {
+        scroll-behavior: auto;
+    }
+
     .js #site-navigation,
     #site-navigation.site-navigation-open,
     .search-form  input[type="search"] {
