@@ -12,7 +12,7 @@
  */
 
 .paginator {
-    margin: 1.5em 0;
+    margin: 1.5em 0 1em;
     padding-top: 1em;
     border-top: 2px dashed $color-border;
 
@@ -21,6 +21,18 @@
         display: inline-block;
         padding: 0 0.1875em; // 3px / 16px
     }
+}
+
+/**
+ * Consistent margins for paginator navigation links on non-blog article lists.
+ *
+ * Example HTML:
+ *
+ * <nav class="paginator paginate-articles">
+ */
+
+.paginate-articles {
+    margin-bottom: 2.5em;
 }
 
 /**
