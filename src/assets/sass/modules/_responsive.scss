@@ -600,4 +600,13 @@
             white-space: pre;
         }
     }
+
+    /**
+     * Forced linebreak until 3rd breakpoint.
+     */
+
+    .separator--passive {
+        display: block;
+        margin-top: 0.5em;
+    }
 }
