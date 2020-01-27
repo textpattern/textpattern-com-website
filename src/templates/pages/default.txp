@@ -139,7 +139,7 @@ echo '<a class="count-bubble" rel="external" href="https://github.com/textpatter
                     </div>
                     <div class="layout-4col">
                         <h3 class="index-feature-community">Community-driven development</h3>
-                        <p>Well over a decade of development has been lovingly poured into our CMS. The active, friendly and helpful <a href="https://forum.textpattern.com/">community</a> surrounding the platform ensures its continued success and guides its future.</p>
+                        <p>Over <txp:php>echo safe_strftime("%Y") - 2003;</txp:php> years of development has been lovingly poured into our CMS. The active, friendly and helpful <a href="https://forum.textpattern.com/">community</a> surrounding the platform ensures its continued success and guides its future.</p>
                     </div>
                     <div class="layout-4col">
                         <h3 class="index-feature-writing">Write using Textile, Markdown, etc.</h3>
