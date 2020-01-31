@@ -1,4 +1,3 @@
-<txp:etc_cache id="webinformer" time="-300">
 <h3>Featured at:</h3>
 <txp:php>
 if (!gps('txpreview')) {
@@ -68,4 +67,3 @@ EOHTML;
     }
 }
 </txp:php>
-</txp:etc_cache>

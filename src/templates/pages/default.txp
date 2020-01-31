@@ -59,15 +59,12 @@
                     <h1 class="cta"><span>The small content management system that can handle big ideas</span></h1>
                     <hr>
                     <p class="cta-buttons">
-                        <txp:etc_cache id="homepage-downloads">
-                            <a class="button button-primary button-large" href="<txp:site_url />start"><span class="ui-button-icon ui-icon ui-extra-icon-download"></span> Download Textpattern <span class="txp-version"><txp:file_download_list category="current-release-zip" limit="1" sort="created desc"><txp:file_download_name title /></txp:file_download_list></span></a>
-                        </txp:etc_cache>
+                        <a class="button button-primary button-large" href="<txp:site_url />start"><span class="ui-button-icon ui-icon ui-extra-icon-download"></span> Download Textpattern <span class="txp-version"><txp:file_download_list category="current-release-zip" limit="1" sort="created desc"><txp:file_download_name title /></txp:file_download_list></span></a>
                         <a class="button" href="<txp:site_url />demo">Try a demo</a>
                     </p>
                     <p>
                         <a class="button" rel="external" href="https://github.com/textpattern/textpattern/" title="Stars on GitHub"><span class="ui-icon ui-extra-icon-github">GitHub</span> <strong>Stars</strong></a>
-                        <txp:etc_cache id="github-stars" time="-3600">
-                            <txp:php>
+                        <txp:php>
 global $variable;
 
 $query = <<<'GRAPHQL'
@@ -108,8 +105,7 @@ if (!($json = json_decode($response))) {
 }
 
 echo '<a class="count-bubble" rel="external" href="https://github.com/textpattern/textpattern/stargazers" title="Stargazers on GitHub">'.intval($json->data->repository->stargazers->totalCount).'</a>';
-                            </txp:php>
-                        </txp:etc_cache>
+                        </txp:php>
                     </p>
                 </div>
             </div>
@@ -164,29 +160,27 @@ echo '<a class="count-bubble" rel="external" href="https://github.com/textpatter
                 <div>
                     <p>Our users continue to amaze us with their wonderful creations! Feast your eyes on some of the awesome websites powered by Textpattern CMS in our <a href="<txp:site_url />showcase/">site showcase section</a>.</p>
                 </div>
-                <txp:etc_cache id="homepage-showcases">
-                    <div class="showcases showcase-home-c">
-                        <txp:images category="showcase-home-c" limit="1" sort="date desc">
-                            <txp:smd_thumbnail type="showcase-teaser-450w300h">
-                                <img loading="lazy" class="img--showcase" width="450" height="300" alt="<txp:image_info type="alt" />" src="<txp:smd_thumbnail_info item="url" />" srcset="<txp:image_url /> 2x">
-                            </txp:smd_thumbnail>
-                        </txp:images>
-                    </div>
-                    <div class="showcases showcase-home-l">
-                        <txp:images category="showcase-home-l" limit="1" sort="date desc">
-                            <txp:smd_thumbnail type="showcase-teaser-318w212h">
-                                <img loading="lazy" class="img--showcase" width="318" height="212" alt="<txp:image_info type="alt" />" src="<txp:smd_thumbnail_info item="url" />" srcset="<txp:image_url /> 2x">
-                            </txp:smd_thumbnail>
-                        </txp:images>
-                    </div>
-                    <div class="showcases showcase-home-r">
-                        <txp:images category="showcase-home-r" limit="1" sort="date desc">
-                            <txp:smd_thumbnail type="showcase-teaser-318w212h">
-                                <img loading="lazy" class="img--showcase" width="318" height="212" alt="<txp:image_info type="alt" />" src="<txp:smd_thumbnail_info item="url" />" srcset="<txp:image_url /> 2x">
-                            </txp:smd_thumbnail>
-                        </txp:images>
-                    </div>
-                </txp:etc_cache>
+                <div class="showcases showcase-home-c">
+                    <txp:images category="showcase-home-c" limit="1" sort="date desc">
+                        <txp:smd_thumbnail type="showcase-teaser-450w300h">
+                            <img loading="lazy" class="img--showcase" width="450" height="300" alt="<txp:image_info type="alt" />" src="<txp:smd_thumbnail_info item="url" />" srcset="<txp:image_url /> 2x">
+                        </txp:smd_thumbnail>
+                    </txp:images>
+                </div>
+                <div class="showcases showcase-home-l">
+                    <txp:images category="showcase-home-l" limit="1" sort="date desc">
+                        <txp:smd_thumbnail type="showcase-teaser-318w212h">
+                            <img loading="lazy" class="img--showcase" width="318" height="212" alt="<txp:image_info type="alt" />" src="<txp:smd_thumbnail_info item="url" />" srcset="<txp:image_url /> 2x">
+                        </txp:smd_thumbnail>
+                    </txp:images>
+                </div>
+                <div class="showcases showcase-home-r">
+                    <txp:images category="showcase-home-r" limit="1" sort="date desc">
+                        <txp:smd_thumbnail type="showcase-teaser-318w212h">
+                            <img loading="lazy" class="img--showcase" width="318" height="212" alt="<txp:image_info type="alt" />" src="<txp:smd_thumbnail_info item="url" />" srcset="<txp:image_url /> 2x">
+                        </txp:smd_thumbnail>
+                    </txp:images>
+                </div>
             </section>
         </div>
         <div class="wrapper-inner zebra">
@@ -212,15 +206,12 @@ echo '<a class="count-bubble" rel="external" href="https://github.com/textpatter
                     <section class="layout-3col-2span" itemscope itemtype="https://schema.org/Blog">
                         <h3>Latest from <a href="<txp:site_url />weblog">the blog</a>…</h3>
                         <p><img loading="lazy" class="prefers-color-scheme" width="756" height="160" alt="The Textpattern blog" src="/assets/img/com/index-blog-header.png" data-src-light="/assets/img/com/index-blog-header.png" data-src-dark="/assets/img/com/dark-index-blog-header.png" srcset="/assets/img/com/index-blog-header@2x.png 2x" data-srcset-light="/assets/img/com/index-blog-header@2x.png 2x" data-srcset-dark="/assets/img/com/dark-index-blog-header@2x.png 2x"></p>
-                        <txp:etc_cache id="homepage-blogs">
-                            <txp:article form="article_listing_blog" limit="2" />
-                        </txp:etc_cache>
+                        <txp:article form="article_listing_blog" limit="2" />
                     </section>
                     <div class="layout-3col">
                         <h3>Latest from <a href="https://forum.textpattern.com/">the forum</a>…</h3>
                         <ul class="list--no-bullets ellipsis">
-                            <txp:etc_cache id="forum-feed" time="-900">
-                                <txp:php>
+                            <txp:php>
 $curl = curl_init();
 
 curl_setopt_array($curl, [
@@ -244,9 +235,8 @@ if (!($json = json_decode($response))) {
 foreach ($json->topic as $topic) {
     echo '<li><a href="'.htmlspecialchars($topic->link).'">'.htmlspecialchars($topic->title).'</a> <small class="block">by '.htmlspecialchars($topic->author->name).' on <time datetime="'.htmlspecialchars($topic->postedutc).'">'.htmlspecialchars($topic->posted).'</time></small></li>';
 }
-                                </txp:php>
-                                <txp:linklist category="paid-links-content" break="li"><a rel="external" referrerpolicy="origin" href="<txp:link_url />"><txp:link_name /></a> <small>(Ad)</small></txp:linklist>
-                            </txp:etc_cache>
+                            </txp:php>
+                            <txp:linklist category="paid-links-content" break="li"><a rel="external" referrerpolicy="origin" href="<txp:link_url />"><txp:link_name /></a> <small>(Ad)</small></txp:linklist>
                         </ul>
                         <txp:output_form form="ads_webinformer" />
                     </div>
