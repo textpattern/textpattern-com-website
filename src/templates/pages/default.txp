@@ -277,7 +277,7 @@ foreach ($json->topic as $topic) {
                             <txp:etc_pagination range="3"
                                 prev='<a rel="prev" href="{href}" title="Go to previous page" aria-label="Go to previous page">Previous</a>'
                                 next='<a rel="next" href="{href}" title="Go to next page" aria-label="Go to next page">Next</a>'
-                                link='<li><a href="{href}" title="Go to page {*}" aria-label="Go to page {*}">{*}</a></li>,<li class="current"><b title="Current page" aria-label="Current page">{*}</b></li>'
+                                link='<li><a href="{href}" title="Go to page {*}" aria-label="Go to page {*}">{*}</a></li>,<li class="current"><b title="Current page" aria-current="page">{*}</b></li>'
                                 gap='<li role="separator" title="More pages" aria-label="More pages">…</li>'
                                 mask='{prev}<ul class="pagination">{first}{<+}{links}{+>}{last}</ul>{next}' />
                         </nav>
@@ -317,7 +317,7 @@ foreach ($json->topic as $topic) {
                             <txp:etc_pagination range="3"
                                 prev='<a rel="prev" href="{href}" title="Go to previous page" aria-label="Go to previous page">Previous</a>'
                                 next='<a rel="next" href="{href}" title="Go to next page" aria-label="Go to next page">Next</a>'
-                                link='<li><a href="{href}" title="Go to page {*}" aria-label="Go to page {*}">{*}</a></li>,<li class="current"><b title="Current page" aria-label="Current page">{*}</b></li>'
+                                link='<li><a href="{href}" title="Go to page {*}" aria-label="Go to page {*}">{*}</a></li>,<li class="current"><b title="Current page" aria-current="page">{*}</b></li>'
                                 gap='<li role="separator" title="More pages" aria-label="More pages">…</li>'
                                 mask='{prev}<ul class="pagination">{first}{<+}{links}{+>}{last}</ul>{next}' />
                         </nav>

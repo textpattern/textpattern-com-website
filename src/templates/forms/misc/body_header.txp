@@ -23,13 +23,13 @@
         <a id="site-navigation-toggle" href="#" role="button" aria-controls="site-navigation">Menu</a>
         <nav id="site-navigation" aria-label="Site navigation" itemscope itemtype="https://schema.org/SiteNavigationElement">
             <ul>
-                <li<txp:if_section name="start"> class="active"</txp:if_section>><a itemprop="url" href="<txp:site_url />start/">Get started</a></li>
+                <li<txp:if_section name="start"> class="active"</txp:if_section>><a itemprop="url" href="<txp:site_url />start/">Get started</a><txp:if_section name="weblog"> <span class="accessibility">(current section)</span></txp:if_section></li>
                 <li><a itemprop="url" href="https://docs.textpattern.com/">Documentation</a></li>
                 <li><a itemprop="url" href="<txp:site_url />themes">Themes</a></li>
                 <li><a itemprop="url" href="https://textpattern.org/">Plugins</a></li>
                 <li><a itemprop="url" href="https://forum.textpattern.com/">Forum</a></li>
-                <li<txp:if_section name="weblog"> class="active"</txp:if_section>><a itemprop="url" href="<txp:site_url />weblog/">Blog</a></li>
-                <li<txp:if_section name="about"> class="active"</txp:if_section>><a itemprop="url" href="<txp:site_url />about/">About</a></li>
+                <li<txp:if_section name="weblog"> class="active"</txp:if_section>><a itemprop="url" href="<txp:site_url />weblog/">Blog</a><txp:if_section name="weblog"> <span class="accessibility">(current section)</span></txp:if_section></li>
+                <li<txp:if_section name="about"> class="active"</txp:if_section>><a itemprop="url" href="<txp:site_url />about/">About</a><txp:if_section name="weblog"> <span class="accessibility">(current section)</span></txp:if_section></li>
             </ul>
         </nav>
     </div>
