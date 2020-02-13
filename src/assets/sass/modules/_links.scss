@@ -143,3 +143,35 @@ h6 {
         }
     }
 }
+
+/**
+ * Visually hide unfocussed/inactive ‘skip links’.
+ *
+ * Example HTML:
+ *
+ * <a class="a--skip-link">
+ */
+
+.a--skip-link {
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    z-index: 2;
+    padding: 0.25em 0.5em;
+    transform: translateY(-5em);
+    transition: transform 0.25s ease-in-out;
+    background-color: $color-selected;
+    color: $color-text;
+
+    &:focus,
+    &:active {
+        transform: translateY(0);
+    }
+}
+
+@include dark-mode {
+    .a--skip-link {
+        background-color: $dark-color-selecting;
+        color: $dark-color-text;
+    }
+}

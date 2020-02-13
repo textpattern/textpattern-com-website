@@ -49,14 +49,14 @@
 <txp:if_variable name="homepage">
 <body itemscope itemtype="https://schema.org/WebPage">
     <txp:output_form form="body_header" />
-    <main id="main" aria-label="Main content">
+    <main aria-label="Main content">
         <div class="wrapper-inner animation-wrapper">
                 <div id="animation-container">
                     <canvas id="animation" width="1150" height="480"><img width="1150" height="480" alt="Powering big ideas from a small open source CMS" src="/assets/img/com/index-animation-fallback.png"></canvas>
                 </div>
                 <div id="animation-overlay">
                 <div class="container">
-                    <h1 class="cta"><span>The small content management system that can handle big ideas</span></h1>
+                    <h1 id="main" class="cta"><span>The small content management system that can handle big ideas</span></h1>
                     <hr>
                     <p class="cta-buttons">
                         <a class="button button-primary button-large" href="<txp:site_url />start"><span class="ui-button-icon ui-icon ui-extra-icon-download"></span> Download Textpattern <span class="txp-version"><txp:file_download_list category="current-release-zip" limit="1" sort="created desc"><txp:file_download_name title /></txp:file_download_list></span></a>
@@ -249,7 +249,7 @@ foreach ($json->topic as $topic) {
     <txp:article pgonly limit="12" />
     <body itemscope itemtype="https://schema.org/SearchResultsPage">
     <txp:output_form form="body_header" />
-    <main aria-label="Main content">
+    <main id="main" aria-label="Main content">
         <div class="wrapper-inner zebra">
             <div class="container" itemscope itemtype="https://schema.org/WebSite">
                 <meta itemprop="url" content="<txp:site_url />">
@@ -299,7 +299,7 @@ foreach ($json->topic as $topic) {
 <txp:else />
     <body itemscope itemtype="https://schema.org/CollectionPage">
     <txp:output_form form="body_header" />
-    <main aria-label="Main content" itemscope itemtype="https://schema.org/Blog">
+    <main id="main" aria-label="Main content" itemscope itemtype="https://schema.org/Blog">
         <div class="container">
             <div class="layout-container">
             <txp:output_form form="body_crumbs" />
