@@ -33,7 +33,7 @@
 </head>
 <body itemscope itemtype="https://schema.org/ContactPage">
     <txp:output_form form="body_header" />
-    <main aria-label="Main content">
+    <main id="main" aria-label="Main content">
         <div class="container">
             <div class="layout-container">
                 <txp:output_form form="body_crumbs" />

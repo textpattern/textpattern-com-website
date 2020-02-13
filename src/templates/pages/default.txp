@@ -49,7 +49,7 @@
 <txp:if_variable name="homepage">
 <body itemscope itemtype="https://schema.org/WebPage">
     <txp:output_form form="body_header" />
-    <main aria-label="Main content">
+    <main id="main" aria-label="Main content">
         <div class="wrapper-inner animation-wrapper">
                 <div id="animation-container">
                     <canvas id="animation" width="1150" height="480"><img width="1150" height="480" alt="Powering big ideas from a small open source CMS" src="/assets/img/com/index-animation-fallback.png"></canvas>

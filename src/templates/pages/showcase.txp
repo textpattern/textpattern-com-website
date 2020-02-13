@@ -74,7 +74,7 @@
 </head>
 <body itemscope itemtype="https://schema.org/WebPage">
     <txp:output_form form="body_header" />
-    <main aria-label="Main content">
+    <main id="main" aria-label="Main content">
         <txp:if_article_list>
             <div class="container showcase-container showcase-landing">
                 <txp:output_form form="body_crumbs" />
