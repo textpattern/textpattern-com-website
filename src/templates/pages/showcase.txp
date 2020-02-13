@@ -86,16 +86,31 @@
                 <section>
                     <h4 class="accessibility">List of site showcases</h4>
                     <txp:article>
-                        <div class="showcases">
-                            <a href="<txp:permlink />">
+                        <article class="showcases" itemscope itemtype="https://schema.org/Article">
+                            <a href="<txp:permlink />" aria-labelledby="headline_<txp:article_id />">
                                 <txp:images limit="1">
                                     <txp:smd_thumbnail type="showcase-teaser-318w212h">
-                                        <img class="img--showcase" width="318" height="212" alt="<txp:image_info type="alt" />" src="<txp:smd_thumbnail_info item="url" />" srcset="<txp:image_url /> 2x">
+                                        <span itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+                                            <img class="img--showcase" width="318" height="212" alt="<txp:image_info type="alt" />" src="<txp:smd_thumbnail_info item="url" />" srcset="<txp:image_url /> 2x" itemprop="url contentUrl">
+                                            <meta itemprop="width" content="318">
+                                            <meta itemprop="height" content="212">
+                                        </span>
                                     </txp:smd_thumbnail>
                                 </txp:images>
                             </a>
-                            <h4><a href="<txp:permlink />"><txp:title /></a></h4>
-                        </div>
+                            <h4 id="headline_<txp:article_id />" itemprop="headline"><a itemprop="url mainEntityOfPage" href="<txp:permlink />" title="Full article"><txp:title /></a></h4>
+                            <meta itemprop="author" content="The Textpattern Development Team">
+                            <span itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+                                <meta itemprop="name" content="Textpattern CMS">
+                                <span itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+                                    <meta itemprop="url contentUrl" content="https://textpattern.com/assets/img/branding/textpattern/textpattern.png">
+                                    <meta itemprop="width" content="320">
+                                    <meta itemprop="height" content="60">
+                                </span>
+                            </span>
+                            <meta itemprop="datePublished" content="<txp:posted format="iso8601" />">
+                            <meta itemprop="dateModified" content="<txp:modified format="iso8601" />">
+                        </article>
                     </txp:article>
                 </section>
                 <p class="alert-block information footnote"><strong>Disclaimer:</strong> Inclusion in this showcase is at the sole discretion of the The Textpattern Development Team. Any site may be removed at any time for any reason. The Textpattern Development Team is not directly responsible for any content or views expressed within third-party sites. See something wrong in this showcase? Please <a href="<txp:site_url />contact">contact us</a> and we’ll look into it.</p>

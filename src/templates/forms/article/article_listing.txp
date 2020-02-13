@@ -1,5 +1,5 @@
 <article class="teaser" itemscope itemtype="https://schema.org/Article">
-    <h2 itemprop="headline"><a itemprop="url mainEntityOfPage" href="<txp:permlink />" title="Full article"><txp:title /></a></h2>
+    <h2 id="headline_<txp:article_id />" itemprop="headline"><a itemprop="url mainEntityOfPage" href="<txp:permlink />" title="Full article"><txp:title /></a></h2>
     <txp:if_article_section name="weblog">
         <meta itemprop="author" content="<txp:if_custom_field name="external-author"><txp:custom_field name="external-author" /><txp:else /><txp:author /></txp:if_custom_field>">
     <txp:else />
@@ -33,5 +33,5 @@
             <meta itemprop="height" content="1200">
         </txp:if_article_image>
     </span>
-    <p><a href="<txp:permlink />">Read more…</a></p>
+    <p><a id="more_<txp:article_id />" href="<txp:permlink />" aria-labelledby="more_<txp:article_id /> headline_<txp:article_id />">Read more…</a></p>
 </article>
