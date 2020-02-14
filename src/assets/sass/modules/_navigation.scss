@@ -37,6 +37,10 @@
         &:first-child {
             border-top: 2px solid $color-text;
         }
+
+        &:last-child {
+            border-bottom: 1px solid transparent;
+        }
     }
 
     a {
@@ -76,7 +80,7 @@
     }
 
     &.site-navigation-open {
-        max-height: 16em;
+        max-height: 16.1875em;
         transition: max-height 0.33s ease-in-out;
     }
 }

@@ -314,6 +314,7 @@
 
         .js & {
             max-height: none;
+            overflow: visible;
         }
 
         ul {
@@ -323,6 +324,10 @@
         li {
             float: left;
             border: 0 !important;
+
+            &:last-child {
+                border: 0;
+            }
         }
 
         a {
