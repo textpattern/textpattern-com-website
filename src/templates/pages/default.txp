@@ -52,7 +52,7 @@
     <main aria-label="Main content">
         <div class="wrapper-inner animation-wrapper">
                 <div id="animation-container">
-                    <canvas id="animation" width="1150" height="480"><img width="1150" height="480" alt="Powering big ideas from a small open source CMS" src="/assets/img/com/index-animation-fallback.png"></canvas>
+                    <canvas id="animation" width="1150" height="480"><img loading="lazy" width="1150" height="480" alt="Powering big ideas from a small open source CMS" src="/assets/img/com/index-animation-fallback.png"></canvas>
                 </div>
                 <div id="animation-overlay">
                 <div class="container">
@@ -291,7 +291,7 @@ foreach ($json->topic as $topic) {
                         </txp:if_search_results>
                     </div>
                     <p>Please try another search term or <a href="<txp:site_url />">return to the Textpattern homepage</a>.</p>
-                    <p><img class="dark-contrast" width="556" height="406" alt="Page error" src="https://textpattern.com/assets/img/com/error.png" srcset="https://textpattern.com/assets/img/com/error@2x.png 2x"></p>
+                    <p><img loading="lazy" class="dark-contrast" width="556" height="406" alt="Page error" src="https://textpattern.com/assets/img/com/error.png" srcset="https://textpattern.com/assets/img/com/error@2x.png 2x"></p>
                 </txp:if_search_results>
             </div>
         </div>
