@@ -7,7 +7,7 @@
                 <txp:newer shift link=""><li><a href="<txp:yield item="url" />" title="Go to page <txp:yield item="page" />" aria-label="Go to page <txp:yield item="page" />"><txp:yield item="page" /></a></li></txp:newer>
                 <txp:newer shift="-2" link=""><li role="separator" title="More pages" aria-label="More pages">…</li></txp:newer>
                 <txp:newer total shift="2" link=""><li><a href="<txp:yield item="url" />" title="Go to page <txp:yield item="page" />" aria-label="Go to page <txp:yield item="page" />"><txp:yield item="page" /></a></li></txp:newer>
-                <txp:newer shift="0" link=""><li class="current"><b title="Current page" aria-current="page"><txp:yield item="page" /></b></li></txp:newer>
+                <txp:pages><li class="current"><b title="Current page" aria-current="page"><txp:yield item="page" /></b></li></txp:pages>
                 <txp:older total shift="2" link=""><li><a href="<txp:yield item="url" />" title="Go to page <txp:yield item="page" />" aria-label="Go to page <txp:yield item="page" />"><txp:yield item="page" /></a></li></txp:older>
                 <txp:older shift="-2" link=""><li role="separator" title="More pages" aria-label="More pages">…</li></txp:older>
                 <txp:older shift link=""><li><a href="<txp:yield item="url" />" title="Go to page <txp:yield item="page" /> (last page)" aria-label="Go to page <txp:yield item="page" /> (last page)"><txp:yield item="page" /></a></li></txp:older>
