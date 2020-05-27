@@ -3,17 +3,12 @@
     <p><a class="button button-primary" href="<txp:file_download_link />" itemprop="contentUrl"><span class="ui-icon ui-extra-icon-download"></span> <span itemprop="name"><txp:file_download_name /></span></a></p>
     <footer class="footnote">
         <txp:evaluate test>
-            <div itemprop="description"><txp:file_download_description /></div>
+            <div itemprop="description">SHA256 checksum <code><txp:file_download_description /></code></div>
         </txp:evaluate>
         File size
         <span itemprop="contentSize"><txp:file_download_size format="k" decimals="0" /></span>
         <span class="separator" role="separator">|</span>
         Created
         <time datetime="<txp:file_download_created format="iso8601" />" itemprop="dateCreated"><txp:file_download_created format="%d %b %Y" /></time>
-        <txp:if_yield name="sha256">
-            <span class="separator" role="separator">|</span>
-            SHA256 checksum
-            <code><txp:yield name="sha256" /></code>
-        </txp:if_yield>
     </footer>
 </section>

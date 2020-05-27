@@ -92,9 +92,9 @@ For example:
 
 To create a file download snippet:
 
-    <txp::media_file category="" filename="" sha256="" />
+    <txp::media_file category="" filename="" />
 
-`category` and `filename` are interchangeable (use one or the other, where appropriate) - if both are provided then `category` is used in preference and `filename` is ignored. `sha256` (SHA256 checksum hash) is optional, but should be provided if possible. If not used, remove this attribute from your shortcode.
+`category` and `filename` are interchangeable (use one or the other, where appropriate) - if both are provided then `category` is used in preference and `filename` is ignored.
 
 For example:
 
