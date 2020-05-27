@@ -1,0 +1,16 @@
+<txp:pages pg="pg" evaluate="5,2,8,4,6">
+    <nav class="paginator" aria-label="Blog navigation">
+        Pages:
+        <txp:newer showalways link=""><a rel="prev" href="<txp:yield item="url" />" title="Go to previous page" aria-label="Go to previous page">Previous</a></txp:newer>
+        <ul class="pagination">
+            <txp:newer shift link=""><li><a href="<txp:yield item="url" />" title="Go to page <txp:yield item="page" />" aria-label="Go to page <txp:yield item="page" />"><txp:yield item="page" /></a></li></txp:newer>
+            <txp:evaluate test="newer"><txp:newer shift="-2" link=""><li role="separator" title="More pages" aria-label="More pages">…</li></txp:newer></txp:evaluate>
+            <txp:newer total shift="2" link=""><li><a href="<txp:yield item="url" />" title="Go to page <txp:yield item="page" />" aria-label="Go to page <txp:yield item="page" />"><txp:yield item="page" /></a></li></txp:newer>
+            <txp:newer shift="0" link=""><li class="current"><b title="Current page" aria-current="page"><txp:yield item="page" /></b></li></txp:newer>
+            <txp:older total shift="2" link=""><li><a href="<txp:yield item="url" />" title="Go to page <txp:yield item="page" />" aria-label="Go to page <txp:yield item="page" />"><txp:yield item="page" /></a></li></txp:older>
+            <txp:evaluate test="older"><txp:older shift="-2" link=""><li role="separator" title="More pages" aria-label="More pages">…</li></txp:older></txp:evaluate>
+            <txp:older shift link=""><li><a href="<txp:yield item="url" />" title="Go to page <txp:yield item="page" /> (last page)" aria-label="Go to page <txp:yield item="page" /> (last page)"><txp:yield item="page" /></a></li></txp:older>
+        </ul>
+        <txp:older showalways link=""><a rel="next" href="<txp:yield item="url" />" title="Go to next page" aria-label="Go to next page">Next</a></txp:older>
+    </nav>
+</txp:pages>

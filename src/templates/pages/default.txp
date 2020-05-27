@@ -271,17 +271,7 @@ foreach ($json->topic as $topic) {
                     <div class="teaser-container">
                         <txp:article searchform="article_listing" limit="12" />
                     </div>
-                    <txp:evaluate test>
-                        <nav class="paginator" aria-label="Page navigation">
-                            Pages:
-                            <txp:etc_pagination range="3"
-                                prev='<a rel="prev" href="{href}" title="Go to previous page" aria-label="Go to previous page">Previous</a>'
-                                next='<a rel="next" href="{href}" title="Go to next page" aria-label="Go to next page">Next</a>'
-                                link='<li><a href="{href}" title="Go to page {*}" aria-label="Go to page {*}">{*}</a></li>,<li class="current"><b title="Current page" aria-current="page">{*}</b></li>'
-                                gap='<li role="separator" title="More pages" aria-label="More pages">…</li>'
-                                mask='{prev}<ul class="pagination">{first}{<+}{links}{+>}{last}</ul>{next}' />
-                        </nav>
-                    </txp:evaluate>
+                    <txp:output_form form="pagination" />
                 <txp:else />
                     <div class="article-description" itemprop="description">
                         <txp:if_search_results>
@@ -311,17 +301,7 @@ foreach ($json->topic as $topic) {
                     <div class="teaser-container">
                         <txp:article form="article_listing_blog" limit="12" />
                     </div>
-                    <txp:evaluate test>
-                        <nav class="paginator" aria-label="Blog navigation">
-                            Pages:
-                            <txp:etc_pagination range="3"
-                                prev='<a rel="prev" href="{href}" title="Go to previous page" aria-label="Go to previous page">Previous</a>'
-                                next='<a rel="next" href="{href}" title="Go to next page" aria-label="Go to next page">Next</a>'
-                                link='<li><a href="{href}" title="Go to page {*}" aria-label="Go to page {*}">{*}</a></li>,<li class="current"><b title="Current page" aria-current="page">{*}</b></li>'
-                                gap='<li role="separator" title="More pages" aria-label="More pages">…</li>'
-                                mask='{prev}<ul class="pagination">{first}{<+}{links}{+>}{last}</ul>{next}' />
-                        </nav>
-                    </txp:evaluate>
+                    <txp:output_form form="pagination" />
                 </div>
                 <txp:output_form form="sidebar" />
             </div>
