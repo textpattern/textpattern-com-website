@@ -1059,6 +1059,7 @@ rules:
   # Disallow duplicate dollar variables within a stylesheet.
   scss/no-duplicate-dollar-variables: true
 
+  # Disallow duplicate mixins within a stylesheet.
   scss/no-duplicate-mixins: true
 
   # Disallows the use of global function names, as these global functions are now located inside built-in Sass modules.
