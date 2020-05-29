@@ -108,3 +108,7 @@ All plugins we use are installed via Composer:
 * [`pat_if_amp`](https://github.com/cara-tm/pat_if_amp) ✓ Composer
 * [`rah_comment_spam`](https://github.com/gocom/rah_comment_spam) ✓ Composer
 * [`smd_thumbnail`](https://github.com/bloke/smd_thumbnail) ✓ Composer
+
+## License
+
+Licensed under the [GPLv2 license](https://github.com/textpattern/textpattern-com-website/blob/master/LICENSE).
