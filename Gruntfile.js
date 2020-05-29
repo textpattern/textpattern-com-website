@@ -245,7 +245,11 @@ module.exports = function (grunt)
                             // Site-specific JavaScript.
                             '<%= paths.src.js %>main.js'
                         ],
-                        '<%= paths.dest.js %>createjs.js': ['node_modules/createjs/builds/1.0.0/createjs.js'],
+                        '<%= paths.dest.js %>createjs.js': [
+                            'node_modules/preloadjs/lib/preloadjs.js',
+                            'node_modules/easeljs/lib/easeljs.js',
+                            'node_modules/tweenjs/lib/tweenjs.js'
+                        ],
                         '<%= paths.dest.js %>indexcanvas.js': ['<%= paths.src.js %>indexcanvas.js'],
                         '<%= paths.dest.js %>lunr.js': ['node_modules/lunr/lunr.js']
                     }
