@@ -240,7 +240,6 @@ module.exports = function (grunt)
                             'node_modules/prismjs/components/prism-markdown.js',
                             'node_modules/prismjs/components/prism-nginx.js',
                             'node_modules/prismjs/components/prism-php.js',
-                            'node_modules/prismjs/components/prism-scss.js',
                             'node_modules/prismjs/components/prism-textile.js',
                             // Site-specific JavaScript.
                             '<%= paths.src.js %>main.js'
