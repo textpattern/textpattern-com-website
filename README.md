@@ -2,9 +2,6 @@
 
 [![Build Status](https://travis-ci.org/textpattern/textpattern-com-website.svg)](https://travis-ci.org/textpattern/textpattern-com-website)
 [![Known Vulnerabilities](https://snyk.io/test/github/textpattern/textpattern-com-website/badge.svg?targetFile=package.json)](https://snyk.io/test/github/textpattern/textpattern-com-website?targetFile=package.json)
-[![Dependencies Status](https://david-dm.org/textpattern/textpattern-com-website/status.svg)](https://david-dm.org/textpattern/textpattern-com-website)
-[![devDependencies Status](https://david-dm.org/textpattern/textpattern-com-website/dev-status.svg)](https://david-dm.org/textpattern/textpattern-com-website?type=dev)
-[![optionalDependencies Status](https://david-dm.org/textpattern/textpattern-com-website/optional-status.svg)](https://david-dm.org/textpattern/textpattern-com-website?type=optional)
 
 Official 2017+ website of the [Textpattern](https://textpattern.com/) project. **Requires Textpattern 4.7.3 or later.**
 
