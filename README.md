@@ -66,13 +66,21 @@ Textpattern 4.7 introduced support for user-definable `<txp:output_form />` attr
 
 To create a HTML5 image snippet:
 
-    <txp::media_image id="" dark-option="" />
+    <txp::media_image id="" dark-option="" set-width="" set-height="" />
 
-`id` accepts either a single image ID, or comma separated image IDs if you want multiple images. For blogs/articles the ideal image width is `832` pixels for the standard resolution version and `1664` pixels for the double resolution version (which is optional, but should be provided if possible). `dark-option` is optional, for if you need to provide an alternative image when website is in Dark Mode.
+`id` accepts either a single image ID, or comma separated image IDs if you want multiple images. For blogs/articles the ideal image width is `832` pixels for the standard resolution version and `1664` pixels for the double resolution version (which is optional, but should be provided if possible).
 
-For example:
+`dark-option` is optional (for a single image ID), for if you need to provide an alternative image when website is in Dark Mode.
+
+`set-width` and `set-height` are optional (for a single image ID), for if you need to provide explicit maximum dimensions (in pixels) for an image. Otherwise (when not set), images default to being fully responsive (expanding to fill their container).
+
+For example, comma separated image IDs:
 
     <txp::media_image id="41, 42, 50" />
+
+For example, image with an alternative dark theme version and a set width and height in pixels:
+
+    <txp::media_image id="51" dark-option="52" set-width="400" set-height="125" />
 
 ### Video
 
