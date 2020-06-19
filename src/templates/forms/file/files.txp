@@ -1,6 +1,6 @@
 <section itemscope itemtype="https://schema.org/DataDownload">
     <h6 class="accessibility">File download</h6>
-    <p><a class="button button-primary" href="<txp:file_download_link />" itemprop="contentUrl"><span class="ui-icon ui-extra-icon-download"></span> <span itemprop="name"><txp:file_download_name /></span></a></p>
+    <p><a class="button button-primary<txp:if_yield name="large-button"> button-large</txp:if_yield>" href="<txp:file_download_link />" itemprop="contentUrl"><span class="ui-icon ui-extra-icon-download"></span> <span itemprop="name"><txp:file_download_name /></span></a></p>
     <footer class="footnote">
         <txp:evaluate test>
             <div itemprop="description">SHA256 checksum <code><txp:file_download_description /></code></div>
