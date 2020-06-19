@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.org/textpattern/textpattern-com-website.svg)](https://travis-ci.org/textpattern/textpattern-com-website)
 [![Known Vulnerabilities](https://snyk.io/test/github/textpattern/textpattern-com-website/badge.svg?targetFile=package.json)](https://snyk.io/test/github/textpattern/textpattern-com-website?targetFile=package.json)
 
-Official 2017+ website of the [Textpattern](https://textpattern.com/) project. **Requires Textpattern 4.7.3 or later.**
+Official 2017+ website of the [Textpattern](https://textpattern.com/) project. **Requires Textpattern 4.8.1 or later.**
 
 ## Supported web browsers
 
