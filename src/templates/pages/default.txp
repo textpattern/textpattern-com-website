@@ -83,6 +83,7 @@ $curl = curl_init();
 curl_setopt_array($curl, [
     CURLOPT_RETURNTRANSFER => true,
     CURLOPT_URL => 'https://api.github.com/graphql',
+    CURLOPT_TIMEOUT => 5,
     CURLOPT_FAILONERROR => true,
     CURLOPT_POSTFIELDS => $json,
     CURLOPT_HTTPHEADER => array(
