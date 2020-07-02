@@ -112,6 +112,7 @@ For example:
 
 All plugins we use are installed via Composer:
 
+* [`etc_cache`](https://github.com/etc-plugins/etc_cache) ✓ Composer
 * [`pat_if_amp`](https://github.com/cara-tm/pat_if_amp) ✓ Composer
 * [`rah_comment_spam`](https://github.com/gocom/rah_comment_spam) ✓ Composer
 * [`smd_thumbnail`](https://github.com/bloke/smd_thumbnail) ✓ Composer

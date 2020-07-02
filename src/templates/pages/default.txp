@@ -64,7 +64,8 @@
                     </p>
                     <p>
                         <a class="button" rel="external" href="https://github.com/textpattern/textpattern/" title="Stars on GitHub"><span class="ui-icon ui-extra-icon-github">GitHub</span> <strong>Stars</strong></a>
-                        <txp:php>
+                        <txp:etc_cache id="github-api">
+                            <txp:php>
 global $variable;
 
 $query = <<<'GRAPHQL'
@@ -106,7 +107,8 @@ if (!($json = json_decode($response))) {
 }
 
 echo '<a class="count-bubble" rel="external" href="https://github.com/textpattern/textpattern/stargazers" title="Stargazers on GitHub">'.intval($json->data->repository->stargazers->totalCount).'</a>';
-                        </txp:php>
+                            </txp:php>
+                        </txp:etc_cache>
                     </p>
                 </div>
             </div>

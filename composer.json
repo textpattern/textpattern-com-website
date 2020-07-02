@@ -8,6 +8,7 @@
     "textpattern/installer": "1.0.10",
     "bloke/smd_thumbnail": "0.5.3",
     "cara-tm/pat_if_amp": "0.3.7",
+    "etc-plugins/etc_cache": "0.2.8",
     "rah/rah_comment_spam": "0.9.0"
   }
 }

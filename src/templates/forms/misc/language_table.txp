@@ -1,4 +1,5 @@
-<txp:php>
+<txp:etc_cache id="crowdin-api">
+    <txp:php>
 $key = parse('<txp:yield name="api-key" />');
 
 try {
@@ -46,4 +47,5 @@ echo <<<EOHTML
     </table>
 </div>
 EOHTML;
-</txp:php>
+    </txp:php>
+</txp:etc_cache>
