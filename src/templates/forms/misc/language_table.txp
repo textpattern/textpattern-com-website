@@ -1,4 +1,4 @@
-<txp:etc_cache id="crowdin-api">
+<txp:etc_cache id="crowdin-api" time="-3600">
     <txp:php>
 $key = parse('<txp:yield name="api-key" />');
 

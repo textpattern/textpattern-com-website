@@ -64,7 +64,7 @@
                     </p>
                     <p>
                         <a class="button" rel="external" href="https://github.com/textpattern/textpattern/" title="Stars on GitHub"><span class="ui-icon ui-extra-icon-github">GitHub</span> <strong>Stars</strong></a>
-                        <txp:etc_cache id="github-api">
+                        <txp:etc_cache id="github-api" time="-900">
                             <txp:php>
 global $variable;
 
