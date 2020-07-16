@@ -249,8 +249,7 @@ module.exports = function (grunt)
                             'node_modules/easeljs/lib/easeljs.js',
                             'node_modules/tweenjs/lib/tweenjs.js'
                         ],
-                        '<%= paths.dest.js %>indexcanvas.js': ['<%= paths.src.js %>indexcanvas.js'],
-                        '<%= paths.dest.js %>lunr.js': ['node_modules/lunr/lunr.js']
+                        '<%= paths.dest.js %>indexcanvas.js': ['<%= paths.src.js %>indexcanvas.js']
                     }
                 ]
             }
