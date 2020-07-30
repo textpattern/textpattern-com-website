@@ -1,7 +1,3 @@
 <txp:images id='<txp:yield name="id" />' break="">
-    <txp:if_variable name="pat_amp" value="1">
-        <txp:output_form form="images_amp" />
-    <txp:else />
-        <txp:output_form form="images" />
-    </txp:if_variable>
+    <txp:output_form form="images" />
 </txp:images>

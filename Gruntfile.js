@@ -168,10 +168,6 @@ module.exports = function (grunt)
                         {
                             match: 'timestamp',
                             replacement: '<%= opt.timestamp %>'
-                        },
-                        {
-                            match: 'ampcss',
-                            replacement: '<%= grunt.file.read("public/assets/css/amp.css") %>'
                         }
                     ]
                 },
@@ -209,7 +205,6 @@ module.exports = function (grunt)
             dist: {
                 files: [
                     {'<%= paths.dest.css %>style.css': '<%= paths.src.sass %>style.scss'},
-                    {'<%= paths.dest.css %>amp.css': '<%= paths.src.sass %>amp.scss'},
                     {'<%= paths.dest.css %>designpatterns.css': '<%= paths.src.sass %>designpatterns.scss'}
                 ]
             }

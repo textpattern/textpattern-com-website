@@ -1,6 +1,3 @@
-<txp:pat_if_amp>
-<txp:output_form form="amp" />
-<txp:else />
 <!DOCTYPE html>
 <html lang="en-GB-oxendict">
 <head>
@@ -53,7 +50,6 @@
         <txp:meta_author title />
         <meta name="robots" content="<txp:if_expires>unavailable_after: <txp:expires gmt format="%d-%b-%y %T" /> GMT<txp:else />index, follow</txp:if_expires>">
         <link rel="canonical" href="<txp:permlink />">
-        <link rel="amphtml" href="<txp:permlink />/amp">
         <meta name="twitter:card" content="summary">
         <meta name="twitter:site" content="@textpattern">
         <meta name="twitter:title" content="<txp:title />">
@@ -133,4 +129,3 @@
     <txp:output_form form="body_footer" />
 </body>
 </html>
-</txp:pat_if_amp>
