@@ -175,3 +175,17 @@ h6 {
         color: $dark-color-text;
     }
 }
+
+/**
+ * Link group, with comfortable space between items.
+ *
+ * Example HTML:
+ *
+ * <p class="link-group">
+ *     <a>Link 1
+ *     <a>Link 2
+ */
+
+.link-group a {
+    margin-right: 0.5rem;
+}
