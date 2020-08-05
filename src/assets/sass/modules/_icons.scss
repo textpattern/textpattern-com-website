@@ -255,6 +255,10 @@
 
 // Additional handy icons we've added to the standard jQuery UI icon sprite.
 
+//.ui-extra-icon-crop { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='%23333' d='m13 4 2-2-1-1-2 2h-7v-2h-2v2h-2v2h2v8h8v2h2v-2h2v-2h-2zm-8 1h5l-5 5zm1 6 5-5v5z'/%3E%3C/svg%3E"); }
+//.ui-extra-icon-arrowreturn-1-s-reversed { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='%23333' d='m4 6c2.209 0 4 2 4 4h-2l3 3 3-3h-2c0-3-2.686-6-6-6z'/%3E%3C/svg%3E"); }
+//.ui-extra-icon-flip-horizontal { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cg fill='%23333'%3E%3Cpath d='m0 2v12h16v-12zm15 11h-6v-2h-2v2h-6v-10h6v2h2v-2h6z'/%3E%3Cpath d='m6 9v2l-3-3 3-3v2h4v-2l3 3-3 3v-2z'/%3E%3C/g%3E%3C/svg%3E"); }
+//.ui-extra-icon-flip-vertical { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cg fill='%23333'%3E%3Cpath d='m2 16h12v-16h-12zm11-15v6h-2v2h2v6h-10v-6h2v-2h-2v-6z'/%3E%3Cpath d='m9 10h2l-3 3-3-3h2v-4h-2l3-3 3 3h-2z'/%3E%3C/g%3E%3C/svg%3E"); }
 //.ui-extra-icon-code { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='%23333' d='m7 5-2-2-5 5 5 5 2-2-3-3zm2 6 2 2 5-5-5-5-2 2 3 3z'/%3E%3C/svg%3E"); }
 //.ui-extra-icon-list { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='%23333' d='M5 3h10v1H5zM5 6h10v1H5zM5 9h10v1H5zM5 12h10v1H5zM1 2h2v2H1zM1 5h2v2H1zM1 8h2v2H1zM1 11h2v2H1z'/%3E%3C/svg%3E"); }
 //.ui-extra-icon-grid { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cg fill='%23333'%3E%3Cpath d='M0 3h16v1H0zM0 6h16v1H0zM0 9h16v1H0zM0 12h16v1H0z'/%3E%3Cpath d='M0 3h1v10H0zM3 3h1v10H3zM6 3h1v10H6zM9 3h1v10H9zM12 3h1v10h-1zM15 3h1v10h-1z'/%3E%3C/g%3E%3C/svg%3E"); }
