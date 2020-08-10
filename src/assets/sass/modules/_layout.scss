@@ -419,7 +419,8 @@ main .layout-4col-3span {
 
 .index-feature h3::before,
 .index-docs h3::before,
-.index-plugins h3::before {
+.index-plugins h3::before,
+.index-themes h3::before  {
     content: "";
     display: block;
     width: 200px;
