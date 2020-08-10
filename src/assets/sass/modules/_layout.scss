@@ -431,7 +431,6 @@ main .layout-4col-3span {
     @include hires-graphic(com/index-features, png, 1600px, 200px);
 }
 
-
 .index-feature-foundations::before {
     background-position: 0 0;
 }
@@ -505,6 +504,22 @@ main .layout-4col-3span {
 }
 
 .index-plugins-report::before {
+    background-position: -400px 0;
+}
+
+.index-themes h3::before {
+    @include hires-graphic(com/index-themes, png, 600px, 200px);
+}
+
+.index-themes-create::before {
+    background-position: 0 0;
+}
+
+.index-themes-add::before {
+    background-position: -200px 0;
+}
+
+.index-themes-report::before {
     background-position: -400px 0;
 }
 
