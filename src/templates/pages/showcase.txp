@@ -28,7 +28,7 @@
                 "@type": "WebPage",
                 "headline": "Textpattern CMS site showcase",
                 "description": "Feast your eyes on some of the awesome websites powered by Textpattern CMS in our site showcase section.",
-                "url": "<txp:site_url escape="json" />showcase/"
+                "url": "<txp:section url escape="json" />"
             }
         </script>
     <txp:else />

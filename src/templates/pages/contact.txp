@@ -27,7 +27,7 @@
             "@type": "WebPage",
             "headline": "Contact us",
             "description": "How to contact the Textpattern Development Team via email.",
-            "url": "<txp:site_url escape="json" />contact/"
+            "url": "<txp:section url escape="json" />"
         }
     </script>
 </head>

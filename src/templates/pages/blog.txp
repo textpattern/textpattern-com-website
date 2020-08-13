@@ -31,7 +31,7 @@
                     "@type": "Blog",
                     "headline": "Textpattern CMS blog",
                     "description": "Latest blogs from Team Textpattern and guests; Textpattern news and other tidbits of info that we find of interest.",
-                    "url": "<txp:site_url escape="json" />weblog/"
+                    "url": "<txp:section url escape="json" />"
                 }
             </script>
         <txp:else />
