@@ -539,6 +539,10 @@
         .layout-4col:not(.sidebar) {
             width: auto;
         }
+
+        main .layout-4col-3span {
+            margin-right: 1.5em;
+        }
     }
 
     /**
