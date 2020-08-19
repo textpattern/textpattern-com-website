@@ -1080,7 +1080,7 @@
         opacity: 1,
         manifest: [
             {
-                src: '../assets/img/com/index-animation.png',
+                src: '/assets/img/com/index-animation.png',
                 id: 'index-animation'
             }
         ]
