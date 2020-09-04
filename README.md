@@ -106,7 +106,7 @@ To create a file download snippet:
 
 For example:
 
-    <txp::media_file category="current-release-zip" sha256="a868c05fc37108f2bb5e878cfbcdc61a82ce2646c4676cccb8105a6c6277be7a" />
+    <txp::media_file category="current-release-zip" large-button="1" />
 
 ## Plugins used
 
