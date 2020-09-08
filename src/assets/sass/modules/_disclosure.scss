@@ -1,0 +1,19 @@
+/* Disclosure boxes (summary/details)
+   ========================================================================== */
+
+/**
+ * Example HTML:
+ *
+ * <details>
+ *     <summary>Summary text</summary>
+ *     <p>Detailed content.</p>
+ * </details>
+ */
+
+summary {
+    cursor: pointer;
+
+    &:focus {
+        outline: 1px solid var(--color-link-focus);
+    }
+}
