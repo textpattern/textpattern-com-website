@@ -145,6 +145,7 @@
 #site-navigation-toggle {
     @include hide-text;
 
+    display: none;
     position: absolute;
     z-index: 2;
     top: 1em;
@@ -157,6 +158,10 @@
     background-size: 32px 32px;
     user-select: none;
     -webkit-touch-callout: none; /* 1 */
+
+    .js & {
+        display: block;
+    }
 
     &:hover {
         background-color: $color-selected;
