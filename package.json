@@ -25,7 +25,7 @@
     "grunt-sass": "3.1.0",
     "grunt-stylelint": "0.15.0",
     "load-grunt-tasks": "5.1.0",
-    "sass": "1.26.11",
+    "sass": "1.26.12",
     "stylelint": "13.7.2",
     "stylelint-order": "4.1.0",
     "stylelint-scss": "3.18.0"
