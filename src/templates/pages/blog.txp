@@ -96,12 +96,12 @@
                         "name": "Textpattern CMS",
                         "logo": {
                             "@type": "ImageObject",
-                            "url": "https://textpattern.com/assets/img/branding/textpattern/textpattern.png"
+                            "url": "https:\/\/textpattern.com\/assets\/img\/branding\/textpattern\/textpattern.png"
                         }
                     },
                     "image": {
                         "@type": "ImageObject",
-                        "url": "<txp:if_article_image><txp:images limit="1"><txp:image_url escape="json" /></txp:images><txp:else />https://textpattern.com/assets/img/branding/textpattern/textpattern-og.png</txp:if_article_image>"
+                        "url": "<txp:if_article_image><txp:images limit="1"><txp:image_url escape="json" /></txp:images><txp:else />https:\/\/textpattern.com\/assets\/img\/branding\/textpattern\/textpattern-og.png</txp:if_article_image>"
                     }
                 }]
             }
