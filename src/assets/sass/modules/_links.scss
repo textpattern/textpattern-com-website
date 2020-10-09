@@ -12,6 +12,7 @@ a {
     color: $color-link; /* 1 */
     text-decoration: none; /* 2 */
     text-decoration-skip-ink: auto; /* 3 */
+    text-underline-offset: 0.125em;
 
     &:hover,
     &:active {
