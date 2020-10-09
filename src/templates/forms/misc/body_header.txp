@@ -21,7 +21,7 @@
         </txp:if_search>
     </header>
     <div class="nav-container">
-        <a id="site-navigation-toggle" href="#" role="button" aria-controls="site-navigation">Menu</a>
+        <a id="site-navigation-toggle" href="#" role="button" aria-controls="site-navigation" title="Navigation menu">Navigation menu</a>
         <nav id="site-navigation" aria-label="Site navigation" itemscope itemtype="https://schema.org/SiteNavigationElement">
             <ul id="site-navigation-list">
                 <li<txp:if_section name="start"> class="active"</txp:if_section>><a itemprop="url" href="<txp:site_url />start/">Get started</a><txp:if_section name="weblog"> <span class="accessibility">(current section)</span></txp:if_section></li>
