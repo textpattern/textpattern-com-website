@@ -1,3 +1,19 @@
 <txp:images id='<txp:yield name="id" />' break="">
-    <txp:output_form form="images" />
+    <txp:output_form form="images">
+        <txp:smd_if_thumbnail type="article-832w">
+            <txp:smd_thumbnail type="article-832w">
+                <img loading="lazy" width="<txp:evaluate query='ceiling(<txp:image_info type="w" />div2)' />" height="<txp:evaluate query='ceiling(<txp:image_info type="h" />div2)' />" itemprop="url contentUrl" alt="<txp:image_info type="alt" />" src="<txp:smd_thumbnail_info item="url" />" srcset="<txp:image_url /> 2x">
+                <meta itemprop="width" content="<txp:evaluate query='ceiling(<txp:image_info type="w" />div2)' />">
+                <meta itemprop="height" content="<txp:evaluate query='ceiling(<txp:image_info type="h" />div2)' />">
+            </txp:smd_thumbnail>
+        <txp:else />
+            <txp:if_yield name="dark-option">
+                <img loading="lazy" class="prefers-color-scheme" width="<txp:if_yield name="set-width"><txp:yield name="set-width" /><txp:else /><txp:image_info type="w" /></txp:if_yield>" height="<txp:if_yield name="set-height"><txp:yield name="set-height" /><txp:else /><txp:image_info type="h" /></txp:if_yield>" itemprop="url contentUrl" alt="<txp:image_info type="alt" />" src="<txp:image_url />" data-src-light="<txp:image_url />" data-src-dark="<txp:image_url id="<txp:yield name="dark-option" />" />">
+            <txp:else />
+                <img loading="lazy" width="<txp:if_yield name="set-width"><txp:yield name="set-width" /><txp:else /><txp:image_info type="w" /></txp:if_yield>" height="<txp:if_yield name="set-height"><txp:yield name="set-height" /><txp:else /><txp:image_info type="h" /></txp:if_yield>" itemprop="url contentUrl" alt="<txp:image_info type="alt" />" src="<txp:image_url />">
+            </txp:if_yield>
+            <meta itemprop="width" content="<txp:if_yield name="set-width"><txp:yield name="set-width" /><txp:else /><txp:image_info type="w" /></txp:if_yield>">
+            <meta itemprop="height" content="<txp:if_yield name="set-height"><txp:yield name="set-height" /><txp:else /><txp:image_info type="h" /></txp:if_yield>">
+        </txp:smd_if_thumbnail>
+    </txp:output_form>
 </txp:images>
