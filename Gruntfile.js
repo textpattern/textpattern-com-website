@@ -105,14 +105,6 @@ module.exports = function (grunt)
                         dest: 'public/'
                     }
                 ]
-            },
-            // Copy JavaScript from from `src/js/` when already minified (i.e. don't Uglify these).
-            js: {
-                files: [
-                    {
-                        '<%= paths.dest.js %>createjs.js': ['<%= paths.src.js %>createjs-2015.11.26.min.js']
-                    }
-                ]
             }
         },
 
