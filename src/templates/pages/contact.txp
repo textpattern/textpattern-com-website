@@ -24,7 +24,7 @@
     <script type="application/ld+json">
         {
             "@context": "https://schema.org",
-            "@type": "WebPage",
+            "@type": "ContactPage",
             "headline": "Contact us",
             "description": "How to contact the Textpattern Development Team via email.",
             "url": "<txp:section url escape="json" />"
