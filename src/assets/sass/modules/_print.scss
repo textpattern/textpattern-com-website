@@ -1,17 +1,4 @@
 /**
- * Remove unnecessary global styling from printed media.
- */
-
-*,
-*::before,
-*::after {
-    background: transparent !important;
-    box-shadow: none !important;
-    color: $color-text-print !important;
-    text-shadow: none !important;
-}
-
-/**
  * Use a print-friendly font size.
  */
 
@@ -27,6 +14,7 @@ html {
 body {
     margin: 0.5cm;
     padding: 2em 5em;
+    color: $color-text-print;
     font-family: $font-print;
 }
 
