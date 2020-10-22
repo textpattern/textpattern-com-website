@@ -105,7 +105,19 @@ module.exports = function (grunt)
                         dest: 'public/'
                     }
                 ]
-            }
+            },
+            // Copy mockups to mockups directory and design patterns doc to public (root) directory.
+            html: {
+                files: [
+                    {
+                        expand: true,
+                        cwd: '<%= paths.src.mockups %>',
+                        src: '**',
+                        dest: '<%= paths.dest.mockups %>'
+                    },
+                    {'public/design-patterns.html': 'src/docs/design-patterns.html'}
+                ]
+            },
         },
 
         // Check code quality of Gruntfile.js and site-specific JavaScript using JSHint.
@@ -152,7 +164,7 @@ module.exports = function (grunt)
             }
         },
 
-        // Generate filename timestamps within templates/mockup files.
+        // Generate filename timestamps and version numbers.
         replace: {
             theme: {
                 options: {
@@ -160,29 +172,23 @@ module.exports = function (grunt)
                         {
                             match: 'timestamp',
                             replacement: '<%= opt.timestamp %>'
+                        },
+                        {
+                            match: 'version',
+                            replacement: '<%= pkg.version %>'
                         }
                     ]
                 },
                 files: [
-                    // Copy mockups to mockups directory.
-                    {
-                        expand: true,
-                        cwd: '<%= paths.src.mockups %>',
-                        src: '**',
-                        dest: '<%= paths.dest.mockups %>'
-                    },
-                    // Copy design patterns doc to public (root) directory.
-                    {
-                        src: 'src/docs/design-patterns.html',
-                        dest: 'public/design-patterns.html'
-                    },
                     // Copy Textpattern templates to themes directory.
                     {
                         expand: true,
                         cwd: '<%= paths.src.templates %>',
-                        src: '**',
+                        src: ['**', '!manifest.json'],
                         dest: '<%= paths.dest.templates %>'
-                    }
+                    },
+                    // Generate version number automatically in theme manifest.json file.
+                    {'<%= paths.dest.templates %>manifest.json': '<%= paths.src.templates %>manifest.json'}
                 ]
             }
         },
