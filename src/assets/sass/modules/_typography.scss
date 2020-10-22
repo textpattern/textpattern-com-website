@@ -3,11 +3,15 @@
 
 /**
  * Establish baseline.
+ *
+ * 1. Prevent adjustments of font size after orientation changes in
+ *    IE on Windows Phone and in iOS.
  */
 
 html {
     font-size: $base-font-size;
     line-height: $line-height-mobile;
+    text-size-adjust: 100%; /* 1 */
 }
 
 /**
@@ -434,11 +438,8 @@ hr {
 .ellipsis {
     overflow: hidden;
     text-overflow: ellipsis;
-}
 
-ul,
-ol {
-    &.ellipsis li {
+    li {
         overflow: inherit;
         text-overflow: inherit;
     }
