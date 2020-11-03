@@ -16,6 +16,7 @@
                     <meta itemprop="target" content="<txp:site_url />?q={q}">
                     <label class="accessibility" for="q">Search</label>
                     <input id="q" name="q" type="search" size="32" placeholder="Search Textpattern.com…" itemprop="query-input"<txp:if_search> value="<txp:search_term />"</txp:if_search>>
+                    <button class="accessibility" type="submit">Submit Search</button>
                 </form>
             </div>
         </txp:if_search>
