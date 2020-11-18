@@ -9,7 +9,7 @@ plugins:
 
 rules:
 
- # Specify percentage or number notation for alpha-values.
+  # Specify percentage or number notation for alpha-values.
   alpha-value-notation: number
 
   # Specify a list of disallowed at-rules.
@@ -115,6 +115,9 @@ rules:
 
   # Disallow empty comments.
   comment-no-empty: true
+
+  # Specify a pattern for comments.
+  #comment-pattern:
 
   # Require or disallow whitespace on the inside of comment markers.
   comment-whitespace-inside: always
@@ -399,6 +402,9 @@ rules:
 
   # Require a single space or disallow whitespace on the inside of the brackets within attribute selectors.
   selector-attribute-brackets-space-inside: never
+
+  # Specify a list of disallowed attribute names.
+  #selector-attribute-name-disallowed-list:
 
   # Specify a blacklist of disallowed attribute operators.
   #selector-attribute-operator-blacklist:
