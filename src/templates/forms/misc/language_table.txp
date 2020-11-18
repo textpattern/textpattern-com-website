@@ -9,7 +9,8 @@ try {
 }
 
 echo <<<EOHTML
-<div class="tabular-data" tabindex="0" aria-label="Language list" itemscope itemtype="https://schema.org/Table">
+<div class="tabular-data" tabindex="0" aria-labelledby="table1-caption" itemscope itemtype="https://schema.org/Table">
+    <h4 id="table1-caption" class="accessibility" itemprop="about">List current of languages translation for Textpattern CMS</h4>
     <table>
         <colgroup>
             <col class="t30">
