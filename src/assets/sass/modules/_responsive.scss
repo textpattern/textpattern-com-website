@@ -291,8 +291,14 @@
         top: 0.75em;
         right: 0;
 
-        input[type="search"] {
-            width: 244px;
+        [type="search"] {
+            width: 254px;
+        }
+    }
+
+    @include dark-mode {
+        .search-form [type="search"] {
+            background-color: $dark-color-background-form;
         }
     }
 
@@ -452,30 +458,9 @@
             padding-right: 0;
             cursor: pointer;
 
-            &:hover {
-                background-color: $color-selected;
-            }
-
             &:focus {
-                width: 244px;
-                padding-right: 0.5384615em;
-                background-color: $color-background-form;
+                width: 254px;
                 cursor: auto;
-            }
-        }
-    }
-
-    @include dark-mode {
-        .search-form {
-            [type="search"] {
-                &:hover {
-                    border-color: $dark-color-border-extra-light;
-                    background-color: $dark-color-selecting;
-                }
-
-                &:focus {
-                    background-color: $dark-color-background-form;
-                }
             }
         }
     }
