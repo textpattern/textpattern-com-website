@@ -870,7 +870,7 @@
                         <h3>Plain table</h3>
                         <p class="information">Simple table (without <code>&lt;thead&gt;</code>, <code>&lt;tfoot&gt;</code> tags)</p>
 
-                        <div class="tabular-data">
+                        <div class="tabular-data" tabindex="0" aria-label="Food list" itemscope itemtype="https://schema.org/Table">
                             <table>
                                 <tbody>
                                     <tr>
@@ -900,9 +900,9 @@
                         <h3>Full Table</h3>
                         <p class="information">Full-feautured table with <code>scope</code>, <code>rowspan</code> <code>colspan</code> attributes, and <code>&lt;caption&gt;</code>, <code>&lt;colgroup&gt;</code>, <code>&lt;thead&gt;</code>, <code>&lt;tfoot&gt;</code>, <code>&lt;tbody&gt;</code> tags included</p>
 
-                        <div class="tabular-data">
+                        <div class="tabular-data" tabindex="0" aria-labelledby="table-caption" itemscope itemtype="https://schema.org/Table">
                             <table>
-                                <caption>This is a table caption</caption>
+                                <caption id="table-caption">This is a table caption</caption>
                                 <colgroup>
                                     <col class="t25">
                                     <col class="t25">

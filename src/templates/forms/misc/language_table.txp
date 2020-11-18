@@ -9,7 +9,7 @@ try {
 }
 
 echo <<<EOHTML
-<div class="tabular-data">
+<div class="tabular-data" tabindex="0" aria-label="Language list" itemscope itemtype="https://schema.org/Table">
     <table>
         <colgroup>
             <col class="t30">
