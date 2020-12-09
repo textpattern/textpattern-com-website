@@ -115,14 +115,3 @@
         }
     }
 }
-
-// Sunken initial on blog body opening paragraph first letter. TODO: when browser support is better?
-//@supports (initial-letter: 1) or (-webkit-initial-letter: 1) {
-//    .article-body p:first-child::first-letter {
-//        margin-right: 0.375em;
-//        color: $color-text-visual-de-emphasis;
-//        font-family: $font-serif;
-//        -webkit-initial-letter: 3 2;
-//        initial-letter: 3 2;
-//    }
-//}
