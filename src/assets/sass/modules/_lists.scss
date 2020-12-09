@@ -285,3 +285,91 @@ dd {
         content: "\2016" "\00A0"; // parallel bars
     }
 }
+
+/**
+ * Documentation custom TOC lists. Allows for 2 sub-levels of nesting.
+ *
+ * Example HTML:
+ *
+ * <ul id="markdown-toc"> (generated via Kramdown)
+ * <ul class="list--toc">
+ */
+
+/* stylelint-disable max-nesting-depth, selector-max-combinators, selector-max-compound-selectors, selector-max-type */
+
+#markdown-toc,
+.list--toc {
+    padding: 0;
+    list-style: none;
+    counter-reset: toc-counter;
+
+    > li {
+        counter-increment: toc-counter;
+
+        &::before {
+            content: counter(toc-counter, decimal-leading-zero) "\00A0" "\00A0";
+        }
+
+        > ul {
+            list-style: none;
+            counter-reset: toc-sub-counter;
+
+            > li {
+                counter-increment: toc-sub-counter;
+
+                &::before {
+                    content: counter(toc-counter, decimal-leading-zero) "\002E" counter(toc-sub-counter) "\00A0" "\00A0";
+                }
+            }
+
+            ul {
+                list-style: none;
+                counter-reset: toc-sub-sub-counter;
+
+                li {
+                    counter-increment: toc-sub-sub-counter;
+
+                    &::before {
+                        content: counter(toc-counter, decimal-leading-zero) "\002E" counter(toc-sub-counter) "\002E" counter(toc-sub-sub-counter) "\00A0" "\00A0";
+                    }
+                }
+            }
+        }
+    }
+}
+
+/**
+ * Article sequentially-numbered h2/h3/h4 headings to complement TOC above.
+ *
+ * Example HTML:
+ *
+ * <article class="article-with-toc">
+ *     <ul class="list--toc">
+ */
+
+.article--with-toc {
+    counter-reset: heading-counter;
+
+    h2 {
+        counter-reset: heading-sub-counter;
+    }
+
+    h2::before {
+        content: counter(heading-counter, decimal-leading-zero) "\00A0" "\00A0";
+        counter-increment: heading-counter;
+    }
+
+    h3 {
+        counter-reset: heading-sub-sub-counter;
+    }
+
+    h3::before {
+        content: counter(heading-counter, decimal-leading-zero) "\002E" counter(heading-sub-counter) "\00A0" "\00A0";
+        counter-increment: heading-sub-counter;
+    }
+
+    h4::before {
+        content: counter(heading-counter, decimal-leading-zero) "\002E" counter(heading-sub-counter) "\002E" counter(heading-sub-sub-counter) "\00A0" "\00A0";
+        counter-increment: heading-sub-sub-counter;
+    }
+}
