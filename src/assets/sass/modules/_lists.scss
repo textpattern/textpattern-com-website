@@ -301,36 +301,62 @@ dd {
 .list--toc {
     padding: 0;
     list-style: none;
-    counter-reset: toc-counter;
+    counter-reset: toc-h2-counter;
+
+    ul {
+        list-style: none;
+    }
 
     > li {
-        counter-increment: toc-counter;
+        counter-increment: toc-h2-counter;
 
         &::before {
-            content: counter(toc-counter) "\00A0" "\00A0";
+            content: counter(toc-h2-counter) "\00A0" "\00A0";
         }
 
         > ul {
-            list-style: none;
-            counter-reset: toc-sub-counter;
+            counter-reset: toc-h3-counter;
 
             > li {
-                counter-increment: toc-sub-counter;
+                counter-increment: toc-h3-counter;
 
                 &::before {
-                    content: counter(toc-counter) "\002E" counter(toc-sub-counter) "\00A0" "\00A0";
+                    content: counter(toc-h2-counter) "\002E" counter(toc-h3-counter) "\00A0" "\00A0";
                 }
-            }
 
-            > ul {
-                list-style: none;
-                counter-reset: toc-sub-sub-counter;
+                > ul {
+                    counter-reset: toc-h4-counter;
 
-                > li {
-                    counter-increment: toc-sub-sub-counter;
+                    > li {
+                        counter-increment: toc-h4-counter;
 
-                    &::before {
-                        content: counter(toc-counter) "\002E" counter(toc-sub-counter) "\002E" counter(toc-sub-sub-counter) "\00A0" "\00A0";
+                        &::before {
+                            content: counter(toc-h2-counter) "\002E" counter(toc-h3-counter) "\002E" counter(toc-h4-counter) "\00A0" "\00A0";
+                        }
+
+                        > ul {
+                            counter-reset: toc-h5-counter;
+
+                            > li {
+                                counter-increment: toc-h5-counter;
+
+                                &::before {
+                                    content: counter(toc-h2-counter) "\002E" counter(toc-h3-counter) "\002E" counter(toc-h4-counter) "\002E" counter(toc-h5-counter) "\00A0" "\00A0";
+                                }
+                            }
+
+                            ul {
+                                counter-reset: toc-h6-counter;
+
+                                li {
+                                    counter-increment: toc-h6-counter;
+
+                                    &::before {
+                                        content: counter(toc-h2-counter) "\002E" counter(toc-h3-counter) "\002E" counter(toc-h4-counter) "\002E" counter(toc-h5-counter) "\002E" counter(toc-h6-counter) "\00A0" "\00A0";
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -348,31 +374,51 @@ dd {
  */
 
 .article--with-toc {
-    counter-reset: heading-counter;
+    counter-reset: heading-h2-counter;
 
     h2 {
-        counter-reset: heading-sub-counter;
+        counter-reset: heading-h3-counter;
     }
 
     h2::before {
-        content: counter(heading-counter) "\00A0" "\00A0";
+        content: counter(heading-h2-counter) "\00A0" "\00A0";
         opacity: 0.66;
-        counter-increment: heading-counter;
+        counter-increment: heading-h2-counter;
     }
 
     h3 {
-        counter-reset: heading-sub-sub-counter;
+        counter-reset: heading-h4-counter;
     }
 
     h3::before {
-        content: counter(heading-counter) "\002E" counter(heading-sub-counter) "\00A0" "\00A0";
+        content: counter(heading-h2-counter) "\002E" counter(heading-h3-counter) "\00A0" "\00A0";
         opacity: 0.66;
-        counter-increment: heading-sub-counter;
+        counter-increment: heading-h3-counter;
+    }
+
+    h4 {
+        counter-reset: heading-h5-counter;
     }
 
     h4::before {
-        content: counter(heading-counter) "\002E" counter(heading-sub-counter) "\002E" counter(heading-sub-sub-counter) "\00A0" "\00A0";
+        content: counter(heading-h2-counter) "\002E" counter(heading-h3-counter) "\002E" counter(heading-h4-counter) "\00A0" "\00A0";
         opacity: 0.66;
-        counter-increment: heading-sub-sub-counter;
+        counter-increment: heading-h4-counter;
+    }
+
+    h5 {
+        counter-reset: heading-h6-counter;
+    }
+
+    h5::before {
+        content: counter(heading-h2-counter) "\002E" counter(heading-h3-counter) "\002E" counter(heading-h4-counter) "\002E" counter(heading-h5-counter) "\00A0" "\00A0";
+        opacity: 0.66;
+        counter-increment: heading-h5-counter;
+    }
+
+    h6::before {
+        content: counter(heading-h2-counter) "\002E" counter(heading-h3-counter) "\002E" counter(heading-h4-counter) "\002E" counter(heading-h5-counter) "\002E" counter(heading-h6-counter) "\00A0" "\00A0";
+        opacity: 0.66;
+        counter-increment: heading-h6-counter;
     }
 }
