@@ -307,7 +307,7 @@ dd {
         counter-increment: toc-counter;
 
         &::before {
-            content: counter(toc-counter, decimal-leading-zero) "\00A0" "\00A0";
+            content: counter(toc-counter) "\00A0" "\00A0";
         }
 
         > ul {
@@ -318,19 +318,19 @@ dd {
                 counter-increment: toc-sub-counter;
 
                 &::before {
-                    content: counter(toc-counter, decimal-leading-zero) "\002E" counter(toc-sub-counter) "\00A0" "\00A0";
+                    content: counter(toc-counter) "\002E" counter(toc-sub-counter) "\00A0" "\00A0";
                 }
             }
 
-            ul {
+            > ul {
                 list-style: none;
                 counter-reset: toc-sub-sub-counter;
 
-                li {
+                > li {
                     counter-increment: toc-sub-sub-counter;
 
                     &::before {
-                        content: counter(toc-counter, decimal-leading-zero) "\002E" counter(toc-sub-counter) "\002E" counter(toc-sub-sub-counter) "\00A0" "\00A0";
+                        content: counter(toc-counter) "\002E" counter(toc-sub-counter) "\002E" counter(toc-sub-sub-counter) "\00A0" "\00A0";
                     }
                 }
             }
@@ -355,7 +355,8 @@ dd {
     }
 
     h2::before {
-        content: counter(heading-counter, decimal-leading-zero) "\00A0" "\00A0";
+        content: counter(heading-counter) "\00A0" "\00A0";
+        opacity: 0.66;
         counter-increment: heading-counter;
     }
 
@@ -364,12 +365,14 @@ dd {
     }
 
     h3::before {
-        content: counter(heading-counter, decimal-leading-zero) "\002E" counter(heading-sub-counter) "\00A0" "\00A0";
+        content: counter(heading-counter) "\002E" counter(heading-sub-counter) "\00A0" "\00A0";
+        opacity: 0.66;
         counter-increment: heading-sub-counter;
     }
 
     h4::before {
-        content: counter(heading-counter, decimal-leading-zero) "\002E" counter(heading-sub-counter) "\002E" counter(heading-sub-sub-counter) "\00A0" "\00A0";
+        content: counter(heading-counter) "\002E" counter(heading-sub-counter) "\002E" counter(heading-sub-sub-counter) "\00A0" "\00A0";
+        opacity: 0.66;
         counter-increment: heading-sub-sub-counter;
     }
 }
