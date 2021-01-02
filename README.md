@@ -1,6 +1,6 @@
 # Textpattern.com website
 
-[![Build Status](https://travis-ci.org/textpattern/textpattern-com-website.svg)](https://travis-ci.org/textpattern/textpattern-com-website)
+[![Build Status](https://travis-ci.com/textpattern/textpattern-com-website.svg)](https://travis-ci.com/textpattern/textpattern-com-website)
 
 Official 2017+ website of the [Textpattern](https://textpattern.com/) project. **Requires Textpattern 4.8.1 or later.**
 
