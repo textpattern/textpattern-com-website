@@ -104,24 +104,27 @@ h6,
     }
 }
 
+h1,
+h2,
+h3 {
+    letter-spacing: -0.25px;
+}
+
 h1 {
     margin: 0.6315789em 0; // 24px / 38px
     font-size: 2.375rem; // 38px / 16px
-    letter-spacing: -0.25px;
     line-height: 1.1842105; // 45px / 38px
 }
 
 h2 {
     margin: 0.8571429em 0; // 24px / 28px
     font-size: 1.75rem; // 28px / 16px
-    letter-spacing: -0.25px;
     line-height: 1.25; // 35px / 28px
 }
 
 h3 {
     margin: 1em 0; // 22px
     font-size: 1.375rem; // 22px / 16px
-    letter-spacing: -0.25px;
     line-height: 1.3181818; // 29px / 22px
 }
 

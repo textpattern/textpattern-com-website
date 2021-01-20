@@ -195,17 +195,13 @@ $dark-colors: (
  *
  * Example HTML:
  *
- * <ol class="design-patterns--breakpoints list--no-bullets clearfix">
+ * <ol class="design-patterns--breakpoints list--no-bullets">
  *     <li class="design-patterns--breakpoint-0">No breakpoint</li>
  *     <li class="design-patterns--breakpoint-1">Breakpoint 1</li>
  *     <li class="design-patterns--breakpoint-2">Breakpoint 2</li>
  *     <li class="design-patterns--breakpoint-3">Breakpoint 3</li>
  * </ol>
  */
-
-.design-patterns--breakpoints li {
-    float: left;
-}
 
 .design-patterns--breakpoint-0,
 .design-patterns--breakpoint-1,
