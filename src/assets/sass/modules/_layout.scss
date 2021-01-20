@@ -586,6 +586,11 @@ main .layout-4col-3span {
 }
 
 @include dark-mode {
+    .showcases img {
+        border-color: $dark-color-border-extra-dark;
+        box-shadow: 0 0.2em 0.5em rgba(0, 0, 0, 0.5);
+    }
+
     .dark-contrast,
     .index-feature h3::before,
     .index-docs h3::before,
