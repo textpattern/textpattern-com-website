@@ -1,16 +1,6 @@
 /* Navigation
    ========================================================================== */
 
-.nav-container {
-    border-bottom: 2px solid $color-text;
-}
-
-@include dark-mode {
-    .nav-container {
-        border-bottom-color: $dark-color-border-extra-dark;
-    }
-}
-
 #site-navigation {
     font-family: $font-serif;
 
@@ -148,11 +138,10 @@
     display: none;
     position: absolute;
     z-index: 2;
-    top: 1em;
+    top: 0.75rem;
     right: 5%;
     width: 32px;
     height: 32px;
-    margin-top: 1px;
     border: 1px solid $color-background;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath fill='%23333' d='M4 6h24v4H4zm0 8h24v4H4zm0 8h24v4H4z'/%3E%3C/svg%3E");
     background-size: 32px 32px;

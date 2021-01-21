@@ -12,7 +12,8 @@ body {
     margin: 0; /* 1 */
     background-color: $color-text;
     color: $color-text-white-out;
-    scroll-behavior: smooth; // https://caniuse.com/#search=scroll-behavior
+    scroll-behavior: smooth;
+    scroll-padding-top: 1rem;
 }
 
 @include dark-mode {
@@ -85,15 +86,47 @@ noscript {
  */
 
 .wrapper {
-    position: relative;
-    padding-top: 1px;
-    border-bottom: 1px solid $color-background;
+    margin: -1px 0;
+    padding: 1px 0;
     background: $color-background;
     color: $color-text;
 }
 
 @include dark-mode {
     .wrapper {
+        border-bottom-color: $dark-color-border-extra-dark;
+        background: $dark-color-background;
+        color: $dark-color-text;
+    }
+}
+
+/**
+ * Show/hide header on scroll.
+ *
+ * Example HTML:
+ *
+ * <div id="dynamic-header">
+ *     <header>
+ *     <nav>
+ * </div>
+ */
+
+#dynamic-header {
+    border-bottom: 2px solid $color-text;
+    background: $color-background;
+    color: $color-text;
+
+    .js & {
+        position: sticky;
+        z-index: 100;
+        top: 0;
+        right: 0;
+        width: 100%;
+    }
+}
+
+@include dark-mode {
+    #dynamic-header {
         border-bottom-color: $dark-color-border-extra-dark;
         background: $dark-color-background;
         color: $dark-color-text;
@@ -114,6 +147,13 @@ noscript {
 .wrapper-footer {
     flex: 1;
     padding-bottom: 0.5em;
+    border-top: 1px solid $color-background;
+}
+
+@include dark-mode {
+    .wrapper-footer {
+        border-top-color: $dark-color-border-extra-dark;
+    }
 }
 
 /**
@@ -145,7 +185,7 @@ noscript {
 }
 
 .masthead {
-    margin: 1em 0;
+    margin: 0.75em 0;
     font-size: 1rem;
 
     a {
