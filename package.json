@@ -1,7 +1,7 @@
 {
   "name": "textpattern-com",
   "description": "Official website of the Textpattern project.",
-  "version": "1.6.4",
+  "version": "1.6.5",
   "repository": {
     "type": "git",
     "url": "https://github.com/textpattern/textpattern-com-website"
