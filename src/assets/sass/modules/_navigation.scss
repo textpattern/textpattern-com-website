@@ -1,8 +1,10 @@
+@use "../setup";
+
 /* Navigation
    ========================================================================== */
 
 #site-navigation {
-    font-family: $font-serif;
+    font-family: var(--font-serif);
 
     .js & {
         display: block;
@@ -15,17 +17,17 @@
 
     ul {
         display: block;
-        max-width: $container-max-width;
+        max-width: setup.$container-max-width;
         margin: 0 auto;
         padding: 0;
         list-style: none;
     }
 
     li {
-        border-top: 1px solid $color-border;
+        border-top: 1px solid var(--color-border);
 
         &:first-child {
-            border-top: 2px solid $color-text;
+            border-top: 2px solid var(--color-text);
         }
 
         &:last-child {
@@ -36,36 +38,36 @@
     a {
         display: block;
         padding: 0.4285714em 5%; // 6px / 14px
-        color: $color-text;
+        color: var(--color-text);
         font-weight: bold;
 
         &:hover {
-            background-color: $color-selected;
-            color: $color-text;
+            background-color: var(--color-nav-hover);
+            color: var(--color-text);
             text-decoration: none;
         }
 
         &:active {
-            background-color: $color-selecting;
-            color: darken($color-text, 10%);
+            background-color: var(--color-nav-active);
+            color: var(--color-text-heading);
             text-decoration: none;
         }
 
         &:focus {
-            background-color: $color-selected;
+            background-color: var(--color-nav-hover);
         }
     }
 
     .active a {
-        background-color: $color-selected;
+        background-color: var(--color-nav-hover);
 
         &:hover,
         &:focus {
-            background-color: darken($color-selected, 4%);
+            background-color: var(--color-nav-hover-selected);
         }
 
         &:active {
-            background-color: $color-selecting;
+            background-color: var(--color-nav-active);
         }
     }
 
@@ -75,48 +77,17 @@
     }
 }
 
-@include dark-mode {
+@include setup.dark-mode {
     #site-navigation {
         ul {
-            background-color: $dark-color-background-box;
+            background-color: var(--color-background-box);
         }
 
         li {
-            border-top-color: $dark-color-border-light;
+            border-top-color: var(--color-border-light);
 
             &:first-child {
-                border-top-color: $dark-color-border-extra-dark;
-            }
-        }
-
-        a {
-            color: $dark-color-text;
-
-            &:hover {
-                background-color: $dark-color-selecting;
-                color: $dark-color-text;
-            }
-
-            &:active {
-                background-color: $dark-color-selected;
-                color: tint($dark-color-text, 15%);
-            }
-
-            &:focus {
-                background-color: $dark-color-selecting;
-            }
-        }
-
-        .active a {
-            background-color: $dark-color-selecting;
-
-            &:hover,
-            &:focus {
-                background-color: $dark-color-selected;
-            }
-
-            &:active {
-                background-color: $dark-color-selecting;
+                border-top-color: var(--color-border-extra-dark);
             }
         }
     }
@@ -133,7 +104,7 @@
  */
 
 #site-navigation-toggle {
-    @include hide-text;
+    @include setup.hide-text;
 
     display: none;
     position: absolute;
@@ -142,7 +113,7 @@
     right: 5%;
     width: 32px;
     height: 32px;
-    border: 1px solid $color-background;
+    border: 1px solid var(--color-background);
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath fill='%23333' d='M4 6h24v4H4zm0 8h24v4H4zm0 8h24v4H4z'/%3E%3C/svg%3E");
     background-size: 32px 32px;
     user-select: none;
@@ -157,22 +128,21 @@
     }
 
     &:hover {
-        border-color: $color-border-extra-dark;
+        border-color: var(--color-border-extra-dark);
     }
 
     &:focus {
-        border-color: $color-link-focus;
+        border-color: var(--color-link-focus);
         outline: 2px solid transparent; // Allows for repainting in high contrast modes.
     }
 }
 
-@include dark-mode {
+@include setup.dark-mode {
     #site-navigation-toggle {
-        border-color: $dark-color-background;
         background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath fill='%23ced4da' d='M4 6h24v4H4zm0 8h24v4H4zm0 8h24v4H4z'/%3E%3C/svg%3E");
 
         &:hover {
-            border-color: $dark-color-border-extra-light;
+            border-color: var(--color-border-extra-light);
         }
 
         &.site-navigation-toggle-active {
@@ -180,7 +150,7 @@
         }
 
         &:focus {
-            border-color: $dark-color-link-focus;
+            border-color: var(--color-link-focus);
         }
     }
 }

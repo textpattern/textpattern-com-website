@@ -1,3 +1,5 @@
+@use "../setup";
+
 /* Alert messages
    ========================================================================== */
 
@@ -13,37 +15,19 @@
  */
 
 .success {
-    color: $color-success-text;
+    color: var(--color-success-text);
 }
 
 .warning {
-    color: $color-warning-text;
+    color: var(--color-warning-text);
 }
 
 .error {
-    color: $color-error-text;
+    color: var(--color-error-text);
 }
 
 .information {
-    color: $color-info-text;
-}
-
-@include dark-mode {
-    .success {
-        color: $dark-color-success-text;
-    }
-
-    .warning {
-        color: $dark-color-warning-text;
-    }
-
-    .error {
-        color: $dark-color-error-text;
-    }
-
-    .information {
-        color: $dark-color-info-text;
-    }
+    color: var(--color-info-text);
 }
 
 /**
@@ -60,13 +44,7 @@
  */
 
 .highlighted {
-    background: $color-highlight-box;
-}
-
-@include dark-mode {
-    .highlighted {
-        background: $dark-color-highlight-box;
-    }
+    background: var(--color-highlight-box);
 }
 
 /**
@@ -83,51 +61,27 @@
 .alert-block {
     padding: 0.5em 1em;
     border: 1px solid;
-    border-radius: $border-radius / 2;
+    border-radius: setup.$border-radius / 2;
     word-wrap: break-word; /* 1 */
 
     &.success {
-        border-color: $color-success-border;
-        background: $color-success-background;
+        border-color: var(--color-success-border);
+        background: var(--color-success-background);
     }
 
     &.warning {
-        border-color: $color-warning-border;
-        background: $color-warning-background;
+        border-color: var(--color-warning-border);
+        background: var(--color-warning-background);
     }
 
     &.error {
-        border-color: $color-error-border;
-        background: $color-error-background;
+        border-color: var(--color-error-border);
+        background: var(--color-error-background);
     }
 
     &.information {
-        border-color: $color-info-border;
-        background: $color-info-background;
-    }
-}
-
-@include dark-mode {
-    .alert-block {
-        &.success {
-            border-color: $dark-color-success-border;
-            background: $dark-color-success-background;
-        }
-
-        &.warning {
-            border-color: $dark-color-warning-border;
-            background: $dark-color-warning-background;
-        }
-
-        &.error {
-            border-color: $dark-color-error-border;
-            background: $dark-color-error-background;
-        }
-
-        &.information {
-            border-color: $dark-color-info-border;
-            background: $dark-color-info-background;
-        }
+        border-color: var(--color-info-border);
+        background: var(--color-info-background);
     }
 }
 

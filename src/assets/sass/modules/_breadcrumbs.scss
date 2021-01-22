@@ -1,3 +1,5 @@
+@use "../setup";
+
 /* Breadcrumb links
    ========================================================================== */
 
@@ -15,9 +17,9 @@
 .breadcrumbs {
     margin: 0 -1.3333333em;
     padding: 0.5em 1.3333333em; // 6px / 12px + 16px / 12px
-    background-color: $color-background-box;
+    background-color: var(--color-background-box);
     list-style: none;
-    font-size: $small-font-size;
+    font-size: setup.$small-font-size;
 
     li {
         display: inline-block;
@@ -27,11 +29,5 @@
 
     > li + li::before {
         content: "\00A0" "\002F" "\00A0";
-    }
-}
-
-@include dark-mode {
-    .breadcrumbs {
-        background-color: $dark-color-background-box;
     }
 }

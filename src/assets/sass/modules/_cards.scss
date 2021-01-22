@@ -1,3 +1,5 @@
+@use "../setup";
+
 /* Cards/article tiles
    ========================================================================== */
 
@@ -27,7 +29,7 @@
     flex: 1 0 0%;
     flex-direction: column;
     margin: 0.5em 0 1.5em;
-    border: 1px solid $color-border-light;
+    border: 1px solid var(--color-border-light);
     word-wrap: break-word;
 
     .alert-pill {
@@ -35,26 +37,20 @@
         top: 0;
         left: -1px;
         transform: translateY(-50%);
-        border-radius: ($border-radius / 2) ($border-radius / 2) ($border-radius / 2) 0;
+        border-radius: (setup.$border-radius / 2) (setup.$border-radius / 2) (setup.$border-radius / 2) 0;
     }
 }
 
 .card.align-right .alert-pill {
     right: -1px;
     left: auto;
-    border-radius: ($border-radius / 2) ($border-radius / 2) 0;
+    border-radius: (setup.$border-radius / 2) (setup.$border-radius / 2) 0;
 }
 
 .card.align-center .alert-pill {
     left: 50%;
     transform: translate(-50%, -50%);
-    border-radius: ($border-radius / 2);
-}
-
-@include dark-mode {
-    .card {
-        border-color: $dark-color-border-light;
-    }
+    border-radius: (setup.$border-radius / 2);
 }
 
 .card-body {
@@ -69,21 +65,14 @@
 .card-header,
 .card-footer {
     padding: 0.33rem 1rem;
-    background: $color-background-box;
+    background: var(--color-background-box);
 }
 
 .card-header {
-    border-bottom: 1px solid $color-border-light;
+    border-bottom: 1px solid var(--color-border-light);
 }
 
 .card-footer {
-    border-top: 1px solid $color-border-light;
+    border-top: 1px solid var(--color-border-light);
 }
 
-@include dark-mode {
-    .card-header,
-    .card-footer {
-        border-color: $dark-color-border-light;
-        background: $dark-color-background-box;
-    }
-}

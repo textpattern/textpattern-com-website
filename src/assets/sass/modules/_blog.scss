@@ -1,3 +1,5 @@
+@use "../setup";
+
 /* Blog section specific
    ========================================================================== */
 
@@ -12,7 +14,7 @@
  */
 
 .article-date {
-    font-family: $font-serif;
+    font-family: var(--font-serif);
     font-size: 1.5rem; // 24px / 16px
 }
 
@@ -48,7 +50,7 @@
 
 .article-footer,
 .card-postinfo {
-    font-size: $small-font-size;
+    font-size: setup.$small-font-size;
 
     a,
     .article-author,
@@ -56,31 +58,28 @@
         display: inline-block;
         margin-top: 0.5em;
         padding: 0.1666667em 0.6666667em; // 2px / 12px + 8px / 12px
-        border: 1px solid $color-text;
+        border: 1px solid var(--color-text);
         border-radius: 1em;
-        background: $color-text;
-        color: $color-text-white-out;
+        background: var(--color-text);
+        color: var(--color-text-white-enforced);
     }
 
-    a:hover {
-        border-color: darken($color-button-primary-border, 13%);
-        background-color: $color-highlight;
-        color: $color-text;
+    a:hover,
+    a:active {
+        border-color: var(--color-button-primary-border-interact);
+        background-color: var(--color-highlight-enforced);
+        color: var(--color-text-button);
         text-decoration: none;
-    }
-
-    a:focus {
-        border-color: $color-link-focus;
-        outline: 2px solid transparent; // Allows for repainting in high contrast modes.
-        background-color: $color-highlight;
-        color: $color-text;
     }
 
     a:active {
-        border-color: darken($color-button-primary-border, 13%);
-        background-color: darken($color-highlight, 7%);
-        color: $color-text;
-        text-decoration: none;
+        filter: brightness(0.95);
+    }
+
+    a:focus {
+        border-color: var(--color-link-focus);
+        outline: 2px solid transparent; // Allows for repainting in high contrast modes.
+        background-color: var(--color-highlight-enforced);
     }
 
     // Put a bit more margin on 2nd category link, if it exists (for better touch accessibility).
@@ -90,28 +89,25 @@
     }
 }
 
-@include dark-mode {
+@include setup.dark-mode {
     .article-footer,
     .card-postinfo {
         a,
-        .article-author {
-            border-color: $dark-color-background-form;
-            background: $dark-color-background-form;
+        .article-author,
+        .compatibility {
+            border-color: var(--color-background-form);
+            background: var(--color-background-form);
         }
 
-        a:hover {
-            border-color: darken($color-button-primary-border, 13%);
-            background-color: $color-highlight;
+        a:hover,
+        a:active {
+            border-color: var(--color-button-primary-border-interact);
+            background-color: var(--color-highlight-enforced);
         }
 
         a:focus {
-            border-color: $dark-color-link-focus;
-            background-color: $color-highlight;
-        }
-
-        a:active {
-            border-color: darken($color-button-primary-border, 13%);
-            background-color: darken($color-highlight, 7%);
+            border-color: var(--color-link-focus);
+            background-color: var(--color-highlight-enforced);
         }
     }
 }

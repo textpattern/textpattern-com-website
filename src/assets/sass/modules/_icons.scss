@@ -1,3 +1,5 @@
+@use "../setup";
+
 /* Icons
    ========================================================================== */
 
@@ -20,7 +22,7 @@
     text-indent: -9999px;
 }
 
-@include dark-mode {
+@include setup.dark-mode {
     .ui-icon {
         filter: brightness(3) sepia(1) hue-rotate(168deg) saturate(33%);
     }

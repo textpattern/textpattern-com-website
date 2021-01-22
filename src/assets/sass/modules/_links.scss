@@ -1,3 +1,5 @@
+@use "../setup";
+
 /* Links
    ========================================================================== */
 
@@ -6,37 +8,24 @@
  * 2. Remove default underline style from non-hover state links.
  * 3. Interrupt the decoration line to let the shape of the text show through
  *    in supported browsers.
+ * 4. Remove tap delay in modern browsers.
  */
 
 a {
-    color: $color-link; /* 1 */
+    color: var(--color-link); /* 1 */
     text-decoration: none; /* 2 */
     text-decoration-skip-ink: auto; /* 3 */
     text-underline-offset: 0.125em;
+    touch-action: manipulation; /* 4 */
 
     &:hover,
     &:active {
-        color: $color-link-hover;
+        color: var(--color-link-interact);
         text-decoration: underline;
     }
 
     &:focus {
-        outline: 1px solid $color-link-focus;
-    }
-}
-
-@include dark-mode {
-    a {
-        color: $dark-color-link;
-
-        &:hover,
-        &:active {
-            color: $dark-color-link-hover;
-        }
-
-        &:focus {
-            outline: thin solid $dark-color-link-focus;
-        }
+        outline: 1px solid var(--color-link-focus);
     }
 }
 
@@ -54,31 +43,12 @@ h4,
 h5,
 h6 {
     a {
-        color: $color-text;
+        color: var(--color-text-heading);
 
         &:hover,
         &:active {
-            color: $color-text;
-            text-decoration-color: rgba($color-text, 0.5);  /* 1 */
-        }
-    }
-}
-
-@include dark-mode {
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-        a {
-            color: $dark-color-text-heading;
-
-            &:hover,
-            &:active {
-                color: $dark-color-text-heading;
-                text-decoration-color: rgba($dark-color-text-heading, 0.5);  /* 1 */
-            }
+            color: var(--color-text-heading);
+            text-decoration-color: rgba(var(--color-text-heading), 0.5);  /* 1 */
         }
     }
 }
@@ -89,15 +59,11 @@ h6 {
 
 .complementary-content a:not(.button),
 .site-footer a {
-    color: $color-selecting;
+    color: var(--color-link-alt);
 
     &:hover,
     &:active {
-        color: $color-selected;
-    }
-
-    &:focus {
-        outline: 1px solid $color-selecting;
+        color: var(--color-link-alt-interact);
     }
 }
 
@@ -113,34 +79,18 @@ h6 {
 
 .a--img {
     img {
-        border: solid 1px $color-border;
+        border: solid 1px var(--color-border);
     }
 
     &:hover img {
-        border-color: $color-link-hover;
+        border-color: var(--color-link-interact);
     }
 
     &:focus {
         outline: 0;
 
         img {
-            border-color: $color-link-focus;
-        }
-    }
-}
-
-@include dark-mode {
-    .a--img {
-        img {
-            border-color: $dark-color-border;
-        }
-
-        &:hover img {
-            border-color: $dark-color-link-hover;
-        }
-
-        &:focus img {
-            border-color: $dark-color-link-focus;
+            border-color: var(--color-link-focus);
         }
     }
 }
@@ -161,19 +111,12 @@ h6 {
     padding: 0.25em 0.5em;
     transform: translateY(-5em);
     transition: transform 0.25s ease-in-out;
-    background-color: $color-selected;
-    color: $color-text;
+    background-color: var(--color-link-alt-interact);
+    color: var(--color-text);
 
     &:focus,
     &:active {
         transform: translateY(0);
-    }
-}
-
-@include dark-mode {
-    .a--skip-link {
-        background-color: $dark-color-selecting;
-        color: $dark-color-text;
     }
 }
 

@@ -1,3 +1,5 @@
+@use "../setup";
+
 /* Progress indicators
    ========================================================================== */
 
@@ -11,21 +13,27 @@ progress {
     max-width: 10em; // 160px / 16px
     height: 0.75em;
     margin-right: 0.33em;
-    border: 1px solid $color-border;
-    background-color: $color-gradient-to;
+    border: 1px solid var(--color-border);
+    background-color: var(--color-background-box);
     vertical-align: baseline; /* 1 */
     appearance: none;
+}
+
+@include setup.dark-mode {
+    progress {
+        border-color: var(--color-border-extra-dark);
+    }
 }
 
 // WebKit/Blink.
 
 progress::-webkit-progress-bar {
-    background-color: $color-gradient-to;
+    background-color: var(--color-background-box);
 }
 
 progress::-webkit-progress-value {
     animation: progressbar-stripes linear 4s infinite;
-    background-color: $color-highlight;
+    background-color: var(--color-highlight);
     background-image:
         linear-gradient(
             135deg,
@@ -42,7 +50,7 @@ progress::-webkit-progress-value {
 
 progress:indeterminate::-webkit-progress-bar {
     animation: progressbar-stripes linear 4s infinite;
-    background-color: $color-border;
+    background-color: var(--color-border);
     background-image:
         linear-gradient(
             135deg,
@@ -67,7 +75,7 @@ progress[value="1"]::-webkit-progress-value {
 
 progress::-moz-progress-bar {
     animation: progressbar-stripes linear 4s infinite;
-    background-color: $color-highlight;
+    background-color: var(--color-highlight);
     background-image:
         linear-gradient(
             135deg,
@@ -85,7 +93,7 @@ progress::-moz-progress-bar {
 progress:indeterminate::-moz-progress-bar {
     /* autoprefixer: off */
     animation: progressbar-stripes linear 4s infinite;
-    background-color: $color-border;
+    background-color: var(--color-border);
     background-image:
         linear-gradient(
             135deg,
@@ -106,33 +114,6 @@ progress[value="1"]::-moz-progress-bar {
     background-image: none;
 }
 
-// EdgeHTML.
-
-progress::-ms-fill {
-    /* autoprefixer: off */
-    animation: progressbar-stripes linear 4s infinite;
-    border: 0;
-    background-color: $color-highlight;
-    background-image:
-        linear-gradient(
-            135deg,
-            rgba(255, 255, 255, 0.33) 25%,
-            transparent 25%,
-            transparent 50%,
-            rgba(255, 255, 255, 0.33) 50%,
-            rgba(255, 255, 255, 0.33) 75%,
-            transparent 75%,
-            transparent
-        );
-    background-size: 24px 24px;
-}
-
-// Stop animation at 100% progress.
-
-progress[value="1"]::-ms-fill {
-    background-image: none;
-}
-
 /**
  * Numerical values alongside progress bars.
  */
@@ -141,38 +122,10 @@ progress[value="1"]::-ms-fill {
     display: inline-block;
     min-width: 2.75em;
     margin-right: 0.5em;
-    font-size: $small-font-size;
+    font-size: setup.$small-font-size;
 }
 
 .data-progress[data-progress="100"] {
-    background: $color-success-background;
-    color: $color-success-text;
-}
-
-@include dark-mode {
-    progress {
-        border-color: $dark-color-border;
-        background-color: $dark-color-background-box;
-    }
-
-    // WebKit/Blink.
-
-    progress::-webkit-progress-bar {
-        background-color: $dark-color-background-box;
-    }
-
-    progress:indeterminate::-webkit-progress-bar {
-        background-color: $dark-color-border;
-    }
-
-    // Gecko/Quantum.
-
-    progress:indeterminate::-moz-progress-bar {
-        background-color: $dark-color-border;
-    }
-
-    .data-progress[data-progress="100"] {
-        background: $dark-color-success-background;
-        color: $dark-color-success-text;
-    }
+    background: var(--color-success-background);
+    color: var(--color-success-text);
 }

@@ -1,3 +1,5 @@
+@use "../setup";
+
 /* Forms
    ========================================================================== */
 
@@ -10,13 +12,7 @@ fieldset {
     min-width: 0; /* 1 */
     margin: 1em 0; /* 2 */
     padding: 1px 1em; /* 2 */
-    border: 1px solid $color-border; /* 2 */
-}
-
-@include dark-mode {
-    fieldset {
-        border-color: $dark-color-border;
-    }
+    border: 1px solid var(--color-border); /* 2 */
 }
 
 /**
@@ -55,12 +51,12 @@ legend {
 }
 
 /**
- * Show the overflow in Edge.
+ * Remove tap delay in modern browsers.
  */
 
-button,
-input {
-    overflow: visible;
+input,
+button {
+    touch-action: manipulation;
 }
 
 /**
@@ -78,20 +74,11 @@ textarea,
     box-sizing: border-box;
     max-width: 100%; /* 1 */
     margin: 0; /* 2 */
-    color: $color-text-form;
-    font-family: $font-form;
+    color: var(--color-text-form);
+    font-family: var(--font-sans-serif);
     font-size: 1rem; /* 3 */
     line-height: 1.375; // 22px / 16px
     vertical-align: baseline;
-}
-
-@include dark-mode {
-    input,
-    select,
-    optgroup,
-    textarea {
-        color: $dark-color-text-form;
-    }
 }
 
 /**
@@ -118,22 +105,22 @@ select,
 textarea {
     height: 2em; // 32px / 16px
     padding: 0.25em 0.1875em; // 8px / 16px + 3px / 16px
-    border: 1px solid $color-border;
+    border: 1px solid var(--color-border);
     border-radius: 0;
-    background: $color-background-form;
+    background: var(--color-background-form);
     appearance: none; /* 1 */
 
     &:hover {
-        border-color: $color-border-extra-dark;
+        border-color: var(--color-border-extra-dark);
     }
 
     &:focus {
-        border-color: $color-link-focus;
+        border-color: var(--color-link-focus);
         outline: 2px solid transparent; // Allows for repainting in high contrast modes.
     }
 }
 
-@include dark-mode {
+@include setup.dark-mode {
     [type="color"],
     [type="date"],
     [type="datetime"],
@@ -150,15 +137,14 @@ textarea {
     [type="week"],
     select,
     textarea {
-        border-color: $dark-color-border-extra-dark;
-        background-color: $dark-color-background-form;
+        border-color: var(--color-border-extra-dark);
 
         &:hover {
-            border-color: $dark-color-border-extra-light;
+            border-color: var(--color-border-extra-light);
         }
 
         &:focus {
-            border-color: $dark-color-link-focus;
+            border-color: var(--color-link-focus);
         }
     }
 }
@@ -176,11 +162,11 @@ textarea {
     width: 16px;
     height: 16px;
     padding: 0; /* 1 */
-    border: 1px solid $color-border-extra-dark;
-    background: $color-background-form;
+    border: 1px solid var(--color-border-extra-dark);
+    background: var(--color-background-form);
     appearance: none;
 
-    + label:not(.ui-controlgroup-item) {
+    + label {
         margin: 0 0.5em 0 0; /* 2 */
 
         &:last-of-type {
@@ -189,12 +175,16 @@ textarea {
     }
 
     &:hover {
-        border-color: shade($color-border-extra-dark, 15%);
+        filter: brightness(1.05);
         cursor: pointer;
     }
 
+    &:active {
+        filter: brightness(0.95);
+    }
+
     &:focus {
-        border-color: $color-link-focus;
+        border-color: var(--color-link-focus);
         outline: 2px solid transparent; // Allows for repainting in high contrast modes.
     }
 
@@ -203,18 +193,11 @@ textarea {
     }
 }
 
-@include dark-mode {
+@include setup.dark-mode {
     [type="checkbox"],
     [type="radio"] {
-        border-color: $dark-color-border-extra-dark;
-        background-color: $dark-color-background-form;
-
         &:hover {
-            border-color: $dark-color-border-extra-light;
-        }
-
-        &:focus {
-            border-color: $dark-color-link-focus;
+            border-color: var(--color-border-extra-light);
         }
     }
 }
@@ -222,40 +205,40 @@ textarea {
 [type="checkbox"] {
     &:checked {
         border: 0;
-        background: $color-text-visual-de-emphasis url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='%23fff' d='M13 2.5l-7 7-2-2-2 2 4 4L15 4.5z'/%3E%3C/svg%3E");
+        background: var(--color-text-visual-de-emphasis) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='%23fff' d='M13 2.5l-7 7-2-2-2 2 4 4L15 4.5z'/%3E%3C/svg%3E");
 
         &:hover,
         &:active {
-            background-color: $color-text;
+            background-color: var(--color-text);
         }
 
         &:focus {
-            background-color: $color-link-focus;
+            background-color: var(--color-link-focus);
         }
     }
 
     &[disabled]:checked {
-        background: $color-text-visual-de-emphasis url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='%23fff' d='M13 2.5l-7 7-2-2-2 2 4 4L15 4.5z'/%3E%3C/svg%3E");
+        background: var(color-text-visual-de-emphasis) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='%23fff' d='M13 2.5l-7 7-2-2-2 2 4 4L15 4.5z'/%3E%3C/svg%3E");
     }
 }
 
-@include dark-mode {
+@include setup.dark-mode {
     [type="checkbox"] {
         &:checked {
-            background: $dark-color-text url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='%23282d32' d='M13 2.5l-7 7-2-2-2 2 4 4L15 4.5z'/%3E%3C/svg%3E");
+            background: var(--color-text) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='%23282d32' d='M13 2.5l-7 7-2-2-2 2 4 4L15 4.5z'/%3E%3C/svg%3E");
 
             &:hover,
             &:active {
-                background-color: $dark-color-text-heading;
+                background-color: var(--color-text-heading);
             }
 
             &:focus {
-                background-color: $dark-color-link-focus;
+                background-color: var(--color-link-focus);
             }
         }
 
         &[disabled]:checked {
-            background: $dark-color-text url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='%23282d32' d='M13 2.5l-7 7-2-2-2 2 4 4L15 4.5z'/%3E%3C/svg%3E");
+            background: var(--color-text) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='%23282d32' d='M13 2.5l-7 7-2-2-2 2 4 4L15 4.5z'/%3E%3C/svg%3E");
         }
     }
 }
@@ -264,30 +247,28 @@ textarea {
     border-radius: 100%;
 
     &:checked {
-        border: 5px solid $color-text-visual-de-emphasis;
+        border: 5px solid var(--color-text-visual-de-emphasis);
 
         &:hover,
         &:active {
-            border-color: $color-text;
+            border-color: var(--color-text);
         }
 
         &:focus {
-            border-color: $color-link-focus;
+            border-color: var(--color-link-focus);
         }
     }
 }
 
-@include dark-mode {
+@include setup.dark-mode {
     [type="radio"]:checked {
-        border-color: $dark-color-text;
-
         &:hover,
         &:active {
-            border-color: $dark-color-text-heading;
+            border-color: var(--color-text-heading);
         }
 
         &:focus {
-            border-color: $dark-color-link-focus;
+            border-color: var(--color-link-focus);
         }
     }
 }
@@ -316,14 +297,13 @@ textarea {
 
 select {
     padding-right: 1.5em; // 24px / 16px
-    background: $color-background-form url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='17' height='5' viewBox='0 0 17 5'%3E%3Cpolygon fill='%23333' points='0,0 5,5 10,0'/%3E%3C/svg%3E") right center no-repeat;
+    background: var(--color-background-form) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='17' height='5' viewBox='0 0 17 5'%3E%3Cpolygon fill='%23333' points='0,0 5,5 10,0'/%3E%3C/svg%3E") right center no-repeat;
     background-size: 1.0625em 0.3125em; // 17px / 16px, 5px / 16px
     text-transform: none;
 }
 
-@include dark-mode {
+@include setup.dark-mode {
     select {
-        background-color: $dark-color-background-form;
         background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='17' height='5' viewBox='0 0 17 5'%3E%3Cpolygon fill='%23788591' points='0,0 5,5 10,0'/%3E%3C/svg%3E");
     }
 }
@@ -339,7 +319,7 @@ select[multiple] {
     background-image: none;
 }
 
-@include dark-mode {
+@include setup.dark-mode {
     select[size],
     select[multiple] {
         background-image: none;
@@ -397,21 +377,19 @@ textarea {
 [disabled] option,
 [disabled] optgroup,
 span.disabled {
-    border: 1px solid $color-border !important;
+    border: 1px solid var(--color-border) !important;
     opacity: 0.33 !important;
-    background-color: $color-background-form-disabled !important;
+    background-color: var(--color-background-form-disabled) !important;
     box-shadow: none !important;
     cursor: default !important; /* 1 */
 }
 
-@include dark-mode {
+@include setup.dark-mode {
     [disabled],
     [disabled] option,
     [disabled] optgroup,
     span.disabled {
-        border: 1px solid $dark-color-border !important;
         opacity: 0.25 !important;
-        background-color: $dark-color-background-form-disabled !important;
     }
 }
 
@@ -452,18 +430,8 @@ input,
 select,
 textarea {
     &:focus:invalid {
-        border-color: $color-error-text;
+        border-color: var(--color-error-text);
         box-shadow: none; // Normalize Firefox styling
-    }
-}
-
-@include dark-mode {
-    input,
-    select,
-    textarea {
-        &:focus:invalid {
-            border-color: $dark-color-error-text;
-        }
     }
 }
 
@@ -475,18 +443,8 @@ input,
 select,
 textarea {
     &:-moz-ui-invalid {
-        border-color: $color-error-text;
+        border-color: var(--color-error-text);
         box-shadow: none;
-    }
-}
-
-@include dark-mode {
-    input,
-    select,
-    textarea {
-        &:-moz-ui-invalid {
-            border-color: $dark-color-error-text;
-        }
     }
 }
 
@@ -498,14 +456,8 @@ textarea {
 
 ::placeholder {
     opacity: 1;
-    color: $color-text-form-placeholder;
+    color: var(--color-text-form-placeholder);
     font: inherit; /* 1 */
-}
-
-@include dark-mode {
-    ::placeholder {
-        color: $dark-color-text-form-placeholder;
-    }
 }
 
 /**
@@ -517,12 +469,6 @@ textarea {
  */
 
 abbr.required {
-    color: $color-warning-text;
+    color: var(--color-warning-text);
     text-decoration: none;
-}
-
-@include dark-mode {
-    abbr.required {
-        color: $dark-color-warning-text;
-    }
 }

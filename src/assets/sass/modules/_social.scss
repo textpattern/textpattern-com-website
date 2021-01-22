@@ -1,3 +1,5 @@
+@use "../setup";
+
 /* Social media
    ========================================================================== */
 
@@ -22,7 +24,7 @@
     }
 
     a {
-        @include hide-text;
+        @include setup.hide-text;
 
         display: block;
         width: 32px;

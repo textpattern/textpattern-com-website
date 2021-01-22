@@ -1,28 +1,12 @@
-// import global variables
-@import "setup/settings";
-
-// import any additional mixins
-@import "setup/helpers";
-
-// import colourscheme
-@import "setup/colours";
-
-
+@use "setup";
 
 /* ==========================================================================
    ONLY for use in design patterns - classes NOT USED in actual site builds.
    ========================================================================== */
 
 body {
-    background-color: $color-background;
-    color: $color-text;
-}
-
-@include dark-mode {
-    body {
-        background-color: $dark-color-background;
-        color: $dark-color-text;
-    }
+    background-color: var(--color-background);
+    color: var(--color-text);
 }
 
 main {
@@ -42,13 +26,7 @@ main {
  */
 
 .information code {
-    color: $color-text;
-}
-
-@include dark-mode {
-    .information code {
-        color: $dark-color-text;
-    }
+    color: var(--color-text);
 }
 
 
@@ -60,111 +38,46 @@ main {
  */
 
 $colors: (
-    "text":                 $color-text,
-    "text-visual-de-emphasis":        $color-text-visual-de-emphasis,
-    "gradient-from":        $color-gradient-from,
-    "gradient-to":          $color-gradient-to,
-    "border-extra-dark":    $color-border-extra-dark,
-    "border-dark":          $color-border-dark,
-    "border":               $color-border,
-    "border-light":         $color-border-light,
-    "border-extra-light":   $color-border-extra-light,
-    "link":                 $color-link,
-    "link-hover":           $color-link-hover,
-    "link-focus":           $color-link-focus,
-    "link-selecting":       $color-selecting,
-    "link-selected":        $color-selected,
-    "background":           $color-background,
-    "background-box":       $color-background-box,
-    "highlight-box":        $color-highlight-box,
-    "strong-highlight-box": $color-strong-highlight-box,
-    "highlight":            $color-highlight,
-    "success-text":         $color-success-text,
-    "success-background":   $color-success-background,
-    "warning-text":         $color-warning-text,
-    "warning-background":   $color-warning-background,
-    "error-text":           $color-error-text,
-    "error-background":     $color-error-background,
-    "info-text":            $color-info-text,
-    "info-background":      $color-info-background
-);
-
-$dark-colors: (
-    "text":                 $dark-color-text,
-    "text-visual-de-emphasis":        $dark-color-text-visual-de-emphasis,
-    "gradient-from":        $dark-color-gradient-from,
-    "gradient-to":          $dark-color-gradient-to,
-    "border-extra-dark":    $dark-color-border-extra-dark,
-    "border-dark":          $dark-color-border-dark,
-    "border":               $dark-color-border,
-    "border-light":         $dark-color-border-light,
-    "border-extra-light":   $dark-color-border-extra-light,
-    "link":                 $dark-color-link,
-    "link-hover":           $dark-color-link-hover,
-    "link-focus":           $dark-color-link-focus,
-    "link-selecting":       $dark-color-selecting,
-    "link-selected":        $dark-color-selected,
-    "background":           $dark-color-background,
-    "background-box":       $dark-color-background-box,
-    "highlight":            $dark-color-highlight,
-    "strong-highlight-box": $dark-color-strong-highlight-box,
-    "highlight-box":        $dark-color-highlight-box,
-    "success-text":         $dark-color-success-text,
-    "success-background":   $dark-color-success-background,
-    "warning-text":         $dark-color-warning-text,
-    "warning-background":   $dark-color-warning-background,
-    "error-text":           $dark-color-error-text,
-    "error-background":     $dark-color-error-background,
-    "info-text":            $dark-color-info-text,
-    "info-background":      $dark-color-info-background
+    "text":                    var(--color-text),
+    "text-visual-de-emphasis": var(--color-text-visual-de-emphasis),
+    "grad-from":               var(--color-grad-from),
+    "grad-to":                 var(--color-grad-to),
+    "border":                  var(--color-border),
+    "border-light":            var(--color-border-light),
+    "border-extra-light":      var(--color-border-extra-light),
+    "border-dark":             var(--color-border-dark),
+    "border-extra-dark":       var(--color-border-extra-dark),
+    "link":                    var(--color-link),
+    "link-hover":              var(--color-link-hover),
+    "link-focus":              var(--color-link-focus),
+    "nav-hover":               var(--color-nav-hover),
+    "nav-hover-selected":      var(--color-nav-hover-selected),
+    "nav-active":              var(--color-nav-active),
+    "background":              var(--color-background),
+    "background-box":          var(--color-background-box),
+    "highlight-box":           var(--color-highlight-box),
+    "strong-highlight-box":    var(--color-strong-highlight-box),
+    "highlight":               var(--color-highlight),
+    "success-text":            var(--color-success-text),
+    "success-background":      var(--color-success-background),
+    "warning-text":            var(--color-warning-text),
+    "warning-background":      var(--color-warning-background),
+    "error-text":              var(--color-error-text),
+    "error-background":        var(--color-error-background),
+    "info-text":               var(--color-info-text),
+    "info-background":         var(--color-info-background)
 );
 
 .design-patterns--color {
     display: block;
-    position: relative;
     height: 2.375em; // 38px / 16px
     margin: 1em 0;
-    border: 1px solid $color-border;
-
-    &::after {
-        position: absolute;
-        top: 0.5em;
-        padding: 1px 0.2142857em; // 3px / 14px
-        background-color: rgba(255, 255, 255, 0.66);
-        font-family: $font-code;
-        font-size: $code-font-size;
-    }
-}
-
-@include dark-mode {
-    .design-patterns--color {
-        border-color: $dark-color-border;
-
-        &::after {
-            background-color: rgba(0, 0, 0, 0.66);
-        }
-    }
+    border: 1px solid var(--color-border);
 }
 
 @each $name, $color in $colors {
     .design-patterns--color-#{$name} {
         background: $color;
-
-        &::after {
-            content: "#{$color}";
-        }
-    }
-}
-
-@include dark-mode {
-    @each $name, $color in $dark-colors {
-        .design-patterns--color-#{$name} {
-            background: $color;
-
-            &::after {
-                content: "#{$color}";
-            }
-        }
     }
 }
 
@@ -218,7 +131,7 @@ $dark-colors: (
     display: none;
 }
 
-@media (min-width: $breakpoint-1) {
+@media (min-width: setup.$breakpoint-1) {
     .design-patterns--breakpoint-0 {
         display: none;
     }
@@ -228,7 +141,7 @@ $dark-colors: (
     }
 }
 
-@media (min-width: $breakpoint-2) {
+@media (min-width: setup.$breakpoint-2) {
     .design-patterns--breakpoint-1 {
         display: none;
     }
@@ -238,7 +151,7 @@ $dark-colors: (
     }
 }
 
-@media (min-width: $breakpoint-3) {
+@media (min-width: setup.$breakpoint-3) {
     .design-patterns--breakpoint-2 {
         display: none;
     }
@@ -266,8 +179,8 @@ $dark-colors: (
         padding: 0.5em 2%;
         overflow-x: hidden;
         overflow-y: auto;
-        border-right: 1px solid $color-border;
-        background-color: $color-background-box;
+        border-right: 1px solid var(--color-border);
+        background-color: var(--color-background-box);
         box-shadow: inset -0.25em 0 0.25em -0.25em rgba(0, 0, 0, 0.2);
     }
 
@@ -277,14 +190,13 @@ $dark-colors: (
     }
 
     .docs-content-container {
-        max-width: $container-max-width;
+        max-width: setup.$container-max-width;
         margin: 0 auto;
     }
 }
 
-@media (prefers-color-scheme: dark) and (min-width: $breakpoint-3) {
+@media (prefers-color-scheme: dark) and (min-width: setup.$breakpoint-3) {
     .docs-menu {
-        border-right-color: $dark-color-border-extra-dark;
-        background-color: $dark-color-background-box;
+        border-right-color: var(--color-border-extra-dark);
     }
 }

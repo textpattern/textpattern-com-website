@@ -1,3 +1,5 @@
+@use "../setup";
+
 /* Code highlighting (via Prism.js)
    ========================================================================== */
 
@@ -114,7 +116,7 @@ pre.line-numbers > code {
     top: 0;
     left: -3.8em;
     width: 3em; // Works for line-numbers below 1000 lines
-    border-right: 1px solid #999999;
+    border-right: 1px solid var(--color-border-light);
     font-size: 1em;
     letter-spacing: -1px;
     pointer-events: none;
@@ -131,13 +133,14 @@ pre.line-numbers > code {
     content: counter(linenumber);
     display: block;
     padding-right: 0.8em;
-    color: #999999;
+    color: var(--color-text-footnote);
+    direction: ltr;
     text-align: right;
 }
 
-@include dark-mode {
+@include setup.dark-mode {
     .token.punctuation {
-        color: #ffffff;
+        color: var(--color-text-white-out);
     }
 
     .token.property,
@@ -147,7 +150,7 @@ pre.line-numbers > code {
     .token.constant,
     .token.symbol,
     .token.deleted {
-        color: $dark-color-error-text;
+        color: var(--color-error-text);
     }
 
     .token.selector,
@@ -156,7 +159,7 @@ pre.line-numbers > code {
     .token.char,
     .token.builtin,
     .token.inserted {
-        color: $dark-color-success-text;
+        color: var(--color-success-text);
     }
 
     .token.operator,
@@ -164,20 +167,12 @@ pre.line-numbers > code {
     .token.url,
     .language-css .token.string,
     .style .token.string {
-        color: $dark-color-warning-text;
+        color: var(--color-warning-text);
     }
 
     .token.atrule,
     .token.attr-value,
     .token.keyword {
-        color: $dark-color-info-text;
-    }
-
-    .line-numbers .line-numbers-rows {
-        border-right-color: $dark-color-text-visual-de-emphasis;
-    }
-
-    .line-numbers-rows > span::before {
-        color: $dark-color-text-visual-de-emphasis;
+        color: var(--color-info-text);
     }
 }

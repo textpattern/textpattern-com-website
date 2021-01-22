@@ -1,3 +1,5 @@
+@use "../setup";
+
 /* Tables
    ========================================================================== */
 
@@ -16,13 +18,7 @@
     overflow-x: auto;
 
     &:focus {
-        outline: thin solid $color-link-focus;
-    }
-}
-
-@include dark-mode {
-    .tabular-data:focus {
-        outline: thin solid $dark-color-link-focus;
+        outline: thin solid var(--color-link-focus);
     }
 }
 
@@ -54,16 +50,9 @@ th,
 td {
     min-width: 6em; // 96px / 16px
     padding: 0.5em; // 8px / 16px
-    border: 1px solid $color-border-light;
+    border: 1px solid var(--color-border-light);
     vertical-align: top;
     text-align: left;
-}
-
-@include dark-mode {
-    th,
-    td {
-        border-color: $dark-color-border-light;
-    }
 }
 
 /**
@@ -72,30 +61,13 @@ td {
 
 thead {
     tr {
-        background-color: $color-gradient-from;
+        background-color: var(--color-grad-from);
     }
 
     th,
     td {
-        border: 1px solid $color-border;
-    }
-}
-
-@include dark-mode {
-    thead {
-        tr {
-            background-color: $dark-color-gradient-from;
-        }
-
-        th,
-        td {
-            border-color: $dark-color-border;
-        }
-
-        th,
-        td {
-            color: $dark-color-text-heading;
-        }
+        border: 1px solid var(--color-border);
+        color: var(--color-text-heading);
     }
 }
 
@@ -106,30 +78,16 @@ thead {
 tbody {
     tr {
         &:nth-child(even) {
-            background-color: $color-background-box;
+            background-color: var(--color-background-box);
         }
 
         &.selected {
-            background-color: $color-selected;
+            background-color: var(--color-nav-hover-selected);
         }
     }
 
     th {
         font-weight: normal;
-    }
-}
-
-@include dark-mode {
-    tbody {
-        tr {
-            &:nth-child(even) {
-                background-color: $dark-color-background-box;
-            }
-
-            &.selected {
-                background-color: $dark-color-selected;
-            }
-        }
     }
 }
 

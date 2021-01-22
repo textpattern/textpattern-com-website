@@ -1,3 +1,5 @@
+@use "../setup";
+
 /* Reset
    ========================================================================== */
 
@@ -15,14 +17,4 @@ main {
 
 template {
     display: none;
-}
-
-/**
- * Remove tap delay in modern browsers.
- */
-
-a,
-input,
-button {
-    touch-action: manipulation;
 }

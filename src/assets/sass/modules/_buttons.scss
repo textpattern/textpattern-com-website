@@ -1,3 +1,5 @@
+@use "../setup";
+
 /* Buttons
    ========================================================================== */
 
@@ -32,42 +34,45 @@ button,
 [type="reset"],
 [type="submit"],
 .button {
-    @include gradient-linear($color-button-gradient-from, $color-button-gradient-to);
+    @include setup.gradient-linear(var(--color-button-grad-from), var(--color-button-grad-to));
 
     display: inline-block;
     position: relative;
     width: auto;
-    height: 2em; // 32px / 16px
+    height: auto;
     padding: 0.25em 1em; // 4px / 16px
-    border: 1px solid $color-button-border;
+    border: 1px solid var(--color-button-border);
     border-radius: 1em;
     background-clip: padding-box;
-    box-shadow: 0 2px 0 $color-button-shadow;
-    color: $color-text-button;
+    box-shadow: 0 2px 0 var(--color-button-shadow);
+    color: var(--color-text-button);
     font-weight: normal;
     text-align: center;
     appearance: none; /* 1 */
     cursor: pointer; /* 2 */
     user-select: none;
 
-    &:hover {
-        @include gradient-linear(lighten($color-button-gradient-from, 4%), lighten($color-button-gradient-to, 4%));
+    &:hover,
+    &:active {
+        border-color: var(--color-button-border-interact);
+        color: var(--color-text-button-interact);
+        text-decoration: none;
+    }
 
-        border-color: shade($color-button-border, 15%);
-        color: $color-text-button-hover;
+    &:hover {
+        filter: brightness(1.05);
         text-decoration: none;
     }
 
     &:active {
         top: 2px;
-        border-color: shade($color-button-border, 15%);
         box-shadow: none;
-        color: $color-text-button-active;
+        filter: brightness(0.95);
         text-decoration: none;
     }
 
     &:focus {
-        border-color: $color-link-focus;
+        border-color: var(--color-link-focus);
         outline: 2px solid transparent; // Allows for repainting in high contrast modes.
     }
 }
@@ -81,37 +86,23 @@ button,
  */
 
 .button-primary {
-    @include gradient-linear($color-button-primary-gradient-from, $color-button-primary-gradient-to);
+    @include setup.gradient-linear(var(--color-button-primary-grad-from), var(--color-button-primary-grad-to));
 
-    border-color: $color-button-primary-border;
-    box-shadow: 0 2px 0 $color-button-primary-shadow;
+    border-color: var(--color-button-primary-border);
+    box-shadow: 0 2px 0 var(--color-button-primary-shadow);
     font-weight: bolder;
 
-    &:hover {
-        @include gradient-linear(lighten($color-button-primary-gradient-from, 6%), lighten($color-button-primary-gradient-to, 6%));
-
-        border-color: shade($color-button-primary-border, 15%);
+    &:hover,
+    &:active {
+        border-color: var(--color-button-primary-border-interact);
     }
 
     &:active {
-        border-color: shade($color-button-primary-border, 15%);
         box-shadow: none;
     }
 
     &:focus {
-        border-color: $color-link-focus;
-    }
-}
-
-@include dark-mode {
-    button,
-    [type="button"],
-    [type="reset"],
-    [type="submit"],
-    .button {
-        &:focus {
-            border-color: $dark-color-link-focus;
-        }
+        border-color: var(--color-link-focus);
     }
 }
 
@@ -124,7 +115,6 @@ button,
  */
 
 .button-large {
-    height: 2.5em; // 40px / 16px
     padding: 0.5em 1em; // 8px / 16px
     border-radius: 1.25em;
 }
@@ -138,7 +128,7 @@ button,
  */
 
 .button-small {
-    font-size: $small-font-size;
+    font-size: setup.$small-font-size;
 }
 
 /**
@@ -153,7 +143,7 @@ button,
     display: inline-block;
     margin: -0.5em 0 -0.5em 0.25em;
     padding: 0.5em 0 0.5em 0.5em;
-    border-left: 1px solid $color-button-primary-shadow;
+    border-left: 1px solid var(--color-button-primary-shadow);
     font-weight: normal;
 }
 
@@ -179,5 +169,5 @@ button[disabled],
 [type="submit"][disabled],
 .button.disabled {
     top: 0 !important;
-    background: $color-background-form-disabled !important;
+    background: var(--color-button-background-disabled) !important;
 }

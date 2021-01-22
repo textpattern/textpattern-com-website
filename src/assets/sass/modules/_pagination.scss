@@ -1,3 +1,5 @@
+@use "../setup";
+
 /* Pagination links
    ========================================================================== */
 
@@ -14,7 +16,7 @@
 .paginator {
     margin: 1.5em 0 1em;
     padding-top: 1em;
-    border-top: 2px dashed $color-border;
+    border-top: 2px dashed var(--color-border);
 
     a,
     b {
@@ -63,8 +65,8 @@
         display: inline-block;
 
         &.current {
-            background: $color-text;
-            color: $color-text-white-out;
+            background: var(--color-text);
+            color: var(--color-text-white-enforced);
         }
     }
 
@@ -79,8 +81,8 @@
     }
 }
 
-@include dark-mode {
+@include setup.dark-mode {
     .pagination li.current {
-        background: $dark-color-background-form;
+        background: var(--color-background-form);
     }
 }

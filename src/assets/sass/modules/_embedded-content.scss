@@ -1,3 +1,5 @@
+@use "../setup";
+
 /* Embedded content
    ========================================================================== */
 
@@ -53,7 +55,7 @@ img {
  */
 
 .img--rounded {
-    border-radius: $border-radius;
+    border-radius: setup.$border-radius;
 }
 
 /**
@@ -77,13 +79,7 @@ img {
  */
 
 .img--bordered {
-    border: 1px solid $color-border-light;
-}
-
-@include dark-mode {
-    .img--bordered {
-        border-color: $dark-color-border-light;
-    }
+    border: 1px solid var(--color-border-light);
 }
 
 /**

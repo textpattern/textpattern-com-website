@@ -1,3 +1,5 @@
+@use "../setup";
+
 /* Comments
    ========================================================================== */
 
@@ -12,27 +14,25 @@
 .comments {
     margin-bottom: 0.5em;
     padding: 1px 1em;
-    border-radius: $border-radius;
-    background: $color-background-box;
+    border-radius: setup.$border-radius;
+    background: var(--color-background-box);
     word-wrap: break-word;
 
     code,
     kbd,
     pre,
     samp {
-        background: $color-background;
+        background: var(--color-background);
     }
 }
 
-@include dark-mode {
+@include setup.dark-mode {
     .comments {
-        background: $dark-color-background-box;
-
         code,
         kbd,
         pre,
         samp {
-            background: $dark-color-background-form;
+            background: var(--color-background-form);
         }
     }
 }
@@ -59,20 +59,10 @@
  */
 
 .comments.article-author {
-    background: $color-highlight-box;
+    background: var(--color-highlight-box);
 
     blockquote {
-        background: $color-background;
-    }
-}
-
-@include dark-mode {
-    .comments.article-author {
-        background: $dark-color-highlight-box;
-
-        blockquote {
-            background: $dark-color-background;
-        }
+        background: var(--color-background);
     }
 }
 
@@ -106,14 +96,8 @@
 #cpreview {
     margin-bottom: 2px;
     padding: 1em;
-    border-radius: $border-radius;
-    background-color: $color-highlight-box;
-}
-
-@include dark-mode {
-    #cpreview {
-        background-color: $dark-color-highlight-box;
-    }
+    border-radius: setup.$border-radius;
+    background-color: var(--color-highlight-box);
 }
 
 /**
@@ -121,13 +105,7 @@
  */
 
 .error_message li {
-    color: $color-error-text;
-}
-
-@include dark-mode {
-    .error_message li {
-        color: $dark-color-error-text;
-    }
+    color: var(--color-error-text);
 }
 
 /**
@@ -135,11 +113,5 @@
  */
 
 .comments_error {
-    border-color: $color-error-text;
-}
-
-@include dark-mode {
-    .comments_error {
-        border-color: $dark-color-error-text;
-    }
+    border-color: var(--color-error-text);
 }

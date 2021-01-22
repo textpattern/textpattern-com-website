@@ -1,3 +1,5 @@
+@use "../setup";
+
 /* Typography
    ========================================================================== */
 
@@ -9,8 +11,8 @@
  */
 
 html {
-    font-size: $base-font-size;
-    line-height: $line-height-mobile;
+    font-size: setup.$base-font-size;
+    line-height: setup.$line-height-mobile;
     text-size-adjust: 100%; /* 1 */
 }
 
@@ -21,7 +23,7 @@ html {
  */
 
 body {
-    font-family: $font-sans-serif;
+    font-family: var(--font-sans-serif);
     font-feature-settings: "liga"; /* 1 */
 }
 
@@ -96,11 +98,22 @@ h5,
 h6,
 .article-description {
     clear: both;
-    font-family: $font-serif;
+    font-family: var(--font-serif);
 
     small {
-        font-family: $font-sans-serif;
+        font-family: var(--font-sans-serif);
         font-size: 0.75em;
+    }
+}
+
+main {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6, {
+        color: var(--color-text-heading);
     }
 }
 
@@ -139,18 +152,7 @@ h5,
 h6 {
     margin: 1em 0; // 16px
     font-size: 1rem;
-    line-height: $line-height-mobile;
-}
-
-@include dark-mode {
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-        color: $dark-color-text-heading;
-    }
+    line-height: setup.$line-height-mobile;
 }
 
 /**
@@ -172,8 +174,8 @@ h6 {
 
     span {
         padding: 0 0.2em;
-        background: $color-highlight;
-        color: $color-text;
+        background: var(--color-highlight-enforced);
+        color: var(--color-text-black-enforced);
         box-decoration-break: clone;
     }
 }
@@ -211,16 +213,9 @@ blockquote {
 blockquote {
     margin: 1em 0;
     padding: 1px 1em 1px 1.5em;
-    border-left: 0.25em solid $color-highlight;
-    border-radius: 0 $border-radius $border-radius 0;
-    background-color: $color-highlight-box;
-}
-
-@include dark-mode {
-    blockquote {
-        border-left-color: $dark-color-highlight;
-        background-color: $dark-color-highlight-box;
-    }
+    border-left: 0.25em solid var(--color-highlight);
+    border-radius: 0 setup.$border-radius setup.$border-radius 0;
+    background-color: var(--color-highlight-box);
 }
 
 /**
@@ -229,8 +224,8 @@ blockquote {
 
 .example {
     padding: 1px 0 1px 1.5rem;
-    border-left: 0.25rem solid $color-info-border;
-    color: $color-text-visual-de-emphasis;
+    border-left: 0.25rem solid var(--color-info-border);
+    color: var(--color-text-visual-de-emphasis);
 }
 
 ol.example,
@@ -240,13 +235,6 @@ ul.example {
 
 ul.example {
     list-style: circle;
-}
-
-@include dark-mode {
-    .example {
-        border-left-color: $dark-color-info-border;
-        color: $dark-color-text-visual-de-emphasis;
-    }
 }
 
 /**
@@ -266,17 +254,9 @@ abbr[title] {
 mark,
 var {
     padding: 0 0.25em; // 0 4px
-    border-radius: $border-radius / 2;
-    background: $color-selected;
-    color: $color-text;
-}
-
-@include dark-mode {
-    mark,
-    var {
-        background-color: $dark-color-selected;
-        color: $dark-color-text;
-    }
+    border-radius: setup.$border-radius / 2;
+    background: var(--color-highlight-box);
+    color: var(--color-text);
 }
 
 /**
@@ -289,25 +269,14 @@ pre,
 code,
 kbd,
 samp {
-    border: 1px solid $color-border-extra-light;
+    border: 1px solid var(--color-border-extra-light);
     border-radius: 0.2857143em; // 4px / 14px
-    background-color: $color-background-box;
-    color: $color-text;
-    font-family: $font-code;
+    background-color: var(--color-background-box);
+    color: var(--color-text);
+    font-family: var(--font-monospaced);
     font-feature-settings: normal; /* 1 */
-    font-size: $code-font-size;
-    line-height: $line-height-mobile;
-}
-
-@include dark-mode {
-    pre,
-    code,
-    kbd,
-    samp {
-        border-color: $dark-color-border-extra-light;
-        background-color: $dark-color-background-box;
-        color: $dark-color-text;
-    }
+    font-size: setup.$code-font-size;
+    line-height: setup.$line-height-mobile;
 }
 
 code,
@@ -378,8 +347,8 @@ blockquote footer,
 .footnotes,
 .card-header,
 .card-footer {
-    font-size: $small-font-size;
-    line-height: $line-height-mobile;
+    font-size: setup.$small-font-size;
+    line-height: setup.$line-height-mobile;
 }
 
 figcaption {
@@ -400,7 +369,7 @@ hr {
     background-size: 240px 24px;
 }
 
-@include dark-mode {
+@include setup.dark-mode {
     hr {
         background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 24'%3E%3Cpath fill='%23ced4da' d='M0,0c1.742,13.61,54.74,20.912,119.995,15.279C184.922,9.679,238.594,13.024,240,24c-1.744-13.613-54.742-20.913-120.005-15.284C55.078,14.32,1.405,10.973,0,0z'/%3E%3C/svg%3E") 50% 50% no-repeat;
     }
@@ -418,13 +387,7 @@ hr {
 
 .separator {
     margin: 0 0.25em;
-    color: $color-text-visual-de-emphasis;
-}
-
-@include dark-mode {
-    .separator {
-        color: $dark-color-text-visual-de-emphasis;
-    }
+    color: var(--color-text-visual-de-emphasis);
 }
 
 /**

@@ -42,13 +42,22 @@ rules:
     - true
     -
       ignoreAtRules:
+        - at-root
         - each
         - else
+        - debug
+        - error
+        - extend
+        - for
+        - forward
         - function
         - if
         - include
         - mixin
         - return
+        - use
+        - warn
+        - while
 
   # Disallow vendor prefixes for at-rules.
   at-rule-no-vendor-prefix: true
@@ -129,7 +138,7 @@ rules:
   #custom-media-pattern:
 
   # Require or disallow an empty line before custom properties (Autofixable).
-  custom-property-empty-line-before: always
+  custom-property-empty-line-before: never
 
   # Specify a pattern for custom properties.
   #custom-property-pattern:
@@ -264,7 +273,7 @@ rules:
   function-whitespace-after: always
 
   # Specify number or angle notation for degree hues.
-  hue-degree-notation: angle
+  hue-degree-notation: number
 
   # Specify indentation.
   indentation: 4

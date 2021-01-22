@@ -1,3 +1,5 @@
+@use "../setup";
+
 /* Disclosure boxes (summary/details)
    ========================================================================== */
 
@@ -14,12 +16,6 @@ summary {
     cursor: pointer;
 
     &:focus {
-        outline: 1px solid $color-link-focus;
-    }
-}
-
-@include dark-mode {
-    summary:focus {
-        outline: 1px solid $dark-color-link-focus;
+        outline: 1px solid var(--color-link-focus);
     }
 }
