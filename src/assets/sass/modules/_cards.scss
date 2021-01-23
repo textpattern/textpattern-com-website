@@ -29,7 +29,7 @@
     flex: 1 0 0%;
     flex-direction: column;
     margin: 0.5em 0 1.5em;
-    border: 1px solid var(--color-border-light);
+    border: 1px solid var(--color-brdr-light);
     word-wrap: break-word;
 
     .alert-pill {
@@ -69,10 +69,10 @@
 }
 
 .card-header {
-    border-bottom: 1px solid var(--color-border-light);
+    border-bottom: 1px solid var(--color-brdr-light);
 }
 
 .card-footer {
-    border-top: 1px solid var(--color-border-light);
+    border-top: 1px solid var(--color-brdr-light);
 }
 

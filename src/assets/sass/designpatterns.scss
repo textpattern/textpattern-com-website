@@ -39,14 +39,14 @@ main {
 
 $colors: (
     "text":                    var(--color-text),
-    "text-visual-de-emphasis": var(--color-text-visual-de-emphasis),
+    "text-visual-de-emphasis": var(--color-text-secondary),
     "grad-from":               var(--color-grad-from),
     "grad-to":                 var(--color-grad-to),
-    "border":                  var(--color-border),
-    "border-light":            var(--color-border-light),
-    "border-extra-light":      var(--color-border-extra-light),
-    "border-dark":             var(--color-border-dark),
-    "border-extra-dark":       var(--color-border-extra-dark),
+    "border":                  var(--color-brdr),
+    "border-light":            var(--color-brdr-light),
+    "border-extra-light":      var(--color-brdr-extra-light),
+    "border-dark":             var(--color-brdr-dark),
+    "border-extra-dark":       var(--color-brdr-extra-dark),
     "link":                    var(--color-link),
     "link-hover":              var(--color-link-hover),
     "link-focus":              var(--color-link-focus),
@@ -72,7 +72,7 @@ $colors: (
     display: block;
     height: 2.375em; // 38px / 16px
     margin: 1em 0;
-    border: 1px solid var(--color-border);
+    border: 1px solid var(--color-brdr);
 }
 
 @each $name, $color in $colors {
@@ -179,7 +179,7 @@ $colors: (
         padding: 0.5em 2%;
         overflow-x: hidden;
         overflow-y: auto;
-        border-right: 1px solid var(--color-border);
+        border-right: 1px solid var(--color-brdr);
         background-color: var(--color-bkgd-box);
         box-shadow: inset -0.25em 0 0.25em -0.25em rgba(0, 0, 0, 0.2);
     }
@@ -197,6 +197,6 @@ $colors: (
 
 @media (prefers-color-scheme: dark) and (min-width: setup.$breakpoint-3) {
     .docs-menu {
-        border-right-color: var(--color-border-extra-dark);
+        border-right-color: var(--color-brdr-extra-dark);
     }
 }

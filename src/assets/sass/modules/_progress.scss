@@ -13,7 +13,7 @@ progress {
     max-width: 10em; // 160px / 16px
     height: 0.75em;
     margin-right: 0.33em;
-    border: 1px solid var(--color-border);
+    border: 1px solid var(--color-brdr);
     background-color: var(--color-bkgd-box);
     vertical-align: baseline; /* 1 */
     appearance: none;
@@ -21,7 +21,7 @@ progress {
 
 @include setup.dark-mode {
     progress {
-        border-color: var(--color-border-extra-dark);
+        border-color: var(--color-brdr-extra-dark);
     }
 }
 
@@ -50,7 +50,7 @@ progress::-webkit-progress-value {
 
 progress:indeterminate::-webkit-progress-bar {
     animation: progressbar-stripes linear 4s infinite;
-    background-color: var(--color-border);
+    background-color: var(--color-brdr);
     background-image:
         linear-gradient(
             135deg,
@@ -93,7 +93,7 @@ progress::-moz-progress-bar {
 progress:indeterminate::-moz-progress-bar {
     /* autoprefixer: off */
     animation: progressbar-stripes linear 4s infinite;
-    background-color: var(--color-border);
+    background-color: var(--color-brdr);
     background-image:
         linear-gradient(
             135deg,

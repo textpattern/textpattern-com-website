@@ -12,7 +12,7 @@ fieldset {
     min-width: 0; /* 1 */
     margin: 1em 0; /* 2 */
     padding: 1px 1em; /* 2 */
-    border: 1px solid var(--color-border); /* 2 */
+    border: 1px solid var(--color-brdr); /* 2 */
 }
 
 /**
@@ -105,13 +105,13 @@ select,
 textarea {
     height: 2em; // 32px / 16px
     padding: 0.25em 0.1875em; // 8px / 16px + 3px / 16px
-    border: 1px solid var(--color-border);
+    border: 1px solid var(--color-brdr);
     border-radius: 0;
     background: var(--color-bkgd-form);
     appearance: none; /* 1 */
 
     &:hover {
-        border-color: var(--color-border-extra-dark);
+        border-color: var(--color-brdr-extra-dark);
     }
 
     &:focus {
@@ -137,10 +137,10 @@ textarea {
     [type="week"],
     select,
     textarea {
-        border-color: var(--color-border-extra-dark);
+        border-color: var(--color-brdr-extra-dark);
 
         &:hover {
-            border-color: var(--color-border-extra-light);
+            border-color: var(--color-brdr-extra-light);
         }
 
         &:focus {
@@ -162,7 +162,7 @@ textarea {
     width: 16px;
     height: 16px;
     padding: 0; /* 1 */
-    border: 1px solid var(--color-border-extra-dark);
+    border: 1px solid var(--color-brdr-extra-dark);
     background: var(--color-bkgd-form);
     appearance: none;
 
@@ -197,7 +197,7 @@ textarea {
     [type="checkbox"],
     [type="radio"] {
         &:hover {
-            border-color: var(--color-border-extra-light);
+            border-color: var(--color-brdr-extra-light);
         }
     }
 }
@@ -205,7 +205,7 @@ textarea {
 [type="checkbox"] {
     &:checked {
         border: 0;
-        background: var(--color-text-visual-de-emphasis) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='%23fff' d='M13 2.5l-7 7-2-2-2 2 4 4L15 4.5z'/%3E%3C/svg%3E");
+        background: var(--color-text-secondary) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='%23fff' d='M13 2.5l-7 7-2-2-2 2 4 4L15 4.5z'/%3E%3C/svg%3E");
 
         &:hover,
         &:active {
@@ -247,7 +247,7 @@ textarea {
     border-radius: 100%;
 
     &:checked {
-        border: 5px solid var(--color-text-visual-de-emphasis);
+        border: 5px solid var(--color-text-secondary);
 
         &:hover,
         &:active {
@@ -367,7 +367,7 @@ textarea {
 [disabled] option,
 [disabled] optgroup,
 span.disabled {
-    border: 1px solid var(--color-border) !important;
+    border: 1px solid var(--color-brdr) !important;
     opacity: 0.33 !important;
     background-color: var(--color-bkgd-form-disabled) !important;
     box-shadow: none !important;
@@ -446,7 +446,7 @@ textarea {
 
 ::placeholder {
     opacity: 1;
-    color: var(--color-text-form-placeholder);
+    color: var(--color-text-placeholder);
     font: inherit; /* 1 */
 }
 
