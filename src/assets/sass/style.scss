@@ -125,20 +125,8 @@
     }
 }
 
-
-/* ==========================================================================
-   Styling and layout for all media
-   ========================================================================== */
-
-@import "modules/fonts";
-@import "modules/base";
-
-
-/* ==========================================================================
-   Styling and layout for screen media (mobile first)
-   ========================================================================== */
-
 @media screen {
+    @import "modules/fonts";
     @import "modules/layout";
     @import "modules/navigation";
     @import "modules/links";
@@ -166,11 +154,6 @@
 @import "modules/responsive";
 @import "modules/accessibility";
 @import "modules/animation-keyframes";
-
-
-/* ==========================================================================
-   Styling and layout for print media
-   ========================================================================== */
 
 @media print {
     @import "modules/print";

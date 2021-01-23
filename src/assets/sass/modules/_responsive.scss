@@ -23,18 +23,9 @@
      */
 
     .layout-container {
-        display: flex; // Flexbox fallback for browsers without CSS Grid support.
         display: grid;
         gap: 0 2em;
         grid-template-columns: repeat(12, 1fr);
-        flex-wrap: wrap; // Flexbox fallback for browsers without CSS Grid support.
-        margin: 0 -1em; // Flexbox fallback for browsers without CSS Grid support.
-
-        > * {
-            box-sizing: border-box; // Flexbox fallback.
-            min-width: 0; // Fix Firefox `pre` overflow issues.
-            padding: 0 1em; // Flexbox fallback.
-        }
     }
 
     /**
@@ -62,7 +53,6 @@
     .layout-4col-2span,
     .layout-4col-3span {
         grid-column: span 12;
-        width: 100%; // Flexbox fallback.
     }
 
     /**
@@ -71,26 +61,6 @@
 
     .layout-4col:not(.sidebar) {
         grid-column: span 6;
-        width: 50%; // Flexbox fallback.
-    }
-
-    // Override Flexbox fallback for browsers with CSS Grid support.
-    @supports (display: grid) {
-        .layout-container {
-            margin: 0;
-        }
-
-        .layout-1col,
-        .layout-2col,
-        .layout-3col,
-        .layout-3col-2span,
-        .layout-4col,
-        .layout-4col-2span,
-        .layout-4col-3span,
-        .layout-4col:not(.sidebar) {
-            width: auto;
-            padding: 0;
-        }
     }
 
     /**
@@ -237,26 +207,14 @@
 
     .layout-2col {
         grid-column: span 6;
-        width: 50%; // Flexbox fallback.
     }
 
     .layout-3col {
         grid-column: span 4;
-        width: 33.333%; // Flexbox fallback.
     }
 
     .layout-3col-2span {
         grid-column: span 8;
-        width: 66.666%; // Flexbox fallback.
-    }
-
-    // Override Flexbox fallback for browsers with CSS Grid support.
-    @supports (display: grid) {
-        .layout-2col,
-        .layout-3col,
-        .layout-3col-2span {
-            width: auto;
-        }
     }
 
     /**
@@ -497,31 +455,14 @@
     .layout-4col,
     .layout-4col:not(.sidebar) {
         grid-column: span 3;
-        width: 25%; // Flexbox fallback.
     }
 
     .layout-4col-2span {
         grid-column: span 6;
-        width: 50%; // Flexbox fallback.
     }
 
     .layout-4col-3span {
         grid-column: span 9;
-        width: 73%; // Flexbox fallback.
-    }
-
-    // Override Flexbox fallback for browsers with CSS Grid support.
-    @supports (display: grid) {
-        .layout-4col,
-        .layout-4col-2span,
-        .layout-4col-3span,
-        .layout-4col:not(.sidebar) {
-            width: auto;
-        }
-
-        main .layout-4col-3span {
-            margin-right: 1.5em;
-        }
     }
 
     /**

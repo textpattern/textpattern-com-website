@@ -41,7 +41,7 @@
   "browserslist": [
     "> 0.5%",
     "Firefox ESR",
-    "IE 11"
+    "not IE 11"
   ],
   "scripts": {
     "test": "grunt travis --verbose"
