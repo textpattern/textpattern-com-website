@@ -12,15 +12,15 @@ body {
     flex-direction: column;
     min-height: 100vh;
     margin: 0; /* 1 */
-    background-color: var(--color-text);
-    color: var(--color-text-white-enforced);
+    background-color: var(--clr-text);
+    color: var(--clr-text-white-enforced);
     scroll-behavior: smooth;
     scroll-padding-top: 1rem;
 }
 
 @include setup.dark-mode {
     body {
-        background-color: var(--color-bkgd-form);
+        background-color: var(--clr-bkgd-form);
     }
 }
 
@@ -38,8 +38,8 @@ iframe {
 
 noscript {
     padding: 0.25em 1em;
-    background-color: var(--color-highlight-enforced);
-    color: var(--color-text-black-enforced);
+    background-color: var(--clr-highlight-enforced);
+    color: var(--clr-text-black-enforced);
     font-size: setup.$small-font-size;
     text-align: center;
 }
@@ -85,8 +85,8 @@ noscript {
 .wrapper {
     margin: -1px 0;
     padding: 1px 0;
-    background: var(--color-bkgd);
-    color: var(--color-text);
+    background: var(--clr-bkgd);
+    color: var(--clr-text);
 }
 
 /**
@@ -101,9 +101,9 @@ noscript {
  */
 
 #dynamic-header {
-    border-bottom: 2px solid var(--color-text);
-    background: var(--color-bkgd);
-    color: var(--color-text);
+    border-bottom: 2px solid var(--clr-text);
+    background: var(--clr-bkgd);
+    color: var(--clr-text);
 
     .js & {
         position: sticky;
@@ -116,7 +116,7 @@ noscript {
 
 @include setup.dark-mode {
     #dynamic-header {
-        border-bottom-color: var(--color-brdr-extra-dark);
+        border-bottom-color: var(--clr-brdr-extra-dark);
     }
 }
 
@@ -134,12 +134,12 @@ noscript {
 .wrapper-footer {
     flex: 1;
     padding-bottom: 0.5em;
-    border-top: 1px solid var(--color-bkgd);
+    border-top: 1px solid var(--clr-bkgd);
 }
 
 @include setup.dark-mode {
     .wrapper-footer {
-        border-top-color: var(--color-brdr-extra-dark);
+        border-top-color: var(--clr-brdr-extra-dark);
     }
 }
 
@@ -209,23 +209,23 @@ noscript {
         height: 34px;
         padding-left: 32px;
         transition: width 0.2s ease-in-out;
-        border-color: var(--color-bkgd);
-        background: var(--color-bkgd-form) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cg fill='%23333'%3E%3Cpath d='M4,13c0-5,4-9,9-9s9,4,9,9s-4,9-9,9S4,18,4,13z M13,19c3.3,0,6-2.7,6-6s-2.7-6-6-6s-6,2.7-6,6S9.7,19,13,19z'/%3E%3Cpath d='M17.5,19l1.5-1.5l4.5,3L28,25c0,0,0,1.5-0.8,2.2S25,28,25,28l-4.5-4.5L17.5,19z'/%3E%3C/g%3E%3C/svg%3E") no-repeat left center;
+        border-color: var(--clr-bkgd);
+        background: var(--clr-bkgd-form) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cg fill='%23333'%3E%3Cpath d='M4,13c0-5,4-9,9-9s9,4,9,9s-4,9-9,9S4,18,4,13z M13,19c3.3,0,6-2.7,6-6s-2.7-6-6-6s-6,2.7-6,6S9.7,19,13,19z'/%3E%3Cpath d='M17.5,19l1.5-1.5l4.5,3L28,25c0,0,0,1.5-0.8,2.2S25,28,25,28l-4.5-4.5L17.5,19z'/%3E%3C/g%3E%3C/svg%3E") no-repeat left center;
         background-size: 32px 32px;
 
         &:focus {
-            border-color: var(--color-link-focus);
+            border-color: var(--clr-a-focus);
         }
     }
 }
 
 @include setup.dark-mode {
     .search-form [type="search"] {
-        background-color: var(--color-bkgd);
+        background-color: var(--clr-bkgd);
         background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cg fill='%23ced4da'%3E%3Cpath d='M4,13c0-5,4-9,9-9s9,4,9,9s-4,9-9,9S4,18,4,13z M13,19c3.3,0,6-2.7,6-6s-2.7-6-6-6s-6,2.7-6,6S9.7,19,13,19z'/%3E%3Cpath d='M17.5,19l1.5-1.5l4.5,3L28,25c0,0,0,1.5-0.8,2.2S25,28,25,28l-4.5-4.5L17.5,19z'/%3E%3C/g%3E%3C/svg%3E");
 
         &:focus {
-            background-color: var(--color-bkgd-form);
+            background-color: var(--clr-bkgd-form);
         }
     }
 }
@@ -323,7 +323,7 @@ section {
 }
 
 .zebra {
-    background-color: var(--color-bkgd-zebra);
+    background-color: var(--clr-bkgd-zebra);
 }
 
 .animation-wrapper {
@@ -335,7 +335,7 @@ section {
  */
 
 .sidebar {
-    border-top: 2px dashed var(--color-text);
+    border-top: 2px dashed var(--clr-text);
 }
 
 /**
@@ -348,7 +348,7 @@ main .layout-4col-3span {
 
 .teaser {
     margin-bottom: 1.5em;
-    border-top: 2px dashed var(--color-brdr);
+    border-top: 2px dashed var(--clr-brdr);
 
     &:first-child {
         border-top: 0;
@@ -356,7 +356,7 @@ main .layout-4col-3span {
 }
 
 .teaser-container {
-    border-top: 2px dashed var(--color-brdr);
+    border-top: 2px dashed var(--clr-brdr);
 }
 
 /**
@@ -369,7 +369,7 @@ main .layout-4col-3span {
 
     h6 {
         margin: 0 0 0.25em;
-        color: var(--color-text);
+        color: var(--clr-text);
         font-weight: normal;
         text-transform: uppercase;
     }
@@ -541,7 +541,7 @@ main .layout-4col-3span {
     margin: 1.5em auto;
 
     img {
-        border: 1px solid var(--color-brdr);
+        border: 1px solid var(--clr-brdr);
         box-shadow: 0 0.2em 0.5em hsla(0, 0%, 20%, 0.4);
     }
 
@@ -551,7 +551,7 @@ main .layout-4col-3span {
         outline: 0;
 
         img {
-            border-color: var(--color-link-focus);
+            border-color: var(--clr-a-focus);
             box-shadow: 0 0.2em 0.5em hsla(216, 100%, 50%, 0.5);
         }
     }
@@ -587,7 +587,7 @@ main .layout-4col-3span {
 
 @include setup.dark-mode {
     .showcases img {
-        border-color: var(--color-brdr-extra-dark);
+        border-color: var(--clr-brdr-extra-dark);
         box-shadow: 0 0.2em 0.5em hsla(0, 0%, 0%, 0.5);
     }
 
@@ -595,7 +595,7 @@ main .layout-4col-3span {
     a:active,
     a:focus {
         img {
-            border-color: var(--color-link-focus);
+            border-color: var(--clr-a-focus);
             box-shadow: 0 0.2em 0.5em hsla(312, 100%, 50%, 0.4);
         }
     }
@@ -631,7 +631,7 @@ main .layout-4col-3span {
 
 .footnotes {
     margin: 2em 0; // 18px / 12px
-    border-top: 1px dashed var(--color-brdr);
+    border-top: 1px dashed var(--clr-brdr);
 }
 
 /**
@@ -653,29 +653,29 @@ main .layout-4col-3span {
 .count-bubble {
     position: relative;
     padding: 0.375em; // 6px / 16px
-    border: 1px solid var(--color-btn-border);
+    border: 1px solid var(--clr-btn-border);
     border-radius: 0.25em; // 4px / 16px
-    background: var(--color-bkgd);
-    color: var(--color-text-button);
+    background: var(--clr-bkgd);
+    color: var(--clr-text-button);
     font-weight: bolder;
 
     &:hover {
-        border-color: var(--color-btn-border-interact);
+        border-color: var(--clr-btn-border-interact);
         filter: brightness(1.05);
-        color: var(--color-text-button-interact);
+        color: var(--clr-text-button-interact);
         text-decoration: none;
 
         &::before {
-            border-color: transparent var(--color-btn-border-interact);
+            border-color: transparent var(--clr-btn-border-interact);
         }
     }
 
     &:focus {
-        border-color: var(--color-link-focus);
+        border-color: var(--clr-a-focus);
         outline: 2px solid transparent; // Allows for repainting in high contrast modes.
 
         &::before {
-            border-color: transparent var(--color-link-focus);
+            border-color: transparent var(--clr-a-focus);
         }
     }
 }
@@ -691,7 +691,7 @@ main .layout-4col-3span {
     margin-top: -8px;
     border-width: 8px 8px 8px 0;
     border-style: solid;
-    border-color: transparent var(--color-bkgd);
+    border-color: transparent var(--clr-bkgd);
 }
 
 .count-bubble::before {
@@ -705,5 +705,5 @@ main .layout-4col-3span {
     margin-top: -8px;
     border-width: 8px 8px 8px 0;
     border-style: solid;
-    border-color: transparent var(--color-btn-border);
+    border-color: transparent var(--clr-btn-border);
 }

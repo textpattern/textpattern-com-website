@@ -58,17 +58,17 @@
         display: inline-block;
         margin-top: 0.5em;
         padding: 0.1666667em 0.6666667em; // 2px / 12px + 8px / 12px
-        border: 1px solid var(--color-text);
+        border: 1px solid var(--clr-text);
         border-radius: 1em;
-        background: var(--color-text);
-        color: var(--color-text-white-enforced);
+        background: var(--clr-text);
+        color: var(--clr-text-white-enforced);
     }
 
     a:hover,
     a:active {
-        border-color: var(--color-btn-primary-border-interact);
-        background-color: var(--color-highlight-enforced);
-        color: var(--color-text-button);
+        border-color: var(--clr-btn-primary-border-interact);
+        background-color: var(--clr-highlight-enforced);
+        color: var(--clr-text-button);
         text-decoration: none;
     }
 
@@ -77,9 +77,9 @@
     }
 
     a:focus {
-        border-color: var(--color-link-focus);
+        border-color: var(--clr-a-focus);
         outline: 2px solid transparent; // Allows for repainting in high contrast modes.
-        background-color: var(--color-highlight-enforced);
+        background-color: var(--clr-highlight-enforced);
     }
 
     // Put a bit more margin on 2nd category link, if it exists (for better touch accessibility).
@@ -95,19 +95,19 @@
         a,
         .article-author,
         .compatibility {
-            border-color: var(--color-bkgd-form);
-            background: var(--color-bkgd-form);
+            border-color: var(--clr-bkgd-form);
+            background: var(--clr-bkgd-form);
         }
 
         a:hover,
         a:active {
-            border-color: var(--color-btn-primary-border-interact);
-            background-color: var(--color-highlight-enforced);
+            border-color: var(--clr-btn-primary-border-interact);
+            background-color: var(--clr-highlight-enforced);
         }
 
         a:focus {
-            border-color: var(--color-link-focus);
-            background-color: var(--color-highlight-enforced);
+            border-color: var(--clr-a-focus);
+            background-color: var(--clr-highlight-enforced);
         }
     }
 }

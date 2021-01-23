@@ -12,7 +12,7 @@ fieldset {
     min-width: 0; /* 1 */
     margin: 1em 0; /* 2 */
     padding: 1px 1em; /* 2 */
-    border: 1px solid var(--color-brdr); /* 2 */
+    border: 1px solid var(--clr-brdr); /* 2 */
 }
 
 /**
@@ -74,7 +74,7 @@ textarea,
     box-sizing: border-box;
     max-width: 100%; /* 1 */
     margin: 0; /* 2 */
-    color: var(--color-text-form);
+    color: var(--clr-text-form);
     font-family: var(--font-sans-serif);
     font-size: 1rem; /* 3 */
     line-height: 1.375; // 22px / 16px
@@ -105,17 +105,17 @@ select,
 textarea {
     height: 2em; // 32px / 16px
     padding: 0.25em 0.1875em; // 8px / 16px + 3px / 16px
-    border: 1px solid var(--color-brdr);
+    border: 1px solid var(--clr-brdr);
     border-radius: 0;
-    background: var(--color-bkgd-form);
+    background: var(--clr-bkgd-form);
     appearance: none; /* 1 */
 
     &:hover {
-        border-color: var(--color-brdr-extra-dark);
+        border-color: var(--clr-brdr-extra-dark);
     }
 
     &:focus {
-        border-color: var(--color-link-focus);
+        border-color: var(--clr-a-focus);
         outline: 2px solid transparent; // Allows for repainting in high contrast modes.
     }
 }
@@ -137,14 +137,14 @@ textarea {
     [type="week"],
     select,
     textarea {
-        border-color: var(--color-brdr-extra-dark);
+        border-color: var(--clr-brdr-extra-dark);
 
         &:hover {
-            border-color: var(--color-brdr-extra-light);
+            border-color: var(--clr-brdr-extra-light);
         }
 
         &:focus {
-            border-color: var(--color-link-focus);
+            border-color: var(--clr-a-focus);
         }
     }
 }
@@ -162,8 +162,8 @@ textarea {
     width: 16px;
     height: 16px;
     padding: 0; /* 1 */
-    border: 1px solid var(--color-brdr-extra-dark);
-    background: var(--color-bkgd-form);
+    border: 1px solid var(--clr-brdr-extra-dark);
+    background: var(--clr-bkgd-form);
     appearance: none;
 
     + label {
@@ -184,7 +184,7 @@ textarea {
     }
 
     &:focus {
-        border-color: var(--color-link-focus);
+        border-color: var(--clr-a-focus);
         outline: 2px solid transparent; // Allows for repainting in high contrast modes.
     }
 
@@ -197,7 +197,7 @@ textarea {
     [type="checkbox"],
     [type="radio"] {
         &:hover {
-            border-color: var(--color-brdr-extra-light);
+            border-color: var(--clr-brdr-extra-light);
         }
     }
 }
@@ -205,15 +205,15 @@ textarea {
 [type="checkbox"] {
     &:checked {
         border: 0;
-        background: var(--color-text-secondary) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='%23fff' d='M13 2.5l-7 7-2-2-2 2 4 4L15 4.5z'/%3E%3C/svg%3E");
+        background: var(--clr-text-secondary) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='%23fff' d='M13 2.5l-7 7-2-2-2 2 4 4L15 4.5z'/%3E%3C/svg%3E");
 
         &:hover,
         &:active {
-            background-color: var(--color-text);
+            background-color: var(--clr-text);
         }
 
         &:focus {
-            background-color: var(--color-link-focus);
+            background-color: var(--clr-a-focus);
         }
     }
 
@@ -225,20 +225,20 @@ textarea {
 @include setup.dark-mode {
     [type="checkbox"] {
         &:checked {
-            background: var(--color-text) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='%23282d32' d='M13 2.5l-7 7-2-2-2 2 4 4L15 4.5z'/%3E%3C/svg%3E");
+            background: var(--clr-text) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='%23282d32' d='M13 2.5l-7 7-2-2-2 2 4 4L15 4.5z'/%3E%3C/svg%3E");
 
             &:hover,
             &:active {
-                background-color: var(--color-heading);
+                background-color: var(--clr-heading);
             }
 
             &:focus {
-                background-color: var(--color-link-focus);
+                background-color: var(--clr-a-focus);
             }
         }
 
         &[disabled]:checked {
-            background: var(--color-text) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='%23282d32' d='M13 2.5l-7 7-2-2-2 2 4 4L15 4.5z'/%3E%3C/svg%3E");
+            background: var(--clr-text) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='%23282d32' d='M13 2.5l-7 7-2-2-2 2 4 4L15 4.5z'/%3E%3C/svg%3E");
         }
     }
 }
@@ -247,15 +247,15 @@ textarea {
     border-radius: 100%;
 
     &:checked {
-        border: 5px solid var(--color-text-secondary);
+        border: 5px solid var(--clr-text-secondary);
 
         &:hover,
         &:active {
-            border-color: var(--color-text);
+            border-color: var(--clr-text);
         }
 
         &:focus {
-            border-color: var(--color-link-focus);
+            border-color: var(--clr-a-focus);
         }
     }
 }
@@ -264,11 +264,11 @@ textarea {
     [type="radio"]:checked {
         &:hover,
         &:active {
-            border-color: var(--color-heading);
+            border-color: var(--clr-heading);
         }
 
         &:focus {
-            border-color: var(--color-link-focus);
+            border-color: var(--clr-a-focus);
         }
     }
 }
@@ -297,7 +297,7 @@ textarea {
 
 select {
     padding-right: 1.5em; // 24px / 16px
-    background: var(--color-bkgd-form) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='17' height='5' viewBox='0 0 17 5'%3E%3Cpolygon fill='%23333' points='0,0 5,5 10,0'/%3E%3C/svg%3E") right center no-repeat;
+    background: var(--clr-bkgd-form) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='17' height='5' viewBox='0 0 17 5'%3E%3Cpolygon fill='%23333' points='0,0 5,5 10,0'/%3E%3C/svg%3E") right center no-repeat;
     background-size: 1.0625em 0.3125em; // 17px / 16px, 5px / 16px
     text-transform: none;
 }
@@ -367,9 +367,9 @@ textarea {
 [disabled] option,
 [disabled] optgroup,
 span.disabled {
-    border: 1px solid var(--color-brdr) !important;
+    border: 1px solid var(--clr-brdr) !important;
     opacity: 0.33 !important;
-    background-color: var(--color-bkgd-form-disabled) !important;
+    background-color: var(--clr-bkgd-form-disabled) !important;
     box-shadow: none !important;
     cursor: default !important; /* 1 */
 }
@@ -420,7 +420,7 @@ input,
 select,
 textarea {
     &:focus:invalid {
-        border-color: var(--color-error-text);
+        border-color: var(--clr-error-text);
         box-shadow: none; // Normalize Firefox styling
     }
 }
@@ -433,7 +433,7 @@ input,
 select,
 textarea {
     &:-moz-ui-invalid {
-        border-color: var(--color-error-text);
+        border-color: var(--clr-error-text);
         box-shadow: none;
     }
 }
@@ -446,7 +446,7 @@ textarea {
 
 ::placeholder {
     opacity: 1;
-    color: var(--color-text-placeholder);
+    color: var(--clr-text-placeholder);
     font: inherit; /* 1 */
 }
 
@@ -459,6 +459,6 @@ textarea {
  */
 
 abbr.required {
-    color: var(--color-warning-text);
+    color: var(--clr-warning-text);
     text-decoration: none;
 }

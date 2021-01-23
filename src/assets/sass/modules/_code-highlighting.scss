@@ -116,7 +116,7 @@ pre.line-numbers > code {
     top: 0;
     left: -3.8em;
     width: 3em; // Works for line-numbers below 1000 lines
-    border-right: 1px solid var(--color-brdr-light);
+    border-right: 1px solid var(--clr-brdr-light);
     font-size: 1em;
     letter-spacing: -1px;
     pointer-events: none;
@@ -133,14 +133,14 @@ pre.line-numbers > code {
     content: counter(linenumber);
     display: block;
     padding-right: 0.8em;
-    color: var(--color-text-footnote);
+    color: var(--clr-text-footnote);
     direction: ltr;
     text-align: right;
 }
 
 @include setup.dark-mode {
     .token.punctuation {
-        color: var(--color-text-white-out);
+        color: var(--clr-text-white-out);
     }
 
     .token.property,
@@ -150,7 +150,7 @@ pre.line-numbers > code {
     .token.constant,
     .token.symbol,
     .token.deleted {
-        color: var(--color-error-text);
+        color: var(--clr-error-text);
     }
 
     .token.selector,
@@ -159,7 +159,7 @@ pre.line-numbers > code {
     .token.char,
     .token.builtin,
     .token.inserted {
-        color: var(--color-success-text);
+        color: var(--clr-success-text);
     }
 
     .token.operator,
@@ -167,12 +167,12 @@ pre.line-numbers > code {
     .token.url,
     .language-css .token.string,
     .style .token.string {
-        color: var(--color-warning-text);
+        color: var(--clr-warning-text);
     }
 
     .token.atrule,
     .token.attr-value,
     .token.keyword {
-        color: var(--color-info-text);
+        color: var(--clr-info-text);
     }
 }

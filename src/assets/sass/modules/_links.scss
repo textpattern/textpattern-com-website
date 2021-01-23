@@ -12,7 +12,7 @@
  */
 
 a {
-    color: var(--color-link); /* 1 */
+    color: var(--clr-a); /* 1 */
     text-decoration: none; /* 2 */
     text-decoration-skip-ink: auto; /* 3 */
     text-underline-offset: 0.125em;
@@ -20,12 +20,12 @@ a {
 
     &:hover,
     &:active {
-        color: var(--color-link-interact);
+        color: var(--clr-a-interact);
         text-decoration: underline;
     }
 
     &:focus {
-        outline: 1px solid var(--color-link-focus);
+        outline: 1px solid var(--clr-a-focus);
     }
 }
 
@@ -43,12 +43,12 @@ h4,
 h5,
 h6 {
     a {
-        color: var(--color-heading);
+        color: var(--clr-heading);
 
         &:hover,
         &:active {
-            color: var(--color-heading);
-            text-decoration-color: rgba(var(--color-heading), 0.5);  /* 1 */
+            color: var(--clr-heading);
+            text-decoration-color: rgba(var(--clr-heading), 0.5);  /* 1 */
         }
     }
 }
@@ -59,11 +59,11 @@ h6 {
 
 .complementary-content a:not(.button),
 .site-footer a {
-    color: var(--color-link-alt);
+    color: var(--clr-a-alt);
 
     &:hover,
     &:active {
-        color: var(--color-link-alt-interact);
+        color: var(--clr-a-alt-interact);
     }
 }
 
@@ -79,18 +79,18 @@ h6 {
 
 .a--img {
     img {
-        border: solid 1px var(--color-brdr);
+        border: solid 1px var(--clr-brdr);
     }
 
     &:hover img {
-        border-color: var(--color-link-interact);
+        border-color: var(--clr-a-interact);
     }
 
     &:focus {
         outline: 0;
 
         img {
-            border-color: var(--color-link-focus);
+            border-color: var(--clr-a-focus);
         }
     }
 }
@@ -111,8 +111,8 @@ h6 {
     padding: 0.25em 0.5em;
     transform: translateY(-5em);
     transition: transform 0.25s ease-in-out;
-    background-color: var(--color-link-alt-interact);
-    color: var(--color-text);
+    background-color: var(--clr-a-alt-interact);
+    color: var(--clr-text);
 
     &:focus,
     &:active {

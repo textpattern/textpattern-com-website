@@ -5,8 +5,8 @@
    ========================================================================== */
 
 body {
-    background-color: var(--color-bkgd);
-    color: var(--color-text);
+    background-color: var(--clr-bkgd);
+    color: var(--clr-text);
 }
 
 main {
@@ -26,7 +26,7 @@ main {
  */
 
 .information code {
-    color: var(--color-text);
+    color: var(--clr-text);
 }
 
 
@@ -38,45 +38,45 @@ main {
  */
 
 $colors: (
-    "text":                    var(--color-text),
-    "text-visual-de-emphasis": var(--color-text-secondary),
-    "grad-from":               var(--color-grad-from),
-    "grad-to":                 var(--color-grad-to),
-    "border":                  var(--color-brdr),
-    "border-light":            var(--color-brdr-light),
-    "border-extra-light":      var(--color-brdr-extra-light),
-    "border-dark":             var(--color-brdr-dark),
-    "border-extra-dark":       var(--color-brdr-extra-dark),
-    "link":                    var(--color-link),
-    "link-hover":              var(--color-link-hover),
-    "link-focus":              var(--color-link-focus),
-    "nav-hover":               var(--color-nav-hover),
-    "nav-hover-selected":      var(--color-nav-hover-selected),
-    "nav-active":              var(--color-nav-active),
-    "background":              var(--color-bkgd),
-    "background-box":          var(--color-bkgd-box),
-    "highlight-box":           var(--color-highlight-box),
-    "strong-highlight-box":    var(--color-strong-highlight-box),
-    "highlight":               var(--color-highlight),
-    "success-text":            var(--color-success-text),
-    "success-background":      var(--color-success-bkgd),
-    "warning-text":            var(--color-warning-text),
-    "warning-background":      var(--color-warning-bkgd),
-    "error-text":              var(--color-error-text),
-    "error-background":        var(--color-error-bkgd),
-    "info-text":               var(--color-info-text),
-    "info-background":         var(--color-info-bkgd)
+    "text":                    var(--clr-text),
+    "text-visual-de-emphasis": var(--clr-text-secondary),
+    "grad-from":               var(--clr-grad-from),
+    "grad-to":                 var(--clr-grad-to),
+    "border":                  var(--clr-brdr),
+    "border-light":            var(--clr-brdr-light),
+    "border-extra-light":      var(--clr-brdr-extra-light),
+    "border-dark":             var(--clr-brdr-dark),
+    "border-extra-dark":       var(--clr-brdr-extra-dark),
+    "link":                    var(--clr-a),
+    "link-hover":              var(--clr-a-hover),
+    "link-focus":              var(--clr-a-focus),
+    "nav-hover":               var(--clr-nav-hover),
+    "nav-hover-selected":      var(--clr-nav-hover-selected),
+    "nav-active":              var(--clr-nav-active),
+    "background":              var(--clr-bkgd),
+    "background-box":          var(--clr-bkgd-box),
+    "highlight-box":           var(--clr-highlight-box),
+    "strong-highlight-box":    var(--clr-strong-highlight-box),
+    "highlight":               var(--clr-highlight),
+    "success-text":            var(--clr-success-text),
+    "success-background":      var(--clr-success-bkgd),
+    "warning-text":            var(--clr-warning-text),
+    "warning-background":      var(--clr-warning-bkgd),
+    "error-text":              var(--clr-error-text),
+    "error-background":        var(--clr-error-bkgd),
+    "info-text":               var(--clr-info-text),
+    "info-background":         var(--clr-info-bkgd)
 );
 
 .design-patterns--color {
     display: block;
     height: 2.375em; // 38px / 16px
     margin: 1em 0;
-    border: 1px solid var(--color-brdr);
+    border: 1px solid var(--clr-brdr);
 }
 
 @each $name, $color in $colors {
-    .design-patterns--color-#{$name} {
+    .design-patterns--clr-#{$name} {
         background: $color;
     }
 }
@@ -179,8 +179,8 @@ $colors: (
         padding: 0.5em 2%;
         overflow-x: hidden;
         overflow-y: auto;
-        border-right: 1px solid var(--color-brdr);
-        background-color: var(--color-bkgd-box);
+        border-right: 1px solid var(--clr-brdr);
+        background-color: var(--clr-bkgd-box);
         box-shadow: inset -0.25em 0 0.25em -0.25em rgba(0, 0, 0, 0.2);
     }
 
@@ -197,6 +197,6 @@ $colors: (
 
 @media (prefers-color-scheme: dark) and (min-width: setup.$breakpoint-3) {
     .docs-menu {
-        border-right-color: var(--color-brdr-extra-dark);
+        border-right-color: var(--clr-brdr-extra-dark);
     }
 }

@@ -13,27 +13,27 @@ progress {
     max-width: 10em; // 160px / 16px
     height: 0.75em;
     margin-right: 0.33em;
-    border: 1px solid var(--color-brdr);
-    background-color: var(--color-bkgd-box);
+    border: 1px solid var(--clr-brdr);
+    background-color: var(--clr-bkgd-box);
     vertical-align: baseline; /* 1 */
     appearance: none;
 }
 
 @include setup.dark-mode {
     progress {
-        border-color: var(--color-brdr-extra-dark);
+        border-color: var(--clr-brdr-extra-dark);
     }
 }
 
 // WebKit/Blink.
 
 progress::-webkit-progress-bar {
-    background-color: var(--color-bkgd-box);
+    background-color: var(--clr-bkgd-box);
 }
 
 progress::-webkit-progress-value {
     animation: progressbar-stripes linear 4s infinite;
-    background-color: var(--color-highlight);
+    background-color: var(--clr-highlight);
     background-image:
         linear-gradient(
             135deg,
@@ -50,7 +50,7 @@ progress::-webkit-progress-value {
 
 progress:indeterminate::-webkit-progress-bar {
     animation: progressbar-stripes linear 4s infinite;
-    background-color: var(--color-brdr);
+    background-color: var(--clr-brdr);
     background-image:
         linear-gradient(
             135deg,
@@ -75,7 +75,7 @@ progress[value="1"]::-webkit-progress-value {
 
 progress::-moz-progress-bar {
     animation: progressbar-stripes linear 4s infinite;
-    background-color: var(--color-highlight);
+    background-color: var(--clr-highlight);
     background-image:
         linear-gradient(
             135deg,
@@ -93,7 +93,7 @@ progress::-moz-progress-bar {
 progress:indeterminate::-moz-progress-bar {
     /* autoprefixer: off */
     animation: progressbar-stripes linear 4s infinite;
-    background-color: var(--color-brdr);
+    background-color: var(--clr-brdr);
     background-image:
         linear-gradient(
             135deg,
@@ -126,6 +126,6 @@ progress[value="1"]::-moz-progress-bar {
 }
 
 .data-progress[data-progress="100"] {
-    background: var(--color-success-bkgd);
-    color: var(--color-success-text);
+    background: var(--clr-success-bkgd);
+    color: var(--clr-success-text);
 }

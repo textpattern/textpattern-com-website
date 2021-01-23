@@ -15,14 +15,14 @@
     margin-bottom: 0.5em;
     padding: 1px 1em;
     border-radius: setup.$border-radius;
-    background: var(--color-bkgd-box);
+    background: var(--clr-bkgd-box);
     word-wrap: break-word;
 
     code,
     kbd,
     pre,
     samp {
-        background: var(--color-bkgd);
+        background: var(--clr-bkgd);
     }
 }
 
@@ -32,7 +32,7 @@
         kbd,
         pre,
         samp {
-            background: var(--color-bkgd-form);
+            background: var(--clr-bkgd-form);
         }
     }
 }
@@ -59,10 +59,10 @@
  */
 
 .comments.article-author {
-    background: var(--color-highlight-box);
+    background: var(--clr-highlight-box);
 
     blockquote {
-        background: var(--color-bkgd);
+        background: var(--clr-bkgd);
     }
 }
 
@@ -97,7 +97,7 @@
     margin-bottom: 2px;
     padding: 1em;
     border-radius: setup.$border-radius;
-    background-color: var(--color-highlight-box);
+    background-color: var(--clr-highlight-box);
 }
 
 /**
@@ -105,7 +105,7 @@
  */
 
 .error_message li {
-    color: var(--color-error-text);
+    color: var(--clr-error-text);
 }
 
 /**
@@ -113,5 +113,5 @@
  */
 
 .comments_error {
-    border-color: var(--color-error-text);
+    border-color: var(--clr-error-text);
 }

@@ -16,7 +16,7 @@
 .paginator {
     margin: 1.5em 0 1em;
     padding-top: 1em;
-    border-top: 2px dashed var(--color-brdr);
+    border-top: 2px dashed var(--clr-brdr);
 
     a,
     b {
@@ -65,8 +65,8 @@
         display: inline-block;
 
         &.current {
-            background: var(--color-text);
-            color: var(--color-text-white-enforced);
+            background: var(--clr-text);
+            color: var(--clr-text-white-enforced);
         }
     }
 
@@ -83,6 +83,6 @@
 
 @include setup.dark-mode {
     .pagination li.current {
-        background: var(--color-bkgd-form);
+        background: var(--clr-bkgd-form);
     }
 }

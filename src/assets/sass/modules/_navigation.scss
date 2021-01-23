@@ -24,10 +24,10 @@
     }
 
     li {
-        border-top: 1px solid var(--color-brdr);
+        border-top: 1px solid var(--clr-brdr);
 
         &:first-child {
-            border-top: 2px solid var(--color-text);
+            border-top: 2px solid var(--clr-text);
         }
 
         &:last-child {
@@ -38,36 +38,36 @@
     a {
         display: block;
         padding: 0.4285714em 5%; // 6px / 14px
-        color: var(--color-text);
+        color: var(--clr-text);
         font-weight: bold;
 
         &:hover {
-            background-color: var(--color-nav-hover);
-            color: var(--color-text);
+            background-color: var(--clr-nav-hover);
+            color: var(--clr-text);
             text-decoration: none;
         }
 
         &:active {
-            background-color: var(--color-nav-active);
-            color: var(--color-heading);
+            background-color: var(--clr-nav-active);
+            color: var(--clr-heading);
             text-decoration: none;
         }
 
         &:focus {
-            background-color: var(--color-nav-hover);
+            background-color: var(--clr-nav-hover);
         }
     }
 
     .active a {
-        background-color: var(--color-nav-hover);
+        background-color: var(--clr-nav-hover);
 
         &:hover,
         &:focus {
-            background-color: var(--color-nav-hover-selected);
+            background-color: var(--clr-nav-hover-selected);
         }
 
         &:active {
-            background-color: var(--color-nav-active);
+            background-color: var(--clr-nav-active);
         }
     }
 
@@ -80,14 +80,14 @@
 @include setup.dark-mode {
     #site-navigation {
         ul {
-            background-color: var(--color-bkgd-box);
+            background-color: var(--clr-bkgd-box);
         }
 
         li {
-            border-top-color: var(--color-brdr-light);
+            border-top-color: var(--clr-brdr-light);
 
             &:first-child {
-                border-top-color: var(--color-brdr-extra-dark);
+                border-top-color: var(--clr-brdr-extra-dark);
             }
         }
     }
@@ -113,7 +113,7 @@
     right: 5%;
     width: 32px;
     height: 32px;
-    border: 1px solid var(--color-bkgd);
+    border: 1px solid var(--clr-bkgd);
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath fill='%23333' d='M4 6h24v4H4zm0 8h24v4H4zm0 8h24v4H4z'/%3E%3C/svg%3E");
     background-size: 32px 32px;
     user-select: none;
@@ -128,11 +128,11 @@
     }
 
     &:hover {
-        border-color: var(--color-brdr-extra-dark);
+        border-color: var(--clr-brdr-extra-dark);
     }
 
     &:focus {
-        border-color: var(--color-link-focus);
+        border-color: var(--clr-a-focus);
         outline: 2px solid transparent; // Allows for repainting in high contrast modes.
     }
 }
@@ -142,7 +142,7 @@
         background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath fill='%23ced4da' d='M4 6h24v4H4zm0 8h24v4H4zm0 8h24v4H4z'/%3E%3C/svg%3E");
 
         &:hover {
-            border-color: var(--color-brdr-extra-light);
+            border-color: var(--clr-brdr-extra-light);
         }
 
         &.site-navigation-toggle-active {
@@ -150,7 +150,7 @@
         }
 
         &:focus {
-            border-color: var(--color-link-focus);
+            border-color: var(--clr-a-focus);
         }
     }
 }

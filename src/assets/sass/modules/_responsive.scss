@@ -258,7 +258,7 @@
 
     @include setup.dark-mode {
         .search-form [type="search"] {
-            background-color: var(--color-bkgd-form);
+            background-color: var(--clr-bkgd-form);
         }
     }
 
@@ -299,13 +299,13 @@
         a {
             margin: 0 0.2727273em 0.2727273em -0.2727273em; // 6px / 22px
             padding: 0 0.2727273em; // 6px / 22px
-            border: 1px solid var(--color-bkgd);
+            border: 1px solid var(--clr-bkgd);
             border-radius: setup.$border-radius / 2;
             font-size: 1.375em; // 22px / 16px
             font-weight: normal;
 
             &:focus {
-                border-color: var(--color-link-focus);
+                border-color: var(--clr-a-focus);
                 outline: 2px solid transparent; // Allows for repainting in high contrast modes.
             }
         }
@@ -314,7 +314,7 @@
     @include setup.dark-mode {
         #site-navigation {
             ul {
-                background-color: var(--color-bkgd);
+                background-color: var(--clr-bkgd);
             }
         }
     }
@@ -490,7 +490,7 @@
         margin: 0 -1em;
         padding: 0 1em;
         border-top: 0;
-        background-color: var(--color-bkgd-box);
+        background-color: var(--clr-bkgd-box);
     }
 
     /**

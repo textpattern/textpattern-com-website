@@ -112,7 +112,7 @@ main {
     h4,
     h5,
     h6, {
-        color: var(--color-heading);
+        color: var(--clr-heading);
     }
 }
 
@@ -173,8 +173,8 @@ h6 {
 
     span {
         padding: 0 0.2em;
-        background: var(--color-highlight-enforced);
-        color: var(--color-text-black-enforced);
+        background: var(--clr-highlight-enforced);
+        color: var(--clr-text-black-enforced);
         box-decoration-break: clone;
     }
 }
@@ -212,9 +212,9 @@ blockquote {
 blockquote {
     margin: 1em 0;
     padding: 1px 1em 1px 1.5em;
-    border-left: 0.25em solid var(--color-highlight);
+    border-left: 0.25em solid var(--clr-highlight);
     border-radius: 0 setup.$border-radius setup.$border-radius 0;
-    background-color: var(--color-highlight-box);
+    background-color: var(--clr-highlight-box);
 }
 
 /**
@@ -223,8 +223,8 @@ blockquote {
 
 .example {
     padding: 1px 0 1px 1.5rem;
-    border-left: 0.25rem solid var(--color-info-border);
-    color: var(--color-text-secondary);
+    border-left: 0.25rem solid var(--clr-info-border);
+    color: var(--clr-text-secondary);
 }
 
 ol.example,
@@ -254,8 +254,8 @@ mark,
 var {
     padding: 0 0.25em; // 0 4px
     border-radius: setup.$border-radius / 2;
-    background: var(--color-highlight-box);
-    color: var(--color-text);
+    background: var(--clr-highlight-box);
+    color: var(--clr-text);
 }
 
 /**
@@ -268,10 +268,10 @@ pre,
 code,
 kbd,
 samp {
-    border: 1px solid var(--color-brdr-extra-light);
+    border: 1px solid var(--clr-brdr-extra-light);
     border-radius: 0.2857143em; // 4px / 14px
-    background-color: var(--color-bkgd-box);
-    color: var(--color-text);
+    background-color: var(--clr-bkgd-box);
+    color: var(--clr-text);
     font-family: var(--font-monospaced);
     font-feature-settings: normal; /* 1 */
     font-size: setup.$code-font-size;
@@ -386,7 +386,7 @@ hr {
 
 .separator {
     margin: 0 0.25em;
-    color: var(--color-text-secondary);
+    color: var(--clr-text-secondary);
 }
 
 /**

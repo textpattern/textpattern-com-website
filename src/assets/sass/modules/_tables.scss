@@ -18,7 +18,7 @@
     overflow-x: auto;
 
     &:focus {
-        outline: thin solid var(--color-link-focus);
+        outline: thin solid var(--clr-a-focus);
     }
 }
 
@@ -50,7 +50,7 @@ th,
 td {
     min-width: 6em; // 96px / 16px
     padding: 0.5em; // 8px / 16px
-    border: 1px solid var(--color-brdr-light);
+    border: 1px solid var(--clr-brdr-light);
     vertical-align: top;
     text-align: left;
 }
@@ -61,13 +61,13 @@ td {
 
 thead {
     tr {
-        background-color: var(--color-grad-from);
+        background-color: var(--clr-grad-from);
     }
 
     th,
     td {
-        border: 1px solid var(--color-brdr);
-        color: var(--color-heading);
+        border: 1px solid var(--clr-brdr);
+        color: var(--clr-heading);
     }
 }
 
@@ -78,11 +78,11 @@ thead {
 tbody {
     tr {
         &:nth-child(even) {
-            background-color: var(--color-bkgd-box);
+            background-color: var(--clr-bkgd-box);
         }
 
         &.selected {
-            background-color: var(--color-nav-hover-selected);
+            background-color: var(--clr-nav-hover-selected);
         }
     }
 
