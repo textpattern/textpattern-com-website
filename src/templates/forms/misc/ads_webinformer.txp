@@ -59,7 +59,7 @@ EOHTML;
         // Hard-code the footer, since it's easier than trying to get innerHTML from DOMDocument.
         $out .= <<<EOHTML
 </ul>
-<small>Sponsored by <a rel="external" href="https://website.informer.com/">website.informer.com</a></small>
+<small>Powered by <a rel="external" href="https://website.informer.com/">website.informer.com</a></small>
 EOHTML;
 
         echo n,comment(date('c'));
