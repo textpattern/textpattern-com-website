@@ -5,7 +5,7 @@
    ========================================================================== */
 
 body {
-    background-color: var(--color-background);
+    background-color: var(--color-bkgd);
     color: var(--color-text);
 }
 
@@ -53,19 +53,19 @@ $colors: (
     "nav-hover":               var(--color-nav-hover),
     "nav-hover-selected":      var(--color-nav-hover-selected),
     "nav-active":              var(--color-nav-active),
-    "background":              var(--color-background),
-    "background-box":          var(--color-background-box),
+    "background":              var(--color-bkgd),
+    "background-box":          var(--color-bkgd-box),
     "highlight-box":           var(--color-highlight-box),
     "strong-highlight-box":    var(--color-strong-highlight-box),
     "highlight":               var(--color-highlight),
     "success-text":            var(--color-success-text),
-    "success-background":      var(--color-success-background),
+    "success-background":      var(--color-success-bkgd),
     "warning-text":            var(--color-warning-text),
-    "warning-background":      var(--color-warning-background),
+    "warning-background":      var(--color-warning-bkgd),
     "error-text":              var(--color-error-text),
-    "error-background":        var(--color-error-background),
+    "error-background":        var(--color-error-bkgd),
     "info-text":               var(--color-info-text),
-    "info-background":         var(--color-info-background)
+    "info-background":         var(--color-info-bkgd)
 );
 
 .design-patterns--color {
@@ -180,7 +180,7 @@ $colors: (
         overflow-x: hidden;
         overflow-y: auto;
         border-right: 1px solid var(--color-border);
-        background-color: var(--color-background-box);
+        background-color: var(--color-bkgd-box);
         box-shadow: inset -0.25em 0 0.25em -0.25em rgba(0, 0, 0, 0.2);
     }
 

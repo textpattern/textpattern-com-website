@@ -66,7 +66,7 @@
 
     a:hover,
     a:active {
-        border-color: var(--color-button-primary-border-interact);
+        border-color: var(--color-btn-primary-border-interact);
         background-color: var(--color-highlight-enforced);
         color: var(--color-text-button);
         text-decoration: none;
@@ -95,13 +95,13 @@
         a,
         .article-author,
         .compatibility {
-            border-color: var(--color-background-form);
-            background: var(--color-background-form);
+            border-color: var(--color-bkgd-form);
+            background: var(--color-bkgd-form);
         }
 
         a:hover,
         a:active {
-            border-color: var(--color-button-primary-border-interact);
+            border-color: var(--color-btn-primary-border-interact);
             background-color: var(--color-highlight-enforced);
         }
 

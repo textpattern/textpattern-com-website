@@ -66,22 +66,22 @@
 
     &.success {
         border-color: var(--color-success-border);
-        background: var(--color-success-background);
+        background: var(--color-success-bkgd);
     }
 
     &.warning {
         border-color: var(--color-warning-border);
-        background: var(--color-warning-background);
+        background: var(--color-warning-bkgd);
     }
 
     &.error {
         border-color: var(--color-error-border);
-        background: var(--color-error-background);
+        background: var(--color-error-bkgd);
     }
 
     &.information {
         border-color: var(--color-info-border);
-        background: var(--color-info-background);
+        background: var(--color-info-bkgd);
     }
 }
 

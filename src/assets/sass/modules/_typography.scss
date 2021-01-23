@@ -112,7 +112,7 @@ main {
     h4,
     h5,
     h6, {
-        color: var(--color-text-heading);
+        color: var(--color-heading);
     }
 }
 
@@ -270,7 +270,7 @@ kbd,
 samp {
     border: 1px solid var(--color-border-extra-light);
     border-radius: 0.2857143em; // 4px / 14px
-    background-color: var(--color-background-box);
+    background-color: var(--color-bkgd-box);
     color: var(--color-text);
     font-family: var(--font-monospaced);
     font-feature-settings: normal; /* 1 */

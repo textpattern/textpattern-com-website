@@ -83,6 +83,6 @@
 
 @include setup.dark-mode {
     .pagination li.current {
-        background: var(--color-background-form);
+        background: var(--color-bkgd-form);
     }
 }

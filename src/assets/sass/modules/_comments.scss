@@ -15,14 +15,14 @@
     margin-bottom: 0.5em;
     padding: 1px 1em;
     border-radius: setup.$border-radius;
-    background: var(--color-background-box);
+    background: var(--color-bkgd-box);
     word-wrap: break-word;
 
     code,
     kbd,
     pre,
     samp {
-        background: var(--color-background);
+        background: var(--color-bkgd);
     }
 }
 
@@ -32,7 +32,7 @@
         kbd,
         pre,
         samp {
-            background: var(--color-background-form);
+            background: var(--color-bkgd-form);
         }
     }
 }
@@ -62,7 +62,7 @@
     background: var(--color-highlight-box);
 
     blockquote {
-        background: var(--color-background);
+        background: var(--color-bkgd);
     }
 }
 

@@ -34,17 +34,17 @@ button,
 [type="reset"],
 [type="submit"],
 .button {
-    @include setup.gradient-linear(var(--color-button-grad-from), var(--color-button-grad-to));
+    @include setup.gradient-linear(var(--color-btn-grad-from), var(--color-btn-grad-to));
 
     display: inline-block;
     position: relative;
     width: auto;
     height: auto;
     padding: 0.25em 1em; // 4px / 16px
-    border: 1px solid var(--color-button-border);
+    border: 1px solid var(--color-btn-border);
     border-radius: 1em;
     background-clip: padding-box;
-    box-shadow: 0 2px 0 var(--color-button-shadow);
+    box-shadow: 0 2px 0 var(--color-btn-shadow);
     color: var(--color-text-button);
     font-weight: normal;
     text-align: center;
@@ -54,7 +54,7 @@ button,
 
     &:hover,
     &:active {
-        border-color: var(--color-button-border-interact);
+        border-color: var(--color-btn-border-interact);
         color: var(--color-text-button-interact);
         text-decoration: none;
     }
@@ -86,15 +86,15 @@ button,
  */
 
 .button-primary {
-    @include setup.gradient-linear(var(--color-button-primary-grad-from), var(--color-button-primary-grad-to));
+    @include setup.gradient-linear(var(--color-btn-primary-grad-from), var(--color-btn-primary-grad-to));
 
-    border-color: var(--color-button-primary-border);
-    box-shadow: 0 2px 0 var(--color-button-primary-shadow);
+    border-color: var(--color-btn-primary-border);
+    box-shadow: 0 2px 0 var(--color-btn-primary-shadow);
     font-weight: bolder;
 
     &:hover,
     &:active {
-        border-color: var(--color-button-primary-border-interact);
+        border-color: var(--color-btn-primary-border-interact);
     }
 
     &:active {
@@ -143,7 +143,7 @@ button,
     display: inline-block;
     margin: -0.5em 0 -0.5em 0.25em;
     padding: 0.5em 0 0.5em 0.5em;
-    border-left: 1px solid var(--color-button-primary-shadow);
+    border-left: 1px solid var(--color-btn-primary-shadow);
     font-weight: normal;
 }
 
@@ -169,5 +169,5 @@ button[disabled],
 [type="submit"][disabled],
 .button.disabled {
     top: 0 !important;
-    background: var(--color-button-background-disabled) !important;
+    background: var(--color-btn-background-disabled) !important;
 }
