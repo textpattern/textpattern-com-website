@@ -312,10 +312,8 @@
     }
 
     @include setup.dark-mode {
-        #site-navigation {
-            ul {
-                background-color: var(--clr-bkgd);
-            }
+        #site-navigation ul {
+            background-color: var(--clr-bkgd);
         }
     }
 
