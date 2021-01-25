@@ -25,7 +25,7 @@ a {
     }
 
     &:focus {
-        outline: 1px solid var(--clr-a-focus);
+        outline: 1px solid var(--clr-focus);
     }
 }
 
@@ -90,7 +90,7 @@ h6 {
         outline: 0;
 
         img {
-            border-color: var(--clr-a-focus);
+            border-color: var(--clr-focus);
         }
     }
 }

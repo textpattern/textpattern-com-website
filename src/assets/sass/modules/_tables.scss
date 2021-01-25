@@ -18,7 +18,7 @@
     overflow-x: auto;
 
     &:focus {
-        outline: thin solid var(--clr-a-focus);
+        outline: thin solid var(--clr-focus);
     }
 }
 
@@ -50,7 +50,7 @@ th,
 td {
     min-width: 6em; // 96px / 16px
     padding: 0.5em; // 8px / 16px
-    border: 1px solid var(--clr-brdr-light);
+    border: 1px solid var(--clr-brdr-lite);
     vertical-align: top;
     text-align: left;
 }

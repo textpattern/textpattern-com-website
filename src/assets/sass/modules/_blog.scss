@@ -77,7 +77,7 @@
     }
 
     a:focus {
-        border-color: var(--clr-a-focus);
+        border-color: var(--clr-focus);
         outline: 2px solid transparent; // Allows for repainting in high contrast modes.
         background-color: var(--clr-hilite-enforced);
     }
@@ -106,7 +106,7 @@
         }
 
         a:focus {
-            border-color: var(--clr-a-focus);
+            border-color: var(--clr-focus);
             background-color: var(--clr-hilite-enforced);
         }
     }

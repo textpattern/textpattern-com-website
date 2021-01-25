@@ -115,7 +115,7 @@ textarea {
     }
 
     &:focus {
-        border-color: var(--clr-a-focus);
+        border-color: var(--clr-focus);
         outline: 2px solid transparent; // Allows for repainting in high contrast modes.
     }
 }
@@ -140,11 +140,11 @@ textarea {
         border-color: var(--clr-brdr-x-dark);
 
         &:hover {
-            border-color: var(--clr-brdr-x-light);
+            border-color: var(--clr-brdr-x-lite);
         }
 
         &:focus {
-            border-color: var(--clr-a-focus);
+            border-color: var(--clr-focus);
         }
     }
 }
@@ -184,7 +184,7 @@ textarea {
     }
 
     &:focus {
-        border-color: var(--clr-a-focus);
+        border-color: var(--clr-focus);
         outline: 2px solid transparent; // Allows for repainting in high contrast modes.
     }
 
@@ -197,7 +197,7 @@ textarea {
     [type="checkbox"],
     [type="radio"] {
         &:hover {
-            border-color: var(--clr-brdr-x-light);
+            border-color: var(--clr-brdr-x-lite);
         }
     }
 }
@@ -213,7 +213,7 @@ textarea {
         }
 
         &:focus {
-            background-color: var(--clr-a-focus);
+            background-color: var(--clr-focus);
         }
     }
 
@@ -233,7 +233,7 @@ textarea {
             }
 
             &:focus {
-                background-color: var(--clr-a-focus);
+                background-color: var(--clr-focus);
             }
         }
 
@@ -255,7 +255,7 @@ textarea {
         }
 
         &:focus {
-            border-color: var(--clr-a-focus);
+            border-color: var(--clr-focus);
         }
     }
 }
@@ -268,18 +268,9 @@ textarea {
         }
 
         &:focus {
-            border-color: var(--clr-a-focus);
+            border-color: var(--clr-focus);
         }
     }
-}
-
-/**
- * Correct the cursor style of increment and decrement buttons in Safari.
- */
-
-[type="number"]::-webkit-inner-spin-button,
-[type="number"]::-webkit-outer-spin-button {
-    height: auto;
 }
 
 /**
@@ -289,6 +280,61 @@ textarea {
 [type="search"]::-webkit-search-decoration {
     /* autoprefixer: off */
     appearance: none;
+}
+
+[type="file"] {
+    box-sizing: border-box;
+    height: auto;
+    min-height: 2em; // 32px / 16px
+    padding: 0.25em 0.1875em; // 8px / 16px + 3px / 16px
+    border: 1px solid var(--clr-brdr);
+    background: var(--clr-bkgd-form);
+    appearance: none;
+    cursor: pointer;
+
+    &:hover {
+        border-color: var(--clr-brdr-x-dark);
+    }
+
+    &:focus {
+        border-color: var(--clr-focus);
+        outline: 2px solid transparent; // Allows for repainting in high contrast modes.
+    }
+}
+
+@include setup.dark-mode {
+    [type="file"] {
+        border-color: var(--clr-brdr-x-dark);
+
+        &:hover {
+            border-color: var(--clr-brdr-x-lite);
+        }
+
+        &:focus {
+            border-color: var(--clr-focus);
+        }
+    }
+}
+
+[type="file"]::-webkit-file-upload-button {
+    @include setup.gradient-linear(var(--clr-btn-grad-from), var(--clr-btn-grad-to));
+
+    padding: 0 0.25em;
+    border: 0;
+    border-radius: 0.25em;
+    color: var(--clr-text-btn);
+    font: inherit;
+    /* autoprefixer: off */
+    appearance: none;
+    cursor: pointer;
+}
+
+[type="file"]:hover::-webkit-file-upload-button {
+    filter: brightness(1.05);
+}
+
+[type="file"]:active::-webkit-file-upload-button {
+    filter: brightness(0.95);
 }
 
 /**

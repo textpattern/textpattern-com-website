@@ -183,7 +183,7 @@ noscript {
         background-size: 32px 32px;
 
         &:focus {
-            border-color: var(--clr-a-focus);
+            border-color: var(--clr-focus);
         }
     }
 }
@@ -520,7 +520,7 @@ main .layout-4col-3span {
         outline: 0;
 
         img {
-            border-color: var(--clr-a-focus);
+            border-color: var(--clr-focus);
             box-shadow: 0 0.2em 0.5em hsla(216, 100%, 50%, 0.5);
         }
     }
@@ -564,7 +564,7 @@ main .layout-4col-3span {
     a:active,
     a:focus {
         img {
-            border-color: var(--clr-a-focus);
+            border-color: var(--clr-focus);
             box-shadow: 0 0.2em 0.5em hsla(312, 100%, 50%, 0.4);
         }
     }
@@ -640,11 +640,11 @@ main .layout-4col-3span {
     }
 
     &:focus {
-        border-color: var(--clr-a-focus);
+        border-color: var(--clr-focus);
         outline: 2px solid transparent; // Allows for repainting in high contrast modes.
 
         &::before {
-            border-color: transparent var(--clr-a-focus);
+            border-color: transparent var(--clr-focus);
         }
     }
 }

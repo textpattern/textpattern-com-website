@@ -94,7 +94,7 @@
         }
 
         li {
-            border-top-color: var(--clr-brdr-light);
+            border-top-color: var(--clr-brdr-lite);
 
             &:first-child {
                 border-top-color: var(--clr-brdr-x-dark);
@@ -143,7 +143,7 @@
     }
 
     &:focus {
-        border-color: var(--clr-a-focus);
+        border-color: var(--clr-focus);
         outline: 2px solid transparent; // Allows for repainting in high contrast modes.
     }
 }
@@ -153,7 +153,7 @@
         background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath fill='%23ced4da' d='M4 6h24v4H4zm0 8h24v4H4zm0 8h24v4H4z'/%3E%3C/svg%3E");
 
         &:hover {
-            border-color: var(--clr-brdr-x-light);
+            border-color: var(--clr-brdr-x-lite);
         }
 
         &.site-navigation-toggle-active {
@@ -161,7 +161,7 @@
         }
 
         &:focus {
-            border-color: var(--clr-a-focus);
+            border-color: var(--clr-focus);
         }
     }
 }

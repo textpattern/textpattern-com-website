@@ -305,7 +305,7 @@
             font-weight: normal;
 
             &:focus {
-                border-color: var(--clr-a-focus);
+                border-color: var(--clr-focus);
                 outline: 2px solid transparent; // Allows for repainting in high contrast modes.
             }
         }
