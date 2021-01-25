@@ -43,12 +43,12 @@ h4,
 h5,
 h6 {
     a {
-        color: var(--clr-heading);
+        color: var( --clr-text-promoted);
 
         &:hover,
         &:active {
-            color: var(--clr-heading);
-            text-decoration-color: rgba(var(--clr-heading), 0.5);  /* 1 */
+            color: var( --clr-text-promoted);
+            text-decoration-color: rgba(var( --clr-text-promoted), 0.5);  /* 1 */
         }
     }
 }

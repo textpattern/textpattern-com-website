@@ -13,10 +13,10 @@
     --font-monospaced: Menlo, Consolas, Monaco, monospace;
     // text colours
     --clr-text:                        #333333;
-    --clr-heading:                     #2b2b2b;
+    --clr-text-promoted:               #2b2b2b;
+    --clr-text-demoted:                #666666;
     --clr-text-form:                   #000000;
     --clr-text-placeholder:            #999999;
-    --clr-text-secondary:              #666666;
     --clr-text-black-enforced:         #333333;
     --clr-text-white-enforced:         #ffffff;
     // interaction colours
@@ -80,10 +80,10 @@
     :root {
         // dark mode text colours
         --clr-text:                 #ced4da;
-        --clr-heading:              #ffffff;
+        --clr-text-promoted:        #ffffff;
+        --clr-text-demoted:         #bcc4cc;
         --clr-text-form:            #ffffff;
         --clr-text-placeholder:     #747b82;
-        --clr-text-secondary:       #bcc4cc;
         // interaction colours
         --clr-a:                    #9cd7ff;
         --clr-a-interact:           #bde4ff;

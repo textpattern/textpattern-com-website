@@ -112,7 +112,7 @@ main {
     h4,
     h5,
     h6, {
-        color: var(--clr-heading);
+        color: var( --clr-text-promoted);
     }
 }
 
@@ -224,7 +224,7 @@ blockquote {
 .example {
     padding: 1px 0 1px 1.5rem;
     border-left: 0.25rem solid var(--clr-info-border);
-    color: var(--clr-text-secondary);
+    color: var(--clr-text-demoted);
 }
 
 ol.example,
@@ -386,7 +386,7 @@ hr {
 
 .separator {
     margin: 0 0.25em;
-    color: var(--clr-text-secondary);
+    color: var(--clr-text-demoted);
 }
 
 /**
