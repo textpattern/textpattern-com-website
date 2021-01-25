@@ -7,7 +7,6 @@ Official 2017+ website of the [Textpattern](https://textpattern.com/) project. *
 ## Supported web browsers
 
 * Chrome, Edge, Firefox, Safari and Opera the last two recent stable releases.
-* Internet Explorer 11.
 * Firefox ESR latest major point release.
 
 Older versions of the above and other browsers may work, but these are the ones we verify.
