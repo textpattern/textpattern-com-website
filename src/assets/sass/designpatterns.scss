@@ -126,6 +126,10 @@ $colors: (
     color: #ffffff;
 }
 
+.design-patterns--breakpoint-0 {
+    display: inline-block;
+}
+
 .design-patterns--breakpoint-1,
 .design-patterns--breakpoint-2,
 .design-patterns--breakpoint-3 {
@@ -138,7 +142,7 @@ $colors: (
     }
 
     .design-patterns--breakpoint-1 {
-        display: block;
+        display: inline-block;
     }
 }
 
@@ -148,7 +152,7 @@ $colors: (
     }
 
     .design-patterns--breakpoint-2 {
-        display: block;
+        display: inline-block;
     }
 }
 
@@ -158,7 +162,7 @@ $colors: (
     }
 
     .design-patterns--breakpoint-3 {
-        display: block;
+        display: inline-block;
     }
 
     /**
