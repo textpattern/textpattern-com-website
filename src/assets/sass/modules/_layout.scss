@@ -521,7 +521,6 @@ main .layout-4col-3span {
 
         img {
             border-color: var(--clr-focus);
-            box-shadow: 0 0.2em 0.5em hsla(216, 100%, 50%, 0.5);
         }
     }
 
@@ -555,17 +554,18 @@ main .layout-4col-3span {
 }
 
 @include setup.dark-mode {
-    .showcases img {
-        border-color: var(--clr-brdr-x-dark);
-        box-shadow: 0 0.2em 0.5em hsla(0, 0%, 0%, 0.5);
-    }
-
-    a:hover,
-    a:active,
-    a:focus {
+    .showcases {
         img {
-            border-color: var(--clr-focus);
-            box-shadow: 0 0.2em 0.5em hsla(312, 100%, 50%, 0.4);
+            border-color: var(--clr-brdr-x-dark);
+            box-shadow: 0 0.2em 0.5em hsla(0, 0%, 0%, 0.5);
+        }
+
+        a:hover,
+        a:active,
+        a:focus {
+            img {
+                border-color: var(--clr-focus);
+            }
         }
     }
 
