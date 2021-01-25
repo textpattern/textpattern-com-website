@@ -52,32 +52,27 @@
         font-weight: bold;
 
         &:hover {
-            background-color: var(--clr-nav-hover);
+            background-color: var(--clr-nav-interact);
             color: var(--clr-text);
             text-decoration: none;
         }
 
         &:active {
-            background-color: var(--clr-nav-active);
-            color: var(--clr-text-promoted);
+            filter: brightness(0.95);
             text-decoration: none;
         }
 
         &:focus {
-            background-color: var(--clr-nav-hover);
+            background-color: var(--clr-nav-interact);
         }
     }
 
     .active a {
-        background-color: var(--clr-nav-hover);
+        background-color: var(--clr-nav-active);
 
         &:hover,
         &:focus {
-            background-color: var(--clr-nav-hover-selected);
-        }
-
-        &:active {
-            background-color: var(--clr-nav-active);
+            background-color: var(--clr-nav-interact);
         }
     }
 

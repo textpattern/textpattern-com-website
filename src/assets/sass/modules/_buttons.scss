@@ -61,14 +61,12 @@ button,
 
     &:hover {
         filter: brightness(1.05);
-        text-decoration: none;
     }
 
     &:active {
         top: 2px;
         box-shadow: none;
         filter: brightness(0.95);
-        text-decoration: none;
     }
 
     &:focus {

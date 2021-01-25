@@ -274,13 +274,8 @@ textarea {
 }
 
 /**
- * Remove the inner padding in Chrome and Safari on macOS.
+ * Styling for file inputs.
  */
-
-[type="search"]::-webkit-search-decoration {
-    /* autoprefixer: off */
-    appearance: none;
-}
 
 [type="file"] {
     box-sizing: border-box;
@@ -288,6 +283,7 @@ textarea {
     min-height: 2em; // 32px / 16px
     padding: 0.25em 0.1875em; // 8px / 16px + 3px / 16px
     border: 1px solid var(--clr-brdr);
+    border-radius: 0;
     background: var(--clr-bkgd-form);
     appearance: none;
     cursor: pointer;
@@ -335,6 +331,15 @@ textarea {
 
 [type="file"]:active::-webkit-file-upload-button {
     filter: brightness(0.95);
+}
+
+/**
+ * Remove the inner padding in Chrome and Safari on macOS.
+ */
+
+[type="search"]::-webkit-search-decoration {
+    /* autoprefixer: off */
+    appearance: none;
 }
 
 /**
