@@ -21,7 +21,7 @@ progress {
 
 @include setup.dark-mode {
     progress {
-        border-color: var(--clr-brdr-extra-dark);
+        border-color: var(--clr-brdr-x-dark);
     }
 }
 
@@ -33,7 +33,7 @@ progress::-webkit-progress-bar {
 
 progress::-webkit-progress-value {
     animation: progressbar-stripes linear 4s infinite;
-    background-color: var(--clr-highlight);
+    background-color: var(--clr-hilite);
     background-image:
         linear-gradient(
             135deg,
@@ -75,7 +75,7 @@ progress[value="1"]::-webkit-progress-value {
 
 progress::-moz-progress-bar {
     animation: progressbar-stripes linear 4s infinite;
-    background-color: var(--clr-highlight);
+    background-color: var(--clr-hilite);
     background-image:
         linear-gradient(
             135deg,

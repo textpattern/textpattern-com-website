@@ -41,11 +41,11 @@ button,
     width: auto;
     height: auto;
     padding: 0.25em 1em; // 4px / 16px
-    border: 1px solid var(--clr-btn-border);
+    border: 1px solid var(--clr-btn-brdr);
     border-radius: 1em;
     background-clip: padding-box;
     box-shadow: 0 2px 0 var(--clr-btn-shadow);
-    color: var(--clr-text-button);
+    color: var(--clr-text-btn);
     font-weight: normal;
     text-align: center;
     appearance: none; /* 1 */
@@ -54,8 +54,8 @@ button,
 
     &:hover,
     &:active {
-        border-color: var(--clr-btn-border-interact);
-        color: var(--clr-text-button-interact);
+        border-color: var(--clr-btn-brdr-interact);
+        color: var(--clr-text-btn-interact);
         text-decoration: none;
     }
 
@@ -88,13 +88,13 @@ button,
 .button-primary {
     @include setup.gradient-linear(var(--clr-btn-primary-grad-from), var(--clr-btn-primary-grad-to));
 
-    border-color: var(--clr-btn-primary-border);
+    border-color: var(--clr-btn-primary-brdr);
     box-shadow: 0 2px 0 var(--clr-btn-primary-shadow);
     font-weight: bolder;
 
     &:hover,
     &:active {
-        border-color: var(--clr-btn-primary-border-interact);
+        border-color: var(--clr-btn-primary-brdr-interact);
     }
 
     &:active {
@@ -169,5 +169,5 @@ button[disabled],
 [type="submit"][disabled],
 .button.disabled {
     top: 0 !important;
-    background: var(--clr-btn-background-disabled) !important;
+    background: var(--clr-btn-bkgd-disabled) !important;
 }

@@ -66,9 +66,9 @@
 
     a:hover,
     a:active {
-        border-color: var(--clr-btn-primary-border-interact);
-        background-color: var(--clr-highlight-enforced);
-        color: var(--clr-text-button);
+        border-color: var(--clr-btn-primary-brdr-interact);
+        background-color: var(--clr-hilite-enforced);
+        color: var(--clr-text-btn);
         text-decoration: none;
     }
 
@@ -79,7 +79,7 @@
     a:focus {
         border-color: var(--clr-a-focus);
         outline: 2px solid transparent; // Allows for repainting in high contrast modes.
-        background-color: var(--clr-highlight-enforced);
+        background-color: var(--clr-hilite-enforced);
     }
 
     // Put a bit more margin on 2nd category link, if it exists (for better touch accessibility).
@@ -101,13 +101,13 @@
 
         a:hover,
         a:active {
-            border-color: var(--clr-btn-primary-border-interact);
-            background-color: var(--clr-highlight-enforced);
+            border-color: var(--clr-btn-primary-brdr-interact);
+            background-color: var(--clr-hilite-enforced);
         }
 
         a:focus {
             border-color: var(--clr-a-focus);
-            background-color: var(--clr-highlight-enforced);
+            background-color: var(--clr-hilite-enforced);
         }
     }
 }

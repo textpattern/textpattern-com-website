@@ -59,7 +59,7 @@
  */
 
 .comments.article-author {
-    background: var(--clr-highlight-box);
+    background: var(--clr-hilite-box);
 
     blockquote {
         background: var(--clr-bkgd);
@@ -97,7 +97,7 @@
     margin-bottom: 2px;
     padding: 1em;
     border-radius: setup.$border-radius;
-    background-color: var(--clr-highlight-box);
+    background-color: var(--clr-hilite-box);
 }
 
 /**

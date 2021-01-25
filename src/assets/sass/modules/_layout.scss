@@ -38,7 +38,7 @@ iframe {
 
 noscript {
     padding: 0.25em 1em;
-    background-color: var(--clr-highlight-enforced);
+    background-color: var(--clr-hilite-enforced);
     color: var(--clr-text-black-enforced);
     font-size: setup.$small-font-size;
     text-align: center;
@@ -92,7 +92,7 @@ noscript {
 
 @include setup.dark-mode {
     .wrapper {
-        border-bottom-color: var(--clr-brdr-extra-dark);
+        border-bottom-color: var(--clr-brdr-x-dark);
     }
 }
 
@@ -556,7 +556,7 @@ main .layout-4col-3span {
 
 @include setup.dark-mode {
     .showcases img {
-        border-color: var(--clr-brdr-extra-dark);
+        border-color: var(--clr-brdr-x-dark);
         box-shadow: 0 0.2em 0.5em hsla(0, 0%, 0%, 0.5);
     }
 
@@ -622,20 +622,20 @@ main .layout-4col-3span {
 .count-bubble {
     position: relative;
     padding: 0.375em; // 6px / 16px
-    border: 1px solid var(--clr-btn-border);
+    border: 1px solid var(--clr-btn-brdr);
     border-radius: 0.25em; // 4px / 16px
     background: var(--clr-bkgd);
     color: var(--clr-text);
     font-weight: bolder;
 
     &:hover {
-        border-color: var(--clr-btn-border-interact);
+        border-color: var(--clr-btn-brdr-interact);
         filter: brightness(1.05);
         color: var(--clr-text);
         text-decoration: none;
 
         &::before {
-            border-color: transparent var(--clr-btn-border-interact);
+            border-color: transparent var(--clr-btn-brdr-interact);
         }
     }
 
@@ -674,5 +674,5 @@ main .layout-4col-3span {
     margin-top: -8px;
     border-width: 8px 8px 8px 0;
     border-style: solid;
-    border-color: transparent var(--clr-btn-border);
+    border-color: transparent var(--clr-btn-brdr);
 }

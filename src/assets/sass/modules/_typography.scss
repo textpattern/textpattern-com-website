@@ -112,7 +112,7 @@ main {
     h4,
     h5,
     h6, {
-        color: var( --clr-text-promoted);
+        color: var(--clr-text-promoted);
     }
 }
 
@@ -173,7 +173,7 @@ h6 {
 
     span {
         padding: 0 0.2em;
-        background: var(--clr-highlight-enforced);
+        background: var(--clr-hilite-enforced);
         color: var(--clr-text-black-enforced);
         box-decoration-break: clone;
     }
@@ -212,9 +212,9 @@ blockquote {
 blockquote {
     margin: 1em 0;
     padding: 1px 1em 1px 1.5em;
-    border-left: 0.25em solid var(--clr-highlight);
+    border-left: 0.25em solid var(--clr-hilite);
     border-radius: 0 setup.$border-radius setup.$border-radius 0;
-    background-color: var(--clr-highlight-box);
+    background-color: var(--clr-hilite-box);
 }
 
 /**
@@ -223,7 +223,7 @@ blockquote {
 
 .example {
     padding: 1px 0 1px 1.5rem;
-    border-left: 0.25rem solid var(--clr-info-border);
+    border-left: 0.25rem solid var(--clr-info-brdr);
     color: var(--clr-text-demoted);
 }
 
@@ -254,7 +254,7 @@ mark,
 var {
     padding: 0 0.25em; // 0 4px
     border-radius: setup.$border-radius / 2;
-    background: var(--clr-highlight-box);
+    background: var(--clr-hilite-box);
     color: var(--clr-text);
 }
 
@@ -268,7 +268,7 @@ pre,
 code,
 kbd,
 samp {
-    border: 1px solid var(--clr-brdr-extra-light);
+    border: 1px solid var(--clr-brdr-x-light);
     border-radius: 0.2857143em; // 4px / 14px
     background-color: var(--clr-bkgd-box);
     color: var(--clr-text);

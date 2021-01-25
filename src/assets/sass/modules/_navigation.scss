@@ -9,7 +9,7 @@
 
 @include setup.dark-mode {
     .nav-container {
-        border-bottom-color: var(--clr-brdr-extra-dark);
+        border-bottom-color: var(--clr-brdr-x-dark);
     }
 }
 
@@ -59,7 +59,7 @@
 
         &:active {
             background-color: var(--clr-nav-active);
-            color: var( --clr-text-promoted);
+            color: var(--clr-text-promoted);
             text-decoration: none;
         }
 
@@ -97,7 +97,7 @@
             border-top-color: var(--clr-brdr-light);
 
             &:first-child {
-                border-top-color: var(--clr-brdr-extra-dark);
+                border-top-color: var(--clr-brdr-x-dark);
             }
         }
     }
@@ -139,7 +139,7 @@
     }
 
     &:hover {
-        border-color: var(--clr-brdr-extra-dark);
+        border-color: var(--clr-brdr-x-dark);
     }
 
     &:focus {
@@ -153,7 +153,7 @@
         background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath fill='%23ced4da' d='M4 6h24v4H4zm0 8h24v4H4zm0 8h24v4H4z'/%3E%3C/svg%3E");
 
         &:hover {
-            border-color: var(--clr-brdr-extra-light);
+            border-color: var(--clr-brdr-x-light);
         }
 
         &.site-navigation-toggle-active {

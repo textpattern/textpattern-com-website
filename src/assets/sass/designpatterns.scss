@@ -38,34 +38,35 @@ main {
  */
 
 $colors: (
-    "text":                    var(--clr-text),
-    "text-visual-de-emphasis": var(--clr-text-demoted),
-    "grad-from":               var(--clr-grad-from),
-    "grad-to":                 var(--clr-grad-to),
-    "border":                  var(--clr-brdr),
-    "border-light":            var(--clr-brdr-light),
-    "border-extra-light":      var(--clr-brdr-extra-light),
-    "border-dark":             var(--clr-brdr-dark),
-    "border-extra-dark":       var(--clr-brdr-extra-dark),
-    "link":                    var(--clr-a),
-    "link-hover":              var(--clr-a-hover),
-    "link-focus":              var(--clr-a-focus),
-    "nav-hover":               var(--clr-nav-hover),
-    "nav-hover-selected":      var(--clr-nav-hover-selected),
-    "nav-active":              var(--clr-nav-active),
-    "background":              var(--clr-bkgd),
-    "background-box":          var(--clr-bkgd-box),
-    "highlight-box":           var(--clr-highlight-box),
-    "strong-highlight-box":    var(--clr-strong-highlight-box),
-    "highlight":               var(--clr-highlight),
-    "success-text":            var(--clr-success-text),
-    "success-background":      var(--clr-success-bkgd),
-    "warning-text":            var(--clr-warning-text),
-    "warning-background":      var(--clr-warning-bkgd),
-    "error-text":              var(--clr-error-text),
-    "error-background":        var(--clr-error-bkgd),
-    "info-text":               var(--clr-info-text),
-    "info-background":         var(--clr-info-bkgd)
+    "text-promoted":      var(--clr-text-promoted),
+    "text":               var(--clr-text),
+    "text-demoted":       var(--clr-text-demoted),
+    "grad-from":          var(--clr-grad-from),
+    "grad-to":            var(--clr-grad-to),
+    "brdr-x-light":       var(--clr-brdr-x-light),
+    "brdr-light":         var(--clr-brdr-light),
+    "brdr":               var(--clr-brdr),
+    "brdr-dark":          var(--clr-brdr-dark),
+    "brdr-x-dark":        var(--clr-brdr-x-dark),
+    "a":                  var(--clr-a),
+    "a-interact":         var(--clr-a-interact),
+    "a-focus":            var(--clr-a-focus),
+    "nav-hover":          var(--clr-nav-hover),
+    "nav-hover-selected": var(--clr-nav-hover-selected),
+    "nav-active":         var(--clr-nav-active),
+    "bkgd":               var(--clr-bkgd),
+    "bkgd-box":           var(--clr-bkgd-box),
+    "hilite-box":         var(--clr-hilite-box),
+    "strong-hilite-box":  var(--clr-strong-hilite-box),
+    "hilite":             var(--clr-hilite),
+    "success-text":       var(--clr-success-text),
+    "success-bkgd":       var(--clr-success-bkgd),
+    "warning-text":       var(--clr-warning-text),
+    "warning-bkgd":       var(--clr-warning-bkgd),
+    "error-text":         var(--clr-error-text),
+    "error-bkgd":         var(--clr-error-bkgd),
+    "info-text":          var(--clr-info-text),
+    "info-bkgd":          var(--clr-info-bkgd)
 );
 
 .design-patterns--color {
@@ -197,6 +198,6 @@ $colors: (
 
 @media (prefers-color-scheme: dark) and (min-width: setup.$breakpoint-3) {
     .docs-menu {
-        border-right-color: var(--clr-brdr-extra-dark);
+        border-right-color: var(--clr-brdr-x-dark);
     }
 }

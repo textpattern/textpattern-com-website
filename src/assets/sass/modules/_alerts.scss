@@ -44,7 +44,7 @@
  */
 
 .highlighted {
-    background: var(--clr-highlight-box);
+    background: var(--clr-hilite-box);
 }
 
 /**
@@ -65,22 +65,22 @@
     word-wrap: break-word; /* 1 */
 
     &.success {
-        border-color: var(--clr-success-border);
+        border-color: var(--clr-success-brdr);
         background: var(--clr-success-bkgd);
     }
 
     &.warning {
-        border-color: var(--clr-warning-border);
+        border-color: var(--clr-warning-brdr);
         background: var(--clr-warning-bkgd);
     }
 
     &.error {
-        border-color: var(--clr-error-border);
+        border-color: var(--clr-error-brdr);
         background: var(--clr-error-bkgd);
     }
 
     &.information {
-        border-color: var(--clr-info-border);
+        border-color: var(--clr-info-brdr);
         background: var(--clr-info-bkgd);
     }
 }

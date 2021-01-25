@@ -47,7 +47,7 @@ td {
  */
 
 li::marker {
-    color: var( --clr-text-promoted);
+    color: var(--clr-text-promoted);
 }
 
 /**
@@ -64,11 +64,11 @@ dt {
     margin-bottom: 1em;
     padding-top: 1em;
     border-top: 1px solid var(--clr-brdr-light);
-    color: var( --clr-text-promoted);
+    color: var(--clr-text-promoted);
     font-weight: bolder;
 
     code {
-        border-color: var(--clr-info-border);
+        border-color: var(--clr-info-brdr);
         background-color: var(--clr-info-bkgd);
     }
 }
@@ -136,7 +136,7 @@ dd {
             bottom: 0.75em;
             left: 0.5em;
             height: 100%;
-            border-left: 1px solid var(--clr-brdr-extra-dark);
+            border-left: 1px solid var(--clr-brdr-x-dark);
         }
     }
 
@@ -150,8 +150,8 @@ dd {
             left: -1.25em;
             width: 0.75em;
             height: 0.75em;
-            border-bottom: 1px solid var(--clr-brdr-extra-dark);
-            border-left: 1px solid var(--clr-brdr-extra-dark);
+            border-bottom: 1px solid var(--clr-brdr-x-dark);
+            border-left: 1px solid var(--clr-brdr-x-dark);
         }
     }
 

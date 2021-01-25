@@ -111,7 +111,7 @@ textarea {
     appearance: none; /* 1 */
 
     &:hover {
-        border-color: var(--clr-brdr-extra-dark);
+        border-color: var(--clr-brdr-x-dark);
     }
 
     &:focus {
@@ -137,10 +137,10 @@ textarea {
     [type="week"],
     select,
     textarea {
-        border-color: var(--clr-brdr-extra-dark);
+        border-color: var(--clr-brdr-x-dark);
 
         &:hover {
-            border-color: var(--clr-brdr-extra-light);
+            border-color: var(--clr-brdr-x-light);
         }
 
         &:focus {
@@ -162,7 +162,7 @@ textarea {
     width: 16px;
     height: 16px;
     padding: 0; /* 1 */
-    border: 1px solid var(--clr-brdr-extra-dark);
+    border: 1px solid var(--clr-brdr-x-dark);
     background: var(--clr-bkgd-form);
     appearance: none;
 
@@ -197,7 +197,7 @@ textarea {
     [type="checkbox"],
     [type="radio"] {
         &:hover {
-            border-color: var(--clr-brdr-extra-light);
+            border-color: var(--clr-brdr-x-light);
         }
     }
 }
@@ -229,7 +229,7 @@ textarea {
 
             &:hover,
             &:active {
-                background-color: var( --clr-text-promoted);
+                background-color: var(--clr-text-promoted);
             }
 
             &:focus {
@@ -264,7 +264,7 @@ textarea {
     [type="radio"]:checked {
         &:hover,
         &:active {
-            border-color: var( --clr-text-promoted);
+            border-color: var(--clr-text-promoted);
         }
 
         &:focus {
