@@ -536,11 +536,7 @@ rules:
   selector-type-case: lower
 
   # Disallow unknown type selectors.
-  selector-type-no-unknown:
-    - true
-    -
-      ignoreTypes:
-        - amp-sidebar
+  selector-type-no-unknown: true
 
   # Disallow redundant values in shorthand properties.
   shorthand-property-no-redundant-values: true
