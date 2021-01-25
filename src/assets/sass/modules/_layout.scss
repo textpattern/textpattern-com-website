@@ -83,39 +83,15 @@ noscript {
  */
 
 .wrapper {
-    margin: -1px 0;
-    padding: 1px 0;
+    position: relative;
+    padding-top: 1px;
+    border-bottom: 1px solid var(--clr-bkgd);
     background: var(--clr-bkgd);
     color: var(--clr-text);
-}
-
-/**
- * Show/hide header on scroll.
- *
- * Example HTML:
- *
- * <div id="dynamic-header">
- *     <header>
- *     <nav>
- * </div>
- */
-
-#dynamic-header {
-    border-bottom: 2px solid var(--clr-text);
-    background: var(--clr-bkgd);
-    color: var(--clr-text);
-
-    .js & {
-        position: sticky;
-        z-index: 100;
-        top: 0;
-        right: 0;
-        width: 100%;
-    }
 }
 
 @include setup.dark-mode {
-    #dynamic-header {
+    .wrapper {
         border-bottom-color: var(--clr-brdr-extra-dark);
     }
 }
@@ -134,13 +110,6 @@ noscript {
 .wrapper-footer {
     flex: 1;
     padding-bottom: 0.5em;
-    border-top: 1px solid var(--clr-bkgd);
-}
-
-@include setup.dark-mode {
-    .wrapper-footer {
-        border-top-color: var(--clr-brdr-extra-dark);
-    }
 }
 
 /**
@@ -656,13 +625,13 @@ main .layout-4col-3span {
     border: 1px solid var(--clr-btn-border);
     border-radius: 0.25em; // 4px / 16px
     background: var(--clr-bkgd);
-    color: var(--clr-text-button);
+    color: var(--clr-text);
     font-weight: bolder;
 
     &:hover {
         border-color: var(--clr-btn-border-interact);
         filter: brightness(1.05);
-        color: var(--clr-text-button-interact);
+        color: var(--clr-text);
         text-decoration: none;
 
         &::before {
