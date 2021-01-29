@@ -218,6 +218,16 @@ module.exports = function (grunt)
 
         // Minify and copy JavaScript files from `node_modules` and from `src/js/` to `public/assets/js/`.
         terser: {
+            options: {
+                ecma: 2015,
+                compress: {
+                    booleans_as_integers: true,
+                    drop_console: true
+                },
+                format: {
+                    comments: false
+                }
+            },
             dist: {
                 files: [
                     {
