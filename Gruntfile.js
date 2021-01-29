@@ -216,8 +216,8 @@ module.exports = function (grunt)
             src: ['<%= paths.src.sass %>**/*.{css,scss}']
         },
 
-        // Uglify and copy JavaScript files from `node_modules` and from `src/js/` to `public/assets/js/`.
-        uglify: {
+        // Minify and copy JavaScript files from `node_modules` and from `src/js/` to `public/assets/js/`.
+        terser: {
             dist: {
                 files: [
                     {
@@ -274,7 +274,7 @@ module.exports = function (grunt)
     });
 
     // Register tasks.
-    grunt.registerTask('build', ['clean', 'concurrent', 'replace', 'uglify']);
+    grunt.registerTask('build', ['clean', 'concurrent', 'replace', 'terser']);
     grunt.registerTask('css', ['stylelint', 'sass', 'postcss']);
     grunt.registerTask('default', ['watch']);
     grunt.registerTask('travis', ['build']);
