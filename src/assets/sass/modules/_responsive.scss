@@ -326,6 +326,10 @@
      * Changes in styling for site footer.
      */
 
+    .wrapper-footer {
+        contains-intrinsic-size: 0 374px;
+    }
+
     .community-details,
     .host-details {
         display: block;
