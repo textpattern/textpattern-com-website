@@ -337,6 +337,8 @@ main .layout-4col-3span {
 .ads-area {
     margin: 0 -0.75em;
     text-align: center;
+    content-visibility: auto;
+    contains-intrinsic-size: 0 558px;
 
     h6 {
         margin: 0 0 0.25em;
