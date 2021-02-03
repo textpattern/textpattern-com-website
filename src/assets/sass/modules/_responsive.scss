@@ -356,6 +356,10 @@
      * Showcase images.
      */
 
+    .wrapper-inner .showcase-container {
+        contains-intrinsic-size: 0 455px;
+    }
+
     .showcase-plugins-container > h3,
     .showcase-themes-container > h3 {
         display: block;

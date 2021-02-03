@@ -494,6 +494,11 @@ main .layout-4col-3span {
  * Showcase section.
  */
 
+.wrapper-inner .showcase-container {
+    content-visibility: auto;
+    contains-intrinsic-size: 0 435px;
+}
+
 .showcase-container h3,
 .showcase-plugins-container > h3,
 .showcase-themes-container > h3 {
