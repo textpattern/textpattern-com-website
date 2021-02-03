@@ -110,6 +110,8 @@ noscript {
 .wrapper-footer {
     flex: 1;
     padding-bottom: 0.5em;
+    content-visibility: auto;
+    contains-intrinsic-size: 0 374px;
 }
 
 /**
@@ -289,6 +291,8 @@ section {
 .wrapper-inner {
     position: relative;
     padding: 1em 0;
+    content-visibility: auto;
+    contains-intrinsic-size: 0 500px;
 }
 
 .zebra {

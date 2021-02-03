@@ -390,7 +390,11 @@ rules:
   property-case: lower
 
   # Disallow unknown properties.
-  property-no-unknown: true
+  property-no-unknown:
+    - true
+    -
+      ignoreProperties:
+        - contains-intrinsic-size
 
   # Disallow vendor prefixes for properties.
   property-no-vendor-prefix:
