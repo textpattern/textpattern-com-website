@@ -2,10 +2,6 @@
 {
     'use strict';
 
-    // If JavaScript enabled, add a class to `<html>` tag.
-
-    document.documentElement.className = 'js';
-
     // Load objects as variables.
 
     var code = document.querySelectorAll('pre code'),
