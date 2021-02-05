@@ -64,7 +64,6 @@ h1 {
     margin: 16pt 0;
     clear: both;
     font-size: 32pt;
-    font-weight: normal;
     line-height: 36pt;
 }
 
@@ -126,7 +125,8 @@ p {
 figcaption,
 tfoot,
 small,
-.footnote {
+.footnote,
+.footnotes {
     font-size: 6pt;
 }
 
@@ -218,29 +218,14 @@ figcaption {
 }
 
 /**
- * Simple bullet styling for `ul` unordered lists.
+ * Remove margins from nested lists.
  */
 
-ul {
-    padding: 0 0 8pt 1.8em;
-    list-style: square;
-}
-
-/**
- * Simple numerical styling for `ol` ordered lists.
- */
-
-ol {
-    padding: 0 0 8pt 1.8em;
-    list-style: decimal;
-}
-
-/**
- * Normalize margins on `dl` definition lists.
- */
-
-dl {
-    padding: 0 0 8pt 1.8em;
+li {
+    > ul,
+    > ol {
+        margin: 0;
+    }
 }
 
 /**
