@@ -59,10 +59,5 @@
         </p>
     </footer>
 </div>
-<txp:if_variable name="homepage">
-    <script async src="https://textpattern.com/assets/js/app.@@timestamp.js"></script>
-    <script defer src="https://textpattern.com/assets/js/indexcanvas.@@timestamp.js"></script>
-<txp:else />
-    <script src="https://textpattern.com/assets/js/app.@@timestamp.js"></script>
-</txp:if_variable>
+<script async src="https://textpattern.com/assets/js/app.@@timestamp.js"></script>
 <noscript>JavaScript is currently disabled in your browser - activate it for the best experience.</noscript>

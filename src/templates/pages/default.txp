@@ -43,6 +43,7 @@
                 }
             </script>
             <script defer src="https://textpattern.com/assets/js/createjs.@@timestamp.js"></script>
+            <script defer src="https://textpattern.com/assets/js/indexcanvas.@@timestamp.js"></script>
             <txp:variable name="homepage" value="1" />
         </txp:if_category>
     </txp:if_search>
