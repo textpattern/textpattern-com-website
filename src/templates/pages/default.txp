@@ -66,8 +66,7 @@
                     </p>
                     <p>
                         <a class="button" rel="external" href="https://github.com/textpattern/textpattern/" title="Stars on GitHub"><span class="ui-icon ui-extra-icon-github">GitHub</span> <strong>Stars</strong></a>
-                        <txp:etc_cache id="github-api" time="-900">
-                            <txp:php>
+                        <txp:etc_cache id="github-api" time="-1800"><txp:php>
 global $variable;
 
 $query = <<<'GRAPHQL'
@@ -109,8 +108,7 @@ if (!($json = json_decode($response))) {
 }
 
 echo '<a class="count-bubble" rel="external" href="https://github.com/textpattern/textpattern/stargazers" title="Stargazers on GitHub">'.intval($json->data->repository->stargazers->totalCount).'</a>';
-                            </txp:php>
-                        </txp:etc_cache>
+                        </txp:php></txp:etc_cache>
                     </p>
                 </div>
             </div>
@@ -216,12 +214,12 @@ echo '<a class="count-bubble" rel="external" href="https://github.com/textpatter
                     <section class="layout-3col-2span" itemscope itemtype="https://schema.org/Blog">
                         <h3>Latest from <a href="<txp:site_url />weblog">the blog</a>…</h3>
                         <p><img loading="lazy" class="prefers-color-scheme" width="756" height="160" alt="The Textpattern blog" src="/assets/img/com/index-blog-header.png" data-src-light="/assets/img/com/index-blog-header.png" data-src-dark="/assets/img/com/dark-index-blog-header.png" srcset="/assets/img/com/index-blog-header@2x.png 2x" data-srcset-light="/assets/img/com/index-blog-header@2x.png 2x" data-srcset-dark="/assets/img/com/dark-index-blog-header@2x.png 2x"></p>
-                        <txp:article form="article_listing_blog" limit="2" />
+                        <txp:etc_cache id="homepage-blog"><txp:article form="article_listing_blog" limit="2" /></txp:etc_cache>
                     </section>
                     <div class="layout-3col">
                         <h3>Latest from <a href="https://forum.textpattern.com/">the forum</a>…</h3>
                         <ul class="list--no-bullets ellipsis">
-                            <txp:php>
+                            <txp:etc_cache id="forum-api" time="-900"><txp:php>
 $curl = curl_init();
 
 curl_setopt_array($curl, [
@@ -246,7 +244,7 @@ if (!($json = json_decode($response))) {
 foreach ($json->topic as $topic) {
     echo '<li><a href="'.htmlspecialchars($topic->link).'">'.htmlspecialchars($topic->title).'</a> <small class="block">by '.htmlspecialchars($topic->author->name).' on <time datetime="'.htmlspecialchars($topic->postedutc).'">'.htmlspecialchars($topic->posted).'</time></small></li>';
 }
-                            </txp:php>
+                            </txp:php></txp:etc_cache>
                             <txp:linklist category="paid-links-content" break="li"><a rel="external" referrerpolicy="origin" href="<txp:link_url />"><txp:link_name /></a> <small>(Ad)</small></txp:linklist>
                         </ul>
                         <txp:output_form form="ads_webinformer" />
