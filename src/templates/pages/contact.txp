@@ -10,7 +10,7 @@
     <meta name="twitter:site" content="@textpattern">
     <meta name="twitter:title" content="Contact us">
     <meta name="twitter:description" content="How to contact the Textpattern Development Team via email.">
-    <meta name="twitter:image:src" content="https://textpattern.com/apple-touch-icon-180x180.png">
+    <meta name="twitter:image:src" content="https://textpattern.com/apple-touch-icon.png">
     <meta name="twitter:url" content="<txp:site_url />contact/">
     <meta property="og:site_name" content="Textpattern CMS">
     <meta property="og:type" content="website">

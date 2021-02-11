@@ -7,9 +7,10 @@
 /img
 /index.php
 /mockups
-/themes/*/
 /textpattern
+/themes/*/
 /vendor
 /video
-/*.png
 /*.ico
+/*.png
+/*.svg

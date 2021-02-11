@@ -22,7 +22,7 @@
             <meta name="twitter:site" content="@textpattern">
             <meta name="twitter:title" content="Textpattern CMS | Open source content management system">
             <meta name="twitter:description" content="Textpattern CMS is a free, PHP open source CMS (content management system) with a browser-based interface in over 50 languages.">
-            <meta name="twitter:image:src" content="https://textpattern.com/apple-touch-icon-180x180.png">
+            <meta name="twitter:image:src" content="https://textpattern.com/apple-touch-icon.png">
             <meta name="twitter:url" content="<txp:site_url />">
             <meta property="og:site_name" content="Textpattern CMS">
             <meta property="og:type" content="website">
