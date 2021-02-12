@@ -1,4 +1,4 @@
-<txp:php>
+<txp:etc_cache id="webinformer" time="-600"><txp:php>
 if (!gps('txpreview')) {
     $opts = array('http' => array('timeout' => 1.6));
     $url = 'https://website.informer.com/widget/textpattern.com-2';
@@ -9,4 +9,4 @@ if (!gps('txpreview')) {
         echo $widget;
     }
 }
-</txp:php>
+</txp:php></txp:etc_cache>
