@@ -41,27 +41,5 @@
                 <txp:if_article_category number="2"><txp:category2 title link /></txp:if_article_category>
             </span>
         </txp:if_article_category>
-        <txp:if_comments>
-            <span class="separator" role="separator">|</span>
-            <span class="ui-icon ui-icon-comment">Comments:</span>
-            <a href="<txp:permlink />#comments-head" title="View article comments" itemprop="discussionUrl">
-                <span itemprop="interactionStatistic" itemscope itemtype="https://schema.org/InteractionCounter">
-                    <meta itemprop="interactionType" content="https://schema.org/CommentAction">
-                    <span itemprop="userInteractionCount"><txp:comments_count /></span>
-                </span>
-            </a>
-        <txp:else />
-            <txp:if_comments_allowed>
-                <span class="separator" role="separator">|</span>
-                <span class="ui-icon ui-icon-comment">Comments:</span>
-                <a href="<txp:permlink />#comments-head" title="View article comments" itemprop="discussionUrl">
-                    <span itemprop="interactionStatistic" itemscope itemtype="https://schema.org/InteractionCounter">
-                        <meta itemprop="interactionType" content="https://schema.org/CommentAction">
-                        <span itemprop="userInteractionCount">0</span>
-                    </span>
-                </a>
-            </txp:if_comments_allowed>
-        </txp:if_comments>
     </footer>
-    <txp:output_form form="comments_display" />
 </article>

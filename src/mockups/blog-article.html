@@ -53,7 +53,6 @@
                             "mainEntityOfPage": "https://textpattern.com/mockups/blog-article.html",
                             "datePublished": "2016-01-21T10:43:39Z",
                             "dateModified": "2016-01-22T14:32:01Z",
-                            "discussionUrl": "https://textpattern.com/mockups/blog-article.html#comments-head",
                             "image": {
                                 "@type": "ImageObject",
                                 "url": "https://placehold.it/832x554",
@@ -71,30 +70,7 @@
                                     "@type": "ImageObject",
                                     "url": "https://textpattern.com/assets/img/branding/textpattern/textpattern.png"
                                 }
-                            },
-                            "interactionStatistic": {
-                                "@type": "InteractionCounter",
-                                "interactionType": "https://schema.org/CommentAction",
-                                "userInteractionCount": "3"
-                            },
-                            "comment": [
-                                {
-                                    "@type": "Comment",
-                                    "author": {
-                                        "@type": "Person",
-                                        "name": "Joe Q. Public"
-                                    },
-                                    "dateCreated": "2016-01-25T16:55:03Z"
-                                },
-                                {
-                                    "@type": "Comment",
-                                    "author": {
-                                        "@type": "Person",
-                                        "name": "Phil Wareham"
-                                    },
-                                    "dateCreated": "2016-01-26T11:20:01Z"
-                                }
-                            ]
+                            }
                         }
                     ]
                 },
@@ -243,94 +219,7 @@
                                 <a rel="category tag" href="#" title="View articles in this category">Releases</a>
                                 <a rel="category tag" href="#" title="View articles in this category">Hope for the future</a>
                             </span>
-                            <span class="separator" role="separator">|</span>
-                            <span class="ui-icon ui-icon-comment">Comments:</span>
-                            <a href="#comments-head" title="View article comments" itemprop="discussionUrl">
-                                <span itemprop="interactionStatistic" itemscope itemtype="https://schema.org/InteractionCounter">
-                                    <meta itemprop="interactionType" content="https://schema.org/CommentAction">
-                                    <span itemprop="userInteractionCount">3</span>
-                                </span>
-                            </a>
                         </footer>
-
-                        <aside class="ads-area" itemscope itemtype="https://schema.org/WPAdBlock">
-                            <h6>Advertisements</h6>
-                            <div class="ads">
-                                <a rel="external" href="#" itemprop="url">
-                                    <img width="300" height="250" itemprop="image" alt="Ad Example 1" src="../assets/img/com/ad-300x250-placeholder.png">
-                                </a>
-                            </div>
-                            <div class="ads">
-                                <a rel="external" href="#" itemprop="url">
-                                    <img width="300" height="250" itemprop="image" alt="Ad Example 2" src="../assets/img/com/ad-300x250-placeholder.png">
-                                </a>
-                            </div>
-                        </aside>
-
-                        <section id="comments-head">
-                            <h3>Comments</h3>
-
-                            <ol class="list--comments">
-                                <li>
-                                    <article class="comments" itemscope itemtype="https://schema.org/Comment">
-                                        <h4 class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
-                                            <span itemprop="name">Joe Q. Public</span>
-                                        </h4>
-                                        <p class="comment-date">
-                                            <time datetime="2016-01-25T16:55:03Z" itemprop="dateCreated">25 Jan 2016 at 16:55</time>
-                                        </p>
-                                        <div itemprop="text">
-                                            <p>Inermis indoctum vis in, has soleat complectitur te. Ut est stet civibus, mucius iriure ad duo. Sumo tantas et est, ea duo elitr utroque, ne mea dicant tincidunt scribentur. Sit dico accusata et. Sint inimicus cu nam, odio velit minim sit ut.</p>
-                                        </div>
-                                    </article>
-                                </li>
-                                <li>
-                                    <article class="comments article-author" itemscope itemtype="https://schema.org/Comment">
-                                        <h4 class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
-                                            <span itemprop="name">Phil Wareham</span>
-                                        </h4>
-                                        <p class="comment-date">
-                                            <time datetime="2016-01-26T11:20:01Z" itemprop="dateCreated">26 Jan 2016 at 11:20</time>
-                                        </p>
-                                        <div itemprop="text">
-                                            <p>Lorem ipsum dolor sit amet, quo epicuri volutpat no. Causae option accusamus in est.</p>
-                                        </div>
-                                    </article>
-                                </li>
-                            </ol>
-
-                            <section id="comments-form">
-                                <h3>Leave a comment</h3>
-
-                                <form id="txpCommentInputForm" method="post" action="#">
-                                    <p>You must preview your comment before submitting it. Email addresses are used for verification only and are not displayed with your comment. Fields marked <abbr class="required" title="Required" aria-label="Required">●</abbr> are required.</p>
-                                    <ul class="comError">
-                                        <li>Please enter your name.</li>
-                                        <li>Please enter a valid email address.</li>
-                                        <li>Please enter a comment.</li>
-                                    </ul>
-                                    <div class="layout-container">
-                                        <div class="field layout-2col">
-                                            <label for="name">Name <abbr class="required" title="Required" aria-label="Required">●</abbr></label><br>
-                                            <input class="comment_name_input comments_error" id="name" name="name" type="text" size="32" required>
-                                        </div>
-                                        <div class="field layout-2col">
-                                            <label for="email">Email <abbr class="required" title="Required" aria-label="Required">●</abbr></label><br>
-                                            <input class="comment_email_input" id="email" name="email" type="email" size="32" required>
-                                        </div>
-                                        <div class="field layout-1col">
-                                            <label for="message">Message <abbr class="required" title="Required" aria-label="Required">●</abbr></label><br>
-                                            <textarea class="txpCommentInputMessage" id="message" name="message" cols="64" rows="8" required></textarea>
-                                        </div>
-                                        <div class="field layout-1col">
-                                            <input class="button" id="txpCommentPreview" name="preview" type="submit" value="Preview">
-                                            <input class="button disabled" id="txpCommentSubmit" name="submit" type="submit" value="Submit" disabled>
-                                        </div>
-                                    </div>
-                                </form>
-                            </section>
-
-                        </section>
 
                     </article>
 

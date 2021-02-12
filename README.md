@@ -105,7 +105,6 @@ For example:
 ## Plugins used
 
 * [`etc_cache`](https://github.com/etc-plugins/etc_cache)
-* [`rah_comment_spam`](https://github.com/gocom/rah_comment_spam)
 * [`smd_thumbnail`](https://github.com/bloke/smd_thumbnail)
 
 ## License

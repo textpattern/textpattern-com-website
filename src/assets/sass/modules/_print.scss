@@ -38,8 +38,6 @@ nav,
 audio,
 video,
 form,
-#comments-form,
-.comments h4 a:last-child,
 .complementary-content,
 .search-form,
 .site-footer,
@@ -280,12 +278,4 @@ th,
 td {
     padding: 4pt 8pt;
     border-bottom: 1pt solid black;
-}
-
-/**
- * Avoid user comments breaking across multiple pages.
- */
-
-.comments {
-    page-break-inside: avoid;
 }
