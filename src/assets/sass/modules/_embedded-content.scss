@@ -47,30 +47,6 @@ img {
 }
 
 /**
- * Rounded corner images.
- *
- * Example HTML:
- *
- * <img class="img--rounded">
- */
-
-.img--rounded {
-    border-radius: setup.$border-radius;
-}
-
-/**
- * Circular images.
- *
- * Example HTML:
- *
- * <img class="img--circular">
- */
-
-.img--circular {
-    border-radius: 50%;
-}
-
-/**
  * Bordered images.
  *
  * Example HTML:

@@ -23,14 +23,6 @@ body {
 }
 
 /**
- * Visually separate site header from body.
- */
-
-.site-header {
-    border-bottom: 1pt solid black;
-}
-
-/**
  * Hide unnecessary content from print.
  */
 
@@ -39,8 +31,9 @@ audio,
 video,
 form,
 .complementary-content,
-.search-form,
+.site-header,
 .site-footer,
+.search-form,
 .paginator,
 .a--skip-link {
     display: none;
