@@ -13,6 +13,7 @@
             <meta name="robots" content="noindex, follow">
         <txp:else />
             <link rel="preload" href="/assets/img/com/index-animation.png" as="image">
+            <link rel="preload" href="/assets/img/com/index-features.png" as="image">
             <title>Textpattern CMS | Open source content management system</title>
             <meta name="description" content="Textpattern CMS is a free, PHP open source CMS (content management system) with a browser-based interface in over 50 languages.">
             <meta name="keywords" content="cms, content management systems, open source, blogs, blogging, free, wordpress alternatives, fast, lightweight, web design, web site design, web development, web site development, php, foss">
