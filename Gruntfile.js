@@ -219,7 +219,6 @@ module.exports = function (grunt)
             dist: {
                 files: [
                     {
-                        '<%= paths.dest.js %>hi.js': ['<%= paths.src.js %>hi.js'],
                         '<%= paths.dest.js %>app.js': [
                             // Prism: Core.
                             'node_modules/prismjs/prism.js',

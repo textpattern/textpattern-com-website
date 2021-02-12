@@ -1,1 +1,0 @@
-document.documentElement.className = 'js';
