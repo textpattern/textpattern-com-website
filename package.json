@@ -10,6 +10,7 @@
     "url": "https://github.com/textpattern/textpattern-com-website/issues"
   },
   "devDependencies": {
+    "@lodder/grunt-postcss": "3.0.0",
     "autoprefixer": "10.2.4",
     "cssnano": "4.1.10",
     "fibers": "5.0.0",
@@ -20,12 +21,12 @@
     "grunt-contrib-copy": "1.0.0",
     "grunt-contrib-jshint": "3.0.0",
     "grunt-contrib-watch": "1.1.0",
-    "grunt-postcss": "0.9.0",
     "grunt-replace-regex": "1.0.3",
     "grunt-sass": "3.1.0",
     "grunt-stylelint": "0.16.0",
     "grunt-terser": "2.0.0",
     "load-grunt-tasks": "5.1.0",
+    "postcss": "8.2.6",
     "sass": "1.32.7",
     "stylelint": "13.10.0",
     "stylelint-order": "4.1.0",
