@@ -109,4 +109,4 @@ For example:
 
 ## License
 
-Licensed under the [GPLv2 license](https://github.com/textpattern/textpattern-com-website/blob/master/LICENSE).
+Licensed under the [GPLv2 license](https://github.com/textpattern/textpattern-com-website/blob/main/LICENSE).
