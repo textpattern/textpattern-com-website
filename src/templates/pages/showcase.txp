@@ -79,7 +79,7 @@
             <div class="container showcase-container showcase-landing">
                 <txp:output_form form="body_crumbs" />
                 <h1>Site showcase</h1>
-                <h3>110% Awesome Websites</h3>
+                <img loading="lazy" class="showcase-rosette dark-contrast" width="132" height="200" alt="110% Awesome Websites" src="/assets/img/com/index-showcase.png" srcset="/assets/img/com/index-showcase@2x.png 2x">
                 <div>
                     <p>Our users continue to amaze us with their wonderful creations! To suggest a website for consideration in our showcase please announce it within the forum <a href="https://forum.textpattern.com/viewforum.php?id=6">‘Showcase your Textpattern site’</a> section first—we then pick new showcase examples on an ad hoc basis.</p>
                 </div>

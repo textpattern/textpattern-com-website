@@ -127,30 +127,28 @@
         }
     }
 
-    .showcase-container,
-    .showcase-plugins-container >,
-    .showcase-themes-container > {
-        h3 {
-            @include setup.hide-text;
-            @include setup.hires-graphic(com/index-showcase, png, 132px, 200px);
+    .showcase-rosette {
+        display: block;
+        position: absolute;
+        z-index: 2;
+        right: 2%;
+        width: 132px;
+        height: 200px;
+    }
 
-            position: absolute;
-            z-index: 2;
-            width: 132px;
-            height: 200px;
+    .showcase-container .showcase-rosette {
+        top: -60px;
+    }
+
+    .showcase-plugins-container,
+    .showcase-themes-container {
+        .showcase-rosette {
+            top: -142px;
         }
     }
 
-    .showcase-container h3 {
-        @include setup.hires-graphic(com/index-showcase, png, 132px, 200px);
-
-        display: block;
-        top: -76px;
-        right: 2%;
-    }
-
-    .showcase-landing h3 {
-        top: -35px;
+    .showcase-landing .showcase-rosette {
+        top: 8px;
     }
 
     /**
@@ -358,21 +356,6 @@
 
     .wrapper-inner .showcase-container {
         contains-intrinsic-size: 0 455px;
-    }
-
-    .showcase-plugins-container > h3,
-    .showcase-themes-container > h3 {
-        display: block;
-        top: -142px;
-        right: 2%;
-    }
-
-    .showcase-plugins-container > h3 {
-        @include setup.hires-graphic(com/index-plugins-showcase, png, 132px, 200px);
-    }
-
-    .showcase-themes-container > h3 {
-        @include setup.hires-graphic(com/index-themes-showcase, png, 132px, 200px);
     }
 
     .showcase-container {

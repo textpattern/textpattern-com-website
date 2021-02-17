@@ -12,7 +12,8 @@
             <meta name="description" content="Blog article ‘<txp:category title />’ category archive.">
             <meta name="robots" content="noindex, follow">
         <txp:else />
-            <link rel="preload" href="/assets/img/com/index-animation.png" as="image">
+            <link rel="preload" as="image" href="/assets/img/com/index-animation.png">
+            <link rel="preload" as="image" href="/assets/img/com/index-features.png" imagesrcset="/assets/img/com/index-features.png 1x, /assets/img/com/index-features@2x.png 2x">
             <title>Textpattern CMS | Open source content management system</title>
             <meta name="description" content="Textpattern CMS is a free, PHP open source CMS (content management system) with a browser-based interface in over 50 languages.">
             <meta name="keywords" content="cms, content management systems, open source, blogs, blogging, free, wordpress alternatives, fast, lightweight, web design, web site design, web development, web site development, php, foss">
@@ -159,7 +160,7 @@ echo '<a class="count-bubble" rel="external" href="https://github.com/textpatter
         <div class="wrapper-inner">
             <section class="container showcase-container">
                 <h1><a href="<txp:site_url />showcase/">Site showcase</a></h1>
-                <h3>110% Awesome Websites</h3>
+                <img loading="lazy" class="showcase-rosette dark-contrast" width="132" height="200" alt="110% Awesome Websites" src="/assets/img/com/index-showcase.png" srcset="/assets/img/com/index-showcase@2x.png 2x">
                 <div>
                     <p>Our users continue to amaze us with their wonderful creations! Feast your eyes on some of the awesome websites powered by Textpattern CMS in our <a href="<txp:site_url />showcase/">site showcase section</a>.</p>
                 </div>
