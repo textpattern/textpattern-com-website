@@ -55,7 +55,13 @@
     <main aria-label="Main content">
         <div class="wrapper-inner animation-wrapper">
                 <div id="animation-container">
-                    <canvas id="animation" width="1150" height="480" role="img" aria-label="Animation of swaying sunflowers"><img loading="lazy" width="1150" height="480" alt="Powering big ideas from a small open source CMS" src="/assets/img/com/index-animation-fallback.png"></canvas>
+                    <canvas id="animation" width="1150" height="480" role="img" aria-label="Animation of swaying sunflowers">
+                        <picture>
+                            <source srcset="/assets/img/com/index-animation-fallback.avif" type="image/avif" />
+                            <source srcset="/assets/img/com/index-animation-fallback.webp" type="image/webp" />
+                            <img loading="lazy" width="1150" height="480" alt="Powering big ideas from a small open source CMS" src="/assets/img/com/index-animation-fallback.png">
+                        </picture>
+                    </canvas>
                 </div>
                 <div id="animation-overlay">
                 <div class="container">
@@ -167,7 +173,12 @@ echo '<a class="count-bubble" rel="external" href="https://github.com/textpatter
                 <div class="showcases showcase-home-c">
                     <txp:images category="showcase-home-c" limit="1" sort="date desc">
                         <txp:smd_thumbnail type="showcase-teaser-450w300h">
-                            <img loading="lazy" class="img--showcase" width="450" height="300" alt="<txp:image_info type="alt" />" src="<txp:smd_thumbnail_info item="url" />" srcset="<txp:image_url /> 2x">
+                            <picture>
+                                <source srcset="<txp:smd_thumbnail_info item="url" trim="" />.avif, <txp:image_url trim="" />.avif 2x" type="image/avif" />
+                                <source srcset="<txp:smd_thumbnail_info item="url" trim="" />.webp, <txp:image_url trim="" />.webp 2x" type="image/webp" />
+                                <source srcset="<txp:smd_thumbnail_info item="url" />, <txp:image_url /> 2x" type="image/<txp:image_info type="ext" />" />
+                                <img loading="lazy" class="img--showcase" width="450" height="300" alt="<txp:image_info type="alt" />" src="<txp:smd_thumbnail_info item="url" />">
+                            </picture>
                         </txp:smd_thumbnail>
                     </txp:images>
                 </div>
