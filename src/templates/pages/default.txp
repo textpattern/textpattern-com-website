@@ -55,7 +55,7 @@
     <main aria-label="Main content">
         <div class="wrapper-inner animation-wrapper">
                 <div id="animation-container">
-                    <canvas id="animation" width="1150" height="480"><img loading="lazy" width="1150" height="480" alt="Powering big ideas from a small open source CMS" src="/assets/img/com/index-animation-fallback.png"></canvas>
+                    <canvas id="animation" width="1150" height="480" role="img" aria-label="Animation of swaying sunflowers"><img loading="lazy" width="1150" height="480" alt="Powering big ideas from a small open source CMS" src="/assets/img/com/index-animation-fallback.png"></canvas>
                 </div>
                 <div id="animation-overlay">
                 <div class="container">
