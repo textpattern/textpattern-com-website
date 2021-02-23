@@ -6,8 +6,8 @@ Official 2017+ website of the [Textpattern](https://textpattern.com/) project. *
 
 ## Supported web browsers
 
-* Chrome, Edge, Firefox, Safari and Opera the last two recent stable releases.
-* Firefox ESR latest major point release.
+- Chrome, Edge, Firefox, Safari and Opera the last two recent stable releases.
+- Firefox ESR latest major point release.
 
 Older versions of the above and other browsers may work, but these are the ones we verify.
 
@@ -15,8 +15,8 @@ Older versions of the above and other browsers may work, but these are the ones 
 
 Building this repository requires:
 
-* [Node.js](https://nodejs.org/)
-* [Grunt](https://gruntjs.com/)
+- [Node.js](https://nodejs.org/)
+- [Grunt](https://gruntjs.com/)
 
 ## Setup
 
@@ -49,8 +49,19 @@ $ grunt @task@
 
 Where the `@task@` is either `build` or `watch`.
 
-* The `build` task builds the project.
-* The `watch` task will launch a task that watches for file changes; the project is then automatically built if a source file is modified.
+- The `build` task builds the project.
+- The `watch` task will launch a task that watches for file changes; the project is then automatically built if a source file is modified.
+
+## Generating AVIF and WebP image formats via CLI
+
+After you have installed all dependencies, you can run [Squoosh](https://github.com/GoogleChromeLabs/squoosh/) on images to generate modern image formats quickly, for example:
+
+```ShellSession
+$ npx squoosh-cli --webp '{"quality":50}' public/img/3.jpg -d public/img/
+$ npx squoosh-cli --avif auto public/img/3.jpg -d public/img/
+```
+
+See [Squoosh CLI](https://github.com/GoogleChromeLabs/squoosh/tree/dev/cli) for more detailed documentation plus [encoding options](https://github.com/GoogleChromeLabs/squoosh/blob/dev/cli/src/codecs.js).
 
 ## Shortcodes
 
@@ -104,8 +115,8 @@ For example:
 
 ## Plugins used
 
-* [`etc_cache`](https://github.com/etc-plugins/etc_cache)
-* [`smd_thumbnail`](https://github.com/bloke/smd_thumbnail)
+- [`etc_cache`](https://github.com/etc-plugins/etc_cache)
+- [`smd_thumbnail`](https://github.com/bloke/smd_thumbnail)
 
 ## License
 
