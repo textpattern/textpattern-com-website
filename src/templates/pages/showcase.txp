@@ -92,7 +92,10 @@
                                     <txp:images limit="1">
                                         <txp:smd_thumbnail type="showcase-teaser-318w212h">
                                             <span itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
-                                                <img loading="lazy" class="img--showcase" width="318" height="212" alt="<txp:image_info type="alt" />" src="<txp:smd_thumbnail_info item="url" />" srcset="<txp:image_url /> 2x" itemprop="url contentUrl">
+                                                <picture>
+                                                    <txp:output_form form="images_type" />
+                                                    <img loading="lazy" class="img--showcase" width="318" height="212" alt="<txp:image_info type="alt" />" src="<txp:smd_thumbnail_info item="url" />" itemprop="url contentUrl">
+                                                </picture>
                                                 <meta itemprop="width" content="318">
                                                 <meta itemprop="height" content="212">
                                             </span>
