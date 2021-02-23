@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.com/textpattern/textpattern-com-website.svg)](https://travis-ci.com/textpattern/textpattern-com-website)
 
-Official 2017+ website of the [Textpattern](https://textpattern.com/) project. **Requires Textpattern 4.8.4 or later.**
+Official 2017+ website of the [Textpattern](https://textpattern.com/) project. **Requires Textpattern 4.8.5 or later.**
 
 ## Supported web browsers
 
