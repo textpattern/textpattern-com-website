@@ -61,7 +61,7 @@ $ npx squoosh-cli --webp '{"quality":50}' public/img/3.jpg -d public/img/
 $ npx squoosh-cli --avif auto public/img/3.jpg -d public/img/
 ```
 
-See [Squoosh CLI](https://github.com/GoogleChromeLabs/squoosh/tree/dev/cli) for more detailed documentation plus [encoding options](https://github.com/GoogleChromeLabs/squoosh/blob/dev/cli/src/codecs.js).
+See [Squoosh CLI](https://github.com/GoogleChromeLabs/squoosh/tree/dev/cli) for more detailed documentation, plus [encoding options](https://github.com/GoogleChromeLabs/squoosh/blob/dev/cli/src/codecs.js). **Note** you should ideally optimize your images manually (per-image) to obtain the best compression level versus quality ratio.
 
 ## Shortcodes
 
