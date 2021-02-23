@@ -58,7 +58,7 @@ After you have installed all dependencies, you can run [Squoosh](https://github.
 
 ```ShellSession
 $ npx squoosh-cli --webp '{"quality":50}' src/img-originals/3.tiff -d public/img/
-$ npx squoosh-cli --avif '{"minQuantizer":0,"maxQuantizer":30}' src/img-originals/3.png -d public/img/
+$ npx squoosh-cli --avif '{"minQuantizer":0,"maxQuantizer":30}' src/img-originals/3.tiff -d public/img/
 ```
 
 See [Squoosh CLI](https://github.com/GoogleChromeLabs/squoosh/tree/dev/cli) for more detailed documentation, plus [encoding options](https://github.com/GoogleChromeLabs/squoosh/blob/dev/cli/src/codecs.js). **Note** you should ideally optimize your images manually (per-image) to obtain the best compression level versus quality ratio.
