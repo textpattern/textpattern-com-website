@@ -174,9 +174,9 @@ echo '<a class="count-bubble" rel="external" href="https://github.com/textpatter
                     <txp:images category="showcase-home-c" limit="1" sort="date desc">
                         <txp:smd_thumbnail type="showcase-teaser-450w300h">
                             <picture>
-                                <source srcset="<txp:smd_thumbnail_info item="url" trim="" />.avif, <txp:image_url trim="" />.avif 2x" type="image/avif" />
-                                <source srcset="<txp:smd_thumbnail_info item="url" trim="" />.webp, <txp:image_url trim="" />.webp 2x" type="image/webp" />
-                                <source srcset="<txp:smd_thumbnail_info item="url" />, <txp:image_url /> 2x" type="image/<txp:image_info type="ext" />" />
+                                <source srcset="<txp:smd_thumbnail_info item="url" trim="/\.(gif|png|jpe?g)$/" />.avif, <txp:image_url trim="/\.(gif|png|jpe?g)$/" />.avif 2x" type="image/avif" />
+                                <source srcset="<txp:smd_thumbnail_info item="url" trim="/\.(gif|png|jpe?g)$/" />.webp, <txp:image_url trim="/\.(gif|png|jpe?g)$/" />.webp 2x" type="image/webp" />
+                                <source srcset="<txp:smd_thumbnail_info item="url" />, <txp:image_url /> 2x" type="<txp:image_info type="mime" />" />
                                 <img loading="lazy" class="img--showcase" width="450" height="300" alt="<txp:image_info type="alt" />" src="<txp:smd_thumbnail_info item="url" />">
                             </picture>
                         </txp:smd_thumbnail>
