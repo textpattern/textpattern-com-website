@@ -256,7 +256,7 @@ module.exports = function (grunt)
                 files: '<%= paths.src.js %>*.js',
                 tasks: [
                     'jshint',
-                    'uglify'
+                    'terser'
                 ]
             },
             html: {
