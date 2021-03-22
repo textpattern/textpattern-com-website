@@ -1,0 +1,4 @@
+Contact: mailto:security@textpattern.com
+Expires: Fri, 31 Dec 2021 23:59 +0000
+Preferred-Languages: en
+Canonical: https://textpattern.com/.well-known/security.txt
