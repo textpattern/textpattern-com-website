@@ -1,4 +1,4 @@
-# http://humanstxt.org
+# https://humanstxt.org
 # The humans responsible and
 # technology colophon
 
