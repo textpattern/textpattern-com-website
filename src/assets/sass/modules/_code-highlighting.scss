@@ -30,11 +30,11 @@ pre[class*="language-"] {
 .token.prolog,
 .token.doctype,
 .token.cdata {
-    color: #708090;
+    color: hsl(210 13% 50%);
 }
 
 .token.punctuation {
-    color: #999999;
+    color: hsl(0 0% 60%);
 }
 
 .namespace {
@@ -48,7 +48,7 @@ pre[class*="language-"] {
 .token.constant,
 .token.symbol,
 .token.deleted {
-    color: #990055;
+    color: hsl(327 100% 30%);
 }
 
 .token.selector,
@@ -57,7 +57,7 @@ pre[class*="language-"] {
 .token.char,
 .token.builtin,
 .token.inserted {
-    color: #669900;
+    color: hsl(80 100% 30%);
 }
 
 .token.operator,
@@ -65,28 +65,28 @@ pre[class*="language-"] {
 .token.url,
 .language-css .token.string,
 .style .token.string {
-    color: #a67f59;
+    color: hsl(30 30% 50%);
 }
 
 .token.atrule,
 .token.attr-value,
 .token.keyword {
-    color: #0077aa;
+    color: hsl(198 100% 33%);
 }
 
 .token.function {
-    color: #dd4a68;
+    color: hsl(348 68% 58%);
 }
 
 .token.regex,
 .token.important,
 .token.variable {
-    color: #ee9900;
+    color: hsl(39 100% 47%);
 }
 
 .token.important,
 .token.bold {
-    font-weight: bold;
+    font-weight: 700;
 }
 
 .token.italic {
@@ -133,14 +133,14 @@ pre.line-numbers > code {
     content: counter(linenumber);
     display: block;
     padding-right: 0.8em;
-    color: var(--clr-text-footnote);
+    color: var(--clr-text-demoted);
     direction: ltr;
     text-align: right;
 }
 
 @include setup.dark-mode {
     .token.punctuation {
-        color: var(--clr-text-white-out);
+        color: var(--clr-text-white-enforced);
     }
 
     .token.property,

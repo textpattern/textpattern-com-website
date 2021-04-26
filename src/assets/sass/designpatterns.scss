@@ -88,7 +88,7 @@ $colors: (
 .design-patterns--box {
     margin-top: 0;
     padding: 1em;
-    background: rgba(0, 0, 0, 0.33);
+    background: hsl(0 0% 0% / 0.33);
 }
 
 /**
@@ -121,8 +121,8 @@ $colors: (
 .design-patterns--breakpoint-2,
 .design-patterns--breakpoint-3 {
     padding: 0.5em;
-    background-color: #ff0000;
-    color: #ffffff;
+    background-color: hsl(0 100% 50%);
+    color: var(--clr-text-white-enforced);
 }
 
 .design-patterns--breakpoint-0 {
@@ -185,7 +185,7 @@ $colors: (
         overflow-y: auto;
         border-right: 1px solid var(--clr-brdr);
         background-color: var(--clr-bkgd-box);
-        box-shadow: inset -0.25em 0 0.25em -0.25em rgba(0, 0, 0, 0.2);
+        box-shadow: inset -0.25em 0 0.25em -0.25em hsl(0 0% 0% / 0.2);
     }
 
     .docs-content {

@@ -12,114 +12,116 @@
     --font-sans-serif: system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     --font-monospaced: Menlo, Consolas, Monaco, monospace;
     // text colours
-    --clr-text:                      #333333;
-    --clr-text-promoted:             #2b2b2b;
-    --clr-text-demoted:              #666666;
-    --clr-text-form:                 #000000;
-    --clr-text-placeholder:          #999999;
-    --clr-text-black-enforced:       #333333;
-    --clr-text-white-enforced:       #ffffff;
+    --clr-text:                      hsl(0 0% 20%);
+    --clr-text-promoted:             hsl(0 0% 17%);
+    --clr-text-promoted-a50:         hsl(0 0% 17% / 0.5);
+    --clr-text-demoted:              hsl(0 0% 40%);
+    --clr-text-form:                 hsl(0 0% 0%);
+    --clr-text-placeholder:          hsl(0 0% 60%);
+    --clr-text-black-enforced:       hsl(0 0% 20%);
+    --clr-text-white-enforced:       hsl(0 0% 100%);
     // interaction colours
-    --clr-a:                         #004cbf;
-    --clr-a-interact:                #0066ff;
-    --clr-a-alt:                     #9cd7ff;
-    --clr-a-alt-interact:            #e6f0ff;
-    --clr-focus:                     hsla(216, 100%, 50%, 1);
-    --clr-nav-interact:              #b1ddfd;
-    --clr-nav-active:                #e6f0ff;
+    --clr-a:                         hsl(216 100% 35%);
+    --clr-a-interact:                hsl(216 100% 50%);
+    --clr-a-alt:                     hsl(216 100% 80%);
+    --clr-a-alt-interact:            hsl(216 100% 95%);
+    --clr-focus:                     hsl(216 100% 50% / 1);
+    --clr-nav-interact:              hsl(216 95% 85%);
+    --clr-nav-active:                hsl(216 100% 95%);
     // neutral colours
-    --clr-bkgd:                      #ffffff;
-    --clr-bkgd-zebra:                #f0f0f0;
-    --clr-bkgd-box:                  #f7f7f7;
-    --clr-bkgd-form:                 #ffffff;
-    --clr-bkgd-form-disabled:        #e4e4e4;
-    --clr-grad-from:                 hsl(0, 0%, 93%);
-    --clr-grad-to:                   hsl(0, 0%, 87%);
+    --clr-bkgd:                      hsl(0 0% 100%);
+    --clr-bkgd-zebra:                hsl(0 0% 94%);
+    --clr-bkgd-box:                  hsl(0 0% 97%);
+    --clr-bkgd-form:                 hsl(0 0% 100%);
+    --clr-bkgd-form-disabled:        hsl(0 0% 89%);
+    --clr-grad-from:                 hsl(0 0% 93%);
+    --clr-grad-to:                   hsl(0 0% 87%);
     // accent colours
-    --clr-hilite:                    hsl(48, 100%, 63%);
-    --clr-hilite-enforced:           hsl(48, 100%, 63%);
-    --clr-strong-hilite-box:         hsl(48, 100%, 76%);
-    --clr-hilite-box:                hsl(48, 100%, 94%);
+    --clr-hilite:                    hsl(48 100% 63%);
+    --clr-hilite-enforced:           hsl(48 100% 63%);
+    --clr-strong-hilite-box:         hsl(48 100% 76%);
+    --clr-hilite-box:                hsl(48 100% 94%);
     // border colours
-    --clr-brdr-x-lite:               hsl(0, 0%, 85%);
-    --clr-brdr-lite:                 hsl(0, 0%, 82.5%);
-    --clr-brdr:                      hsl(0, 0%, 80%);
-    --clr-brdr-dark:                 hsl(0, 0%, 75%);
-    --clr-brdr-x-dark:               hsl(0, 0%, 70%);
+    --clr-brdr-x-lite:               hsl(0 0% 85%);
+    --clr-brdr-lite:                 hsl(0 0% 82.5%);
+    --clr-brdr:                      hsl(0 0% 80%);
+    --clr-brdr-dark:                 hsl(0 0% 75%);
+    --clr-brdr-x-dark:               hsl(0 0% 70%);
     // button colours
-    --clr-text-btn:                  #333333;
-    --clr-text-btn-interact:         #2b2b2b;
-    --clr-btn-grad-from:             hsl(0, 0%, 93%);
-    --clr-btn-grad-to:               hsl(0, 0%, 87%);
-    --clr-btn-brdr:                  hsl(0, 0%, 87%);
-    --clr-btn-brdr-interact:         hsl(0, 0%, 77%);
-    --clr-btn-shadow:                hsl(0, 0%, 67%);
-    --clr-btn-primary-grad-from:     hsl(48, 100%, 63%);
-    --clr-btn-primary-grad-to:       hsl(48, 100%, 57%);
-    --clr-btn-primary-brdr:          hsl(48, 100%, 57%);
-    --clr-btn-primary-brdr-interact: hsl(48, 100%, 47%);
-    --clr-btn-primary-shadow:        hsl(48, 100%, 37%);
-    --clr-btn-bkgd-disabled:         #e4e4e4;
+    --clr-text-btn:                  hsl(0 0% 20%);
+    --clr-text-btn-interact:         hsl(0 0% 17%);
+    --clr-btn-grad-from:             hsl(0 0% 93%);
+    --clr-btn-grad-to:               hsl(0 0% 87%);
+    --clr-btn-brdr:                  hsl(0 0% 87%);
+    --clr-btn-brdr-interact:         hsl(0 0% 77%);
+    --clr-btn-shadow:                hsl(0 0% 67%);
+    --clr-btn-primary-grad-from:     hsl(48 100% 63%);
+    --clr-btn-primary-grad-to:       hsl(48 100% 57%);
+    --clr-btn-primary-brdr:          hsl(48 100% 57%);
+    --clr-btn-primary-brdr-interact: hsl(48 100% 47%);
+    --clr-btn-primary-shadow:        hsl(48 100% 37%);
+    --clr-btn-bkgd-disabled:         hsl(0 0% 89%);
     // alert colours
-    --clr-success-text:              hsl(120, 60%, 34%);
-    --clr-success-bkgd:              hsl(120, 40%, 90%);
-    --clr-success-brdr:              hsl(102, 40%, 68%);
-    --clr-warning-text:              hsl(41, 100%, 40%);
-    --clr-warning-bkgd:              hsl(41, 64%, 91%);
-    --clr-warning-brdr:              hsl(41, 64%, 71%);
-    --clr-error-text:                hsl(4, 69%, 36%);
-    --clr-error-bkgd:                hsl(4, 43%, 91%);
-    --clr-error-brdr:                hsl(4, 43%, 78%);
-    --clr-info-text:                 hsl(200, 50%, 45%);
-    --clr-info-bkgd:                 hsl(200, 78%, 95%);
-    --clr-info-brdr:                 hsl(200, 78%, 82%);
+    --clr-success-text:              hsl(120 60% 34%);
+    --clr-success-bkgd:              hsl(120 40% 90%);
+    --clr-success-brdr:              hsl(102 40% 68%);
+    --clr-warning-text:              hsl(41 100% 40%);
+    --clr-warning-bkgd:              hsl(41 64% 91%);
+    --clr-warning-brdr:              hsl(41 64% 71%);
+    --clr-error-text:                hsl(4 69% 36%);
+    --clr-error-bkgd:                hsl(4 43% 91%);
+    --clr-error-brdr:                hsl(4 43% 78%);
+    --clr-info-text:                 hsl(200 50% 45%);
+    --clr-info-bkgd:                 hsl(200 78% 95%);
+    --clr-info-brdr:                 hsl(200 78% 82%);
 }
 
 @include setup.dark-mode {
     :root {
         // dark mode text colours
-        --clr-text:               #ced4da;
-        --clr-text-promoted:      #ffffff;
-        --clr-text-demoted:       #bcc4cc;
-        --clr-text-form:          #ffffff;
-        --clr-text-placeholder:   #747b82;
+        --clr-text:               hsl(210 14% 83%);
+        --clr-text-promoted:      hsl(0 0% 100%);
+        --clr-text-promoted-a50:  hsl(0 0% 100% / 0.5);
+        --clr-text-demoted:       hsl(210 14% 77%);
+        --clr-text-form:          hsl(0 0% 100%);
+        --clr-text-placeholder:   hsl(210 6% 48%);
         // interaction colours
-        --clr-a:                  #9cd7ff;
-        --clr-a-interact:         #bde4ff;
-        --clr-focus:              #ff00cc;
-        --clr-nav-interact:       #1b2f48;
-        --clr-nav-active:         #1c3456;
+        --clr-a:                  hsl(204 100% 81%);
+        --clr-a-interact:         hsl(204 100% 87%);
+        --clr-focus:              hsl(312 100% 50%);
+        --clr-nav-interact:       hsl(214 45% 19%);
+        --clr-nav-active:         hsl(214 51% 22%);
         // neutral colours
-        --clr-bkgd:               #373e45;
-        --clr-bkgd-zebra:         #53595f;
-        --clr-bkgd-box:           #2f353b;
-        --clr-bkgd-form:          #282d32;
-        --clr-bkgd-form-disabled: #282d32;
-        --clr-grad-from:          hsl(210, 7%, 30%);
-        --clr-grad-to:            hsl(210, 7%, 36%);
+        --clr-bkgd:               hsl(210 11% 24%);
+        --clr-bkgd-zebra:         hsl(210 7% 35%);
+        --clr-bkgd-box:           hsl(210 11% 21%);
+        --clr-bkgd-form:          hsl(210 11% 18%);
+        --clr-bkgd-form-disabled: hsl(210 11% 18%);
+        --clr-grad-from:          hsl(210 7% 30%);
+        --clr-grad-to:            hsl(210 7% 36%);
         // accent colours
-        --clr-hilite:             hsl(48, 100%, 63%);
-        --clr-strong-hilite-box:  hsl(48, 42%, 47%);
-        --clr-hilite-box:         hsl(48, 20%, 30%);
+        --clr-hilite:             hsl(48 100% 63%);
+        --clr-strong-hilite-box:  hsl(48 42% 47%);
+        --clr-hilite-box:         hsl(48 20% 30%);
         // border colours
-        --clr-brdr-x-lite:        hsl(210, 7%, 33%);
-        --clr-brdr-lite:          hsl(210, 7%, 43%);
-        --clr-brdr:               hsl(210, 7%, 53%);
-        --clr-brdr-dark:          hsl(210, 7%, 21%);
-        --clr-brdr-x-dark:        hsl(210, 7%, 6%);
+        --clr-brdr-x-lite:        hsl(210 7% 33%);
+        --clr-brdr-lite:          hsl(210 7% 43%);
+        --clr-brdr:               hsl(210 7% 53%);
+        --clr-brdr-dark:          hsl(210 7% 21%);
+        --clr-brdr-x-dark:        hsl(210 7% 6%);
         // alert colours
-        --clr-success-text:       hsl(100, 60%, 50%);
-        --clr-success-bkgd:       hsl(109, 27%, 20%);
-        --clr-success-brdr:       hsla(100, 60%, 50%, 0.33);
-        --clr-warning-text:       hsl(40, 100%, 62%);
-        --clr-warning-bkgd:       hsl(49, 35%, 21%);
-        --clr-warning-brdr:       hsla(40, 100%, 62%, 0.33);
-        --clr-error-text:         hsl(337, 100%, 60%);
-        --clr-error-bkgd:         hsl(348, 34%, 21%);
-        --clr-error-brdr:         hsla(337, 100%, 60%, 0.43);
-        --clr-info-text:          hsl(207, 100%, 63%);
-        --clr-info-bkgd:          hsl(207, 68%, 17%);
-        --clr-info-brdr:          hsla(207, 100%, 63%, 0.38);
+        --clr-success-text:       hsl(100 60% 50%);
+        --clr-success-bkgd:       hsl(109 27% 20%);
+        --clr-success-brdr:       hsl(100 60% 50% / 0.33);
+        --clr-warning-text:       hsl(40 100% 62%);
+        --clr-warning-bkgd:       hsl(49 35% 21%);
+        --clr-warning-brdr:       hsl(40 100% 62% / 0.33);
+        --clr-error-text:         hsl(337 100% 60%);
+        --clr-error-bkgd:         hsl(348 34% 21%);
+        --clr-error-brdr:         hsl(337 100% 60% / 0.43);
+        --clr-info-text:          hsl(207 100% 63%);
+        --clr-info-bkgd:          hsl(207 68% 17%);
+        --clr-info-brdr:          hsl(207 100% 63% / 0.38);
     }
 }
 

@@ -48,7 +48,7 @@ h6 {
         &:hover,
         &:active {
             color: var(--clr-text-promoted);
-            text-decoration-color: rgba(var(--clr-text-promoted), 0.5);  /* 1 */
+            text-decoration-color: var(--clr-text-promoted-a50);  /* 1 */
         }
     }
 }

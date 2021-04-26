@@ -46,7 +46,7 @@ button,
     background-clip: padding-box;
     box-shadow: 0 2px 0 var(--clr-btn-shadow);
     color: var(--clr-text-btn);
-    font-weight: normal;
+    font-weight: 400;
     text-align: center;
     appearance: none; /* 1 */
     cursor: pointer; /* 2 */
@@ -88,7 +88,7 @@ button,
 
     border-color: var(--clr-btn-primary-brdr);
     box-shadow: 0 2px 0 var(--clr-btn-primary-shadow);
-    font-weight: bolder;
+    font-weight: 700;
 
     &:hover,
     &:active {
@@ -142,7 +142,7 @@ button,
     margin: -0.5em 0 -0.5em 0.25em;
     padding: 0.5em 0 0.5em 0.5em;
     border-left: 1px solid var(--clr-btn-primary-shadow);
-    font-weight: normal;
+    font-weight: 400;
 }
 
 /**

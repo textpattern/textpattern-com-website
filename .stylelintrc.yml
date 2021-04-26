@@ -102,7 +102,7 @@ rules:
   block-opening-brace-space-before: always
 
   # Specify modern or legacy notation for applicable color-functions.
-  color-function-notation: legacy
+  color-function-notation: modern
 
   # Specify lowercase or uppercase for hexadecimal color values.
   color-hex-case: lower
@@ -114,7 +114,7 @@ rules:
   color-named: never
 
   # Disallow hex colors.
-  #color-no-hex: true
+  color-no-hex: true
 
   # Disallow invalid hexadecimal colors.
   color-no-invalid-hex: true
@@ -219,7 +219,7 @@ rules:
   font-family-no-missing-generic-family-keyword: true
 
   # Require numeric or named (where possible) `font-weight` values.
-  font-weight-notation: named-where-possible
+  font-weight-notation: numeric
 
   # Specify a blacklist of disallowed functions.
   #function-blacklist:
@@ -374,6 +374,12 @@ rules:
   # Disallow double-slash comments (`//`) which are not supported by CSS.
   no-invalid-double-slash-comments: true
 
+  # Disallow invalid position `@import` rules within a stylesheet.
+  #no-invalid-position-at-import-rule:
+
+  # Disallow irregular whitespaces.
+  no-irregular-whitespace: true
+
   # Disallow missing end-of-source newlines.
   no-missing-end-of-source-newline: true
 
@@ -447,7 +453,7 @@ rules:
   #selector-combinator-blacklist:
 
   # Require a single space or disallow whitespace after the combinators of selectors.
-  #selector-combinator-space-after:
+  selector-combinator-space-after: always
 
   # Require a single space or disallow whitespace before the combinators of selectors.
   selector-combinator-space-before: always
@@ -457,6 +463,9 @@ rules:
 
   # Disallow non-space characters for descendant combinators of selectors.
   selector-descendant-combinator-no-non-space: true
+
+  # Specify a list of disallowed selectors.
+  #selector-disallowed-list:
 
   # Specify a pattern for ID selectors.
   #selector-id-pattern:
