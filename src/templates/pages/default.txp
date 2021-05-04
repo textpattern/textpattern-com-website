@@ -59,7 +59,7 @@
                         <picture>
                             <source srcset="/assets/img/com/index-animation-fallback.avif" type="image/avif" />
                             <source srcset="/assets/img/com/index-animation-fallback.webp" type="image/webp" />
-                            <img loading="lazy" width="1150" height="480" alt="Powering big ideas from a small open source CMS" src="/assets/img/com/index-animation-fallback.png">
+                            <img loading="lazy" decoding="async" width="1150" height="480" alt="Powering big ideas from a small open source CMS" src="/assets/img/com/index-animation-fallback.png">
                         </picture>
                     </canvas>
                 </div>
@@ -160,13 +160,13 @@ echo '<a class="count-bubble" rel="external" href="https://github.com/textpatter
         </div>
         <div class="wrapper-inner zebra">
             <div class="container">
-                <p><img loading="lazy" class="screen-large prefers-color-scheme" width="1150" height="494" alt="Textpattern Screenshots" src="/assets/img/com/index-device-screens.png" data-src-light="/assets/img/com/index-device-screens.png" data-src-dark="/assets/img/com/dark-index-device-screens.png" srcset="/assets/img/com/index-device-screens@2x.png 2x" data-srcset-light="/assets/img/com/index-device-screens@2x.png 2x" data-srcset-dark="/assets/img/com/dark-index-device-screens@2x.png 2x"><img loading="lazy" class="screen-small prefers-color-scheme" width="620" height="477" alt="Textpattern Screenshot" src="/assets/img/com/index-device-screen.png" data-src-light="/assets/img/com/index-device-screen.png" data-src-dark="/assets/img/com/dark-index-device-screen.png"></p>
+                <p><img loading="lazy" decoding="async" class="screen-large prefers-color-scheme" width="1150" height="494" alt="Textpattern Screenshots" src="/assets/img/com/index-device-screens.png" data-src-light="/assets/img/com/index-device-screens.png" data-src-dark="/assets/img/com/dark-index-device-screens.png" srcset="/assets/img/com/index-device-screens@2x.png 2x" data-srcset-light="/assets/img/com/index-device-screens@2x.png 2x" data-srcset-dark="/assets/img/com/dark-index-device-screens@2x.png 2x"><img loading="lazy" decoding="async" class="screen-small prefers-color-scheme" width="620" height="477" alt="Textpattern Screenshot" src="/assets/img/com/index-device-screen.png" data-src-light="/assets/img/com/index-device-screen.png" data-src-dark="/assets/img/com/dark-index-device-screen.png"></p>
             </div>
         </div>
         <div class="wrapper-inner">
             <section class="container showcase-container">
                 <h1><a href="<txp:site_url />showcase/">Site showcase</a></h1>
-                <img loading="lazy" class="showcase-rosette dark-contrast" width="132" height="200" alt="110% Awesome Websites" src="/assets/img/com/index-showcase.png" srcset="/assets/img/com/index-showcase@2x.png 2x">
+                <img loading="lazy" decoding="async" class="showcase-rosette dark-contrast" width="132" height="200" alt="110% Awesome Websites" src="/assets/img/com/index-showcase.png" srcset="/assets/img/com/index-showcase@2x.png 2x">
                 <div>
                     <p>Our users continue to amaze us with their wonderful creations! Feast your eyes on some of the awesome websites powered by Textpattern CMS in our <a href="<txp:site_url />showcase/">site showcase section</a>.</p>
                 </div>
@@ -175,7 +175,7 @@ echo '<a class="count-bubble" rel="external" href="https://github.com/textpatter
                         <txp:smd_thumbnail type="showcase-teaser-450w300h">
                             <picture>
                                 <txp:output_form form="images_type" />
-                                <img loading="lazy" class="img--showcase" width="450" height="300" alt="<txp:image_info type="alt" />" src="<txp:smd_thumbnail_info item="url" />">
+                                <img loading="lazy" decoding="async" class="img--showcase" width="450" height="300" alt="<txp:image_info type="alt" />" src="<txp:smd_thumbnail_info item="url" />">
                             </picture>
                         </txp:smd_thumbnail>
                     </txp:images>
@@ -185,7 +185,7 @@ echo '<a class="count-bubble" rel="external" href="https://github.com/textpatter
                         <txp:smd_thumbnail type="showcase-teaser-318w212h">
                             <picture>
                                 <txp:output_form form="images_type" />
-                                <img loading="lazy" class="img--showcase" width="318" height="212" alt="<txp:image_info type="alt" />" src="<txp:smd_thumbnail_info item="url" />">
+                                <img loading="lazy" decoding="async" class="img--showcase" width="318" height="212" alt="<txp:image_info type="alt" />" src="<txp:smd_thumbnail_info item="url" />">
                             </picture>
                         </txp:smd_thumbnail>
                     </txp:images>
@@ -195,7 +195,7 @@ echo '<a class="count-bubble" rel="external" href="https://github.com/textpatter
                         <txp:smd_thumbnail type="showcase-teaser-318w212h">
                             <picture>
                                 <txp:output_form form="images_type" />
-                                <img loading="lazy" class="img--showcase" width="318" height="212" alt="<txp:image_info type="alt" />" src="<txp:smd_thumbnail_info item="url" />">
+                                <img loading="lazy" decoding="async" class="img--showcase" width="318" height="212" alt="<txp:image_info type="alt" />" src="<txp:smd_thumbnail_info item="url" />">
                             </picture>
                         </txp:smd_thumbnail>
                     </txp:images>
@@ -212,13 +212,13 @@ echo '<a class="count-bubble" rel="external" href="https://github.com/textpatter
                                 <source srcset="/assets/img/com/digitalocean-300x250.avif, /assets/img/com/digitalocean-300x250@2x.avif 2x" type="image/avif" />
                                 <source srcset="/assets/img/com/digitalocean-300x250.webp, /assets/img/com/digitalocean-300x250@2x.webp 2x" type="image/webp" />
                                 <source srcset="/assets/img/com/digitalocean-300x250.png, /assets/img/com/digitalocean-300x250@2x.png 2x" type="image/png" />
-                                <img loading="lazy" width="300" height="250" itemprop="image" alt="DigitalOcean" src="/assets/img/com/digitalocean-300x250.png">
+                                <img loading="lazy" decoding="async" width="300" height="250" itemprop="image" alt="DigitalOcean" src="/assets/img/com/digitalocean-300x250.png">
                             </picture>
                         </a>
                     </div>
                     <div class="ads">
                         <a href="<txp:site_url />contact" itemprop="url" title="Want to advertise here? Please contact us to discuss.">
-                            <img loading="lazy" class="prefers-color-scheme" width="300" height="250" itemprop="image" alt="Want to advertise here? Please contact us to discuss." src="/assets/img/com/ad-300x250-placeholder.png" data-src-light="/assets/img/com/ad-300x250-placeholder.png" data-src-dark="/assets/img/com/dark-ad-300x250-placeholder.png" srcset="/assets/img/com/ad-300x250-placeholder@2x.png 2x" data-srcset-light="/assets/img/com/ad-300x250-placeholder@2x.png 2x" data-srcset-dark="/assets/img/com/dark-ad-300x250-placeholder@2x.png 2x">
+                            <img loading="lazy" decoding="async" class="prefers-color-scheme" width="300" height="250" itemprop="image" alt="Want to advertise here? Please contact us to discuss." src="/assets/img/com/ad-300x250-placeholder.png" data-src-light="/assets/img/com/ad-300x250-placeholder.png" data-src-dark="/assets/img/com/dark-ad-300x250-placeholder.png" srcset="/assets/img/com/ad-300x250-placeholder@2x.png 2x" data-srcset-light="/assets/img/com/ad-300x250-placeholder@2x.png 2x" data-srcset-dark="/assets/img/com/dark-ad-300x250-placeholder@2x.png 2x">
                         </a>
                     </div>
                 </aside>
@@ -229,7 +229,7 @@ echo '<a class="count-bubble" rel="external" href="https://github.com/textpatter
                 <div class="layout-container">
                     <section class="layout-3col-2span" itemscope itemtype="https://schema.org/Blog">
                         <h3>Latest from <a href="<txp:site_url />weblog">the blog</a>…</h3>
-                        <p><img loading="lazy" class="prefers-color-scheme" width="756" height="160" alt="The Textpattern blog" src="/assets/img/com/index-blog-header.png" data-src-light="/assets/img/com/index-blog-header.png" data-src-dark="/assets/img/com/dark-index-blog-header.png" srcset="/assets/img/com/index-blog-header@2x.png 2x" data-srcset-light="/assets/img/com/index-blog-header@2x.png 2x" data-srcset-dark="/assets/img/com/dark-index-blog-header@2x.png 2x"></p>
+                        <p><img loading="lazy" decoding="async" class="prefers-color-scheme" width="756" height="160" alt="The Textpattern blog" src="/assets/img/com/index-blog-header.png" data-src-light="/assets/img/com/index-blog-header.png" data-src-dark="/assets/img/com/dark-index-blog-header.png" srcset="/assets/img/com/index-blog-header@2x.png 2x" data-srcset-light="/assets/img/com/index-blog-header@2x.png 2x" data-srcset-dark="/assets/img/com/dark-index-blog-header@2x.png 2x"></p>
                         <txp:etc_cache id="homepage-blog"><txp:article form="article_listing_blog" limit="2" /></txp:etc_cache>
                     </section>
                     <div class="layout-3col">
@@ -306,7 +306,7 @@ foreach ($json->topic as $topic) {
                         </txp:if_search_results>
                     </div>
                     <p>Please try another search term or <a href="<txp:site_url />">return to the Textpattern homepage</a>.</p>
-                    <p><img loading="lazy" class="dark-contrast" width="556" height="406" alt="Page error" src="https://textpattern.com/assets/img/com/error.png" srcset="https://textpattern.com/assets/img/com/error@2x.png 2x"></p>
+                    <p><img loading="lazy" decoding="async" class="dark-contrast" width="556" height="406" alt="Page error" src="https://textpattern.com/assets/img/com/error.png" srcset="https://textpattern.com/assets/img/com/error@2x.png 2x"></p>
                 </txp:if_search_results>
             </div>
         </div>
