@@ -57,8 +57,9 @@
                 <div id="animation-container">
                     <canvas id="animation" width="1150" height="480" role="img" aria-label="Animation of swaying sunflowers">
                         <picture>
-                            <source srcset="/assets/img/com/index-animation-fallback.avif" type="image/avif" />
-                            <source srcset="/assets/img/com/index-animation-fallback.webp" type="image/webp" />
+                            <source srcset="/assets/img/com/index-animation-fallback.jxl" type="image/jxl">
+                            <source srcset="/assets/img/com/index-animation-fallback.avif" type="image/avif">
+                            <source srcset="/assets/img/com/index-animation-fallback.webp" type="image/webp">
                             <img loading="lazy" decoding="async" width="1150" height="480" alt="Powering big ideas from a small open source CMS" src="/assets/img/com/index-animation-fallback.png">
                         </picture>
                     </canvas>
@@ -209,9 +210,10 @@ echo '<a class="count-bubble" rel="external" href="https://github.com/textpatter
                     <div class="ads">
                         <a rel="external" href="https://www.digitalocean.com/?utm_source=opensource&amp;utm_campaign=textpattern" itemprop="url">
                             <picture>
-                                <source srcset="/assets/img/com/digitalocean-300x250.avif, /assets/img/com/digitalocean-300x250@2x.avif 2x" type="image/avif" />
-                                <source srcset="/assets/img/com/digitalocean-300x250.webp, /assets/img/com/digitalocean-300x250@2x.webp 2x" type="image/webp" />
-                                <source srcset="/assets/img/com/digitalocean-300x250.png, /assets/img/com/digitalocean-300x250@2x.png 2x" type="image/png" />
+                                <source srcset="/assets/img/com/digitalocean-300x250.jxl, /assets/img/com/digitalocean-300x250@2x.jxl 2x" type="image/jxl">
+                                <source srcset="/assets/img/com/digitalocean-300x250.avif, /assets/img/com/digitalocean-300x250@2x.avif 2x" type="image/avif">
+                                <source srcset="/assets/img/com/digitalocean-300x250.webp, /assets/img/com/digitalocean-300x250@2x.webp 2x" type="image/webp">
+                                <source srcset="/assets/img/com/digitalocean-300x250.png, /assets/img/com/digitalocean-300x250@2x.png 2x" type="image/png">
                                 <img loading="lazy" decoding="async" width="300" height="250" itemprop="image" alt="DigitalOcean" src="/assets/img/com/digitalocean-300x250.png">
                             </picture>
                         </a>
