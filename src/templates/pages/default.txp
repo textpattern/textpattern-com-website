@@ -210,7 +210,6 @@ echo '<a class="count-bubble" rel="external" href="https://github.com/textpatter
                     <div class="ads">
                         <a rel="external" href="https://www.digitalocean.com/?utm_source=opensource&amp;utm_campaign=textpattern" itemprop="url">
                             <picture>
-                                <source srcset="/assets/img/com/digitalocean-300x250.jxl, /assets/img/com/digitalocean-300x250@2x.jxl 2x" type="image/jxl">
                                 <source srcset="/assets/img/com/digitalocean-300x250.avif, /assets/img/com/digitalocean-300x250@2x.avif 2x" type="image/avif">
                                 <source srcset="/assets/img/com/digitalocean-300x250.webp, /assets/img/com/digitalocean-300x250@2x.webp 2x" type="image/webp">
                                 <source srcset="/assets/img/com/digitalocean-300x250.png, /assets/img/com/digitalocean-300x250@2x.png 2x" type="image/png">
