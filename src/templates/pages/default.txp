@@ -12,7 +12,8 @@
             <meta name="description" content="Blog article ‘<txp:category title />’ category archive.">
             <meta name="robots" content="noindex, follow">
         <txp:else />
-            <link rel="preload" as="image" href="/assets/img/com/index-animation.png">
+            <link rel="preload" as="image" href="https://textpattern.com/assets/img/com/index-animation.png">
+            <script defer src="https://textpattern.com/assets/js/animate.@@timestamp.js"></script>
             <title>Textpattern CMS | Open source content management system</title>
             <meta name="description" content="Textpattern CMS is a free, PHP open source CMS (content management system) with a browser-based interface in over 50 languages.">
             <meta name="keywords" content="cms, content management systems, open source, blogs, blogging, free, wordpress alternatives, fast, lightweight, web design, web site design, web development, web site development, php, foss">
@@ -42,8 +43,6 @@
                     "url": "<txp:site_url escape="json" />"
                 }
             </script>
-            <script defer src="https://textpattern.com/assets/js/createjs.@@timestamp.js"></script>
-            <script defer src="https://textpattern.com/assets/js/indexcanvas.@@timestamp.js"></script>
             <txp:variable name="homepage" value="1" />
         </txp:if_category>
     </txp:if_search>

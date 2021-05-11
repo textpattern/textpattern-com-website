@@ -236,12 +236,12 @@ module.exports = function (grunt)
                             '<%= paths.src.js %>main.js'
                         ],
                         '<%= paths.dest.js %>detect.js': ['<%= paths.src.js %>detect.js'],
-                        '<%= paths.dest.js %>createjs.js': [
+                        '<%= paths.dest.js %>animate.js': [
                             'node_modules/preloadjs/lib/preloadjs.js',
                             'node_modules/easeljs/lib/easeljs.js',
-                            'node_modules/tweenjs/lib/tweenjs.js'
-                        ],
-                        '<%= paths.dest.js %>indexcanvas.js': ['<%= paths.src.js %>indexcanvas.js']
+                            'node_modules/tweenjs/lib/tweenjs.js',
+                            '<%= paths.src.js %>indexcanvas.js'
+                        ]
                     }
                 ]
             }
