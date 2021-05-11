@@ -398,6 +398,10 @@ main .layout-4col-3span {
     @include setup.hires-graphic(com/index-features, png, 1600px, 200px);
 }
 
+.webp .index-feature h3::before { // TODO: TEST
+    @include setup.hires-graphic(com/index-features, webp, 1600px, 200px);
+}
+
 .index-feature-foundations::before {
     background-position: 0 0;
 }
