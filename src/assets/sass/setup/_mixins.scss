@@ -18,6 +18,13 @@
     background-size: $hdwidth $hdheight;
 }
 
+@mixin hires-graphic-modern($hdfile, $hdtype) {
+    $filename: $hdfile + "." + $hdtype;
+    $hdfilename: $hdfile + "@2x." + $hdtype;
+    background-image: url("../img/" + $filename);
+    background-image: image-set(url("../img/" + $filename) 1x, url("../img/" + $hdfilename) 2x);
+}
+
 // standard gradients
 
 @mixin gradient-linear($color-gradient-from, $color-gradient-to) {
