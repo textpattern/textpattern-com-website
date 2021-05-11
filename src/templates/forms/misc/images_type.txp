@@ -1,4 +1,3 @@
-<source srcset="<txp:smd_thumbnail_info item="url" trim="/\.(gif|png|jpe?g)$/" />.jxl, <txp:image_url trim="/\.(gif|png|jpe?g)$/" />.jxl 2x" type="image/jxl">
 <source srcset="<txp:smd_thumbnail_info item="url" trim="/\.(gif|png|jpe?g)$/" />.avif, <txp:image_url trim="/\.(gif|png|jpe?g)$/" />.avif 2x" type="image/avif">
 <source srcset="<txp:smd_thumbnail_info item="url" trim="/\.(gif|png|jpe?g)$/" />.webp, <txp:image_url trim="/\.(gif|png|jpe?g)$/" />.webp 2x" type="image/webp">
 <source srcset="<txp:smd_thumbnail_info item="url" />, <txp:image_url /> 2x" type="<txp:image_info type="mime" />">
