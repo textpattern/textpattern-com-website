@@ -235,6 +235,7 @@ module.exports = function (grunt)
                             // Site-specific JavaScript.
                             '<%= paths.src.js %>main.js'
                         ],
+                        '<%= paths.dest.js %>detect.js': ['<%= paths.src.js %>detect.js'],
                         '<%= paths.dest.js %>createjs.js': [
                             'node_modules/preloadjs/lib/preloadjs.js',
                             'node_modules/easeljs/lib/easeljs.js',
