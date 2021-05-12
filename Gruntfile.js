@@ -190,7 +190,8 @@ module.exports = function (grunt)
             },
             dist: {
                 files: [
-                    {'<%= paths.dest.css %>style.css': '<%= paths.src.sass %>style.scss'},
+                    {'<%= paths.dest.css %>screen.css': '<%= paths.src.sass %>screen.scss'},
+                    {'<%= paths.dest.css %>print.css': '<%= paths.src.sass %>print.scss'},
                     {'<%= paths.dest.css %>designpatterns.css': '<%= paths.src.sass %>designpatterns.scss'}
                 ]
             }

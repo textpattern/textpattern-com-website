@@ -125,35 +125,28 @@
     }
 }
 
-@media screen {
-    @import "modules/fonts";
-    @import "modules/layout";
-    @import "modules/navigation";
-    @import "modules/links";
-    @import "modules/typography";
-    @import "modules/alerts";
-    @import "modules/embedded-content";
-    @import "modules/tables";
-    @import "modules/lists";
-    @import "modules/forms";
-    @import "modules/buttons";
-    @import "modules/progress";
-    @import "modules/disclosure";
-    @import "modules/code-highlighting";
-    @import "modules/pagination";
-    @import "modules/breadcrumbs";
-    @import "modules/social";
-    @import "modules/misc";
-    @import "modules/http-errors";
-    @import "modules/blog";
-    @import "modules/cards";
-    @import "modules/icons";
-}
-
+@import "modules/fonts";
+@import "modules/layout";
+@import "modules/navigation";
+@import "modules/links";
+@import "modules/typography";
+@import "modules/alerts";
+@import "modules/embedded-content";
+@import "modules/tables";
+@import "modules/lists";
+@import "modules/forms";
+@import "modules/buttons";
+@import "modules/progress";
+@import "modules/disclosure";
+@import "modules/code-highlighting";
+@import "modules/pagination";
+@import "modules/breadcrumbs";
+@import "modules/social";
+@import "modules/misc";
+@import "modules/http-errors";
+@import "modules/blog";
+@import "modules/cards";
+@import "modules/icons";
 @import "modules/responsive";
 @import "modules/accessibility";
 @import "modules/animation-keyframes";
-
-@media print {
-    @import "modules/print";
-}

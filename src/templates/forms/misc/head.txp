@@ -3,7 +3,8 @@
 <link rel="preload" as="font" type="font/woff2" href="https://textpattern.com/assets/fonts/pt-serif-v12-latin-regular.woff2" crossorigin>
 <link rel="preload" as="font" type="font/woff2" href="https://textpattern.com/assets/fonts/pt-serif-v12-latin-700.woff2" crossorigin>
 <script src="https://textpattern.com/assets/js/detect.@@timestamp.js"></script>
-<link rel="stylesheet" href="https://textpattern.com/assets/css/style.@@timestamp.css">
+<link rel="stylesheet" media="screen"href="https://textpattern.com/assets/css/screen.@@timestamp.css">
+<link rel="stylesheet" media="print" href="https://textpattern.com/assets/css/print.@@timestamp.css">
 <link rel="icon" href="/favicon.ico">
 <link rel="icon" href="/icon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
