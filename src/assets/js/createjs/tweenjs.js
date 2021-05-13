@@ -210,15 +210,6 @@ this.createjs = this.createjs||{};
 		this.cancelable = !!cancelable;
 
 		/**
-		 * The epoch time at which this event was created.
-		 * @property timeStamp
-		 * @type Number
-		 * @default 0
-		 * @readonly
-		*/
-		this.timeStamp = (new Date()).getTime();
-
-		/**
 		 * Indicates if {{#crossLink "Event/preventDefault"}}{{/crossLink}} has been called
 		 * on this event.
 		 * @property defaultPrevented
@@ -755,55 +746,8 @@ this.createjs = this.createjs||{};
 		throw "Ticker cannot be instantiated.";
 	}
 
-
-// constants:
-	/**
-	 * In this mode, Ticker uses the requestAnimationFrame API, but attempts to synch the ticks to target framerate. It
-	 * uses a simple heuristic that compares the time of the RAF return to the target time for the current frame and
-	 * dispatches the tick when the time is within a certain threshold.
-	 *
-	 * This mode has a higher variance for time between frames than {{#crossLink "Ticker/TIMEOUT:property"}}{{/crossLink}},
-	 * but does not require that content be time based as with {{#crossLink "Ticker/RAF:property"}}{{/crossLink}} while
-	 * gaining the benefits of that API (screen synch, background throttling).
-	 *
-	 * Variance is usually lowest for framerates that are a divisor of the RAF frequency. This is usually 60, so
-	 * framerates of 10, 12, 15, 20, and 30 work well.
-	 *
-	 * Falls back to {{#crossLink "Ticker/TIMEOUT:property"}}{{/crossLink}} if the requestAnimationFrame API is not
-	 * supported.
-	 * @property RAF_SYNCHED
-	 * @static
-	 * @type {String}
-	 * @default "synched"
-	 * @readonly
-	 **/
 	Ticker.RAF_SYNCHED = "synched";
-
-	/**
-	 * In this mode, Ticker passes through the requestAnimationFrame heartbeat, ignoring the target framerate completely.
-	 * Because requestAnimationFrame frequency is not deterministic, any content using this mode should be time based.
-	 * You can leverage {{#crossLink "Ticker/getTime"}}{{/crossLink}} and the {{#crossLink "Ticker/tick:event"}}{{/crossLink}}
-	 * event object's "delta" properties to make this easier.
-	 *
-	 * Falls back on {{#crossLink "Ticker/TIMEOUT:property"}}{{/crossLink}} if the requestAnimationFrame API is not
-	 * supported.
-	 * @property RAF
-	 * @static
-	 * @type {String}
-	 * @default "raf"
-	 * @readonly
-	 **/
 	Ticker.RAF = "raf";
-
-	/**
-	 * In this mode, Ticker uses the setTimeout API. This provides predictable, adaptive frame timing, but does not
-	 * provide the benefits of requestAnimationFrame (screen synch, background throttling).
-	 * @property TIMEOUT
-	 * @static
-	 * @type {String}
-	 * @default "timeout"
-	 * @readonly
-	 **/
 	Ticker.TIMEOUT = "timeout";
 
 
@@ -830,57 +774,8 @@ this.createjs = this.createjs||{};
 	 * @since 0.6.0
 	 */
 
-
-// public static properties:
-	/**
-	 * Specifies the timing api (setTimeout or requestAnimationFrame) and mode to use. See
-	 * {{#crossLink "Ticker/TIMEOUT:property"}}{{/crossLink}}, {{#crossLink "Ticker/RAF:property"}}{{/crossLink}}, and
-	 * {{#crossLink "Ticker/RAF_SYNCHED:property"}}{{/crossLink}} for mode details.
-	 * @property timingMode
-	 * @static
-	 * @type {String}
-	 * @default Ticker.TIMEOUT
-	 **/
 	Ticker.timingMode = null;
-
-	/**
-	 * Specifies a maximum value for the delta property in the tick event object. This is useful when building time
-	 * based animations and systems to prevent issues caused by large time gaps caused by background tabs, system sleep,
-	 * alert dialogs, or other blocking routines. Double the expected frame duration is often an effective value
-	 * (ex. maxDelta=50 when running at 40fps).
-	 *
-	 * This does not impact any other values (ex. time, runTime, etc), so you may experience issues if you enable maxDelta
-	 * when using both delta and other values.
-	 *
-	 * If 0, there is no maximum.
-	 * @property maxDelta
-	 * @static
-	 * @type {number}
-	 * @default 0
-	 */
 	Ticker.maxDelta = 0;
-
-	/**
-	 * When the ticker is paused, all listeners will still receive a tick event, but the <code>paused</code> property
-	 * of the event will be `true`. Also, while paused the `runTime` will not increase. See {{#crossLink "Ticker/tick:event"}}{{/crossLink}},
-	 * {{#crossLink "Ticker/getTime"}}{{/crossLink}}, and {{#crossLink "Ticker/getEventTime"}}{{/crossLink}} for more
-	 * info.
-	 *
-	 * <h4>Example</h4>
-	 *
-	 *      createjs.Ticker.addEventListener("tick", handleTick);
-	 *      createjs.Ticker.paused = true;
-	 *      function handleTick(event) {
-	 *          console.log(event.paused,
-	 *          	createjs.Ticker.getTime(false),
-	 *          	createjs.Ticker.getTime(true));
-	 *      }
-	 *
-	 * @property paused
-	 * @static
-	 * @type {Boolean}
-	 * @default false
-	 **/
 	Ticker.paused = false;
 
 
@@ -1076,7 +971,6 @@ this.createjs = this.createjs||{};
 		Ticker._inited = true;
 		Ticker._times = [];
 		Ticker._tickTimes = [];
-		Ticker._startTime = Ticker._getTime();
 		Ticker._times.push(Ticker._lastTime = 0);
 		Ticker.interval = Ticker._interval;
 	};
@@ -1099,120 +993,8 @@ this.createjs = this.createjs||{};
 		Ticker._inited = false;
 	};
 
-	/**
-	 * Returns the average time spent within a tick. This can vary significantly from the value provided by getMeasuredFPS
-	 * because it only measures the time spent within the tick execution stack.
-	 *
-	 * Example 1: With a target FPS of 20, getMeasuredFPS() returns 20fps, which indicates an average of 50ms between
-	 * the end of one tick and the end of the next. However, getMeasuredTickTime() returns 15ms. This indicates that
-	 * there may be up to 35ms of "idle" time between the end of one tick and the start of the next.
-	 *
-	 * Example 2: With a target FPS of 30, {{#crossLink "Ticker/framerate:property"}}{{/crossLink}} returns 10fps, which
-	 * indicates an average of 100ms between the end of one tick and the end of the next. However, {{#crossLink "Ticker/getMeasuredTickTime"}}{{/crossLink}}
-	 * returns 20ms. This would indicate that something other than the tick is using ~80ms (another script, DOM
-	 * rendering, etc).
-	 * @method getMeasuredTickTime
-	 * @static
-	 * @param {Number} [ticks] The number of previous ticks over which to measure the average time spent in a tick.
-	 * Defaults to the number of ticks per second. To get only the last tick's time, pass in 1.
-	 * @return {Number} The average time spent in a tick in milliseconds.
-	 **/
-	Ticker.getMeasuredTickTime = function(ticks) {
-		var ttl=0, times=Ticker._tickTimes;
-		if (!times || times.length < 1) { return -1; }
-
-		// by default, calculate average for the past ~1 second:
-		ticks = Math.min(times.length, ticks||(Ticker._getFPS()|0));
-		for (var i=0; i<ticks; i++) { ttl += times[i]; }
-		return ttl/ticks;
-	};
-
-	/**
-	 * Returns the actual frames / ticks per second.
-	 * @method getMeasuredFPS
-	 * @static
-	 * @param {Number} [ticks] The number of previous ticks over which to measure the actual frames / ticks per second.
-	 * Defaults to the number of ticks per second.
-	 * @return {Number} The actual frames / ticks per second. Depending on performance, this may differ
-	 * from the target frames per second.
-	 **/
-	Ticker.getMeasuredFPS = function(ticks) {
-		var times = Ticker._times;
-		if (!times || times.length < 2) { return -1; }
-
-		// by default, calculate fps for the past ~1 second:
-		ticks = Math.min(times.length-1, ticks||(Ticker._getFPS()|0));
-		return 1000/((times[0]-times[ticks])/ticks);
-	};
-
-	/**
-	 * Returns the number of milliseconds that have elapsed since Ticker was initialized via {{#crossLink "Ticker/init"}}.
-	 * Returns -1 if Ticker has not been initialized. For example, you could use
-	 * this in a time synchronized animation to determine the exact amount of time that has elapsed.
-	 * @method getTime
-	 * @static
-	 * @param {Boolean} [runTime=false] If true only time elapsed while Ticker was not paused will be returned.
-	 * If false, the value returned will be total time elapsed since the first tick event listener was added.
-	 * @return {Number} Number of milliseconds that have elapsed since Ticker was initialized or -1.
-	 **/
-	Ticker.getTime = function(runTime) {
-		return Ticker._startTime ? Ticker._getTime() - (runTime ? Ticker._pausedTime : 0) : -1;
-	};
-
-	/**
-	 * Similar to the {{#crossLink "Ticker/getTime"}}{{/crossLink}} method, but returns the time on the most recent {{#crossLink "Ticker/tick:event"}}{{/crossLink}}
-	 * event object.
-	 * @method getEventTime
-	 * @static
-	 * @param runTime {Boolean} [runTime=false] If true, the runTime property will be returned instead of time.
-	 * @returns {number} The time or runTime property from the most recent tick event or -1.
-	 */
-	Ticker.getEventTime = function(runTime) {
-		return Ticker._startTime ? (Ticker._lastTime || Ticker._startTime) - (runTime ? Ticker._pausedTime : 0) : -1;
-	};
-
-	/**
-	 * Returns the number of ticks that have been broadcast by Ticker.
-	 * @method getTicks
-	 * @static
-	 * @param {Boolean} pauseable Indicates whether to include ticks that would have been broadcast
-	 * while Ticker was paused. If true only tick events broadcast while Ticker is not paused will be returned.
-	 * If false, tick events that would have been broadcast while Ticker was paused will be included in the return
-	 * value. The default value is false.
-	 * @return {Number} of ticks that have been broadcast.
-	 **/
-	Ticker.getTicks = function(pauseable) {
-		return  Ticker._ticks - (pauseable ? Ticker._pausedTicks : 0);
-	};
-
 
 // private static methods:
-	/**
-	 * @method _handleSynch
-	 * @static
-	 * @private
-	 **/
-	Ticker._handleSynch = function() {
-		Ticker._timerId = null;
-		Ticker._setupTick();
-
-		// run if enough time has elapsed, with a little bit of flexibility to be early:
-		if (Ticker._getTime() - Ticker._lastTime >= (Ticker._interval-1)*0.97) {
-			Ticker._tick();
-		}
-	};
-
-	/**
-	 * @method _handleRAF
-	 * @static
-	 * @private
-	 **/
-	Ticker._handleRAF = function() {
-		Ticker._timerId = null;
-		Ticker._setupTick();
-		Ticker._tick();
-	};
-
 	/**
 	 * @method _handleTimeout
 	 * @static
@@ -1235,11 +1017,6 @@ this.createjs = this.createjs||{};
 		var mode = Ticker.timingMode;
 		if (mode == Ticker.RAF_SYNCHED || mode == Ticker.RAF) {
 			var f = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame;
-			if (f) {
-				Ticker._timerId = f(mode == Ticker.RAF ? Ticker._handleRAF : Ticker._handleSynch);
-				Ticker._raf = true;
-				return;
-			}
 		}
 		Ticker._raf = false;
 		Ticker._timerId = setTimeout(Ticker._handleTimeout, Ticker._interval);
@@ -1477,62 +1254,6 @@ this.createjs = this.createjs||{};
 	};
 
 	var p = createjs.extend(AbstractTween, createjs.EventDispatcher);
-
-// events:
-	/**
-	 * Dispatched whenever the tween's position changes. It occurs after all tweened properties are updated and actions
-	 * are executed.
-	 * @event change
-	 **/
-
-	/**
-	 * Dispatched when the tween reaches its end and has paused itself. This does not fire until all loops are complete;
-	 * tweens that loop continuously will never fire a complete event.
-	 * @event complete
-	 **/
-
-// getter / setters:
-
-	/**
-	 * Use the {{#crossLink "AbstractTween/paused:property"}}{{/crossLink}} property instead.
-	 * @method _setPaused
-	 * @param {Boolean} [value=true] Indicates whether the tween should be paused (`true`) or played (`false`).
-	 * @return {AbstractTween} This tween instance (for chaining calls)
-	 * @protected
-	 * @chainable
-	 */
-	p._setPaused = function(value) {
-		createjs.Tween._register(this, value);
-		return this;
-	};
-
-	/**
-	 * Use the {{#crossLink "AbstractTween/paused:property"}}{{/crossLink}} property instead.
-	 * @method _getPaused
-	 * @protected
-	 */
-	p._getPaused = function() {
-		return this._paused;
-	};
-
-	/**
-	 * Pauses or unpauses the tween. A paused tween is removed from the global registry and is eligible for garbage
-	 * collection if no other references to it exist.
-	 * @property paused
-	 * @type Boolean
-	 * @readonly
-	 **/
-
-// public methods:
-	/**
-	 * Advances the tween by a specified amount.
-	 * @method advance
-	 * @param {Number} delta The amount to advance in milliseconds (or ticks if useTicks is true). Negative values are supported.
-	 * @param {Number} [ignoreActions=false] If true, actions will not be executed due to this change in position.
-	 */
-	p.advance = function(delta, ignoreActions) {
-		this.setPosition(this.rawPosition+delta*this.timeScale, ignoreActions);
-	};
 
 	/**
 	 * Advances the tween to a specified position.
@@ -1930,43 +1651,6 @@ this.createjs = this.createjs||{};
 	 */
 	Tween.get = function(target, props) {
 		return new Tween(target, props);
-	};
-
-	/**
-	 * Advances all tweens. This typically uses the {{#crossLink "Ticker"}}{{/crossLink}} class, but you can call it
-	 * manually if you prefer to use your own "heartbeat" implementation.
-	 * @method tick
-	 * @param {Number} delta The change in time in milliseconds since the last tick. Required unless all tweens have
-	 * `useTicks` set to true.
-	 * @param {Boolean} paused Indicates whether a global pause is in effect. Tweens with {{#crossLink "Tween/ignoreGlobalPause:property"}}{{/crossLink}}
-	 * will ignore this, but all others will pause if this is `true`.
-	 * @static
-	 */
-	Tween.tick = function(delta, paused) {
-		var tween = Tween._tweenHead;
-		while (tween) {
-			var next = tween._next; // in case it completes and wipes its _next property
-			if ((paused && !tween.ignoreGlobalPause) || tween._paused) { /* paused */ }
-			else { tween.advance(tween.useTicks?1:delta); }
-			tween = next;
-		}
-	};
-
-	/**
-	 * Handle events that result from Tween being used as an event handler. This is included to allow Tween to handle
-	 * {{#crossLink "Ticker/tick:event"}}{{/crossLink}} events from the createjs {{#crossLink "Ticker"}}{{/crossLink}}.
-	 * No other events are handled in Tween.
-	 * @method handleEvent
-	 * @param {Object} event An event object passed in by the {{#crossLink "EventDispatcher"}}{{/crossLink}}. Will
-	 * usually be of type "tick".
-	 * @private
-	 * @static
-	 * @since 0.4.2
-	 */
-	Tween.handleEvent = function(event) {
-		if (event.type === "tick") {
-			this.tick(event.delta, event.paused);
-		}
 	};
 
 	/**

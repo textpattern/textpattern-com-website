@@ -306,15 +306,6 @@ this.createjs = this.createjs||{};
 		this.cancelable = !!cancelable;
 
 		/**
-		 * The epoch time at which this event was created.
-		 * @property timeStamp
-		 * @type Number
-		 * @default 0
-		 * @readonly
-		*/
-		this.timeStamp = (new Date()).getTime();
-
-		/**
 		 * Indicates if {{#crossLink "Event/preventDefault"}}{{/crossLink}} has been called
 		 * on this event.
 		 * @property defaultPrevented
