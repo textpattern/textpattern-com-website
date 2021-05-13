@@ -1714,24 +1714,6 @@ this.createjs = this.createjs||{};
 	};
 
 
-	/**
-	 * Returns a string representation of this object.
-	 * @method toString
-	 * @return {String} a string representation of the instance.
-	 */
-	p.toString = function() {
-		return "[AbstractTween]";
-	};
-
-	/**
-	 * @method clone
-	 * @protected
-	 */
-	p.clone = function() {
-		throw("AbstractTween can not be cloned.")
-	};
-
-
 // private methods:
 	/**
 	 * Shared logic that executes at the end of the subclass constructor.
@@ -2111,55 +2093,6 @@ this.createjs = this.createjs||{};
 		if (event.type === "tick") {
 			this.tick(event.delta, event.paused);
 		}
-	};
-
-	/**
-	 * Removes all existing tweens for a target. This is called automatically by new tweens if the `override`
-	 * property is `true`.
-	 * @method removeTweens
-	 * @param {Object} target The target object to remove existing tweens from.
-	 * @static
-	 */
-	Tween.removeTweens = function(target) {
-		if (!target.tweenjs_count) { return; }
-		var tween = Tween._tweenHead;
-		while (tween) {
-			var next = tween._next;
-			if (tween.target === target) { Tween._register(tween, true); }
-			tween = next;
-		}
-		target.tweenjs_count = 0;
-	};
-
-	/**
-	 * Stop and remove all existing tweens.
-	 * @method removeAllTweens
-	 * @static
-	 * @since 0.4.1
-	 */
-	Tween.removeAllTweens = function() {
-		var tween = Tween._tweenHead;
-		while (tween) {
-			var next = tween._next;
-			tween._paused = true;
-			tween.target&&(tween.target.tweenjs_count = 0);
-			tween._next = tween._prev = null;
-			tween = next;
-		}
-		Tween._tweenHead = Tween._tweenTail = null;
-	};
-
-	/**
-	 * Indicates whether there are any active tweens on the target object (if specified) or in general.
-	 * @method hasActiveTweens
-	 * @param {Object} [target] The target to check for active tweens. If not specified, the return value will indicate
-	 * if there are any active tweens on any target.
-	 * @return {Boolean} Indicates if there are active tweens.
-	 * @static
-	 */
-	Tween.hasActiveTweens = function(target) {
-		if (target) { return !!target.tweenjs_count; }
-		return !!Tween._tweenHead;
 	};
 
 	/**
