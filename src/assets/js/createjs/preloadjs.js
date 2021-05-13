@@ -860,28 +860,8 @@ this.createjs = this.createjs || {};
 		return s.el("a");
 	}
 
-	s.svg = function() {
-		return s.el("svg");
-	}
-
-	s.object = function() {
-		return s.el("object");
-	}
-
-	s.image = function() {
-		return s.el("image");
-	}
-
 	s.img = function() {
 		return s.el("img");
-	}
-
-	s.link = function() {
-		return s.el("link");
-	}
-
-	s.text = function(value) {
-		return document.createTextNode(value);
 	}
 
 	s.el = function(name) {
@@ -1033,133 +1013,15 @@ this.createjs = this.createjs || {};
 		s.container.appendChild(el);
 	}
 
-	s.getHead = function () {
-		return document.head || document.getElementsByTagName("head")[0];
-	}
-
 	s.getBody = function () {
 		return document.body || document.getElementsByTagName("body")[0];
 	}
 
-	s.removeChild = function(el) {
-		if (el.parent) {
-			el.parent.removeChild(el);
-		}
-	}
-
-	/**
-	 * Check if item is a valid HTMLImageElement
-	 * @method isImageTag
-	 * @param {Object} item
-	 * @returns {Boolean}
-	 * @static
-	 */
 	s.isImageTag = function(item) {
 		return item instanceof HTMLImageElement;
 	};
 
-	/**
-	 * Check if item is a valid HTMLAudioElement
-	 * @method isAudioTag
-	 * @param {Object} item
-	 * @returns {Boolean}
-	 * @static
-	 */
-	s.isAudioTag = function(item) {
-		if (window.HTMLAudioElement) {
-			return item instanceof HTMLAudioElement;
-		} else {
-			return false;
-		}
-	};
-
-	/**
-	 * Check if item is a valid HTMLVideoElement
-	 * @method isVideoTag
-	 * @param {Object} item
-	 * @returns {Boolean}
-	 * @static
-	 */
-	s.isVideoTag = function(item) {
-		if (window.HTMLVideoElement) {
-			return item instanceof HTMLVideoElement;
-		} else {
-			return false;
-		}
-	};
-
 	createjs.DomUtils = s;
-
-}());
-
-//##############################################################################
-// DataUtils.js
-//##############################################################################
-
-(function () {
-
-	/**
-	 * A few data utilities for formatting different data types.
-	 * @class DataUtils
-	 */
-	var s = {};
-
-	// static methods
-	/**
-	 * Parse XML using the DOM. This is required when preloading XML or SVG.
-	 * @method parseXML
-	 * @param {String} text The raw text or XML that is loaded by XHR.
-	 * @return {XML} An XML document
-	 * @static
-	 */
-	s.parseXML = function (text) {
-		var xml = null;
-		// CocoonJS does not support XML parsing with either method.
-
-		// Most browsers will use DOMParser
-		// IE fails on certain SVG files, so we have a fallback below.
-		try {
-			if (window.DOMParser) {
-				var parser = new DOMParser();
-				xml = parser.parseFromString(text, "text/xml");
-			}
-		} catch (e) {
-		}
-
-		// Fallback for IE support.
-		if (!xml) {
-			try {
-				xml = new ActiveXObject("Microsoft.XMLDOM");
-				xml.async = false;
-				xml.loadXML(text);
-			} catch (e) {
-				xml = null;
-			}
-		}
-
-		return xml;
-	};
-
-	/**
-	 * Parse a string into an Object.
-	 * @method parseJSON
-	 * @param {String} value The loaded JSON string
-	 * @returns {Object} A JavaScript object.
-	 */
-	s.parseJSON = function (value) {
-		if (value == null) {
-			return null;
-		}
-
-		try {
-			return JSON.parse(value);
-		} catch (e) {
-			// TODO; Handle this with a custom error?
-			throw e;
-		}
-	};
-
-	createjs.DataUtils = s;
 
 }());
 
@@ -1584,50 +1446,6 @@ this.createjs = this.createjs || {};
 	 * @class RequestUtils
 	 */
 	var s = {};
-
-	/**
-	 * Determine if a specific type should be loaded as a binary file. Currently, only images and items marked
-	 * specifically as "binary" are loaded as binary. Note that audio is <b>not</b> a binary type, as we can not play
-	 * back using an audio tag if it is loaded as binary. Plugins can change the item type to binary to ensure they get
-	 * a binary result to work with. Binary files are loaded using XHR2. Types are defined as static constants on
-	 * {{#crossLink "AbstractLoader"}}{{/crossLink}}.
-	 * @method isBinary
-	 * @param {String} type The item type.
-	 * @return {Boolean} If the specified type is binary.
-	 * @static
-	 */
-	s.isBinary = function (type) {
-		switch (type) {
-			case createjs.Types.IMAGE:
-			case createjs.Types.BINARY:
-				return true;
-			default:
-				return false;
-		}
-	};
-
-	/**
-	 * Determine if a specific type is a text-based asset, and should be loaded as UTF-8.
-	 * @method isText
-	 * @param {String} type The item type.
-	 * @return {Boolean} If the specified type is text.
-	 * @static
-	 */
-	s.isText = function (type) {
-		switch (type) {
-			case createjs.Types.TEXT:
-			case createjs.Types.JSON:
-			case createjs.Types.MANIFEST:
-			case createjs.Types.XML:
-			case createjs.Types.CSS:
-			case createjs.Types.SVG:
-			case createjs.Types.JAVASCRIPT:
-			case createjs.Types.SPRITESHEET:
-				return true;
-			default:
-				return false;
-		}
-	};
 
 	/**
 	 * Determine the type of the object using common extensions. Note that the type can be passed in with the load item

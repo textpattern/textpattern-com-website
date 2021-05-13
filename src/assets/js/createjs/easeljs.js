@@ -506,67 +506,6 @@ this.createjs = this.createjs||{};
 		return pt;
 	};
 
-	/**
-	 * Decomposes the matrix into transform properties (x, y, scaleX, scaleY, and rotation). Note that these values
-	 * may not match the transform properties you used to generate the matrix, though they will produce the same visual
-	 * results.
-	 * @method decompose
-	 * @param {Object} target The object to apply the transform properties to. If null, then a new object will be returned.
-	 * @return {Object} The target, or a new generic object with the transform properties applied.
-	*/
-	p.decompose = function(target) {
-		// TODO: it would be nice to be able to solve for whether the matrix can be decomposed into only scale/rotation even when scale is negative
-		if (target == null) { target = {}; }
-		target.x = this.tx;
-		target.y = this.ty;
-		target.scaleX = Math.sqrt(this.a * this.a + this.b * this.b);
-		target.scaleY = Math.sqrt(this.c * this.c + this.d * this.d);
-
-		var skewX = Math.atan2(-this.c, this.d);
-		var skewY = Math.atan2(this.b, this.a);
-
-		var delta = Math.abs(1-skewX/skewY);
-		if (delta < 0.00001) { // effectively identical, can use rotation:
-			target.rotation = skewY/Matrix2D.DEG_TO_RAD;
-			if (this.a < 0 && this.d >= 0) {
-				target.rotation += (target.rotation <= 0) ? 180 : -180;
-			}
-			target.skewX = target.skewY = 0;
-		} else {
-			target.skewX = skewX/Matrix2D.DEG_TO_RAD;
-			target.skewY = skewY/Matrix2D.DEG_TO_RAD;
-		}
-		return target;
-	};
-
-	/**
-	 * Copies all properties from the specified matrix to this matrix.
-	 * @method copy
-	 * @param {Matrix2D} matrix The matrix to copy properties from.
-	 * @return {Matrix2D} This matrix. Useful for chaining method calls.
-	*/
-	p.copy = function(matrix) {
-		return this.setValues(matrix.a, matrix.b, matrix.c, matrix.d, matrix.tx, matrix.ty);
-	};
-
-	/**
-	 * Returns a clone of the Matrix2D instance.
-	 * @method clone
-	 * @return {Matrix2D} a clone of the Matrix2D instance.
-	 **/
-	p.clone = function() {
-		return new Matrix2D(this.a, this.b, this.c, this.d, this.tx, this.ty);
-	};
-
-	/**
-	 * Returns a string representation of this object.
-	 * @method toString
-	 * @return {String} a string representation of the instance.
-	 **/
-	p.toString = function() {
-		return "[Matrix2D (a="+this.a+" b="+this.b+" c="+this.c+" d="+this.d+" tx="+this.tx+" ty="+this.ty+")]";
-	};
-
 	// this has to be populated after the class is defined:
 	Matrix2D.identity = new Matrix2D();
 
@@ -2198,58 +2137,6 @@ this.createjs = this.createjs||{};
 	};
 
 	/**
-	 * Sets the stroke style. Like all drawing methods, this can be chained, so you can define
-	 * the stroke style and color in a single line of code like so:
-	 *
-	 * 	myGraphics.setStrokeStyle(8,"round").beginStroke("#F00");
-	 *
-	 * A tiny API method "ss" also exists.
-	 * @method setStrokeStyle
-	 * @param {Number} thickness The width of the stroke.
-	 * @param {String | Number} [caps=0] Indicates the type of caps to use at the end of lines. One of butt,
-	 * round, or square. Defaults to "butt". Also accepts the values 0 (butt), 1 (round), and 2 (square) for use with
-	 * the tiny API.
-	 * @param {String | Number} [joints=0] Specifies the type of joints that should be used where two lines meet.
-	 * One of bevel, round, or miter. Defaults to "miter". Also accepts the values 0 (miter), 1 (round), and 2 (bevel)
-	 * for use with the tiny API.
-	 * @param {Number} [miterLimit=10] If joints is set to "miter", then you can specify a miter limit ratio which
-	 * controls at what point a mitered joint will be clipped.
-	 * @param {Boolean} [ignoreScale=false] If true, the stroke will be drawn at the specified thickness regardless
-	 * of active transformations.
-	 * @return {Graphics} The Graphics instance the method is called on (useful for chaining calls.)
-	 * @chainable
-	 **/
-	p.setStrokeStyle = function(thickness, caps, joints, miterLimit, ignoreScale) {
-		this._updateInstructions(true);
-		this._strokeStyle = this.command = new G.StrokeStyle(thickness, caps, joints, miterLimit, ignoreScale);
-
-		// ignoreScale lives on Stroke, not StrokeStyle, so we do a little trickery:
-		if (this._stroke) { this._stroke.ignoreScale = ignoreScale; }
-		this._strokeIgnoreScale = ignoreScale;
-		return this;
-	};
-
-	/**
-	 * Sets or clears the stroke dash pattern.
-	 *
-	 * 	myGraphics.setStrokeDash([20, 10], 0);
-	 *
-	 * A tiny API method `sd` also exists.
-	 * @method setStrokeDash
-	 * @param {Array} [segments] An array specifying the dash pattern, alternating between line and gap.
-	 * For example, `[20,10]` would create a pattern of 20 pixel lines with 10 pixel gaps between them.
-	 * Passing null or an empty array will clear the existing stroke dash.
-	 * @param {Number} [offset=0] The offset of the dash pattern. For example, you could increment this value to create a "marching ants" effect.
-	 * @return {Graphics} The Graphics instance the method is called on (useful for chaining calls.)
-	 * @chainable
-	 **/
-	p.setStrokeDash = function(segments, offset) {
-		this._updateInstructions(true);
-		this._strokeDash = this.command = new G.StrokeDash(segments, offset);
-		return this;
-	};
-
-	/**
 	 * Begins a stroke with the specified color. This ends the current sub-path. A tiny API method "s" also exists.
 	 * @method beginStroke
 	 * @param {String} color A CSS compatible color value (ex. "#FF0000", "red", or "rgba(255,0,0,0.5)"). Setting to
@@ -2259,76 +2146,6 @@ this.createjs = this.createjs||{};
 	 **/
 	p.beginStroke = function(color) {
 		return this._setStroke(color ? new G.Stroke(color) : null);
-	};
-
-	/**
-	 * Begins a linear gradient stroke defined by the line (x0, y0) to (x1, y1). This ends the current sub-path. For
-	 * example, the following code defines a black to white vertical gradient ranging from 20px to 120px, and draws a
-	 * square to display it:
-	 *
-	 *      myGraphics.setStrokeStyle(10).
-	 *          beginLinearGradientStroke(["#000","#FFF"], [0, 1], 0, 20, 0, 120).drawRect(20, 20, 120, 120);
-	 *
-	 * A tiny API method "ls" also exists.
-	 * @method beginLinearGradientStroke
-	 * @param {Array} colors An array of CSS compatible color values. For example, ["#F00","#00F"] would define
-	 * a gradient drawing from red to blue.
-	 * @param {Array} ratios An array of gradient positions which correspond to the colors. For example, [0.1,
-	 * 0.9] would draw the first color to 10% then interpolating to the second color at 90%.
-	 * @param {Number} x0 The position of the first point defining the line that defines the gradient direction and size.
-	 * @param {Number} y0 The position of the first point defining the line that defines the gradient direction and size.
-	 * @param {Number} x1 The position of the second point defining the line that defines the gradient direction and size.
-	 * @param {Number} y1 The position of the second point defining the line that defines the gradient direction and size.
-	 * @return {Graphics} The Graphics instance the method is called on (useful for chaining calls.)
-	 * @chainable
-	 **/
-	p.beginLinearGradientStroke = function(colors, ratios, x0, y0, x1, y1) {
-		return this._setStroke(new G.Stroke().linearGradient(colors, ratios, x0, y0, x1, y1));
-	};
-
-	/**
-	 * Begins a radial gradient stroke. This ends the current sub-path. For example, the following code defines a red to
-	 * blue radial gradient centered at (100, 100), with a radius of 50, and draws a rectangle to display it:
-	 *
-	 *      myGraphics.setStrokeStyle(10)
-	 *          .beginRadialGradientStroke(["#F00","#00F"], [0, 1], 100, 100, 0, 100, 100, 50)
-	 *          .drawRect(50, 90, 150, 110);
-	 *
-	 * A tiny API method "rs" also exists.
-	 * @method beginRadialGradientStroke
-	 * @param {Array} colors An array of CSS compatible color values. For example, ["#F00","#00F"] would define
-	 * a gradient drawing from red to blue.
-	 * @param {Array} ratios An array of gradient positions which correspond to the colors. For example, [0.1,
-	 * 0.9] would draw the first color to 10% then interpolating to the second color at 90%, then draw the second color
-	 * to 100%.
-	 * @param {Number} x0 Center position of the inner circle that defines the gradient.
-	 * @param {Number} y0 Center position of the inner circle that defines the gradient.
-	 * @param {Number} r0 Radius of the inner circle that defines the gradient.
-	 * @param {Number} x1 Center position of the outer circle that defines the gradient.
-	 * @param {Number} y1 Center position of the outer circle that defines the gradient.
-	 * @param {Number} r1 Radius of the outer circle that defines the gradient.
-	 * @return {Graphics} The Graphics instance the method is called on (useful for chaining calls.)
-	 * @chainable
-	 **/
-	p.beginRadialGradientStroke = function(colors, ratios, x0, y0, r0, x1, y1, r1) {
-		return this._setStroke(new G.Stroke().radialGradient(colors, ratios, x0, y0, r0, x1, y1, r1));
-	};
-
-	/**
-	 * Begins a pattern fill using the specified image. This ends the current sub-path. Note that unlike bitmap fills,
-	 * strokes do not currently support a matrix parameter due to limitations in the canvas API. A tiny API method "bs"
-	 * also exists.
-	 * @method beginBitmapStroke
-	 * @param {HTMLImageElement | HTMLCanvasElement | HTMLVideoElement} image The Image, Canvas, or Video object to use
-	 * as the pattern. Must be loaded prior to creating a bitmap fill, or the fill will be empty.
-	 * @param {String} [repetition=repeat] Optional. Indicates whether to repeat the image in the fill area. One of
-	 * "repeat", "repeat-x", "repeat-y", or "no-repeat". Defaults to "repeat".
-	 * @return {Graphics} The Graphics instance the method is called on (useful for chaining calls.)
-	 * @chainable
-	 **/
-	p.beginBitmapStroke = function(image, repetition) {
-		// NOTE: matrix is not supported for stroke because transforms on strokes also affect the drawn stroke width.
-		return this._setStroke(new G.Stroke().bitmap(image, repetition));
 	};
 
 	/**
