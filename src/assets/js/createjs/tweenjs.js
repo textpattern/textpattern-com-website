@@ -866,7 +866,6 @@ this.createjs = this.createjs||{};
 
 		if (props) {
 			this.pluginData = props.pluginData;
-			if (props.override) { Tween.removeTweens(target); }
 		}
 		if (!this.pluginData) { this.pluginData = {}; }
 
@@ -969,41 +968,6 @@ this.createjs = this.createjs||{};
 		arr.splice(i,0,plugin);
 	};
 
-	/**
-	 * Registers or unregisters a tween with the ticking system.
-	 * @method _register
-	 * @param {Tween} tween The tween instance to register or unregister.
-	 * @param {Boolean} paused If `false`, the tween is registered. If `true` the tween is unregistered.
-	 * @static
-	 * @protected
-	 */
-	Tween._register = function(tween, paused) {
-		var target = tween.target;
-		if (!paused && tween._paused) {
-			// TODO: this approach might fail if a dev is using sealed objects
-			if (target) { target.tweenjs_count = target.tweenjs_count ? target.tweenjs_count+1 : 1; }
-			var tail = Tween._tweenTail;
-			if (!tail) { Tween._tweenHead = Tween._tweenTail = tween; }
-			else {
-				Tween._tweenTail = tail._next = tween;
-				tween._prev = tail;
-			}
-			if (!Tween._inited && createjs.Ticker) { createjs.Ticker.addEventListener("tick", Tween); Tween._inited = true; }
-		} else if (paused && !tween._paused) {
-			if (target) { target.tweenjs_count--; }
-			var next = tween._next, prev = tween._prev;
-
-			if (next) { next._prev = prev; }
-			else { Tween._tweenTail = prev; } // was tail
-			if (prev) { prev._next = next; }
-			else { Tween._tweenHead = next; } // was head.
-
-			tween._next = tween._prev = null;
-		}
-		tween._paused = paused;
-	};
-
-
 // events:
 
 // public methods:
@@ -1070,61 +1034,6 @@ this.createjs = this.createjs||{};
 		return this._addAction(scope||this.target, callback, params||[this]);
 	};
 
-	/**
-	 * Adds an action to set the specified props on the specified target. If `target` is null, it will use this tween's
-	 * target. Note that for properties on the target object, you should consider using a zero duration {{#crossLink "Tween/to"}}{{/crossLink}}
-	 * operation instead so the values are registered as tweened props.
-	 * <h4>Example</h4>
-	 *
-	 *	myTween.wait(1000).set({visible:false}, foo);
-	 *
-	 * @method set
-	 * @param {Object} props The properties to set (ex. `{visible:false}`).
-	 * @param {Object} [target] The target to set the properties on. If omitted, they will be set on the tween's target.
-	 * @return {Tween} This tween instance (for chaining calls).
-	 * @chainable
-	 */
-	p.set = function(props, target) {
-		return this._addAction(target||this.target, this._set, [props]);
-	};
-
-	/**
-	 * Adds an action to play (unpause) the specified tween. This enables you to sequence multiple tweens.
-	 * <h4>Example</h4>
-	 *
-	 *	myTween.to({x:100}, 500).play(otherTween);
-	 *
-	 * @method play
-	 * @param {Tween} [tween] The tween to play. Defaults to this tween.
-	 * @return {Tween} This tween instance (for chaining calls).
-	 * @chainable
-	 */
-	p.play = function(tween) {
-		return this._addAction(tween||this, this._set, [{paused:false}]);
-	};
-
-	/**
-	 * Adds an action to pause the specified tween.
-	 *
-	 * 	myTween.pause(otherTween).to({alpha:1}, 1000).play(otherTween);
-	 *
-	 * Note that this executes at the end of a tween update, so the tween may advance beyond the time the pause
-	 * action was inserted at. For example:
-	 *
-	 * myTween.to({foo:0}, 1000).pause().to({foo:1}, 1000);
-	 *
-	 * At 60fps the tween will advance by ~16ms per tick, if the tween above was at 999ms prior to the current tick, it
-	 * will advance to 1015ms (15ms into the second "step") and then pause.
-	 *
-	 * @method pause
-	 * @param {Tween} [tween] The tween to pause. Defaults to this tween.
-	 * @return {Tween} This tween instance (for chaining calls)
-	 * @chainable
-	 */
-	p.pause = function(tween) {
-		return this._addAction(tween||this, this._set, [{paused:true}]);
-	};
-
 	// tiny api (primarily for tool output):
 	p.w = p.wait;
 	p.t = p.to;
@@ -1150,27 +1059,6 @@ this.createjs = this.createjs||{};
 
 
 // private methods:
-	/**
-	 * Adds a plugin to this tween.
-	 * @method _addPlugin
-	 * @param {Object} plugin
-	 * @protected
-	 */
-	p._addPlugin = function(plugin) {
-		var ids = this._pluginIds || (this._pluginIds = {}), id = plugin.ID;
-		if (!id || ids[id]) { return; } // already added
-
-		ids[id] = true;
-		var plugins = this._plugins || (this._plugins = []), priority = plugin.priority || 0;
-		for (var i=0,l=plugins.length; i<l; i++) {
-			if (priority < plugins[i].priority) {
-				plugins.splice(i,0,plugin);
-				return;
-			}
-		}
-		plugins.push(plugin);
-	};
-
 	// Docced in AbstractTween
 	p._updatePosition = function(jump, end) {
 		var step = this._stepHead.next, t=this.position, d=this.duration;
@@ -1499,65 +1387,6 @@ this.createjs = this.createjs||{};
 		return tween;
 	};
 
-	/**
-	 * Removes one or more tweens from this timeline.
-	 * @method removeTween
-	 * @param {Tween} ...tween The tween(s) to remove. Accepts multiple arguments.
-	 * @return Boolean Returns `true` if all of the tweens were successfully removed.
-	 **/
-	p.removeTween = function(tween) {
-		var l = arguments.length;
-		if (l > 1) {
-			var good = true;
-			for (var i=0; i<l; i++) { good = good && this.removeTween(arguments[i]); }
-			return good;
-		} else if (l === 0) { return true; }
-
-		var tweens = this.tweens;
-		var i = tweens.length;
-		while (i--) {
-			if (tweens[i] === tween) {
-				tweens.splice(i, 1);
-				tween._parent = null;
-				if (tween.duration >= this.duration) { this.updateDuration(); }
-				return true;
-			}
-		}
-		return false;
-	};
-
-	/**
-	 * Recalculates the duration of the timeline. The duration is automatically updated when tweens are added or removed,
-	 * but this method is useful if you modify a tween after it was added to the timeline.
-	 * @method updateDuration
-	 **/
-	p.updateDuration = function() {
-		this.duration = 0;
-		for (var i=0,l=this.tweens.length; i<l; i++) {
-			var tween = this.tweens[i];
-			var d = tween.duration;
-			if (tween.loop > 0) { d *= tween.loop+1; }
-			if (d > this.duration) { this.duration = d; }
-		}
-	};
-
-	/**
-	* Returns a string representation of this object.
-	* @method toString
-	* @return {String} a string representation of the instance.
-	**/
-	p.toString = function() {
-		return "[Timeline]";
-	};
-
-	/**
-	 * @method clone
-	 * @protected
-	 **/
-	p.clone = function() {
-		throw("Timeline can not be cloned.")
-	};
-
 // private methods:
 
 	// Docced in AbstractTween
@@ -1870,76 +1699,6 @@ this.createjs = this.createjs||{};
 	 * @return {Number}
 	 **/
 	Ease.backInOut = Ease.getBackInOut(1.7);
-
-	/**
-	 * @method circIn
-	 * @param {Number} t
-	 * @static
-	 * @return {Number}
-	 **/
-	Ease.circIn = function(t) {
-		return -(Math.sqrt(1-t*t)- 1);
-	};
-
-	/**
-	 * @method circOut
-	 * @param {Number} t
-	 * @static
-	 * @return {Number}
-	 **/
-	Ease.circOut = function(t) {
-		return Math.sqrt(1-(--t)*t);
-	};
-
-	/**
-	 * @method circInOut
-	 * @param {Number} t
-	 * @static
-	 * @return {Number}
-	 **/
-	Ease.circInOut = function(t) {
-		if ((t*=2) < 1) return -0.5*(Math.sqrt(1-t*t)-1);
-		return 0.5*(Math.sqrt(1-(t-=2)*t)+1);
-	};
-
-	/**
-	 * @method bounceIn
-	 * @param {Number} t
-	 * @static
-	 * @return {Number}
-	 **/
-	Ease.bounceIn = function(t) {
-		return 1-Ease.bounceOut(1-t);
-	};
-
-	/**
-	 * @method bounceOut
-	 * @param {Number} t
-	 * @static
-	 * @return {Number}
-	 **/
-	Ease.bounceOut = function(t) {
-		if (t < 1/2.75) {
-			return (7.5625*t*t);
-		} else if (t < 2/2.75) {
-			return (7.5625*(t-=1.5/2.75)*t+0.75);
-		} else if (t < 2.5/2.75) {
-			return (7.5625*(t-=2.25/2.75)*t+0.9375);
-		} else {
-			return (7.5625*(t-=2.625/2.75)*t +0.984375);
-		}
-	};
-
-	/**
-	 * @method bounceInOut
-	 * @param {Number} t
-	 * @static
-	 * @return {Number}
-	 **/
-	Ease.bounceInOut = function(t) {
-		if (t<0.5) return Ease.bounceIn (t*2) * .5;
-		return Ease.bounceOut(t*2-1)*0.5+0.5;
-	};
 
 	/**
 	 * Configurable elastic ease.

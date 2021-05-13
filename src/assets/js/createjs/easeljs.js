@@ -5446,25 +5446,6 @@ this.createjs = this.createjs||{};
 		while (frames--) { this._updateTimeline(this._rawPosition+1, false); }
 	};
 
-	/**
-	 * MovieClip instances cannot be cloned.
-	 * @method clone
-	 **/
-	p.clone = function() {
-		// TODO: add support for this? Need to clone the Timeline & retarget tweens - pretty complex.
-		throw("MovieClip cannot be cloned.");
-	};
-
-	/**
-	 * Returns a string representation of this object.
-	 * @method toString
-	 * @return {String} a string representation of the instance.
-	 **/
-	p.toString = function() {
-		return "[MovieClip (name="+  this.name +")]";
-	};
-
-
 // private methods:
 	/**
 	 * Docced in superclass.
@@ -5521,19 +5502,6 @@ this.createjs = this.createjs||{};
 		// update timeline position, ignoring actions if this is a graphic.
 		tl.loop = this.loop; // TODO: should we maintain this on MovieClip, or just have it on timeline?
 		tl.setPosition(rawPosition, synced || !this.actionsEnabled, jump, this._bound_resolveState);
-	};
-
-	/**
-	 * Renders position 0 without running actions or updating _rawPosition.
-	 * Primarily used by Animate CC to build out the first frame in the constructor of MC symbols.
-	 * NOTE: not tested when run after the MC advances past the first frame.
-	 * @method _renderFirstFrame
-	 * @protected
-	 **/
-	p._renderFirstFrame = function() {
-		var tl = this.timeline, pos = tl.rawPosition;
-		tl.setPosition(0, true, true, this._bound_resolveState);
-		tl.rawPosition = pos;
 	};
 
 	/**
