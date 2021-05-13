@@ -36,28 +36,7 @@ this.createjs = this.createjs || {};
 (function () {
 	"use strict";
 
-	/**
-	 * Static class holding library specific information such as the version and buildDate of the library.
-	 * @class PreloadJS
-	 **/
 	var s = createjs.PreloadJS = createjs.PreloadJS || {};
-
-	/**
-	 * The version string for this release.
-	 * @property version
-	 * @type {String}
-	 * @static
-	 **/
-	s.version = /*=version*/"1.0.0"; // injected by build process
-
-	/**
-	 * The build date for this release in UTC format.
-	 * @property buildDate
-	 * @type {String}
-	 * @static
-	 **/
-	s.buildDate = /*=date*/"Thu, 14 Sep 2017 19:47:47 GMT"; // injected by build process
-
 })();
 
 //##############################################################################
@@ -1989,27 +1968,6 @@ this.createjs = this.createjs || {};
 	};
 
 	/**
-	 * Formats an object into a query string for either a POST or GET request.
-	 * @method formatQueryString
-	 * @param {Object} data The data to convert to a query string.
-	 * @param {Array} [query] Existing name/value pairs to append on to this query.
-	 * @static
-	 */
-	s.formatQueryString = function (data, query) {
-		if (data == null) {
-			throw new Error("You must specify data.");
-		}
-		var params = [];
-		for (var n in data) {
-			params.push(n + "=" + escape(data[n]));
-		}
-		if (query) {
-			params = params.concat(query);
-		}
-		return params.join("&");
-	};
-
-	/**
 	 * A utility method that builds a file path using a source and a data object, and formats it into a new path.
 	 * @method buildURI
 	 * @param {String} src The source path to add values to.
@@ -2029,12 +1987,6 @@ this.createjs = this.createjs || {};
 		if (idx != -1) {
 			var q = src.slice(idx + 1);
 			query = query.concat(q.split("&"));
-		}
-
-		if (idx != -1) {
-			return src.slice(0, idx) + "?" + this.formatQueryString(data, query);
-		} else {
-			return src + "?" + this.formatQueryString(data, query);
 		}
 	};
 
@@ -3887,17 +3839,6 @@ this.createjs = this.createjs || {};
 		// Set up a timeout if we don't have XHR2
 		if (this._xhrLevel == 1) {
 			this._loadTimeout = setTimeout(createjs.proxy(this._handleTimeout, this), this._item.loadTimeout);
-		}
-
-		// Sometimes we get back 404s immediately, particularly when there is a cross origin request.  // note this does not catch in Chrome
-		try {
-			if (!this._item.values) {
-				this._request.send();
-			} else {
-				this._request.send(createjs.URLUtils.formatQueryString(this._item.values));
-			}
-		} catch (error) {
-			this.dispatchEvent(new createjs.ErrorEvent("XHR_SEND", null, error));
 		}
 	};
 
