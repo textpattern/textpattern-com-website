@@ -12832,25 +12832,6 @@ this.createjs = this.createjs||{};
 
 
 // getter / setters:
-	/**
-	 * Use the {{#crossLink "MovieClip/labels:property"}}{{/crossLink}} property instead.
-	 * @method _getLabels
-	 * @protected
-	 * @return {Array}
-	 **/
-	p._getLabels = function() {
-		return this.timeline.getLabels();
-	};
-
-	/**
-	 * Use the {{#crossLink "MovieClip/currentLabel:property"}}{{/crossLink}} property instead.
-	 * @method _getCurrentLabel
-	 * @protected
-	 * @return {String}
-	 **/
-	p._getCurrentLabel = function() {
-		return this.timeline.currentLabel;
-	};
 
 	/**
 	 * Use the {{#crossLink "MovieClip/duration:property"}}{{/crossLink}} property instead.
@@ -12891,8 +12872,6 @@ this.createjs = this.createjs||{};
 	 **/
 	try {
 		Object.defineProperties(p, {
-			labels: { get: p._getLabels },
-			currentLabel: { get: p._getCurrentLabel },
 			totalFrames: { get: p._getDuration },
 			duration: { get: p._getDuration }
 			// TODO: can we just proxy .currentFrame to tl.position as well? Ditto for .loop (or just remove entirely).

@@ -1516,46 +1516,12 @@ this.createjs = this.createjs||{};
 	};
 
 	/**
-	 * Use the {{#crossLink "AbstractTween/currentLabel:property"}}{{/crossLink}} property instead.
-	 * @method _getCurrentLabel
-	 * @protected
-	 * @return {String} The name of the current label or null if there is no label
-	 **/
-	p._getCurrentLabel = function(pos) {
-		var labels = this.getLabels();
-		if (pos == null) { pos = this.position; }
-		for (var i = 0, l = labels.length; i<l; i++) { if (pos < labels[i].position) { break; } }
-		return (i===0) ? null : labels[i-1].label;
-	};
-
-	/**
 	 * Pauses or unpauses the tween. A paused tween is removed from the global registry and is eligible for garbage
 	 * collection if no other references to it exist.
 	 * @property paused
 	 * @type Boolean
 	 * @readonly
 	 **/
-
-	/**
-	 * Returns the name of the label on or immediately before the current position. For example, given a tween with
-	 * two labels, "first" on frame index 4, and "second" on frame 8, `currentLabel` would return:
-	 * <UL>
-	 * 		<LI>null if the current position is 2.</LI>
-	 * 		<LI>"first" if the current position is 4.</LI>
-	 * 		<LI>"first" if the current position is 7.</LI>
-	 * 		<LI>"second" if the current position is 15.</LI>
-	 * </UL>
-	 * @property currentLabel
-	 * @type String
-	 * @readonly
-	 **/
-
-	try {
-		Object.defineProperties(p, {
-			paused: { set: p._setPaused, get: p._getPaused },
-			currentLabel: { get: p._getCurrentLabel }
-		});
-	} catch (e) {}
 
 // public methods:
 	/**
@@ -1614,43 +1580,6 @@ this.createjs = this.createjs||{};
 		if (end) { this.dispatchEvent("complete"); }
 	};
 
-	/**
-	 * Calculates a normalized position based on a raw position. For example, given a tween with a duration of 3000ms set to loop:
-	 * 	console.log(myTween.calculatePosition(3700); // 700
-	 * @method calculatePosition
-	 * @param {Number} rawPosition A raw position.
-	 */
-	p.calculatePosition = function(rawPosition) {
-		// largely duplicated from setPosition, but necessary to avoid having to instantiate generic objects to pass values (end, loop, position) back.
-		var d=this.duration, loopCount=this.loop, loop=0, t=0;
-
-		if (d===0) { return 0; }
-		if (loopCount !== -1 && rawPosition >= loopCount*d+d) { t = d; loop = loopCount } // end
-		else if (rawPosition < 0) { t = 0; }
-		else { loop = rawPosition/d|0; t = rawPosition-loop*d;  }
-
-		var rev = !this.reversed !== !(this.bounce && loop%2); // current loop is reversed
-		return rev ? d-t : t;
-	};
-
-	/**
-	 * Returns a list of the labels defined on this tween sorted by position.
-	 * @method getLabels
-	 * @return {Array[Object]} A sorted array of objects with label and position properties.
-	 **/
-	p.getLabels = function() {
-		var list = this._labelList;
-		if (!list) {
-			list = this._labelList = [];
-			var labels = this._labels;
-			for (var n in labels) {
-				list.push({label:n, position:labels[n]});
-			}
-			list.sort(function (a,b) { return a.position- b.position; });
-		}
-		return list;
-	};
-
 
 	/**
 	 * Defines labels for use with gotoAndPlay/Stop. Overwrites any previously set labels.
@@ -1661,44 +1590,6 @@ this.createjs = this.createjs||{};
 	p.setLabels = function(labels) {
 		this._labels = labels;
 		this._labelList = null;
-	};
-
-	/**
-	 * Adds a label that can be used with {{#crossLink "Timeline/gotoAndPlay"}}{{/crossLink}}/{{#crossLink "Timeline/gotoAndStop"}}{{/crossLink}}.
-	 * @method addLabel
-	 * @param {String} label The label name.
-	 * @param {Number} position The position this label represents.
-	 **/
-	p.addLabel = function(label, position) {
-		if (!this._labels) { this._labels = {}; }
-		this._labels[label] = position;
-		var list = this._labelList;
-		if (list) {
-			for (var i= 0,l=list.length; i<l; i++) { if (position < list[i].position) { break; } }
-			list.splice(i, 0, {label:label, position:position});
-		}
-	};
-
-	/**
-	 * Unpauses this timeline and jumps to the specified position or label.
-	 * @method gotoAndPlay
-	 * @param {String|Number} positionOrLabel The position in milliseconds (or ticks if `useTicks` is `true`)
-	 * or label to jump to.
-	 **/
-	p.gotoAndPlay = function(positionOrLabel) {
-		this.paused = false;
-		this._goto(positionOrLabel);
-	};
-
-	/**
-	 * Pauses this timeline and jumps to the specified position or label.
-	 * @method gotoAndStop
-	 * @param {String|Number} positionOrLabel The position in milliseconds (or ticks if `useTicks` is `true`) or label
-	 * to jump to.
-	 **/
-	p.gotoAndStop = function(positionOrLabel) {
-		this.paused = true;
-		this._goto(positionOrLabel);
 	};
 
 	/**
@@ -1723,23 +1614,6 @@ this.createjs = this.createjs||{};
 	p._init = function(props) {
 		if (!props || !props.paused) { this.paused = false; }
 		if (props&&(props.position!=null)) { this.setPosition(props.position); }
-	};
-
-	/**
-	 * @method _updatePosition
-	 * @protected
-	 */
-	p._updatePosition = function(jump, end) {
-		// abstract.
-	};
-
-	/**
-	 * @method _goto
-	 * @protected
-	 **/
-	p._goto = function(positionOrLabel) {
-		var pos = this.resolve(positionOrLabel);
-		if (pos != null) { this.setPosition(pos, false, true); }
 	};
 
 	/**
@@ -2191,27 +2065,6 @@ this.createjs = this.createjs||{};
 		if (duration == null || duration < 0) { duration = 0; }
 		var step = this._addStep(+duration, null, ease);
 		this._appendProps(props, step);
-		return this;
-	};
-
-	/**
-	 * Adds a label that can be used with {{#crossLink "Tween/gotoAndPlay"}}{{/crossLink}}/{{#crossLink "Tween/gotoAndStop"}}{{/crossLink}}
-	 * at the current point in the tween. For example:
-	 *
-	 * 	var tween = createjs.Tween.get(foo)
-	 * 					.to({x:100}, 1000)
-	 * 					.label("myLabel")
-	 * 					.to({x:200}, 1000);
-	 * // ...
-	 * tween.gotoAndPlay("myLabel"); // would play from 1000ms in.
-	 *
-	 * @method addLabel
-	 * @param {String} label The label name.
-	 * @return {Tween} This tween instance (for chaining calls).
-	 * @chainable
-	 **/
-	p.label = function(name) {
-		this.addLabel(name, this.duration);
 		return this;
 	};
 
