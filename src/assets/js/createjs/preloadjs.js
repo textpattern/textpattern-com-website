@@ -1087,62 +1087,6 @@ this.createjs = this.createjs || {};
 		return info;
 	};
 
-	/**
-	 * A utility method that builds a file path using a source and a data object, and formats it into a new path.
-	 * @method buildURI
-	 * @param {String} src The source path to add values to.
-	 * @param {Object} [data] Object used to append values to this request as a query string. Existing parameters on the
-	 * path will be preserved.
-	 * @returns {string} A formatted string that contains the path and the supplied parameters.
-	 * @static
-	 */
-	s.buildURI = function (src, data) {
-		if (data == null) {
-			return src;
-		}
-
-		var query = [];
-		var idx = src.indexOf("?");
-
-		if (idx != -1) {
-			var q = src.slice(idx + 1);
-			query = query.concat(q.split("&"));
-		}
-	};
-
-	/**
-	 * @method isCrossDomain
-	 * @param {LoadItem|Object} item A load item with a `src` property.
-	 * @return {Boolean} If the load item is loading from a different domain than the current location.
-	 * @static
-	 */
-	s.isCrossDomain = function (item) {
-		var target = createjs.Elements.a();
-		target.href = item.src;
-
-		var host = createjs.Elements.a();
-		host.href = location.href;
-
-		var crossdomain = (target.hostname != "") &&
-			(target.port != host.port ||
-			target.protocol != host.protocol ||
-			target.hostname != host.hostname);
-		return crossdomain;
-	};
-
-	/**
-	 * @method isLocal
-	 * @param {LoadItem|Object} item A load item with a `src` property
-	 * @return {Boolean} If the load item is loading from the "file:" protocol. Assume that the host must be local as
-	 * well.
-	 * @static
-	 */
-	s.isLocal = function (item) {
-		var target = createjs.Elements.a();
-		target.href = item.src;
-		return target.hostname == "" && target.protocol == "file:";
-	};
-
 	createjs.URLUtils = s;
 
 }());
