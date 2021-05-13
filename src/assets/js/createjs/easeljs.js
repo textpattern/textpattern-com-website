@@ -221,63 +221,6 @@ this.createjs = this.createjs||{};
 	};
 
 	/**
-	 * Prepends the specified matrix properties to this matrix.
-	 * This is the equivalent of multiplying `(specified matrix) * (this matrix)`.
-	 * All parameters are required.
-	 * @method prepend
-	 * @param {Number} a
-	 * @param {Number} b
-	 * @param {Number} c
-	 * @param {Number} d
-	 * @param {Number} tx
-	 * @param {Number} ty
-	 * @return {Matrix2D} This matrix. Useful for chaining method calls.
-	 **/
-	p.prepend = function(a, b, c, d, tx, ty) {
-		var a1 = this.a;
-		var c1 = this.c;
-		var tx1 = this.tx;
-
-		this.a  = a*a1+c*this.b;
-		this.b  = b*a1+d*this.b;
-		this.c  = a*c1+c*this.d;
-		this.d  = b*c1+d*this.d;
-		this.tx = a*tx1+c*this.ty+tx;
-		this.ty = b*tx1+d*this.ty+ty;
-		return this;
-	};
-
-	/**
-	 * Appends the specified matrix to this matrix.
-	 * This is the equivalent of multiplying `(this matrix) * (specified matrix)`.
-	 * @method appendMatrix
-	 * @param {Matrix2D} matrix
-	 * @return {Matrix2D} This matrix. Useful for chaining method calls.
-	 **/
-	p.appendMatrix = function(matrix) {
-		return this.append(matrix.a, matrix.b, matrix.c, matrix.d, matrix.tx, matrix.ty);
-	};
-
-	/**
-	 * Prepends the specified matrix to this matrix.
-	 * This is the equivalent of multiplying `(specified matrix) * (this matrix)`.
-	 * For example, you could calculate the combined transformation for a child object using:
-	 *
-	 * 	var o = myDisplayObject;
-	 * 	var mtx = o.getMatrix();
-	 * 	while (o = o.parent) {
-	 * 		// prepend each parent's transformation in turn:
-	 * 		o.prependMatrix(o.getMatrix());
-	 * 	}
-	 * @method prependMatrix
-	 * @param {Matrix2D} matrix
-	 * @return {Matrix2D} This matrix. Useful for chaining method calls.
-	 **/
-	p.prependMatrix = function(matrix) {
-		return this.prepend(matrix.a, matrix.b, matrix.c, matrix.d, matrix.tx, matrix.ty);
-	};
-
-	/**
 	 * Generates matrix properties from the specified display object transform properties, and appends them to this matrix.
 	 * For example, you can use this to generate a matrix representing the transformations of a display object:
 	 *
@@ -324,122 +267,6 @@ this.createjs = this.createjs||{};
 	};
 
 	/**
-	 * Generates matrix properties from the specified display object transform properties, and prepends them to this matrix.
-	 * For example, you could calculate the combined transformation for a child object using:
-	 *
-	 * 	var o = myDisplayObject;
-	 * 	var mtx = new createjs.Matrix2D();
-	 * 	do  {
-	 * 		// prepend each parent's transformation in turn:
-	 * 		mtx.prependTransform(o.x, o.y, o.scaleX, o.scaleY, o.rotation, o.skewX, o.skewY, o.regX, o.regY);
-	 * 	} while (o = o.parent);
-	 *
-	 * 	Note that the above example would not account for {{#crossLink "DisplayObject/transformMatrix:property"}}{{/crossLink}}
-	 * 	values. See {{#crossLink "Matrix2D/prependMatrix"}}{{/crossLink}} for an example that does.
-	 * @method prependTransform
-	 * @param {Number} x
-	 * @param {Number} y
-	 * @param {Number} scaleX
-	 * @param {Number} scaleY
-	 * @param {Number} rotation
-	 * @param {Number} skewX
-	 * @param {Number} skewY
-	 * @param {Number} regX Optional.
-	 * @param {Number} regY Optional.
-	 * @return {Matrix2D} This matrix. Useful for chaining method calls.
-	 **/
-	p.prependTransform = function(x, y, scaleX, scaleY, rotation, skewX, skewY, regX, regY) {
-		if (rotation%360) {
-			var r = rotation*Matrix2D.DEG_TO_RAD;
-			var cos = Math.cos(r);
-			var sin = Math.sin(r);
-		} else {
-			cos = 1;
-			sin = 0;
-		}
-
-		if (regX || regY) {
-			// prepend the registration offset:
-			this.tx -= regX; this.ty -= regY;
-		}
-		if (skewX || skewY) {
-			// TODO: can this be combined into a single prepend operation?
-			skewX *= Matrix2D.DEG_TO_RAD;
-			skewY *= Matrix2D.DEG_TO_RAD;
-			this.prepend(cos*scaleX, sin*scaleX, -sin*scaleY, cos*scaleY, 0, 0);
-			this.prepend(Math.cos(skewY), Math.sin(skewY), -Math.sin(skewX), Math.cos(skewX), x, y);
-		} else {
-			this.prepend(cos*scaleX, sin*scaleX, -sin*scaleY, cos*scaleY, x, y);
-		}
-		return this;
-	};
-
-	/**
-	 * Applies a clockwise rotation transformation to the matrix.
-	 * @method rotate
-	 * @param {Number} angle The angle to rotate by, in degrees. To use a value in radians, multiply it by `180/Math.PI`.
-	 * @return {Matrix2D} This matrix. Useful for chaining method calls.
-	 **/
-	p.rotate = function(angle) {
-		angle = angle*Matrix2D.DEG_TO_RAD;
-		var cos = Math.cos(angle);
-		var sin = Math.sin(angle);
-
-		var a1 = this.a;
-		var b1 = this.b;
-
-		this.a = a1*cos+this.c*sin;
-		this.b = b1*cos+this.d*sin;
-		this.c = -a1*sin+this.c*cos;
-		this.d = -b1*sin+this.d*cos;
-		return this;
-	};
-
-	/**
-	 * Applies a skew transformation to the matrix.
-	 * @method skew
-	 * @param {Number} skewX The amount to skew horizontally in degrees. To use a value in radians, multiply it by `180/Math.PI`.
-	 * @param {Number} skewY The amount to skew vertically in degrees.
-	 * @return {Matrix2D} This matrix. Useful for chaining method calls.
-	*/
-	p.skew = function(skewX, skewY) {
-		skewX = skewX*Matrix2D.DEG_TO_RAD;
-		skewY = skewY*Matrix2D.DEG_TO_RAD;
-		this.append(Math.cos(skewY), Math.sin(skewY), -Math.sin(skewX), Math.cos(skewX), 0, 0);
-		return this;
-	};
-
-	/**
-	 * Applies a scale transformation to the matrix.
-	 * @method scale
-	 * @param {Number} x The amount to scale horizontally. E.G. a value of 2 will double the size in the X direction, and 0.5 will halve it.
-	 * @param {Number} y The amount to scale vertically.
-	 * @return {Matrix2D} This matrix. Useful for chaining method calls.
-	 **/
-	p.scale = function(x, y) {
-		this.a *= x;
-		this.b *= x;
-		this.c *= y;
-		this.d *= y;
-		//this.tx *= x;
-		//this.ty *= y;
-		return this;
-	};
-
-	/**
-	 * Translates the matrix on the x and y axes.
-	 * @method translate
-	 * @param {Number} x
-	 * @param {Number} y
-	 * @return {Matrix2D} This matrix. Useful for chaining method calls.
-	 **/
-	p.translate = function(x, y) {
-		this.tx += this.a*x + this.c*y;
-		this.ty += this.b*x + this.d*y;
-		return this;
-	};
-
-	/**
 	 * Sets the properties of the matrix to those of an identity matrix (one that applies a null transformation).
 	 * @method identity
 	 * @return {Matrix2D} This matrix. Useful for chaining method calls.
@@ -448,62 +275,6 @@ this.createjs = this.createjs||{};
 		this.a = this.d = 1;
 		this.b = this.c = this.tx = this.ty = 0;
 		return this;
-	};
-
-	/**
-	 * Inverts the matrix, causing it to perform the opposite transformation.
-	 * @method invert
-	 * @return {Matrix2D} This matrix. Useful for chaining method calls.
-	 **/
-	p.invert = function() {
-		var a1 = this.a;
-		var b1 = this.b;
-		var c1 = this.c;
-		var d1 = this.d;
-		var tx1 = this.tx;
-		var n = a1*d1-b1*c1;
-
-		this.a = d1/n;
-		this.b = -b1/n;
-		this.c = -c1/n;
-		this.d = a1/n;
-		this.tx = (c1*this.ty-d1*tx1)/n;
-		this.ty = -(a1*this.ty-b1*tx1)/n;
-		return this;
-	};
-
-	/**
-	 * Returns true if the matrix is an identity matrix.
-	 * @method isIdentity
-	 * @return {Boolean}
-	 **/
-	p.isIdentity = function() {
-		return this.tx === 0 && this.ty === 0 && this.a === 1 && this.b === 0 && this.c === 0 && this.d === 1;
-	};
-
-	/**
-	 * Returns true if this matrix is equal to the specified matrix (all property values are equal).
-	 * @method equals
-	 * @param {Matrix2D} matrix The matrix to compare.
-	 * @return {Boolean}
-	 **/
-	p.equals = function(matrix) {
-		return this.tx === matrix.tx && this.ty === matrix.ty && this.a === matrix.a && this.b === matrix.b && this.c === matrix.c && this.d === matrix.d;
-	};
-
-	/**
-	 * Transforms a point according to this matrix.
-	 * @method transformPoint
-	 * @param {Number} x The x component of the point to transform.
-	 * @param {Number} y The y component of the point to transform.
-	 * @param {Point | Object} [pt] An object to copy the result into. If omitted a generic object with x/y properties will be returned.
-	 * @return {Point} This matrix. Useful for chaining method calls.
-	 **/
-	p.transformPoint = function(x, y, pt) {
-		pt = pt||{};
-		pt.x = x*this.a+y*this.c+this.tx;
-		pt.y = x*this.b+y*this.d+this.ty;
-		return pt;
 	};
 
 	// this has to be populated after the class is defined:
@@ -1369,7 +1140,6 @@ this.createjs = this.createjs||{};
 			this._spacing = o.spacing||0;
 			this._margin = o.margin||0;
 			this._numFrames = o.count;
-			if (this._loadCount == 0) { this._calculateFrames(); }
 		}
 
 		// parse animations:
@@ -1406,71 +1176,6 @@ this.createjs = this.createjs||{};
 			}
 		}
 	};
-
-	/**
-	 * @method _handleImageLoad
-	 * @protected
-	 **/
-	p._handleImageLoad = function(src) {
-		if (--this._loadCount == 0) {
-			this._calculateFrames();
-			this.complete = true;
-			this.dispatchEvent("complete");
-		}
-	};
-
-	/**
-	 * @method _handleImageError
-	 * @protected
-	 */
-	p._handleImageError = function (src) {
-		var errorEvent = new createjs.Event("error");
-		errorEvent.src = src;
-		this.dispatchEvent(errorEvent);
-
-		// Complete is still dispatched.
-		if (--this._loadCount == 0) {
-			this.dispatchEvent("complete");
-		}
-	};
-
-	/**
-	 * @method _calculateFrames
-	 * @protected
-	 **/
-	p._calculateFrames = function() {
-		if (this._frames || this._frameWidth == 0) { return; }
-
-		this._frames = [];
-
-		var maxFrames = this._numFrames || 100000; // if we go over this, something is wrong.
-		var frameCount = 0, frameWidth = this._frameWidth, frameHeight = this._frameHeight;
-		var spacing = this._spacing, margin = this._margin;
-
-		imgLoop:
-		for (var i=0, imgs=this._images; i<imgs.length; i++) {
-			var img = imgs[i], imgW = (img.width||img.naturalWidth), imgH = (img.height||img.naturalHeight);
-
-			var y = margin;
-			while (y <= imgH-margin-frameHeight) {
-				var x = margin;
-				while (x <= imgW-margin-frameWidth) {
-					if (frameCount >= maxFrames) { break imgLoop; }
-					frameCount++;
-					this._frames.push({
-							image: img,
-							rect: new createjs.Rectangle(x, y, frameWidth, frameHeight),
-							regX: this._regX,
-							regY: this._regY
-						});
-					x += frameWidth+spacing;
-				}
-				y += frameHeight+spacing;
-			}
-		}
-		this._numFrames = frameCount;
-	};
-
 
 	createjs.SpriteSheet = createjs.promote(SpriteSheet, "EventDispatcher");
 }());
@@ -1695,68 +1400,6 @@ this.createjs = this.createjs||{};
 	}
 	var p = Graphics.prototype;
 	var G = Graphics; // shortcut
-
-// static public methods:
-	/**
-	 * Returns a CSS compatible color string based on the specified RGB numeric color values in the format
-	 * "rgba(255,255,255,1.0)", or if alpha is null then in the format "rgb(255,255,255)". For example,
-	 *
-	 *      createjs.Graphics.getRGB(50, 100, 150, 0.5);
-	 *      // Returns "rgba(50,100,150,0.5)"
-	 *
-	 * It also supports passing a single hex color value as the first param, and an optional alpha value as the second
-	 * param. For example,
-	 *
-	 *      createjs.Graphics.getRGB(0xFF00FF, 0.2);
-	 *      // Returns "rgba(255,0,255,0.2)"
-	 *
-	 * @method getRGB
-	 * @static
-	 * @param {Number} r The red component for the color, between 0 and 0xFF (255).
-	 * @param {Number} g The green component for the color, between 0 and 0xFF (255).
-	 * @param {Number} b The blue component for the color, between 0 and 0xFF (255).
-	 * @param {Number} [alpha] The alpha component for the color where 0 is fully transparent and 1 is fully opaque.
-	 * @return {String} A CSS compatible color string based on the specified RGB numeric color values in the format
-	 * "rgba(255,255,255,1.0)", or if alpha is null then in the format "rgb(255,255,255)".
-	 **/
-	Graphics.getRGB = function(r, g, b, alpha) {
-		if (r != null && b == null) {
-			alpha = g;
-			b = r&0xFF;
-			g = r>>8&0xFF;
-			r = r>>16&0xFF;
-		}
-		if (alpha == null) {
-			return "rgb("+r+","+g+","+b+")";
-		} else {
-			return "rgba("+r+","+g+","+b+","+alpha+")";
-		}
-	};
-
-	/**
-	 * Returns a CSS compatible color string based on the specified HSL numeric color values in the format "hsla(360,100,100,1.0)",
-	 * or if alpha is null then in the format "hsl(360,100,100)".
-	 *
-	 *      createjs.Graphics.getHSL(150, 100, 70);
-	 *      // Returns "hsl(150,100,70)"
-	 *
-	 * @method getHSL
-	 * @static
-	 * @param {Number} hue The hue component for the color, between 0 and 360.
-	 * @param {Number} saturation The saturation component for the color, between 0 and 100.
-	 * @param {Number} lightness The lightness component for the color, between 0 and 100.
-	 * @param {Number} [alpha] The alpha component for the color where 0 is fully transparent and 1 is fully opaque.
-	 * @return {String} A CSS compatible color string based on the specified HSL numeric color values in the format
-	 * "hsla(360,100,100,1.0)", or if alpha is null then in the format "hsl(360,100,100)".
-	 **/
-	Graphics.getHSL = function(hue, saturation, lightness, alpha) {
-		if (alpha == null) {
-			return "hsl("+(hue%360)+","+saturation+"%,"+lightness+"%)";
-		} else {
-			return "hsla("+(hue%360)+","+saturation+"%,"+lightness+"%,"+alpha+")";
-		}
-	};
-
 
 // static properties:
 	/**
