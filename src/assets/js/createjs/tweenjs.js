@@ -975,24 +975,6 @@ this.createjs = this.createjs||{};
 		Ticker.interval = Ticker._interval;
 	};
 
-	/**
-	 * Stops the Ticker and removes all listeners. Use init() to restart the Ticker.
-	 * @method reset
-	 * @static
-	 **/
-	Ticker.reset = function() {
-		if (Ticker._raf) {
-			var f = window.cancelAnimationFrame || window.webkitCancelAnimationFrame || window.mozCancelAnimationFrame || window.oCancelAnimationFrame || window.msCancelAnimationFrame;
-			f&&f(Ticker._timerId);
-		} else {
-			clearTimeout(Ticker._timerId);
-		}
-		Ticker.removeAllEventListeners("tick");
-		Ticker._timerId = Ticker._times = Ticker._tickTimes = null;
-		Ticker._startTime = Ticker._lastTime = Ticker._ticks = Ticker._pausedTime = 0;
-		Ticker._inited = false;
-	};
-
 
 // private static methods:
 	/**
