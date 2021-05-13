@@ -202,48 +202,6 @@ this.createjs = this.createjs||{};
 }());
 
 //##############################################################################
-// deprecate.js
-//##############################################################################
-
-this.createjs = this.createjs||{};
-
-/**
- * @class Utility Methods
- */
-
-/**
- * Wraps deprecated methods so they still be used, but throw warnings to developers.
- *
- *	obj.deprecatedMethod = createjs.deprecate("Old Method Name", obj._fallbackMethod);
- *
- * The recommended approach for deprecated properties is:
- *
- *	try {
- *		Obj	ect.defineProperties(object, {
- *			readyOnlyProp: { get: createjs.deprecate("readOnlyProp", function() { return this.alternateProp; }) },
- *			readWriteProp: {
- *				get: createjs.deprecate("readOnlyProp", function() { return this.alternateProp; }),
- *				set: createjs.deprecate("readOnlyProp", function(val) { this.alternateProp = val; })
- *		});
- *	} catch (e) {}
- *
- * @method deprecate
- * @param {Function} [fallbackMethod=null] A method to call when the deprecated method is used. See the example for how
- * @param {String} [name=null] The name of the method or property to display in the console warning.
- * to deprecate properties.
- * @return {Function} If a fallbackMethod is supplied, returns a closure that will call the fallback method after
- * logging the warning in the console.
- */
-createjs.deprecate = function(fallbackMethod, name) {
-	"use strict";
-	return function() {
-		var msg = "Deprecated property or method '"+name+"'. See docs for info.";
-		console && (console.warn ? console.warn(msg) : console.log(msg));
-		return fallbackMethod && fallbackMethod.apply(this, arguments);
-	}
-};
-
-//##############################################################################
 // Event.js
 //##############################################################################
 
@@ -1127,8 +1085,6 @@ this.createjs = this.createjs||{};
 		if (!Ticker._inited) { return; }
 		Ticker._setupTick();
 	};
-	// Ticker.setInterval is @deprecated. Remove for 1.1+
-	Ticker.setInterval = createjs.deprecate(Ticker._setInterval, "Ticker.setInterval");
 
 	/**
 	 * Use the {{#crossLink "Ticker/interval:property"}}{{/crossLink}} property instead.
@@ -1140,8 +1096,6 @@ this.createjs = this.createjs||{};
 	Ticker._getInterval = function() {
 		return Ticker._interval;
 	};
-	// Ticker.getInterval is @deprecated. Remove for 1.1+
-	Ticker.getInterval = createjs.deprecate(Ticker._getInterval, "Ticker.getInterval");
 
 	/**
 	 * Use the {{#crossLink "Ticker/framerate:property"}}{{/crossLink}} property instead.
@@ -1153,8 +1107,6 @@ this.createjs = this.createjs||{};
 	Ticker._setFPS = function(value) {
 		Ticker._setInterval(1000/value);
 	};
-	// Ticker.setFPS is @deprecated. Remove for 1.1+
-	Ticker.setFPS = createjs.deprecate(Ticker._setFPS, "Ticker.setFPS");
 
 	/**
 	 * Use the {{#crossLink "Ticker/framerate:property"}}{{/crossLink}} property instead.
@@ -1166,8 +1118,6 @@ this.createjs = this.createjs||{};
 	Ticker._getFPS = function() {
 		return 1000/Ticker._interval;
 	};
-	// Ticker.getFPS is @deprecated. Remove for 1.1+
-	Ticker.getFPS = createjs.deprecate(Ticker._getFPS, "Ticker.getFPS");
 
 	/**
 	 * Indicates the target time (in milliseconds) between ticks. Default is 50 (20 FPS).
@@ -2803,8 +2753,6 @@ this.createjs = this.createjs||{};
 			if (o.__reset) { o._reset = o.__reset; delete(o.__reset); }
 		}
 	};
-	// ButtonHelper.setEnabled is @deprecated. Remove for 1.1+
-	p.setEnabled = createjs.deprecate(p._setEnabled, "ButtonHelper.setEnabled");
 
 	/**
 	 * Use the {{#crossLink "ButtonHelper/enabled:property"}}{{/crossLink}} property instead.
@@ -2815,8 +2763,6 @@ this.createjs = this.createjs||{};
 	p._getEnabled = function() {
 		return this._enabled;
 	};
-	// ButtonHelper.getEnabled is @deprecated. Remove for 1.1+
-	p.getEnabled = createjs.deprecate(p._getEnabled, "ButtonHelper.getEnabled");
 
 	/**
 	 * Enables or disables the button functionality on the target.
@@ -3323,8 +3269,6 @@ this.createjs = this.createjs||{};
 	p._getAnimations = function() {
 		return this._animations.slice();
 	};
-	// SpriteSheet.getAnimations is @deprecated. Remove for 1.1+
-	p.getAnimations = createjs.deprecate(p._getAnimations, "SpriteSheet.getAnimations");
 
 	/**
 	 * Returns an array of all available animation names available on this sprite sheet as strings.
@@ -3939,8 +3883,6 @@ this.createjs = this.createjs||{};
 		this._updateInstructions();
 		return this._instructions;
 	};
-	// Graphics.getInstructions is @deprecated. Remove for 1.1+
-	p.getInstructions = createjs.deprecate(p._getInstructions, "Graphics.getInstructions");
 
 	/**
 	 * Returns the graphics instructions array. Each entry is a graphics command object (ex. Graphics.Fill, Graphics.Rect)
@@ -6499,8 +6441,6 @@ this.createjs = this.createjs||{};
 		if (o instanceof _Stage) { return o; }
 		return null;
 	};
-	// DisplayObject.getStage is @deprecated. Remove for 1.1+
-	p.getStage = createjs.deprecate(p._getStage, "DisplayObject.getStage");
 
 	/**
 	 * Returns the Stage instance that this display object will be rendered on, or null if it has not been added to one.
@@ -7263,8 +7203,6 @@ this.createjs = this.createjs||{};
 	p._getNumChildren = function() {
 		return this.children.length;
 	};
-	// Container.getNumChildren is @deprecated. Remove for 1.1+
-	p.getNumChildren = createjs.deprecate(p._getNumChildren, "Container.getNumChildren");
 
 	/**
 	 * Returns the number of children in the container.
@@ -12903,8 +12841,6 @@ this.createjs = this.createjs||{};
 	p._getLabels = function() {
 		return this.timeline.getLabels();
 	};
-	// MovieClip.getLabels is @deprecated. Remove for 1.1+
-	p.getLabels = createjs.deprecate(p._getLabels, "MovieClip.getLabels");
 
 	/**
 	 * Use the {{#crossLink "MovieClip/currentLabel:property"}}{{/crossLink}} property instead.
@@ -12915,8 +12851,6 @@ this.createjs = this.createjs||{};
 	p._getCurrentLabel = function() {
 		return this.timeline.currentLabel;
 	};
-	// MovieClip.getCurrentLabel is @deprecated. Remove for 1.1+
-	p.getCurrentLabel = createjs.deprecate(p._getCurrentLabel, "MovieClip.getCurrentLabel");
 
 	/**
 	 * Use the {{#crossLink "MovieClip/duration:property"}}{{/crossLink}} property instead.
@@ -12927,8 +12861,6 @@ this.createjs = this.createjs||{};
 	p._getDuration = function() {
 		return this.timeline.duration;
 	};
-	// MovieClip.getDuration is @deprecated. Remove for 1.1+
-	p.getDuration = createjs.deprecate(p._getDuration, "MovieClip.getDuration");
 
 	/**
 	 * Returns an array of objects with label and position (aka frame) properties, sorted by position.
@@ -13401,12 +13333,6 @@ this.createjs = this.createjs||{};
 		img.src = canvas.toDataURL("image/png");
 		return img;
 	};
-
-	// SpriteSheetUtils.addFlippedFrames is @deprecated. Remove for 1.1+
-	SpriteSheetUtils.addFlippedFrames = createjs.deprecate(null, "SpriteSheetUtils.addFlippedFrames");
-
-	// SpriteSheetUtils.addFlippedFrames is @deprecated. Remove for 1.1+
-	SpriteSheetUtils.mergeAlpha = createjs.deprecate(null, "SpriteSheetUtils.mergeAlpha");
 
 
 // private static methods:

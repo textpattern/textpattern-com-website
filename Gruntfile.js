@@ -238,9 +238,9 @@ module.exports = function (grunt)
                         ],
                         '<%= paths.dest.js %>detect.js': ['<%= paths.src.js %>detect.js'],
                         '<%= paths.dest.js %>animate.js': [
-                            'node_modules/preloadjs/lib/preloadjs.js',
-                            'node_modules/easeljs/lib/easeljs.js',
-                            'node_modules/tweenjs/lib/tweenjs.js',
+                            '<%= paths.src.js %>createjs/preloadjs.js',
+                            '<%= paths.src.js %>createjs/easeljs.js',
+                            '<%= paths.src.js %>createjs/tweenjs.js',
                             '<%= paths.src.js %>indexcanvas.js'
                         ]
                     }

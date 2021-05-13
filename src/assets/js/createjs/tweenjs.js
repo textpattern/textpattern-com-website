@@ -124,48 +124,6 @@ createjs.promote = function(subclass, prefix) {
 };
 
 //##############################################################################
-// deprecate.js
-//##############################################################################
-
-this.createjs = this.createjs||{};
-
-/**
- * @class Utility Methods
- */
-
-/**
- * Wraps deprecated methods so they still be used, but throw warnings to developers.
- *
- *	obj.deprecatedMethod = createjs.deprecate("Old Method Name", obj._fallbackMethod);
- *
- * The recommended approach for deprecated properties is:
- *
- *	try {
- *		Obj	ect.defineProperties(object, {
- *			readyOnlyProp: { get: createjs.deprecate("readOnlyProp", function() { return this.alternateProp; }) },
- *			readWriteProp: {
- *				get: createjs.deprecate("readOnlyProp", function() { return this.alternateProp; }),
- *				set: createjs.deprecate("readOnlyProp", function(val) { this.alternateProp = val; })
- *		});
- *	} catch (e) {}
- *
- * @method deprecate
- * @param {Function} [fallbackMethod=null] A method to call when the deprecated method is used. See the example for how
- * @param {String} [name=null] The name of the method or property to display in the console warning.
- * to deprecate properties.
- * @return {Function} If a fallbackMethod is supplied, returns a closure that will call the fallback method after
- * logging the warning in the console.
- */
-createjs.deprecate = function(fallbackMethod, name) {
-	"use strict";
-	return function() {
-		var msg = "Deprecated property or method '"+name+"'. See docs for info.";
-		console && (console.warn ? console.warn(msg) : console.log(msg));
-		return fallbackMethod && fallbackMethod.apply(this, arguments);
-	}
-};
-
-//##############################################################################
 // Event.js
 //##############################################################################
 
@@ -1049,8 +1007,6 @@ this.createjs = this.createjs||{};
 		if (!Ticker._inited) { return; }
 		Ticker._setupTick();
 	};
-	// Ticker.setInterval is @deprecated. Remove for 1.1+
-	Ticker.setInterval = createjs.deprecate(Ticker._setInterval, "Ticker.setInterval");
 
 	/**
 	 * Use the {{#crossLink "Ticker/interval:property"}}{{/crossLink}} property instead.
@@ -1062,8 +1018,6 @@ this.createjs = this.createjs||{};
 	Ticker._getInterval = function() {
 		return Ticker._interval;
 	};
-	// Ticker.getInterval is @deprecated. Remove for 1.1+
-	Ticker.getInterval = createjs.deprecate(Ticker._getInterval, "Ticker.getInterval");
 
 	/**
 	 * Use the {{#crossLink "Ticker/framerate:property"}}{{/crossLink}} property instead.
@@ -1075,8 +1029,6 @@ this.createjs = this.createjs||{};
 	Ticker._setFPS = function(value) {
 		Ticker._setInterval(1000/value);
 	};
-	// Ticker.setFPS is @deprecated. Remove for 1.1+
-	Ticker.setFPS = createjs.deprecate(Ticker._setFPS, "Ticker.setFPS");
 
 	/**
 	 * Use the {{#crossLink "Ticker/framerate:property"}}{{/crossLink}} property instead.
@@ -1088,8 +1040,6 @@ this.createjs = this.createjs||{};
 	Ticker._getFPS = function() {
 		return 1000/Ticker._interval;
 	};
-	// Ticker.getFPS is @deprecated. Remove for 1.1+
-	Ticker.getFPS = createjs.deprecate(Ticker._getFPS, "Ticker.getFPS");
 
 	/**
 	 * Indicates the target time (in milliseconds) between ticks. Default is 50 (20 FPS).
@@ -1555,7 +1505,6 @@ this.createjs = this.createjs||{};
 		createjs.Tween._register(this, value);
 		return this;
 	};
-	p.setPaused = createjs.deprecate(p._setPaused, "AbstractTween.setPaused");
 
 	/**
 	 * Use the {{#crossLink "AbstractTween/paused:property"}}{{/crossLink}} property instead.
@@ -1565,7 +1514,6 @@ this.createjs = this.createjs||{};
 	p._getPaused = function() {
 		return this._paused;
 	};
-	p.getPaused = createjs.deprecate(p._getPaused, "AbstactTween.getPaused");
 
 	/**
 	 * Use the {{#crossLink "AbstractTween/currentLabel:property"}}{{/crossLink}} property instead.
@@ -1579,7 +1527,6 @@ this.createjs = this.createjs||{};
 		for (var i = 0, l = labels.length; i<l; i++) { if (pos < labels[i].position) { break; } }
 		return (i===0) ? null : labels[i-1].label;
 	};
-	p.getCurrentLabel = createjs.deprecate(p._getCurrentLabel, "AbstractTween.getCurrentLabel");
 
 	/**
 	 * Pauses or unpauses the tween. A paused tween is removed from the global registry and is eligible for garbage
