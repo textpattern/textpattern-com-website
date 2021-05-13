@@ -876,24 +876,8 @@ this.createjs = this.createjs || {};
 		return s.el("img");
 	}
 
-	s.style = function() {
-		return s.el("style");
-	}
-
 	s.link = function() {
 		return s.el("link");
-	}
-
-	s.script = function() {
-		return s.el("script");
-	}
-
-	s.audio = function() {
-		return s.el("audio");
-	}
-
-	s.video = function() {
-		return s.el("video");
 	}
 
 	s.text = function(value) {
