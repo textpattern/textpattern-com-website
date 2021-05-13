@@ -256,7 +256,7 @@ this.createjs = this.createjs||{};
 	/**
 	 * Contains properties and methods shared by all events for use with
 	 * {{#crossLink "EventDispatcher"}}{{/crossLink}}.
-	 * 
+	 *
 	 * Note that Event objects are often reused, so you should never
 	 * rely on an event object's state outside of the call stack it was received in.
 	 * @class Event
@@ -266,8 +266,8 @@ this.createjs = this.createjs||{};
 	 * @constructor
 	 **/
 	function Event(type, bubbles, cancelable) {
-		
-	
+
+
 	// public properties:
 		/**
 		 * The type of event.
@@ -275,7 +275,7 @@ this.createjs = this.createjs||{};
 		 * @type String
 		 **/
 		this.type = type;
-	
+
 		/**
 		 * The object that generated an event.
 		 * @property target
@@ -284,7 +284,7 @@ this.createjs = this.createjs||{};
 		 * @readonly
 		*/
 		this.target = null;
-	
+
 		/**
 		 * The current target that a bubbling event is being dispatched from. For non-bubbling events, this will
 		 * always be the same as target. For example, if childObj.parent = parentObj, and a bubbling event
@@ -296,7 +296,7 @@ this.createjs = this.createjs||{};
 		 * @readonly
 		*/
 		this.currentTarget = null;
-	
+
 		/**
 		 * For bubbling events, this indicates the current event phase:<OL>
 		 * 	<LI> capture phase: starting from the top parent to the target</LI>
@@ -309,7 +309,7 @@ this.createjs = this.createjs||{};
 		 * @readonly
 		*/
 		this.eventPhase = 0;
-	
+
 		/**
 		 * Indicates whether the event will bubble through the display list.
 		 * @property bubbles
@@ -318,7 +318,7 @@ this.createjs = this.createjs||{};
 		 * @readonly
 		*/
 		this.bubbles = !!bubbles;
-	
+
 		/**
 		 * Indicates whether the default behaviour of this event can be cancelled via
 		 * {{#crossLink "Event/preventDefault"}}{{/crossLink}}. This is set via the Event constructor.
@@ -328,7 +328,7 @@ this.createjs = this.createjs||{};
 		 * @readonly
 		*/
 		this.cancelable = !!cancelable;
-	
+
 		/**
 		 * The epoch time at which this event was created.
 		 * @property timeStamp
@@ -337,7 +337,7 @@ this.createjs = this.createjs||{};
 		 * @readonly
 		*/
 		this.timeStamp = (new Date()).getTime();
-	
+
 		/**
 		 * Indicates if {{#crossLink "Event/preventDefault"}}{{/crossLink}} has been called
 		 * on this event.
@@ -347,7 +347,7 @@ this.createjs = this.createjs||{};
 		 * @readonly
 		*/
 		this.defaultPrevented = false;
-	
+
 		/**
 		 * Indicates if {{#crossLink "Event/stopPropagation"}}{{/crossLink}} or
 		 * {{#crossLink "Event/stopImmediatePropagation"}}{{/crossLink}} has been called on this event.
@@ -357,7 +357,7 @@ this.createjs = this.createjs||{};
 		 * @readonly
 		*/
 		this.propagationStopped = false;
-	
+
 		/**
 		 * Indicates if {{#crossLink "Event/stopImmediatePropagation"}}{{/crossLink}} has been called
 		 * on this event.
@@ -367,7 +367,7 @@ this.createjs = this.createjs||{};
 		 * @readonly
 		*/
 		this.immediatePropagationStopped = false;
-		
+
 		/**
 		 * Indicates if {{#crossLink "Event/remove"}}{{/crossLink}} has been called on this event.
 		 * @property removed
@@ -408,21 +408,21 @@ this.createjs = this.createjs||{};
 	p.stopImmediatePropagation = function() {
 		this.immediatePropagationStopped = this.propagationStopped = true;
 	};
-	
+
 	/**
 	 * Causes the active listener to be removed via removeEventListener();
-	 * 
+	 *
 	 * 		myBtn.addEventListener("click", function(evt) {
 	 * 			// do stuff...
 	 * 			evt.remove(); // removes this listener.
 	 * 		});
-	 * 
+	 *
 	 * @method remove
 	 **/
 	p.remove = function() {
 		this.removed = true;
 	};
-	
+
 	/**
 	 * Returns a clone of the Event instance.
 	 * @method clone
@@ -431,7 +431,7 @@ this.createjs = this.createjs||{};
 	p.clone = function() {
 		return new Event(this.type, this.bubbles, this.cancelable);
 	};
-	
+
 	/**
 	 * Provides a chainable shortcut method for setting a number of properties on the instance.
 	 *
@@ -473,18 +473,18 @@ this.createjs = this.createjs||{};
 	 *
 	 * You can either extend EventDispatcher or mix its methods into an existing prototype or instance by using the
 	 * EventDispatcher {{#crossLink "EventDispatcher/initialize"}}{{/crossLink}} method.
-	 * 
+	 *
 	 * Together with the CreateJS Event class, EventDispatcher provides an extended event model that is based on the
 	 * DOM Level 2 event model, including addEventListener, removeEventListener, and dispatchEvent. It supports
 	 * bubbling / capture, preventDefault, stopPropagation, stopImmediatePropagation, and handleEvent.
-	 * 
+	 *
 	 * EventDispatcher also exposes a {{#crossLink "EventDispatcher/on"}}{{/crossLink}} method, which makes it easier
-	 * to create scoped listeners, listeners that only run once, and listeners with associated arbitrary data. The 
+	 * to create scoped listeners, listeners that only run once, and listeners with associated arbitrary data. The
 	 * {{#crossLink "EventDispatcher/off"}}{{/crossLink}} method is merely an alias to
 	 * {{#crossLink "EventDispatcher/removeEventListener"}}{{/crossLink}}.
-	 * 
+	 *
 	 * Another addition to the DOM Level 2 model is the {{#crossLink "EventDispatcher/removeAllEventListeners"}}{{/crossLink}}
-	 * method, which can be used to listeners for all events, or listeners for a specific event. The Event object also 
+	 * method, which can be used to listeners for all events, or listeners for a specific event. The Event object also
 	 * includes a {{#crossLink "Event/remove"}}{{/crossLink}} method which removes the active listener.
 	 *
 	 * <h4>Example</h4>
@@ -506,25 +506,25 @@ this.createjs = this.createjs||{};
 	 *      instance.addEventListener("click", function(event) {
 	 *          console.log(instance == this); // false, scope is ambiguous.
 	 *      });
-	 *      
+	 *
 	 *      instance.on("click", function(event) {
 	 *          console.log(instance == this); // true, "on" uses dispatcher scope by default.
 	 *      });
-	 * 
+	 *
 	 * If you want to use addEventListener instead, you may want to use function.bind() or a similar proxy to manage
 	 * scope.
 	 *
 	 * <b>Browser support</b>
 	 * The event model in CreateJS can be used separately from the suite in any project, however the inheritance model
 	 * requires modern browsers (IE9+).
-	 *      
+	 *
 	 *
 	 * @class EventDispatcher
 	 * @constructor
 	 **/
 	function EventDispatcher() {
-	
-	
+
+
 	// private properties:
 		/**
 		 * @protected
@@ -532,7 +532,7 @@ this.createjs = this.createjs||{};
 		 * @type Object
 		 **/
 		this._listeners = null;
-		
+
 		/**
 		 * @protected
 		 * @property _captureListeners
@@ -545,10 +545,10 @@ this.createjs = this.createjs||{};
 // static public methods:
 	/**
 	 * Static initializer to mix EventDispatcher methods into a target object or prototype.
-	 * 
+	 *
 	 * 		EventDispatcher.initialize(MyClass.prototype); // add to the prototype of the class
 	 * 		EventDispatcher.initialize(myObject); // add to a specific instance
-	 * 
+	 *
 	 * @method initialize
 	 * @static
 	 * @param {Object} target The target object to inject EventDispatcher methods into. This can be an instance or a
@@ -564,7 +564,7 @@ this.createjs = this.createjs||{};
 		target._dispatchEvent = p._dispatchEvent;
 		target.willTrigger = p.willTrigger;
 	};
-	
+
 
 // public methods:
 	/**
@@ -599,20 +599,20 @@ this.createjs = this.createjs||{};
 		else { arr.push(listener); }
 		return listener;
 	};
-	
+
 	/**
 	 * A shortcut method for using addEventListener that makes it easier to specify an execution scope, have a listener
 	 * only run once, associate arbitrary data with the listener, and remove the listener.
-	 * 
+	 *
 	 * This method works by creating an anonymous wrapper function and subscribing it with addEventListener.
 	 * The wrapper function is returned for use with `removeEventListener` (or `off`).
-	 * 
+	 *
 	 * <b>IMPORTANT:</b> To remove a listener added with `on`, you must pass in the returned wrapper function as the listener, or use
 	 * {{#crossLink "Event/remove"}}{{/crossLink}}. Likewise, each time you call `on` a NEW wrapper function is subscribed, so multiple calls
 	 * to `on` with the same params will create multiple listeners.
-	 * 
+	 *
 	 * <h4>Example</h4>
-	 * 
+	 *
 	 * 		var listener = myBtn.on("click", handleClick, null, false, {count:3});
 	 * 		function handleClick(evt, data) {
 	 * 			data.count -= 1;
@@ -623,7 +623,7 @@ this.createjs = this.createjs||{};
 	 * 				// alternately: evt.remove();
 	 * 			}
 	 * 		}
-	 * 
+	 *
 	 * @method on
 	 * @param {String} type The string type of the event.
 	 * @param {Function | Object} listener An object with a handleEvent method, or a function that will be called when
@@ -675,12 +675,12 @@ this.createjs = this.createjs||{};
 			}
 		}
 	};
-	
+
 	/**
 	 * A shortcut to the removeEventListener method, with the same parameters and return value. This is a companion to the
 	 * .on method.
-	 * 
-	 * <b>IMPORTANT:</b> To remove a listener added with `on`, you must pass in the returned wrapper function as the listener. See 
+	 *
+	 * <b>IMPORTANT:</b> To remove a listener added with `on`, you must pass in the returned wrapper function as the listener. See
 	 * {{#crossLink "EventDispatcher/on"}}{{/crossLink}} for an example.
 	 *
 	 * @method off
@@ -743,7 +743,7 @@ this.createjs = this.createjs||{};
 			// redispatching an active event object, so clone it:
 			eventObj = eventObj.clone();
 		}
-		
+
 		// TODO: it would be nice to eliminate this. Maybe in favour of evtObj instanceof Event? Or !!evtObj.createEvent
 		try { eventObj.target = this; } catch (e) {} // try/catch allows redispatching of native events
 
@@ -776,12 +776,12 @@ this.createjs = this.createjs||{};
 		var listeners = this._listeners, captureListeners = this._captureListeners;
 		return !!((listeners && listeners[type]) || (captureListeners && captureListeners[type]));
 	};
-	
+
 	/**
 	 * Indicates whether there is at least one listener for the specified event type on this object or any of its
 	 * ancestors (parent, parent's parent, etc). A return value of true indicates that if a bubbling event of the
 	 * specified type is dispatched from this object, it will trigger at least one listener.
-	 * 
+	 *
 	 * This is similar to {{#crossLink "EventDispatcher/hasEventListener"}}{{/crossLink}}, but it searches the entire
 	 * event flow for a listener, not just this object.
 	 * @method willTrigger
@@ -819,7 +819,7 @@ this.createjs = this.createjs||{};
 			try { eventObj.currentTarget = this; } catch (e) {}
 			try { eventObj.eventPhase = eventPhase|0; } catch (e) {}
 			eventObj.removed = false;
-			
+
 			arr = arr.slice(); // to avoid issues with items being removed or added during the dispatch
 			for (var i=0; i<l && !eventObj.immediatePropagationStopped; i++) {
 				var o = arr[i];
@@ -968,10 +968,10 @@ this.createjs = this.createjs||{};
 	 * based animations and systems to prevent issues caused by large time gaps caused by background tabs, system sleep,
 	 * alert dialogs, or other blocking routines. Double the expected frame duration is often an effective value
 	 * (ex. maxDelta=50 when running at 40fps).
-	 * 
+	 *
 	 * This does not impact any other values (ex. time, runTime, etc), so you may experience issues if you enable maxDelta
 	 * when using both delta and other values.
-	 * 
+	 *
 	 * If 0, there is no maximum.
 	 * @property maxDelta
 	 * @static
@@ -979,7 +979,7 @@ this.createjs = this.createjs||{};
 	 * @default 0
 	 */
 	Ticker.maxDelta = 0;
-	
+
 	/**
 	 * When the ticker is paused, all listeners will still receive a tick event, but the <code>paused</code> property
 	 * of the event will be `true`. Also, while paused the `runTime` will not increase. See {{#crossLink "Ticker/tick:event"}}{{/crossLink}},
@@ -1102,7 +1102,7 @@ this.createjs = this.createjs||{};
 	 * @private
 	 **/
 	Ticker._timerId = null;
-	
+
 	/**
 	 * True if currently using requestAnimationFrame, false if using setTimeout. This may be different than timingMode
 	 * if that property changed and a tick hasn't fired.
@@ -1112,7 +1112,7 @@ this.createjs = this.createjs||{};
 	 * @private
 	 **/
 	Ticker._raf = true;
-	
+
 
 // static getter / setters:
 	/**
@@ -1177,7 +1177,7 @@ this.createjs = this.createjs||{};
 	 * @static
 	 * @type {Number}
 	 **/
-	 
+
 	/**
 	 * Indicates the target frame rate in frames per second (FPS). Effectively just a shortcut to `interval`, where
 	 * `framerate == 1000/interval`.
@@ -1208,7 +1208,7 @@ this.createjs = this.createjs||{};
 		Ticker._times.push(Ticker._lastTime = 0);
 		Ticker.interval = Ticker._interval;
 	};
-	
+
 	/**
 	 * Stops the Ticker and removes all listeners. Use init() to restart the Ticker.
 	 * @method reset
@@ -1229,10 +1229,10 @@ this.createjs = this.createjs||{};
 
 	/**
 	 * Returns the average time spent within a tick. This can vary significantly from the value provided by getMeasuredFPS
-	 * because it only measures the time spent within the tick execution stack. 
-	 * 
-	 * Example 1: With a target FPS of 20, getMeasuredFPS() returns 20fps, which indicates an average of 50ms between 
-	 * the end of one tick and the end of the next. However, getMeasuredTickTime() returns 15ms. This indicates that 
+	 * because it only measures the time spent within the tick execution stack.
+	 *
+	 * Example 1: With a target FPS of 20, getMeasuredFPS() returns 20fps, which indicates an average of 50ms between
+	 * the end of one tick and the end of the next. However, getMeasuredTickTime() returns 15ms. This indicates that
 	 * there may be up to 35ms of "idle" time between the end of one tick and the start of the next.
 	 *
 	 * Example 2: With a target FPS of 30, {{#crossLink "Ticker/framerate:property"}}{{/crossLink}} returns 10fps, which
@@ -1298,7 +1298,7 @@ this.createjs = this.createjs||{};
 	Ticker.getEventTime = function(runTime) {
 		return Ticker._startTime ? (Ticker._lastTime || Ticker._startTime) - (runTime ? Ticker._pausedTime : 0) : -1;
 	};
-	
+
 	/**
 	 * Returns the number of ticks that have been broadcast by Ticker.
 	 * @method getTicks
@@ -1384,12 +1384,12 @@ this.createjs = this.createjs||{};
 		var elapsedTime = time-Ticker._lastTime;
 		Ticker._lastTime = time;
 		Ticker._ticks++;
-		
+
 		if (paused) {
 			Ticker._pausedTicks++;
 			Ticker._pausedTime += elapsedTime;
 		}
-		
+
 		if (Ticker.hasEventListener("tick")) {
 			var event = new createjs.Event("tick");
 			var maxDelta = Ticker.maxDelta;
@@ -1399,7 +1399,7 @@ this.createjs = this.createjs||{};
 			event.runTime = time-Ticker._pausedTime;
 			Ticker.dispatchEvent(event);
 		}
-		
+
 		Ticker._tickTimes.unshift(Ticker._getTime()-time);
 		while (Ticker._tickTimes.length > 100) { Ticker._tickTimes.pop(); }
 
@@ -1436,16 +1436,16 @@ this.createjs = this.createjs||{};
 	 * When an HTML video seeks, including when looping, there is an indeterminate period before a new frame is available.
 	 * This can result in the video blinking or flashing when it is drawn to a canvas. The VideoBuffer class resolves
 	 * this issue by drawing each frame to an off-screen canvas and preserving the prior frame during a seek.
-	 * 
+	 *
 	 * 	var myBuffer = new createjs.VideoBuffer(myVideo);
 	 * 	var myBitmap = new Bitmap(myBuffer);
-	 * 
+	 *
 	 * @class VideoBuffer
 	 * @param {HTMLVideoElement} video The HTML video element to buffer.
 	 * @constructor
 	 **/
 	function VideoBuffer(video) {
-		
+
 	// private properties:
 		/**
 		 * Used by Bitmap to determine when the video buffer is ready to be drawn. Not intended for general use.
@@ -1455,7 +1455,7 @@ this.createjs = this.createjs||{};
 		 * @default 0
 		 **/
 		this.readyState = video.readyState;
-		
+
 		/**
 		 * @property _video
 		 * @protected
@@ -1463,7 +1463,7 @@ this.createjs = this.createjs||{};
 		 * @default 0
 		 **/
 		this._video = video;
-		
+
 		/**
 		 * @property _canvas
 		 * @protected
@@ -1471,7 +1471,7 @@ this.createjs = this.createjs||{};
 		 * @default 0
 		 **/
 		this._canvas = null;
-		
+
 		/**
 		 * @property _lastTime
 		 * @protected
@@ -1479,12 +1479,12 @@ this.createjs = this.createjs||{};
 		 * @default -1
 		 **/
 		this._lastTime = -1;
-		
+
 		if (this.readyState < 2) { video.addEventListener("canplaythrough", this._videoReady.bind(this)); } //once:true isn't supported everywhere, but its a non-critical optimization here.
 	}
 	var p = VideoBuffer.prototype;
-	
-	
+
+
 // public methods:
 	/**
 	 * Gets an HTML canvas element showing the current video frame, or the previous frame if in a seek / loop.
@@ -1507,7 +1507,7 @@ this.createjs = this.createjs||{};
 		}
 		return canvas;
 	};
-	
+
 // private methods:
 	/**
 	 * @method _videoReady
@@ -1552,8 +1552,8 @@ this.createjs = this.createjs||{};
 	 **/
 	function MouseEvent(type, bubbles, cancelable, stageX, stageY, nativeEvent, pointerID, primary, rawX, rawY, relatedTarget) {
 		this.Event_constructor(type, bubbles, cancelable);
-		
-		
+
+
 	// public properties:
 		/**
 		 * The normalized x position on the stage. This will always be within the range 0 to stage width.
@@ -1561,14 +1561,14 @@ this.createjs = this.createjs||{};
 		 * @type Number
 		*/
 		this.stageX = stageX;
-	
+
 		/**
 		 * The normalized y position on the stage. This will always be within the range 0 to stage height.
 		 * @property stageY
 		 * @type Number
 		 **/
 		this.stageY = stageY;
-	
+
 		/**
 		 * The raw x position relative to the stage. Normally this will be the same as the stageX value, unless
 		 * stage.mouseMoveOutside is true and the pointer is outside of the stage bounds.
@@ -1576,7 +1576,7 @@ this.createjs = this.createjs||{};
 		 * @type Number
 		*/
 		this.rawX = (rawX==null)?stageX:rawX;
-	
+
 		/**
 		 * The raw y position relative to the stage. Normally this will be the same as the stageY value, unless
 		 * stage.mouseMoveOutside is true and the pointer is outside of the stage bounds.
@@ -1584,7 +1584,7 @@ this.createjs = this.createjs||{};
 		 * @type Number
 		*/
 		this.rawY = (rawY==null)?stageY:rawY;
-	
+
 		/**
 		 * The native MouseEvent generated by the browser. The properties and API for this
 		 * event may differ between browsers. This property will be null if the
@@ -1594,7 +1594,7 @@ this.createjs = this.createjs||{};
 		 * @default null
 		 **/
 		this.nativeEvent = nativeEvent;
-	
+
 		/**
 		 * The unique id for the pointer (touch point or cursor). This will be either -1 for the mouse, or the system
 		 * supplied id value.
@@ -1602,7 +1602,7 @@ this.createjs = this.createjs||{};
 		 * @type {Number}
 		 */
 		this.pointerID = pointerID;
-	
+
 		/**
 		 * Indicates whether this is the primary pointer in a multitouch environment. This will always be true for the mouse.
 		 * For touch pointers, the first pointer in the current stack will be considered the primary pointer.
@@ -1610,12 +1610,12 @@ this.createjs = this.createjs||{};
 		 * @type {Boolean}
 		 */
 		this.primary = !!primary;
-		
+
 		/**
 		 * The secondary target for the event, if applicable. This is used for mouseout/rollout
 		 * events to indicate the object that the mouse entered from, mouseover/rollover for the object the mouse exited,
 		 * and stagemousedown/stagemouseup events for the object that was the under the cursor, if any.
-		 * 
+		 *
 		 * Only valid interaction targets will be returned (ie. objects with mouse listeners or a cursor set).
 		 * @property relatedTarget
 		 * @type {DisplayObject}
@@ -1626,8 +1626,8 @@ this.createjs = this.createjs||{};
 
 	// TODO: deprecated
 	// p.initialize = function() {}; // searchable for devs wondering where it is. REMOVED. See docs for details.
-	
-	
+
+
 // getter / setters:
 	/**
 	 * Returns the x position of the mouse in the local coordinate system of the current target (ie. the dispatcher).
@@ -1638,7 +1638,7 @@ this.createjs = this.createjs||{};
 	p._get_localX = function() {
 		return this.currentTarget.globalToLocal(this.rawX, this.rawY).x;
 	};
-	
+
 	/**
 	 * Returns the y position of the mouse in the local coordinate system of the current target (ie. the dispatcher).
 	 * @property localY
@@ -1648,7 +1648,7 @@ this.createjs = this.createjs||{};
 	p._get_localY = function() {
 		return this.currentTarget.globalToLocal(this.rawX, this.rawY).y;
 	};
-	
+
 	/**
 	 * Indicates whether the event was generated by a touch input (versus a mouse input).
 	 * @property isTouch
@@ -1658,8 +1658,8 @@ this.createjs = this.createjs||{};
 	p._get_isTouch = function() {
 		return this.pointerID !== -1;
 	};
-	
-	
+
+
 	try {
 		Object.defineProperties(p, {
 			localX: { get: p._get_localX },
@@ -1725,7 +1725,7 @@ this.createjs = this.createjs||{};
 	 **/
 	function Matrix2D(a, b, c, d, tx, ty) {
 		this.setValues(a,b,c,d,tx,ty);
-		
+
 	// public properties:
 		// assigned in the setValues method.
 		/**
@@ -1733,31 +1733,31 @@ this.createjs = this.createjs||{};
 		 * @property a
 		 * @type Number
 		 **/
-	
+
 		/**
 		 * Position (0, 1) in a 3x3 affine transformation matrix.
 		 * @property b
 		 * @type Number
 		 **/
-	
+
 		/**
 		 * Position (1, 0) in a 3x3 affine transformation matrix.
 		 * @property c
 		 * @type Number
 		 **/
-	
+
 		/**
 		 * Position (1, 1) in a 3x3 affine transformation matrix.
 		 * @property d
 		 * @type Number
 		 **/
-	
+
 		/**
 		 * Position (2, 0) in a 3x3 affine transformation matrix.
 		 * @property tx
 		 * @type Number
 		 **/
-	
+
 		/**
 		 * Position (2, 1) in a 3x3 affine transformation matrix.
 		 * @property ty
@@ -1787,11 +1787,11 @@ this.createjs = this.createjs||{};
 	 * @readonly
 	 **/
 	Matrix2D.identity = null; // set at bottom of class definition.
-	
+
 
 // public methods:
 	/**
-	 * Sets the specified values on this instance. 
+	 * Sets the specified values on this instance.
 	 * @method setValues
 	 * @param {Number} [a=1] Specifies the a property for the new matrix.
 	 * @param {Number} [b=0] Specifies the b property for the new matrix.
@@ -1882,7 +1882,7 @@ this.createjs = this.createjs||{};
 	 * Prepends the specified matrix to this matrix.
 	 * This is the equivalent of multiplying `(specified matrix) * (this matrix)`.
 	 * For example, you could calculate the combined transformation for a child object using:
-	 * 
+	 *
 	 * 	var o = myDisplayObject;
 	 * 	var mtx = o.getMatrix();
 	 * 	while (o = o.parent) {
@@ -1900,7 +1900,7 @@ this.createjs = this.createjs||{};
 	/**
 	 * Generates matrix properties from the specified display object transform properties, and appends them to this matrix.
 	 * For example, you can use this to generate a matrix representing the transformations of a display object:
-	 * 
+	 *
 	 * 	var mtx = new createjs.Matrix2D();
 	 * 	mtx.appendTransform(o.x, o.y, o.scaleX, o.scaleY, o.rotation);
 	 * @method appendTransform
@@ -1934,10 +1934,10 @@ this.createjs = this.createjs||{};
 		} else {
 			this.append(cos*scaleX, sin*scaleX, -sin*scaleY, cos*scaleY, x, y);
 		}
-		
+
 		if (regX || regY) {
 			// append the registration offset:
-			this.tx -= regX*this.a+regY*this.c; 
+			this.tx -= regX*this.a+regY*this.c;
 			this.ty -= regX*this.b+regY*this.d;
 		}
 		return this;
@@ -1946,14 +1946,14 @@ this.createjs = this.createjs||{};
 	/**
 	 * Generates matrix properties from the specified display object transform properties, and prepends them to this matrix.
 	 * For example, you could calculate the combined transformation for a child object using:
-	 * 
+	 *
 	 * 	var o = myDisplayObject;
 	 * 	var mtx = new createjs.Matrix2D();
 	 * 	do  {
 	 * 		// prepend each parent's transformation in turn:
 	 * 		mtx.prependTransform(o.x, o.y, o.scaleX, o.scaleY, o.rotation, o.skewX, o.skewY, o.regX, o.regY);
 	 * 	} while (o = o.parent);
-	 * 	
+	 *
 	 * 	Note that the above example would not account for {{#crossLink "DisplayObject/transformMatrix:property"}}{{/crossLink}}
 	 * 	values. See {{#crossLink "Matrix2D/prependMatrix"}}{{/crossLink}} for an example that does.
 	 * @method prependTransform
@@ -2100,7 +2100,7 @@ this.createjs = this.createjs||{};
 	p.isIdentity = function() {
 		return this.tx === 0 && this.ty === 0 && this.a === 1 && this.b === 0 && this.c === 0 && this.d === 1;
 	};
-	
+
 	/**
 	 * Returns true if this matrix is equal to the specified matrix (all property values are equal).
 	 * @method equals
@@ -2158,7 +2158,7 @@ this.createjs = this.createjs||{};
 		}
 		return target;
 	};
-	
+
 	/**
 	 * Copies all properties from the specified matrix to this matrix.
 	 * @method copy
@@ -2215,7 +2215,7 @@ this.createjs = this.createjs||{};
 	 **/
 	function DisplayProps(visible, alpha, shadow, compositeOperation, matrix) {
 		this.setValues(visible, alpha, shadow, compositeOperation, matrix);
-		
+
 	// public properties:
 		// assigned in the setValues method.
 		/**
@@ -2223,13 +2223,13 @@ this.createjs = this.createjs||{};
 		 * @property alpha
 		 * @type Number
 		 **/
-	
+
 		/**
 		 * Property representing the shadow that will be applied to a display object.
 		 * @property shadow
 		 * @type Shadow
 		 **/
-	
+
 		/**
 		 * Property representing the compositeOperation that will be applied to a display object.
 		 * You can find a list of valid composite operations at:
@@ -2237,13 +2237,13 @@ this.createjs = this.createjs||{};
 		 * @property compositeOperation
 		 * @type String
 		 **/
-		
+
 		/**
 		 * Property representing the value for visible that will be applied to a display object.
 		 * @property visible
 		 * @type Boolean
 		 **/
-		
+
 		/**
 		 * The transformation matrix that will be applied to a display object.
 		 * @property matrix
@@ -2293,18 +2293,18 @@ this.createjs = this.createjs||{};
 		matrix&&this.matrix.appendMatrix(matrix);
 		return this;
 	};
-	
+
 	/**
 	 * Prepends the specified display properties. This is generally used to apply a parent's properties to a child's.
 	 * For example, to get the combined display properties that would be applied to a child, you could use:
-	 * 
+	 *
 	 * 	var o = myDisplayObject;
 	 * 	var props = new createjs.DisplayProps();
 	 * 	do {
 	 * 		// prepend each parent's props in turn:
 	 * 		props.prepend(o.visible, o.alpha, o.shadow, o.compositeOperation, o.getMatrix());
 	 * 	} while (o = o.parent);
-	 * 	
+	 *
 	 * @method prepend
 	 * @param {Boolean} visible desired visible value
 	 * @param {Number} alpha desired alpha value
@@ -2322,7 +2322,7 @@ this.createjs = this.createjs||{};
 		matrix&&this.matrix.prependMatrix(matrix);
 		return this;
 	};
-	
+
 	/**
 	 * Resets this instance and its matrix to default values.
 	 * @method identity
@@ -2336,7 +2336,7 @@ this.createjs = this.createjs||{};
 		this.matrix.identity();
 		return this;
 	};
-	
+
 	/**
 	 * Returns a clone of the DisplayProps instance. Clones the associated matrix.
 	 * @method clone
@@ -2366,9 +2366,9 @@ this.createjs = this.createjs||{};
 	 * Represents a point on a 2 dimensional x / y coordinate system.
 	 *
 	 * <h4>Example</h4>
-	 * 
+	 *
 	 *      var point = new createjs.Point(0, 100);
-	 * 
+	 *
 	 * @class Point
 	 * @param {Number} [x=0] X position.
 	 * @param {Number} [y=0] Y position.
@@ -2376,8 +2376,8 @@ this.createjs = this.createjs||{};
 	 **/
 	function Point(x, y) {
 	 	this.setValues(x, y);
-	 	
-	 	
+
+
 	// public properties:
 		// assigned in the setValues method.
 		/**
@@ -2385,7 +2385,7 @@ this.createjs = this.createjs||{};
 		 * @property x
 		 * @type Number
 		 **/
-	
+
 		/**
 		 * Y position.
 		 * @property y
@@ -2393,9 +2393,9 @@ this.createjs = this.createjs||{};
 		 **/
 	}
 	var p = Point.prototype;
-	
+
 // public methods:
-	/** 
+	/**
 	 * Sets the specified values on this instance.
 	 * @method setValues
 	 * @param {Number} [x=0] X position.
@@ -2408,7 +2408,7 @@ this.createjs = this.createjs||{};
 		this.y = y||0;
 		return this;
 	};
-	
+
 	/**
 	 * Copies all properties from the specified point to this point.
 	 * @method copy
@@ -2421,7 +2421,7 @@ this.createjs = this.createjs||{};
 		this.y = point.y;
 		return this;
 	};
-	
+
 	/**
 	 * Returns a clone of the Point instance.
 	 * @method clone
@@ -2439,8 +2439,8 @@ this.createjs = this.createjs||{};
 	p.toString = function() {
 		return "[Point (x="+this.x+" y="+this.y+")]";
 	};
-	
-	
+
+
 	createjs.Point = Point;
 }());
 
@@ -2471,8 +2471,8 @@ this.createjs = this.createjs||{};
 	 **/
 	function Rectangle(x, y, width, height) {
 		this.setValues(x, y, width, height);
-		
-		
+
+
 	// public properties:
 		// assigned in the setValues method.
 		/**
@@ -2480,19 +2480,19 @@ this.createjs = this.createjs||{};
 		 * @property x
 		 * @type Number
 		 **/
-	
+
 		/**
 		 * Y position.
 		 * @property y
 		 * @type Number
 		 **/
-	
+
 		/**
 		 * Width.
 		 * @property width
 		 * @type Number
 		 **/
-	
+
 		/**
 		 * Height.
 		 * @property height
@@ -2502,7 +2502,7 @@ this.createjs = this.createjs||{};
 	var p = Rectangle.prototype;
 
 // public methods:
-	/** 
+	/**
 	 * Sets the specified values on this instance.
 	 * @method setValues
 	 * @param {Number} [x=0] X position.
@@ -2520,8 +2520,8 @@ this.createjs = this.createjs||{};
 		this.height = height||0;
 		return this;
 	};
-	
-	/** 
+
+	/**
 	 * Extends the rectangle's bounds to include the described point or rectangle.
 	 * @method extend
 	 * @param {Number} x X position of the point or rectangle.
@@ -2540,8 +2540,8 @@ this.createjs = this.createjs||{};
 		if (y < this.y) { this.height += this.y-y; this.y = y; }
 		return this;
 	};
-	
-	/** 
+
+	/**
 	 * Adds the specified padding to the rectangle's bounds.
 	 * @method pad
 	 * @param {Number} top
@@ -2558,7 +2558,7 @@ this.createjs = this.createjs||{};
 		this.height += top+bottom;
 		return this;
 	};
-	
+
 	/**
 	 * Copies all properties from the specified rectangle to this rectangle.
 	 * @method copy
@@ -2569,8 +2569,8 @@ this.createjs = this.createjs||{};
 	p.copy = function(rectangle) {
 		return this.setValues(rectangle.x, rectangle.y, rectangle.width, rectangle.height);
 	};
-	
-	/** 
+
+	/**
 	 * Returns true if this rectangle fully encloses the described point or rectangle.
 	 * @method contains
 	 * @param {Number} x X position of the point or rectangle.
@@ -2584,8 +2584,8 @@ this.createjs = this.createjs||{};
 		height = height||0;
 		return (x >= this.x && x+width <= this.x+this.width && y >= this.y && y+height <= this.y+this.height);
 	};
-	
-	/** 
+
+	/**
 	 * Returns a new rectangle which contains this rectangle and the specified rectangle.
 	 * @method union
 	 * @param {Rectangle} rect The rectangle to calculate a union with.
@@ -2594,8 +2594,8 @@ this.createjs = this.createjs||{};
 	p.union = function(rect) {
 		return this.clone().extend(rect.x, rect.y, rect.width, rect.height);
 	};
-	
-	/** 
+
+	/**
 	 * Returns a new rectangle which describes the intersection (overlap) of this rectangle and the specified rectangle,
 	 * or null if they do not intersect.
 	 * @method intersection
@@ -2610,8 +2610,8 @@ this.createjs = this.createjs||{};
 		if (this.y + this.height < y2) { y2 = this.y + this.height; }
 		return (x2 <= x1 || y2 <= y1) ? null : new Rectangle(x1, y1, x2-x1, y2-y1);
 	};
-	
-	/** 
+
+	/**
 	 * Returns true if the specified rectangle intersects (has any overlap) with this rectangle.
 	 * @method intersects
 	 * @param {Rectangle} rect The rectangle to compare.
@@ -2620,8 +2620,8 @@ this.createjs = this.createjs||{};
 	p.intersects = function(rect) {
 		return (rect.x <= this.x+this.width && this.x <= rect.x+rect.width && rect.y <= this.y+this.height && this.y <= rect.y + rect.height);
 	};
-	
-	/** 
+
+	/**
 	 * Returns true if the width or height are equal or less than 0.
 	 * @method isEmpty
 	 * @return {Boolean} True if the rectangle is empty.
@@ -2629,7 +2629,7 @@ this.createjs = this.createjs||{};
 	p.isEmpty = function() {
 		return this.width <= 0 || this.height <= 0;
 	};
-	
+
 	/**
 	 * Returns a clone of the Rectangle instance.
 	 * @method clone
@@ -2647,8 +2647,8 @@ this.createjs = this.createjs||{};
 	p.toString = function() {
 		return "[Rectangle (x="+this.x+" y="+this.y+" width="+this.width+" height="+this.height+")]";
 	};
-	
-	
+
+
 	createjs.Rectangle = Rectangle;
 }());
 
@@ -2671,7 +2671,7 @@ this.createjs = this.createjs||{};
 	 *
 	 * The ButtonHelper instance does not need to be added to the stage, but a reference should be maintained to prevent
 	 * garbage collection.
-	 * 
+	 *
 	 * Note that over states will not work unless you call {{#crossLink "Stage/enableMouseOver"}}{{/crossLink}}.
 	 *
 	 * <h4>Example</h4>
@@ -2698,8 +2698,8 @@ this.createjs = this.createjs||{};
 	 */
 	function ButtonHelper(target, outLabel, overLabel, downLabel, play, hitArea, hitLabel) {
 		if (!target.addEventListener) { return; }
-	
-	
+
+
 	// public properties:
 		/**
 		 * The target for this button helper.
@@ -2708,28 +2708,28 @@ this.createjs = this.createjs||{};
 		 * @readonly
 		 **/
 		this.target = target;
-	
+
 		/**
 		 * The label name or frame number to display when the user mouses out of the target. Defaults to "over".
 		 * @property overLabel
 		 * @type String | Number
 		 **/
 		this.overLabel = overLabel == null ? "over" : overLabel;
-	
+
 		/**
 		 * The label name or frame number to display when the user mouses over the target. Defaults to "out".
 		 * @property outLabel
 		 * @type String | Number
 		 **/
 		this.outLabel = outLabel == null ? "out" : outLabel;
-	
+
 		/**
 		 * The label name or frame number to display when the user presses on the target. Defaults to "down".
 		 * @property downLabel
 		 * @type String | Number
 		 **/
 		this.downLabel = downLabel == null ? "down" : downLabel;
-	
+
 		/**
 		 * If true, then ButtonHelper will call gotoAndPlay, if false, it will use gotoAndStop. Default is false.
 		 * @property play
@@ -2737,8 +2737,8 @@ this.createjs = this.createjs||{};
 		 * @type Boolean
 		 **/
 		this.play = play;
-		
-		
+
+
 	//  private properties
 		/**
 		 * @property _isPressed
@@ -2746,21 +2746,21 @@ this.createjs = this.createjs||{};
 		 * @protected
 		 **/
 		this._isPressed = false;
-	
+
 		/**
 		 * @property _isOver
 		 * @type Boolean
 		 * @protected
 		 **/
 		this._isOver = false;
-	
+
 		/**
 		 * @property _enabled
 		 * @type Boolean
 		 * @protected
 		 **/
 		this._enabled = false;
-		
+
 	// setup:
 		target.mouseChildren = false; // prevents issues when children are removed from the display list when state changes.
 		this.enabled = true;
@@ -2774,7 +2774,7 @@ this.createjs = this.createjs||{};
 		}
 	}
 	var p = ButtonHelper.prototype;
-	
+
 // getter / setters:
 	/**
 	 * Use the {{#crossLink "ButtonHelper/enabled:property"}}{{/crossLink}} property instead.
@@ -2868,7 +2868,7 @@ this.createjs = this.createjs||{};
 			t.gotoAndStop&&t.gotoAndStop(label);
 		}
 	};
-	
+
 	/**
 	 * Injected into target. Preserves the paused state through a reset.
 	 * @method _reset
@@ -2912,31 +2912,31 @@ this.createjs = this.createjs||{};
 	 * @param {Number} blur The size of the blurring effect.
 	 **/
 	function Shadow(color, offsetX, offsetY, blur) {
-		
-		
+
+
 	// public properties:
-		/** 
+		/**
 		 * The color of the shadow. This can be any valid CSS color value.
 		 * @property color
 		 * @type String
 		 * @default null
 		 */
 		this.color = color||"black";
-	
+
 		/** The x offset of the shadow.
 		 * @property offsetX
 		 * @type Number
 		 * @default 0
 		 */
 		this.offsetX = offsetX||0;
-	
+
 		/** The y offset of the shadow.
 		 * @property offsetY
 		 * @type Number
 		 * @default 0
 		 */
 		this.offsetY = offsetY||0;
-	
+
 		/** The blur of the shadow.
 		 * @property blur
 		 * @type Number
@@ -2976,7 +2976,7 @@ this.createjs = this.createjs||{};
 	p.clone = function() {
 		return new Shadow(this.color, this.offsetX, this.offsetY, this.blur);
 	};
-	
+
 
 	createjs.Shadow = Shadow;
 }());
@@ -3551,7 +3551,7 @@ this.createjs = this.createjs||{};
 		var maxFrames = this._numFrames || 100000; // if we go over this, something is wrong.
 		var frameCount = 0, frameWidth = this._frameWidth, frameHeight = this._frameHeight;
 		var spacing = this._spacing, margin = this._margin;
-		
+
 		imgLoop:
 		for (var i=0, imgs=this._images; i<imgs.length; i++) {
 			var img = imgs[i], imgW = (img.width||img.naturalWidth), imgH = (img.height||img.naturalHeight);
@@ -3718,21 +3718,21 @@ this.createjs = this.createjs||{};
 		 * @type {StrokeStyle}
 		 **/
 		this._strokeStyle = null;
-		
+
 		/**
 		 * @property _oldStrokeStyle
 		 * @protected
 		 * @type {StrokeStyle}
 		 **/
 		this._oldStrokeStyle = null;
-		
+
 		/**
 		 * @property _strokeDash
 		 * @protected
 		 * @type {StrokeDash}
 		 **/
 		this._strokeDash = null;
-		
+
 		/**
 		 * @property _oldStrokeDash
 		 * @protected
@@ -4274,7 +4274,7 @@ this.createjs = this.createjs||{};
 		this._strokeIgnoreScale = ignoreScale;
 		return this;
 	};
-	
+
 	/**
 	 * Sets or clears the stroke dash pattern.
 	 *
@@ -4915,7 +4915,7 @@ this.createjs = this.createjs||{};
 	 * @protected
 	 **/
 	p.ss = p.setStrokeStyle;
-	
+
 	/**
 	 * Shortcut to setStrokeDash.
 	 * @method sd
@@ -5655,7 +5655,7 @@ this.createjs = this.createjs||{};
 		ctx.ignoreScale = (this.ignoreScale == null ? false : this.ignoreScale);
 	};
 	p.path = false;
-	
+
 	/**
 	 * Graphics command object. See {{#crossLink "Graphics/setStrokeDash"}}{{/crossLink}} and {{#crossLink "Graphics/append"}}{{/crossLink}} for more information.
 	 * @class StrokeDash
@@ -6191,7 +6191,7 @@ this.createjs = this.createjs||{};
 		 * the hit test object were a child of this display object and relative to its regX/Y). The hitArea will be tested
 		 * using only its own `alpha` value regardless of the alpha value on the target display object, or the target's
 		 * ancestors (parents).
-		 * 
+		 *
 		 * If set on a {{#crossLink "Container"}}{{/crossLink}}, children of the Container will not receive mouse events.
 		 * This is similar to setting {{#crossLink "mouseChildren"}}{{/crossLink}} to false.
 		 *
@@ -6354,7 +6354,7 @@ this.createjs = this.createjs||{};
 
 // events:
 	/**
-	 * Dispatched when the user presses their left mouse button over the display object. See the 
+	 * Dispatched when the user presses their left mouse button over the display object. See the
 	 * {{#crossLink "MouseEvent"}}{{/crossLink}} class for a listing of event properties.
 	 * @event mousedown
 	 * @since 0.6.0
@@ -6375,7 +6375,7 @@ this.createjs = this.createjs||{};
 	 */
 
 	/**
-	 * Dispatched when the user's mouse enters this display object. This event must be enabled using 
+	 * Dispatched when the user's mouse enters this display object. This event must be enabled using
 	 * {{#crossLink "Stage/enableMouseOver"}}{{/crossLink}}. See also {{#crossLink "DisplayObject/rollover:event"}}{{/crossLink}}.
 	 * See the {{#crossLink "MouseEvent"}}{{/crossLink}} class for a listing of event properties.
 	 * @event mouseover
@@ -6383,7 +6383,7 @@ this.createjs = this.createjs||{};
 	 */
 
 	/**
-	 * Dispatched when the user's mouse leaves this display object. This event must be enabled using 
+	 * Dispatched when the user's mouse leaves this display object. This event must be enabled using
 	 * {{#crossLink "Stage/enableMouseOver"}}{{/crossLink}}. See also {{#crossLink "DisplayObject/rollout:event"}}{{/crossLink}}.
 	 * See the {{#crossLink "MouseEvent"}}{{/crossLink}} class for a listing of event properties.
 	 * @event mouseout
@@ -6394,7 +6394,7 @@ this.createjs = this.createjs||{};
 	 * This event is similar to {{#crossLink "DisplayObject/mouseover:event"}}{{/crossLink}}, with the following
 	 * differences: it does not bubble, and it considers {{#crossLink "Container"}}{{/crossLink}} instances as an
 	 * aggregate of their content.
-	 * 
+	 *
 	 * For example, myContainer contains two overlapping children: shapeA and shapeB. The user moves their mouse over
 	 * shapeA and then directly on to shapeB. With a listener for {{#crossLink "mouseover:event"}}{{/crossLink}} on
 	 * myContainer, two events would be received, each targeting a child element:<OL>
@@ -6403,7 +6403,7 @@ this.createjs = this.createjs||{};
 	 * </OL>
 	 * However, with a listener for "rollover" instead, only a single event is received when the mouse first enters
 	 * the aggregate myContainer content (target=myContainer).
-	 * 
+	 *
 	 * This event must be enabled using {{#crossLink "Stage/enableMouseOver"}}{{/crossLink}}.
 	 * See the {{#crossLink "MouseEvent"}}{{/crossLink}} class for a listing of event properties.
 	 * @event rollover
@@ -6414,7 +6414,7 @@ this.createjs = this.createjs||{};
 	 * This event is similar to {{#crossLink "DisplayObject/mouseout:event"}}{{/crossLink}}, with the following
 	 * differences: it does not bubble, and it considers {{#crossLink "Container"}}{{/crossLink}} instances as an
 	 * aggregate of their content.
-	 * 
+	 *
 	 * For example, myContainer contains two overlapping children: shapeA and shapeB. The user moves their mouse over
 	 * shapeA, then directly on to shapeB, then off both. With a listener for {{#crossLink "mouseout:event"}}{{/crossLink}}
 	 * on myContainer, two events would be received, each targeting a child element:<OL>
@@ -6423,7 +6423,7 @@ this.createjs = this.createjs||{};
 	 * </OL>
 	 * However, with a listener for "rollout" instead, only a single event is received when the mouse leaves
 	 * the aggregate myContainer content (target=myContainer).
-	 * 
+	 *
 	 * This event must be enabled using {{#crossLink "Stage/enableMouseOver"}}{{/crossLink}}.
 	 * See the {{#crossLink "MouseEvent"}}{{/crossLink}} class for a listing of event properties.
 	 * @event rollout
@@ -6582,18 +6582,18 @@ this.createjs = this.createjs||{};
 	 **/
 	p.updateContext = function(ctx) {
 		var o=this, mask=o.mask, mtx= o._props.matrix;
-		
+
 		if (mask && mask.graphics && !mask.graphics.isEmpty()) {
 			mask.getMatrix(mtx);
 			ctx.transform(mtx.a,  mtx.b, mtx.c, mtx.d, mtx.tx, mtx.ty);
-			
+
 			mask.graphics.drawAsPath(ctx);
 			ctx.clip();
-			
+
 			mtx.invert();
 			ctx.transform(mtx.a,  mtx.b, mtx.c, mtx.d, mtx.tx, mtx.ty);
 		}
-		
+
 		this.getMatrix(mtx);
 		var tx = mtx.tx, ty = mtx.ty;
 		if (DisplayObject._snapToPixelEnabled && o.snapToPixel) {
@@ -6624,7 +6624,7 @@ this.createjs = this.createjs||{};
 	 * Note that filters need to be defined <em>before</em> the cache is applied or you will have to call updateCache after
 	 * application. Check out the {{#crossLink "Filter"}}{{/crossLink}} class for more information. Some filters
 	 * (ex. BlurFilter) may not work as expected in conjunction with the scale param.
-	 * 
+	 *
 	 * Usually, the resulting cacheCanvas will have the dimensions width * scale, height * scale, however some filters (ex. BlurFilter)
 	 * will add padding to the canvas dimensions.
 	 *
@@ -6716,7 +6716,7 @@ this.createjs = this.createjs||{};
 	 * @method localToGlobal
 	 * @param {Number} x The x position in the source display object to transform.
 	 * @param {Number} y The y position in the source display object to transform.
-	 * @param {Point | Object} [pt] An object to copy the result into. If omitted a new Point object with x/y properties will be returned. 
+	 * @param {Point | Object} [pt] An object to copy the result into. If omitted a new Point object with x/y properties will be returned.
 	 * @return {Point} A Point instance with x and y properties correlating to the transformed coordinates
 	 * on the stage.
 	 **/
@@ -6741,7 +6741,7 @@ this.createjs = this.createjs||{};
 	 * @method globalToLocal
 	 * @param {Number} x The x position on the stage to transform.
 	 * @param {Number} y The y position on the stage to transform.
-	 * @param {Point | Object} [pt] An object to copy the result into. If omitted a new Point object with x/y properties will be returned. 
+	 * @param {Point | Object} [pt] An object to copy the result into. If omitted a new Point object with x/y properties will be returned.
 	 * @return {Point} A Point instance with x and y properties correlating to the transformed position in the
 	 * display object's coordinate space.
 	 **/
@@ -6762,7 +6762,7 @@ this.createjs = this.createjs||{};
 	 * @param {Number} x The x position in the source display object to transform.
 	 * @param {Number} y The y position on the source display object to transform.
 	 * @param {DisplayObject} target The target display object to which the coordinates will be transformed.
-	 * @param {Point | Object} [pt] An object to copy the result into. If omitted a new Point object with x/y properties will be returned. 
+	 * @param {Point | Object} [pt] An object to copy the result into. If omitted a new Point object with x/y properties will be returned.
 	 * @return {Point} Returns a Point instance with x and y properties correlating to the transformed position
 	 * in the target's coordinate space.
 	 **/
@@ -6845,10 +6845,10 @@ this.createjs = this.createjs||{};
 	 **/
 	p.getConcatenatedDisplayProps = function(props) {
 		props = props ? props.identity() : new createjs.DisplayProps();
-		var o = this, mtx = o.getMatrix(props.matrix); 
+		var o = this, mtx = o.getMatrix(props.matrix);
 		do {
 			props.prepend(o.visible, o.alpha, o.shadow, o.compositeOperation);
-			
+
 			// we do this to avoid problems with the matrix being used for both operations when o._props.matrix is passed in as the props param.
 			// this could be simplified (ie. just done as part of the prepend above) if we switched to using a pool.
 			if (o != this) { mtx.prependMatrix(o.getMatrix(o._props.matrix)); }
@@ -6906,11 +6906,11 @@ this.createjs = this.createjs||{};
 	/**
 	 * Returns a rectangle representing this object's bounds in its local coordinate system (ie. with no transformation).
 	 * Objects that have been cached will return the bounds of the cache.
-	 * 
-	 * Not all display objects can calculate their own bounds (ex. Shape). For these objects, you can use 
+	 *
+	 * Not all display objects can calculate their own bounds (ex. Shape). For these objects, you can use
 	 * {{#crossLink "DisplayObject/setBounds"}}{{/crossLink}} so that they are included when calculating Container
 	 * bounds.
-	 * 
+	 *
 	 * <table>
 	 * 	<tr><td><b>All</b></td><td>
 	 * 		All display objects support setting bounds manually using setBounds(). Likewise, display objects that
@@ -6939,22 +6939,22 @@ this.createjs = this.createjs||{};
 	 * 		to (x=0,y=0).
 	 * 	</td></tr>
 	* </table>
-	 * 
+	 *
 	 * Bounds can be expensive to calculate for some objects (ex. text, or containers with many children), and
 	 * are recalculated each time you call getBounds(). You can prevent recalculation on static objects by setting the
 	 * bounds explicitly:
-	 * 
+	 *
 	 * 	var bounds = obj.getBounds();
 	 * 	obj.setBounds(bounds.x, bounds.y, bounds.width, bounds.height);
 	 * 	// getBounds will now use the set values, instead of recalculating
-	 * 
+	 *
 	 * To reduce memory impact, the returned Rectangle instance may be reused internally; clone the instance or copy its
 	 * values if you need to retain it.
-	 * 
+	 *
 	 * 	var myBounds = obj.getBounds().clone();
 	 * 	// OR:
 	 * 	myRect.copy(obj.getBounds());
-	 * 
+	 *
 	 * @method getBounds
 	 * @return {Rectangle} A Rectangle instance representing the bounds, or null if bounds are not available for this
 	 * object.
@@ -6972,14 +6972,14 @@ this.createjs = this.createjs||{};
 	/**
 	 * Returns a rectangle representing this object's bounds in its parent's coordinate system (ie. with transformations applied).
 	 * Objects that have been cached will return the transformed bounds of the cache.
-	 * 
-	 * Not all display objects can calculate their own bounds (ex. Shape). For these objects, you can use 
+	 *
+	 * Not all display objects can calculate their own bounds (ex. Shape). For these objects, you can use
 	 * {{#crossLink "DisplayObject/setBounds"}}{{/crossLink}} so that they are included when calculating Container
 	 * bounds.
-	 * 
+	 *
 	 * To reduce memory impact, the returned Rectangle instance may be reused internally; clone the instance or copy its
 	 * values if you need to retain it.
-	 * 
+	 *
 	 * Container instances calculate aggregate bounds for all children that return bounds via getBounds.
 	 * @method getTransformedBounds
 	 * @return {Rectangle} A Rectangle instance representing the bounds, or null if bounds are not available for this object.
@@ -6992,7 +6992,7 @@ this.createjs = this.createjs||{};
 	 * Allows you to manually specify the bounds of an object that either cannot calculate their own bounds (ex. Shape &
 	 * Text) for future reference, or so the object can be included in Container bounds. Manually set bounds will always
 	 * override calculated bounds.
-	 * 
+	 *
 	 * The bounds should be specified in the object's local (untransformed) coordinates. For example, a Shape instance
 	 * with a 25px radius circle centered at 0,0 would have bounds of (-25, -25, 50, 50).
 	 * @method setBounds
@@ -7145,14 +7145,14 @@ this.createjs = this.createjs||{};
 		if (!bounds) { return bounds; }
 		var x = bounds.x, y = bounds.y, width = bounds.width, height = bounds.height, mtx = this._props.matrix;
 		mtx = ignoreTransform ? mtx.identity() : this.getMatrix(mtx);
-		
+
 		if (x || y) { mtx.appendTransform(0,0,1,1,0,0,0,-x,-y); } // TODO: simplify this.
 		if (matrix) { mtx.prependMatrix(matrix); }
-		
+
 		var x_a = width*mtx.a, x_b = width*mtx.b;
 		var y_c = height*mtx.c, y_d = height*mtx.d;
 		var tx = mtx.tx, ty = mtx.ty;
-		
+
 		var minX = tx, maxX = tx, minY = ty, maxY = ty;
 
 		if ((x = x_a + tx) < minX) { minX = x; } else if (x > maxX) { maxX = x; }
@@ -7191,7 +7191,7 @@ this.createjs = this.createjs||{};
 
 (function() {
 	"use strict";
-	
+
 
 // constructor:
 /**
@@ -7217,7 +7217,7 @@ this.createjs = this.createjs||{};
  **/
 	function Container() {
 		this.DisplayObject_constructor();
-		
+
 	// public properties:
 		/**
 		 * The array of children in the display list. You should usually use the child management methods such as
@@ -7229,7 +7229,7 @@ this.createjs = this.createjs||{};
 		 * @default null
 		 **/
 		this.children = [];
-		
+
 		/**
 		 * Indicates whether the children of this container are independently enabled for mouse/pointer interaction.
 		 * If false, the children will be aggregated under the container - for example, a click on a child shape would
@@ -7239,7 +7239,7 @@ this.createjs = this.createjs||{};
 		 * @default true
 		 **/
 		this.mouseChildren = true;
-		
+
 		/**
 		 * If false, the tick will not be propagated to children of this Container. This can provide some performance benefits.
 		 * In addition to preventing the "tick" event from being dispatched, it will also prevent tick related updates
@@ -7251,8 +7251,8 @@ this.createjs = this.createjs||{};
 		this.tickChildren = true;
 	}
 	var p = createjs.extend(Container, createjs.DisplayObject);
-	
-	
+
+
 // getter / setters:
 	/**
 	 * Use the {{#crossLink "Container/numChildren:property"}}{{/crossLink}} property instead.
@@ -7277,7 +7277,7 @@ this.createjs = this.createjs||{};
 			numChildren: { get: p._getNumChildren }
 		});
 	} catch (e) {}
-	
+
 
 // public methods:
 	/**
@@ -7287,7 +7287,7 @@ this.createjs = this.createjs||{};
 	 * @deprecated in favour of `createjs.promote()`
 	 **/
 	p.initialize = Container; // TODO: deprecated.
-	
+
 	/**
 	 * Returns true or false indicating whether the display object would be visible if drawn to a canvas.
 	 * This does not account for whether it would be visible within the boundaries of the stage.
@@ -7314,13 +7314,13 @@ this.createjs = this.createjs||{};
 	 **/
 	p.draw = function(ctx, ignoreCache) {
 		if (this.DisplayObject_draw(ctx, ignoreCache)) { return true; }
-		
+
 		// this ensures we don't have issues with display list changes that occur during a draw:
 		var list = this.children.slice();
 		for (var i=0,l=list.length; i<l; i++) {
 			var child = list[i];
 			if (!child.isVisible()) { continue; }
-			
+
 			// draw the child:
 			ctx.save();
 			child.updateContext(ctx);
@@ -7329,7 +7329,7 @@ this.createjs = this.createjs||{};
 		}
 		return true;
 	};
-	
+
 	/**
 	 * Adds a child to the top of the display list.
 	 *
@@ -7485,7 +7485,7 @@ this.createjs = this.createjs||{};
 	p.getChildAt = function(index) {
 		return this.children[index];
 	};
-	
+
 	/**
 	 * Returns the child with the specified name.
 	 * @method getChildByName
@@ -7504,7 +7504,7 @@ this.createjs = this.createjs||{};
 	 * Performs an array sort operation on the child list.
 	 *
 	 * <h4>Example: Display children with a higher y in front.</h4>
-	 * 
+	 *
 	 *      var sortFunction = function(obj1, obj2, options) {
 	 *          if (obj1.y > obj2.y) { return 1; }
 	 *          if (obj1.y < obj2.y) { return -1; }
@@ -7534,7 +7534,7 @@ this.createjs = this.createjs||{};
 	p.getChildIndex = function(child) {
 		return createjs.indexOf(this.children, child);
 	};
-	
+
 	/**
 	 * Swaps the children at the specified indexes. Fails silently if either index is out of range.
 	 * @method swapChildrenAt
@@ -7549,7 +7549,7 @@ this.createjs = this.createjs||{};
 		kids[index1] = o2;
 		kids[index2] = o1;
 	};
-	
+
 	/**
 	 * Swaps the specified children's depth in the display list. Fails silently if either child is not a child of this
 	 * Container.
@@ -7569,11 +7569,11 @@ this.createjs = this.createjs||{};
 		kids[index1] = child2;
 		kids[index2] = child1;
 	};
-	
+
 	/**
 	 * Changes the depth of the specified child. Fails silently if the child is not a child of this container, or the index is out of range.
 	 * @param {DisplayObject} child
-	 * @param {Number} index  
+	 * @param {Number} index
 	 * @method setChildIndex
 	 **/
 	p.setChildIndex = function(child, index) {
@@ -7624,7 +7624,7 @@ this.createjs = this.createjs||{};
 	 * This uses shape based hit detection, and can be an expensive operation to run, so it is best to use it carefully.
 	 * For example, if testing for objects under the mouse, test on tick (instead of on {{#crossLink "DisplayObject/mousemove:event"}}{{/crossLink}}),
 	 * and only if the mouse's position has changed.
-	 * 
+	 *
 	 * <ul>
 	 *     <li>By default (mode=0) this method evaluates all display objects.</li>
 	 *     <li>By setting the `mode` parameter to `1`, the {{#crossLink "DisplayObject/mouseEnabled:property"}}{{/crossLink}}
@@ -7634,7 +7634,7 @@ this.createjs = this.createjs||{};
 	 * 	   	that would normally intercept mouse interaction will be included. This can significantly improve performance
 	 * 	   	in some cases by reducing the number of display objects that need to be tested.</li>
 	 * </li>
-	 * 
+	 *
 	 * This method accounts for both {{#crossLink "DisplayObject/hitArea:property"}}{{/crossLink}} and {{#crossLink "DisplayObject/mask:property"}}{{/crossLink}}.
 	 * @method getObjectsUnderPoint
 	 * @param {Number} x The x position in the container to test.
@@ -7663,15 +7663,15 @@ this.createjs = this.createjs||{};
 		var pt = this.localToGlobal(x, y);
 		return this._getObjectsUnderPoint(pt.x, pt.y, null, mode>0, mode==1);
 	};
-	
+
 	/**
 	 * Docced in superclass.
 	 */
 	p.getBounds = function() {
 		return this._getBounds(null, true);
 	};
-	
-	
+
+
 	/**
 	 * Docced in superclass.
 	 */
@@ -7718,7 +7718,7 @@ this.createjs = this.createjs||{};
 		}
 		this.DisplayObject__tick(evtObj);
 	};
-	
+
 	/**
 	 * Recursively clones all children of this container, and adds them to the target container.
 	 * @method cloneChildren
@@ -7734,7 +7734,7 @@ this.createjs = this.createjs||{};
 			arr.push(clone);
 		}
 	};
-	
+
 	/**
 	 * Removes the child at the specified index from the display list, and sets its parent to null.
 	 * Used by `removeChildAt`, `addChild`, and `addChildAt`.
@@ -7777,23 +7777,23 @@ this.createjs = this.createjs||{};
 			var hitArea = child.hitArea;
 			if (!child.visible || (!hitArea && !child.isVisible()) || (mouse && !child.mouseEnabled)) { continue; }
 			if (!hitArea && !this._testMask(child, x, y)) { continue; }
-			
+
 			// if a child container has a hitArea then we only need to check its hitAre2a, so we can treat it as a normal DO:
 			if (!hitArea && child instanceof Container) {
 				var result = child._getObjectsUnderPoint(x, y, arr, mouse, activeListener, currentDepth+1);
 				if (!arr && result) { return (mouse && !this.mouseChildren) ? this : result; }
 			} else {
 				if (mouse && !activeListener && !child._hasMouseEventListener()) { continue; }
-				
+
 				// TODO: can we pass displayProps forward, to avoid having to calculate this backwards every time? It's kind of a mixed bag. When we're only hunting for DOs with event listeners, it may not make sense.
 				var props = child.getConcatenatedDisplayProps(child._props);
 				mtx = props.matrix;
-				
+
 				if (hitArea) {
 					mtx.appendMatrix(hitArea.getMatrix(hitArea._props.matrix));
 					props.alpha = hitArea.alpha;
 				}
-				
+
 				ctx.globalAlpha = props.alpha;
 				ctx.setTransform(mtx.a,  mtx.b, mtx.c, mtx.d, mtx.tx-x, mtx.ty-y);
 				(hitArea||child).draw(ctx);
@@ -7806,7 +7806,7 @@ this.createjs = this.createjs||{};
 		}
 		return null;
 	};
-	
+
 	/**
 	 * @method _testMask
 	 * @param {DisplayObject} target
@@ -7818,26 +7818,26 @@ this.createjs = this.createjs||{};
 	p._testMask = function(target, x, y) {
 		var mask = target.mask;
 		if (!mask || !mask.graphics || mask.graphics.isEmpty()) { return true; }
-		
+
 		var mtx = this._props.matrix, parent = target.parent;
 		mtx = parent ? parent.getConcatenatedMatrix(mtx) : mtx.identity();
 		mtx = mask.getMatrix(mask._props.matrix).prependMatrix(mtx);
-		
+
 		var ctx = createjs.DisplayObject._hitTestContext;
 		ctx.setTransform(mtx.a,  mtx.b, mtx.c, mtx.d, mtx.tx-x, mtx.ty-y);
-		
+
 		// draw the mask as a solid fill:
 		mask.graphics.drawAsPath(ctx);
 		ctx.fillStyle = "#000";
 		ctx.fill();
-		
+
 		if (!this._testHit(ctx)) { return false; }
 		ctx.setTransform(1, 0, 0, 1, 0, 0);
 		ctx.clearRect(0, 0, 2, 2);
-		
+
 		return true;
 	};
-	
+
 	/**
 	 * @method _getBounds
 	 * @param {Matrix2D} matrix
@@ -7848,11 +7848,11 @@ this.createjs = this.createjs||{};
 	p._getBounds = function(matrix, ignoreTransform) {
 		var bounds = this.DisplayObject_getBounds();
 		if (bounds) { return this._transformBounds(bounds, matrix, ignoreTransform); }
-		
+
 		var mtx = this._props.matrix;
 		mtx = ignoreTransform ? mtx.identity() : this.getMatrix(mtx);
 		if (matrix) { mtx.prependMatrix(matrix); }
-		
+
 		var l = this.children.length, rect=null;
 		for (var i=0; i<l; i++) {
 			var child = this.children[i];
@@ -7903,8 +7903,8 @@ this.createjs = this.createjs||{};
 	 **/
 	function Stage(canvas) {
 		this.Container_constructor();
-	
-	
+
+
 	// public properties:
 		/**
 		 * Indicates whether the stage should automatically clear the canvas before each render. You can set this to <code>false</code>
@@ -7921,7 +7921,7 @@ this.createjs = this.createjs||{};
 		 * @default true
 		 **/
 		this.autoClear = true;
-	
+
 		/**
 		 * The canvas the stage will render to. Multiple stages can share a single canvas, but you must disable autoClear for all but the
 		 * first stage that will be ticked (or they will clear each other's render).
@@ -7937,7 +7937,7 @@ this.createjs = this.createjs||{};
 		 * @type HTMLCanvasElement | Object
 		 **/
 		this.canvas = (typeof canvas == "string") ? document.getElementById(canvas) : canvas;
-	
+
 		/**
 		 * The current mouse X position on the canvas. If the mouse leaves the canvas, this will indicate the most recent
 		 * position over the canvas, and mouseInBounds will be set to false.
@@ -7946,7 +7946,7 @@ this.createjs = this.createjs||{};
 		 * @readonly
 		 **/
 		this.mouseX = 0;
-	
+
 		/**
 		 * The current mouse Y position on the canvas. If the mouse leaves the canvas, this will indicate the most recent
 		 * position over the canvas, and mouseInBounds will be set to false.
@@ -7955,7 +7955,7 @@ this.createjs = this.createjs||{};
 		 * @readonly
 		 **/
 		this.mouseY = 0;
-	
+
 		/**
 		 * Specifies the area of the stage to affect when calling update. This can be use to selectively
 		 * re-draw specific regions of the canvas. If null, the whole canvas area is drawn.
@@ -7963,7 +7963,7 @@ this.createjs = this.createjs||{};
 		 * @type {Rectangle}
 		 */
 		this.drawRect = null;
-	
+
 		/**
 		 * Indicates whether display objects should be rendered on whole pixels. You can set the
 		 * {{#crossLink "DisplayObject/snapToPixel"}}{{/crossLink}} property of
@@ -7973,7 +7973,7 @@ this.createjs = this.createjs||{};
 		 * @default false
 		 **/
 		this.snapToPixelEnabled = false;
-	
+
 		/**
 		 * Indicates whether the mouse is currently within the bounds of the canvas.
 		 * @property mouseInBounds
@@ -7981,7 +7981,7 @@ this.createjs = this.createjs||{};
 		 * @default false
 		 **/
 		this.mouseInBounds = false;
-	
+
 		/**
 		 * If true, tick callbacks will be called on all display objects on the stage prior to rendering to the canvas.
 		 * @property tickOnUpdate
@@ -7989,7 +7989,7 @@ this.createjs = this.createjs||{};
 		 * @default true
 		 **/
 		this.tickOnUpdate = true;
-	
+
 		/**
 		 * If true, mouse move events will continue to be called when the mouse leaves the target canvas. See
 		 * {{#crossLink "Stage/mouseInBounds:property"}}{{/crossLink}}, and {{#crossLink "MouseEvent"}}{{/crossLink}}
@@ -7999,8 +7999,8 @@ this.createjs = this.createjs||{};
 		 * @default false
 		 **/
 		this.mouseMoveOutside = false;
-		
-		
+
+
 		/**
 		 * Prevents selection of other elements in the html page if the user clicks and drags, or double clicks on the canvas.
 		 * This works by calling `preventDefault()` on any mousedown events (or touch equivalent) originating on the canvas.
@@ -8009,15 +8009,15 @@ this.createjs = this.createjs||{};
 		 * @default true
 		 **/
 		this.preventSelection = true;
-	
+
 		/**
 		 * The hitArea property is not supported for Stage.
 		 * @property hitArea
 		 * @type {DisplayObject}
 		 * @default null
 		 */
-		 
-		 
+
+
 	// private properties:
 		/**
 		 * Holds objects with data for each active pointer id. Each object has the following properties:
@@ -8027,7 +8027,7 @@ this.createjs = this.createjs||{};
 		 * @private
 		 */
 		this._pointerData = {};
-	
+
 		/**
 		 * Number of active pointers.
 		 * @property _pointerCount
@@ -8035,7 +8035,7 @@ this.createjs = this.createjs||{};
 		 * @private
 		 */
 		this._pointerCount = 0;
-	
+
 		/**
 		 * The ID of the primary pointer.
 		 * @property _primaryPointerID
@@ -8043,29 +8043,29 @@ this.createjs = this.createjs||{};
 		 * @private
 		 */
 		this._primaryPointerID = null;
-	
+
 		/**
 		 * @property _mouseOverIntervalID
 		 * @protected
 		 * @type Number
 		 **/
 		this._mouseOverIntervalID = null;
-		
+
 		/**
 		 * @property _nextStage
 		 * @protected
 		 * @type Stage
 		 **/
 		this._nextStage = null;
-		
+
 		/**
 		 * @property _prevStage
 		 * @protected
 		 * @type Stage
 		 **/
 		this._prevStage = null;
-		
-		
+
+
 	// initialize:
 		this.enableDOMEvents(true);
 	}
@@ -8109,35 +8109,35 @@ this.createjs = this.createjs||{};
 	 * @event mouseenter
 	 * @since 0.7.0
 	 */
-	 
+
 	/**
 	 * Dispatched each update immediately before the tick event is propagated through the display list.
 	 * You can call preventDefault on the event object to cancel propagating the tick event.
 	 * @event tickstart
 	 * @since 0.7.0
 	 */
-	 
+
 	/**
 	 * Dispatched each update immediately after the tick event is propagated through the display list. Does not fire if
 	 * tickOnUpdate is false. Precedes the "drawstart" event.
 	 * @event tickend
 	 * @since 0.7.0
 	 */
-	 
+
 	/**
 	 * Dispatched each update immediately before the canvas is cleared and the display list is drawn to it.
 	 * You can call preventDefault on the event object to cancel the draw.
 	 * @event drawstart
 	 * @since 0.7.0
 	 */
-	 
+
 	/**
 	 * Dispatched each update immediately after the display list is drawn to the canvas and the canvas context is restored.
 	 * @event drawend
 	 * @since 0.7.0
 	 */
 
-	 
+
 // getter / setters:
 	/**
 	 * Specifies a target stage that will have mouse / touch interactions relayed to it after this stage handles them.
@@ -8147,7 +8147,7 @@ this.createjs = this.createjs||{};
 	 *      topStage.nextStage = bottomStage;
 	 *
 	 * To disable relaying, set nextStage to null.
-	 * 
+	 *
 	 * MouseOver, MouseOut, RollOver, and RollOut interactions are also passed through using the mouse over settings
 	 * of the top-most stage, but are only processed if the target stage has mouse over interactions enabled.
 	 * Considerations when using roll over in relay targets:<OL>
@@ -8160,12 +8160,12 @@ this.createjs = this.createjs||{};
 	 * 	topStage.nextStage = targetStage;
 	 * 	topStage.enableMouseOver(10);
 	 * 	targetStage.enableMouseOver(30);
-	 * 
+	 *
 	 * If the target stage's canvas is completely covered by this stage's canvas, you may also want to disable its
 	 * DOM events using:
-	 * 
+	 *
 	 *	targetStage.enableDOMEvents(false);
-	 * 
+	 *
 	 * @property nextStage
 	 * @type {Stage}
 	 **/
@@ -8177,7 +8177,7 @@ this.createjs = this.createjs||{};
 		if (value) { value._prevStage = this; }
 		this._nextStage = value;
 	};
-	
+
 	try {
 		Object.defineProperties(p, {
 			nextStage: { get: p._get_nextStage, set: p._set_nextStage }
@@ -8216,7 +8216,7 @@ this.createjs = this.createjs||{};
 		ctx.restore();
 		this.dispatchEvent("drawend");
 	};
-	
+
 	/**
 	 * Propagates a tick event through the display list. This is automatically called by {{#crossLink "Stage/update"}}{{/crossLink}}
 	 * unless {{#crossLink "Stage/tickOnUpdate:property"}}{{/crossLink}} is set to false.
@@ -8232,18 +8232,18 @@ this.createjs = this.createjs||{};
 	 * 	function handleTick(evtObj) {
 	 * 		// clone the event object from Ticker, and add some custom data to it:
 	 * 		var evt = evtObj.clone().set({greeting:"hello", name:"world"});
-	 * 		
+	 *
 	 * 		// pass it to stage.update():
 	 * 		myStage.update(evt); // subsequently calls tick() with the same param
 	 * 	}
-	 * 	
+	 *
 	 * 	// ...
 	 * 	myDisplayObject.on("tick", handleDisplayObjectTick);
 	 * 	function handleDisplayObjectTick(evt) {
 	 * 		console.log(evt.delta); // the delta property from the Ticker tick event object
 	 * 		console.log(evt.greeting, evt.name); // custom data: "hello world"
 	 * 	}
-	 * 
+	 *
 	 * @method tick
 	 * @param {Object} [props] An object with properties that should be copied to the event object. Should usually be a Ticker event object, or similar object with a delta property.
 	 **/
@@ -8303,7 +8303,7 @@ this.createjs = this.createjs||{};
 			data = ctx.getImageData(0, 0, w, h);
 			var compositeOperation = ctx.globalCompositeOperation;
 			ctx.globalCompositeOperation = "destination-over";
-			
+
 			ctx.fillStyle = backgroundColor;
 			ctx.fillRect(0, 0, w, h);
 		}
@@ -8477,11 +8477,11 @@ this.createjs = this.createjs||{};
 			if (id === -1 && o.inBounds == !inBounds) {
 				this._dispatchMouseEvent(this, (inBounds ? "mouseleave" : "mouseenter"), false, id, o, e);
 			}
-			
+
 			this._dispatchMouseEvent(this, "stagemousemove", false, id, o, e);
 			this._dispatchMouseEvent(o.target, "pressmove", true, id, o, e);
 		}
-		
+
 		nextStage&&nextStage._handlePointerMove(id, e, pageX, pageY, null);
 	};
 
@@ -8542,20 +8542,20 @@ this.createjs = this.createjs||{};
 	p._handlePointerUp = function(id, e, clear, owner) {
 		var nextStage = this._nextStage, o = this._getPointerData(id);
 		if (this._prevStage && owner === undefined) { return; } // redundant listener.
-		
+
 		var target=null, oTarget = o.target;
 		if (!owner && (oTarget || nextStage)) { target = this._getObjectsUnderPoint(o.x, o.y, null, true); }
-		
+
 		if (o.down) { this._dispatchMouseEvent(this, "stagemouseup", false, id, o, e, target); o.down = false; }
-		
+
 		if (target == oTarget) { this._dispatchMouseEvent(oTarget, "click", true, id, o, e); }
 		this._dispatchMouseEvent(oTarget, "pressup", true, id, o, e);
-		
+
 		if (clear) {
 			if (id==this._primaryPointerID) { this._primaryPointerID = null; }
 			delete(this._pointerData[id]);
 		} else { o.target = null; }
-		
+
 		nextStage&&nextStage._handlePointerUp(id, e, clear, owner || target && this);
 	};
 
@@ -8580,14 +8580,14 @@ this.createjs = this.createjs||{};
 	p._handlePointerDown = function(id, e, pageX, pageY, owner) {
 		if (this.preventSelection) { e.preventDefault(); }
 		if (this._primaryPointerID == null || id === -1) { this._primaryPointerID = id; } // mouse always takes over.
-		
+
 		if (pageY != null) { this._updatePointerPosition(id, e, pageX, pageY); }
 		var target = null, nextStage = this._nextStage, o = this._getPointerData(id);
 		if (!owner) { target = o.target = this._getObjectsUnderPoint(o.x, o.y, null, true); }
 
 		if (o.inBounds) { this._dispatchMouseEvent(this, "stagemousedown", false, id, o, e, target); o.down = true; }
 		this._dispatchMouseEvent(target, "mousedown", true, id, o, e);
-		
+
 		nextStage&&nextStage._handlePointerDown(id, e, pageX, pageY, owner || target && this);
 	};
 
@@ -8600,7 +8600,7 @@ this.createjs = this.createjs||{};
 	 **/
 	p._testMouseOver = function(clear, owner, eventTarget) {
 		if (this._prevStage && owner === undefined) { return; } // redundant listener.
-		
+
 		var nextStage = this._nextStage;
 		if (!this._mouseOverIntervalID) {
 			// not enabled for mouseover, but should still relay the event.
@@ -8610,11 +8610,11 @@ this.createjs = this.createjs||{};
 		var o = this._getPointerData(-1);
 		// only update if the mouse position has changed. This provides a lot of optimization, but has some trade-offs.
 		if (!o || (!clear && this.mouseX == this._mouseOverX && this.mouseY == this._mouseOverY && this.mouseInBounds)) { return; }
-		
+
 		var e = o.posEvtObj;
 		var isEventTarget = eventTarget || e&&(e.target == this.canvas);
 		var target=null, common = -1, cursor="", t, i, l;
-		
+
 		if (!owner && (clear || this.mouseInBounds && isEventTarget)) {
 			target = this._getObjectsUnderPoint(this.mouseX, this.mouseY, null, true);
 			this._mouseOverX = this.mouseX;
@@ -8656,7 +8656,7 @@ this.createjs = this.createjs||{};
 		if (oldTarget != target) {
 			this._dispatchMouseEvent(target, "mouseover", true, -1, o, e, oldTarget);
 		}
-		
+
 		nextStage&&nextStage._testMouseOver(clear, owner || target && this, eventTarget || isEventTarget && this);
 	};
 
@@ -8744,11 +8744,11 @@ this.createjs = this.createjs||{};
 	 * 	are not rendered when added to the display list.
 	 * - To display something StageGL cannot render, {{#crossLink "displayObject/cache"}}{{/crossLink}} the object.
 	 *	Caches can be rendered regardless of source.
-	 * - Images are wrapped as a webGL "Texture". Each graphics card has a limit to its concurrent Textures, too many 
+	 * - Images are wrapped as a webGL "Texture". Each graphics card has a limit to its concurrent Textures, too many
 	 * Textures will noticeably slow performance.
-	 * - Each cache counts as an individual Texture. As such {{#crossLink "SpriteSheet"}}{{/crossLink}} and 
+	 * - Each cache counts as an individual Texture. As such {{#crossLink "SpriteSheet"}}{{/crossLink}} and
 	 * {{#crossLink "SpriteSheetBuilder"}}{{/crossLink}} are recommended practices to help keep texture counts low.
-	 * - To use any image node (DOM Image/Canvas Element) between multiple StageGL instances it must be a 
+	 * - To use any image node (DOM Image/Canvas Element) between multiple StageGL instances it must be a
 	 * {{#crossLink "Bitmap/clone"}}{{/crossLink}}, otherwise the GPU texture loading and tracking will get confused.
 	 * - to avoid an up/down scaled render you must call {{#crossLink "StageGL/updateViewport"}}{{/crossLink}} if you
 	 * resize your canvas after making a StageGL instance, this will properly size the WebGL context stored in memory.
@@ -9765,12 +9765,12 @@ this.createjs = this.createjs||{};
 	};
 
 	/**
-	 * For every image encountered StageGL registers and tracks it automatically. This tracking can cause memory leaks 
+	 * For every image encountered StageGL registers and tracks it automatically. This tracking can cause memory leaks
 	 * if not purged. StageGL, by default, automatically purges them. This does have a cost and may unfortunately find
 	 * false positives. This function is for manual management of this memory instead of the automatic system controlled
 	 * by the {{#crossLink "StageGL/autoPurge:property"}}{{/crossLink}} property.
 	 *
-	 * This function will recursively remove all textures found on the object, its children, cache, etc. It will uncache 
+	 * This function will recursively remove all textures found on the object, its children, cache, etc. It will uncache
 	 * objects and remove any texture it finds REGARDLESS of whether it is currently in use elsewhere. It is up to the
 	 * developer to ensure that a texture in use is not removed.
 	 *
@@ -10128,7 +10128,7 @@ this.createjs = this.createjs||{};
 
 // private methods:
 	/**
-	 * Sets up and returns the WebGL context for the canvas. May return undefined in error scenarios. These can include 
+	 * Sets up and returns the WebGL context for the canvas. May return undefined in error scenarios. These can include
 	 * situations where the canvas element already has a context, 2D or GL.
 	 * @param  {Canvas} canvas The DOM canvas element to attach to
 	 * @param  {Object} options The options to be handed into the WebGL object, see WebGL spec
@@ -10164,9 +10164,9 @@ this.createjs = this.createjs||{};
 	 * @param  {WebGLRenderingContext} gl The canvas WebGL context object to draw into.
 	 * @param  {String} [shaderName="regular"] Working values: "regular", "override", and "filter". Which type of shader to build.
 	 * Filter and override both accept the custom params. Regular and override have all features. Filter is a special case reduced feature shader meant to be over-ridden.
-	 * @param  {String} [customVTX] Extra vertex shader information to replace a regular draw, see 
+	 * @param  {String} [customVTX] Extra vertex shader information to replace a regular draw, see
 	 * {{#crossLink "StageGL/COVER_VERTEX_BODY"}}{{/crossLink}} for default and {{#crossLink "Filter"}}{{/crossLink}} for examples.
-	 * @param  {String} [customFRAG] Extra fragment shader information to replace a regular draw, see 
+	 * @param  {String} [customFRAG] Extra fragment shader information to replace a regular draw, see
 	 * {{#crossLink "StageGL/COVER_FRAGMENT_BODY"}}{{/crossLink}} for default and {{#crossLink "Filter"}}{{/crossLink}} for examples.
 	 * @param  {Function} [shaderParamSetup] Function to run so custom shader parameters can get applied for the render.
 	 * @protected
@@ -10571,7 +10571,7 @@ this.createjs = this.createjs||{};
 	};
 
 	/**
-	 * Remove and clean the texture, expects a texture and is inflexible. Mostly for internal use, recommended to call 
+	 * Remove and clean the texture, expects a texture and is inflexible. Mostly for internal use, recommended to call
 	 * {{#crossLink "StageGL/releaseTexture"}}{{/crossLink}} instead as it will call this with the correct texture object(s).
 	 * Note: Testing shows this may not happen immediately, have to wait frames for WebGL to have actually adjust memory.
 	 * @method _killTextureObject
@@ -11109,7 +11109,7 @@ this.createjs = this.createjs||{};
 this.createjs = this.createjs||{};
 
 (function() {
-	
+
 	/**
 	 * A Bitmap represents an Image, Canvas, or Video in the display list. A Bitmap can be instantiated using an existing
 	 * HTML element, or a string.
@@ -11142,8 +11142,8 @@ this.createjs = this.createjs||{};
 	 **/
 	function Bitmap(imageOrUri) {
 		this.DisplayObject_constructor();
-		
-		
+
+
 	// public properties:
 		/**
 		 * The source image to display. This can be a CanvasImageSource
@@ -11158,7 +11158,7 @@ this.createjs = this.createjs||{};
 		} else {
 			this.image = imageOrUri;
 		}
-	
+
 		/**
 		 * Specifies an area of the source image to draw. If omitted, the whole image will be drawn.
 		 * Notes:
@@ -11179,8 +11179,8 @@ this.createjs = this.createjs||{};
 		this._webGLRenderStyle = createjs.DisplayObject._StageGL_BITMAP;
 	}
 	var p = createjs.extend(Bitmap, createjs.DisplayObject);
-	
-	
+
+
 // public methods:
 	/**
 	 * Constructor alias for backwards compatibility. This method will be removed in future versions.
@@ -11234,10 +11234,10 @@ this.createjs = this.createjs||{};
 		}
 		return true;
 	};
-	
+
 	//Note, the doc sections below document using the specified APIs (from DisplayObject)  from
 	//Bitmap. This is why they have no method implementations.
-	
+
 	/**
 	 * Because the content of a Bitmap is already in a simple format, cache is unnecessary for Bitmap instances.
 	 * You should <b>not</b> cache Bitmap instances as it can degrade performance.
@@ -11247,7 +11247,7 @@ this.createjs = this.createjs||{};
 	 * method.
 	 * @method cache
 	 **/
-	
+
 	/**
 	 * Because the content of a Bitmap is already in a simple format, cache is unnecessary for Bitmap instances.
 	 * You should <b>not</b> cache Bitmap instances as it can degrade performance.
@@ -11257,7 +11257,7 @@ this.createjs = this.createjs||{};
 	 * method.
 	 * @method updateCache
 	 **/
-	
+
 	/**
 	 * Because the content of a Bitmap is already in a simple format, cache is unnecessary for Bitmap instances.
 	 * You should <b>not</b> cache Bitmap instances as it can degrade performance.
@@ -11278,7 +11278,7 @@ this.createjs = this.createjs||{};
 		var hasContent = (image && (image.naturalWidth || image.getContext || image.readyState >= 2));
 		return hasContent ? this._rectangle.setValues(0, 0, o.width, o.height) : null;
 	};
-	
+
 	/**
 	 * Returns a clone of the Bitmap instance.
 	 * @method clone
@@ -11293,7 +11293,7 @@ this.createjs = this.createjs||{};
 		this._cloneProps(o);
 		return o;
 	};
-	
+
 	/**
 	 * Returns a string representation of this object.
 	 * @method toString
@@ -11303,7 +11303,7 @@ this.createjs = this.createjs||{};
 		return "[Bitmap (name="+  this.name +")]";
 	};
 
-	
+
 	createjs.Bitmap = createjs.promote(Bitmap, "DisplayObject");
 }());
 
@@ -11343,8 +11343,8 @@ this.createjs = this.createjs||{};
 	 **/
 	function Sprite(spriteSheet, frameOrAnimation) {
 		this.DisplayObject_constructor();
-		
-		
+
+
 	// public properties:
 		/**
 		 * The frame index that will be drawn when draw is called. Note that with some {{#crossLink "SpriteSheet"}}{{/crossLink}}
@@ -11355,7 +11355,7 @@ this.createjs = this.createjs||{};
 		 * @readonly
 		 **/
 		this.currentFrame = 0;
-	
+
 		/**
 		 * Returns the name of the currently playing animation.
 		 * @property currentAnimation
@@ -11364,7 +11364,7 @@ this.createjs = this.createjs||{};
 		 * @readonly
 		 **/
 		this.currentAnimation = null;
-	
+
 		/**
 		 * Prevents the animation from advancing each tick automatically. For example, you could create a sprite
 		 * sheet of icons, set paused to true, and display the appropriate icon by setting <code>currentFrame</code>.
@@ -11373,7 +11373,7 @@ this.createjs = this.createjs||{};
 		 * @default false
 		 **/
 		this.paused = true;
-	
+
 		/**
 		 * The SpriteSheet instance to play back. This includes the source image, frame dimensions, and frame
 		 * data. See {{#crossLink "SpriteSheet"}}{{/crossLink}} for more information.
@@ -11382,7 +11382,7 @@ this.createjs = this.createjs||{};
 		 * @readonly
 		 **/
 		this.spriteSheet = spriteSheet;
-	
+
 		/**
 		 * Specifies the current frame index within the currently playing animation. When playing normally, this will increase
 		 * from 0 to n-1, where n is the number of frames in the current animation.
@@ -11395,7 +11395,7 @@ this.createjs = this.createjs||{};
 		 * @default 0
 		 **/
 		this.currentAnimationFrame = 0;
-	
+
 		/**
 		 * By default Sprite instances advance one frame per tick. Specifying a framerate for the Sprite (or its related
 		 * SpriteSheet) will cause it to advance based on elapsed time between ticks as appropriate to maintain the target
@@ -11412,8 +11412,8 @@ this.createjs = this.createjs||{};
 		 * @default 0
 		 **/
 		this.framerate = 0;
-	
-	
+
+
 	// private properties:
 		/**
 		 * Current animation object.
@@ -11423,7 +11423,7 @@ this.createjs = this.createjs||{};
 		 * @default null
 		 **/
 		this._animation = null;
-	
+
 		/**
 		 * Current frame index.
 		 * @property _currentFrame
@@ -11432,7 +11432,7 @@ this.createjs = this.createjs||{};
 		 * @default null
 		 **/
 		this._currentFrame = null;
-		
+
 		/**
 		 * Skips the next auto advance. Used by gotoAndPlay to avoid immediately jumping to the next frame
 		 * @property _skipAdvance
@@ -11470,7 +11470,7 @@ this.createjs = this.createjs||{};
 	 * @param {String} next The name of the next animation that will be played, or null. This will be the same as name if the animation is looping.
 	 * @since 0.6.0
 	 */
-	 
+
 	/**
 	 * Dispatched any time the current frame changes. For example, this could be due to automatic advancement on a tick,
 	 * or calling gotoAndPlay() or gotoAndStop().
@@ -11588,7 +11588,7 @@ this.createjs = this.createjs||{};
 		var t = (fps && time != null) ? time/(1000/fps) : 1;
 		this._normalizeFrame(t);
 	};
-	
+
 	/**
 	 * Returns a {{#crossLink "Rectangle"}}{{/crossLink}} instance defining the bounds of the current frame relative to
 	 * the origin. For example, a 90 x 70 frame with <code>regX=50</code> and <code>regY=40</code> would return a
@@ -11637,13 +11637,13 @@ this.createjs = this.createjs||{};
 		o.paused = this.paused;
 		o.currentAnimationFrame = this.currentAnimationFrame;
 		o.framerate = this.framerate;
-		
+
 		o._animation = this._animation;
 		o._currentFrame = this._currentFrame;
 		o._skipAdvance = this._skipAdvance;
 		return o;
 	};
-	
+
 	/**
 	 * Advances the <code>currentFrame</code> if paused is not true. This is called automatically when the {{#crossLink "Stage"}}{{/crossLink}}
 	 * ticks.
@@ -11671,7 +11671,7 @@ this.createjs = this.createjs||{};
 		var paused = this.paused;
 		var frame = this._currentFrame;
 		var l;
-		
+
 		if (animation) {
 			var speed = animation.speed || 1;
 			var animFrame = this.currentAnimationFrame;
@@ -11796,8 +11796,8 @@ this.createjs = this.createjs||{};
 	 **/
 	function Shape(graphics) {
 		this.DisplayObject_constructor();
-		
-		
+
+
 	// public properties:
 		/**
 		 * The graphics instance to display.
@@ -11909,8 +11909,8 @@ this.createjs = this.createjs||{};
 	 **/
 	function Text(text, font, color) {
 		this.DisplayObject_constructor();
-		
-		
+
+
 	// public properties:
 		/**
 		 * The text to display.
@@ -11918,14 +11918,14 @@ this.createjs = this.createjs||{};
 		 * @type String
 		 **/
 		this.text = text;
-	
+
 		/**
 		 * The font style to use. Any valid value for the CSS font attribute is acceptable (ex. "bold 36px Arial").
 		 * @property font
 		 * @type String
 		 **/
 		this.font = font;
-	
+
 		/**
 		 * The color to draw the text in. Any valid value for the CSS color attribute is acceptable (ex. "#F00"). Default is "#000".
 		 * It will also accept valid canvas fillStyle values.
@@ -11933,7 +11933,7 @@ this.createjs = this.createjs||{};
 		 * @type String
 		 **/
 		this.color = color;
-	
+
 		/**
 		 * The horizontal text alignment. Any of "start", "end", "left", "right", and "center". For detailed
 		 * information view the
@@ -11943,7 +11943,7 @@ this.createjs = this.createjs||{};
 		 * @type String
 		 **/
 		this.textAlign = "left";
-	
+
 		/**
 		 * The vertical alignment point on the font. Any of "top", "hanging", "middle", "alphabetic", "ideographic", or
 		 * "bottom". For detailed information view the <a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/the-canvas-element.html#text-styles">
@@ -11952,7 +11952,7 @@ this.createjs = this.createjs||{};
 		 * @type String
 		*/
 		this.textBaseline = "top";
-	
+
 		/**
 		 * The maximum width to draw the text. If maxWidth is specified (not null), the text will be condensed or
 		 * shrunk to make it fit in this width. For detailed information view the
@@ -11962,14 +11962,14 @@ this.createjs = this.createjs||{};
 		 * @type Number
 		*/
 		this.maxWidth = null;
-	
+
 		/**
 		 * If greater than 0, the text will be drawn as a stroke (outline) of the specified width.
 		 * @property outline
 		 * @type Number
 		 **/
 		this.outline = 0;
-	
+
 		/**
 		 * Indicates the line height (vertical distance between baselines) for multi-line text. If null or 0,
 		 * the value of getMeasuredLineHeight is used.
@@ -11977,7 +11977,7 @@ this.createjs = this.createjs||{};
 		 * @type Number
 		 **/
 		this.lineHeight = 0;
-	
+
 		/**
 		 * Indicates the maximum width for a line of text before it is wrapped to multiple lines. If null,
 		 * the text will not be wrapped.
@@ -11991,7 +11991,7 @@ this.createjs = this.createjs||{};
 	// TODO: deprecated
 	// p.initialize = function() {}; // searchable for devs wondering where it is. REMOVED. See docs for details.
 
-	
+
 // static properties:
 	/**
 	 * @property _workingContext
@@ -12000,8 +12000,8 @@ this.createjs = this.createjs||{};
 	 **/
 	var canvas = (createjs.createCanvas?createjs.createCanvas():document.createElement("canvas"));
 	if (canvas.getContext) { Text._workingContext = canvas.getContext("2d"); canvas.width = canvas.height = 1; }
-	
-	
+
+
 // constants:
 	/**
 	 * Lookup table for the ratio to offset bounds x calculations based on the textAlign property.
@@ -12011,7 +12011,7 @@ this.createjs = this.createjs||{};
 	 * @static
 	 **/
 	Text.H_OFFSETS = {start: 0, left: 0, center: -0.5, end: -1, right: -1};
-	
+
 	/**
 	 * Lookup table for the ratio to offset bounds y calculations based on the textBaseline property.
 	 * @property H_OFFSETS
@@ -12051,7 +12051,7 @@ this.createjs = this.createjs||{};
 		var col = this.color || "#000";
 		if (this.outline) { ctx.strokeStyle = col; ctx.lineWidth = this.outline*1; }
 		else { ctx.fillStyle = col; }
-		
+
 		this._drawText(this._prepContext(ctx));
 		return true;
 	};
@@ -12101,7 +12101,7 @@ this.createjs = this.createjs||{};
 		var y = lineHeight * Text.V_OFFSETS[this.textBaseline||"top"];
 		return this._rectangle.setValues(x, y, w, o.height);
 	};
-	
+
 	/**
 	 * Returns an object with width, height, and lines properties. The width and height are the visual width and height
 	 * of the drawn text. The lines property contains an array of strings, one for
@@ -12186,19 +12186,19 @@ this.createjs = this.createjs||{};
 			this._prepContext(ctx);
 		}
 		var lineHeight = this.lineHeight||this.getMeasuredLineHeight();
-		
+
 		var maxW = 0, count = 0;
 		var hardLines = String(this.text).split(/(?:\r\n|\r|\n)/);
 		for (var i=0, l=hardLines.length; i<l; i++) {
 			var str = hardLines[i];
 			var w = null;
-			
+
 			if (this.lineWidth != null && (w = ctx.measureText(str).width) > this.lineWidth) {
 				// text wrapping:
 				var words = str.split(/(\s)/);
 				str = words[0];
 				w = ctx.measureText(str).width;
-				
+
 				for (var j=1, jl=words.length; j<jl; j+=2) {
 					// Line needs to wrap:
 					var wordW = ctx.measureText(words[j] + words[j+1]).width;
@@ -12215,14 +12215,14 @@ this.createjs = this.createjs||{};
 					}
 				}
 			}
-			
+
 			if (paint) { this._drawTextLine(ctx, str, count*lineHeight); }
 			if (lines) { lines.push(str); }
 			if (o && w == null) { w = ctx.measureText(str).width; }
 			if (w > maxW) { maxW = w; }
 			count++;
 		}
-		
+
 		if (o) {
 			o.width = maxW;
 			o.height = count*lineHeight;
@@ -12243,8 +12243,8 @@ this.createjs = this.createjs||{};
 		if (this.outline) { ctx.strokeText(text, 0, y, this.maxWidth||0xFFFF); }
 		else { ctx.fillText(text, 0, y, this.maxWidth||0xFFFF); }
 	};
-	
-	
+
+
 	/**
 	 * @method _getMeasuredWidth
 	 * @param {String} text
@@ -12290,8 +12290,8 @@ this.createjs = this.createjs || {};
 	 **/
 	function BitmapText(text, spriteSheet) {
 		this.Container_constructor();
-		
-		
+
+
 	// public properties:
 		/**
 		 * The text to display.
@@ -12300,7 +12300,7 @@ this.createjs = this.createjs || {};
 		 * @default ""
 		 **/
 		this.text = text||"";
-		
+
 		/**
 		 * A SpriteSheet instance that defines the glyphs for this bitmap text. Each glyph/character
 		 * should have a single frame animation defined in the sprite sheet named the same as
@@ -12310,7 +12310,7 @@ this.createjs = this.createjs || {};
 		 *
 		 * would indicate that the frame at index 0 of the spritesheet should be drawn for the "A" character. The short form
 		 * is also acceptable:
-		 * 
+		 *
 		 * 		"A": 0
 		 *
 		 * Note that if a character in the text is not found in the sprite sheet, it will also
@@ -12322,7 +12322,7 @@ this.createjs = this.createjs || {};
 		 * @default null
 		 **/
 		this.spriteSheet = spriteSheet;
-	
+
 		/**
 		 * The height of each line of text. If 0, then it will use a line height calculated
 		 * by checking for the height of the "1", "T", or "L" character (in that order). If
@@ -12333,7 +12333,7 @@ this.createjs = this.createjs || {};
 		 * @default 0
 		 **/
 		this.lineHeight = 0;
-	
+
 		/**
 		 * This spacing (in pixels) will be added after each character in the output.
 		 * @property letterSpacing
@@ -12341,7 +12341,7 @@ this.createjs = this.createjs || {};
 		 * @default 0
 		 **/
 		this.letterSpacing = 0;
-	
+
 		/**
 		 * If a space character is not defined in the sprite sheet, then empty pixels equal to
 		 * spaceWidth will be inserted instead. If 0, then it will use a value calculated
@@ -12353,8 +12353,8 @@ this.createjs = this.createjs || {};
 		 * @default 0
 		 **/
 		this.spaceWidth = 0;
-		
-		
+
+
 	// private properties:
 	 	/**
 		 * @property _oldProps
@@ -12391,7 +12391,7 @@ this.createjs = this.createjs || {};
 	 * @default 100
 	 **/
 	BitmapText.maxPoolSize = 100;
-	
+
 	/**
 	 * Sprite object pool.
 	 * @type {Array}
@@ -12400,7 +12400,7 @@ this.createjs = this.createjs || {};
 	 */
 	BitmapText._spritePool = [];
 
-	
+
 // public methods:
 	/**
 	 * Docced in superclass.
@@ -12410,7 +12410,7 @@ this.createjs = this.createjs || {};
 		this._updateState();
 		this.Container_draw(ctx, ignoreCache);
 	};
-	
+
 	/**
 	 * Docced in superclass.
 	 **/
@@ -12418,7 +12418,7 @@ this.createjs = this.createjs || {};
 		this._updateText();
 		return this.Container_getBounds();
 	};
-	
+
 	/**
 	 * Returns true or false indicating whether the display object would be visible if drawn to a canvas.
 	 * This does not account for whether it would be visible within the boundaries of the stage.
@@ -12430,11 +12430,11 @@ this.createjs = this.createjs || {};
 		var hasContent = this.cacheCanvas || (this.spriteSheet && this.spriteSheet.complete && this.text);
 		return !!(this.visible && this.alpha > 0 && this.scaleX !== 0 && this.scaleY !== 0 && hasContent);
 	};
-	
+
 	p.clone = function() {
 		return this._cloneProps(new BitmapText(this.text, this.spriteSheet));
 	};
-	
+
 	/**
 	 * <strong>Disabled in BitmapText.</strong>
 	 * @method addChild
@@ -12479,7 +12479,7 @@ this.createjs = this.createjs || {};
 		o.spaceWidth = this.spaceWidth;
 		return o;
 	};
-	
+
 	/**
 	 * @method _getFrameIndex
 	 * @param {String} character
@@ -12495,7 +12495,7 @@ this.createjs = this.createjs || {};
 		}
 		return o && o.frames[0];
 	};
-	
+
 	/**
 	 * @method _getFrame
 	 * @param {String} character
@@ -12537,7 +12537,7 @@ this.createjs = this.createjs || {};
 	p._updateText = function() {
 		var x=0, y=0, o=this._oldProps, change=false, spaceW=this.spaceWidth, lineH=this.lineHeight, ss=this.spriteSheet;
 		var pool=BitmapText._spritePool, kids=this.children, childIndex=0, numKids=kids.length, sprite;
-		
+
 		for (var n in o) {
 			if (o[n] != this[n]) {
 				o[n] = this[n];
@@ -12545,11 +12545,11 @@ this.createjs = this.createjs || {};
 			}
 		}
 		if (!change) { return; }
-		
+
 		var hasSpace = !!this._getFrame(" ", ss);
 		if (!hasSpace && !spaceW) { spaceW = this._getSpaceWidth(ss); }
 		if (!lineH) { lineH = this._getLineHeight(ss); }
-		
+
 		for(var i=0, l=this.text.length; i<l; i++) {
 			var character = this.text.charAt(i);
 			if (character == " " && !hasSpace) {
@@ -12564,7 +12564,7 @@ this.createjs = this.createjs || {};
 
 			var index = this._getFrameIndex(character, ss);
 			if (index == null) { continue; }
-			
+
 			if (childIndex < numKids) {
 				sprite = kids[childIndex];
 			} else {
@@ -12577,7 +12577,7 @@ this.createjs = this.createjs || {};
 			sprite.x = x;
 			sprite.y = y;
 			childIndex++;
-			
+
 			x += sprite.getBounds().width + this.letterSpacing;
 		}
 		while (numKids > childIndex) {
@@ -12651,7 +12651,7 @@ this.createjs = this.createjs||{};
 	 *    <LI> `startPosition`</LI>
 	 *    <LI> `frameBounds`</LI>
 	 * </UL>
-	 * 
+	 *
 	 * This object will also be passed into the Timeline instance associated with this MovieClip. See the documentation
 	 * for Timeline for a list of supported props (ex. `paused`, `labels`, `loop`, `reversed`, etc.)
 	 * @extends Container
@@ -12660,9 +12660,9 @@ this.createjs = this.createjs||{};
 	function MovieClip(props) {
 		this.Container_constructor();
 		!MovieClip.inited&&MovieClip.init(); // static init
-		
+
 		var mode, startPosition, loop, labels;
-		
+
 		// handle old params (mode, startPosition, loop, labels):
 		// TODO: deprecated param handling:
 		if (props instanceof String || arguments.length > 1) {
@@ -12679,8 +12679,8 @@ this.createjs = this.createjs||{};
 			labels = props.labels;
 		}
 		if (!props) { props = {labels:labels}; }
-		
-		
+
+
 	// public properties:
 		/**
 		 * Controls how this MovieClip advances its time. Must be one of 0 (INDEPENDENT), 1 (SINGLE_FRAME), or 2 (SYNCHED).
@@ -12690,7 +12690,7 @@ this.createjs = this.createjs||{};
 		 * @default null
 		 **/
 		this.mode = mode||MovieClip.INDEPENDENT;
-	
+
 		/**
 		 * Specifies what the first frame to play in this movieclip, or the only frame to display if mode is SINGLE_FRAME.
 		 * @property startPosition
@@ -12698,7 +12698,7 @@ this.createjs = this.createjs||{};
 		 * @default 0
 		 */
 		this.startPosition = startPosition||0;
-	
+
 		/**
 		 * Specifies how many times this MovieClip should loop. A value of -1 indicates it should loop indefinitely. A value of
 		 * 1 would cause it to loop once (ie. play a total of twice).
@@ -12707,7 +12707,7 @@ this.createjs = this.createjs||{};
 		 * @default -1
 		 */
 		this.loop = loop === true ? -1 : (loop || 0);
-	
+
 		/**
 		 * The current frame of the movieclip.
 		 * @property currentFrame
@@ -12716,7 +12716,7 @@ this.createjs = this.createjs||{};
 		 * @readonly
 		 */
 		this.currentFrame = 0;
-	
+
 		/**
 		 * If true, the MovieClip's position will not advance when ticked.
 		 * @property paused
@@ -12724,7 +12724,7 @@ this.createjs = this.createjs||{};
 		 * @default false
 		 */
 		this.paused = props.paused||false;
-	
+
 		/**
 		 * If true, actions in this MovieClip's tweens will be run when the playhead advances.
 		 * @property actionsEnabled
@@ -12732,7 +12732,7 @@ this.createjs = this.createjs||{};
 		 * @default true
 		 */
 		this.actionsEnabled = true;
-	
+
 		/**
 		 * If true, the MovieClip will automatically be reset to its first frame whenever the timeline adds
 		 * it back onto the display list. This only applies to MovieClip instances with mode=INDEPENDENT.
@@ -12746,7 +12746,7 @@ this.createjs = this.createjs||{};
 		 * @default true
 		 */
 		this.autoReset = true;
-		
+
 		/**
 		 * An array of bounds for each frame in the MovieClip. This is mainly intended for tool output.
 		 * @property frameBounds
@@ -12754,7 +12754,7 @@ this.createjs = this.createjs||{};
 		 * @default null
 		 */
 		this.frameBounds = this.frameBounds||props.frameBounds; // frameBounds are set on the prototype in Animate.
-		
+
 		/**
 		 * By default MovieClip instances advance one frame per tick. Specifying a framerate for the MovieClip
 		 * will cause it to advance based on elapsed time between ticks as appropriate to maintain the target
@@ -12771,10 +12771,10 @@ this.createjs = this.createjs||{};
 		 * @default null
 		 **/
 		this.framerate = null;
-		
+
 		// set up the needed props for Timeline:
 		props.useTicks = props.paused = true;
-		
+
 		/**
 		 * The TweenJS Timeline that is associated with this MovieClip. This is created automatically when the MovieClip
 		 * instance is initialized. Animations are created by adding <a href="http://tweenjs.com">TweenJS</a> Tween
@@ -12800,8 +12800,8 @@ this.createjs = this.createjs||{};
 		 * @default null
 		 */
 		this.timeline = new createjs.Timeline(props);
-		
-		
+
+
 	// private properties:
 		/**
 		 * @property _synchOffset
@@ -12810,7 +12810,7 @@ this.createjs = this.createjs||{};
 		 * @private
 		 */
 		this._synchOffset = 0;
-	
+
 		/**
 		 * @property _rawPosition
 		 * @type Number
@@ -12818,15 +12818,15 @@ this.createjs = this.createjs||{};
 		 * @private
 		 */
 		this._rawPosition = -1; // TODO: evaluate using a ._reset Boolean prop instead of -1.
-		
+
 		/**
 		 * @property _bound_resolveState
 		 * @type Function
 		 * @private
 		 */
 		this._bound_resolveState = this._resolveState.bind(this);
-	
-	
+
+
 		/**
 		 * The time remaining from the previous tick, only applicable when .framerate is set.
 		 * @property _t
@@ -12834,7 +12834,7 @@ this.createjs = this.createjs||{};
 		 * @private
 		 */
 		this._t = 0;
-	
+
 		/**
 		 * List of display objects that are actively being managed by the MovieClip.
 		 * @property _managed
@@ -12878,12 +12878,12 @@ this.createjs = this.createjs||{};
 	 * @readonly
 	 **/
 	MovieClip.SYNCHED = "synched";
-	
-	
+
+
 // static properties:
 	MovieClip.inited = false;
-	
-	
+
+
 // static methods:
 	MovieClip.init = function() {
 		if (MovieClip.inited) { return; }
@@ -12891,8 +12891,8 @@ this.createjs = this.createjs||{};
 		MovieClipPlugin.install();
 		MovieClip.inited = true;
 	};
-	
-	
+
+
 // getter / setters:
 	/**
 	 * Use the {{#crossLink "MovieClip/labels:property"}}{{/crossLink}} property instead.
@@ -12936,21 +12936,21 @@ this.createjs = this.createjs||{};
 	 * @type {Array}
 	 * @readonly
 	 **/
-	
+
 	/**
 	 * Returns the name of the label on or immediately before the current frame.
 	 * @property currentLabel
 	 * @type {String}
 	 * @readonly
 	 **/
-	
+
 	/**
 	 * Returns the duration of this MovieClip in seconds or ticks.
 	 * @property totalFrames
 	 * @type {Number}
 	 * @readonly
 	 **/
-	
+
 	/**
 	 * Returns the duration of this MovieClip in seconds or ticks.
 	 * @property duration
@@ -13014,7 +13014,7 @@ this.createjs = this.createjs||{};
 	p.play = function() {
 		this.paused = false;
 	};
-	
+
 	/**
 	 * Sets paused to true.
 	 * @method stop
@@ -13022,7 +13022,7 @@ this.createjs = this.createjs||{};
 	p.stop = function() {
 		this.paused = true;
 	};
-	
+
 	/**
 	 * Advances this movie clip to the specified position or label and sets paused to false.
 	 * @method gotoAndPlay
@@ -13032,7 +13032,7 @@ this.createjs = this.createjs||{};
 		this.paused = false;
 		this._goto(positionOrLabel);
 	};
-	
+
 	/**
 	 * Advances this movie clip to the specified position or label and sets paused to true.
 	 * @method gotoAndStop
@@ -13042,7 +13042,7 @@ this.createjs = this.createjs||{};
 		this.paused = true;
 		this._goto(positionOrLabel);
 	};
-	
+
 	/**
 	 * Advances the playhead. This occurs automatically each tick by default.
 	 * @param [time] {Number} The amount of time in ms to advance by. Only applicable if framerate is set.
@@ -13051,22 +13051,22 @@ this.createjs = this.createjs||{};
 	p.advance = function(time) {
 		var independent = MovieClip.INDEPENDENT;
 		if (this.mode !== independent) { return; } // update happens in draw for synched clips
-		
+
 		// if this MC doesn't have a framerate, hunt ancestors for one:
 		var o=this, fps = o.framerate;
 		while ((o = o.parent) && fps === null) { if (o.mode === independent) { fps = o._framerate; } }
 		this._framerate = fps;
-		
+
 		if (this.paused) { return; }
-		
+
 		// calculate how many frames to advance:
 		var t = (fps !== null && fps !== -1 && time !== null) ? time/(1000/fps) + this._t : 1;
 		var frames = t|0;
 		this._t = t-frames; // leftover time, save to add to next advance.
-		
+
 		while (frames--) { this._updateTimeline(this._rawPosition+1, false); }
 	};
-	
+
 	/**
 	 * MovieClip instances cannot be cloned.
 	 * @method clone
@@ -13075,7 +13075,7 @@ this.createjs = this.createjs||{};
 		// TODO: add support for this? Need to clone the Timeline & retarget tweens - pretty complex.
 		throw("MovieClip cannot be cloned.");
 	};
-	
+
 	/**
 	 * Returns a string representation of this object.
 	 * @method toString
@@ -13104,7 +13104,7 @@ this.createjs = this.createjs||{};
 		this.advance(evtObj&&evtObj.delta);
 		this.Container__tick(evtObj);
 	};
-	
+
 	/**
 	 * @method _goto
 	 * @param {String|Number} positionOrLabel The animation name or frame number to go to.
@@ -13116,7 +13116,7 @@ this.createjs = this.createjs||{};
 		this._t = 0;
 		this._updateTimeline(pos, true);
 	};
-	
+
 	/**
 	 * @method _reset
 	 * @private
@@ -13126,7 +13126,7 @@ this.createjs = this.createjs||{};
 		this._t = this.currentFrame = 0;
 		this.paused = false;
 	};
-	
+
 	/**
 	 * @method _updateTimeline
 	 * @param {Boolean} jump Indicates whether this update is due to jumping (via gotoAndXX) to a new position.
@@ -13138,12 +13138,12 @@ this.createjs = this.createjs||{};
 		if (rawPosition < 0) { rawPosition = 0; }
 		if (this._rawPosition === rawPosition && !synced) { return; }
 		this._rawPosition = rawPosition;
-		
+
 		// update timeline position, ignoring actions if this is a graphic.
 		tl.loop = this.loop; // TODO: should we maintain this on MovieClip, or just have it on timeline?
 		tl.setPosition(rawPosition, synced || !this.actionsEnabled, jump, this._bound_resolveState);
 	};
-	
+
 	/**
 	 * Renders position 0 without running actions or updating _rawPosition.
 	 * Primarily used by Animate CC to build out the first frame in the constructor of MC symbols.
@@ -13156,7 +13156,7 @@ this.createjs = this.createjs||{};
 		tl.setPosition(0, true, true, this._bound_resolveState);
 		tl.rawPosition = pos;
 	};
-	
+
 	/**
 	 * Runs via a callback after timeline property updates and before actions.
 	 * @method _resolveState
@@ -13165,7 +13165,7 @@ this.createjs = this.createjs||{};
 	p._resolveState = function() {
 		var tl = this.timeline;
 		this.currentFrame = tl.position;
-		
+
 		for (var n in this._managed) { this._managed[n] = 1; }
 
 		var tweens = tl.tweens;
@@ -13229,7 +13229,7 @@ this.createjs = this.createjs||{};
 		}
 		this._managed[child.id] = 2;
 	};
-	
+
 	/**
 	 * @method _getBounds
 	 * @param {Matrix2D} matrix
@@ -13262,7 +13262,7 @@ this.createjs = this.createjs||{};
 	function MovieClipPlugin() {
 		throw("MovieClipPlugin cannot be instantiated.")
 	}
-	
+
 	/**
 	 * @property priority
 	 * @type {Number}
@@ -13270,7 +13270,7 @@ this.createjs = this.createjs||{};
 	 * @readonly
 	 **/
 	MovieClipPlugin.priority = 100; // very high priority, should run first
-	
+
 	/**
 	 * @property ID
 	 * @type {String}
@@ -13286,7 +13286,7 @@ this.createjs = this.createjs||{};
 	MovieClipPlugin.install = function() {
 		createjs.Tween._installPlugin(MovieClipPlugin);
 	};
-	
+
 	/**
 	 * @method init
 	 * @param {Tween} tween
@@ -13297,7 +13297,7 @@ this.createjs = this.createjs||{};
 	MovieClipPlugin.init = function(tween, prop, value) {
 		if (prop === "startPosition" && tween.target instanceof MovieClip) { tween._addPlugin(MovieClipPlugin); }
 	};
-	
+
 	/**
 	 * @method step
 	 * @param {Tween} tween
@@ -13331,8 +13331,8 @@ this.createjs = this.createjs||{};
 
 (function() {
 	"use strict";
-	
-	
+
+
 // constructor:
 	/**
 	 * The SpriteSheetUtils class is a collection of static methods for working with {{#crossLink "SpriteSheet"}}{{/crossLink}}s.
@@ -13408,7 +13408,7 @@ this.createjs = this.createjs||{};
 	// SpriteSheetUtils.addFlippedFrames is @deprecated. Remove for 1.1+
 	SpriteSheetUtils.mergeAlpha = createjs.deprecate(null, "SpriteSheetUtils.mergeAlpha");
 
-	
+
 // private static methods:
 	SpriteSheetUtils._flip = function(spriteSheet, count, h, v) {
 		var imgs = spriteSheet._images;
@@ -13503,7 +13503,7 @@ this.createjs = this.createjs||{};
 	 **/
 	function SpriteSheetBuilder(framerate) {
 		this.EventDispatcher_constructor();
-		
+
 	// public properties:
 		/**
 		 * The maximum width for the images (not individual frames) in the generated SpriteSheet. It is recommended to
@@ -13514,7 +13514,7 @@ this.createjs = this.createjs||{};
 		 * @default 2048
 		*/
 		this.maxWidth = 2048;
-	
+
 		/**
 		 * The maximum height for the images (not individual frames) in the generated SpriteSheet. It is recommended to
 		 * use a power of 2 for this value (ex. 1024, 2048, 4096). If the frames cannot all fit within the max
@@ -13524,14 +13524,14 @@ this.createjs = this.createjs||{};
 		 * @default 2048
 		 **/
 		this.maxHeight = 2048;
-	
+
 		/**
 		 * The SpriteSheet that was generated. This will be null before a build is completed successfully.
 		 * @property spriteSheet
 		 * @type SpriteSheet
 		 **/
 		this.spriteSheet = null;
-	
+
 		/**
 		 * The scale to apply when drawing all frames to the SpriteSheet. This is multiplied against any scale specified
 		 * in the addFrame call. This can be used, for example, to generate a SpriteSheet at run time that is tailored
@@ -13541,7 +13541,7 @@ this.createjs = this.createjs||{};
 		 * @default 1
 		 **/
 		this.scale = 1;
-	
+
 		/**
 		* The padding to use between frames. This is helpful to preserve antialiasing on drawn vector content.
 		* @property padding
@@ -13549,7 +13549,7 @@ this.createjs = this.createjs||{};
 		* @default 1
 		**/
 		this.padding = 1;
-	
+
 		/**
 		 * A number from 0.01 to 0.99 that indicates what percentage of time the builder can use. This can be
 		 * thought of as the number of seconds per second the builder will use. For example, with a timeSlice value of 0.3,
@@ -13560,7 +13560,7 @@ this.createjs = this.createjs||{};
 		 * @default 0.3
 		 **/
 		this.timeSlice = 0.3;
-	
+
 		/**
 		 * A value between 0 and 1 that indicates the progress of a build, or -1 if a build has not
 		 * been initiated.
@@ -13580,8 +13580,8 @@ this.createjs = this.createjs||{};
 		 * @default 0
 		 */
 		this.framerate = framerate || 0;
-	
-	
+
+
 	// private properties:
 		/**
 		 * @property _frames
@@ -13589,42 +13589,42 @@ this.createjs = this.createjs||{};
 		 * @type Array
 		 **/
 		this._frames = [];
-	
+
 		/**
 		 * @property _animations
 		 * @protected
 		 * @type Array
 		 **/
 		this._animations = {};
-	
+
 		/**
 		 * @property _data
 		 * @protected
 		 * @type Array
 		 **/
 		this._data = null;
-	
+
 		/**
 		 * @property _nextFrameIndex
 		 * @protected
 		 * @type Number
 		 **/
 		this._nextFrameIndex = 0;
-	
+
 		/**
 		 * @property _index
 		 * @protected
 		 * @type Number
 		 **/
 		this._index = 0;
-	
+
 		/**
 		 * @property _timerID
 		 * @protected
 		 * @type Number
 		 **/
 		this._timerID = null;
-	
+
 		/**
 		 * @property _scale
 		 * @protected
@@ -13858,7 +13858,7 @@ this.createjs = this.createjs||{};
 			}
 		}
 	};
-	
+
 	/**
 	 * @method _setupMovieClipFrame
 	 * @protected
@@ -14034,15 +14034,15 @@ this.createjs = this.createjs||{};
 	 */
 	function DOMElement(htmlElement) {
 		this.DisplayObject_constructor();
-		
+
 		if (typeof(htmlElement)=="string") { htmlElement = document.getElementById(htmlElement); }
 		this.mouseEnabled = false;
-		
+
 		var style = htmlElement.style;
 		style.position = "absolute";
 		style.transformOrigin = style.WebkitTransformOrigin = style.msTransformOrigin = style.MozTransformOrigin = style.OTransformOrigin = "0% 0%";
-		
-		
+
+
 	// public properties:
 		/**
 		 * The DOM object to manage.
@@ -14050,8 +14050,8 @@ this.createjs = this.createjs||{};
 		 * @type HTMLElement
 		 */
 		this.htmlElement = htmlElement;
-	
-	
+
+
 	// private properties:
 		/**
 		 * @property _oldMtx
@@ -14215,7 +14215,7 @@ this.createjs = this.createjs||{};
 		}
 		this.DisplayObject__tick(evtObj);
 	};
-	
+
 	/**
 	 * @method _handleDrawEnd
 	 * @param {Event} evt
@@ -14225,16 +14225,16 @@ this.createjs = this.createjs||{};
 		var o = this.htmlElement;
 		if (!o) { return; }
 		var style = o.style;
-		
+
 		var props = this.getConcatenatedDisplayProps(this._props), mtx = props.matrix;
-		
+
 		var visibility = props.visible ? "visible" : "hidden";
 		if (visibility != style.visibility) { style.visibility = visibility; }
 		if (!props.visible) { return; }
-		
+
 		var oldProps = this._oldProps, oldMtx = oldProps&&oldProps.matrix;
 		var n = 10000; // precision
-		
+
 		if (!oldMtx || !oldMtx.equals(mtx)) {
 			var str = "matrix(" + (mtx.a*n|0)/n +","+ (mtx.b*n|0)/n +","+ (mtx.c*n|0)/n +","+ (mtx.d*n|0)/n +","+ (mtx.tx+0.5|0);
 			style.transform = style.WebkitTransform = style.OTransform = style.msTransform = str +","+ (mtx.ty+0.5|0) +")";
@@ -14242,7 +14242,7 @@ this.createjs = this.createjs||{};
 			if (!oldProps) { oldProps = this._oldProps = new createjs.DisplayProps(true, null); }
 			oldProps.matrix.copy(mtx);
 		}
-		
+
 		if (oldProps.alpha != props.alpha) {
 			style.opacity = ""+(props.alpha*n|0)/n;
 			oldProps.alpha = props.alpha;
@@ -14401,7 +14401,7 @@ this.createjs = this.createjs||{};
 	p.clone = function() {
 		return new Filter();
 	};
-	
+
 // private methods:
 	/**
 	 * @method _applyFilter
@@ -14432,16 +14432,16 @@ this.createjs = this.createjs||{};
 	 *
 	 * Caching in this context is purely visual, and will render the DisplayObject out into an image to be used instead
 	 * of the object. The actual cache itself is still stored on the target with the {{#crossLink "DisplayObject/cacheCanvas:property"}}{{/crossLink}}.
-	 * Working with a singular image like a {{#crossLink "Bitmap"}}{{/crossLink}} there is little benefit to performing 
-	 * a cache as it is already a single image. Caching is best done on containers containing multiple complex parts that 
-	 * do not move often, so that rendering the image instead will improve overall rendering speed. A cached object will 
-	 * not visually update until explicitly told to do so with a call to update, much like a Stage. If a cache is being 
+	 * Working with a singular image like a {{#crossLink "Bitmap"}}{{/crossLink}} there is little benefit to performing
+	 * a cache as it is already a single image. Caching is best done on containers containing multiple complex parts that
+	 * do not move often, so that rendering the image instead will improve overall rendering speed. A cached object will
+	 * not visually update until explicitly told to do so with a call to update, much like a Stage. If a cache is being
 	 * updated every frame it is likely not improving rendering performance. Cache are best used when updates will be sparse.
 	 *
-	 * Caching is also a co-requisite for applying filters to prevent expensive filters running constantly without need, 
-	 * and to physically enable some effects. The BitmapCache is also responsible for applying filters to objects and 
-	 * reads each {{#crossLink "Filter"}}{{/crossLink}} due to this relationship. Real-time Filters are not recommended 
-	 * performance wise when dealing with a Context2D canvas. For best performance and to still allow for some visual 
+	 * Caching is also a co-requisite for applying filters to prevent expensive filters running constantly without need,
+	 * and to physically enable some effects. The BitmapCache is also responsible for applying filters to objects and
+	 * reads each {{#crossLink "Filter"}}{{/crossLink}} due to this relationship. Real-time Filters are not recommended
+	 * performance wise when dealing with a Context2D canvas. For best performance and to still allow for some visual
 	 * effects use a compositeOperation when possible.
 	 * @class BitmapCache
 	 * @constructor
@@ -15396,8 +15396,8 @@ this.createjs = this.createjs || {};
 
 (function () {
 	"use strict";
-	
-	
+
+
 // constructor:
 	/**
 	 * Applies a greyscale alpha map image (or canvas) to the target, such that the alpha channel of the result will
@@ -15430,7 +15430,7 @@ this.createjs = this.createjs || {};
 	 **/
 	function AlphaMapFilter(alphaMap) {
 		this.Filter_constructor();
-	
+
 	// public properties:
 		/**
 		 * The greyscale image (or canvas) to use as the alpha value for the result. This should be exactly the same
@@ -15439,8 +15439,8 @@ this.createjs = this.createjs || {};
 		 * @type HTMLImageElement|HTMLCanvasElement
 		 **/
 		this.alphaMap = alphaMap;
-		
-		
+
+
 	// private properties:
 		/**
 		 * @property _alphaMap
@@ -15448,7 +15448,7 @@ this.createjs = this.createjs || {};
 		 * @type HTMLImageElement|HTMLCanvasElement
 		 **/
 		this._alphaMap = null;
-		
+
 		/**
 		 * @property _mapData
 		 * @protected
@@ -15510,12 +15510,12 @@ this.createjs = this.createjs || {};
 	p._applyFilter = function (imageData) {
 		if (!this.alphaMap) { return true; }
 		if (!this._prepAlphaMap()) { return false; }
-		
+
 		// TODO: update to support scenarios where the target has different dimensions.
 		var data = imageData.data;
 		var map = this._mapData;
 		for(var i=0, l=data.length; i<l; i += 4) { data[i + 3] = map[i] || 0; }
-		
+
 		return true;
 	};
 
@@ -15547,7 +15547,7 @@ this.createjs = this.createjs || {};
 			//if (!this.suppressCrossDomainErrors) throw new Error("unable to access local image data: " + e);
 			return false;
 		}
-		
+
 		this._mapData = imgData.data;
 		return true;
 	};
@@ -15597,7 +15597,7 @@ this.createjs = this.createjs || {};
 	 **/
 	function AlphaMaskFilter(mask) {
 		this.Filter_constructor();
-	
+
 	// public properties:
 		/**
 		 * The image (or canvas) to use as the mask.
@@ -15743,49 +15743,49 @@ this.createjs = this.createjs||{};
 		 * @type Number
 		 **/
 		this.redMultiplier = redMultiplier != null ? redMultiplier : 1;
-	
+
 		/**
 		 * Green channel multiplier.
 		 * @property greenMultiplier
 		 * @type Number
 		 **/
 		this.greenMultiplier = greenMultiplier != null ? greenMultiplier : 1;
-	
+
 		/**
 		 * Blue channel multiplier.
 		 * @property blueMultiplier
 		 * @type Number
 		 **/
 		this.blueMultiplier = blueMultiplier != null ? blueMultiplier : 1;
-	
+
 		/**
 		 * Alpha channel multiplier.
 		 * @property alphaMultiplier
 		 * @type Number
 		 **/
 		this.alphaMultiplier = alphaMultiplier != null ? alphaMultiplier : 1;
-	
+
 		/**
 		 * Red channel offset (added to value).
 		 * @property redOffset
 		 * @type Number
 		 **/
 		this.redOffset = redOffset || 0;
-	
+
 		/**
 		 * Green channel offset (added to value).
 		 * @property greenOffset
 		 * @type Number
 		 **/
 		this.greenOffset = greenOffset || 0;
-	
+
 		/**
 		 * Blue channel offset (added to value).
 		 * @property blueOffset
 		 * @type Number
 		 **/
 		this.blueOffset = blueOffset || 0;
-	
+
 		/**
 		 * Alpha channel offset (added to value).
 		 * @property alphaOffset
@@ -16135,7 +16135,7 @@ this.createjs = this.createjs||{};
 		}
 		return this;
 	};
-	
+
 	/**
 	 * Returns a string representation of this object.
 	 * @method toString
@@ -16303,7 +16303,7 @@ this.createjs = this.createjs||{};
 
 // private methods:
 	/** docced in super class **/
-	p._applyFilter = function(imageData) { 
+	p._applyFilter = function(imageData) {
 		var data = imageData.data;
 		var l = data.length;
 		var r,g,b,a;
@@ -16415,7 +16415,7 @@ this.createjs = this.createjs||{};
 		if (!stage) { return; }
 		if ('ontouchstart' in window) { Touch._IOS_disable(stage); }
 		else if (window.navigator['msPointerEnabled'] || window.navigator["pointerEnabled"]) { Touch._IE_disable(stage); }
-		
+
 		delete stage.__touch;
 	};
 
