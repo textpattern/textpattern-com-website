@@ -36,7 +36,7 @@
     "easeljs": "1.0.2",
     "preloadjs": "1.0.1",
     "prismjs": "1.23.0",
-    "textpattern-branding": "0.3.2",
+    "textpattern-branding": "0.3.3",
     "tweenjs": "1.0.2"
   },
   "optionalDependencies": {
