@@ -363,81 +363,6 @@ this.createjs = this.createjs||{};
 		return this;
 	};
 
-// public methods:
-	/**
-	 * Appends the specified display properties. This is generally used to apply a child's properties its parent's.
-	 * @method append
-	 * @param {Boolean} visible desired visible value
-	 * @param {Number} alpha desired alpha value
-	 * @param {Shadow} shadow desired shadow value
-	 * @param {String} compositeOperation desired composite operation value
-	 * @param {Matrix2D} [matrix] a Matrix2D instance
-	 * @return {DisplayProps} This instance. Useful for chaining method calls.
-	 * @chainable
-	*/
-	p.append = function(visible, alpha, shadow, compositeOperation, matrix) {
-		this.alpha *= alpha;
-		this.shadow = shadow || this.shadow;
-		this.compositeOperation = compositeOperation || this.compositeOperation;
-		this.visible = this.visible && visible;
-		matrix&&this.matrix.appendMatrix(matrix);
-		return this;
-	};
-
-	/**
-	 * Prepends the specified display properties. This is generally used to apply a parent's properties to a child's.
-	 * For example, to get the combined display properties that would be applied to a child, you could use:
-	 *
-	 * 	var o = myDisplayObject;
-	 * 	var props = new createjs.DisplayProps();
-	 * 	do {
-	 * 		// prepend each parent's props in turn:
-	 * 		props.prepend(o.visible, o.alpha, o.shadow, o.compositeOperation, o.getMatrix());
-	 * 	} while (o = o.parent);
-	 *
-	 * @method prepend
-	 * @param {Boolean} visible desired visible value
-	 * @param {Number} alpha desired alpha value
-	 * @param {Shadow} shadow desired shadow value
-	 * @param {String} compositeOperation desired composite operation value
-	 * @param {Matrix2D} [matrix] a Matrix2D instance
-	 * @return {DisplayProps} This instance. Useful for chaining method calls.
-	 * @chainable
-	*/
-	p.prepend = function(visible, alpha, shadow, compositeOperation, matrix) {
-		this.alpha *= alpha;
-		this.shadow = this.shadow || shadow;
-		this.compositeOperation = this.compositeOperation || compositeOperation;
-		this.visible = this.visible && visible;
-		matrix&&this.matrix.prependMatrix(matrix);
-		return this;
-	};
-
-	/**
-	 * Resets this instance and its matrix to default values.
-	 * @method identity
-	 * @return {DisplayProps} This instance. Useful for chaining method calls.
-	 * @chainable
-	*/
-	p.identity = function() {
-		this.visible = true;
-		this.alpha = 1;
-		this.shadow = this.compositeOperation = null;
-		this.matrix.identity();
-		return this;
-	};
-
-	/**
-	 * Returns a clone of the DisplayProps instance. Clones the associated matrix.
-	 * @method clone
-	 * @return {DisplayProps} a clone of the DisplayProps instance.
-	 **/
-	p.clone = function() {
-		return new DisplayProps(this.alpha, this.shadow, this.compositeOperation, this.visible, this.matrix.clone());
-	};
-
-// private methods:
-
 	createjs.DisplayProps = DisplayProps;
 })();
 
@@ -517,134 +442,6 @@ this.createjs = this.createjs||{};
 		this.height = height||0;
 		return this;
 	};
-
-	/**
-	 * Extends the rectangle's bounds to include the described point or rectangle.
-	 * @method extend
-	 * @param {Number} x X position of the point or rectangle.
-	 * @param {Number} y Y position of the point or rectangle.
-	 * @param {Number} [width=0] The width of the rectangle.
-	 * @param {Number} [height=0] The height of the rectangle.
-	 * @return {Rectangle} This instance. Useful for chaining method calls.
-	 * @chainable
-	*/
-	p.extend = function(x, y, width, height) {
-		width = width||0;
-		height = height||0;
-		if (x+width > this.x+this.width) { this.width = x+width-this.x; }
-		if (y+height > this.y+this.height) { this.height = y+height-this.y; }
-		if (x < this.x) { this.width += this.x-x; this.x = x; }
-		if (y < this.y) { this.height += this.y-y; this.y = y; }
-		return this;
-	};
-
-	/**
-	 * Adds the specified padding to the rectangle's bounds.
-	 * @method pad
-	 * @param {Number} top
-	 * @param {Number} left
-	 * @param {Number} bottom
-	 * @param {Number} right
-	 * @return {Rectangle} This instance. Useful for chaining method calls.
-	 * @chainable
-	*/
-	p.pad = function(top, left, bottom, right) {
-		this.x -= left;
-		this.y -= top;
-		this.width += left+right;
-		this.height += top+bottom;
-		return this;
-	};
-
-	/**
-	 * Copies all properties from the specified rectangle to this rectangle.
-	 * @method copy
-	 * @param {Rectangle} rectangle The rectangle to copy properties from.
-	 * @return {Rectangle} This rectangle. Useful for chaining method calls.
-	 * @chainable
-	*/
-	p.copy = function(rectangle) {
-		return this.setValues(rectangle.x, rectangle.y, rectangle.width, rectangle.height);
-	};
-
-	/**
-	 * Returns true if this rectangle fully encloses the described point or rectangle.
-	 * @method contains
-	 * @param {Number} x X position of the point or rectangle.
-	 * @param {Number} y Y position of the point or rectangle.
-	 * @param {Number} [width=0] The width of the rectangle.
-	 * @param {Number} [height=0] The height of the rectangle.
-	 * @return {Boolean} True if the described point or rectangle is contained within this rectangle.
-	*/
-	p.contains = function(x, y, width, height) {
-		width = width||0;
-		height = height||0;
-		return (x >= this.x && x+width <= this.x+this.width && y >= this.y && y+height <= this.y+this.height);
-	};
-
-	/**
-	 * Returns a new rectangle which contains this rectangle and the specified rectangle.
-	 * @method union
-	 * @param {Rectangle} rect The rectangle to calculate a union with.
-	 * @return {Rectangle} A new rectangle describing the union.
-	*/
-	p.union = function(rect) {
-		return this.clone().extend(rect.x, rect.y, rect.width, rect.height);
-	};
-
-	/**
-	 * Returns a new rectangle which describes the intersection (overlap) of this rectangle and the specified rectangle,
-	 * or null if they do not intersect.
-	 * @method intersection
-	 * @param {Rectangle} rect The rectangle to calculate an intersection with.
-	 * @return {Rectangle} A new rectangle describing the intersection or null.
-	*/
-	p.intersection = function(rect) {
-		var x1 = rect.x, y1 = rect.y, x2 = x1+rect.width, y2 = y1+rect.height;
-		if (this.x > x1) { x1 = this.x; }
-		if (this.y > y1) { y1 = this.y; }
-		if (this.x + this.width < x2) { x2 = this.x + this.width; }
-		if (this.y + this.height < y2) { y2 = this.y + this.height; }
-		return (x2 <= x1 || y2 <= y1) ? null : new Rectangle(x1, y1, x2-x1, y2-y1);
-	};
-
-	/**
-	 * Returns true if the specified rectangle intersects (has any overlap) with this rectangle.
-	 * @method intersects
-	 * @param {Rectangle} rect The rectangle to compare.
-	 * @return {Boolean} True if the rectangles intersect.
-	*/
-	p.intersects = function(rect) {
-		return (rect.x <= this.x+this.width && this.x <= rect.x+rect.width && rect.y <= this.y+this.height && this.y <= rect.y + rect.height);
-	};
-
-	/**
-	 * Returns true if the width or height are equal or less than 0.
-	 * @method isEmpty
-	 * @return {Boolean} True if the rectangle is empty.
-	*/
-	p.isEmpty = function() {
-		return this.width <= 0 || this.height <= 0;
-	};
-
-	/**
-	 * Returns a clone of the Rectangle instance.
-	 * @method clone
-	 * @return {Rectangle} a clone of the Rectangle instance.
-	 **/
-	p.clone = function() {
-		return new Rectangle(this.x, this.y, this.width, this.height);
-	};
-
-	/**
-	 * Returns a string representation of this object.
-	 * @method toString
-	 * @return {String} a string representation of the instance.
-	 **/
-	p.toString = function() {
-		return "[Rectangle (x="+this.x+" y="+this.y+" width="+this.width+" height="+this.height+")]";
-	};
-
 
 	createjs.Rectangle = Rectangle;
 }());
@@ -944,54 +741,7 @@ this.createjs = this.createjs||{};
 	// TODO: deprecated
 	// p.initialize = function() {}; // searchable for devs wondering where it is. REMOVED. See docs for details.
 
-
-// events:
-	/**
-	 * Dispatched when all images are loaded.  Note that this only fires if the images
-	 * were not fully loaded when the sprite sheet was initialized. You should check the complete property
-	 * to prior to adding a listener. Ex.
-	 *
-	 * 	var sheet = new createjs.SpriteSheet(data);
-	 * 	if (!sheet.complete) {
-	 * 		// not preloaded, listen for the complete event:
-	 * 		sheet.addEventListener("complete", handler);
-	 * 	}
-	 *
-	 * @event complete
-	 * @param {Object} target The object that dispatched the event.
-	 * @param {String} type The event type.
-	 * @since 0.6.0
-	 */
-
-	/**
-	 * Dispatched when getFrame is called with a valid frame index. This is primarily intended for use by {{#crossLink "SpriteSheetBuilder"}}{{/crossLink}}
-	 * when doing on-demand rendering.
-	 * @event getframe
-	 * @param {Number} index The frame index.
-	 * @param {Object} frame The frame object that getFrame will return.
-	 */
-
-	/**
-	 * Dispatched when an image encounters an error. A SpriteSheet will dispatch an error event for each image that
-	 * encounters an error, and will still dispatch a {{#crossLink "SpriteSheet/complete:event"}}{{/crossLink}}
-	 * event once all images are finished processing, even if an error is encountered.
-	 * @event error
-	 * @param {String} src The source of the image that failed to load.
-	 * @since 0.8.2
-	 */
-
-
 // getter / setters:
-	/**
-	 * Use the {{#crossLink "SpriteSheet/animations:property"}}{{/crossLink}} property instead.
-	 * @method _getAnimations
-	 * @protected
-	 * @return {Array}
-	 **/
-	p._getAnimations = function() {
-		return this._animations.slice();
-	};
-
 	/**
 	 * Returns an array of all available animation names available on this sprite sheet as strings.
 	 * @property animations
@@ -1025,22 +775,6 @@ this.createjs = this.createjs||{};
 	};
 
 	/**
-	 * Returns an object defining the specified animation. The returned object contains:<UL>
-	 * 	<li>frames: an array of the frame ids in the animation</li>
-	 * 	<li>speed: the playback speed for this animation</li>
-	 * 	<li>name: the name of the animation</li>
-	 * 	<li>next: the default animation to play next. If the animation loops, the name and next property will be the
-	 * 	same.</li>
-	 * </UL>
-	 * @method getAnimation
-	 * @param {String} name The name of the animation to get.
-	 * @return {Object} a generic object with frames, speed, name, and next properties.
-	 **/
-	p.getAnimation = function(name) {
-		return this._data[name];
-	};
-
-	/**
 	 * Returns an object specifying the image and source rect of the specified frame. The returned object has:<UL>
 	 * 	<li>an image property holding a reference to the image object in which the frame is found</li>
 	 * 	<li>a rect property containing a Rectangle instance which defines the boundaries for the frame within that
@@ -1055,39 +789,6 @@ this.createjs = this.createjs||{};
 		var frame;
 		if (this._frames && (frame=this._frames[frameIndex])) { return frame; }
 		return null;
-	};
-
-	/**
-	 * Returns a {{#crossLink "Rectangle"}}{{/crossLink}} instance defining the bounds of the specified frame relative
-	 * to the origin. For example, a 90 x 70 frame with a regX of 50 and a regY of 40 would return:
-	 *
-	 * 	[x=-50, y=-40, width=90, height=70]
-	 *
-	 * @method getFrameBounds
-	 * @param {Number} frameIndex The index of the frame.
-	 * @param {Rectangle} [rectangle] A Rectangle instance to copy the values into. By default a new instance is created.
-	 * @return {Rectangle} A Rectangle instance. Returns null if the frame does not exist, or the image is not fully loaded.
-	 **/
-	p.getFrameBounds = function(frameIndex, rectangle) {
-		var frame = this.getFrame(frameIndex);
-		return frame ? (rectangle||new createjs.Rectangle()).setValues(-frame.regX, -frame.regY, frame.rect.width, frame.rect.height) : null;
-	};
-
-	/**
-	 * Returns a string representation of this object.
-	 * @method toString
-	 * @return {String} a string representation of the instance.
-	 **/
-	p.toString = function() {
-		return "[SpriteSheet]";
-	};
-
-	/**
-	 * SpriteSheet cannot be cloned. A SpriteSheet can be shared by multiple Sprite instances without cloning it.
-	 * @method clone
-	 **/
-	p.clone = function() {
-		throw("SpriteSheet cannot be cloned.")
 	};
 
 // private methods:
@@ -1435,19 +1136,7 @@ this.createjs = this.createjs||{};
 		canvas.width = canvas.height = 1;
 	}
 
-
 // getter / setters:
-	/**
-	 * Use the {{#crossLink "Graphics/instructions:property"}}{{/crossLink}} property instead.
-	 * @method _getInstructions
-	 * @protected
-	 * @return {Array} The instructions array, useful for chaining
-	 **/
-	p._getInstructions = function() {
-		this._updateInstructions();
-		return this._instructions;
-	};
-
 	/**
 	 * Returns the graphics instructions array. Each entry is a graphics command object (ex. Graphics.Fill, Graphics.Rect)
 	 * Modifying the returned array directly is not recommended, and is likely to result in unexpected behaviour.
@@ -1491,24 +1180,6 @@ this.createjs = this.createjs||{};
 		}
 	};
 
-	/**
-	 * Draws only the path described for this Graphics instance, skipping any non-path instructions, including fill and
-	 * stroke descriptions. Used for <code>DisplayObject.mask</code> to draw the clipping path, for example.
-	 *
-	 * NOTE: This method is mainly for internal use, though it may be useful for advanced uses.
-	 * @method drawAsPath
-	 * @param {CanvasRenderingContext2D} ctx The canvas 2D context object to draw into.
-	 **/
-	p.drawAsPath = function(ctx) {
-		this._updateInstructions();
-		var instr, instrs = this._instructions;
-		for (var i=this._storeIndex, l=instrs.length; i<l; i++) {
-			// the first command is always a beginPath command.
-			if ((instr = instrs[i]).path !== false) { instr.exec(ctx); }
-		}
-	};
-
-
 // public methods that map directly to context 2D calls:
 	/**
 	 * Moves the drawing point to the specified position. A tiny API method "mt" also exists.
@@ -1541,46 +1212,6 @@ this.createjs = this.createjs||{};
 	};
 
 	/**
-	 * Draws an arc with the specified control points and radius.  For detailed information, read the
-	 * <a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/the-canvas-element.html#dom-context-2d-arcto">
-	 * whatwg spec</a>. A tiny API method "at" also exists.
-	 * @method arcTo
-	 * @param {Number} x1
-	 * @param {Number} y1
-	 * @param {Number} x2
-	 * @param {Number} y2
-	 * @param {Number} radius
-	 * @return {Graphics} The Graphics instance the method is called on (useful for chaining calls.)
-	 * @chainable
-	 **/
-	p.arcTo = function(x1, y1, x2, y2, radius) {
-		return this.append(new G.ArcTo(x1, y1, x2, y2, radius));
-	};
-
-	/**
-	 * Draws an arc defined by the radius, startAngle and endAngle arguments, centered at the position (x, y). For
-	 * example, to draw a full circle with a radius of 20 centered at (100, 100):
-	 *
-	 *      arc(100, 100, 20, 0, Math.PI*2);
-	 *
-	 * For detailed information, read the
-	 * <a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/the-canvas-element.html#dom-context-2d-arc">whatwg spec</a>.
-	 * A tiny API method "a" also exists.
-	 * @method arc
-	 * @param {Number} x
-	 * @param {Number} y
-	 * @param {Number} radius
-	 * @param {Number} startAngle Measured in radians.
-	 * @param {Number} endAngle Measured in radians.
-	 * @param {Boolean} anticlockwise
-	 * @return {Graphics} The Graphics instance the method is called on (useful for chaining calls.)
-	 * @chainable
-	 **/
-	p.arc = function(x, y, radius, startAngle, endAngle, anticlockwise) {
-		return this.append(new G.Arc(x, y, radius, startAngle, endAngle, anticlockwise));
-	};
-
-	/**
 	 * Draws a quadratic curve from the current drawing point to (x, y) using the control point (cpx, cpy). For detailed
 	 * information, read the <a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/the-canvas-element.html#dom-context-2d-quadraticcurveto">
 	 * whatwg spec</a>. A tiny API method "qt" also exists.
@@ -1594,42 +1225,6 @@ this.createjs = this.createjs||{};
 	 **/
 	p.quadraticCurveTo = function(cpx, cpy, x, y) {
 		return this.append(new G.QuadraticCurveTo(cpx, cpy, x, y));
-	};
-
-	/**
-	 * Draws a bezier curve from the current drawing point to (x, y) using the control points (cp1x, cp1y) and (cp2x,
-	 * cp2y). For detailed information, read the
-	 * <a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/the-canvas-element.html#dom-context-2d-beziercurveto">
-	 * whatwg spec</a>. A tiny API method "bt" also exists.
-	 * @method bezierCurveTo
-	 * @param {Number} cp1x
-	 * @param {Number} cp1y
-	 * @param {Number} cp2x
-	 * @param {Number} cp2y
-	 * @param {Number} x
-	 * @param {Number} y
-	 * @return {Graphics} The Graphics instance the method is called on (useful for chaining calls.)
-	 * @chainable
-	 **/
-	p.bezierCurveTo = function(cp1x, cp1y, cp2x, cp2y, x, y) {
-		return this.append(new G.BezierCurveTo(cp1x, cp1y, cp2x, cp2y, x, y));
-	};
-
-	/**
-	 * Draws a rectangle at (x, y) with the specified width and height using the current fill and/or stroke.
-	 * For detailed information, read the
-	 * <a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/the-canvas-element.html#dom-context-2d-rect">
-	 * whatwg spec</a>. A tiny API method "r" also exists.
-	 * @method rect
-	 * @param {Number} x
-	 * @param {Number} y
-	 * @param {Number} w Width of the rectangle
-	 * @param {Number} h Height of the rectangle
-	 * @return {Graphics} The Graphics instance the method is called on (useful for chaining calls.)
-	 * @chainable
-	 **/
-	p.rect = function(x, y, w, h) {
-		return this.append(new G.Rect(x, y, w, h));
 	};
 
 	/**
@@ -1669,84 +1264,6 @@ this.createjs = this.createjs||{};
 	 **/
 	p.beginFill = function(color) {
 		return this._setFill(color ? new G.Fill(color) : null);
-	};
-
-	/**
-	 * Begins a linear gradient fill defined by the line (x0, y0) to (x1, y1). This ends the current sub-path. For
-	 * example, the following code defines a black to white vertical gradient ranging from 20px to 120px, and draws a
-	 * square to display it:
-	 *
-	 *      myGraphics.beginLinearGradientFill(["#000","#FFF"], [0, 1], 0, 20, 0, 120).drawRect(20, 20, 120, 120);
-	 *
-	 * A tiny API method "lf" also exists.
-	 * @method beginLinearGradientFill
-	 * @param {Array} colors An array of CSS compatible color values. For example, ["#F00","#00F"] would define a gradient
-	 * drawing from red to blue.
-	 * @param {Array} ratios An array of gradient positions which correspond to the colors. For example, [0.1, 0.9] would draw
-	 * the first color to 10% then interpolating to the second color at 90%.
-	 * @param {Number} x0 The position of the first point defining the line that defines the gradient direction and size.
-	 * @param {Number} y0 The position of the first point defining the line that defines the gradient direction and size.
-	 * @param {Number} x1 The position of the second point defining the line that defines the gradient direction and size.
-	 * @param {Number} y1 The position of the second point defining the line that defines the gradient direction and size.
-	 * @return {Graphics} The Graphics instance the method is called on (useful for chaining calls.)
-	 * @chainable
-	 **/
-	p.beginLinearGradientFill = function(colors, ratios, x0, y0, x1, y1) {
-		return this._setFill(new G.Fill().linearGradient(colors, ratios, x0, y0, x1, y1));
-	};
-
-	/**
-	 * Begins a radial gradient fill. This ends the current sub-path. For example, the following code defines a red to
-	 * blue radial gradient centered at (100, 100), with a radius of 50, and draws a circle to display it:
-	 *
-	 *      myGraphics.beginRadialGradientFill(["#F00","#00F"], [0, 1], 100, 100, 0, 100, 100, 50).drawCircle(100, 100, 50);
-	 *
-	 * A tiny API method "rf" also exists.
-	 * @method beginRadialGradientFill
-	 * @param {Array} colors An array of CSS compatible color values. For example, ["#F00","#00F"] would define
-	 * a gradient drawing from red to blue.
-	 * @param {Array} ratios An array of gradient positions which correspond to the colors. For example, [0.1,
-	 * 0.9] would draw the first color to 10% then interpolating to the second color at 90%.
-	 * @param {Number} x0 Center position of the inner circle that defines the gradient.
-	 * @param {Number} y0 Center position of the inner circle that defines the gradient.
-	 * @param {Number} r0 Radius of the inner circle that defines the gradient.
-	 * @param {Number} x1 Center position of the outer circle that defines the gradient.
-	 * @param {Number} y1 Center position of the outer circle that defines the gradient.
-	 * @param {Number} r1 Radius of the outer circle that defines the gradient.
-	 * @return {Graphics} The Graphics instance the method is called on (useful for chaining calls.)
-	 * @chainable
-	 **/
-	p.beginRadialGradientFill = function(colors, ratios, x0, y0, r0, x1, y1, r1) {
-		return this._setFill(new G.Fill().radialGradient(colors, ratios, x0, y0, r0, x1, y1, r1));
-	};
-
-	/**
-	 * Begins a pattern fill using the specified image. This ends the current sub-path. A tiny API method "bf" also
-	 * exists.
-	 * @method beginBitmapFill
-	 * @param {HTMLImageElement | HTMLCanvasElement | HTMLVideoElement} image The Image, Canvas, or Video object to use
-	 * as the pattern. Must be loaded prior to creating a bitmap fill, or the fill will be empty.
-	 * @param {String} repetition Optional. Indicates whether to repeat the image in the fill area. One of "repeat",
-	 * "repeat-x", "repeat-y", or "no-repeat". Defaults to "repeat". Note that Firefox does not support "repeat-x" or
-	 * "repeat-y" (latest tests were in FF 20.0), and will default to "repeat".
-	 * @param {Matrix2D} matrix Optional. Specifies a transformation matrix for the bitmap fill. This transformation
-	 * will be applied relative to the parent transform.
-	 * @return {Graphics} The Graphics instance the method is called on (useful for chaining calls.)
-	 * @chainable
-	 **/
-	p.beginBitmapFill = function(image, repetition, matrix) {
-		return this._setFill(new G.Fill(null,matrix).bitmap(image, repetition));
-	};
-
-	/**
-	 * Ends the current sub-path, and begins a new one with no fill. Functionally identical to <code>beginFill(null)</code>.
-	 * A tiny API method "ef" also exists.
-	 * @method endFill
-	 * @return {Graphics} The Graphics instance the method is called on (useful for chaining calls.)
-	 * @chainable
-	 **/
-	p.endFill = function() {
-		return this.beginFill();
 	};
 
 	/**
@@ -1798,112 +1315,6 @@ this.createjs = this.createjs||{};
 	 * @chainable
 	 **/
 	p.drawRect = p.rect;
-
-	/**
-	 * Draws a rounded rectangle with all corners with the specified radius.
-	 * @method drawRoundRect
-	 * @param {Number} x
-	 * @param {Number} y
-	 * @param {Number} w
-	 * @param {Number} h
-	 * @param {Number} radius Corner radius.
-	 * @return {Graphics} The Graphics instance the method is called on (useful for chaining calls.)
-	 * @chainable
-	 **/
-	p.drawRoundRect = function(x, y, w, h, radius) {
-		return this.drawRoundRectComplex(x, y, w, h, radius, radius, radius, radius);
-	};
-
-	/**
-	 * Draws a rounded rectangle with different corner radii. Supports positive and negative corner radii. A tiny API
-	 * method "rc" also exists.
-	 * @method drawRoundRectComplex
-	 * @param {Number} x The horizontal coordinate to draw the round rect.
-	 * @param {Number} y The vertical coordinate to draw the round rect.
-	 * @param {Number} w The width of the round rect.
-	 * @param {Number} h The height of the round rect.
-	 * @param {Number} radiusTL Top left corner radius.
-	 * @param {Number} radiusTR Top right corner radius.
-	 * @param {Number} radiusBR Bottom right corner radius.
-	 * @param {Number} radiusBL Bottom left corner radius.
-	 * @return {Graphics} The Graphics instance the method is called on (useful for chaining calls.)
-	 * @chainable
-	 **/
-	p.drawRoundRectComplex = function(x, y, w, h, radiusTL, radiusTR, radiusBR, radiusBL) {
-		return this.append(new G.RoundRect(x, y, w, h, radiusTL, radiusTR, radiusBR, radiusBL));
-	};
-
-	/**
-	 * Draws a circle with the specified radius at (x, y).
-	 *
-	 *      var g = new createjs.Graphics();
-	 *	    g.setStrokeStyle(1);
-	 *	    g.beginStroke(createjs.Graphics.getRGB(0,0,0));
-	 *	    g.beginFill(createjs.Graphics.getRGB(255,0,0));
-	 *	    g.drawCircle(0,0,3);
-	 *
-	 *	    var s = new createjs.Shape(g);
-	 *		s.x = 100;
-	 *		s.y = 100;
-	 *
-	 *	    stage.addChild(s);
-	 *	    stage.update();
-	 *
-	 * A tiny API method "dc" also exists.
-	 * @method drawCircle
-	 * @param {Number} x x coordinate center point of circle.
-	 * @param {Number} y y coordinate center point of circle.
-	 * @param {Number} radius Radius of circle.
-	 * @return {Graphics} The Graphics instance the method is called on (useful for chaining calls.)
-	 * @chainable
-	 **/
-	p.drawCircle = function(x, y, radius) {
-		return this.append(new G.Circle(x, y, radius));
-	};
-
-	/**
-	 * Draws an ellipse (oval) with a specified width (w) and height (h). Similar to {{#crossLink "Graphics/drawCircle"}}{{/crossLink}},
-	 * except the width and height can be different. A tiny API method "de" also exists.
-	 * @method drawEllipse
-	 * @param {Number} x The left coordinate point of the ellipse. Note that this is different from {{#crossLink "Graphics/drawCircle"}}{{/crossLink}}
-	 * which draws from center.
-	 * @param {Number} y The top coordinate point of the ellipse. Note that this is different from {{#crossLink "Graphics/drawCircle"}}{{/crossLink}}
-	 * which draws from the center.
-	 * @param {Number} w The height (horizontal diameter) of the ellipse. The horizontal radius will be half of this
-	 * number.
-	 * @param {Number} h The width (vertical diameter) of the ellipse. The vertical radius will be half of this number.
-	 * @return {Graphics} The Graphics instance the method is called on (useful for chaining calls.)
-	 * @chainable
-	 **/
-	p.drawEllipse = function(x, y, w, h) {
-		return this.append(new G.Ellipse(x, y, w, h));
-	};
-
-	/**
-	 * Draws a star if pointSize is greater than 0, or a regular polygon if pointSize is 0 with the specified number of
-	 * points. For example, the following code will draw a familiar 5 pointed star shape centered at 100, 100 and with a
-	 * radius of 50:
-	 *
-	 *      myGraphics.beginFill("#FF0").drawPolyStar(100, 100, 50, 5, 0.6, -90);
-	 *      // Note: -90 makes the first point vertical
-	 *
-	 * A tiny API method "dp" also exists.
-	 *
-	 * @method drawPolyStar
-	 * @param {Number} x Position of the center of the shape.
-	 * @param {Number} y Position of the center of the shape.
-	 * @param {Number} radius The outer radius of the shape.
-	 * @param {Number} sides The number of points on the star or sides on the polygon.
-	 * @param {Number} pointSize The depth or "pointy-ness" of the star points. A pointSize of 0 will draw a regular
-	 * polygon (no points), a pointSize of 1 will draw nothing because the points are infinitely pointy.
-	 * @param {Number} angle The angle of the first point / corner. For example a value of 0 will draw the first point
-	 * directly to the right of the center.
-	 * @return {Graphics} The Graphics instance the method is called on (useful for chaining calls.)
-	 * @chainable
-	 **/
-	p.drawPolyStar = function(x, y, radius, sides, pointSize, angle) {
-		return this.append(new G.PolyStar(x, y, radius, sides, pointSize, angle));
-	};
 
 	/**
 	 * Appends a graphics command object to the graphics queue. Command objects expose an "exec" method
@@ -2010,93 +1421,6 @@ this.createjs = this.createjs||{};
 		}
 		return this;
 	};
-
-	/**
-	 * Stores all graphics commands so they won't be executed in future draws. Calling store() a second time adds to
-	 * the existing store. This also affects `drawAsPath()`.
-	 *
-	 * This is useful in cases where you are creating vector graphics in an iterative manner (ex. generative art), so
-	 * that only new graphics need to be drawn (which can provide huge performance benefits), but you wish to retain all
-	 * of the vector instructions for later use (ex. scaling, modifying, or exporting).
-	 *
-	 * Note that calling store() will force the active path (if any) to be ended in a manner similar to changing
-	 * the fill or stroke.
-	 *
-	 * For example, consider a application where the user draws lines with the mouse. As each line segment (or collection of
-	 * segments) are added to a Shape, it can be rasterized using {{#crossLink "DisplayObject/updateCache"}}{{/crossLink}},
-	 * and then stored, so that it can be redrawn at a different scale when the application is resized, or exported to SVG.
-	 *
-	 * 	// set up cache:
-	 * 	myShape.cache(0,0,500,500,scale);
-	 *
-	 * 	// when the user drags, draw a new line:
-	 * 	myShape.graphics.moveTo(oldX,oldY).lineTo(newX,newY);
-	 * 	// then draw it into the existing cache:
-	 * 	myShape.updateCache("source-over");
-	 * 	// store the new line, so it isn't redrawn next time:
-	 * 	myShape.store();
-	 *
-	 * 	// then, when the window resizes, we can re-render at a different scale:
-	 * 	// first, unstore all our lines:
-	 * 	myShape.unstore();
-	 * 	// then cache using the new scale:
-	 * 	myShape.cache(0,0,500,500,newScale);
-	 * 	// finally, store the existing commands again:
-	 * 	myShape.store();
-	 *
-	 * @method store
-	 * @return {Graphics} The Graphics instance the method is called on (useful for chaining calls.)
-	 * @chainable
-	 **/
-	p.store = function() {
-		this._updateInstructions(true);
-		this._storeIndex = this._instructions.length;
-		return this;
-	};
-
-	/**
-	 * Unstores any graphics commands that were previously stored using {{#crossLink "Graphics/store"}}{{/crossLink}}
-	 * so that they will be executed in subsequent draw calls.
-	 *
-	 * @method unstore
-	 * @return {Graphics} The Graphics instance the method is called on (useful for chaining calls.)
-	 * @chainable
-	 **/
-	p.unstore = function() {
-		this._storeIndex = 0;
-		return this;
-	};
-
-	/**
-	 * Returns a clone of this Graphics instance. Note that the individual command objects are not cloned.
-	 * @method clone
-	 * @return {Graphics} A clone of the current Graphics instance.
-	 **/
-	p.clone = function() {
-		var o = new Graphics();
-		o.command = this.command;
-		o._stroke = this._stroke;
-		o._strokeStyle = this._strokeStyle;
-		o._strokeDash = this._strokeDash;
-		o._strokeIgnoreScale = this._strokeIgnoreScale;
-		o._fill = this._fill;
-		o._instructions = this._instructions.slice();
-		o._commitIndex = this._commitIndex;
-		o._activeInstructions = this._activeInstructions.slice();
-		o._dirty = this._dirty;
-		o._storeIndex = this._storeIndex;
-		return o;
-	};
-
-	/**
-	 * Returns a string representation of this object.
-	 * @method toString
-	 * @return {String} a string representation of the instance.
-	 **/
-	p.toString = function() {
-		return "[Graphics]";
-	};
-
 
 // tiny API:
 	/**
@@ -2600,95 +1924,6 @@ this.createjs = this.createjs||{};
 		this.x = x; this.y = y;
 	}).prototype.exec = function(ctx) { ctx.moveTo(this.x, this.y); };
 
-
-	/**
-	 * Graphics command object. See {{#crossLink "Graphics/arcTo"}}{{/crossLink}} and {{#crossLink "Graphics/append"}}{{/crossLink}} for more information.
-	 * @class ArcTo
-	 * @constructor
-	 * @param {Number} x1
-	 * @param {Number} y1
-	 * @param {Number} x2
-	 * @param {Number} y2
-	 * @param {Number} radius
-	 **/
-	/**
-	 * @property x1
-	 * @type Number
-	 */
-	/**
-	 * @property y1
-	 * @type Number
-	 */
-	/**
-	 * @property x2
-	 * @type Number
-	 */
-	/**
-	 * @property y2
-	 * @type Number
-	 */
-	/**
-	 * @property radius
-	 * @type Number
-	 */
-	/**
-	 * Execute the Graphics command in the provided Canvas context.
-	 * @method exec
-	 * @param {CanvasRenderingContext2D} ctx The canvas rendering context
-	 */
-	(G.ArcTo = function(x1, y1, x2, y2, radius) {
-		this.x1 = x1; this.y1 = y1;
-		this.x2 = x2; this.y2 = y2;
-		this.radius = radius;
-	}).prototype.exec = function(ctx) { ctx.arcTo(this.x1, this.y1, this.x2, this.y2, this.radius); };
-
-	/**
-	 * Graphics command object. See {{#crossLink "Graphics/arc"}}{{/crossLink}} and {{#crossLink "Graphics/append"}}{{/crossLink}} for more information.
-	 * @class Arc
-	 * @constructor
-	 * @param {Number} x
-	 * @param {Number} y
-	 * @param {Number} radius
-	 * @param {Number} startAngle
-	 * @param {Number} endAngle
-	 * @param {Number} anticlockwise
-	 **/
-	/**
-	 * @property x
-	 * @type Number
-	 */
-	/**
-	 * @property y
-	 * @type Number
-	 */
-	/**
-	 * @property radius
-	 * @type Number
-	 */
-	/**
-	 * @property startAngle
-	 * @type Number
-	 */
-	/**
-	 * @property endAngle
-	 * @type Number
-	 */
-	/**
-	 * @property anticlockwise
-	 * @type Number
-	 */
-	/**
-	 * Execute the Graphics command in the provided Canvas context.
-	 * @method exec
-	 * @param {CanvasRenderingContext2D} ctx The canvas rendering context
-	 */
-	(G.Arc = function(x, y, radius, startAngle, endAngle, anticlockwise) {
-		this.x = x; this.y = y;
-		this.radius = radius;
-		this.startAngle = startAngle; this.endAngle = endAngle;
-		this.anticlockwise = !!anticlockwise;
-	}).prototype.exec = function(ctx) { ctx.arc(this.x, this.y, this.radius, this.startAngle, this.endAngle, this.anticlockwise); };
-
 	/**
 	 * Graphics command object. See {{#crossLink "Graphics/quadraticCurveTo"}}{{/crossLink}} and {{#crossLink "Graphics/append"}}{{/crossLink}} for more information.
 	 * @class QuadraticCurveTo
@@ -2723,87 +1958,6 @@ this.createjs = this.createjs||{};
 		this.cpx = cpx; this.cpy = cpy;
 		this.x = x; this.y = y;
 	}).prototype.exec = function(ctx) { ctx.quadraticCurveTo(this.cpx, this.cpy, this.x, this.y); };
-
-	/**
-	 * Graphics command object. See {{#crossLink "Graphics/bezierCurveTo"}}{{/crossLink}} and {{#crossLink "Graphics/append"}}{{/crossLink}} for more information.
-	 * @class BezierCurveTo
-	 * @constructor
-	 * @param {Number} cp1x
-	 * @param {Number} cp1y
-	 * @param {Number} cp2x
-	 * @param {Number} cp2y
-	 * @param {Number} x
-	 * @param {Number} y
-	 **/
-	/**
-	 * @property cp1x
-	 * @type Number
-	 */
-	/**
-	 * @property cp1y
-	 * @type Number
-	 */
-	/**
-	 * @property cp2x
-	 * @type Number
-	 */
-	/**
-	 * @property cp2y
-	 * @type Number
-	 */
-	/**
-	 * @property x
-	 * @type Number
-	 */
-	/**
-	 * @property y
-	 * @type Number
-	 */
-	/**
-	 * Execute the Graphics command in the provided Canvas context.
-	 * @method exec
-	 * @param {CanvasRenderingContext2D} ctx The canvas rendering context
-	 */
-	(G.BezierCurveTo = function(cp1x, cp1y, cp2x, cp2y, x, y) {
-		this.cp1x = cp1x; this.cp1y = cp1y;
-		this.cp2x = cp2x; this.cp2y = cp2y;
-		this.x = x; this.y = y;
-	}).prototype.exec = function(ctx) { ctx.bezierCurveTo(this.cp1x, this.cp1y, this.cp2x, this.cp2y, this.x, this.y); };
-
-	/**
-	 * Graphics command object. See {{#crossLink "Graphics/rect"}}{{/crossLink}} and {{#crossLink "Graphics/append"}}{{/crossLink}} for more information.
-	 * @class Rect
-	 * @constructor
-	 * @param {Number} x
-	 * @param {Number} y
-	 * @param {Number} w
-	 * @param {Number} h
-	 **/
-	/**
-	 * @property x
-	 * @type Number
-	 */
-	/**
-	 * @property y
-	 * @type Number
-	 */
-	/**
-	 * @property w
-	 * @type Number
-	 */
-	/**
-	 * @property h
-	 * @type Number
-	 */
-	/**
-	 * Execute the Graphics command in the provided Canvas context.
-	 * @method exec
-	 * @param {CanvasRenderingContext2D} ctx The canvas rendering context
-	 */
-	(G.Rect = function(x, y, w, h) {
-		this.x = x; this.y = y;
-		this.w = w; this.h = h;
-	}).prototype.exec = function(ctx) { ctx.rect(this.x, this.y, this.w, this.h); };
 
 	/**
 	 * Graphics command object. See {{#crossLink "Graphics/closePath"}}{{/crossLink}} and {{#crossLink "Graphics/append"}}{{/crossLink}} for more information.
@@ -4459,10 +3613,6 @@ this.createjs = this.createjs||{};
 			var t = window.addEventListener ? window : document;
 			var _this = this;
 			ls = this._eventListeners = {};
-			ls["mouseup"] = {t:t, f:function(e) { _this._handleMouseUp(e)} };
-			ls["mousemove"] = {t:t, f:function(e) { _this._handleMouseMove(e)} };
-			ls["dblclick"] = {t:this.canvas, f:function(e) { _this._handleDoubleClick(e)} };
-			ls["mousedown"] = {t:this.canvas, f:function(e) { _this._handleMouseDown(e)} };
 
 			for (n in ls) {
 				o = ls[n];
@@ -4682,59 +3832,6 @@ this.createjs = this.createjs||{};
 		return true;
 	};
 
-	//Note, the doc sections below document using the specified APIs (from DisplayObject)  from
-	//Bitmap. This is why they have no method implementations.
-
-	/**
-	 * Because the content of a Sprite is already in a raster format, cache is unnecessary for Sprite instances.
-	 * You should not cache Sprite instances as it can degrade performance.
-	 * @method cache
-	 **/
-
-	/**
-	 * Because the content of a Sprite is already in a raster format, cache is unnecessary for Sprite instances.
-	 * You should not cache Sprite instances as it can degrade performance.
-	 * @method updateCache
-	 **/
-
-	/**
-	 * Because the content of a Sprite is already in a raster format, cache is unnecessary for Sprite instances.
-	 * You should not cache Sprite instances as it can degrade performance.
-	 * @method uncache
-	 **/
-
-	/**
-	 * Play (unpause) the current animation. The Sprite will be paused if either {{#crossLink "Sprite/stop"}}{{/crossLink}}
-	 * or {{#crossLink "Sprite/gotoAndStop"}}{{/crossLink}} is called. Single frame animations will remain
-	 * unchanged.
-	 * @method play
-	 **/
-	p.play = function() {
-		this.paused = false;
-	};
-
-	/**
-	 * Stop playing a running animation. The Sprite will be playing if {{#crossLink "Sprite/gotoAndPlay"}}{{/crossLink}}
-	 * is called. Note that calling {{#crossLink "Sprite/gotoAndPlay"}}{{/crossLink}} or {{#crossLink "Sprite/play"}}{{/crossLink}}
-	 * will resume playback.
-	 * @method stop
-	 **/
-	p.stop = function() {
-		this.paused = true;
-	};
-
-	/**
-	 * Sets paused to false and plays the specified animation name, named frame, or frame number.
-	 * @method gotoAndPlay
-	 * @param {String|Number} frameOrAnimation The frame number or animation name that the playhead should move to
-	 * and begin playing.
-	 **/
-	p.gotoAndPlay = function(frameOrAnimation) {
-		this.paused = false;
-		this._skipAdvance = true;
-		this._goto(frameOrAnimation);
-	};
-
 	/**
 	 * Sets paused to true and seeks to the specified animation name, named frame, or frame number.
 	 * @method gotoAndStop
@@ -4746,73 +3843,7 @@ this.createjs = this.createjs||{};
 		this._goto(frameOrAnimation);
 	};
 
-	/**
-	 * Advances the playhead. This occurs automatically each tick by default.
-	 * @param [time] {Number} The amount of time in ms to advance by. Only applicable if framerate is set on the Sprite
-	 * or its SpriteSheet.
-	 * @method advance
-	*/
-	p.advance = function(time) {
-		var fps = this.framerate || this.spriteSheet.framerate;
-		var t = (fps && time != null) ? time/(1000/fps) : 1;
-		this._normalizeFrame(t);
-	};
-
-	/**
-	 * Returns a {{#crossLink "Rectangle"}}{{/crossLink}} instance defining the bounds of the current frame relative to
-	 * the origin. For example, a 90 x 70 frame with <code>regX=50</code> and <code>regY=40</code> would return a
-	 * rectangle with [x=-50, y=-40, width=90, height=70]. This ignores transformations on the display object.
-	 *
-	 * Also see the SpriteSheet {{#crossLink "SpriteSheet/getFrameBounds"}}{{/crossLink}} method.
-	 * @method getBounds
-	 * @return {Rectangle} A Rectangle instance. Returns null if the frame does not exist, or the image is not fully
-	 * loaded.
-	 **/
-	p.getBounds = function() {
-		// TODO: should this normalizeFrame?
-		return this.DisplayObject_getBounds() || this.spriteSheet.getFrameBounds(this.currentFrame, this._rectangle);
-	};
-
-	/**
-	 * Returns a clone of the Sprite instance. Note that the same SpriteSheet is shared between cloned
-	 * instances.
-	 * @method clone
-	 * @return {Sprite} a clone of the Sprite instance.
-	 **/
-	p.clone = function() {
-		return this._cloneProps(new Sprite(this.spriteSheet));
-	};
-
-	/**
-	 * Returns a string representation of this object.
-	 * @method toString
-	 * @return {String} a string representation of the instance.
-	 **/
-	p.toString = function() {
-		return "[Sprite (name="+  this.name +")]";
-	};
-
 // private methods:
-	/**
-	 * @method _cloneProps
-	 * @param {Sprite} o
-	 * @return {Sprite} o
-	 * @protected
-	 **/
-	p._cloneProps = function(o) {
-		this.DisplayObject__cloneProps(o);
-		o.currentFrame = this.currentFrame;
-		o.currentAnimation = this.currentAnimation;
-		o.paused = this.paused;
-		o.currentAnimationFrame = this.currentAnimationFrame;
-		o.framerate = this.framerate;
-
-		o._animation = this._animation;
-		o._currentFrame = this._currentFrame;
-		o._skipAdvance = this._skipAdvance;
-		return o;
-	};
-
 	/**
 	 * Advances the <code>currentFrame</code> if paused is not true. This is called automatically when the {{#crossLink "Stage"}}{{/crossLink}}
 	 * ticks.
@@ -4878,28 +3909,6 @@ this.createjs = this.createjs||{};
 			this.currentFrame = frame;
 			this.dispatchEvent("change");
 		}
-	};
-
-	/**
-	 * Dispatches the "animationend" event. Returns true if a handler changed the animation (ex. calling {{#crossLink "Sprite/stop"}}{{/crossLink}},
-	 * {{#crossLink "Sprite/gotoAndPlay"}}{{/crossLink}}, etc.)
-	 * @property _dispatchAnimationEnd
-	 * @private
-	 * @type {Function}
-	 **/
-	p._dispatchAnimationEnd = function(animation, frame, paused, next, end) {
-		var name = animation ? animation.name : null;
-		if (this.hasEventListener("animationend")) {
-			var evt = new createjs.Event("animationend");
-			evt.name = name;
-			evt.next = next;
-			this.dispatchEvent(evt);
-		}
-		// did the animation get changed in the event stack?:
-		var changed = (this._animation != animation || this._currentFrame != frame);
-		// if the animation hasn't changed, but the sprite was paused, then we want to stick to the last frame:
-		if (!changed && !paused && this.paused) { this.currentAnimationFrame = end; changed = true; }
-		return changed;
 	};
 
 	/**
@@ -5010,28 +4019,6 @@ this.createjs = this.createjs||{};
 		this.graphics.draw(ctx, this);
 		return true;
 	};
-
-	/**
-	 * Returns a clone of this Shape. Some properties that are specific to this instance's current context are reverted to
-	 * their defaults (for example .parent).
-	 * @method clone
-	 * @param {Boolean} recursive If true, this Shape's {{#crossLink "Graphics"}}{{/crossLink}} instance will also be
-	 * cloned. If false, the Graphics instance will be shared with the new Shape.
-	 **/
-	p.clone = function(recursive) {
-		var g = (recursive && this.graphics) ? this.graphics.clone() : this.graphics;
-		return  this._cloneProps(new Shape(g));
-	};
-
-	/**
-	 * Returns a string representation of this object.
-	 * @method toString
-	 * @return {String} a string representation of the instance.
-	 **/
-	p.toString = function() {
-		return "[Shape (name="+  this.name +")]";
-	};
-
 
 	createjs.Shape = createjs.promote(Shape, "DisplayObject");
 }());
@@ -5576,23 +4563,6 @@ this.createjs = this.createjs||{};
 		}
 		this._managed[child.id] = 2;
 	};
-
-	/**
-	 * @method _getBounds
-	 * @param {Matrix2D} matrix
-	 * @param {Boolean} ignoreTransform
-	 * @return {Rectangle}
-	 * @protected
-	 **/
-	p._getBounds = function(matrix, ignoreTransform) {
-		var bounds = this.DisplayObject_getBounds();
-		if (!bounds) {
-			if (this.frameBounds) { bounds = this._rectangle.copy(this.frameBounds[this.currentFrame]); }
-		}
-		if (bounds) { return this._transformBounds(bounds, matrix, ignoreTransform); }
-		return this.Container__getBounds(matrix, ignoreTransform);
-	};
-
 
 	createjs.MovieClip = createjs.promote(MovieClip, "Container");
 
