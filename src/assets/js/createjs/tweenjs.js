@@ -98,8 +98,6 @@ this.createjs = this.createjs||{};
 
 // mix-ins:
 	// EventDispatcher methods:
-	Ticker.removeEventListener = null;
-	Ticker.removeAllEventListeners = null;
 	Ticker.dispatchEvent = null;
 	Ticker.hasEventListener = null;
 	Ticker._listeners = null;

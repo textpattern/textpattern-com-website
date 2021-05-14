@@ -410,62 +410,6 @@ this.createjs = this.createjs||{};
 (function() {
 	"use strict";
 
-
-// constructor:
-	/**
-	 * EventDispatcher provides methods for managing queues of event listeners and dispatching events.
-	 *
-	 * You can either extend EventDispatcher or mix its methods into an existing prototype or instance by using the
-	 * EventDispatcher {{#crossLink "EventDispatcher/initialize"}}{{/crossLink}} method.
-	 *
-	 * Together with the CreateJS Event class, EventDispatcher provides an extended event model that is based on the
-	 * DOM Level 2 event model, including addEventListener, removeEventListener, and dispatchEvent. It supports
-	 * bubbling / capture, preventDefault, stopPropagation, stopImmediatePropagation, and handleEvent.
-	 *
-	 * EventDispatcher also exposes a {{#crossLink "EventDispatcher/on"}}{{/crossLink}} method, which makes it easier
-	 * to create scoped listeners, listeners that only run once, and listeners with associated arbitrary data. The
-	 * {{#crossLink "EventDispatcher/off"}}{{/crossLink}} method is merely an alias to
-	 * {{#crossLink "EventDispatcher/removeEventListener"}}{{/crossLink}}.
-	 *
-	 * Another addition to the DOM Level 2 model is the {{#crossLink "EventDispatcher/removeAllEventListeners"}}{{/crossLink}}
-	 * method, which can be used to listeners for all events, or listeners for a specific event. The Event object also
-	 * includes a {{#crossLink "Event/remove"}}{{/crossLink}} method which removes the active listener.
-	 *
-	 * <h4>Example</h4>
-	 * Add EventDispatcher capabilities to the "MyClass" class.
-	 *
-	 *      EventDispatcher.initialize(MyClass.prototype);
-	 *
-	 * Add an event (see {{#crossLink "EventDispatcher/addEventListener"}}{{/crossLink}}).
-	 *
-	 *      instance.addEventListener("eventName", handlerMethod);
-	 *      function handlerMethod(event) {
-	 *          console.log(event.target + " Was Clicked");
-	 *      }
-	 *
-	 * <b>Maintaining proper scope</b><br />
-	 * Scope (ie. "this") can be be a challenge with events. Using the {{#crossLink "EventDispatcher/on"}}{{/crossLink}}
-	 * method to subscribe to events simplifies this.
-	 *
-	 *      instance.addEventListener("click", function(event) {
-	 *          console.log(instance == this); // false, scope is ambiguous.
-	 *      });
-	 *
-	 *      instance.on("click", function(event) {
-	 *          console.log(instance == this); // true, "on" uses dispatcher scope by default.
-	 *      });
-	 *
-	 * If you want to use addEventListener instead, you may want to use function.bind() or a similar proxy to manage
-	 * scope.
-	 *
-	 * <b>Browser support</b>
-	 * The event model in CreateJS can be used separately from the suite in any project, however the inheritance model
-	 * requires modern browsers (IE9+).
-	 *
-	 *
-	 * @class EventDispatcher
-	 * @constructor
-	 **/
 	function EventDispatcher() {
 
 
@@ -501,12 +445,9 @@ this.createjs = this.createjs||{};
 	EventDispatcher.initialize = function(target) {
 		target.addEventListener = p.addEventListener;
 		target.on = p.on;
-		target.removeEventListener = target.off =  p.removeEventListener;
-		target.removeAllEventListeners = p.removeAllEventListeners;
 		target.hasEventListener = p.hasEventListener;
 		target.dispatchEvent = p.dispatchEvent;
 		target._dispatchEvent = p._dispatchEvent;
-		target.willTrigger = p.willTrigger;
 	};
 
 
@@ -537,7 +478,6 @@ this.createjs = this.createjs||{};
 			listeners = this._listeners = this._listeners||{};
 		}
 		var arr = listeners[type];
-		if (arr) { this.removeEventListener(type, listener, useCapture); }
 		arr = listeners[type]; // remove may have deleted the array
 		if (!arr) { listeners[type] = [listener];  }
 		else { arr.push(listener); }
@@ -547,9 +487,6 @@ this.createjs = this.createjs||{};
 	/**
 	 * A shortcut method for using addEventListener that makes it easier to specify an execution scope, have a listener
 	 * only run once, associate arbitrary data with the listener, and remove the listener.
-	 *
-	 * This method works by creating an anonymous wrapper function and subscribing it with addEventListener.
-	 * The wrapper function is returned for use with `removeEventListener` (or `off`).
 	 *
 	 * <b>IMPORTANT:</b> To remove a listener added with `on`, you must pass in the returned wrapper function as the listener, or use
 	 * {{#crossLink "Event/remove"}}{{/crossLink}}. Likewise, each time you call `on` a NEW wrapper function is subscribed, so multiple calls
@@ -576,7 +513,6 @@ this.createjs = this.createjs||{};
 	 * @param {Boolean} [once=false] If true, the listener will remove itself after the first time it is triggered.
 	 * @param {*} [data] Arbitrary data that will be included as the second parameter when the listener is called.
 	 * @param {Boolean} [useCapture=false] For events that bubble, indicates whether to listen for the event in the capture or bubbling/target phase.
-	 * @return {Function} Returns the anonymous function that was created and assigned as the listener. This is needed to remove the listener later using .removeEventListener.
 	 **/
 	p.on = function(type, listener, scope, once, data, useCapture) {
 		if (listener.handleEvent) {
@@ -588,72 +524,6 @@ this.createjs = this.createjs||{};
 				listener.call(scope, evt, data);
 				once&&evt.remove();
 			}, useCapture);
-	};
-
-	/**
-	 * Removes the specified event listener.
-	 *
-	 * <b>Important Note:</b> that you must pass the exact function reference used when the event was added. If a proxy
-	 * function, or function closure is used as the callback, the proxy/closure reference must be used - a new proxy or
-	 * closure will not work.
-	 *
-	 * <h4>Example</h4>
-	 *
-	 *      displayObject.removeEventListener("click", handleClick);
-	 *
-	 * @method removeEventListener
-	 * @param {String} type The string type of the event.
-	 * @param {Function | Object} listener The listener function or object.
-	 * @param {Boolean} [useCapture] For events that bubble, indicates whether to listen for the event in the capture or bubbling/target phase.
-	 **/
-	p.removeEventListener = function(type, listener, useCapture) {
-		var listeners = useCapture ? this._captureListeners : this._listeners;
-		if (!listeners) { return; }
-		var arr = listeners[type];
-		if (!arr) { return; }
-		for (var i=0,l=arr.length; i<l; i++) {
-			if (arr[i] == listener) {
-				if (l==1) { delete(listeners[type]); } // allows for faster checks.
-				else { arr.splice(i,1); }
-				break;
-			}
-		}
-	};
-
-	/**
-	 * A shortcut to the removeEventListener method, with the same parameters and return value. This is a companion to the
-	 * .on method.
-	 *
-	 * <b>IMPORTANT:</b> To remove a listener added with `on`, you must pass in the returned wrapper function as the listener. See
-	 * {{#crossLink "EventDispatcher/on"}}{{/crossLink}} for an example.
-	 *
-	 * @method off
-	 * @param {String} type The string type of the event.
-	 * @param {Function | Object} listener The listener function or object.
-	 * @param {Boolean} [useCapture] For events that bubble, indicates whether to listen for the event in the capture or bubbling/target phase.
-	 **/
-	p.off = p.removeEventListener;
-
-	/**
-	 * Removes all listeners for the specified type, or all listeners of all types.
-	 *
-	 * <h4>Example</h4>
-	 *
-	 *      // Remove all listeners
-	 *      displayObject.removeAllEventListeners();
-	 *
-	 *      // Remove all click listeners
-	 *      displayObject.removeAllEventListeners("click");
-	 *
-	 * @method removeAllEventListeners
-	 * @param {String} [type] The string type of the event. If omitted, all listeners for all types will be removed.
-	 **/
-	p.removeAllEventListeners = function(type) {
-		if (!type) { this._listeners = this._captureListeners = null; }
-		else {
-			if (this._listeners) { delete(this._listeners[type]); }
-			if (this._captureListeners) { delete(this._captureListeners[type]); }
-		}
 	};
 
 	/**
@@ -720,35 +590,6 @@ this.createjs = this.createjs||{};
 		var listeners = this._listeners, captureListeners = this._captureListeners;
 		return !!((listeners && listeners[type]) || (captureListeners && captureListeners[type]));
 	};
-
-	/**
-	 * Indicates whether there is at least one listener for the specified event type on this object or any of its
-	 * ancestors (parent, parent's parent, etc). A return value of true indicates that if a bubbling event of the
-	 * specified type is dispatched from this object, it will trigger at least one listener.
-	 *
-	 * This is similar to {{#crossLink "EventDispatcher/hasEventListener"}}{{/crossLink}}, but it searches the entire
-	 * event flow for a listener, not just this object.
-	 * @method willTrigger
-	 * @param {String} type The string type of the event.
-	 * @return {Boolean} Returns `true` if there is at least one listener for the specified event.
-	 **/
-	p.willTrigger = function(type) {
-		var o = this;
-		while (o) {
-			if (o.hasEventListener(type)) { return true; }
-			o = o.parent;
-		}
-		return false;
-	};
-
-	/**
-	 * @method toString
-	 * @return {String} a string representation of the instance.
-	 **/
-	p.toString = function() {
-		return "[EventDispatcher]";
-	};
-
 
 // private methods:
 	/**
@@ -1758,26 +1599,6 @@ this.createjs = this.createjs || {};
 	};
 
 	/**
-	 * Return the `tag` this object creates or uses for loading.
-	 * @method getTag
-	 * @return {Object} The tag instance
-	 * @since 0.6.0
-	 */
-	p.getTag = function () {
-		return this._tag;
-	};
-
-	/**
-	 * Set the `tag` this item uses for loading.
-	 * @method setTag
-	 * @param {Object} tag The tag instance
-	 * @since 0.6.0
-	 */
-	p.setTag = function(tag) {
-	  this._tag = tag;
-	};
-
-	/**
 	 * Begin loading the item. This method is required when using a loader by itself.
 	 *
 	 * <h4>Example</h4>
@@ -1804,37 +1625,6 @@ this.createjs = this.createjs || {};
 		this.dispatchEvent(evt);
 
 		this._request.load();
-	};
-
-	/**
-	 * Close the the item. This will stop any open requests (although downloads using HTML tags may still continue in
-	 * the background), but events will not longer be dispatched.
-	 * @method cancel
-	 */
-	p.cancel = function () {
-		this.canceled = true;
-		this.destroy();
-	};
-
-	/**
-	 * Clean up the loader.
-	 * @method destroy
-	 */
-	p.destroy = function() {
-		if (this._request) {
-			this._request.removeAllEventListeners();
-			this._request.destroy();
-		}
-
-		this._request = null;
-
-		this._item = null;
-		this._rawResult = null;
-		this._result = null;
-
-		this._loadItems = null;
-
-		this.removeAllEventListeners();
 	};
 
 	/**
@@ -2125,25 +1915,6 @@ this.createjs = this.createjs || {};
             event.loader.setResponseType("blob");
         }
     };
-
-	/**
-	 * The result formatter for media files.
-	 * @method _formatResult
-	 * @param {AbstractLoader} loader
-	 * @returns {HTMLVideoElement|HTMLAudioElement}
-	 * @private
-	 */
-	p._formatResult = function (loader) {
-		this._tag.removeEventListener && this._tag.removeEventListener("canplaythrough", this._loadedHandler);
-		this._tag.onstalled = null;
-		if (this._preferXHR) {
-            var URL = window.URL || window.webkitURL;
-            var result = loader.getResult(true);
-
-			loader.getTag().src = URL.createObjectURL(result);
-		}
-		return loader.getTag();
-	};
 
 	createjs.AbstractMediaLoader = createjs.promote(AbstractMediaLoader, "AbstractLoader");
 
@@ -3843,14 +3614,6 @@ this.createjs = this.createjs || {};
 	 */
 	p._processFinishedLoad = function (item, loader) {
 		this._numItemsLoaded++;
-
-		// Since LoadQueue needs maintain order, we can't append scripts in the loader.
-		// So we do it here instead. Or in _checkScriptLoadOrder();
-		if (!this.maintainScriptOrder && item.type == createjs.Types.JAVASCRIPT) {
-			var tag = loader.getTag();
-			createjs.DomUtils.appendToHead(tag);
-		}
-
 		this._updateProgress();
 		this._sendFileComplete(item, loader);
 		this._loadNext();

@@ -3606,7 +3606,6 @@ this.createjs = this.createjs||{};
 		if (!enable && ls) {
 			for (n in ls) {
 				o = ls[n];
-				o.t.removeEventListener(n, o.f, false);
 			}
 			this._eventListeners = null;
 		} else if (enable && !ls && this.canvas) {
