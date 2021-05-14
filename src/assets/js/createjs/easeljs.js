@@ -1279,44 +1279,6 @@ this.createjs = this.createjs||{};
 	};
 
 	/**
-	 * Ends the current sub-path, and begins a new one with no stroke. Functionally identical to <code>beginStroke(null)</code>.
-	 * A tiny API method "es" also exists.
-	 * @method endStroke
-	 * @return {Graphics} The Graphics instance the method is called on (useful for chaining calls.)
-	 * @chainable
-	 **/
-	p.endStroke = function() {
-		return this.beginStroke();
-	};
-
-	/**
-	 * Maps the familiar ActionScript <code>curveTo()</code> method to the functionally similar {{#crossLink "Graphics/quadraticCurveTo"}}{{/crossLink}}
-	 * method.
-	 * @method curveTo
-	 * @param {Number} cpx
-	 * @param {Number} cpy
-	 * @param {Number} x
-	 * @param {Number} y
-	 * @return {Graphics} The Graphics instance the method is called on (useful for chaining calls.)
-	 * @chainable
-	 **/
-	p.curveTo = p.quadraticCurveTo;
-
-	/**
-	 *
-	 * Maps the familiar ActionScript <code>drawRect()</code> method to the functionally similar {{#crossLink "Graphics/rect"}}{{/crossLink}}
-	 * method.
-	 * @method drawRect
-	 * @param {Number} x
-	 * @param {Number} y
-	 * @param {Number} w Width of the rectangle
-	 * @param {Number} h Height of the rectangle
-	 * @return {Graphics} The Graphics instance the method is called on (useful for chaining calls.)
-	 * @chainable
-	 **/
-	p.drawRect = p.rect;
-
-	/**
 	 * Appends a graphics command object to the graphics queue. Command objects expose an "exec" method
 	 * that accepts two parameters: the Context2D to operate on, and an arbitrary data object passed into
 	 * {{#crossLink "Graphics/draw"}}{{/crossLink}}. The latter will usually be the Shape instance that called draw.
@@ -2052,92 +2014,7 @@ this.createjs = this.createjs||{};
 		ctx.stroke();
 		if (this.ignoreScale) { ctx.restore(); }
 	};
-	/**
-	 * Creates a linear gradient style and assigns it to {{#crossLink "Stroke/style:property"}}{{/crossLink}}.
-	 * See {{#crossLink "Graphics/beginLinearGradientStroke"}}{{/crossLink}} for more information.
-	 * @method linearGradient
-	 * @param {Array} colors
-	 * @param {Array} ratios
-	 * @param {Number} x0
-	 * @param {Number} y0
-	 * @param {Number} x1
-	 * @param {Number} y1
-	 * @return {Fill} Returns this Stroke object for chaining or assignment.
-	 */
-	p.linearGradient = G.Fill.prototype.linearGradient;
-	/**
-	 * Creates a radial gradient style and assigns it to {{#crossLink "Stroke/style:property"}}{{/crossLink}}.
-	 * See {{#crossLink "Graphics/beginRadialGradientStroke"}}{{/crossLink}} for more information.
-	 * @method radialGradient
-	 * @param {Array} colors
-	 * @param {Array} ratios
-	 * @param {Number} x0
-	 * @param {Number} y0
-	 * @param {Number} r0
-	 * @param {Number} x1
-	 * @param {Number} y1
-	 * @param {Number} r1
-	 * @return {Fill} Returns this Stroke object for chaining or assignment.
-	 */
-	p.radialGradient = G.Fill.prototype.radialGradient;
-	/**
-	 * Creates a bitmap fill style and assigns it to {{#crossLink "Stroke/style:property"}}{{/crossLink}}.
-	 * See {{#crossLink "Graphics/beginBitmapStroke"}}{{/crossLink}} for more information.
-	 * @method bitmap
-	 * @param {HTMLImageElement} image
-	 * @param {String} [repetition] One of: repeat, repeat-x, repeat-y, or no-repeat.
-	 * @return {Fill} Returns this Stroke object for chaining or assignment.
-	 */
-	p.bitmap = G.Fill.prototype.bitmap;
-	p.path = false;
 
-	/**
-	 * Graphics command object. See {{#crossLink "Graphics/setStrokeStyle"}}{{/crossLink}} and {{#crossLink "Graphics/append"}}{{/crossLink}} for more information.
-	 * @class StrokeStyle
-	 * @constructor
-	 * @param {Number} width
-	 * @param {String} [caps=butt]
-	 * @param {String} [joints=miter]
-	 * @param {Number} [miterLimit=10]
-	 * @param {Boolean} [ignoreScale=false]
-	 **/
-	/**
-	 * @property width
-	 * @type Number
-	 */
-	/**
-	 * One of: butt, round, square
-	 * @property caps
-	 * @type String
-	 */
-	/**
-	 * One of: round, bevel, miter
-	 * @property joints
-	 * @type String
-	 */
-	/**
-	 * @property miterLimit
-	 * @type Number
-	 */
-	/**
-	 * Execute the Graphics command in the provided Canvas context.
-	 * @method exec
-	 * @param {CanvasRenderingContext2D} ctx The canvas rendering context
-	 */
-	p = (G.StrokeStyle = function(width, caps, joints, miterLimit, ignoreScale) {
-		this.width = width;
-		this.caps = caps;
-		this.joints = joints;
-		this.miterLimit = miterLimit;
-		this.ignoreScale = ignoreScale;
-	}).prototype;
-	p.exec = function(ctx) {
-		ctx.lineWidth = (this.width == null ? "1" : this.width);
-		ctx.lineCap = (this.caps == null ? "butt" : (isNaN(this.caps) ? this.caps : Graphics.STROKE_CAPS_MAP[this.caps]));
-		ctx.lineJoin = (this.joints == null ? "miter" : (isNaN(this.joints) ? this.joints : Graphics.STROKE_JOINTS_MAP[this.joints]));
-		ctx.miterLimit = (this.miterLimit == null ? "10" : this.miterLimit);
-		ctx.ignoreScale = (this.ignoreScale == null ? false : this.ignoreScale);
-	};
 	p.path = false;
 
 	/**
@@ -2738,75 +2615,7 @@ this.createjs = this.createjs||{};
 	 * @since 0.6.0
 	 */
 
-
-// getter / setters:
-	/**
-	 * Use the {{#crossLink "DisplayObject/stage:property"}}{{/crossLink}} property instead.
-	 * @method _getStage
-	 * @protected
-	 * @return {Stage}
-	 **/
-	p._getStage = function() {
-		// uses dynamic access to avoid circular dependencies;
-		var o = this, _Stage = createjs["Stage"];
-		while (o.parent) { o = o.parent; }
-		if (o instanceof _Stage) { return o; }
-		return null;
-	};
-
-	/**
-	 * Returns the Stage instance that this display object will be rendered on, or null if it has not been added to one.
-	 * @property stage
-	 * @type {Stage}
-	 * @readonly
-	 **/
-
-	/**
-	 * Returns an ID number that uniquely identifies the current cache for this display object. This can be used to
-	 * determine if the cache has changed since a previous check.
-	 * Moved to {{#crossLink "BitmapCache"}}{{/crossLink}}
-	 * @property cacheID
-	 * @deprecated
-	 * @type {Number}
-	 * @default 0
-	 */
-
-	/**
-	 * Set both the {{#crossLink "DisplayObject/scaleX:property"}}{{/crossLink}} and the {{#crossLink "DisplayObject/scaleY"}}{{/crossLink}}
-	 * property to the same value. Note that when you get the value, if the `scaleX` and `scaleY` are different values,
-	 * it will return only the `scaleX`.
-	 * @property scaleX
-	 * @type {Number}
-	 * @default 1
-	 */
-	try {
-		Object.defineProperties(p, {
-			stage: { get: p._getStage },
-			cacheID: {
-				get: function(){ return this.bitmapCache && this.bitmapCache.cacheID },
-				set: function(a){ this.bitmapCache && (this.bitmapCache.cacheID = a) }
-			},
-			scale: {
-				get: function() { return this.scaleX; },
-				set: function(scale) { this.scaleX = this.scaleY = scale; },
-			}
-		});
-	} catch (e) {}
-
-
 // public methods:
-	/**
-	 * Returns true or false indicating whether the display object would be visible if drawn to a canvas.
-	 * This does not account for whether it would be visible within the boundaries of the stage.
-	 *
-	 * NOTE: This method is mainly for internal use, though it may be useful for advanced uses.
-	 * @method isVisible
-	 * @return {Boolean} Boolean indicating whether the display object would be visible if drawn to a canvas
-	 **/
-	p.isVisible = function() {
-		return !!(this.visible && this.alpha > 0 && this.scaleX != 0 && this.scaleY != 0);
-	};
-
 	/**
 	 * Draws the display object into the specified context ignoring its visible, alpha, shadow, and transform.
 	 * Returns <code>true</code> if the draw was handled (useful for overriding functionality).
@@ -3005,53 +2814,7 @@ this.createjs = this.createjs||{};
 	}
 	var p = createjs.extend(Container, createjs.DisplayObject);
 
-
-// getter / setters:
-	/**
-	 * Use the {{#crossLink "Container/numChildren:property"}}{{/crossLink}} property instead.
-	 * @method _getNumChildren
-	 * @protected
-	 * @return {Number}
-	 **/
-	p._getNumChildren = function() {
-		return this.children.length;
-	};
-
-	/**
-	 * Returns the number of children in the container.
-	 * @property numChildren
-	 * @type {Number}
-	 * @readonly
-	 **/
-	try {
-		Object.defineProperties(p, {
-			numChildren: { get: p._getNumChildren }
-		});
-	} catch (e) {}
-
-
 // public methods:
-	/**
-	 * Constructor alias for backwards compatibility. This method will be removed in future versions.
-	 * Subclasses should be updated to use {{#crossLink "Utility Methods/extends"}}{{/crossLink}}.
-	 * @method initialize
-	 * @deprecated in favour of `createjs.promote()`
-	 **/
-	p.initialize = Container; // TODO: deprecated.
-
-	/**
-	 * Returns true or false indicating whether the display object would be visible if drawn to a canvas.
-	 * This does not account for whether it would be visible within the boundaries of the stage.
-	 *
-	 * NOTE: This method is mainly for internal use, though it may be useful for advanced uses.
-	 * @method isVisible
-	 * @return {Boolean} Boolean indicating whether the display object would be visible if drawn to a canvas
-	 **/
-	p.isVisible = function() {
-		var hasContent = this.cacheCanvas || this.children.length;
-		return !!(this.visible && this.alpha > 0 && this.scaleX != 0 && this.scaleY != 0 && hasContent);
-	};
-
 	/**
 	 * Draws the display object into the specified context ignoring its visible, alpha, shadow, and transform.
 	 * Returns true if the draw was handled (useful for overriding functionality).
@@ -4622,20 +4385,6 @@ this.createjs = this.createjs||{};
 	 * @static
 	 **/
 	MovieClipPlugin.step = function(tween, step, props) {};
-
-	/**
-	 * @method change
-	 * @param {Tween} tween
-	 * @param {TweenStep} step
-	 * @param {*} value
-	 * @param {Number} ratio
-	 * @param {Object} end
-	 * @return {*}
-	 * @static
-	 */
-	MovieClipPlugin.change = function(tween, step, prop, value, ratio, end) {
-		if (prop === "startPosition") { return (ratio === 1 ? step.props[prop] : step.prev.props[prop]); }
-	};
 
 }());
 

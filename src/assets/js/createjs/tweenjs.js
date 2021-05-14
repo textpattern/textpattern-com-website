@@ -219,17 +219,6 @@ this.createjs = this.createjs||{};
 	};
 
 	/**
-	 * Use the {{#crossLink "Ticker/interval:property"}}{{/crossLink}} property instead.
-	 * @method _getInterval
-	 * @private
-	 * @static
-	 * @return {Number}
-	 **/
-	Ticker._getInterval = function() {
-		return Ticker._interval;
-	};
-
-	/**
 	 * Use the {{#crossLink "Ticker/framerate:property"}}{{/crossLink}} property instead.
 	 * @method _setFPS
 	 * @private
@@ -238,17 +227,6 @@ this.createjs = this.createjs||{};
 	 **/
 	Ticker._setFPS = function(value) {
 		Ticker._setInterval(1000/value);
-	};
-
-	/**
-	 * Use the {{#crossLink "Ticker/framerate:property"}}{{/crossLink}} property instead.
-	 * @method _getFPS
-	 * @static
-	 * @private
-	 * @return {Number}
-	 **/
-	Ticker._getFPS = function() {
-		return 1000/Ticker._interval;
 	};
 
 	/**

@@ -3396,10 +3396,6 @@ this.createjs = this.createjs || {};
 		this.hasEventListener("filestart") && this.dispatchEvent(event);
 	};
 
-	p.toString = function () {
-		return "[PreloadJS LoadQueue]";
-	};
-
 	createjs.LoadQueue = createjs.promote(LoadQueue, "AbstractLoader");
 }());
 
