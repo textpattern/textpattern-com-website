@@ -37,7 +37,6 @@ body {
  * <p class="align-justify">
  */
 
-address,
 article,
 aside,
 blockquote,
@@ -189,14 +188,6 @@ strong {
 }
 
 /**
- * Add vertical margin to addresses.
- */
-
-address {
-    margin: 1em 0;
-}
-
-/**
  * Oxford English quote behaviour (quotes: ‘ ’, quotes within quotes: “ ”).
  */
 
@@ -244,18 +235,6 @@ ul.example {
 abbr[title] {
     border-bottom: 0; /* 1 */
     text-decoration: underline dotted; /* 2 */
-}
-
-/**
- * Consistent styling for `mark` and `var` tags.
- */
-
-mark,
-var {
-    padding: 0 0.25em; // 0 4px
-    border-radius: setup.$border-radius / 2;
-    background: var(--clr-hilite-box);
-    color: var(--clr-text);
 }
 
 /**
