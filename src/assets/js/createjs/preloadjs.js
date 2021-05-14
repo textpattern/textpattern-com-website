@@ -1657,16 +1657,6 @@ this.createjs = this.createjs || {};
 	};
 
 	/**
-	 * Create the HTML tag used for loading. This method does nothing by default, and needs to be implemented
-	 * by loaders that require tag loading.
-	 * @method _createTag
-	 * @param {String} src The tag source
-	 * @return {HTMLElement} The tag that was created
-	 * @protected
-	 */
-	p._createTag = function(src) { return null; };
-
-	/**
 	 * Dispatch a loadstart {{#crossLink "Event"}}{{/crossLink}}. Please see the {{#crossLink "AbstractLoader/loadstart:event"}}{{/crossLink}}
 	 * event for details on the event payload.
 	 * @method _sendLoadStart
@@ -1716,21 +1706,6 @@ this.createjs = this.createjs || {};
 			event.result = this._result;
 		}
 
-		this.dispatchEvent(event);
-	};
-
-	/**
-	 * Dispatch an error {{#crossLink "Event"}}{{/crossLink}}. Please see the {{#crossLink "AbstractLoader/error:event"}}{{/crossLink}}
-	 * event for details on the event payload.
-	 * @method _sendError
-	 * @param {ErrorEvent} event The event object containing specific error properties.
-	 * @protected
-	 */
-	p._sendError = function (event) {
-		if (this._isCanceled() || !this.hasEventListener("error")) { return; }
-		if (event == null) {
-			event = new createjs.ErrorEvent("PRELOAD_ERROR_EMPTY"); // TODO: Populate error
-		}
 		this.dispatchEvent(event);
 	};
 
@@ -1823,14 +1798,6 @@ this.createjs = this.createjs || {};
 	 */
 	p._resultFormatFailed = function (event) {
 		this._sendError(event);
-	};
-
-	/**
-	 * @method toString
-	 * @return {String} a string representation of the instance.
-	 */
-	p.toString = function () {
-		return "[PreloadJS AbstractLoader]";
 	};
 
 	createjs.AbstractLoader = createjs.promote(AbstractLoader, "EventDispatcher");
@@ -1950,18 +1917,6 @@ this.createjs = this.createjs || {};
 	 */
 	p.load =  function() {};
 
-	/**
-	 * Clean up a request.
-	 * @method destroy
-	 */
-	p.destroy = function() {};
-
-	/**
-	 * Cancel an in-progress request.
-	 * @method cancel
-	 */
-	p.cancel = function() {};
-
 	createjs.AbstractRequest = createjs.promote(AbstractRequest, "EventDispatcher");
 
 }());
@@ -2043,13 +1998,6 @@ this.createjs = this.createjs || {};
 			createjs.DomUtils.appendToBody(this._tag);
 			this._addedToDOM = true;
 		}
-	};
-
-	p.destroy = function() {
-		this._clean();
-		this._tag = null;
-
-		this.AbstractRequest_destroy();
 	};
 
 	// private methods
@@ -2685,37 +2633,6 @@ this.createjs = this.createjs || {};
 
 // public methods
 	/**
-	 * Register a custom loaders class. New loaders are given precedence over loaders added earlier and default loaders.
-	 * It is recommended that loaders extend {{#crossLink "AbstractLoader"}}{{/crossLink}}. Loaders can only be added
-	 * once, and will be prepended to the list of available loaders.
-	 * @method registerLoader
-	 * @param {Function|AbstractLoader} loader The AbstractLoader class to add.
-	 * @since 0.6.0
-	 */
-	p.registerLoader = function (loader) {
-		if (!loader || !loader.canLoadItem) {
-			throw new Error("loader is of an incorrect type.");
-		} else if (this._availableLoaders.indexOf(loader) != -1) {
-			throw new Error("loader already exists."); //LM: Maybe just silently fail here
-		}
-
-		this._availableLoaders.unshift(loader);
-	};
-
-	/**
-	 * Remove a custom loader added using {{#crossLink "registerLoader"}}{{/crossLink}}. Only custom loaders can be
-	 * unregistered, the default loaders will always be available.
-	 * @method unregisterLoader
-	 * @param {Function|AbstractLoader} loader The AbstractLoader class to remove
-	 */
-	p.unregisterLoader = function (loader) {
-		var idx = this._availableLoaders.indexOf(loader);
-		if (idx != -1 && idx < this._defaultLoaderLength - 1) {
-			this._availableLoaders.splice(idx, 1);
-		}
-	};
-
-	/**
 	 * Change the {{#crossLink "preferXHR:property"}}{{/crossLink}} value. Note that if this is set to `true`, it may
 	 * fail, or be ignored depending on the browser's capabilities and the load type.
 	 * @method setPreferXHR
@@ -2728,227 +2645,6 @@ this.createjs = this.createjs || {};
 		//TODO: Should we be checking for the other XHR types? Might have to do a try/catch on the different types similar to createXHR.
 		this.preferXHR = (value != false && window.XMLHttpRequest != null);
 		return this.preferXHR;
-	};
-
-	/**
-	 * Stops all queued and loading items, and clears the queue. This also removes all internal references to loaded
-	 * content, and allows the queue to be used again.
-	 * @method removeAll
-	 * @since 0.3.0
-	 */
-	p.removeAll = function () {
-		this.remove();
-	};
-
-	/**
-	 * Stops an item from being loaded, and removes it from the queue. If nothing is passed, all items are removed.
-	 * This also removes internal references to loaded item(s).
-	 *
-	 * <h4>Example</h4>
-	 *
-	 *      queue.loadManifest([
-	 *          {src:"test.png", id:"png"},
-	 *          {src:"test.jpg", id:"jpg"},
-	 *          {src:"test.mp3", id:"mp3"}
-	 *      ]);
-	 *      queue.remove("png"); // Single item by ID
-	 *      queue.remove("png", "test.jpg"); // Items as arguments. Mixed id and src.
-	 *      queue.remove(["test.png", "jpg"]); // Items in an Array. Mixed id and src.
-	 *
-	 * @method remove
-	 * @param {String | Array} idsOrUrls* The id or ids to remove from this queue. You can pass an item, an array of
-	 * items, or multiple items as arguments.
-	 * @since 0.3.0
-	 */
-	p.remove = function (idsOrUrls) {
-		var args = null;
-
-		if (idsOrUrls && !Array.isArray(idsOrUrls)) {
-			args = [idsOrUrls];
-		} else if (idsOrUrls) {
-			args = idsOrUrls;
-		} else if (arguments.length > 0) {
-			return;
-		}
-
-		var itemsWereRemoved = false;
-
-		// Destroy everything
-		if (!args) {
-			this.close();
-			for (var n in this._loadItemsById) {
-				this._disposeItem(this._loadItemsById[n]);
-			}
-			this.init(this.preferXHR, this._basePath);
-
-			// Remove specific items
-		} else {
-			while (args.length) {
-				var item = args.pop();
-				var r = this.getResult(item);
-
-				//Remove from the main load Queue
-				for (i = this._loadQueue.length - 1; i >= 0; i--) {
-					loadItem = this._loadQueue[i].getItem();
-					if (loadItem.id == item || loadItem.src == item) {
-						this._loadQueue.splice(i, 1)[0].cancel();
-						break;
-					}
-				}
-
-				//Remove from the backup queue
-				for (i = this._loadQueueBackup.length - 1; i >= 0; i--) {
-					loadItem = this._loadQueueBackup[i].getItem();
-					if (loadItem.id == item || loadItem.src == item) {
-						this._loadQueueBackup.splice(i, 1)[0].cancel();
-						break;
-					}
-				}
-
-				if (r) {
-					this._disposeItem(this.getItem(item));
-				} else {
-					for (var i = this._currentLoads.length - 1; i >= 0; i--) {
-						var loadItem = this._currentLoads[i].getItem();
-						if (loadItem.id == item || loadItem.src == item) {
-							this._currentLoads.splice(i, 1)[0].cancel();
-							itemsWereRemoved = true;
-							break;
-						}
-					}
-				}
-			}
-
-			// If this was called during a load, try to load the next item.
-			if (itemsWereRemoved) {
-				this._loadNext();
-			}
-		}
-	};
-
-	/**
-	 * Stops all open loads, destroys any loaded items, and resets the queue, so all items can
-	 * be reloaded again by calling {{#crossLink "AbstractLoader/load"}}{{/crossLink}}. Items are not removed from the
-	 * queue. To remove items use the {{#crossLink "LoadQueue/remove"}}{{/crossLink}} or
-	 * {{#crossLink "LoadQueue/removeAll"}}{{/crossLink}} method.
-	 * @method reset
-	 * @since 0.3.0
-	 */
-	p.reset = function () {
-		this.close();
-		for (var n in this._loadItemsById) {
-			this._disposeItem(this._loadItemsById[n]);
-		}
-
-		//Reset the queue to its start state
-		var a = [];
-		for (var i = 0, l = this._loadQueueBackup.length; i < l; i++) {
-			a.push(this._loadQueueBackup[i].getItem());
-		}
-
-		this.loadManifest(a, false);
-	};
-
-	/**
-	 * Register a plugin. Plugins can map to load types (sound, image, etc), or specific extensions (png, mp3, etc).
-	 * Currently, only one plugin can exist per type/extension.
-	 *
-	 * When a plugin is installed, a <code>getPreloadHandlers()</code> method will be called on it. For more information
-	 * on this method, check out the {{#crossLink "SamplePlugin/getPreloadHandlers"}}{{/crossLink}} method in the
-	 * {{#crossLink "SamplePlugin"}}{{/crossLink}} class.
-	 *
-	 * Before a file is loaded, a matching plugin has an opportunity to modify the load. If a `callback` is returned
-	 * from the {{#crossLink "SamplePlugin/getPreloadHandlers"}}{{/crossLink}} method, it will be invoked first, and its
-	 * result may cancel or modify the item. The callback method can also return a `completeHandler` to be fired when
-	 * the file is loaded, or a `tag` object, which will manage the actual download. For more information on these
-	 * methods, check out the {{#crossLink "SamplePlugin/preloadHandler"}}{{/crossLink}} and {{#crossLink "SamplePlugin/fileLoadHandler"}}{{/crossLink}}
-	 * methods on the {{#crossLink "SamplePlugin"}}{{/crossLink}}.
-	 *
-	 * @method installPlugin
-	 * @param {Function} plugin The plugin class to install.
-	 */
-	p.installPlugin = function (plugin) {
-		if (plugin == null) {
-			return;
-		}
-
-		if (plugin.getPreloadHandlers != null) {
-			this._plugins.push(plugin);
-			var map = plugin.getPreloadHandlers();
-			map.scope = plugin;
-
-			if (map.types != null) {
-				for (var i = 0, l = map.types.length; i < l; i++) {
-					this._typeCallbacks[map.types[i]] = map;
-				}
-			}
-
-			if (map.extensions != null) {
-				for (i = 0, l = map.extensions.length; i < l; i++) {
-					this._extensionCallbacks[map.extensions[i]] = map;
-				}
-			}
-		}
-	};
-
-	/**
-	 * Set the maximum number of concurrent connections. Note that browsers and servers may have a built-in maximum
-	 * number of open connections, so any additional connections may remain in a pending state until the browser
-	 * opens the connection. When loading scripts using tags, and when {{#crossLink "LoadQueue/maintainScriptOrder:property"}}{{/crossLink}}
-	 * is `true`, only one script is loaded at a time due to browser limitations.
-	 *
-	 * <h4>Example</h4>
-	 *
-	 *      var queue = new createjs.LoadQueue();
-	 *      queue.setMaxConnections(10); // Allow 10 concurrent loads
-	 *
-	 * @method setMaxConnections
-	 * @param {Number} value The number of concurrent loads to allow. By default, only a single connection per LoadQueue
-	 * is open at any time.
-	 */
-	p.setMaxConnections = function (value) {
-		this._maxConnections = value;
-		if (!this._paused && this._loadQueue.length > 0) {
-			this._loadNext();
-		}
-	};
-
-	/**
-	 * Load a single file. To add multiple files at once, use the {{#crossLink "LoadQueue/loadManifest"}}{{/crossLink}}
-	 * method.
-	 *
-	 * Files are always appended to the current queue, so this method can be used multiple times to add files.
-	 * To clear the queue first, use the {{#crossLink "AbstractLoader/close"}}{{/crossLink}} method.
-	 * @method loadFile
-	 * @param {LoadItem|Object|String} file The file object or path to load. A file can be either
-	 * <ul>
-	 *     <li>A {{#crossLink "LoadItem"}}{{/crossLink}} instance</li>
-	 *     <li>An object containing properties defined by {{#crossLink "LoadItem"}}{{/crossLink}}</li>
-	 *     <li>OR A string path to a resource. Note that this kind of load item will be converted to a {{#crossLink "LoadItem"}}{{/crossLink}}
-	 *     in the background.</li>
-	 * </ul>
-	 * @param {Boolean} [loadNow=true] Kick off an immediate load (true) or wait for a load call (false). The default
-	 * value is true. If the queue is paused using {{#crossLink "LoadQueue/setPaused"}}{{/crossLink}}, and the value is
-	 * `true`, the queue will resume automatically.
-	 * @param {String} [basePath] A base path that will be prepended to each file. The basePath argument overrides the
-	 * path specified in the constructor. Note that if you load a manifest using a file of type {{#crossLink "Types/MANIFEST:property"}}{{/crossLink}},
-	 * its files will <strong>NOT</strong> use the basePath parameter. <strong>The basePath parameter is deprecated.</strong>
-	 * This parameter will be removed in a future version. Please either use the `basePath` parameter in the LoadQueue
-	 * constructor, or a `path` property in a manifest definition.
-	 */
-	p.loadFile = function (file, loadNow, basePath) {
-		if (file == null) {
-			var event = new createjs.ErrorEvent("PRELOAD_NO_FILE");
-			this._sendError(event);
-			return;
-		}
-		this._addItem(file, null, basePath);
-
-		if (loadNow !== false) {
-			this.setPaused(false);
-		} else {
-			this.setPaused(true);
-		}
 	};
 
 	/**
@@ -3052,28 +2748,6 @@ this.createjs = this.createjs || {};
 	};
 
 	/**
-	 * Start a LoadQueue that was created, but not automatically started.
-	 * @method load
-	 */
-	p.load = function () {
-		this.setPaused(false);
-	};
-
-	/**
-	 * Look up a {{#crossLink "LoadItem"}}{{/crossLink}} using either the "id" or "src" that was specified when loading it. Note that if no "id" was
-	 * supplied with the load item, the ID will be the "src", including a `path` property defined by a manifest. The
-	 * `basePath` will not be part of the ID.
-	 * @method getItem
-	 * @param {String} value The <code>id</code> or <code>src</code> of the load item.
-	 * @return {Object} The load item that was initially requested using {{#crossLink "LoadQueue/loadFile"}}{{/crossLink}}
-	 * or {{#crossLink "LoadQueue/loadManifest"}}{{/crossLink}}. This object is also returned via the {{#crossLink "LoadQueue/fileload:event"}}{{/crossLink}}
-	 * event as the `item` parameter.
-	 */
-	p.getItem = function (value) {
-		return this._loadItemsById[value] || this._loadItemsBySrc[value];
-	};
-
-	/**
 	 * Look up a loaded result using either the "id" or "src" that was specified when loading it. Note that if no "id"
 	 * was supplied with the load item, the ID will be the "src", including a `path` property defined by a manifest. The
 	 * `basePath` will not be part of the ID.
@@ -3112,32 +2786,6 @@ this.createjs = this.createjs || {};
 	};
 
 	/**
-	 * Generate an list of items loaded by this queue.
-	 * @method getItems
-	 * @param {Boolean} loaded Determines if only items that have been loaded should be returned. If false, in-progress
-	 * and failed load items will also be included.
-	 * @returns {Array} A list of objects that have been loaded. Each item includes the {{#crossLink "LoadItem"}}{{/crossLink}},
-	 * result, and rawResult.
-	 * @since 0.6.0
-	 */
-	p.getItems = function (loaded) {
-		var arr = [];
-		for (var n in this._loadItemsById) {
-			var item = this._loadItemsById[n];
-			var result = this.getResult(n);
-			if (loaded === true && result == null) {
-				continue;
-			}
-			arr.push({
-				item: item,
-				result: result,
-				rawResult: this.getResult(n, true)
-			});
-		}
-		return arr;
-	};
-
-	/**
 	 * Pause or resume the current load. Active loads will not be cancelled, but the next items in the queue will not
 	 * be processed when active loads complete. LoadQueues are not paused by default.
 	 *
@@ -3152,24 +2800,6 @@ this.createjs = this.createjs || {};
 		if (!this._paused) {
 			this._loadNext();
 		}
-	};
-
-	/**
-	 * Close the active queue. Closing a queue completely empties the queue, and prevents any remaining items from
-	 * starting to download. Note that currently any active loads will remain open, and events may be processed.
-	 *
-	 * To stop and restart a queue, use the {{#crossLink "LoadQueue/setPaused"}}{{/crossLink}} method instead.
-	 * @method close
-	 */
-	p.close = function () {
-		while (this._currentLoads.length) {
-			this._currentLoads.pop().cancel();
-		}
-		this._scriptOrder.length = 0;
-		this._loadedScripts.length = 0;
-		this.loadStartWasDispatched = false;
-		this._itemCount = 0;
-		this._lastProgress = NaN;
 	};
 
 // protected methods
@@ -3724,46 +3354,6 @@ this.createjs = this.createjs || {};
 			this._sendProgress(loaded);
 			this._lastProgress = loaded;
 		}
-	};
-
-	/**
-	 * Clean out item results, to free them from memory. Mainly, the loaded item and results are cleared from internal
-	 * hashes.
-	 * @method _disposeItem
-	 * @param {LoadItem|Object} item The item that was passed in for preloading.
-	 * @private
-	 */
-	p._disposeItem = function (item) {
-		delete this._loadedResults[item.id];
-		delete this._loadedRawResults[item.id];
-		delete this._loadItemsById[item.id];
-		delete this._loadItemsBySrc[item.src];
-	};
-
-	/**
-	 * Dispatch a "fileprogress" {{#crossLink "Event"}}{{/crossLink}}. Please see the LoadQueue {{#crossLink "LoadQueue/fileprogress:event"}}{{/crossLink}}
-	 * event for details on the event payload.
-	 * @method _sendFileProgress
-	 * @param {LoadItem|Object} item The item that is being loaded.
-	 * @param {Number} progress The amount the item has been loaded (between 0 and 1).
-	 * @protected
-	 */
-	p._sendFileProgress = function (item, progress) {
-		if (this._isCanceled() || this._paused) {
-			return;
-		}
-		if (!this.hasEventListener("fileprogress")) {
-			return;
-		}
-
-		//LM: Rework ProgressEvent to support this?
-		var event = new createjs.Event("fileprogress");
-		event.progress = progress;
-		event.loaded = progress;
-		event.total = 1;
-		event.item = item;
-
-		this.dispatchEvent(event);
 	};
 
 	/**
