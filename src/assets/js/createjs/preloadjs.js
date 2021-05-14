@@ -1981,8 +1981,6 @@ this.createjs = this.createjs || {};
 	// public methods
 	p.load = function () {
 		this._tag.onload = createjs.proxy(this._handleTagComplete, this);
-		this._tag.onreadystatechange = createjs.proxy(this._handleReadyStateChange, this);
-		this._tag.onerror = createjs.proxy(this._handleError, this);
 
 		var evt = new createjs.Event("initialize");
 		evt.loader = this._tag;
@@ -2001,33 +1999,6 @@ this.createjs = this.createjs || {};
 	};
 
 	// private methods
-	/**
-	 * Handle the readyStateChange event from a tag. We need this in place of the `onload` callback (mainly SCRIPT
-	 * and LINK tags), but other cases may exist.
-	 * @method _handleReadyStateChange
-	 * @private
-	 */
-	p._handleReadyStateChange = function () {
-		clearTimeout(this._loadTimeout);
-		// This is strictly for tags in browsers that do not support onload.
-		var tag = this._tag;
-
-		// Complete is for old IE support.
-		if (tag.readyState == "loaded" || tag.readyState == "complete") {
-			this._handleTagComplete();
-		}
-	};
-
-	/**
-	 * Handle any error events from the tag.
-	 * @method _handleError
-	 * @protected
-	 */
-	p._handleError = function() {
-		this._clean();
-		this.dispatchEvent("error");
-	};
-
 	/**
 	 * Handle the tag's onload callback.
 	 * @method _handleTagComplete
@@ -3194,44 +3165,10 @@ this.createjs = this.createjs || {};
 			} // This loader no longer exists
 			this._loadedScripts[index] = (loadFailed === true) ? true : item;
 
-			this._checkScriptLoadOrder();
 			return true;
 		}
 
 		return false;
-	};
-
-	/**
-	 * Ensure the scripts load and dispatch in the correct order. When using XHR, scripts are stored in an array in the
-	 * order they were added, but with a "null" value. When they are completed, the value is set to the load item,
-	 * and then when they are processed and dispatched, the value is set to `true`. This method simply
-	 * iterates the array, and ensures that any loaded items that are not preceded by a `null` value are
-	 * dispatched.
-	 * @method _checkScriptLoadOrder
-	 * @private
-	 */
-	p._checkScriptLoadOrder = function () {
-		var l = this._loadedScripts.length;
-
-		for (var i = 0; i < l; i++) {
-			var item = this._loadedScripts[i];
-			if (item === null) {
-				break;
-			} // This is still loading. Do not process further.
-			if (item === true) {
-				continue;
-			} // This has completed, and been processed. Move on.
-
-			var loadItem = this._loadedResults[item.id];
-			if (item.type == createjs.Types.JAVASCRIPT) {
-				// Append script tags to the head automatically.
-				createjs.DomUtils.appendToHead(loadItem);
-			}
-
-			var loader = item._loader;
-			this._processFinishedLoad(item, loader);
-			this._loadedScripts[i] = true;
-		}
 	};
 
 	/**
