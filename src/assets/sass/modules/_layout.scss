@@ -381,8 +381,8 @@ main .layout-4col-3span {
 /* Homepage feature images.
    ========================================================================== */
 
-.index-feature h3::before,
-.index-docs h3::before,
+.index-feature h2::before,
+.index-docs h2::before,
 .index-plugins h3::before,
 .index-themes h3::before {
     content: "";
@@ -392,11 +392,11 @@ main .layout-4col-3span {
     margin-bottom: 1em;
 }
 
-.index-feature h3::before {
+.index-feature h2::before {
     @include setup.hires-graphic(com/index-features, png, 1600px, 200px);
 }
 
-.webp .index-feature h3::before { // TODO: also add jxl when server mime type available.
+.webp .index-feature h2::before { // TODO: also add jxl when server mime type available.
     @include setup.hires-graphic-modern(com/index-features, webp);
 }
 
@@ -432,11 +432,11 @@ main .layout-4col-3span {
     background-position: -1400px 0;
 }
 
-.index-docs h3::before {
+.index-docs h2::before {
     @include setup.hires-graphic(com/index-docs, png, 1200px, 200px);
 }
 
-.webp .index-docs h3::before { // TODO: also add jxl when server mime type available.
+.webp .index-docs h2::before { // TODO: also add jxl when server mime type available.
     @include setup.hires-graphic-modern(com/index-docs, webp);
 }
 
@@ -583,8 +583,8 @@ main .layout-4col-3span {
     }
 
     .dark-contrast,
-    .index-feature h3::before,
-    .index-docs h3::before,
+    .index-feature h2::before,
+    .index-docs h2::before,
     .index-plugins h3::before,
     .index-themes h3::before,
     .showcase-container h3,
