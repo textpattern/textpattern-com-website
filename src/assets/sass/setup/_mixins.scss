@@ -8,7 +8,8 @@
     }
 }
 
-// higher resolution background images for high resolution displays
+// higher resolution background images for high resolution displays.
+// TODO: harness image-set `type` (instead of the second mixin) when browser support is better.
 
 @mixin hires-graphic($hdfile, $hdtype, $hdwidth, $hdheight) {
     $filename: $hdfile + "." + $hdtype;
@@ -23,14 +24,14 @@
     background-image: image-set(url("../img/" + $filename) 1x, url("../img/" + $hdfilename) 2x);
 }
 
-// standard gradients
+// standard gradients.
 
 @mixin gradient-linear($color-gradient-from, $color-gradient-to) {
     background-color: $color-gradient-to;
     background-image: linear-gradient($color-gradient-from, $color-gradient-to);
 }
 
-// hide text
+// hide text.
 
 @mixin hide-text {
     overflow: hidden;
