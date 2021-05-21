@@ -11,7 +11,7 @@
 
 html {
     font-size: setup.$base-font-size;
-    line-height: setup.$line-height-mobile;
+    line-height: setup.$base-line-height;
     text-size-adjust: 100%; /* 1 */
 }
 
@@ -151,7 +151,7 @@ h5,
 h6 {
     margin: 1em 0; // 16px
     font-size: 1rem;
-    line-height: setup.$line-height-mobile;
+    line-height: setup.$small-line-height;
 }
 
 /**
@@ -255,7 +255,6 @@ samp {
     font-family: var(--font-monospaced);
     font-feature-settings: normal; /* 1 */
     font-size: setup.$code-font-size;
-    line-height: setup.$line-height-mobile;
 }
 
 code,
@@ -325,7 +324,6 @@ blockquote footer,
 .card-header,
 .card-footer {
     font-size: setup.$small-font-size;
-    line-height: setup.$line-height-mobile;
 }
 
 figcaption {
