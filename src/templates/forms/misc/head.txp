@@ -11,7 +11,7 @@
 <link rel="manifest" href="/site.webmanifest">
 <link rel="alternate" type="application/rss+xml" title="RSS feed" href="<txp:site_url />rss">
 <meta name="color-scheme" content="dark light">
-<meta name="theme-color" content="#ffda44" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#363d44" media="(prefers-color-scheme: dark)">
 <meta name="generator" content="Textpattern CMS">
 <meta name="application-name" content="Textpattern">
