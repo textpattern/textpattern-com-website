@@ -54,6 +54,7 @@
     .layout-4col-2span,
     .layout-4col-3span {
         grid-column: span 12;
+        overflow: hidden; // Fix for Firefox content overflowing.
     }
 
     /**
