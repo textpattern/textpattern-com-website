@@ -161,12 +161,16 @@ echo '<a class="count-bubble" rel="external" href="https://github.com/textpatter
             <div class="container">
                 <p>
                     <picture class="screen-large">
-                        <source srcset="/assets/img/com/dark-index-device-screens.png, /assets/img/com/dark-index-device-screens@2x.png 2x" media="(prefers-color-scheme: dark)">
-                        <source srcset="/assets/img/com/index-device-screens.png, /assets/img/com/index-device-screens@2x.png 2x">
+                        <source srcset="/assets/img/com/dark-index-device-screens.webp, /assets/img/com/dark-index-device-screens@2x.webp 2x" type="image/webp" media="(prefers-color-scheme: dark)">
+                        <source srcset="/assets/img/com/index-device-screens.webp, /assets/img/com/index-device-screens@2x.webp 2x" type="image/webp">
+                        <source srcset="/assets/img/com/dark-index-device-screens.png, /assets/img/com/dark-index-device-screens@2x.png 2x" type="image/png" media="(prefers-color-scheme: dark)">
+                        <source srcset="/assets/img/com/index-device-screens.png, /assets/img/com/index-device-screens@2x.png 2x" type="image/png">
                         <img loading="lazy" decoding="async" width="1150" height="494" alt="Textpattern Screenshots" src="/assets/img/com/index-device-screens.png">
                     </picture>
                     <picture class="screen-small">
-                        <source srcset="/assets/img/com/dark-index-device-screen.png" media="(prefers-color-scheme: dark)">
+                        <source srcset="/assets/img/com/dark-index-device-screen.webp" type="image/webp" media="(prefers-color-scheme: dark)">
+                        <source srcset="/assets/img/com/index-device-screen.webp" type="image/webp">
+                        <source srcset="/assets/img/com/dark-index-device-screen.png" type="image/png" media="(prefers-color-scheme: dark)">
                         <img loading="lazy" decoding="async" width="620" height="477" alt="Textpattern Screenshot" src="/assets/img/com/index-device-screen.png">
                     </picture>
                 </p>
@@ -244,8 +248,10 @@ echo '<a class="count-bubble" rel="external" href="https://github.com/textpatter
                         <h2>Latest from <a href="<txp:site_url />weblog">the blog</a>…</h2>
                         <p>
                             <picture>
-                                <source srcset="/assets/img/com/dark-index-blog-header.png, /assets/img/com/dark-index-blog-header@2x.png 2x" media="(prefers-color-scheme: dark)">
-                                <source srcset="/assets/img/com/index-blog-header.png, /assets/img/com/index-blog-header@2x.png 2x">
+                                <source srcset="/assets/img/com/dark-index-blog-header.webp, /assets/img/com/dark-index-blog-header@2x.webp 2x" type="image/webp" media="(prefers-color-scheme: dark)">
+                                <source srcset="/assets/img/com/index-blog-header.webp, /assets/img/com/index-blog-header@2x.webp 2x" type="image/webp">
+                                <source srcset="/assets/img/com/dark-index-blog-header.png, /assets/img/com/dark-index-blog-header@2x.png 2x" type="image/png" media="(prefers-color-scheme: dark)">
+                                <source srcset="/assets/img/com/index-blog-header.png, /assets/img/com/index-blog-header@2x.png 2x" type="image/png">
                                 <img loading="lazy" decoding="async" width="756" height="160" alt="The Textpattern blog" src="/assets/img/com/index-blog-header.png">
                             </picture>
                         </p>
