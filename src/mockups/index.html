@@ -186,17 +186,15 @@
             <div class="wrapper-inner zebra">
                 <div class="container">
                     <p>
-                        <img class="screen-large prefers-color-scheme" width="1150" height="494" alt="Textpattern Screenshots"
-                            src="/assets/img/com/index-device-screens.png"
-                            data-src-light="/assets/img/com/index-device-screens.png"
-                            data-src-dark="/assets/img/com/dark-index-device-screens.png"
-                            srcset="/assets/img/com/index-device-screens@2x.png 2x"
-                            data-srcset-light="/assets/img/com/index-device-screens@2x.png 2x"
-                            data-srcset-dark="/assets/img/com/dark-index-device-screens@2x.png 2x">
-                        <img class="screen-small prefers-color-scheme" width="620" height="477" alt="Textpattern Screenshot"
-                            src="/assets/img/com/index-device-screen.png"
-                            data-src-light="/assets/img/com/index-device-screen.png"
-                            data-src-dark="/assets/img/com/dark-index-device-screen.png">
+                        <picture class="screen-large">
+                            <source srcset="/assets/img/com/dark-index-device-screens.png, /assets/img/com/dark-index-device-screens@2x.png 2x" media="(prefers-color-scheme: dark)">
+                            <source srcset="/assets/img/com/index-device-screens.png, /assets/img/com/index-device-screens@2x.png 2x">
+                            <img loading="lazy" decoding="async" width="1150" height="494" alt="Textpattern Screenshots" src="/assets/img/com/index-device-screens.png">
+                        </picture>
+                        <picture class="screen-small">
+                            <source srcset="/assets/img/com/dark-index-device-screen.png" media="(prefers-color-scheme: dark)">
+                            <img loading="lazy" decoding="async" width="620" height="477" alt="Textpattern Screenshot" src="/assets/img/com/index-device-screen.png">
+                        </picture>
                     </p>
                 </div><!-- /.container -->
             </div><!-- /.wrapper-inner -->
@@ -244,7 +242,11 @@
 
                         <div class="ads">
                             <a href="https://textpattern.com/contact" itemprop="url" title="Want to advertise here? Please contact us to discuss.">
-                                <img loading="lazy" class="prefers-color-scheme" width="300" height="250" itemprop="image" alt="Want to advertise here? Please contact us to discuss." src="/assets/img/com/ad-300x250-placeholder.png" data-src-light="/assets/img/com/ad-300x250-placeholder.png" data-src-dark="/assets/img/com/dark-ad-300x250-placeholder.png" srcset="/assets/img/com/ad-300x250-placeholder@2x.png 2x" data-srcset-light="/assets/img/com/ad-300x250-placeholder@2x.png 2x" data-srcset-dark="/assets/img/com/dark-ad-300x250-placeholder@2x.png 2x">
+                                <picture>
+                                    <source srcset="/assets/img/com/dark-ad-300x250-placeholder.png, /assets/img/com/dark-ad-300x250-placeholder@2x.png 2x" media="(prefers-color-scheme: dark)">
+                                    <source srcset="/assets/img/com/ad-300x250-placeholder.png, /assets/img/com/ad-300x250-placeholder@2x.png 2x">
+                                    <img loading="lazy" decoding="async" width="300" height="250" itemprop="image" alt="Want to advertise here? Please contact us to discuss." src="/assets/img/com/ad-300x250-placeholder.png">
+                                </picture>
                             </a>
                         </div>
 
@@ -260,13 +262,11 @@
                         <section class="layout-3col-2span" itemscope itemtype="https://schema.org/Blog">
                             <h2>Latest from <a href="#">the blog</a>…</h2>
                             <p>
-                                <img class="prefers-color-scheme" width="756" height="160" alt="The Textpattern blog"
-                                    src="../assets/img/com/index-blog-header.png"
-                                    data-src-light="../assets/img/com/index-blog-header.png"
-                                    data-src-dark="../assets/img/com/dark-index-blog-header.png"
-                                    srcset="../assets/img/com/index-blog-header@2x.png 2x"
-                                    data-srcset-light="../assets/img/com/index-blog-header@2x.png 2x"
-                                    data-srcset-dark="../assets/img/com/dark-index-blog-header@2x.png 2x">
+                                <picture class="screen-large">
+                                    <source srcset="/assets/img/com/dark-index-blog-header.png, /assets/img/com/dark-index-blog-header@2x.png 2x" media="(prefers-color-scheme: dark)">
+                                    <source srcset="/assets/img/com/index-blog-header.png, /assets/img/com/index-blog-header@2x.png 2x">
+                                    <img loading="lazy" decoding="async" width="756" height="160" alt="The Textpattern blog" src="/assets/img/com/index-blog-header.png">
+                                </picture>
                             </p>
                             <article class="teaser" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
                                 <h1 itemprop="headline"><a itemprop="url mainEntityOfPage" title="Full article" href="blog-article.html">Blog example 1 title</a></h1>
