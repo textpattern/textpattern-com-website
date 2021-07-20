@@ -55,7 +55,6 @@
                 <div id="animation-container">
                     <canvas id="animation" width="1150" height="480" role="img" aria-label="Animation of swaying sunflowers">
                         <picture>
-                            <source srcset="/assets/img/com/index-animation-fallback.jxl" type="image/jxl">
                             <source srcset="/assets/img/com/index-animation-fallback.avif" type="image/avif">
                             <source srcset="/assets/img/com/index-animation-fallback.webp" type="image/webp">
                             <img loading="lazy" decoding="async" width="1150" height="480" alt="Powering big ideas from a small open source CMS" src="/assets/img/com/index-animation-fallback.png">
@@ -333,7 +332,6 @@ foreach ($json->topic as $topic) {
                     <p>Please try another search term or <a href="<txp:site_url />">return to the Textpattern homepage</a>.</p>
                     <p>
                         <picture>
-                            <source srcset="/assets/img/com/error.jxl, /assets/img/com/error@2x.jxl 2x" type="image/jxl">
                             <source srcset="/assets/img/com/error.webp, /assets/img/com/error@2x.webp 2x" type="image/webp">
                             <source srcset="/assets/img/com/error.png, /assets/img/com/error@2x.png 2x" type="image/png">
                             <img decoding="async" class="dark-contrast" width="556" height="406" alt="Page error" src="/assets/img/com/error.png">
