@@ -8,7 +8,10 @@
             </txp:smd_thumbnail>
         <txp:else />
             <txp:if_yield name="dark-option">
-                <img loading="lazy" class="prefers-color-scheme" width="<txp:if_yield name="set-width"><txp:yield name="set-width" /><txp:else /><txp:image_info type="w" /></txp:if_yield>" height="<txp:if_yield name="set-height"><txp:yield name="set-height" /><txp:else /><txp:image_info type="h" /></txp:if_yield>" itemprop="url contentUrl" alt="<txp:image_info type="alt" />" src="<txp:image_url />" data-src-light="<txp:image_url />" data-src-dark="<txp:image_url id="<txp:yield name="dark-option" />" />">
+                <picture>
+                    <source srcset="<txp:image_url id="<txp:yield name="dark-option" />" media="(prefers-color-scheme: dark)">
+                    <img loading="lazy" width="<txp:if_yield name="set-width"><txp:yield name="set-width" /><txp:else /><txp:image_info type="w" /></txp:if_yield>" height="<txp:if_yield name="set-height"><txp:yield name="set-height" /><txp:else /><txp:image_info type="h" /></txp:if_yield>" itemprop="url contentUrl" alt="<txp:image_info type="alt" />" src="<txp:image_url />">
+                <picture>
             <txp:else />
                 <img loading="lazy" width="<txp:if_yield name="set-width"><txp:yield name="set-width" /><txp:else /><txp:image_info type="w" /></txp:if_yield>" height="<txp:if_yield name="set-height"><txp:yield name="set-height" /><txp:else /><txp:image_info type="h" /></txp:if_yield>" itemprop="url contentUrl" alt="<txp:image_info type="alt" />" src="<txp:image_url />">
             </txp:if_yield>
@@ -29,7 +32,10 @@
             </txp:smd_thumbnail>
         <txp:else />
             <txp:if_yield name="dark-option">
-                <img loading="lazy" class="prefers-color-scheme" width="<txp:if_yield name="set-width"><txp:yield name="set-width" /><txp:else /><txp:image_info type="w" /></txp:if_yield>" height="<txp:if_yield name="set-height"><txp:yield name="set-height" /><txp:else /><txp:image_info type="h" /></txp:if_yield>" itemprop="url contentUrl" alt="<txp:image_info type="alt" />" src="<txp:image_url />" data-src-light="<txp:image_url />" data-src-dark="<txp:image_url id="<txp:yield name="dark-option" />" />">
+                <picture>
+                    <source srcset="<txp:image_url id="<txp:yield name="dark-option" />" media="(prefers-color-scheme: dark)">
+                    <img loading="lazy" width="<txp:if_yield name="set-width"><txp:yield name="set-width" /><txp:else /><txp:image_info type="w" /></txp:if_yield>" height="<txp:if_yield name="set-height"><txp:yield name="set-height" /><txp:else /><txp:image_info type="h" /></txp:if_yield>" itemprop="url contentUrl" alt="<txp:image_info type="alt" />" src="<txp:image_url />">
+                <picture>
             <txp:else />
                 <img loading="lazy" width="<txp:if_yield name="set-width"><txp:yield name="set-width" /><txp:else /><txp:image_info type="w" /></txp:if_yield>" height="<txp:if_yield name="set-height"><txp:yield name="set-height" /><txp:else /><txp:image_info type="h" /></txp:if_yield>" itemprop="url contentUrl" alt="<txp:image_info type="alt" />" src="<txp:image_url />">
             </txp:if_yield>

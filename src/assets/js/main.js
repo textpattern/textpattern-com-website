@@ -54,48 +54,4 @@
             navmenu.classList.remove('site-navigation-open');
         });
     }
-
-    // Dark Mode.
-
-    var imgPrefers = document.querySelectorAll('img.prefers-color-scheme'),
-        isDark = window.matchMedia('screen and (prefers-color-scheme: dark)');
-
-    function makeImagesDark()
-    {
-        for (var i = 0; i < imgPrefers.length; i++) {
-            if (imgPrefers[i].getAttribute('data-src-dark')) {
-                imgPrefers[i].setAttribute('src', imgPrefers[i].getAttribute('data-src-dark'));
-            }
-
-            if (imgPrefers[i].getAttribute('data-srcset-dark')) {
-                imgPrefers[i].setAttribute('srcset', imgPrefers[i].getAttribute('data-srcset-dark'));
-            }
-        }
-    }
-
-    function makeImagesLight()
-    {
-        for (var i = 0; i < imgPrefers.length; i++) {
-            if (imgPrefers[i].getAttribute('data-src-light')) {
-                imgPrefers[i].setAttribute('src', imgPrefers[i].getAttribute('data-src-light'));
-            }
-
-            if (imgPrefers[i].getAttribute('data-srcset-light')) {
-                imgPrefers[i].setAttribute('srcset', imgPrefers[i].getAttribute('data-srcset-light'));
-            }
-        }
-    }
-
-    function toggleDarkMode(isDark)
-    {
-        if (isDark.matches) {
-            makeImagesDark();
-        } else {
-            makeImagesLight();
-        }
-    }
-
-    toggleDarkMode(isDark);
-    isDark.addListener(toggleDarkMode);
-
 })();
