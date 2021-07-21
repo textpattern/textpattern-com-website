@@ -8,18 +8,6 @@
 @media (min-width: setup.$breakpoint-1) {
 
     /**
-     * Screen size-specific elements.
-     */
-
-    .screen-small {
-        display: none;
-    }
-
-    .screen-large {
-        display: block; // TODO: use `display: revert` when browser support is widespread.
-    }
-
-    /**
      * Grid container.
      */
 
