@@ -30,7 +30,7 @@
     "sass": "1.39.0",
     "stylelint": "13.13.1",
     "stylelint-order": "4.1.0",
-    "stylelint-scss": "3.20.1"
+    "stylelint-scss": "3.21.0"
   },
   "dependencies": {
     "prismjs": "1.24.1",
