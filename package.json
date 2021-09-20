@@ -33,7 +33,7 @@
     "stylelint-scss": "3.20.1"
   },
   "dependencies": {
-    "prismjs": "1.24.1",
+    "prismjs": "1.25.0",
     "textpattern-branding": "0.3.3"
   },
   "optionalDependencies": {
