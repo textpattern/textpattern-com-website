@@ -1092,9 +1092,6 @@ rules:
   # Disallow duplicate mixins within a stylesheet.
   scss/no-duplicate-mixins: true
 
-  # Disallows the use of global function names, as these global functions are now located inside built-in Sass modules.
-  scss/no-global-function-names: true
-
   # Disallow linebreaks after Sass operators.
   scss/operator-no-newline-after: true
 
