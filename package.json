@@ -10,7 +10,7 @@
     "url": "https://github.com/textpattern/textpattern-com-website/issues"
   },
   "devDependencies": {
-    "@lodder/grunt-postcss": "3.0.1",
+    "@lodder/grunt-postcss": "3.1.0",
     "@squoosh/cli": "0.7.2",
     "autoprefixer": "10.3.7",
     "cssnano": "5.0.8",
