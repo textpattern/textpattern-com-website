@@ -37,7 +37,7 @@
     "textpattern-branding": "0.3.3"
   },
   "optionalDependencies": {
-    "fibers": "5.0.0"
+    "fibers": "5.0.1"
   },
   "browserslist": [
     "> 0.5%",
