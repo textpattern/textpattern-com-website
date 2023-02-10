@@ -29,7 +29,7 @@
     "postcss": "8.4.20",
     "sass": "1.57.0",
     "stylelint": "13.13.1",
-    "stylelint-order": "4.1.0",
+    "stylelint-order": "6.0.2",
     "stylelint-scss": "3.21.0"
   },
   "dependencies": {
