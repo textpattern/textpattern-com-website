@@ -50,16 +50,6 @@ Where the `@task@` is either `build` or `watch`.
 - The `build` task builds the project.
 - The `watch` task will launch a task that watches for file changes; the project is then automatically built if a source file is modified.
 
-## Generating AVIF and WebP image formats via CLI
-
-After you have installed all dependencies, you can run [Squoosh](https://github.com/GoogleChromeLabs/squoosh/) on images to generate modern image formats quickly, for example:
-
-```ShellSession
-$ npx squoosh-cli --webp '{"quality":50}' src/img-originals/76.png -d public/img/
-```
-
-See [Squoosh CLI](https://github.com/GoogleChromeLabs/squoosh/tree/dev/cli) for more detailed documentation, plus [encoding options](https://github.com/GoogleChromeLabs/squoosh/blob/dev/cli/src/codecs.js). **Note** you should ideally optimize your images manually (per-image) to obtain the best compression level versus quality ratio.
-
 ## Shortcodes
 
 Textpattern 4.7 introduced support for user-definable `<txp:output_form />` attributes (and also the short tags syntax `<txp::...>`), allowing for our own version of 'shortcodes' within articles (**note:** remember to also use `notextile.` when within Textile content). This site uses the following tags:
