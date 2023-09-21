@@ -14,6 +14,7 @@
 @mixin hires-graphic($hdfile, $hdtype, $hdwidth, $hdheight) {
     $filename: $hdfile + "." + $hdtype;
     $hdfilename: $hdfile + "@2x." + $hdtype;
+
     background-image: image-set(url("../img/" + $filename) 1x, url("../img/" + $hdfilename) 2x);
     background-size: $hdwidth $hdheight;
 }
@@ -21,6 +22,7 @@
 @mixin hires-graphic-modern($hdfile, $hdtype) {
     $filename: $hdfile + "." + $hdtype;
     $hdfilename: $hdfile + "@2x." + $hdtype;
+
     background-image: image-set(url("../img/" + $filename) 1x, url("../img/" + $hdfilename) 2x);
 }
 
