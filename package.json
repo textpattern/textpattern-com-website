@@ -12,9 +12,9 @@
   "devDependencies": {
     "@lodder/grunt-postcss": "3.1.1",
     "@squoosh/cli": "0.7.3",
-    "autoprefixer": "10.4.13",
-    "cssnano": "5.1.15",
-    "grunt": "1.5.3",
+    "autoprefixer": "10.4.15",
+    "cssnano": "6.0.1",
+    "grunt": "1.6.1",
     "grunt-cli": "1.4.3",
     "grunt-concurrent": "3.0.0",
     "grunt-contrib-clean": "2.0.1",
@@ -23,14 +23,14 @@
     "grunt-contrib-watch": "1.1.0",
     "grunt-replace-regex": "1.0.3",
     "grunt-sass": "3.1.0",
-    "grunt-stylelint": "0.16.0",
+    "grunt-stylelint": "0.19.0",
     "grunt-terser": "2.0.0",
     "load-grunt-tasks": "5.1.0",
-    "postcss": "8.4.20",
-    "sass": "1.59.3",
-    "stylelint": "13.13.1",
-    "stylelint-order": "4.1.0",
-    "stylelint-scss": "3.21.0"
+    "postcss": "8.4.30",
+    "sass": "1.67.0",
+    "stylelint": "15.10.3",
+    "stylelint-config-standard-scss": "11.0.0",
+    "stylelint-order": "6.0.3"
   },
   "dependencies": {
     "prismjs": "1.29.0",
@@ -44,8 +44,5 @@
     "Firefox ESR",
     "not IE 11"
   ],
-  "scripts": {
-    "test": "grunt travis --verbose"
-  },
   "license": "GPL-2.0"
 }
