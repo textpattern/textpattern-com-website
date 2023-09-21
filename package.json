@@ -13,7 +13,7 @@
     "@lodder/grunt-postcss": "3.1.1",
     "@squoosh/cli": "0.7.2",
     "autoprefixer": "10.4.13",
-    "cssnano": "5.1.14",
+    "cssnano": "5.1.15",
     "grunt": "1.5.3",
     "grunt-cli": "1.4.3",
     "grunt-concurrent": "3.0.0",
