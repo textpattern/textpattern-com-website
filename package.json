@@ -28,7 +28,7 @@
     "postcss": "8.4.31",
     "sass": "1.69.5",
     "stylelint": "15.11.0",
-    "stylelint-config-standard-scss": "11.0.0",
+    "stylelint-config-standard-scss": "11.1.0",
     "stylelint-order": "6.0.3"
   },
   "dependencies": {
