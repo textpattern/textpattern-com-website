@@ -180,8 +180,7 @@ $colors: (
         box-sizing: border-box;
         width: 29%;
         padding: 0.5em 2%;
-        overflow-x: hidden;
-        overflow-y: auto;
+        overflow: hidden auto;
         border-right: 1px solid var(--clr-brdr);
         background-color: var(--clr-bkgd-box);
         box-shadow: inset -0.25em 0 0.25em -0.25em hsl(0 0% 0% / 0.2);
