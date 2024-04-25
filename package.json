@@ -12,7 +12,7 @@
   "devDependencies": {
     "@lodder/grunt-postcss": "3.1.1",
     "autoprefixer": "10.4.19",
-    "cssnano": "6.1.2",
+    "cssnano": "7.0.0",
     "grunt": "1.6.1",
     "grunt-cli": "1.4.3",
     "grunt-concurrent": "3.0.0",
