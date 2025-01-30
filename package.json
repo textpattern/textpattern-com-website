@@ -27,7 +27,7 @@
     "load-grunt-tasks": "5.1.0",
     "postcss": "8.5.1",
     "sass": "1.83.4",
-    "stylelint": "16.13.2",
+    "stylelint": "16.14.1",
     "stylelint-config-standard-scss": "14.0.0",
     "stylelint-order": "6.0.4"
   },
