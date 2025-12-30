@@ -29,7 +29,7 @@
     "sass": "1.97.0",
     "stylelint": "16.26.1",
     "stylelint-config-standard-scss": "16.0.0",
-    "stylelint-order": "7.0.0"
+    "stylelint-order": "7.0.1"
   },
   "dependencies": {
     "prismjs": "1.30.0",
