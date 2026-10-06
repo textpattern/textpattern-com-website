@@ -6,14 +6,12 @@
 
   Developer: Team Textpattern
   Site: https://textpattern.com/
-  Twitter: https://twitter.com/textpattern
   GitHub: https://github.com/textpattern
   Location: Everywhere
 
 # THANKS
 
   Names (& URL):
-    Phil Wareham (https://www.designhive.com)
     Destry Wion (https://wion.com)
     Philipp Schilling (http://www.psgd.de)
 
