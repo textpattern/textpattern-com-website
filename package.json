@@ -12,7 +12,7 @@
   "devDependencies": {
     "@lodder/grunt-postcss": "3.1.1",
     "autoprefixer": "10.6.1",
-    "cssnano": "9.2.0",
+    "cssnano": "9.3.1",
     "grunt": "1.6.3",
     "grunt-cli": "1.5.0",
     "grunt-concurrent": "3.0.0",
@@ -28,7 +28,7 @@
     "postcss": "8.5.19",
     "sass": "1.101.3",
     "stylelint": "17.14.0",
-    "postcss": "8.5.28",
+    "postcss": "8.5.29",
     "sass": "1.105.1",
     "stylelint": "17.16.0",
     "stylelint-config-standard-scss": "17.0.0",
